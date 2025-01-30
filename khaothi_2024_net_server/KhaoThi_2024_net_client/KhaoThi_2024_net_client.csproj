@@ -41,6 +41,9 @@
     <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="6.5.2" />
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.3.0" />
+    <PackageReference Include="MudBlazor" Version="8.1.0" />
+    <PackageReference Include="MudBlazor.Extensions" Version="8.0.1" />
+    <PackageReference Include="MudBlazor.ThemeManager" Version="3.0.0" />
     <PackageReference Include="Serilog" Version="4.2.0" />
     <PackageReference Include="Serilog.Sinks.BrowserConsole" Version="8.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />

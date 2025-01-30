@@ -1,0 +1,40 @@
+﻿// Shared/Components/CircularProgress.razor
+@namespace KhaoThi_2024_net_client.Components
+
+<div class="@Class">
+    <MudProgressCircular Color="@Color"
+                         Size="@Size"
+                         Indeterminate="@Indeterminate"
+                         Value="@Value"
+                         Min="@Min"
+                         Max="@Max"
+                         StrokeWidth="@StrokeWidth"
+                         Style="@Style">
+        @if (ShowValue)
+        {
+            <MudText Typo="Typo.h5" Color="@Color" Class="mt-1">
+                @(Math.Round(Value, 0))%
+            </MudText>
+        }
+        @if (!string.IsNullOrEmpty(LoadingText))
+        {
+            <MudText Typo="Typo.body2" Color="Color.Default" Class="mt-2">
+                @LoadingText
+            </MudText>
+        }
+    </MudProgressCircular>
+</div>
+
+@code {
+    [Parameter] public Color Color { get; set; } = Color.Primary;
+    [Parameter] public Size Size { get; set; } = Size.Large;
+    [Parameter] public bool Indeterminate { get; set; } = true;
+    [Parameter] public double Value { get; set; } = 0;
+    [Parameter] public double Min { get; set; } = 0;
+    [Parameter] public double Max { get; set; } = 100;
+    [Parameter] public int StrokeWidth { get; set; } = 4;
+    [Parameter] public bool ShowValue { get; set; }
+    [Parameter] public string LoadingText { get; set; } = "Loading...";
+    [Parameter] public string Class { get; set; } = "d-flex flex-column justify-center align-center";
+    [Parameter] public string Style { get; set; }
+}

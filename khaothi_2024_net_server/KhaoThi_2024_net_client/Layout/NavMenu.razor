@@ -3,69 +3,44 @@
 @inject IDispatcher Dispatcher
 @inject IState<AuthState> AuthState
 
-<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">KhaoThi 2024</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+<MudNavMenu>
+    <AuthorizeView>
+        <Authorized>
+            <div class="px-4 py-2">
+                <MudText Typo="Typo.subtitle1">KhaoThi 2024</MudText>
+                <MudText Typo="Typo.caption" Color="Color.Secondary">Xin chào,</MudText>
+                <MudText Typo="Typo.body1" Class="mt-n1">@AuthState.Value.CurrentUser?.HoTen</MudText>
+            </div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <AuthorizeView>
-            <Authorized>
-                <div class="user-info px-3 py-2">
-                    <div class="text-light mb-2">
-                        <small>Xin chào,</small>
-                        <div class="fw-bold">@AuthState.Value.CurrentUser?.HoTen</div>
-                    </div>
-                </div>
+            <MudDivider Class="my-2" />
 
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="dashboard" Match="NavLinkMatch.All">
-                        <span class="bi bi-house-door-fill" aria-hidden="true"></span> Dashboard
-                    </NavLink>
-                </div>
+            <MudNavLink Href="dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Dashboard">
+                Dashboard
+            </MudNavLink>
 
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="counter">
-                        <span class="bi bi-plus-square-fill" aria-hidden="true"></span> Counter
-                    </NavLink>
-                </div>
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="weather">
-                        <span class="bi bi-list-nested" aria-hidden="true"></span> Weather
-                    </NavLink>
-                </div>
+            <MudNavLink Href="counter" Icon="@Icons.Material.Filled.Add">
+                Counter
+            </MudNavLink>
 
-                <div class="nav-item px-3 mt-auto">
-                    <button class="nav-link" @onclick="HandleLogout">
-                        <span class="bi bi-box-arrow-right" aria-hidden="true"></span> Đăng xuất
-                    </button>
-                </div>
-            </Authorized>
-            <NotAuthorized>
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="login">
-                        <span class="bi bi-box-arrow-in-right" aria-hidden="true"></span> Đăng nhập
-                    </NavLink>
-                </div>
-            </NotAuthorized>
-        </AuthorizeView>
-    </nav>
-</div>
+            <MudNavLink Href="weather" Icon="@Icons.Material.Filled.CloudQueue">
+                Weather
+            </MudNavLink>
+
+            <MudSpacer />
+
+            <MudNavLink OnClick="HandleLogout" Icon="@Icons.Material.Filled.Logout" Class="mt-auto">
+                Đăng xuất
+            </MudNavLink>
+        </Authorized>
+        <NotAuthorized>
+            <MudNavLink Href="login" Icon="@Icons.Material.Filled.Login">
+                Đăng nhập
+            </MudNavLink>
+        </NotAuthorized>
+    </AuthorizeView>
+</MudNavMenu>
 
 @code {
-    private bool collapseNavMenu = true;
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
     private async Task HandleLogout()
     {
         try

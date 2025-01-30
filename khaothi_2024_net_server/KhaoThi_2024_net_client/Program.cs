@@ -134,6 +134,11 @@ using Fluxor.Blazor.Web.ReduxDevTools;
 using Microsoft.AspNetCore.Routing;
 using Serilog.Events;
 using System.Security.Claims;
+using MudBlazor;
+using MudBlazor.Services;
+using KhaoThi_2024_net_client.Components;
+
+using MudBlazor.Extensions;
 
 public class Program
 {
@@ -142,6 +147,7 @@ public class Program
     public static async Task Main(string[] args)
     {
         var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
 
         // Root Components Registration
         ConfigureRootComponents(builder);
@@ -196,6 +202,8 @@ public class Program
 
         // Route Configuration
         ConfigureRouting(services);
+
+        services.AddScoped<CircularProgress>();
     }
 
     private static void ConfigureHttpClient(IServiceCollection services)
@@ -264,6 +272,17 @@ public class Program
         services.AddScoped<ILoggingService, LoggingService>();
 
         // Thêm các service khác ở đây
+        services.AddMudServices();
+        // Thêm MudBlazor Extensions
+        services.AddMudExtensions();
+
+        // Hoặc thêm với cấu hình tùy chỉnh
+        //services.AddMudExtensions(config =>
+        //{
+        //    config.EnableRipple = true;   // Enable ripple effect
+        //    config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
+        //    // ... các cấu hình khác
+        //});
     }
 
     private static void ConfigureRouting(IServiceCollection services)

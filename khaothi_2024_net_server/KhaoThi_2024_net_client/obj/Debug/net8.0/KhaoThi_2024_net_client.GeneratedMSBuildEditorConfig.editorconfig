@@ -1,4 +1,7 @@
 is_global = true
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudAllowedAttributeList = 
 build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -22,6 +25,10 @@ build_property.EnableCodeStyleSeverity =
 
 [C:/Users/TRY/Documents/GitHub/khaothi_2024_net/khaothi_2024_net_server/KhaoThi_2024_net_client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TRY/Documents/GitHub/khaothi_2024_net/khaothi_2024_net_server/KhaoThi_2024_net_client/Components/CircularProgress.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaXJjdWxhclByb2dyZXNzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TRY/Documents/GitHub/khaothi_2024_net/khaothi_2024_net_server/KhaoThi_2024_net_client/Pages/Auth/AdminOnly.razor]

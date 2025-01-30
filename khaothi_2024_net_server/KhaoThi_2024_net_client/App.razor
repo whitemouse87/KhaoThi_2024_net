@@ -1,33 +1,56 @@
 ﻿@*@using Fluxor
-    @using Fluxor.Blazor.Web.Components
+    @using KhaoThi_2024_net_client.Components.Auth
+    @using Microsoft.AspNetCore.Components.Authorization
+    @using Microsoft.AspNetCore.Authorization
+    @inject NavigationManager NavigationManager
 
-    <CascadingValue Value="@WebApp">
+    <StoreInitializer />
+    <MudThemeProvider />
+    <MudDialogProvider />
+    <MudSnackbarProvider />
+
+    <CascadingAuthenticationState>
         <Router AppAssembly="@typeof(App).Assembly">
             <Found Context="routeData">
-                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                    <NotAuthorized>
+                        @if (context.User?.Identity?.IsAuthenticated != true)
+                        {
+                            @if (!routeData.PageType.GetCustomAttributes(typeof(AllowAnonymousAttribute), true).Any())
+                            {
+                                <LoginRedirect />
+                            }
+                            else
+                            {
+                                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                            }
+                        }
+                        else
+                        {
+                            <MudAlert Severity="Severity.Warning" Variant="Variant.Filled">
+                                Bạn không có quyền truy cập trang này.
+                            </MudAlert>
+                        }
+                    </NotAuthorized>
+                    <Authorizing>
+                        <MudAlert Severity="Severity.Info" Variant="Variant.Filled">
+                            Đang kiểm tra quyền truy cập...
+                        </MudAlert>
+                    </Authorizing>
+                </AuthorizeRouteView>
                 <FocusOnNavigate RouteData="@routeData" Selector="h1" />
             </Found>
             <NotFound>
                 <PageTitle>Không tìm thấy trang</PageTitle>
                 <LayoutView Layout="@typeof(MainLayout)">
-                    <div class="alert alert-warning" role="alert">
+                    <MudAlert Severity="Severity.Warning" Variant="Variant.Filled" Class="mt-8">
                         Xin lỗi, không tìm thấy trang bạn yêu cầu.
-                    </div>
+                    </MudAlert>
                 </LayoutView>
             </NotFound>
         </Router>
-    </CascadingValue>
+    </CascadingAuthenticationState>*@
 
-    @code {
-        [Inject]
-        private IStore WebApp { get; set; } = default!;
-
-        protected override async Task OnInitializedAsync()
-        {
-            await WebApp.InitializeAsync();
-            await base.OnInitializedAsync();
-        }
-    }*@
 @using Fluxor
 @using KhaoThi_2024_net_client.Components.Auth
 @using Microsoft.AspNetCore.Components.Authorization
@@ -35,45 +58,50 @@
 @inject NavigationManager NavigationManager
 
 <StoreInitializer />
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-<CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(App).Assembly">
-        <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-                <NotAuthorized>
-                    @if (context.User?.Identity?.IsAuthenticated != true)
-                    {
-                        @if (!routeData.PageType.GetCustomAttributes(typeof(AllowAnonymousAttribute), true).Any())
+<CascadingValue Value="typeof(CircularProgress)" Name="CircularProgressComponent">
+    <CascadingAuthenticationState>
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                    <NotAuthorized>
+                        @if (context.User?.Identity?.IsAuthenticated != true)
                         {
-                            <LoginRedirect />
+                            @if (!routeData.PageType.GetCustomAttributes(typeof(AllowAnonymousAttribute), true).Any())
+                            {
+                                <LoginRedirect />
+                            }
+                            else
+                            {
+                                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                            }
                         }
                         else
                         {
-                            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                            <MudAlert Severity="Severity.Warning" Variant="Variant.Filled">
+                                Bạn không có quyền truy cập trang này.
+                            </MudAlert>
                         }
-                    }
-                    else
-                    {
-                        <div class="alert alert-warning" role="alert">
-                            <p>Bạn không có quyền truy cập trang này.</p>
-                        </div>
-                    }
-                </NotAuthorized>
-                <Authorizing>
-                    <div class="alert alert-info">
-                        <p>Đang kiểm tra quyền truy cập...</p>
-                    </div>
-                </Authorizing>
-            </AuthorizeRouteView>
-            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-        </Found>
-        <NotFound>
-            <PageTitle>Không tìm thấy trang</PageTitle>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <div class="alert alert-warning" role="alert">
-                    Xin lỗi, không tìm thấy trang bạn yêu cầu.
-                </div>
-            </LayoutView>
-        </NotFound>
-    </Router>
-</CascadingAuthenticationState>
+                    </NotAuthorized>
+                    <Authorizing>
+                        <MudAlert Severity="Severity.Info" Variant="Variant.Filled">
+                            Đang kiểm tra quyền truy cập...
+                        </MudAlert>
+                    </Authorizing>
+                </AuthorizeRouteView>
+                <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            </Found>
+            <NotFound>
+                <PageTitle>Không tìm thấy trang</PageTitle>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <MudAlert Severity="Severity.Warning" Variant="Variant.Filled" Class="mt-8">
+                        Xin lỗi, không tìm thấy trang bạn yêu cầu.
+                    </MudAlert>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </CascadingAuthenticationState>
+</CascadingValue>

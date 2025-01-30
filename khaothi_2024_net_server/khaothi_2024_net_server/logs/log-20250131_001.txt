@@ -1,0 +1,23 @@
+2025-01-31 00:02:28.697 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-31 00:02:28.694 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-31 00:02:29.527 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-31 00:02:29.626 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-31 00:02:29.629 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-31 00:02:30.994 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 00:02:31.310 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-31 00:02:42.805 +07:00 [INF] [Client] User  logging out 
+2025-01-31 00:02:42.814 +07:00 [INF] [Client] Processing logout 
+2025-01-31 00:02:42.830 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-31 00:02:42.836 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-31 00:04:22.208 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: 171.235.39.83, URL: https://localhost:44386/home 
+2025-01-31 00:33:08.581 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-31 00:33:08.581 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-31 00:33:09.454 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-31 00:33:09.575 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-31 00:33:09.579 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-31 00:33:11.087 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 00:33:11.381 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-31 00:33:27.971 +07:00 [INF] [Client] User  logging out 
+2025-01-31 00:33:27.980 +07:00 [INF] [Client] Processing logout 
+2025-01-31 00:33:27.996 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-31 00:33:28.003 +07:00 [INF] [Client] [Info] Token removed from local storage 
