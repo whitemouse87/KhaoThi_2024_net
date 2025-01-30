@@ -1,0 +1,41 @@
+﻿@page "/"
+@attribute [AllowAnonymous]
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Trang chủ - KhaoThi</PageTitle>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Chào mừng đến với KhaoThi</h1>
+
+            <AuthorizeView>
+                <Authorized>
+                    <div class="alert alert-info">
+                        <p>Xin chào @context.User.FindFirst("hoTen")?.Value!</p>
+                        <a href="/dashboard" class="btn btn-primary">Đi đến Dashboard</a>
+                    </div>
+                </Authorized>
+                <NotAuthorized>
+                    <div class="alert alert-secondary">
+                        <p>Vui lòng đăng nhập để truy cập hệ thống.</p>
+                        <a href="/login" class="btn btn-primary">Đăng nhập</a>
+                    </div>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (authState.User.Identity?.IsAuthenticated ?? false)
+        {
+            // Không tự động chuyển đến dashboard
+            // Để người dùng có thể xem nội dung trang chủ
+        }
+    }
+}

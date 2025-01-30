@@ -1,0 +1,96 @@
+﻿@inherits LayoutComponentBase
+@using KhaoThi_2024_net_client.Models.Auth
+@using KhaoThi_2024_net_client.Components.Auth
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Authorization
+@implements IDisposable
+@inject IState<AuthState> AuthState
+@inject NavigationManager NavigationManager
+
+<div class="page">
+    <AuthorizeView>
+        <Authorized>
+            <div class="sidebar">
+                <NavMenu />
+            </div>
+            <main>
+                <div class="top-row px-4 justify-content-end">
+                    @if (AuthState.Value.CurrentUser != null)
+                    {
+                        <span class="me-3">
+                            <small class="text-muted">Đơn vị:</small>
+                            @AuthState.Value.CurrentUser.MaDonVi
+                        </span>
+                        <span class="me-3">
+                            <small class="text-muted">Chức vụ:</small>
+                            @AuthState.Value.CurrentUser.MaChucVu
+                        </span>
+                        <button class="btn btn-link" @onclick="HandleLogout">Đăng xuất</button>
+                    }
+                </div>
+                <article class="content px-4">
+                    @Body
+                </article>
+            </main>
+        </Authorized>
+        <NotAuthorized>
+            @if (IsPublicPage)
+            {
+                <div class="public-layout">
+                    @Body
+                </div>
+            }
+            else
+            {
+                <LoginRedirect></LoginRedirect>
+            }
+        </NotAuthorized>
+    </AuthorizeView>
+</div>
+
+@code {
+    [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
+
+    private bool IsPublicPage =>
+        NavigationManager.Uri.EndsWith("/login", StringComparison.OrdinalIgnoreCase) ||
+        NavigationManager.Uri.EndsWith("/", StringComparison.OrdinalIgnoreCase);
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += HandleLocationChanged;
+    }
+
+    private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    private async Task HandleLogout()
+    {
+        try
+        {
+            if (AuthenticationStateProvider is CustomAuthStateProvider authStateProvider)
+            {
+                await authStateProvider.MarkUserAsLoggedOut();
+                NavigationManager.NavigateTo("/", true);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log error
+            Console.WriteLine($"Error during logout: {ex.Message}");
+        }
+    }
+
+    public void Dispose()
+    {
+        try
+        {
+            NavigationManager.LocationChanged -= HandleLocationChanged;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in Dispose: {ex.Message}");
+        }
+    }
+}

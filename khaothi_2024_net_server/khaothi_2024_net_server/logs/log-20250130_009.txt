@@ -1,0 +1,17 @@
+2025-01-30 23:32:19.921 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 23:32:19.920 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-30 23:32:20.918 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 23:32:21.022 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-30 23:32:21.024 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 23:32:22.359 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:32:22.455 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-30 23:32:30.018 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:32:30.189 +07:00 [INF] [Client] [CLIENT] Authenticated user attempting to access login page - redirecting to dashboard 
+2025-01-30 23:32:31.283 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:32:31.374 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-30 23:32:36.612 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:32:42.538 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:32:44.555 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-30 23:32:50.392 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:32:57.693 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-30 23:33:28.003 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 

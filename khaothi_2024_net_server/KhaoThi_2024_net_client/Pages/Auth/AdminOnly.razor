@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using KhaoThi_2024_net_client.Components.Auth
+<AuthorizeView>
+    <Authorized>
+        @if (context.User.FindFirst("maChucVu")?.Value == Constants.Roles.Admin)
+        {
+            @ChildContent
+        }
+        else
+        {
+            @if (ShowUnauthorizedMessage)
+            {
+                <div class="alert alert-warning">
+                    Bạn không có quyền truy cập nội dung này.
+                </div>
+            }
+        }
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool ShowUnauthorizedMessage { get; set; } = true;
+}

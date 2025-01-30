@@ -1,0 +1,144 @@
+﻿@page "/login"
+@using KhaoThi_2024_net_client.Models.Auth
+@using KhaoThi_2024_net_client.Services.Auth
+@using static KhaoThi_2024_net_client.Services.Auth.AuthActions
+@using Fluxor
+@using Fluxor.Blazor.Web.Components
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ILoggingService LoggingService
+@inherits FluxorComponent
+
+@if (!isAuthenticated)
+{
+    <div class="login-container bg-white shadow-sm rounded p-4">
+        <h3 class="text-center mb-4">Đăng nhập</h3>
+        <EditForm Model="@loginRequest" OnValidSubmit="HandleLoginAsync">
+            <DataAnnotationsValidator />
+            <div class="mb-3">
+                <label for="username" class="form-label">Tên đăng nhập</label>
+                <InputText id="username"
+                           class="form-control"
+                           @bind-Value="loginRequest.TenDangNhap"
+                           disabled="@AuthState.Value.IsLoading" />
+                <ValidationMessage For="@(() => loginRequest.TenDangNhap)" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <InputText type="password"
+                           id="password"
+                           class="form-control"
+                           @bind-Value="loginRequest.MatKhau"
+                           disabled="@AuthState.Value.IsLoading" />
+                <ValidationMessage For="@(() => loginRequest.MatKhau)" class="text-danger" />
+            </div>
+            @if (!string.IsNullOrEmpty(AuthState.Value.Error))
+            {
+                <div class="alert alert-danger d-flex align-items-center">
+                    <div class="flex-grow-1">@AuthState.Value.Error</div>
+                    <button type="button" class="btn-close" @onclick="ClearError"></button>
+                </div>
+            }
+            <button type="submit"
+                    class="btn btn-primary w-100"
+                    disabled="@AuthState.Value.IsLoading">
+                @if (AuthState.Value.IsLoading)
+                {
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="spinner-border spinner-border-sm me-2"></span>
+                        <span>Đang xử lý...</span>
+                    </div>
+                }
+                else
+                {
+                    <span>Đăng nhập</span>
+                }
+            </button>
+        </EditForm>
+    </div>
+}
+
+@code {
+    private readonly LoginRequest loginRequest = new();
+    private bool isAuthenticated;
+
+    [Inject] private IState<AuthState> AuthState { get; set; } = default!;
+    [Inject] private IDispatcher Dispatcher { get; set; } = default!;
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        // Kiểm tra trạng thái xác thực
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        isAuthenticated = authState.User.Identity?.IsAuthenticated ?? false;
+
+        if (isAuthenticated || AuthState.Value.IsAuthenticated)
+        {
+            await Logger.Info($"[CLIENT] Authenticated user attempting to access login page - redirecting to dashboard");
+            NavigationManager.NavigateTo("/dashboard", true);
+            return;
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Subscribe to AuthState changes
+            AuthState.StateChanged += HandleAuthStateChanged;
+        }
+    }
+
+    private async void HandleAuthStateChanged(object? sender, EventArgs e)
+    {
+        if (AuthState.Value.IsAuthenticated)
+        {
+            await Logger.Info($"[CLIENT] User authenticated - redirecting to dashboard");
+            NavigationManager.NavigateTo("/dashboard", true);
+        }
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task HandleLoginAsync()
+    {
+        try
+        {
+            if (AuthState.Value.IsLoading) return;
+
+            // Gửi action login
+            Dispatcher.Dispatch(new LoginAction(
+                new LoginRequest
+                {
+                    TenDangNhap = loginRequest.TenDangNhap,
+                    MatKhau = loginRequest.MatKhau
+                }
+            ));
+
+            await Logger.Info($"[CLIENT] Login attempt initiated: {loginRequest.TenDangNhap}");
+
+            // Đợi state thay đổi
+            await Task.Delay(100); // Đợi state cập nhật
+
+            if (AuthState.Value.IsAuthenticated)
+            {
+                // Sử dụng replace state thay vì redirect
+                NavigationManager.NavigateTo("/dashboard", false);
+            }
+        }
+        catch (Exception ex)
+        {
+            Dispatcher.Dispatch(new LoginFailureAction("Lỗi khi xử lý đăng nhập"));
+            await Logger.Error($"[CLIENT] Login error for user: {loginRequest.TenDangNhap}", ex);
+        }
+    }
+
+    private void ClearError() => Dispatcher.Dispatch(new LoginFailureAction(null));
+
+    public void Dispose()
+    {
+        // Unsubscribe from AuthState changes
+        AuthState.StateChanged -= HandleAuthStateChanged;
+    }
+}

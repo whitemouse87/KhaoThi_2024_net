@@ -1,0 +1,79 @@
+﻿@*@using Fluxor
+    @using Fluxor.Blazor.Web.Components
+
+    <CascadingValue Value="@WebApp">
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            </Found>
+            <NotFound>
+                <PageTitle>Không tìm thấy trang</PageTitle>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <div class="alert alert-warning" role="alert">
+                        Xin lỗi, không tìm thấy trang bạn yêu cầu.
+                    </div>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </CascadingValue>
+
+    @code {
+        [Inject]
+        private IStore WebApp { get; set; } = default!;
+
+        protected override async Task OnInitializedAsync()
+        {
+            await WebApp.InitializeAsync();
+            await base.OnInitializedAsync();
+        }
+    }*@
+@using Fluxor
+@using KhaoThi_2024_net_client.Components.Auth
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Authorization
+@inject NavigationManager NavigationManager
+
+<StoreInitializer />
+
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <NotAuthorized>
+                    @if (context.User?.Identity?.IsAuthenticated != true)
+                    {
+                        @if (!routeData.PageType.GetCustomAttributes(typeof(AllowAnonymousAttribute), true).Any())
+                        {
+                            <LoginRedirect />
+                        }
+                        else
+                        {
+                            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            <p>Bạn không có quyền truy cập trang này.</p>
+                        </div>
+                    }
+                </NotAuthorized>
+                <Authorizing>
+                    <div class="alert alert-info">
+                        <p>Đang kiểm tra quyền truy cập...</p>
+                    </div>
+                </Authorizing>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Không tìm thấy trang</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <div class="alert alert-warning" role="alert">
+                    Xin lỗi, không tìm thấy trang bạn yêu cầu.
+                </div>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>

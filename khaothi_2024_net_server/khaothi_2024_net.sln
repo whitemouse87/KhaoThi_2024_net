@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "khaothi_2024_net_server", "khaothi_2024_net_server\khaothi_2024_net_server.csproj", "{951309C8-78BB-4619-A44A-5C0D43F37444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhaoThi_2024_net_client", "KhaoThi_2024_net_client\KhaoThi_2024_net_client.csproj", "{F4EF9336-4582-4F45-AF3A-28B6502A778E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{951309C8-78BB-4619-A44A-5C0D43F37444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951309C8-78BB-4619-A44A-5C0D43F37444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951309C8-78BB-4619-A44A-5C0D43F37444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951309C8-78BB-4619-A44A-5C0D43F37444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EF9336-4582-4F45-AF3A-28B6502A778E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EF9336-4582-4F45-AF3A-28B6502A778E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EF9336-4582-4F45-AF3A-28B6502A778E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EF9336-4582-4F45-AF3A-28B6502A778E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

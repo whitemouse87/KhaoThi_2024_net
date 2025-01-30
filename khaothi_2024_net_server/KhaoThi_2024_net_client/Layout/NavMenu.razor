@@ -1,0 +1,81 @@
+﻿@using KhaoThi_2024_net_client.Models.Auth
+@using static KhaoThi_2024_net_client.Services.Auth.AuthActions
+@inject IDispatcher Dispatcher
+@inject IState<AuthState> AuthState
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">KhaoThi 2024</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <AuthorizeView>
+            <Authorized>
+                <div class="user-info px-3 py-2">
+                    <div class="text-light mb-2">
+                        <small>Xin chào,</small>
+                        <div class="fw-bold">@AuthState.Value.CurrentUser?.HoTen</div>
+                    </div>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="dashboard" Match="NavLinkMatch.All">
+                        <span class="bi bi-house-door-fill" aria-hidden="true"></span> Dashboard
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="counter">
+                        <span class="bi bi-plus-square-fill" aria-hidden="true"></span> Counter
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="weather">
+                        <span class="bi bi-list-nested" aria-hidden="true"></span> Weather
+                    </NavLink>
+                </div>
+
+                <div class="nav-item px-3 mt-auto">
+                    <button class="nav-link" @onclick="HandleLogout">
+                        <span class="bi bi-box-arrow-right" aria-hidden="true"></span> Đăng xuất
+                    </button>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                        <span class="bi bi-box-arrow-in-right" aria-hidden="true"></span> Đăng nhập
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private async Task HandleLogout()
+    {
+        try
+        {
+            await Logger.Info($"User {AuthState.Value.CurrentUser?.TenDangNhap} logging out");
+            Dispatcher.Dispatch(new LogoutAction());
+        }
+        catch (Exception ex)
+        {
+            await Logger.Error("Error during logout", ex);
+        }
+    }
+}

@@ -1,0 +1,121 @@
+﻿@page "/dashboard"
+@attribute [Authorize]
+@using KhaoThi_2024_net_client.Components.Auth
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject ILoggingService LoggingService
+
+<PageTitle>Dashboard - KhaoThi</PageTitle>
+
+<div class="container-fluid">
+    <AuthorizeView>
+        <Authorized>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mb-4">Dashboard</h3>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Thông tin người dùng</h5>
+                            <div class="user-info">
+                                <p><strong>Họ tên:</strong> @context.User.FindFirst("hoTen")?.Value</p>
+                                <p><strong>Đơn vị:</strong> @context.User.FindFirst("maDonVi")?.Value</p>
+                                <p><strong>Chức vụ:</strong> @GetChucVuDisplay(context.User.FindFirst("maChucVu")?.Value)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    @{
+                        var maChucVu = context.User.FindFirst("maChucVu")?.Value;
+                    }
+
+                    @if (maChucVu == "01") // Admin
+                    {
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Quản lý người dùng</h5>
+                                        <p class="card-text">Quản lý tài khoản và phân quyền người dùng</p>
+                                        <a href="/admin/users" class="btn btn-primary">Truy cập</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cấu hình hệ thống</h5>
+                                        <p class="card-text">Thiết lập các thông số hệ thống</p>
+                                        <a href="/admin/settings" class="btn btn-primary">Truy cập</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nhật ký hệ thống</h5>
+                                        <p class="card-text">Xem lịch sử hoạt động</p>
+                                        <a href="/admin/logs" class="btn btn-primary">Truy cập</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else // User thường
+                    {
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Công việc của tôi</h5>
+                                        <p class="card-text">Xem và cập nhật công việc</p>
+                                        <a href="/tasks" class="btn btn-primary">Xem công việc</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Báo cáo</h5>
+                                        <p class="card-text">Xem báo cáo công việc</p>
+                                        <a href="/reports" class="btn btn-primary">Xem báo cáo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </Authorized>
+        <NotAuthorized>
+            <LoginRedirect></LoginRedirect>
+        </NotAuthorized>
+    </AuthorizeView>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (!authState.User.Identity?.IsAuthenticated ?? true)
+        {
+            await Logger.Warning("Unauthorized access attempt to dashboard");
+            NavigationManager.NavigateTo("/login", true);
+            return;
+        }
+
+        var user = authState.User;
+        var maChucVu = user.FindFirst("maChucVu")?.Value;
+        await Logger.Info($"Dashboard accessed - User: {user.FindFirst("tenDangNhap")?.Value}, Role: {maChucVu}");
+    }
+
+    private string GetChucVuDisplay(string? maChucVu)
+    {
+        return maChucVu switch
+        {
+            "01" => "Quản trị viên",
+            "02" => "Người dùng",
+            _ => maChucVu ?? "Không xác định"
+        };
+    }
+}

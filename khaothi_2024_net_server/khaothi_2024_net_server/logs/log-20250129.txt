@@ -1,0 +1,2 @@
+2025-01-29 17:44:16.428 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-29 17:44:17.361 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1

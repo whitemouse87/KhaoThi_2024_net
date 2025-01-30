@@ -1,0 +1,36 @@
+2025-01-30 22:52:56.529 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:53:02.358 +07:00 [INF] [Client] User  logging out 
+2025-01-30 22:53:02.378 +07:00 [INF] [Client] Processing logout 
+2025-01-30 22:53:02.401 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-30 22:53:02.412 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 22:53:04.444 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 22:53:10.440 +07:00 [INF] [Client] user bắt đầu đăng nhập: nvdkhoa 
+2025-01-30 22:53:10.455 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 22:53:11.426 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 22:53:11.607 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 22:53:13.878 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:53:14.058 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:53:16.175 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:53:23.583 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:53:35.012 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:21.975 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:22.322 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:22.336 +07:00 [INF] [Client] [CLIENT] Authenticated user attempting to access login page - redirecting to dashboard 
+2025-01-30 22:55:24.468 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:24.633 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:26.773 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:32.506 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:32.790 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:32.803 +07:00 [INF] [Client] [CLIENT] Authenticated user attempting to access login page - redirecting to dashboard 
+2025-01-30 22:55:34.866 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:35.031 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:37.097 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 22:55:48.470 +07:00 [INF] [Client] User  logging out 
+2025-01-30 22:55:48.492 +07:00 [INF] [Client] Processing logout 
+2025-01-30 22:55:48.517 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-30 22:55:48.528 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 22:55:50.519 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 22:55:50.931 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 22:55:54.859 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 22:55:55.409 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: 171.235.39.83, URL: https://localhost:44386/dashboard 
+2025-01-30 22:55:55.584 +07:00 [INF] [Client] No authentication token found - returning anonymous state 

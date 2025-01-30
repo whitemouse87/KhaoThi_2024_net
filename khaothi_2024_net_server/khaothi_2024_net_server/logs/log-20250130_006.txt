@@ -1,0 +1,92 @@
+2025-01-30 23:08:03.457 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 23:08:03.792 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 23:08:10.892 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 23:08:11.548 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: 171.235.39.83, URL: https://localhost:44386/dashboard 
+2025-01-30 23:08:11.737 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 23:08:21.423 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-30 23:08:21.456 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 23:08:22.265 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 23:08:22.442 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-30 23:08:22.452 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 23:08:24.657 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:08:24.843 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:08:24.856 +07:00 [INF] [Client] User accessed dashboard - Username: nvdkhoa, Role: 01 
+2025-01-30 23:08:39.396 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:08:39.564 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:08:39.574 +07:00 [INF] [Client] User accessed dashboard - Username: nvdkhoa, Role: 01 
+2025-01-30 23:08:43.647 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:08:43.815 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:08:43.826 +07:00 [INF] [Client] User accessed dashboard - Username: nvdkhoa, Role: 01 
+2025-01-30 23:09:02.059 +07:00 [INF] [Client] User  logging out 
+2025-01-30 23:09:02.076 +07:00 [INF] [Client] Processing logout 
+2025-01-30 23:09:02.106 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-30 23:09:02.118 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 23:09:04.265 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 23:09:04.670 +07:00 [INF] [Client] No authentication token found - returning anonymous state 
+2025-01-30 23:09:10.254 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 23:09:10.256 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-30 23:09:10.554 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 23:09:10.728 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-30 23:09:10.732 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 23:09:13.198 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:09:13.368 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:09:13.380 +07:00 [INF] [Client] User accessed dashboard - Username: nvdkhoa, Role: 02 
+2025-01-30 23:10:25.150 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:10:25.438 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:10:25.447 +07:00 [INF] [Client] [CLIENT] Authenticated user attempting to access login page - redirecting to dashboard 
+2025-01-30 23:10:27.782 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:10:27.956 +07:00 [INF] [Client] Successfully authenticated user: nvdkhoa 
+2025-01-30 23:10:27.967 +07:00 [INF] [Client] User accessed dashboard - Username: nvdkhoa, Role: 02 
+2025-01-30 23:15:39.180 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:15:39.329 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:15:39.344 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 02 
+2025-01-30 23:15:47.516 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:15:47.684 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:15:47.695 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 02 
+2025-01-30 23:15:49.048 +07:00 [INF] [Client] User  logging out 
+2025-01-30 23:15:49.068 +07:00 [INF] [Client] Processing logout 
+2025-01-30 23:15:49.093 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-30 23:15:49.104 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 23:15:51.090 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:15:51.493 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:16:01.471 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-30 23:16:01.503 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 23:16:02.293 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 23:16:02.484 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-30 23:16:02.492 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 23:16:04.730 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:04.912 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:04.924 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 02 
+2025-01-30 23:16:31.727 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:31.919 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:31.933 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 02 
+2025-01-30 23:16:45.799 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:45.896 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:45.902 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 02 
+2025-01-30 23:16:57.868 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:58.018 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:58.039 +07:00 [INF] [Client] [CLIENT] Authenticated user attempting to access login page - redirecting to dashboard 
+2025-01-30 23:16:59.135 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:59.252 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 02 
+2025-01-30 23:16:59.269 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 02 
+2025-01-30 23:17:01.546 +07:00 [INF] [Client] User  logging out 
+2025-01-30 23:17:01.560 +07:00 [INF] [Client] Processing logout 
+2025-01-30 23:17:01.574 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-30 23:17:01.584 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 23:17:02.806 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:03.020 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:07.606 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:07.733 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:27.697 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:27.823 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:31.483 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:31.739 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:32.302 +07:00 [INF] [Client] No token found - returning anonymous state 
+2025-01-30 23:17:39.846 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-01-30 23:17:39.849 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 23:17:40.151 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 23:17:40.220 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-01-30 23:17:40.222 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 23:17:41.332 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 01 
+2025-01-30 23:17:41.419 +07:00 [INF] [Client] Refreshed auth state for user: nvdkhoa with role: 01 
+2025-01-30 23:17:41.427 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 

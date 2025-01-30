@@ -1,0 +1,14 @@
+2025-01-30 18:06:42.587 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 18:06:49.698 +07:00 [INF] [Client] user bắt đầu đăng nhập: nvdkhoa 
+2025-01-30 18:06:49.715 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 18:06:50.777 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 18:06:50.977 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 18:06:56.393 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-30 18:07:39.639 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-30 18:07:39.640 +07:00 [INF] [Client] user bắt đầu đăng nhập: nvdkhoa 
+2025-01-30 18:07:39.980 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-30 18:07:40.156 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-30 22:26:03.276 +07:00 [INF] [Client] User  logging out 
+2025-01-30 22:26:03.366 +07:00 [INF] [Client] Processing logout 
+2025-01-30 22:26:03.380 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-30 22:26:03.387 +07:00 [INF] [Client] [Info] Token removed from local storage 

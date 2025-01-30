@@ -1,0 +1,6 @@
+@khaothi_2024_net_server_HostAddress = http://localhost:5168
+
+GET {{khaothi_2024_net_server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
