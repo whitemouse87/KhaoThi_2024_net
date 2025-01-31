@@ -1,8 +1,12 @@
 ﻿@page "/dashboard"
 @attribute [Authorize]
+
 @using KhaoThi_2024_net_client.Components.Auth
+
 @inject AuthenticationStateProvider AuthenticationStateProvider
+
 @inject NavigationManager NavigationManager
+
 @inject ILoggingService LoggingService
 
 <PageTitle>Dashboard - KhaoThi</PageTitle>
@@ -93,6 +97,7 @@
     </AuthorizeView>
 </div>
 
+
 @code {
     protected override async Task OnInitializedAsync()
     {
@@ -118,4 +123,5 @@
             _ => maChucVu ?? "Không xác định"
         };
     }
-}
+
+} 

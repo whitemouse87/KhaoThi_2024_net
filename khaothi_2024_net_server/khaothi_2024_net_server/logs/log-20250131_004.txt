@@ -1,0 +1,18 @@
+2025-01-31 15:41:50.387 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-31 15:41:51.564 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-31 15:41:51.757 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-31 15:41:53.470 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 15:41:53.770 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-31 15:41:55.593 +07:00 [INF] [Client] User  logging out 
+2025-01-31 15:41:55.604 +07:00 [INF] [Client] Processing logout 
+2025-01-31 15:41:55.622 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-31 15:41:55.628 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-31 16:22:38.190 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-31 16:22:39.218 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-31 16:22:39.420 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-31 16:22:40.887 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 16:22:41.166 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-31 16:22:45.620 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 16:23:02.539 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 16:23:03.063 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-31 16:23:10.428 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 

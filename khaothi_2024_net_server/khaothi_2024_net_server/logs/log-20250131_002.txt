@@ -9,3 +9,14 @@
 2025-01-31 00:33:27.980 +07:00 [INF] [Client] Processing logout 
 2025-01-31 00:33:27.996 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
 2025-01-31 00:33:28.003 +07:00 [INF] [Client] [Info] Token removed from local storage 
+2025-01-31 14:42:39.036 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-31 14:42:40.104 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại:Mật khẩu không đúng 
+2025-01-31 14:42:43.363 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-01-31 14:42:43.808 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-01-31 14:42:43.938 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-01-31 14:42:45.632 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-01-31 14:42:45.952 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-01-31 14:42:47.691 +07:00 [INF] [Client] User  logging out 
+2025-01-31 14:42:47.706 +07:00 [INF] [Client] Processing logout 
+2025-01-31 14:42:47.724 +07:00 [INF] [Client] [CLIENT] Token removed from local storage. 
+2025-01-31 14:42:47.731 +07:00 [INF] [Client] [Info] Token removed from local storage 
