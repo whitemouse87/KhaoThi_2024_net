@@ -1,0 +1,135 @@
+﻿@page "/userinfo/{UserId:int?}"
+@using MudBlazor
+@using KhaoThi_2024_net_client.Services.User
+@using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions
+@inject IDispatcher Dispatcher
+@inject IState<KhaoThiUserState> UserState
+@inject NavigationManager Navigation
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
+    <MudPaper Elevation="3" Class="pa-4">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h5" Class="mb-2">
+                        <MudIcon Icon="@Icons.Material.Filled.Person" Class="mr-2" />
+                        THÔNG TIN NGƯỜI DÙNG
+                    </MudText>
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudTooltip Text="Làm mới">
+                        <MudIconButton Icon="@Icons.Material.Filled.Refresh"
+                                       OnClick="RefreshUserData"
+                                       Disabled="@UserState.Value.IsLoading" />
+                    </MudTooltip>
+                </CardHeaderActions>
+            </MudCardHeader>
+
+            <MudDivider />
+
+            <MudCardContent>
+                @if (UserState.Value.IsLoading)
+                {
+                    <div class="d-flex justify-center align-center" style="min-height: 200px;">
+                        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+                    </div>
+                }
+                else if (UserState.Value.ErrorMessage is not null)
+                {
+                    <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="my-2">
+                        @UserState.Value.ErrorMessage
+                    </MudAlert>
+                }
+                else if (UserState.Value.SelectedUser is not null)
+                {
+                    <MudGrid Class="mt-2">
+                        <MudItem xs="12">
+                            <MudPaper Class="pa-4" Elevation="0">
+                                <MudList T="string">
+                                    <MudListItem T="string" Text="@($"Họ Tên: {UserState.Value.SelectedUser.HoTen}")"
+                                                 Icon="@Icons.Material.Filled.Person" />
+
+                                    <MudListItem T="string" Text="@($"Email: {UserState.Value.SelectedUser.Email}")"
+                                                 Icon="@Icons.Material.Filled.Email" />
+
+                                    <MudListItem T="string" Text="@($"Số Điện Thoại: {UserState.Value.SelectedUser.SDT}")"
+                                                 Icon="@Icons.Material.Filled.Phone" />
+
+                                    <MudListItem T="string" Text="@($"Ngày Sinh: {UserState.Value.SelectedUser.NgaySinh?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật"}")"
+                                                 Icon="@Icons.Material.Filled.Cake" />
+
+                                    <MudListItem T="string" Text="@($"Địa Chỉ: {UserState.Value.SelectedUser.DiaChi ?? "Chưa cập nhật"}")"
+                                                 Icon="@Icons.Material.Filled.Home" />
+
+                                    <MudListItem T="string" Text="@($"Đơn Vị: {UserState.Value.SelectedUser.TenDonVi}")"
+                                                 Icon="@Icons.Material.Filled.Business" />
+                                </MudList>
+                            </MudPaper>
+                        </MudItem>
+                    </MudGrid>
+
+                    <MudDivider Class="my-4" />
+
+                    <MudButton Color="Color.Primary"
+                               Variant="Variant.Filled"
+                               StartIcon="@Icons.Material.Filled.Edit"
+                               OnClick="EditUser">
+                        Chỉnh Sửa Thông Tin
+                    </MudButton>
+                }
+                else
+                {
+                    <MudAlert Severity="Severity.Warning"
+                              Variant="Variant.Filled"
+                              Class="my-2">
+                        Không tìm thấy thông tin người dùng.
+                        <MudButton Color="Color.Inherit"
+                                   Variant="Variant.Text"
+                                   OnClick="LoadUserData"
+                                   Class="ml-auto">
+                            Tải Lại
+                        </MudButton>
+                    </MudAlert>
+                }
+            </MudCardContent>
+        </MudCard>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    [Parameter]
+    public int? UserId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (UserId.HasValue)
+        {
+            LoadUserData();
+        }
+        else
+        {
+            Console.WriteLine("Không có UserId, không thể tải dữ liệu.");
+        }
+    }
+
+    private void LoadUserData()
+    {
+        if (UserId.HasValue)
+        {
+            Dispatcher.Dispatch(new GetUserByIdAction(UserId.Value));
+        }
+    }
+
+    private void RefreshUserData()
+    {
+        LoadUserData();
+    }
+
+    private void EditUser()
+    {
+        if (UserId.HasValue)
+        {
+            Navigation.NavigateTo($"/user/edit/{UserId.Value}");
+        }
+    }
+}

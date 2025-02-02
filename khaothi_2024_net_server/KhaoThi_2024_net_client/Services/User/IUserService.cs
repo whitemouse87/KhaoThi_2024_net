@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace KhaoThi_2024_net_client.Services.User
 {
-    public interface IUserService
-    {
+   
         // Services/User/IUserService.cs
         public interface IUserService
         {
@@ -69,5 +68,5 @@ namespace KhaoThi_2024_net_client.Services.User
             /// <returns>true nếu tên đăng nhập đã tồn tại</returns>
             Task<bool> IsUsernameExistAsync(string username);
         }
-    }
+    
 }

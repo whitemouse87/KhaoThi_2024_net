@@ -405,3 +405,17 @@ button.nav-link[b-0x2883fcsu] {
         width: 90%;
     }
 }
+/* /Pages/Profile/Profile.razor.rz.scp.css */
+.mud-nav-link[b-i8juruxc1o] {
+    transition: all 0.2s ease-in-out;
+}
+
+    .mud-nav-link:hover[b-i8juruxc1o] {
+        background-color: var(--mud-palette-primary-lighten);
+        transform: translateX(4px);
+    }
+
+    .mud-nav-link.active[b-i8juruxc1o] {
+        background-color: var(--mud-palette-primary-darken);
+        color: var(--mud-palette-primary-text);
+    }

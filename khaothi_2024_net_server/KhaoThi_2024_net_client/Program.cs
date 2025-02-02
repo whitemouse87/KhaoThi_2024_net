@@ -201,6 +201,7 @@ using KhaoThi_2024_net_client.Components;
 using KhaoThi_2024_net_client.Components.Auth;
 using KhaoThi_2024_net_client.Middleware;
 using KhaoThi_2024_net_client.Services.Auth;
+using KhaoThi_2024_net_client.Services.User;
 using KhaoThi_2024_net_client.Services.Logging;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -370,6 +371,7 @@ public class Program
         // Core Services
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ILoggingService, LoggingService>();
+        services.AddScoped<IUserService, KhaoThiUserService>();
 
         // Add other application services here
         ConfigureAdditionalServices(services);
