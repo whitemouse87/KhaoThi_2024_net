@@ -52,7 +52,6 @@
 		<Folder Include="Services\Auth\" />
 		<Folder Include="Services\Logging\" />
 		<Folder Include="State\Auth\" />
-		<Folder Include="Models\" />
 		<Folder Include="Models\Auth\" />
 	</ItemGroup>
 

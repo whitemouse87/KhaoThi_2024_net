@@ -212,6 +212,7 @@ using MudBlazor.Extensions;
 using MudBlazor.Services;
 using Serilog;
 using Serilog.Events;
+using System.Runtime.Intrinsics.Arm;
 using System.Security.Claims;
 
 public class Program
@@ -334,7 +335,14 @@ public class Program
             options.ScanAssemblies(typeof(Program).Assembly);
             options.AddMiddleware<FluxorLoggingMiddleware>();
 #if DEBUG
-            options.UseReduxDevTools();
+            
+            options.UseReduxDevTools(options =>
+            {
+                // Cấu hình thêm nếu cần
+                options.Name = "KhaoThi_2024"; // Tên của ứng dụng
+                //options.trac(); // Hiển thị stack trace
+                //options.EnableStackTrace();
+            });
 #endif
         });
     }

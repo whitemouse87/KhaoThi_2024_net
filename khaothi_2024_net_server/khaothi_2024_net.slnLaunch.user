@@ -9,7 +9,7 @@
       },
       {
         "Path": "KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
-        "Action": "StartWithoutDebugging",
+        "Action": "Start",
         "DebugTarget": "IIS Express"
       }
     ]
