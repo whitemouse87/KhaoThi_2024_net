@@ -83,6 +83,26 @@
               "target": "Package",
               "version": "[2.0.78, )"
             },
+            "DotSwashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
+            "DotSwashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
+            "DotSwashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
+            "DotSwashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
+            "DotSwashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[3.0.11, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
@@ -91,21 +111,9 @@
               "target": "Package",
               "version": "[8.0.11, )"
             },
-            "Microsoft.AspNetCore.Cors": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.1.1, )"
-            },
-            "Microsoft.AspNetCore.Http": {
-              "target": "Package",
-              "version": "[2.1.34, )"
-            },
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.1.39, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.1.38, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
@@ -162,10 +170,6 @@
             "Serilog.Sinks.Seq": {
               "target": "Package",
               "version": "[9.0.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[7.2.0, )"
             },
             "System.Security.Cryptography.Xml": {
               "target": "Package",

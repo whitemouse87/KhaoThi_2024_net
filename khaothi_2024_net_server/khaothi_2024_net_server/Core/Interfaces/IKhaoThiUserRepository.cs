@@ -13,5 +13,8 @@ namespace khaothi_2024_net_server.Core.Interfaces
         Task<bool> IsUsernameExistAsync(string username);
         Task<IEnumerable<KhaoThiUser>> GetByMaDonViAsync(string maDonVi);
         Task<KhaoThiUser> GetByRefreshTokenAsync(string refreshToken);
+        Task BulkInsertUsers(IEnumerable<KhaoThiUser> users);
+        Task BulkUpdateUsers(IEnumerable<KhaoThiUser> users);
+
     }
 }

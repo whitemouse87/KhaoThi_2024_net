@@ -1,5 +1,0 @@
-2025-01-29 18:14:34.041 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
-2025-01-29 18:14:34.041 +07:00 [INF] [Client] user bắt đầu đăng nhập: nvdkhoa 
-2025-01-29 18:14:35.033 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
-2025-01-29 18:14:35.165 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
-2025-01-29 18:15:05.814 +07:00 [INF] [Client] [Info] Token removed from local storage 

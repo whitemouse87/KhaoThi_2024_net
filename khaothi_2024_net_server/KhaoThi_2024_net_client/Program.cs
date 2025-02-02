@@ -216,7 +216,7 @@ using System.Security.Claims;
 
 public class Program
 {
-    private const string API_BASE_URL = "http://localhost:5168/api/";
+    private const string API_BASE_URL = "https://localhost:7168/api/";
     private const int HTTP_TIMEOUT_SECONDS = 30;
 
     public static async Task Main(string[] args)

@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>khaothi_2024_net_server</name>
+    </assembly>
+    <members>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.QueryAsync``1(System.String,System.Object[])">
+            <summary>
+            Thực hiện truy vấn và trả về tập kết quả
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu trả về</typeparam>
+            <param name="sql">Câu lệnh SQL</param>
+            <param name="parameters">Các tham số theo cặp (tên tham số, giá trị)</param>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.QueryFirstOrDefaultAsync``1(System.String,System.Object[])">
+            <summary>
+            Thực hiện truy vấn và trả về kết quả đầu tiên hoặc null
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu trả về</typeparam>
+            <param name="sql">Câu lệnh SQL</param>
+            <param name="parameters">Các tham số theo cặp (tên tham số, giá trị)</param>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.ExecuteAsync(System.String,System.Object[])">
+            <summary>
+            Thực thi câu lệnh SQL không trả về kết quả (Insert, Update, Delete)
+            </summary>
+            <param name="sql">Câu lệnh SQL</param>
+            <param name="parameters">Các tham số theo cặp (tên tham số, giá trị)</param>
+            <returns>Số dòng bị ảnh hưởng</returns>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.ExecuteScalarAsync``1(System.String,System.Object[])">
+            <summary>
+            Thực thi và trả về giá trị đơn
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu trả về</typeparam>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.GetDataTableAsync(System.String,System.Object[])">
+            <summary>
+            Lấy dữ liệu dưới dạng DataTable
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.ExecuteInTransactionAsync(System.Func{System.Data.IDbTransaction,System.Threading.Tasks.Task})">
+            <summary>
+            Thực hiện nhiều câu lệnh trong một transaction
+            </summary>
+            <param name="action">Hàm thực thi các câu lệnh trong transaction</param>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.QueryPaginatedAsync``1(System.String,System.Int32,System.Int32,System.Object[])">
+            <summary>
+            Thực hiện truy vấn với phân trang
+            </summary>
+            <param name="page">Số trang (bắt đầu từ 1)</param>
+            <param name="pageSize">Số bản ghi mỗi trang</param>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.BulkInsertWithBulkCopyAsync``1(System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Thực hiện bulk insert sử dụng SqlBulkCopy (Hiệu năng tốt nhất cho insert số lượng lớn)
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu của bảng</typeparam>
+            <param name="tableName">Tên bảng</param>
+            <param name="data">Dữ liệu cần insert</param>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Interfaces.IDataAccessLayer.BulkUpdateAsync``1(System.String,System.Collections.Generic.IEnumerable{``0},System.String,System.Int32)">
+            <summary>
+            Thực hiện bulk update cho nhiều bản ghi
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu của bảng</typeparam>
+            <param name="tableName">Tên bảng</param>
+            <param name="data">Dữ liệu cần update</param>
+            <param name="keyField">Tên trường khóa chính</param>
+            <param name="batchSize">Số lượng bản ghi mỗi lần update</param>
+        </member>
+        <member name="T:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1">
+            <summary>
+            Generic class để xử lý kết quả phân trang cho mọi loại entity
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu của entity</typeparam>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.Items">
+            <summary>
+            Danh sách items trong trang hiện tại
+            </summary>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.TotalCount">
+            <summary>
+            Tổng số bản ghi (toàn bộ, không phải trong trang hiện tại)
+            </summary>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.Page">
+            <summary>
+            Số trang hiện tại
+            </summary>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.PageSize">
+            <summary>
+            Số bản ghi trên mỗi trang
+            </summary>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.TotalPages">
+            <summary>
+            Tổng số trang
+            </summary>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.HasPreviousPage">
+            <summary>
+            Kiểm tra có trang trước không
+            </summary>
+        </member>
+        <member name="P:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.HasNextPage">
+            <summary>
+            Kiểm tra có trang sau không
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.#ctor">
+            <summary>
+            Constructor mặc định
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor với dữ liệu ban đầu
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1.Empty">
+            <summary>
+            Tạo một PaginatedResult trống
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(System.Int32)">
+            <summary>
+            Lấy thông tin người dùng theo ID
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetPaginated(System.Int32,System.Int32,System.String)">
+            <summary>
+            Lấy danh sách người dùng có phân trang và tìm kiếm
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Create(khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser)">
+            <summary>
+            Tạo mới người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(System.Int32,khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser)">
+            <summary>
+            Cập nhật thông tin người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Delete(System.Int32)">
+            <summary>
+            Xóa người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetByMaDonVi(System.String)">
+            <summary>
+            Lấy danh sách người dùng theo mã đơn vị
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.BulkInsert(System.Collections.Generic.IEnumerable{khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser})">
+            <summary>
+            Thêm nhiều người dùng cùng lúc
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.BulkUpdate(System.Collections.Generic.IEnumerable{khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser})">
+            <summary>
+            Cập nhật nhiều người dùng cùng lúc
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.CheckUsername(System.String)">
+            <summary>
+            Kiểm tra tên đăng nhập đã tồn tại
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.#ctor(khaothi_2024_net_server.Core.Interfaces.IKhaoThiUserRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService})">
+            <summary>
+            Constructor với Dependency Injection
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(System.Int32)">
+            <summary>
+            Lấy thông tin người dùng theo ID
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByUsernameAsync(System.String)">
+            <summary>
+            Lấy thông tin người dùng theo tên đăng nhập
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetAllAsync">
+            <summary>
+            Lấy danh sách tất cả người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetPaginatedAsync(System.Int32,System.Int32,System.String)">
+            <summary>
+            Lấy danh sách người dùng theo trang
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.CreateAsync(khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser)">
+            <summary>
+            Tạo mới người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser)">
+            <summary>
+            Cập nhật thông tin người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.DeleteAsync(System.Int32)">
+            <summary>
+            Xóa người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.IsUsernameExistAsync(System.String)">
+            <summary>
+            Kiểm tra username đã tồn tại
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByMaDonViAsync(System.String)">
+            <summary>
+            Lấy danh sách người dùng theo mã đơn vị
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.BulkInsertUsersAsync(System.Collections.Generic.IEnumerable{khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser})">
+            <summary>
+            Thêm nhiều người dùng cùng lúc
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.BulkUpdateUsersAsync(System.Collections.Generic.IEnumerable{khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser})">
+            <summary>
+            Cập nhật nhiều người dùng cùng lúc
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.ValidateUserData(khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser)">
+            <summary>
+            Validate dữ liệu người dùng
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -5,7 +5,7 @@
       {
         "Path": "khaothi_2024_net_server\\khaothi_2024_net_server.csproj",
         "Action": "StartWithoutDebugging",
-        "DebugTarget": "IIS Express"
+        "DebugTarget": "Development"
       },
       {
         "Path": "KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
