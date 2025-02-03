@@ -198,5 +198,21 @@ namespace KhaoThi_2024_net_client.Services.Auth
                 c => c.Value
             );
         }
+        public async Task<int?> GetUserIdFromToken()
+        {
+            var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
+            if (string.IsNullOrWhiteSpace(token)) return null;
+
+            try
+            {
+                var claims = ParseJwtClaims(token);
+                return claims.ContainsKey("id") ? int.Parse(claims["id"]) : null;
+            }
+            catch (Exception ex)
+            {
+                await Logger.Error($"[Error] Lỗi lấy dữ liệu UserId from token: {ex.Message}");
+                return null;
+            }
+        }
     }
 }

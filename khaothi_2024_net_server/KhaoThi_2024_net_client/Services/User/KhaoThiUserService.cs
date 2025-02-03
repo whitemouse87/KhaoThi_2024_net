@@ -9,7 +9,7 @@ namespace KhaoThi_2024_net_client.Services.User
 {
     public class KhaoThiUserService : BaseService, IUserService
     {
-        private const string API_ENDPOINT = "api/KhaoThiUser";
+        private const string API_ENDPOINT = "KhaoThiUser";
         private readonly JsonSerializerOptions _jsonOptions;
         public KhaoThiUserService(
            HttpClient httpClient,

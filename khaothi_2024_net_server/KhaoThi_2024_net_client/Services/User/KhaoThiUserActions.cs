@@ -56,5 +56,7 @@ namespace KhaoThi_2024_net_client.Services.User
         public record SetLoadingAction(bool IsLoading);
         public record ClearErrorAction();
         public record ShowNotificationAction(string Message, string Type);
+
+        
     }
 }

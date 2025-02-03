@@ -453,6 +453,7 @@ using DotSwashbuckle.AspNetCore.Swagger;
 using DotSwashbuckle.AspNetCore.SwaggerGen;
 using DotSwashbuckle.AspNetCore.SwaggerUI;
 using Microsoft.AspNetCore.Mvc;
+using khaothi_2024_net_server.Features.UserManagement;
 
 namespace khaothi_2024_net_server;
 
@@ -579,8 +580,10 @@ public class Program
     {
         builder.Services
             .AddSingleton<IDataAccessLayer, MyDataAccessLayer>()
-            .AddScoped<IKhaoThiUserRepository, KhaoThiUserRepository>()
-            .AddScoped<IAuthService, AuthService>();
+        .AddScoped<IKhaoThiUserRepository, KhaoThiUserRepository>()
+        .AddScoped<IKhaoThiUserService, KhaoThiUserService>()  // Thêm dòng này
+        .AddScoped<IAuthService, AuthService>();
+
     }
 
     private static void ConfigureSwagger(WebApplicationBuilder builder)

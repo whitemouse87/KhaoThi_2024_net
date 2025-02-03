@@ -8,7 +8,7 @@ using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions;
 namespace KhaoThi_2024_net_client.State.User
 {
     /// <summary>
-    /// Class xử lý các hiệu ứng (Effects) khi thực hiện các hành động liên quan đến người dùng
+    /// Class xử lý các side effects trong quản lý state người dùng
     /// </summary>
     public class KhaoThiUserEffects
     {
@@ -20,128 +20,265 @@ namespace KhaoThi_2024_net_client.State.User
             _userService = userService;
             _logger = logger;
         }
+
         /// <summary>
-        /// Phương thức chung để xử lý gọi API và dispatch action tương ứng
+        /// Effect xử lý tải danh sách người dùng có phân trang
         /// </summary>
-        private async Task HandleApiCall<TRequest, TSuccess, TFailure>(
-            TRequest requestAction,
-            Func<TRequest, Task<object>> apiCall,
-            Func<object, TSuccess> successAction,
-            Func<string, TFailure> failureAction,
-            string successMessage,
-            string errorMessage,
-            IDispatcher dispatcher)
+        [EffectMethod]
+        public async Task HandleLoadPaginatedUsers(LoadPaginatedUsersAction action, IDispatcher dispatcher)
         {
             try
             {
-                var result = await apiCall(requestAction);
-                dispatcher.Dispatch(successAction(result));
-                dispatcher.Dispatch(new ShowNotificationAction(successMessage, "success"));
-                await _logger.LogInfoAsync(successMessage);
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var result = await _userService.GetPaginatedAsync(action.Page, action.PageSize, action.SearchTerm);
+                dispatcher.Dispatch(new LoadPaginatedUsersSuccessAction(result));
             }
-            catch (HttpRequestException ex)
+            catch (Exception ex)
             {
-                await _logger.LogErrorAsync(errorMessage, ex);
-                dispatcher.Dispatch(failureAction($"Lỗi mạng: {ex.Message}"));
-                dispatcher.Dispatch(new ShowNotificationAction(errorMessage, "error"));
+                await _logger.LogErrorAsync("Lỗi khi tải danh sách người dùng phân trang", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new LoadPaginatedUsersFailureAction(ex.Message));
             }
-            catch (System.Exception ex)
+            finally
             {
-                await _logger.LogErrorAsync(errorMessage, ex);
-                dispatcher.Dispatch(failureAction($"Lỗi: {ex.Message}"));
-                dispatcher.Dispatch(new ShowNotificationAction(errorMessage, "error"));
+                dispatcher.Dispatch(new SetLoadingAction(false));
             }
         }
-        /// <summary>
-        /// Xử lý tải danh sách người dùng theo mã đơn vị
-        /// </summary>
-        [EffectMethod]
-        public async Task HandleLoadUsersAction(LoadUsersAction action, IDispatcher dispatcher) =>
-            await HandleApiCall(
-                action,
-                async (_) => await _userService.GetByMaDonViAsync("default"),
-                (result) => new LoadUsersSuccessAction((IEnumerable<KhaoThiUserModel>)result),
-                (error) => new LoadUsersFailureAction(error),
-                "Tải danh sách người dùng thành công",
-                "Lỗi khi tải danh sách người dùng",
-                dispatcher
-            );
 
         /// <summary>
-        /// Xử lý tải danh sách người dùng có phân trang
+        /// Effect xử lý lấy thông tin người dùng theo ID
         /// </summary>
         [EffectMethod]
-        public async Task HandleLoadPaginatedUsersAction(LoadPaginatedUsersAction action, IDispatcher dispatcher) =>
-            await HandleApiCall(
-                action,
-                async (req) => await _userService.GetPaginatedAsync(req.Page, req.PageSize, req.SearchTerm),
-                (result) => new LoadPaginatedUsersSuccessAction((PaginatedResult<KhaoThiUserModel>)result),
-                (error) => new LoadPaginatedUsersFailureAction(error),
-                "Tải danh sách người dùng phân trang thành công",
-                "Lỗi khi tải danh sách phân trang",
-                dispatcher
-            );
+        public async Task HandleGetUserById(GetUserByIdAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var user = await _userService.GetByIdAsync(action.Id);
+                if (user != null)
+                {
+                    dispatcher.Dispatch(new GetUserByIdSuccessAction(user));
+                }
+                else
+                {
+                    dispatcher.Dispatch(new GetUserByIdFailureAction($"Không tìm thấy người dùng với ID: {action.Id}"));
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi lấy thông tin người dùng ID: {action.Id}", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new GetUserByIdFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
 
         /// <summary>
-        /// Xử lý tạo mới người dùng
+        /// Effect xử lý tạo mới người dùng
         /// </summary>
         [EffectMethod]
-        public async Task HandleCreateUserAction(CreateUserAction action, IDispatcher dispatcher) =>
-            await HandleApiCall(
-                action,
-                async (req) => await _userService.CreateAsync(req.User),
-                (result) => new CreateUserSuccessAction((KhaoThiUserModel)result),
-                (error) => new CreateUserFailureAction(error),
-                "Tạo người dùng thành công",
-                "Lỗi khi tạo người dùng",
-                dispatcher
-            );
+        public async Task HandleCreateUser(CreateUserAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var createdUser = await _userService.CreateAsync(action.User);
+                dispatcher.Dispatch(new CreateUserSuccessAction(createdUser));
+                dispatcher.Dispatch(new ShowNotificationAction("Tạo mới người dùng thành công", "success"));
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi khi tạo mới người dùng", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new CreateUserFailureAction(ex.Message));
+                dispatcher.Dispatch(new ShowNotificationAction("Tạo mới người dùng thất bại", "error"));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
 
         /// <summary>
-        /// Xử lý cập nhật thông tin người dùng
+        /// Effect xử lý cập nhật thông tin người dùng
         /// </summary>
         [EffectMethod]
-        public async Task HandleUpdateUserAction(UpdateUserAction action, IDispatcher dispatcher) =>
-            await HandleApiCall(
-                action,
-                async (req) => await _userService.UpdateAsync(req.User) ? req.User : throw new System.Exception("Cập nhật thất bại"),
-                (result) => new UpdateUserSuccessAction((KhaoThiUserModel)result),
-                (error) => new UpdateUserFailureAction(error),
-                "Cập nhật người dùng thành công",
-                "Lỗi khi cập nhật người dùng",
-                dispatcher
-            );
+        public async Task HandleUpdateUser(UpdateUserAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var success = await _userService.UpdateAsync(action.User);
+                if (success)
+                {
+                    dispatcher.Dispatch(new UpdateUserSuccessAction(action.User));
+                    dispatcher.Dispatch(new ShowNotificationAction("Cập nhật người dùng thành công", "success"));
+                }
+                else
+                {
+                    dispatcher.Dispatch(new UpdateUserFailureAction("Không thể cập nhật người dùng"));
+                    dispatcher.Dispatch(new ShowNotificationAction("Cập nhật người dùng thất bại", "error"));
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi cập nhật người dùng ID: {action.User.ID}", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new UpdateUserFailureAction(ex.Message));
+                dispatcher.Dispatch(new ShowNotificationAction("Cập nhật người dùng thất bại", "error"));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
 
         /// <summary>
-        /// Xử lý xóa người dùng
+        /// Effect xử lý xóa người dùng
         /// </summary>
         [EffectMethod]
-        public async Task HandleDeleteUserAction(DeleteUserAction action, IDispatcher dispatcher) =>
-            await HandleApiCall(
-                action,
-                async (req) => await _userService.DeleteAsync(req.Id) ? req.Id : throw new System.Exception("Xóa thất bại"),
-                (result) => new DeleteUserSuccessAction((int)result),
-                (error) => new DeleteUserFailureAction(error),
-                "Xóa người dùng thành công",
-                "Lỗi khi xóa người dùng",
-                dispatcher
-            );
+        public async Task HandleDeleteUser(DeleteUserAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var success = await _userService.DeleteAsync(action.Id);
+                if (success)
+                {
+                    dispatcher.Dispatch(new DeleteUserSuccessAction(action.Id));
+                    dispatcher.Dispatch(new ShowNotificationAction("Xóa người dùng thành công", "success"));
+                }
+                else
+                {
+                    dispatcher.Dispatch(new DeleteUserFailureAction($"Không thể xóa người dùng ID: {action.Id}"));
+                    dispatcher.Dispatch(new ShowNotificationAction("Xóa người dùng thất bại", "error"));
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi xóa người dùng ID: {action.Id}", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new DeleteUserFailureAction(ex.Message));
+                dispatcher.Dispatch(new ShowNotificationAction("Xóa người dùng thất bại", "error"));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
 
         /// <summary>
-        /// Xử lý kiểm tra username đã tồn tại hay chưa
+        /// Effect xử lý lấy danh sách người dùng theo mã đơn vị
         /// </summary>
         [EffectMethod]
-        public async Task HandleCheckUsernameAction(CheckUsernameAction action, IDispatcher dispatcher) =>
-            await HandleApiCall(
-                action,
-                async (req) => await _userService.IsUsernameExistAsync(req.Username),
-                (result) => new CheckUsernameSuccessAction((bool)result),
-                (error) => new CheckUsernameFailureAction(error),
-                "Kiểm tra username thành công",
-                "Lỗi khi kiểm tra username",
-                dispatcher
-            );
+        public async Task HandleLoadUsersByDonVi(LoadUsersByDonViAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var users = await _userService.GetByMaDonViAsync(action.MaDonVi);
+                dispatcher.Dispatch(new LoadUsersByDonViSuccessAction(users));
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi lấy danh sách người dùng theo mã đơn vị: {action.MaDonVi}", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new LoadUsersByDonViFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
+
+        /// <summary>
+        /// Effect xử lý thêm nhiều người dùng cùng lúc
+        /// </summary>
+        [EffectMethod]
+        public async Task HandleBulkInsertUsers(BulkInsertUsersAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                await _userService.BulkInsertUsersAsync(action.Users);
+                dispatcher.Dispatch(new BulkInsertUsersSuccessAction());
+                dispatcher.Dispatch(new ShowNotificationAction("Thêm nhiều người dùng thành công", "success"));
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi khi thêm nhiều người dùng", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new BulkInsertUsersFailureAction(ex.Message));
+                dispatcher.Dispatch(new ShowNotificationAction("Thêm nhiều người dùng thất bại", "error"));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
+
+        /// <summary>
+        /// Effect xử lý cập nhật nhiều người dùng cùng lúc
+        /// </summary>
+        [EffectMethod]
+        public async Task HandleBulkUpdateUsers(BulkUpdateUsersAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                await _userService.BulkUpdateUsersAsync(action.Users);
+                dispatcher.Dispatch(new BulkUpdateUsersSuccessAction());
+                dispatcher.Dispatch(new ShowNotificationAction("Cập nhật nhiều người dùng thành công", "success"));
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi khi cập nhật nhiều người dùng", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new BulkUpdateUsersFailureAction(ex.Message));
+                dispatcher.Dispatch(new ShowNotificationAction("Cập nhật nhiều người dùng thất bại", "error"));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
+
+        /// <summary>
+        /// Effect xử lý kiểm tra tên đăng nhập đã tồn tại
+        /// </summary>
+        [EffectMethod]
+        public async Task HandleCheckUsername(CheckUsernameAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var exists = await _userService.IsUsernameExistAsync(action.Username);
+                dispatcher.Dispatch(new CheckUsernameSuccessAction(exists));
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi kiểm tra tên đăng nhập: {action.Username}", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new CheckUsernameFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
+        [EffectMethod]
+        public async Task HandleLoadUsers(LoadUsersAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var users = await _userService.GetPaginatedAsync(1, 100, null);
+                dispatcher.Dispatch(new LoadUsersSuccessAction(users.Items));
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi khi tải danh sách người dùng", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new LoadUsersFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
     }
-
 }
 

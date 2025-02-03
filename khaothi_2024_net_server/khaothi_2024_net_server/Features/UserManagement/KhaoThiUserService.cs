@@ -21,23 +21,36 @@ namespace khaothi_2024_net_server.Features.UserManagement
         /// <summary>
         /// Lấy thông tin người dùng theo ID
         /// </summary>
-        public async Task<KhaoThiUser> GetByIdAsync(int id)
+        public async Task<KhaoThiUser?> GetByIdAsync(int id)
         {
+            if (id <= 0)
+            {
+                _logger.LogWarning($"[Warning] ID không hợp lệ: {id}");
+                throw new ArgumentException("ID phải lớn hơn 0", nameof(id));
+            }
+
             try
             {
+                _logger.LogInformation($"🔍 Đang tìm user với ID: {id}");
+
                 var user = await _userRepository.GetByIdAsync(id);
-                if (user == null)
+
+                if (user is null)
                 {
-                    _logger.LogWarning($"Không tìm thấy người dùng với ID: {id}");
+                    _logger.LogWarning($"❌ Không tìm thấy user với ID {id}");
+                    return null; // Trả về null thay vì throw
                 }
+
+                _logger.LogInformation($"✅ Tìm thấy user với ID {id}: {user.HoTen}");
                 return user;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Lỗi khi lấy thông tin người dùng ID: {id}");
+                _logger.LogError(ex, $"🔥 Lỗi khi truy vấn user ID {id}");
                 throw;
             }
         }
+
         /// <summary>
         /// Lấy thông tin người dùng theo tên đăng nhập
         /// </summary>

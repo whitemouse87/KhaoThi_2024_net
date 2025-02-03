@@ -7,7 +7,8 @@ namespace KhaoThi_2024_net_client.Services.Auth
         Task<UserInfo> GetUserInfo(string token);
         Task Logout();
         Task<ValidateTokenResponse> ValidateToken();
+        Task<int?> GetUserIdFromToken();
 
-       
+
     }
 }

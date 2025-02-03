@@ -1,127 +1,136 @@
 ﻿@using KhaoThi_2024_net_client.Models.Auth
 @using static KhaoThi_2024_net_client.Services.Auth.AuthActions
-@using Microsoft.Extensions.Logging  @* Thêm dòng này *@
+@using Microsoft.Extensions.Logging
 @inject IDispatcher Dispatcher
 @inject IState<AuthState> AuthState
 @inject ILogger<NavMenu> Logger
-    <MudLayout Class="layout-container">
-        <MudNavMenu Color="Color.Primary" Class="py-2" Bordered="true">
-            <AuthorizeView>
-                <Authorized>
-                    <div class="d-flex flex-column px-4 py-3">
-                        <MudText Typo="Typo.h6" Color="Color.Primary">KhaoThi 2024</MudText>
-                        <MudDivider Class="my-2" />
+@inject NavigationManager NavigationManager
+<MudLayout Class="layout-container">
+    <MudNavMenu Color="Color.Primary" Class="py-2" Bordered="true">
+        <AuthorizeView>
+            <Authorized>
+                <div class="d-flex flex-column px-4 py-3">
+                    <MudText Typo="Typo.h6" Color="Color.Primary">KhaoThi 2024</MudText>
+                    <MudDivider Class="my-2" />
 
-                        @* Thêm error handling cho việc lấy ký tự đầu tên người dùng *@
-                        <MudPaper Elevation="0" Class="d-flex align-center pa-2 rounded-lg">
-                            <MudAvatar Color="Color.Primary" Class="mr-2">
-                                @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
-                            ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
-                            : "U")
-                            </MudAvatar>
-                            <div>
-                                <MudText Typo="Typo.caption" Color="Color.Secondary">Xin chào,</MudText>
-                                <MudNavLink Href=@($"/userinfo/{AuthState.Value.CurrentUser?.Id ?? 0}")
-                                            Icon="@Icons.Material.Filled.Person">
-                                    <MudText Typo="Typo.body1" Class="font-weight-bold">
-                                        @(AuthState.Value.CurrentUser?.HoTen ?? "Người dùng")
-                                    </MudText>
-                                </MudNavLink>
-                            </div>
-                        </MudPaper>
-                    </div>
-
-                    <MudDivider Class="mb-2" />
-
-                    <MudNavLink Href="dashboard"
-                                Match="NavLinkMatch.All"
-                                Icon="@Icons.Material.Filled.Dashboard"
-                                Class="rounded-lg mx-2">
-                        Dashboard
-                    </MudNavLink>
-
-                    <MudNavGroup Title="Quản Lý"
-                                 Icon="@Icons.Material.Filled.ManageAccounts"
-                                 Expanded="true">
-                        <MudNavLink Href="users"
-                                    Icon="@Icons.Material.Filled.People"
-                                    Class="rounded-lg mx-2">
-                            Người Dùng
-                        </MudNavLink>
-                        <MudNavLink Href="departments"
-                                    Icon="@Icons.Material.Filled.Business"
-                                    Class="rounded-lg mx-2">
-                            Đơn Vị
-                        </MudNavLink>
-                    </MudNavGroup>
-
-                    <MudNavGroup Title="Báo Cáo"
-                                 Icon="@Icons.Material.Filled.Assessment"
-                                 Expanded="false">
-                        <MudNavLink Href="reports"
-                                    Icon="@Icons.Material.Filled.BarChart"
-                                    Class="rounded-lg mx-2">
-                            Thống Kê
-                        </MudNavLink>
-                        <MudNavLink Href="analytics"
-                                    Icon="@Icons.Material.Filled.Analytics"
-                                    Class="rounded-lg mx-2">
-                            Phân Tích
-                        </MudNavLink>
-                    </MudNavGroup>
-
-                    <MudNavLink Href="settings"
-                                Icon="@Icons.Material.Filled.Settings"
-                                Class="rounded-lg mx-2">
-                        Cài Đặt
-                    </MudNavLink>
-
-                    <div class="mt-auto">
-                        <MudDivider Class="my-2" />
-                        <MudNavLink OnClick="@HandleLogout"
-                                    Icon="@Icons.Material.Filled.Logout"
-                                    Class="rounded-lg mx-2">
-                            <div class="d-flex align-center">
-                                <MudText>Đăng xuất</MudText>
-                                <MudIcon Icon="@Icons.Material.Filled.ExitToApp"
-                                         Class="ml-auto" />
-                            </div>
-                        </MudNavLink>
-                    </div>
-                </Authorized>
-
-                <NotAuthorized>
-                    <MudPaper Class="pa-4" Elevation="0">
-                        <MudText Typo="Typo.h6" Color="Color.Primary"
-                                 Class="mb-4 text-center">
-                            KhaoThi 2024
-                        </MudText>
-                        <MudButton Href="login"
-                                   Variant="Variant.Filled"
-                                   Color="Color.Primary"
-                                   StartIcon="@Icons.Material.Filled.Login"
-                                   FullWidth="true">
-                            Đăng nhập
-                        </MudButton>
+                    @* Thêm error handling cho việc lấy ký tự đầu tên người dùng *@
+                    <MudPaper Elevation="0" Class="d-flex align-center pa-2 rounded-lg">
+                        <MudAvatar Color="Color.Primary" Class="mr-2">
+                            @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
+    ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
+    : "U")
+                        </MudAvatar>
+                        <div>
+                            <MudText Typo="Typo.caption" Color="Color.Secondary">Xin chào,</MudText>
+                            <MudNavLink Href=@($"/userinfo/{AuthState.Value.CurrentUser?.Id ?? 0}")
+                                        Icon="@Icons.Material.Filled.Person">
+                                <MudText Typo="Typo.body1" Class="font-weight-bold">
+                                    @(AuthState.Value.CurrentUser?.HoTen ?? "Người dùng")
+                                </MudText>
+                            </MudNavLink>
+                        </div>
                     </MudPaper>
-                </NotAuthorized>
-            </AuthorizeView>
-        </MudNavMenu>
-    </MudLayout>
-    @code {
-        private async Task HandleLogout()@* Thêm async *@
+                </div>
+
+                <MudDivider Class="mb-2" />
+
+                <MudNavLink Href="dashboard"
+                            Match="NavLinkMatch.All"
+                            Icon="@Icons.Material.Filled.Dashboard"
+                            Class="rounded-lg mx-2">
+                    Dashboard
+                </MudNavLink>
+
+                <MudNavGroup Title="Quản Lý"
+                             Icon="@Icons.Material.Filled.ManageAccounts"
+                             Expanded="true">
+                    <MudNavLink Href="users"
+                                Icon="@Icons.Material.Filled.People"
+                                Class="rounded-lg mx-2">
+                        Người Dùng
+                    </MudNavLink>
+                    <MudNavLink Href="departments"
+                                Icon="@Icons.Material.Filled.Business"
+                                Class="rounded-lg mx-2">
+                        Đơn Vị
+                    </MudNavLink>
+                </MudNavGroup>
+
+                <MudNavGroup Title="Báo Cáo"
+                             Icon="@Icons.Material.Filled.Assessment"
+                             Expanded="false">
+                    <MudNavLink Href="reports"
+                                Icon="@Icons.Material.Filled.BarChart"
+                                Class="rounded-lg mx-2">
+                        Thống Kê
+                    </MudNavLink>
+                    <MudNavLink Href="analytics"
+                                Icon="@Icons.Material.Filled.Analytics"
+                                Class="rounded-lg mx-2">
+                        Phân Tích
+                    </MudNavLink>
+                </MudNavGroup>
+
+                <MudNavLink Href="settings"
+                            Icon="@Icons.Material.Filled.Settings"
+                            Class="rounded-lg mx-2">
+                    Cài Đặt
+                </MudNavLink>
+
+                <div class="mt-auto">
+                    <MudDivider Class="my-2" />
+                    <MudNavLink OnClick="@HandleLogout"
+                                Icon="@Icons.Material.Filled.Logout"
+                                Class="rounded-lg mx-2">
+                        <div class="d-flex align-center">
+                            <MudText>Đăng xuất</MudText>
+                            <MudIcon Icon="@Icons.Material.Filled.ExitToApp"
+                                     Class="ml-auto" />
+                        </div>
+                    </MudNavLink>
+                </div>
+            </Authorized>
+
+            <NotAuthorized>
+                <MudPaper Class="pa-4" Elevation="0">
+                    <MudText Typo="Typo.h6" Color="Color.Primary"
+                             Class="mb-4 text-center">
+                        KhaoThi 2024
+                    </MudText>
+                    <MudButton Href="login"
+                               Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               StartIcon="@Icons.Material.Filled.Login"
+                               FullWidth="true">
+                        Đăng nhập
+                    </MudButton>
+                </MudPaper>
+            </NotAuthorized>
+        </AuthorizeView>
+    </MudNavMenu>
+</MudLayout>
+@code {
+    private void HandleLogout()
+    {
+        try
         {
-            try
+            if (AuthState.Value.CurrentUser != null)
             {
-                if (AuthState.Value.CurrentUser != null)
-                {
-                    Logger.LogInformation($"User {AuthState.Value.CurrentUser.TenDangNhap} logging out");
-                    await Task.Run(() => Dispatcher.Dispatch(new LogoutAction()));
-                }
+                var username = AuthState.Value.CurrentUser.TenDangNhap ?? "Unknown"; // Xử lý null
+                Logger.LogInformation($"Người dùng {username} đang đăng xuất");
+                Dispatcher.Dispatch(new LogoutAction());
             }
-            catch (Exception ex)
+            else
             {
-                Logger.LogError(ex, "Error during logout");
+                Logger.LogWarning("Cố gắng đăng xuất khi không có người dùng đăng nhập");
+                // Vẫn dispatch action để đảm bảo state được reset
+                Dispatcher.Dispatch(new LogoutAction());
             }
         }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Lỗi trong quá trình đăng xuất");
+            throw; // Re-throw exception để error boundary có thể xử lý
+        }
     }
+}

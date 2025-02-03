@@ -1,10 +1,12 @@
-﻿@page "/userinfo/{UserId:int?}"
+﻿@page "/profile"
 @using MudBlazor
 @using KhaoThi_2024_net_client.Services.User
 @using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions
+@implements IDisposable
 @inject IDispatcher Dispatcher
 @inject IState<KhaoThiUserState> UserState
 @inject NavigationManager Navigation
+@inject IAuthService AuthService
 
 <MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
     <MudPaper Elevation="3" Class="pa-4">
@@ -12,14 +14,14 @@
             <MudCardHeader>
                 <CardHeaderContent>
                     <MudText Typo="Typo.h5" Class="mb-2">
-                        <MudIcon Icon="@Icons.Material.Filled.Person" Class="mr-2" />
-                        THÔNG TIN NGƯỜI DÙNG
+                        <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Class="mr-2" />
+                        HỒ SƠ NGƯỜI DÙNG
                     </MudText>
                 </CardHeaderContent>
                 <CardHeaderActions>
                     <MudTooltip Text="Làm mới">
                         <MudIconButton Icon="@Icons.Material.Filled.Refresh"
-                                       OnClick="RefreshUserData"
+                                       OnClick="LoadUserProfile"
                                        Disabled="@UserState.Value.IsLoading" />
                     </MudTooltip>
                 </CardHeaderActions>
@@ -34,35 +36,58 @@
                         <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
                     </div>
                 }
-                else if (UserState.Value.ErrorMessage is not null)
+                else if (!string.IsNullOrEmpty(_errorMessage))
+                {
+                    <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="my-2">
+                        @_errorMessage
+                    </MudAlert>
+                }
+                else if (!string.IsNullOrEmpty(UserState.Value.ErrorMessage))
                 {
                     <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="my-2">
                         @UserState.Value.ErrorMessage
+                        <MudButton Color="Color.Inherit"
+                                   Variant="Variant.Text"
+                                   OnClick="LoadUserProfile"
+                                   Class="ml-auto">
+                            Thử lại
+                        </MudButton>
                     </MudAlert>
                 }
                 else if (UserState.Value.SelectedUser is not null)
                 {
                     <MudGrid Class="mt-2">
-                        <MudItem xs="12">
+                        <MudItem xs="12" sm="4" md="3">
+                            <MudAvatar Size="Size.Large" Class="ma-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Large" />
+                            </MudAvatar>
+                        </MudItem>
+                        <MudItem xs="12" sm="8" md="9">
                             <MudPaper Class="pa-4" Elevation="0">
                                 <MudList T="string">
-                                    <MudListItem T="string" Text="@($"Họ Tên: {UserState.Value.SelectedUser.HoTen}")"
-                                                 Icon="@Icons.Material.Filled.Person" />
+                                    <MudListItem T="string" Icon="@Icons.Material.Filled.Person">
+                                        <MudText><strong>Họ Tên:</strong> @UserState.Value.SelectedUser.HoTen</MudText>
+                                    </MudListItem>
 
-                                    <MudListItem T="string" Text="@($"Email: {UserState.Value.SelectedUser.Email}")"
-                                                 Icon="@Icons.Material.Filled.Email" />
+                                    <MudListItem T="string" Icon="@Icons.Material.Filled.Email">
+                                        <MudText><strong>Email:</strong> @UserState.Value.SelectedUser.Email</MudText>
+                                    </MudListItem>
 
-                                    <MudListItem T="string" Text="@($"Số Điện Thoại: {UserState.Value.SelectedUser.SDT}")"
-                                                 Icon="@Icons.Material.Filled.Phone" />
+                                    <MudListItem T="string" Icon="@Icons.Material.Filled.Phone">
+                                        <MudText><strong>Số Điện Thoại:</strong> @(UserState.Value.SelectedUser.SDT ?? "Chưa cập nhật")</MudText>
+                                    </MudListItem>
 
-                                    <MudListItem T="string" Text="@($"Ngày Sinh: {UserState.Value.SelectedUser.NgaySinh?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật"}")"
-                                                 Icon="@Icons.Material.Filled.Cake" />
+                                    <MudListItem T="string" Icon="@Icons.Material.Filled.Cake">
+                                        <MudText><strong>Ngày Sinh:</strong> @(UserState.Value.SelectedUser.NgaySinh?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật")</MudText>
+                                    </MudListItem>
 
-                                    <MudListItem T="string" Text="@($"Địa Chỉ: {UserState.Value.SelectedUser.DiaChi ?? "Chưa cập nhật"}")"
-                                                 Icon="@Icons.Material.Filled.Home" />
+                                    <MudListItem T="string" Icon="@Icons.Material.Filled.Home">
+                                        <MudText><strong>Địa Chỉ:</strong> @(UserState.Value.SelectedUser.DiaChi ?? "Chưa cập nhật")</MudText>
+                                    </MudListItem>
 
-                                    <MudListItem T="string" Text="@($"Đơn Vị: {UserState.Value.SelectedUser.TenDonVi}")"
-                                                 Icon="@Icons.Material.Filled.Business" />
+                                    <MudListItem T="string" Icon="@Icons.Material.Filled.Business">
+                                        <MudText><strong>Đơn Vị:</strong> @UserState.Value.SelectedUser.TenDonVi</MudText>
+                                    </MudListItem>
                                 </MudList>
                             </MudPaper>
                         </MudItem>
@@ -70,23 +95,21 @@
 
                     <MudDivider Class="my-4" />
 
-                    <MudButton Color="Color.Primary"
-                               Variant="Variant.Filled"
-                               StartIcon="@Icons.Material.Filled.Edit"
-                               OnClick="EditUser">
-                        Chỉnh Sửa Thông Tin
-                    </MudButton>
+                    <div class="d-flex gap-2">
+                        <MudButton Color="Color.Primary" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Edit" OnClick="EditProfile">
+                            Chỉnh Sửa Thông Tin
+                        </MudButton>
+
+                        <MudButton Color="Color.Secondary" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Password" OnClick="ChangePassword">
+                            Đổi Mật Khẩu
+                        </MudButton>
+                    </div>
                 }
                 else
                 {
-                    <MudAlert Severity="Severity.Warning"
-                              Variant="Variant.Filled"
-                              Class="my-2">
+                    <MudAlert Severity="Severity.Warning" Variant="Variant.Filled" Class="my-2">
                         Không tìm thấy thông tin người dùng.
-                        <MudButton Color="Color.Inherit"
-                                   Variant="Variant.Text"
-                                   OnClick="LoadUserData"
-                                   Class="ml-auto">
+                        <MudButton Color="Color.Inherit" Variant="Variant.Text" OnClick="LoadUserProfile" Class="ml-auto">
                             Tải Lại
                         </MudButton>
                     </MudAlert>
@@ -97,39 +120,61 @@
 </MudContainer>
 
 @code {
-    [Parameter]
-    public int? UserId { get; set; }
+    private string? _errorMessage;
+    private int? _userId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _userId = await AuthService.GetUserIdFromToken();
+
+            if (!_userId.HasValue || _userId <= 0)
+            {
+                _errorMessage = "Không thể xác định người dùng. Vui lòng đăng nhập lại.";
+                return;
+            }
+
+            await LoadUserProfile();
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = $"Đã xảy ra lỗi: {ex.Message}";
+        }
+    }
 
     protected override void OnInitialized()
     {
-        if (UserId.HasValue)
+        // Subscribe to state changes
+        UserState.StateChanged += OnUserStateChanged;
+    }
+
+    private async void OnUserStateChanged(object? sender, EventArgs e)
+    {
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        // Unsubscribe to prevent memory leaks
+        UserState.StateChanged -= OnUserStateChanged;
+    }
+
+    private async Task LoadUserProfile()
+    {
+        if (_userId.HasValue && _userId > 0)
         {
-            LoadUserData();
+            _errorMessage = null;
+            Console.WriteLine($"Loading profile for user ID: {_userId}");
+            Dispatcher.Dispatch(new GetUserByIdAction(_userId.Value));
         }
         else
         {
-            Console.WriteLine("Không có UserId, không thể tải dữ liệu.");
+            _errorMessage = "Không thể xác định ID người dùng.";
         }
     }
 
-    private void LoadUserData()
-    {
-        if (UserId.HasValue)
-        {
-            Dispatcher.Dispatch(new GetUserByIdAction(UserId.Value));
-        }
-    }
+    private void EditProfile() => Navigation.NavigateTo("/profile/edit");
 
-    private void RefreshUserData()
-    {
-        LoadUserData();
-    }
-
-    private void EditUser()
-    {
-        if (UserId.HasValue)
-        {
-            Navigation.NavigateTo($"/user/edit/{UserId.Value}");
-        }
-    }
+    private void ChangePassword() => Navigation.NavigateTo("/profile/change-password");
 }

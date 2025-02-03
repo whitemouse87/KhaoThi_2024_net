@@ -1,78 +1,114 @@
 ﻿using Fluxor;
+using KhaoThi_2024_net_client.Models.Auth;
 using KhaoThi_2024_net_client.Services.Auth;
-using KhaoThi_2024_net_client.Services.Logging;
 using static KhaoThi_2024_net_client.Services.Auth.AuthActions;
 
 namespace KhaoThi_2024_net_client.State.Auth
 {
     public static class AuthReducers
     {
+        /// <summary>
+        /// Reducer xử lý action đăng nhập
+        /// </summary>
         [ReducerMethod]
-        public static AuthState ReduceLoginAction(AuthState state, LoginAction action)
-        {
-            //Console.WriteLine("[Info] Starting login process...");
-            return new AuthState(
+        public static AuthState ReduceLoginAction(AuthState state, LoginAction action) =>
+            new AuthState(
                 isAuthenticated: false,
                 isLoading: true,
                 user: null,
                 token: null,
                 error: null
             );
-        }
 
+        /// <summary>
+        /// Reducer xử lý đăng nhập thành công
+        /// </summary>
         [ReducerMethod]
-        public static AuthState ReduceLoginSuccess(AuthState state, LoginSuccessAction action)
-        {
-            if (action.User == null || string.IsNullOrEmpty(action.Token))
-            {
-                //Console.WriteLine("[Error] Invalid login response: missing user or token");
-                return new AuthState(
-                    isAuthenticated: false,
-                    isLoading: false,
-                    user: null,
-                    token: null,
-                    error: "Invalid login response from server"
-                );
-            }
-
-            //await Logger.Info($"[Success] User {action.User.TenDangNhap} logged in successfully");
-            return new AuthState(
+        public static AuthState ReduceLoginSuccessAction(AuthState state, LoginSuccessAction action) =>
+            new AuthState(
                 isAuthenticated: true,
                 isLoading: false,
                 user: action.User,
                 token: action.Token,
                 error: null
             );
-        }
 
+        /// <summary>
+        /// Reducer xử lý đăng nhập thất bại
+        /// </summary>
         [ReducerMethod]
-        public static AuthState ReduceLoginFailure(AuthState state, LoginFailureAction action)
-        {
-            var errorMessage = string.IsNullOrEmpty(action.Error)
-                ? "Unknown error occurred"
-                : action.Error;
-
-            //Console.WriteLine($"[Error] Login failed: {errorMessage}");
-            return new AuthState(
+        public static AuthState ReduceLoginFailureAction(AuthState state, LoginFailureAction action) =>
+            new AuthState(
                 isAuthenticated: false,
                 isLoading: false,
                 user: null,
                 token: null,
-                error: errorMessage
+                error: action.ErrorMessage
             );
-        }
 
+        /// <summary>
+        /// Reducer xử lý bắt đầu đăng xuất
+        /// </summary>
         [ReducerMethod]
-        public static AuthState ReduceLogout(AuthState state, LogoutAction action)
-        {
-            //Console.WriteLine("[Info] User logged out");
-            return new AuthState(
+        public static AuthState ReduceLogoutAction(AuthState state, LogoutAction action) =>
+            new AuthState(
+                isAuthenticated: state.IsAuthenticated,
+                isLoading: true,
+                user: state.CurrentUser,
+                token: state.Token,
+                error: null
+            );
+
+        /// <summary>
+        /// Reducer xử lý đăng xuất thành công
+        /// </summary>
+        [ReducerMethod]
+        public static AuthState ReduceLogoutSuccessAction(AuthState state, LogoutSuccessAction action) =>
+            new AuthState(
                 isAuthenticated: false,
                 isLoading: false,
                 user: null,
                 token: null,
                 error: null
             );
-        }
+
+        /// <summary>
+        /// Reducer xử lý đăng xuất thất bại
+        /// </summary>
+        [ReducerMethod]
+        public static AuthState ReduceLogoutFailureAction(AuthState state, LogoutFailureAction action) =>
+            new AuthState(
+                isAuthenticated: state.IsAuthenticated,
+                isLoading: false,
+                user: state.CurrentUser,
+                token: state.Token,
+                error: action.ErrorMessage
+            );
+
+        /// <summary>
+        /// Reducer xử lý set loading state
+        /// </summary>
+        [ReducerMethod]
+        public static AuthState ReduceSetLoadingAction(AuthState state, SetLoadingAction action) =>
+            new AuthState(
+                isAuthenticated: state.IsAuthenticated,
+                isLoading: action.IsLoading,
+                user: state.CurrentUser,
+                token: state.Token,
+                error: state.Error
+            );
+
+        /// <summary>
+        /// Reducer xử lý xóa error message
+        /// </summary>
+        [ReducerMethod]
+        public static AuthState ReduceClearErrorAction(AuthState state, ClearErrorAction action) =>
+            new AuthState(
+                isAuthenticated: state.IsAuthenticated,
+                isLoading: state.IsLoading,
+                user: state.CurrentUser,
+                token: state.Token,
+                error: null
+            );
     }
 }
