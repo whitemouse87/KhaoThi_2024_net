@@ -1,0 +1,107 @@
+2025-02-03 11:37:50.849 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-03 11:37:56.659 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 11:37:56.703 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:37:56.725 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:37:56.846 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 11:37:56.852 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 11:37:56.873 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 11:37:56.910 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:37:56.928 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:03.850 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 11:38:03.951 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:03.971 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:04.061 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 11:38:04.067 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 11:38:04.085 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 11:38:04.104 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:04.122 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:09.372 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: LoginAction 
+2025-02-03 11:38:09.400 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: LoginAction 
+2025-02-03 11:38:09.400 +07:00 [INF] [Client] [CLIENT] Login attempt initiated: nvdkhoa 
+2025-02-03 11:38:09.430 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-02-03 11:38:09.456 +07:00 [INF] [Fluxor] ⏱ [Fluxor] Action LoginAction đã hoàn thành sau 3 ms 
+2025-02-03 11:38:09.483 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:09.504 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:10.077 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-02-03 11:38:10.167 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: LoginSuccessAction 
+2025-02-03 11:38:10.196 +07:00 [INF] [Client] [CLIENT] User authenticated - redirecting to dashboard 
+2025-02-03 11:38:10.197 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: LoginSuccessAction 
+2025-02-03 11:38:10.197 +07:00 [INF] [Client] [CLIENT] user đăng nhập thành công: nvdkhoa 
+2025-02-03 11:38:10.293 +07:00 [INF] [Fluxor] ⏱ [Fluxor] Action LoginSuccessAction đã hoàn thành sau 91 ms 
+2025-02-03 11:38:13.007 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 11:38:13.053 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-02-03 11:38:13.073 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:13.372 +07:00 [INF] [Client] Dashboard accessed - User: , Role: 01 
+2025-02-03 11:38:13.406 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:13.494 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 11:38:13.501 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 11:38:13.519 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 11:38:13.542 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:13.559 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:22.503 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 11:38:22.544 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-02-03 11:38:22.567 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:22.833 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:22.910 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 11:38:22.915 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 11:38:22.926 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 11:38:22.950 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:22.967 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:38:34.428 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction 
+2025-02-03 11:38:34.443 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: GetUserByIdAction 
+2025-02-03 11:38:34.674 +07:00 [INF] [Fluxor] ⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 3 ms 
+2025-02-03 11:38:34.698 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:38:34.719 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:42:35.637 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-03 11:42:39.610 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 11:42:39.619 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-02-03 11:42:39.706 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:42:40.821 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:42:40.998 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 11:42:40.998 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 11:42:41.024 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 11:42:41.104 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:42:41.130 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:42:43.874 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 11:42:43.956 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-02-03 11:42:44.001 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:42:44.566 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:42:44.697 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 11:42:44.704 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 11:42:44.722 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 11:42:44.740 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction 
+2025-02-03 11:42:44.746 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: GetUserByIdAction 
+2025-02-03 11:42:44.797 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:42:44.804 +07:00 [INF] [Fluxor] ⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 3 ms 
+2025-02-03 11:42:44.907 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:42:44.912 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:42:44.938 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 11:42:53.971 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction 
+2025-02-03 11:42:53.972 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: GetUserByIdAction 
+2025-02-03 11:42:54.008 +07:00 [INF] [Fluxor] ⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 8 ms 
+2025-02-03 11:42:54.029 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 11:42:54.049 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 12:07:12.723 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-03 12:07:15.726 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 12:07:15.726 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-02-03 12:07:15.770 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 12:07:16.151 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 12:07:16.240 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 12:07:16.247 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 12:07:16.258 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 12:07:16.291 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 12:07:16.309 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 12:07:27.603 +07:00 [INF] [Fluxor] 🚀 [Fluxor] Middleware Ghi Log đã khởi tạo. 
+2025-02-03 12:07:27.651 +07:00 [INF] [Client] Auth state updated - User: nvdkhoa, Role: 01 
+2025-02-03 12:07:27.675 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 12:07:28.034 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 12:07:28.121 +07:00 [INF] [Fluxor] ✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất. 
+2025-02-03 12:07:28.126 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction 
+2025-02-03 12:07:28.138 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: StoreInitializedAction 
+2025-02-03 12:07:28.169 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 12:07:28.187 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
+2025-02-03 12:07:28.750 +07:00 [INF] [Fluxor] 📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction 
+2025-02-03 12:07:28.756 +07:00 [INF] [Fluxor] ✅ [Fluxor] Đã thực thi action: GetUserByIdAction 
+2025-02-03 12:07:28.869 +07:00 [INF] [Fluxor] ⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 2 ms 
+2025-02-03 12:07:28.892 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState 
+2025-02-03 12:07:28.918 +07:00 [INF] [Fluxor] 📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState 
