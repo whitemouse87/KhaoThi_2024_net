@@ -22,7 +22,7 @@
                         </MudAvatar>
                         <div>
                             <MudText Typo="Typo.caption" Color="Color.Secondary">Xin chào,</MudText>
-                            <MudNavLink Href=@($"/userinfo/{AuthState.Value.CurrentUser?.Id ?? 0}")
+                            <MudNavLink Href="/profile"
                                         Icon="@Icons.Material.Filled.Person">
                                 <MudText Typo="Typo.body1" Class="font-weight-bold">
                                     @(AuthState.Value.CurrentUser?.HoTen ?? "Người dùng")

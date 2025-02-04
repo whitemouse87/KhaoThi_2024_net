@@ -14,13 +14,26 @@ namespace KhaoThi_2024_net_client.Services.Auth
         private readonly HttpClient _httpClient;
         private readonly ILocalStorageService _localStorage;
         private const string AUTH_TOKEN_KEY = "authToken";
-
+        private const string REFRESH_TOKEN_KEY = "refreshToken";
         public AuthService(HttpClient httpClient, ILocalStorageService localStorage)
         {
             _httpClient = httpClient;
             _localStorage = localStorage;
         }
-
+        public  bool IsTokenExpired(string token)
+        {
+            try
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+                return jwtToken.ValidTo < DateTime.UtcNow;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"[Error] Lỗi kiểm tra token hết hạn: {ex.Message}").Wait();
+                return true;
+            }
+        }
         public async Task<LoginResponse> Login(LoginRequest request)
         {
             try
@@ -91,8 +104,9 @@ namespace KhaoThi_2024_net_client.Services.Auth
             try
             {
                 await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
-                await Logger.Info($"[Info] Token removed from local storage");
-               
+                await _localStorage.RemoveItemAsync(REFRESH_TOKEN_KEY);
+                await Logger.Info($"[Info] Tokens removed from local storage");
+
             }
             catch (Exception ex)
             {
@@ -133,53 +147,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
             }
         }
 
-        private async Task<LoginResponse> HandleSuccessfulLogin(HttpResponseMessage response)
-        {
-            var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
-            if (!string.IsNullOrEmpty(loginResponse?.Token))
-            {
-                await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, loginResponse.Token);
-                return new LoginResponse { Success = true, Token = loginResponse.Token };
-            }
-
-            return new LoginResponse
-            {
-                Success = false,
-                ErrorMessage = "Invalid token received from server"
-            };
-        }
-
-        private async Task<LoginResponse> HandleTooManyRequestsError(HttpResponseMessage response)
-        {
-            var errorContent = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-            return new LoginResponse
-            {
-                Success = false,
-                ErrorMessage = "Too many requests. Please try again later.",
-                ErrorType = errorContent?.ErrorType ?? "UnknownError"
-            };
-        }
-
-        private async Task<LoginResponse> HandleUnsuccessfulResponse(HttpResponseMessage response)
-        {
-            var errorContent = await response.Content.ReadFromJsonAsync<ErrorResponse>();
-            return new LoginResponse
-            {
-                Success = false,
-                ErrorMessage = "Login failed",
-                ErrorType = errorContent?.ErrorType ?? "UnknownError"
-            };
-        }
-
-        private LoginResponse HandleLoginException(Exception ex)
-        {
-            return new LoginResponse
-            {
-                Success = false,
-                ErrorMessage = "Connection error",
-                ErrorType = "ConnectionError"
-            };
-        }
+      
 
         private Dictionary<string, string> ParseJwtClaims(string token)
         {
@@ -200,18 +168,78 @@ namespace KhaoThi_2024_net_client.Services.Auth
         }
         public async Task<int?> GetUserIdFromToken()
         {
-            var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
-            if (string.IsNullOrWhiteSpace(token)) return null;
-
             try
             {
+                var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
+                if (string.IsNullOrWhiteSpace(token)) return null;
+
+                // Kiểm tra token hết hạn
+                if (IsTokenExpired(token))
+                {
+                    // Thử refresh token
+                    var refreshResult = await RefreshToken();
+                    if (!refreshResult.Success)
+                    {
+                        await Logout();
+                        return null;
+                    }
+                    token = refreshResult.Token;
+                }
+
                 var claims = ParseJwtClaims(token);
                 return claims.ContainsKey("id") ? int.Parse(claims["id"]) : null;
             }
             catch (Exception ex)
             {
-                await Logger.Error($"[Error] Lỗi lấy dữ liệu UserId from token: {ex.Message}");
+                await Logger.Error($"[Error] Lỗi lấy UserId từ token: {ex.Message}");
                 return null;
+            }
+        }
+        public async Task<LoginResponse> RefreshToken()
+        {
+            try
+            {
+                var refreshToken = await _localStorage.GetItemAsync<string>(REFRESH_TOKEN_KEY);
+                if (string.IsNullOrEmpty(refreshToken))
+                {
+                    return new LoginResponse
+                    {
+                        Success = false,
+                        ErrorMessage = "Không tìm thấy refresh token"
+                    };
+                }
+
+                var response = await _httpClient.PostAsJsonAsync("auth/refresh-token",
+                    new { RefreshToken = refreshToken });
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+                    if (result?.Success == true)
+                    {
+                        await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, result.Token);
+                        await _localStorage.SetItemAsync(REFRESH_TOKEN_KEY, result.RefreshToken);
+                        return result;
+                    }
+                }
+
+                // Nếu refresh thất bại, xóa tokens
+                await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
+                await _localStorage.RemoveItemAsync(REFRESH_TOKEN_KEY);
+                return new LoginResponse
+                {
+                    Success = false,
+                    ErrorMessage = "Không thể làm mới token"
+                };
+            }
+            catch (Exception ex)
+            {
+                await Logger.Error($"[Error] Lỗi refresh token: {ex.Message}");
+                return new LoginResponse
+                {
+                    Success = false,
+                    ErrorMessage = "Lỗi khi làm mới token"
+                };
             }
         }
     }

@@ -8,7 +8,8 @@ namespace KhaoThi_2024_net_client.Services.Auth
         Task Logout();
         Task<ValidateTokenResponse> ValidateToken();
         Task<int?> GetUserIdFromToken();
-
+        Task<LoginResponse> RefreshToken(); // Thêm method này
+        bool IsTokenExpired(string token);
 
     }
 }

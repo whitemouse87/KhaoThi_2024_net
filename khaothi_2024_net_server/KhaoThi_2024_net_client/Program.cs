@@ -278,6 +278,17 @@ public class Program
 
     private static void ConfigureHttpClient(IServiceCollection services)
     {
+        // Đăng ký AuthInterceptor
+        services.AddScoped<AuthInterceptor>();
+
+        // Đăng ký named HttpClient với AuthInterceptor
+        services.AddHttpClient("API", client =>
+        {
+            client.BaseAddress = new Uri(API_BASE_URL);
+            client.Timeout = TimeSpan.FromSeconds(HTTP_TIMEOUT_SECONDS);
+        }).AddHttpMessageHandler<AuthInterceptor>();
+
+        // Đăng ký default HttpClient (giữ nguyên cái cũ nếu cần)
         services.AddScoped(sp => new HttpClient
         {
             BaseAddress = new Uri(API_BASE_URL),
@@ -369,10 +380,11 @@ public class Program
     private static void ConfigureApplicationServices(IServiceCollection services)
     {
         // Core Services
+      
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ILoggingService, LoggingService>();
         services.AddScoped<IUserService, KhaoThiUserService>();
-
+  
         // Add other application services here
         ConfigureAdditionalServices(services);
     }

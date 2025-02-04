@@ -31,5 +31,10 @@ namespace KhaoThi_2024_net_client.Services.Auth
         public record SetLoadingAction(bool IsLoading);  // Action điều khiển trạng thái loading
         public record ClearErrorAction();  // Action xóa thông báo lỗi
         public record ShowNotificationAction(string Message, string Type);  // Action hiển thị thông báo
+        
+        // Refresh token actions - Các actions liên quan đến làm mới token
+        public record RefreshTokenAction();  // Action khởi tạo quá trình refresh token
+        public record RefreshTokenSuccessAction(string Token, UserInfo User);  // Action khi refresh thành công
+        public record RefreshTokenFailureAction(string ErrorMessage);  // Action khi refresh thất bại
     }
 }

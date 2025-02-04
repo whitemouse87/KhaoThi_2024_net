@@ -2,6 +2,7 @@
 using KhaoThi_2024_net_client.Components;
 using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Services.Logging;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -12,9 +13,10 @@ namespace KhaoThi_2024_net_client.Services.User
         private const string API_ENDPOINT = "KhaoThiUser";
         private readonly JsonSerializerOptions _jsonOptions;
         public KhaoThiUserService(
-           HttpClient httpClient,
-           ILocalStorageService localStorage,
-           ILoggingService logger) : base(httpClient, localStorage, logger)
+       IHttpClientFactory httpClientFactory,
+       ILocalStorageService localStorage,
+       ILoggingService logger)
+       : base(httpClientFactory, localStorage, logger)
         {
             _jsonOptions = new JsonSerializerOptions
             {

@@ -77,10 +77,11 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("logout")]
-    [AllowAnonymous]
+    [Authorize]
     public async Task<IActionResult> Logout()
     {
         var userId = GetUserIdFromClaims();
+        var jti = User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
         var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString();
 
         if (!userId.HasValue)
@@ -94,8 +95,16 @@ public class AuthController : ControllerBase
             var result = await _authService.LogoutAsync(userId.Value);
             if (result)
             {
-                _logger.LogInformation("User {UserId} logged out successfully from IP: {IpAddress}",
-                    userId, ipAddress);
+                // Lưu Token vào Blacklist (Redis)
+                if (!string.IsNullOrEmpty(jti))
+                {
+                    await _cache.SetStringAsync($"blacklist_{jti}", "revoked", new DistributedCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30) // Token bị vô hiệu trong 30 phút
+                    });
+                }
+
+                _logger.LogInformation("User {UserId} logged out successfully", userId);
                 return Ok(new ApiResponse { Success = true, Message = "Đăng xuất thành công" });
             }
 
@@ -103,8 +112,7 @@ public class AuthController : ControllerBase
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Logout failed for user {UserId} from IP {IpAddress}",
-                userId, ipAddress);
+            _logger.LogError(ex, "Logout failed for user {UserId}", userId);
             return StatusCode(500, new ErrorResponse { Message = "Đã xảy ra lỗi trong quá trình đăng xuất" });
         }
     }
@@ -113,6 +121,7 @@ public class AuthController : ControllerBase
     [HttpGet("validate")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+ 
     public IActionResult ValidateToken()
     {
         try
@@ -129,7 +138,6 @@ public class AuthController : ControllerBase
                 c => c.Value
             );
 
-            // Kiểm tra token trong blacklist
             var jti = User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti)?.Value;
             if (!string.IsNullOrEmpty(jti))
             {

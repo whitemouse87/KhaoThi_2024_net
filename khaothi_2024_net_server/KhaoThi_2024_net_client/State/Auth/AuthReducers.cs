@@ -110,5 +110,31 @@ namespace KhaoThi_2024_net_client.State.Auth
                 token: state.Token,
                 error: null
             );
+        // Trong AuthReducers.cs
+        /// <summary>
+        /// Reducer xử lý refresh token thành công
+        /// </summary>
+        [ReducerMethod]
+        public static AuthState ReduceRefreshTokenSuccessAction(AuthState state, RefreshTokenSuccessAction action) =>
+            new AuthState(
+                isAuthenticated: true,
+                isLoading: false,
+                user: action.User,
+                token: action.Token,
+                error: null
+            );
+
+        /// <summary>
+        /// Reducer xử lý refresh token thất bại
+        /// </summary>
+        [ReducerMethod]
+        public static AuthState ReduceRefreshTokenFailureAction(AuthState state, RefreshTokenFailureAction action) =>
+            new AuthState(
+                isAuthenticated: false,
+                isLoading: false,
+                user: null,
+                token: null,
+                error: action.ErrorMessage
+            );
     }
 }

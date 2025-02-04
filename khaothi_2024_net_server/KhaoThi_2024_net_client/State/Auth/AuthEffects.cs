@@ -73,8 +73,8 @@ namespace KhaoThi_2024_net_client.State.Auth
                 dispatcher.Dispatch(new SetLoadingAction(true));
                 await Logger.Info("[CLIENT] Bắt đầu xử lý đăng xuất");
 
+                // Chỉ cần gọi Logout() từ AuthService
                 await _authService.Logout();
-                await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
 
                 dispatcher.Dispatch(new LogoutSuccessAction());
                 dispatcher.Dispatch(new ShowNotificationAction("Đăng xuất thành công", "success"));
@@ -96,8 +96,91 @@ namespace KhaoThi_2024_net_client.State.Auth
                 dispatcher.Dispatch(new LogoutFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction("Đăng xuất thất bại", "error"));
 
-                // Trong trường hợp lỗi, vẫn cố gắng cleanup
-                await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
+                try
+                {
+                    // Cố gắng cleanup một lần nữa thông qua service
+                    await _authService.Logout();
+                }
+                catch
+                {
+                    // Bỏ qua lỗi trong cleanup
+                }
+                _navigationManager.NavigateTo("/login", forceLoad: true);
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
+        //[EffectMethod]
+        //public async Task HandleRefreshTokenAction(RefreshTokenAction action, IDispatcher dispatcher)
+        //{
+        //    try
+        //    {
+        //        dispatcher.Dispatch(new SetLoadingAction(true));
+        //        var result = await _authService.RefreshToken();
+
+        //        if (result.Success)
+        //        {
+        //            var userInfo = await _authService.GetUserInfo(result.Token);
+        //            dispatcher.Dispatch(new RefreshTokenSuccessAction(result.Token, userInfo));
+        //        }
+        //        else
+        //        {
+        //            dispatcher.Dispatch(new RefreshTokenFailureAction(result.ErrorMessage));
+        //            dispatcher.Dispatch(new LogoutAction());
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        dispatcher.Dispatch(new RefreshTokenFailureAction(ex.Message));
+        //        dispatcher.Dispatch(new LogoutAction());
+        //    }
+        //    finally
+        //    {
+        //        dispatcher.Dispatch(new SetLoadingAction(false));
+        //    }
+        //}
+      
+        [EffectMethod]
+        public async Task HandleRefreshTokenAction(RefreshTokenAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                await Logger.Info("[CLIENT] Bắt đầu quy trình refresh token");
+
+                var response = await _authService.RefreshToken();
+
+                if (response.Success && response.Token != null)
+                {
+                    await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, response.Token);
+                    var userInfo = await _authService.GetUserInfo(response.Token);
+
+                    dispatcher.Dispatch(new RefreshTokenSuccessAction(response.Token, userInfo));
+                    await Logger.Info($"[CLIENT] Refresh token thành công cho user: {userInfo.TenDangNhap}");
+                    dispatcher.Dispatch(new ShowNotificationAction("Làm mới phiên thành công", "success"));
+                }
+                else
+                {
+                    await Logger.Warning($"[CLIENT] Refresh token thất bại: {response.ErrorMessage}");
+                    dispatcher.Dispatch(new RefreshTokenFailureAction(response.ErrorMessage));
+                    dispatcher.Dispatch(new ShowNotificationAction("Phiên làm việc hết hạn", "error"));
+
+                    // Chuyển về trang login khi refresh thất bại
+                    await _authService.Logout();
+                    _navigationManager.NavigateTo("/login", forceLoad: true);
+                }
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = "Lỗi trong quá trình làm mới phiên";
+                await Logger.Error(errorMessage, ex);
+                dispatcher.Dispatch(new RefreshTokenFailureAction(ex.Message));
+                dispatcher.Dispatch(new ShowNotificationAction(errorMessage, "error"));
+
+                // Đảm bảo logout và chuyển về login trong trường hợp lỗi
+                await _authService.Logout();
                 _navigationManager.NavigateTo("/login", forceLoad: true);
             }
             finally

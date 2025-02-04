@@ -1,163 +1,4 @@
-﻿//using Blazored.LocalStorage;
-//using KhaoThi_2024_net_client.Services.Auth;
-//using KhaoThi_2024_net_client.Services.Logging;
-//using Microsoft.AspNetCore.Components.Authorization;
-//using System.Security.Claims;
-
-//namespace KhaoThi_2024_net_client.Components.Auth
-//{
-//    public class CustomAuthStateProvider : AuthenticationStateProvider
-//    {
-//        private readonly ILocalStorageService _localStorage;
-//        private readonly IAuthService _authService;
-//        private readonly ILoggingService _loggingService;
-//        private const string AUTH_TOKEN_KEY = "authToken";
-
-//        public CustomAuthStateProvider(
-//            ILocalStorageService localStorage,
-//            IAuthService authService,
-//            ILoggingService loggingService)
-//        {
-//            _localStorage = localStorage;
-//            _authService = authService;
-//            _loggingService = loggingService;
-//        }
-
-//        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
-//        {
-//            try
-//            {
-//                var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
-//                if (string.IsNullOrEmpty(token))
-//                {
-//                    await Logger.Info("No token found - returning anonymous state");
-//                    return CreateAnonymousState();
-//                }
-
-//                // Luôn validate token và lấy thông tin mới từ server
-//                var validateResult = await _authService.ValidateToken();
-//                if (!validateResult.IsValid)
-//                {
-//                    await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
-//                    await Logger.Warning("Invalid token - clearing authentication");
-//                    await HandleTokenExpired();
-//                    return CreateAnonymousState();
-//                }
-
-//                // Lấy thông tin user mới nhất từ server
-//                var userInfo = await _authService.GetUserInfo(token);
-
-//                var claims = new List<Claim>
-//                {
-//                    new Claim(ClaimTypes.NameIdentifier, userInfo.Id.ToString()),
-//                    new Claim(ClaimTypes.Name, userInfo.TenDangNhap),
-//                    new Claim("hoTen", userInfo.HoTen ?? string.Empty),
-//                    new Claim("maDonVi", userInfo.MaDonVi ?? string.Empty),
-//                    new Claim("maChucVu", userInfo.MaChucVu ?? string.Empty)
-//                };
-
-//                var identity = new ClaimsIdentity(claims, "jwt");
-//                var user = new ClaimsPrincipal(identity);
-
-//                await Logger.Info($"Refreshed auth state for user: {userInfo.TenDangNhap} with role: {userInfo.MaChucVu}");
-
-//                return new AuthenticationState(user);
-//            }
-//            catch (Exception ex)
-//            {
-//                await Logger.Error("Error in GetAuthenticationStateAsync", ex);
-//                return CreateAnonymousState();
-//            }
-//        }
-
-//        public async Task MarkUserAsAuthenticated(string token)
-//        {
-//            try
-//            {
-//                // Lưu token trước
-//                await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, token);
-
-//                var userInfo = await _authService.GetUserInfo(token);
-//                var claims = new List<Claim>
-//                {
-//                    new Claim("id", userInfo.Id.ToString()),
-//                    new Claim("tenDangNhap", userInfo.TenDangNhap),
-//                    new Claim("hoTen", userInfo.HoTen ?? string.Empty),
-//                    new Claim("maDonVi", userInfo.MaDonVi ?? string.Empty),
-//                    new Claim("maChucVu", userInfo.MaChucVu ?? string.Empty)
-//                };
-//                // Thêm role dựa trên mã chức vụ
-//                if (userInfo.MaChucVu == Constants.Roles.Admin)
-//                {
-//                    claims.Add(new Claim(ClaimTypes.Role, "Admin"));
-//                }
-
-//                var identity = new ClaimsIdentity(claims, "jwt");
-//                var user = new ClaimsPrincipal(identity);
-//                var authState = new AuthenticationState(user);
-
-//                await Logger.Info($"User marked as authenticated: {userInfo.TenDangNhap} - {userInfo.HoTen}");
-
-//                NotifyAuthenticationStateChanged(Task.FromResult(authState));
-//            }
-//            catch (Exception ex)
-//            {
-//                await Logger.Error($"Error in MarkUserAsAuthenticated", ex);
-//                await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
-//                throw;
-//            }
-//        }
-
-//        public async Task MarkUserAsLoggedOut()
-//        {
-//            try
-//            {
-//                var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
-//                if (!string.IsNullOrEmpty(token))
-//                {
-//                    var userInfo = await _authService.GetUserInfo(token);
-//                    await Logger.Info($"User logged out: {userInfo.TenDangNhap}");
-//                }
-
-//                await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
-//                var authState = CreateAnonymousState();
-//                NotifyAuthenticationStateChanged(Task.FromResult(authState));
-//            }
-//            catch (Exception ex)
-//            {
-//                await Logger.Error("Error in MarkUserAsLoggedOut", ex);
-//                throw;
-//            }
-//        }
-
-//        private AuthenticationState CreateAnonymousState()
-//        {
-//            return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
-//        }
-
-//        private async Task HandleTokenExpired()
-//        {
-//            try
-//            {
-//                var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
-//                if (!string.IsNullOrEmpty(token))
-//                {
-//                    var userInfo = await _authService.GetUserInfo(token);
-//                    await Logger.Warning($"Token expired for user: {userInfo.TenDangNhap}");
-//                }
-
-//                await MarkUserAsLoggedOut();
-//                // Có thể thêm thông báo cho người dùng thông qua service
-//            }
-//            catch (Exception ex)
-//            {
-//                await Logger.Error("Error handling token expiration", ex);
-//            }
-//        }
-//    }
-//}
-
-using Blazored.LocalStorage;
+﻿using Blazored.LocalStorage;
 using KhaoThi_2024_net_client.Models.Auth;
 using KhaoThi_2024_net_client.Services.Auth;
 using KhaoThi_2024_net_client.Services.Logging;
@@ -173,7 +14,7 @@ namespace KhaoThi_2024_net_client.Components.Auth
         private readonly ILoggingService _loggingService;
         private AuthenticationState? _lastAuthState;
         private const string AUTH_TOKEN_KEY = "authToken";
-
+        private const string REFRESH_TOKEN_KEY = "refreshToken";  // Thêm dòng này
         public CustomAuthStateProvider(
             ILocalStorageService localStorage,
             IAuthService authService,
@@ -195,13 +36,36 @@ namespace KhaoThi_2024_net_client.Components.Auth
                     return _lastAuthState;
                 }
 
+                if (_authService.IsTokenExpired(token))
+                {
+                    var refreshToken = await _localStorage.GetItemAsync<string>(REFRESH_TOKEN_KEY);
+                    if (!string.IsNullOrEmpty(refreshToken))
+                    {
+                        var refreshResult = await _authService.RefreshToken();
+                        if (refreshResult.Success && refreshResult.Token != null)
+                        {
+                            token = refreshResult.Token;
+                            await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, token);
+                            await _localStorage.SetItemAsync(REFRESH_TOKEN_KEY, refreshResult.RefreshToken);
+                        }
+                        else
+                        {
+                            await HandleTokenExpired();
+                            return CreateAnonymousState();
+                        }
+                    }
+                    else
+                    {
+                        await HandleTokenExpired();
+                        return CreateAnonymousState();
+                    }
+                }
+
                 var validateResult = await _authService.ValidateToken();
                 if (!validateResult.IsValid)
                 {
-                    await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
                     await HandleTokenExpired();
-                    _lastAuthState = CreateAnonymousState();
-                    return _lastAuthState;
+                    return CreateAnonymousState();
                 }
 
                 var userInfo = await _authService.GetUserInfo(token);
@@ -210,7 +74,6 @@ namespace KhaoThi_2024_net_client.Components.Auth
                 var user = new ClaimsPrincipal(identity);
                 var newAuthState = new AuthenticationState(user);
 
-                // Chỉ notify và log khi có thay đổi thực sự
                 if (ShouldUpdateAuthState(_lastAuthState, newAuthState))
                 {
                     await Logger.Info($"Auth state updated - User: {userInfo.TenDangNhap}, Role: {userInfo.MaChucVu}");
@@ -228,16 +91,15 @@ namespace KhaoThi_2024_net_client.Components.Auth
             }
         }
 
-        public async Task MarkUserAsAuthenticated(string token)
+        public async Task MarkUserAsAuthenticated(string token, string refreshToken)
         {
             if (string.IsNullOrEmpty(token))
-            {
                 throw new ArgumentNullException(nameof(token));
-            }
 
             try
             {
                 await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, token);
+                await _localStorage.SetItemAsync(REFRESH_TOKEN_KEY, refreshToken);
                 var userInfo = await _authService.GetUserInfo(token);
 
                 var claims = BuildUserClaims(userInfo);
@@ -254,6 +116,7 @@ namespace KhaoThi_2024_net_client.Components.Auth
             {
                 await Logger.Error($"Authentication failed", ex);
                 await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
+                await _localStorage.RemoveItemAsync(REFRESH_TOKEN_KEY);
                 throw;
             }
         }
@@ -271,6 +134,7 @@ namespace KhaoThi_2024_net_client.Components.Auth
                 }
 
                 await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
+                await _localStorage.RemoveItemAsync(REFRESH_TOKEN_KEY);
                 var anonymousState = CreateAnonymousState();
                 _lastAuthState = anonymousState;
                 NotifyAuthenticationStateChanged(Task.FromResult(anonymousState));
@@ -286,7 +150,6 @@ namespace KhaoThi_2024_net_client.Components.Auth
                 throw;
             }
         }
-
         private List<Claim> BuildUserClaims(UserInfo userInfo)
         {
             var claims = new List<Claim>
@@ -335,6 +198,7 @@ namespace KhaoThi_2024_net_client.Components.Auth
                 }
 
                 await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY);
+                await _localStorage.RemoveItemAsync(REFRESH_TOKEN_KEY);
                 var anonymousState = CreateAnonymousState();
                 _lastAuthState = anonymousState;
                 NotifyAuthenticationStateChanged(Task.FromResult(anonymousState));
