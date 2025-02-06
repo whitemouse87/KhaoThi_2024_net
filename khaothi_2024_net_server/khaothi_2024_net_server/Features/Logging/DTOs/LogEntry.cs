@@ -3,9 +3,9 @@
     public class LogEntry
     {
         public DateTime Timestamp { get; set; }
-        public string? Level { get; set; }  // DEBUG, INFO, ERROR
-        public string? Message { get; set; }
-        public string? Component { get; set; }
-        public Exception? Exception { get; set; }
+        public string Level { get; set; } = string.Empty;
+        public string Component { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
+        public string? Exception { get; set; }
     }
 }

@@ -278,6 +278,20 @@ public class Program
 
     private static void ConfigureHttpClient(IServiceCollection services)
     {
+        // Cấu hình JSON serialization options
+        var jsonOptions = new System.Text.Json.JsonSerializerOptions
+        {
+            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+            PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+            WriteIndented = false,
+            PropertyNameCaseInsensitive = true,
+            NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString,
+            Converters =
+        {
+            new System.Text.Json.Serialization.JsonStringEnumConverter(),
+        }
+        };
+
         // Đăng ký AuthInterceptor
         services.AddScoped<AuthInterceptor>();
 
@@ -286,7 +300,17 @@ public class Program
         {
             client.BaseAddress = new Uri(API_BASE_URL);
             client.Timeout = TimeSpan.FromSeconds(HTTP_TIMEOUT_SECONDS);
-        }).AddHttpMessageHandler<AuthInterceptor>();
+            client.DefaultRequestHeaders.ConnectionClose = false;
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            // Thêm compression
+            client.DefaultRequestHeaders.AcceptEncoding.Add(new System.Net.Http.Headers.StringWithQualityHeaderValue("gzip"));
+            client.DefaultRequestHeaders.AcceptEncoding.Add(new System.Net.Http.Headers.StringWithQualityHeaderValue("deflate"));
+        })
+      .AddHttpMessageHandler<AuthInterceptor>()
+      .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+      {
+          AutomaticDecompression = System.Net.DecompressionMethods.GZip | System.Net.DecompressionMethods.Deflate
+      });
 
         // Đăng ký default HttpClient (giữ nguyên cái cũ nếu cần)
         services.AddScoped(sp => new HttpClient
@@ -294,6 +318,18 @@ public class Program
             BaseAddress = new Uri(API_BASE_URL),
             Timeout = TimeSpan.FromSeconds(HTTP_TIMEOUT_SECONDS)
         });
+        //services.Configure<System.Text.Json.JsonSerializerOptions>(options =>
+        //{
+        //    options.DefaultIgnoreCondition = jsonOptions.DefaultIgnoreCondition;
+        //    options.PropertyNamingPolicy = jsonOptions.PropertyNamingPolicy;
+        //    options.WriteIndented = jsonOptions.WriteIndented;
+        //    options.PropertyNameCaseInsensitive = jsonOptions.PropertyNameCaseInsensitive;
+        //    options.NumberHandling = jsonOptions.NumberHandling;
+        //    foreach (var converter in jsonOptions.Converters)
+        //    {
+        //        options.Converters.Add(converter);
+        //    }
+        //});
     }
 
     private static void ConfigureAuth(IServiceCollection services)
@@ -352,6 +388,7 @@ public class Program
             {
                 // Cấu hình thêm nếu cần
                 options.Name = "KhaoThi_2024"; // Tên của ứng dụng
+                options.MaximumHistoryLength = 50; // Giới hạn history để tránh memory leak
                 //options.trac(); // Hiển thị stack trace
                 //options.EnableStackTrace();
             });
@@ -364,12 +401,18 @@ public class Program
         services.AddMudServices(config =>
         {
             config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
-            config.SnackbarConfiguration.PreventDuplicates = false;
+            config.SnackbarConfiguration.PreventDuplicates = true;
             config.SnackbarConfiguration.NewestOnTop = true;
             config.SnackbarConfiguration.ShowCloseIcon = true;
-            config.SnackbarConfiguration.VisibleStateDuration = 5000;
-            config.SnackbarConfiguration.HideTransitionDuration = 500;
-            config.SnackbarConfiguration.ShowTransitionDuration = 500;
+            //config.SnackbarConfiguration.VisibleStateDuration = 5000;
+            //config.SnackbarConfiguration.HideTransitionDuration = 500;
+            //config.SnackbarConfiguration.ShowTransitionDuration = 500;
+
+            config.SnackbarConfiguration.MaxDisplayedSnackbars = 3;
+
+            config.SnackbarConfiguration.VisibleStateDuration = 3000;
+            config.SnackbarConfiguration.HideTransitionDuration = 200;
+            config.SnackbarConfiguration.ShowTransitionDuration = 200;
             config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
         });
 
@@ -379,15 +422,16 @@ public class Program
 
     private static void ConfigureApplicationServices(IServiceCollection services)
     {
-        // Core Services
-      
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ILoggingService, LoggingService>();
         services.AddScoped<IUserService, KhaoThiUserService>();
-  
-        // Add other application services here
-        ConfigureAdditionalServices(services);
+        services.Configure<RouteOptions>(options =>
+        {
+            options.LowercaseUrls = true;
+            options.AppendTrailingSlash = false;
+        });
     }
+
 
     private static void ConfigureAdditionalServices(IServiceCollection services)
     {
@@ -407,17 +451,15 @@ public class Program
 
     private static void ConfigureLogging()
     {
-        var logConfig = new LoggerConfiguration()
-            .MinimumLevel.Debug()
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Error() // Chỉ log Error trở lên
             .WriteTo.BrowserConsole(
-                restrictedToMinimumLevel: LogEventLevel.Information,
+                restrictedToMinimumLevel: LogEventLevel.Error,
                 outputTemplate: "[{Level}] {Message}{Exception}"
-            );
-
+            )
 #if DEBUG
-        logConfig.WriteTo.Debug();
+            .WriteTo.Debug(LogEventLevel.Error)
 #endif
-
-        Log.Logger = logConfig.CreateLogger();
+            .CreateLogger();
     }
 }

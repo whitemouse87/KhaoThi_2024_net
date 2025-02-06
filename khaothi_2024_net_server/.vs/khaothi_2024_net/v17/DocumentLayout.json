@@ -1,22 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\",
+  "WorkspaceRootPath": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\logs\\system-log-20250204.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\logs\\system-log-20250204.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\infrastructure\\repositories\\khaothiuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\infrastructure\\repositories\\khaothiuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\logs\\fluxor-log-20250204.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\logs\\fluxor-log-20250204.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\k-pc\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,55 +17,20 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "system-log-20250204.txt",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\logs\\system-log-20250204.txt",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\logs\\system-log-20250204.txt",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\logs\\system-log-20250204.txt",
-              "RelativeToolTip": "khaothi_2024_net_server\\logs\\system-log-20250204.txt",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAAAO8AAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-02-04T16:09:05.42Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Program.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Program.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Program.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Program.cs",
-              "ViewState": "AgIAAEoDAAAAAAAAAAAMwHkDAAAKAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Program.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Program.cs",
+              "ToolTip": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Program.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\Program.cs",
+              "ViewState": "AgIAABgBAAAAAAAAAAAEwDgBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T15:27:04.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KhaoThiUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Infrastructure\\Repositories\\KhaoThiUserRepository.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Infrastructure\\Repositories\\KhaoThiUserRepository.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Infrastructure\\Repositories\\KhaoThiUserRepository.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Infrastructure\\Repositories\\KhaoThiUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T15:26:00.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "fluxor-log-20250204.txt",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\logs\\fluxor-log-20250204.txt",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\logs\\fluxor-log-20250204.txt",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\logs\\fluxor-log-20250204.txt",
-              "RelativeToolTip": "khaothi_2024_net_server\\logs\\fluxor-log-20250204.txt",
-              "ViewState": "AgIAALEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-02-04T15:22:35.529Z",
+              "WhenOpened": "2025-02-06T05:18:11.521Z",
               "EditorCaption": ""
             }
           ]

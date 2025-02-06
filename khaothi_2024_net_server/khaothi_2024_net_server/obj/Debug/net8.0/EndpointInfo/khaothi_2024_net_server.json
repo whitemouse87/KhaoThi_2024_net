@@ -752,6 +752,87 @@
             "description": "Success"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Logs"
+        ],
+        "parameters": [
+          {
+            "name": "level",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "component",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Logs/dates": {
+      "get": {
+        "tags": [
+          "Logs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     }
   },
@@ -760,11 +841,11 @@
       "ErrorResponse": {
         "type": "object",
         "properties": {
-          "message": {
+          "Message": {
             "type": "string",
             "nullable": true
           },
-          "errorType": {
+          "ErrorType": {
             "type": "string",
             "nullable": true
           }
@@ -798,2177 +879,10 @@
         },
         "additionalProperties": { }
       },
-      "System.Exception": {
-        "type": "object",
-        "properties": {
-          "targetSite": {
-            "$ref": "#/components/schemas/System.Reflection.MethodBase"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "data": {
-            "type": "object",
-            "additionalProperties": { },
-            "nullable": true,
-            "readOnly": true
-          },
-          "innerException": {
-            "$ref": "#/components/schemas/System.Exception"
-          },
-          "helpLink": {
-            "type": "string",
-            "nullable": true
-          },
-          "source": {
-            "type": "string",
-            "nullable": true
-          },
-          "hResult": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "stackTrace": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.IntPtr": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "System.ModuleHandle": {
-        "type": "object",
-        "properties": {
-          "mdStreamVersion": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.Assembly": {
-        "type": "object",
-        "properties": {
-          "definedTypes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.TypeInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "exportedTypes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Type"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "codeBase": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true,
-            "deprecated": true
-          },
-          "entryPoint": {
-            "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "imageRuntimeVersion": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "isDynamic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "location": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "reflectionOnly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFullyTrusted": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "escapedCodeBase": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true,
-            "deprecated": true
-          },
-          "manifestModule": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "modules": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.Module"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "globalAssemblyCache": {
-            "type": "boolean",
-            "readOnly": true,
-            "deprecated": true
-          },
-          "hostContext": {
-            "type": "integer",
-            "format": "int64",
-            "readOnly": true
-          },
-          "securityRuleSet": {
-            "enum": [
-              0,
-              1,
-              2
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.ConstructorInfo": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              1024,
-              2048,
-              4096,
-              8192,
-              16384,
-              32768,
-              53248
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "methodImplementationFlags": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              4096,
-              65535
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "callingConvention": {
-            "enum": [
-              1,
-              2,
-              3,
-              32,
-              64
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isAbstract": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructor": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFinal": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isHideBySig": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isStatic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVirtual": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamily": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyAndAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyOrAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPrivate": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructedGenericMethod": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethod": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethodDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "containsGenericParameters": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "methodHandle": {
-            "$ref": "#/components/schemas/System.RuntimeMethodHandle"
-          },
-          "isSecurityCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecuritySafeCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityTransparent": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.CustomAttributeData": {
-        "type": "object",
-        "properties": {
-          "attributeType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "constructor": {
-            "$ref": "#/components/schemas/System.Reflection.ConstructorInfo"
-          },
-          "constructorArguments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeTypedArgument"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "namedArguments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeNamedArgument"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.CustomAttributeNamedArgument": {
-        "type": "object",
-        "properties": {
-          "memberInfo": {
-            "$ref": "#/components/schemas/System.Reflection.MemberInfo"
-          },
-          "typedValue": {
-            "$ref": "#/components/schemas/System.Reflection.CustomAttributeTypedArgument"
-          },
-          "memberName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "isField": {
-            "type": "boolean",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.CustomAttributeTypedArgument": {
-        "type": "object",
-        "properties": {
-          "argumentType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "value": {
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.EventInfo": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              512,
-              1024
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "addMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-          },
-          "removeMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-          },
-          "raiseMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-          },
-          "isMulticast": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "eventHandlerType": {
-            "$ref": "#/components/schemas/System.Type"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.FieldInfo": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              1024,
-              4096,
-              8192,
-              32768,
-              38144
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "fieldType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "isInitOnly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isLiteral": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNotSerialized": {
-            "type": "boolean",
-            "readOnly": true,
-            "deprecated": true
-          },
-          "isPinvokeImpl": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isStatic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamily": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyAndAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyOrAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPrivate": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecuritySafeCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityTransparent": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "fieldHandle": {
-            "$ref": "#/components/schemas/System.RuntimeFieldHandle"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.ICustomAttributeProvider": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "System.Reflection.MemberInfo": {
-        "type": "object",
-        "properties": {
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.MethodBase": {
-        "type": "object",
-        "properties": {
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              1024,
-              2048,
-              4096,
-              8192,
-              16384,
-              32768,
-              53248
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "methodImplementationFlags": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              4096,
-              65535
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "callingConvention": {
-            "enum": [
-              1,
-              2,
-              3,
-              32,
-              64
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isAbstract": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructor": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFinal": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isHideBySig": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isStatic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVirtual": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamily": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyAndAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyOrAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPrivate": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructedGenericMethod": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethod": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethodDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "containsGenericParameters": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "methodHandle": {
-            "$ref": "#/components/schemas/System.RuntimeMethodHandle"
-          },
-          "isSecurityCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecuritySafeCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityTransparent": {
-            "type": "boolean",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.MethodInfo": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              1024,
-              2048,
-              4096,
-              8192,
-              16384,
-              32768,
-              53248
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "methodImplementationFlags": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              256,
-              512,
-              4096,
-              65535
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "callingConvention": {
-            "enum": [
-              1,
-              2,
-              3,
-              32,
-              64
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isAbstract": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructor": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFinal": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isHideBySig": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isStatic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVirtual": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamily": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyAndAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFamilyOrAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPrivate": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructedGenericMethod": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethod": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethodDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "containsGenericParameters": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "methodHandle": {
-            "$ref": "#/components/schemas/System.RuntimeMethodHandle"
-          },
-          "isSecurityCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecuritySafeCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityTransparent": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "returnParameter": {
-            "$ref": "#/components/schemas/System.Reflection.ParameterInfo"
-          },
-          "returnType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "returnTypeCustomAttributes": {
-            "$ref": "#/components/schemas/System.Reflection.ICustomAttributeProvider"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.Module": {
-        "type": "object",
-        "properties": {
-          "assembly": {
-            "$ref": "#/components/schemas/System.Reflection.Assembly"
-          },
-          "fullyQualifiedName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "mdStreamVersion": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "moduleVersionId": {
-            "type": "string",
-            "format": "uuid",
-            "readOnly": true
-          },
-          "scopeName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "moduleHandle": {
-            "$ref": "#/components/schemas/System.ModuleHandle"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.ParameterInfo": {
-        "type": "object",
-        "properties": {
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              4,
-              8,
-              16,
-              4096,
-              8192,
-              16384,
-              32768,
-              61440
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "member": {
-            "$ref": "#/components/schemas/System.Reflection.MemberInfo"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "parameterType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "position": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isIn": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isLcid": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isOptional": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isOut": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isRetval": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "defaultValue": {
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawDefaultValue": {
-            "nullable": true,
-            "readOnly": true
-          },
-          "hasDefaultValue": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.PropertyInfo": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "propertyType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "attributes": {
-            "enum": [
-              0,
-              512,
-              1024,
-              4096,
-              8192,
-              16384,
-              32768,
-              62464
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canRead": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canWrite": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "getMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-          },
-          "setMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Reflection.TypeInfo": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isInterface": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "namespace": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "assemblyQualifiedName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "assembly": {
-            "$ref": "#/components/schemas/System.Reflection.Assembly"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "isNested": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "declaringMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodBase"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "underlyingSystemType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "isTypeDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isArray": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isByRef": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPointer": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructedGenericType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericParameter": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericTypeParameter": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethodParameter": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericTypeDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSZArray": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVariableBoundArray": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isByRefLike": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFunctionPointer": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isUnmanagedFunctionPointer": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "hasElementType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "genericTypeArguments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Type"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "genericParameterPosition": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "genericParameterAttributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              8,
-              16,
-              28
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              16,
-              24,
-              32,
-              128,
-              256,
-              1024,
-              2048,
-              4096,
-              8192,
-              16384,
-              65536,
-              131072,
-              196608,
-              262144,
-              264192,
-              1048576,
-              12582912
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isAbstract": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isImport": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSealed": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedFamANDAssem": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedFamily": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedFamORAssem": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedPrivate": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNotPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAutoLayout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isExplicitLayout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isLayoutSequential": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAnsiClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAutoClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isUnicodeClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isCOMObject": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isContextful": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isEnum": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isMarshalByRef": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPrimitive": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isValueType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSignatureType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecuritySafeCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityTransparent": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "structLayoutAttribute": {
-            "$ref": "#/components/schemas/System.Runtime.InteropServices.StructLayoutAttribute"
-          },
-          "typeInitializer": {
-            "$ref": "#/components/schemas/System.Reflection.ConstructorInfo"
-          },
-          "typeHandle": {
-            "$ref": "#/components/schemas/System.RuntimeTypeHandle"
-          },
-          "guid": {
-            "type": "string",
-            "format": "uuid",
-            "readOnly": true
-          },
-          "baseType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "isSerializable": {
-            "type": "boolean",
-            "readOnly": true,
-            "deprecated": true
-          },
-          "containsGenericParameters": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVisible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "genericTypeParameters": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Type"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredConstructors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.ConstructorInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredEvents": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.EventInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredFields": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.FieldInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredMembers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.MemberInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredMethods": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.MethodInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredNestedTypes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.TypeInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "declaredProperties": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.PropertyInfo"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "implementedInterfaces": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Type"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Runtime.InteropServices.StructLayoutAttribute": {
-        "type": "object",
-        "properties": {
-          "typeId": {
-            "nullable": true,
-            "readOnly": true
-          },
-          "value": {
-            "enum": [
-              0,
-              2,
-              3
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.RuntimeFieldHandle": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/System.IntPtr"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.RuntimeMethodHandle": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/System.IntPtr"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.RuntimeTypeHandle": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/System.IntPtr"
-          }
-        },
-        "additionalProperties": false
-      },
-      "System.Type": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "customAttributes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Reflection.CustomAttributeData"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "isCollectible": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "metadataToken": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isInterface": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "memberType": {
-            "enum": [
-              1,
-              2,
-              4,
-              8,
-              16,
-              32,
-              64,
-              128,
-              191
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "namespace": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "assemblyQualifiedName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "assembly": {
-            "$ref": "#/components/schemas/System.Reflection.Assembly"
-          },
-          "module": {
-            "$ref": "#/components/schemas/System.Reflection.Module"
-          },
-          "isNested": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "declaringType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "declaringMethod": {
-            "$ref": "#/components/schemas/System.Reflection.MethodBase"
-          },
-          "reflectedType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "underlyingSystemType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "isTypeDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isArray": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isByRef": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPointer": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isConstructedGenericType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericParameter": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericTypeParameter": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericMethodParameter": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isGenericTypeDefinition": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSZArray": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVariableBoundArray": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isByRefLike": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isFunctionPointer": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isUnmanagedFunctionPointer": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "hasElementType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "genericTypeArguments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/System.Type"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "genericParameterPosition": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "genericParameterAttributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              8,
-              16,
-              28
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "attributes": {
-            "enum": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              16,
-              24,
-              32,
-              128,
-              256,
-              1024,
-              2048,
-              4096,
-              8192,
-              16384,
-              65536,
-              131072,
-              196608,
-              262144,
-              264192,
-              1048576,
-              12582912
-            ],
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "isAbstract": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isImport": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSealed": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSpecialName": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedAssembly": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedFamANDAssem": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedFamily": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedFamORAssem": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedPrivate": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNestedPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isNotPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPublic": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAutoLayout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isExplicitLayout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isLayoutSequential": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAnsiClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isAutoClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isUnicodeClass": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isCOMObject": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isContextful": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isEnum": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isMarshalByRef": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPrimitive": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isValueType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSignatureType": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecuritySafeCritical": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isSecurityTransparent": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "structLayoutAttribute": {
-            "$ref": "#/components/schemas/System.Runtime.InteropServices.StructLayoutAttribute"
-          },
-          "typeInitializer": {
-            "$ref": "#/components/schemas/System.Reflection.ConstructorInfo"
-          },
-          "typeHandle": {
-            "$ref": "#/components/schemas/System.RuntimeTypeHandle"
-          },
-          "guid": {
-            "type": "string",
-            "format": "uuid",
-            "readOnly": true
-          },
-          "baseType": {
-            "$ref": "#/components/schemas/System.Type"
-          },
-          "isSerializable": {
-            "type": "boolean",
-            "readOnly": true,
-            "deprecated": true
-          },
-          "containsGenericParameters": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isVisible": {
-            "type": "boolean",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
       "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
-          "items": {
+          "Items": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser"
@@ -2976,33 +890,33 @@
             "description": "Danh sách items trong trang hiện tại",
             "nullable": true
           },
-          "totalCount": {
+          "TotalCount": {
             "type": "integer",
             "description": "Tổng số bản ghi (toàn bộ, không phải trong trang hiện tại)",
             "format": "int32"
           },
-          "page": {
+          "Page": {
             "type": "integer",
             "description": "Số trang hiện tại",
             "format": "int32"
           },
-          "pageSize": {
+          "PageSize": {
             "type": "integer",
             "description": "Số bản ghi trên mỗi trang",
             "format": "int32"
           },
-          "totalPages": {
+          "TotalPages": {
             "type": "integer",
             "description": "Tổng số trang",
             "format": "int32",
             "readOnly": true
           },
-          "hasPreviousPage": {
+          "HasPreviousPage": {
             "type": "boolean",
             "description": "Kiểm tra có trang trước không",
             "readOnly": true
           },
-          "hasNextPage": {
+          "HasNextPage": {
             "type": "boolean",
             "description": "Kiểm tra có trang sau không",
             "readOnly": true
@@ -3013,16 +927,16 @@
       },
       "khaothi_2024_net_server.Features.Authentication.DTOs.LoginRequest": {
         "required": [
-          "matKhau",
-          "tenDangNhap"
+          "MatKhau",
+          "TenDangNhap"
         ],
         "type": "object",
         "properties": {
-          "tenDangNhap": {
+          "TenDangNhap": {
             "minLength": 3,
             "type": "string"
           },
-          "matKhau": {
+          "MatKhau": {
             "minLength": 6,
             "type": "string"
           }
@@ -3032,33 +946,32 @@
       "khaothi_2024_net_server.Features.Authentication.DTOs.LoginResponse": {
         "type": "object",
         "properties": {
-          "token": {
+          "Token": {
             "type": "string",
             "nullable": true
           },
-          "refreshToken": {
+          "RefreshToken": {
             "type": "string",
             "nullable": true
           },
-          "user": {
+          "User": {
             "$ref": "#/components/schemas/khaothi_2024_net_server.Features.Authentication.DTOs.UserDto"
           },
-          "errorType": {
+          "ErrorType": {
             "enum": [
-              0,
-              1,
-              2,
-              3
+              "InvalidCredentials",
+              "AccountLocked",
+              "TooManyAttempts",
+              "AccountInactive"
             ],
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "errorMessage": {
             "type": "string",
             "nullable": true
           },
-          "success": {
+          "ErrorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "Success": {
             "type": "boolean"
           }
         },
@@ -3067,27 +980,27 @@
       "khaothi_2024_net_server.Features.Authentication.DTOs.UserDto": {
         "type": "object",
         "properties": {
-          "id": {
+          "ID": {
             "type": "integer",
             "format": "int32"
           },
-          "tenDangNhap": {
+          "TenDangNhap": {
             "type": "string",
             "nullable": true
           },
-          "hoTen": {
+          "HoTen": {
             "type": "string",
             "nullable": true
           },
-          "maDonVi": {
+          "MaDonVi": {
             "type": "string",
             "nullable": true
           },
-          "maChucVu": {
+          "MaChucVu": {
             "type": "string",
             "nullable": true
           },
-          "email": {
+          "Email": {
             "type": "string",
             "nullable": true
           }
@@ -3097,24 +1010,25 @@
       "khaothi_2024_net_server.Features.Logging.DTOs.LogEntry": {
         "type": "object",
         "properties": {
-          "timestamp": {
+          "Timestamp": {
             "type": "string",
             "format": "date-time"
           },
-          "level": {
+          "Level": {
             "type": "string",
             "nullable": true
           },
-          "message": {
+          "Component": {
             "type": "string",
             "nullable": true
           },
-          "component": {
+          "Message": {
             "type": "string",
             "nullable": true
           },
-          "exception": {
-            "$ref": "#/components/schemas/System.Exception"
+          "Exception": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3122,75 +1036,75 @@
       "khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser": {
         "type": "object",
         "properties": {
-          "id": {
+          "ID": {
             "type": "integer",
             "format": "int32"
           },
-          "tenDangNhap": {
+          "TenDangNhap": {
             "type": "string",
             "nullable": true
           },
-          "matKhau": {
+          "MatKhau": {
             "type": "string",
             "nullable": true
           },
-          "hoTen": {
+          "HoTen": {
             "type": "string",
             "nullable": true
           },
-          "ngaySinh": {
+          "NgaySinh": {
             "type": "string",
             "format": "date-time",
             "nullable": true
           },
-          "maDonVi": {
+          "MaDonVi": {
             "type": "string",
             "nullable": true
           },
-          "tenDonVi": {
+          "TenDonVi": {
             "type": "string",
             "nullable": true
           },
-          "ngayTao": {
+          "NgayTao": {
             "type": "string",
             "format": "date-time"
           },
-          "maChucVu": {
+          "MaChucVu": {
             "type": "string",
             "nullable": true
           },
-          "email": {
+          "Email": {
             "type": "string",
             "nullable": true
           },
-          "sdt": {
+          "SDT": {
             "type": "string",
             "nullable": true
           },
-          "soTaiKhoan": {
+          "SoTaiKhoan": {
             "type": "string",
             "nullable": true
           },
-          "tenNganHang": {
+          "TenNganHang": {
             "type": "string",
             "nullable": true
           },
-          "diaChi": {
+          "DiaChi": {
             "type": "string",
             "nullable": true
           },
-          "maSoThue": {
+          "MaSoThue": {
             "type": "string",
             "nullable": true
           },
-          "active": {
+          "Active": {
             "type": "boolean"
           },
-          "refreshToken": {
+          "RefreshToken": {
             "type": "string",
             "nullable": true
           },
-          "refreshTokenExpiryTime": {
+          "RefreshTokenExpiryTime": {
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -3201,10 +1115,10 @@
     },
     "securitySchemes": {
       "Bearer": {
-        "type": "http",
-        "description": "JWT Authorization header using Bearer scheme. Example: 'Bearer {token}'",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
+        "type": "apiKey",
+        "description": "Nhập Bearer token theo định dạng: Bearer {your_token}\r\n\r\nVí dụ: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "name": "Authorization",
+        "in": "header"
       }
     }
   },

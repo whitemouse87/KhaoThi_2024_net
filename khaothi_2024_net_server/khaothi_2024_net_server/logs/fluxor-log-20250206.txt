@@ -1,0 +1,723 @@
+2025-02-06 12:07:03 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:07:08 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:07:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:14 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:08:19 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:29 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:39 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LoginAction" ""
+2025-02-06 12:08:39 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LoginAction" ""
+2025-02-06 12:08:39 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-02-06 12:08:39 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:39 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:39 [INF] ["Client"] "[CLIENT] Login attempt initiated: nvdkhoa" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "⏱ [Fluxor] Action LoginAction đã hoàn thành sau 12 ms" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:40 [INF] User "nvdkhoa" logged in successfully from IP: "::1"
+2025-02-06 12:08:40 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LoginSuccessAction" ""
+2025-02-06 12:08:40 [INF] ["Client"] "[CLIENT] User authenticated - redirecting to dashboard" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LoginSuccessAction" ""
+2025-02-06 12:08:40 [INF] ["Client"] "[CLIENT] user đăng nhập thành công: nvdkhoa" ""
+2025-02-06 12:08:40 [INF] ["Fluxor"] "⏱ [Fluxor] Action LoginSuccessAction đã hoàn thành sau 209 ms" ""
+2025-02-06 12:08:45 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:08:45 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 12:08:45 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:45 [INF] ["Client"] "Dashboard accessed - User: , Role: 01" ""
+2025-02-06 12:08:45 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:46 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:08:46 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:46 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:46 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:46 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:49 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-06 12:08:49 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-06 12:08:49 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 7 ms" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdSuccessAction đã hoàn thành sau 16 ms" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 0 ms" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:49 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LogoutAction" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LogoutAction" ""
+2025-02-06 12:08:52 [INF] ["Client"] "[CLIENT] Bắt đầu xử lý đăng xuất" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "⏱ [Fluxor] Action LogoutAction đã hoàn thành sau 1 ms" ""
+2025-02-06 12:08:52 [INF] ["Client"] "[Info] Tokens removed from local storage" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LogoutSuccessAction" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LogoutSuccessAction" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: ShowNotificationAction" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "⏱ [Fluxor] Action ShowNotificationAction đã hoàn thành sau 33 ms" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:52 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:56 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:08:57 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:14:42 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:14:43 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:43 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:14:46 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: An item with the same key has already been added. Key: Bearer
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.AddSecurityDefinition(SwaggerGenOptions swaggerGenOptions, String name, OpenApiSecurityScheme securityScheme)
+   at khaothi_2024_net_server.Program.<>c.<ConfigureSwagger>b__3_0(SwaggerGenOptions options) in C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 143
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at DotSwashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at InvokeStub_ConfigureSwaggerGeneratorOptions..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method1(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-06 12:15:57 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:16:01 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:16:01 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:16:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:16:02 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:16:02 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:16:02 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:16:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:16:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:20:42 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:22:05 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:22:06 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:06 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:22:06 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:06 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:06 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:15 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:22:15 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:15 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:16 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:22:16 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:16 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:16 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:16 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LoginAction" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LoginAction" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:22:24 [INF] Login attempt for user: "nvdkhoa" from IP: "127.0.0.1"
+2025-02-06 12:22:24 [INF] ["Client"] "[CLIENT] Login attempt initiated: nvdkhoa" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "⏱ [Fluxor] Action LoginAction đã hoàn thành sau 18 ms" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:24 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:25 [INF] User "nvdkhoa" logged in successfully from IP: "127.0.0.1"
+2025-02-06 12:22:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LoginSuccessAction" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LoginSuccessAction" ""
+2025-02-06 12:22:25 [INF] ["Client"] "[CLIENT] User authenticated - redirecting to dashboard" ""
+2025-02-06 12:22:25 [INF] ["Client"] "[CLIENT] user đăng nhập thành công: nvdkhoa" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "⏱ [Fluxor] Action LoginSuccessAction đã hoàn thành sau 2 ms" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: ShowNotificationAction" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: ShowNotificationAction" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:22:25 [INF] ["Client"] "[CLIENT] User authenticated - redirecting to dashboard" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:25 [INF] ["Fluxor"] "⏱ [Fluxor] Action ShowNotificationAction đã hoàn thành sau 49 ms" ""
+2025-02-06 12:22:31 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:22:31 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 12:22:31 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:31 [INF] ["Client"] "Dashboard accessed - User: , Role: 01" ""
+2025-02-06 12:22:31 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:22:31 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:22:31 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:31 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:22:32 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:22:32 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:23:57 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 12:24:01 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:24:01 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 12:24:01 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:01 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:01 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:24:01 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:24:01 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:24:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdAction" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 3 ms" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:07 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-06 12:24:07 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:07 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:08 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-06 12:24:08 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdSuccessAction đã hoàn thành sau 3 ms" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 0 ms" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:08 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LogoutAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LogoutAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:13 [INF] ["Client"] "[CLIENT] Bắt đầu xử lý đăng xuất" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "⏱ [Fluxor] Action LogoutAction đã hoàn thành sau 3 ms" ""
+2025-02-06 12:24:13 [INF] ["Client"] "[Info] Tokens removed from local storage" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LogoutSuccessAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LogoutSuccessAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: ShowNotificationAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: ShowNotificationAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:13 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:18 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:24:18 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:19 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:24:19 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:24:19 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:24:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:19 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LoginAction" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LoginAction" ""
+2025-02-06 12:24:25 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:25 [INF] ["Client"] "[CLIENT] Login attempt initiated: nvdkhoa" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "⏱ [Fluxor] Action LoginAction đã hoàn thành sau 17 ms" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 4 ms" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:25 [INF] User "nvdkhoa" logged in successfully from IP: "::1"
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: LoginSuccessAction" ""
+2025-02-06 12:24:25 [INF] ["Client"] "[CLIENT] User authenticated - redirecting to dashboard" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: LoginSuccessAction" ""
+2025-02-06 12:24:25 [INF] ["Client"] "[CLIENT] user đăng nhập thành công: nvdkhoa" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: ShowNotificationAction" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: ShowNotificationAction" ""
+2025-02-06 12:24:25 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 12:24:30 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 12:24:30 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 12:24:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:30 [INF] ["Client"] "Dashboard accessed - User: , Role: 01" ""
+2025-02-06 12:24:31 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 12:24:31 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 12:24:31 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 12:24:31 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 12:24:31 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 12:24:31 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:00:58 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 14:01:02 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 14:01:02 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 14:01:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:02 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:03 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 14:01:03 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 14:01:03 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 14:01:03 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:03 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:22 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 14:01:22 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 14:01:22 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:23 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:23 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 14:01:23 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 14:01:23 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 14:01:23 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:23 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:27 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction" ""
+2025-02-06 14:01:27 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdAction" ""
+2025-02-06 14:01:27 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 14:01:27 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 7 ms" ""
+2025-02-06 14:01:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-06 14:01:28 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdSuccessAction đã hoàn thành sau 8 ms" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:01:28 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:02:29 [INF] ["Fluxor"] "🚀 [Fluxor] Middleware Ghi Log đã khởi tạo." ""
+2025-02-06 14:02:29 [INF] ["Client"] "Auth state updated - User: nvdkhoa, Role: 01" ""
+2025-02-06 14:02:29 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái ban đầu của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "✅ [Fluxor] Tất cả Middleware đã khởi tạo hoàn tất." ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: StoreInitializedAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: StoreInitializedAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 14:02:30 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-06 14:02:30 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdAction đã hoàn thành sau 2 ms" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 1 ms" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: GetUserByIdSuccessAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📢 [Fluxor] Chuẩn bị thực thi action: SetLoadingAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "✅ [Fluxor] Đã thực thi action: SetLoadingAction" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "⏱ [Fluxor] Action GetUserByIdSuccessAction đã hoàn thành sau 2 ms" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "⏱ [Fluxor] Action SetLoadingAction đã hoàn thành sau 0 ms" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.User.KhaoThiUserState: KhaoThi_2024_net_client.Services.User.KhaoThiUserState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:02:30 [INF] ["Fluxor"] "📌 [Fluxor] Trạng thái mới của KhaoThi_2024_net_client.Services.Auth.AuthState: KhaoThi_2024_net_client.Services.Auth.AuthState" ""
+2025-02-06 14:48:28 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 14:49:00 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 14:49:23 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-06 14:58:52 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
