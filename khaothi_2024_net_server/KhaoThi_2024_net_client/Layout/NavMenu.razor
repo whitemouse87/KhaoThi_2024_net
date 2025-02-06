@@ -5,98 +5,68 @@
 @inject IState<AuthState> AuthState
 @inject ILogger<NavMenu> Logger
 @inject NavigationManager NavigationManager
-<MudLayout Class="layout-container">
-    <MudNavMenu Color="Color.Primary" Class="py-2" Bordered="true">
+
+<div class="nav-container">
+    <MudNavMenu Color="Color.Dark" Class="mud-navmenu">
         <AuthorizeView>
             <Authorized>
-                <div class="d-flex flex-column px-4 py-3">
-                    <MudText Typo="Typo.h6" Color="Color.Primary">KhaoThi 2024</MudText>
-                    <MudDivider Class="my-2" />
-
-                    @* Thêm error handling cho việc lấy ký tự đầu tên người dùng *@
-                    <MudPaper Elevation="0" Class="d-flex align-center pa-2 rounded-lg">
-                        <MudAvatar Color="Color.Primary" Class="mr-2">
-                            @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
-    ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
-    : "U")
-                        </MudAvatar>
-                        <div>
-                            <MudText Typo="Typo.caption" Color="Color.Secondary">Xin chào,</MudText>
-                            <MudNavLink Href="/profile"
-                                        Icon="@Icons.Material.Filled.Person">
-                                <MudText Typo="Typo.body1" Class="font-weight-bold">
-                                    @(AuthState.Value.CurrentUser?.HoTen ?? "Người dùng")
-                                </MudText>
-                            </MudNavLink>
-                        </div>
-                    </MudPaper>
+                <div class="menu-header">
+                    <MudText Typo="Typo.h6" Class="d-flex align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.School" Class="mr-2" Size="Size.Small" />
+                        KhaoThi 2024
+                    </MudText>
                 </div>
 
-                <MudDivider Class="mb-2" />
+                <div class="profile-section d-flex align-center">
+                    <MudAvatar Color="Color.Primary" Size="Size.Medium">
+                        @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
+                            ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
+                            : "U")
+                    </MudAvatar>
+                    <div class="user-info">
+                        <div class="user-name">@(AuthState.Value.CurrentUser?.HoTen ?? "Người dùng")</div>
+                        <div class="user-role">@(AuthState.Value.CurrentUser?.MaChucVu ?? "Chưa có chức vụ")</div>
+                    </div>
+                </div>
 
-                <MudNavLink Href="dashboard"
-                            Match="NavLinkMatch.All"
-                            Icon="@Icons.Material.Filled.Dashboard"
-                            Class="rounded-lg mx-2">
+                <div class="menu-section">GETTING STARTED</div>
+                <MudNavLink Href="dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Dashboard">
                     Dashboard
                 </MudNavLink>
 
-                <MudNavGroup Title="Quản Lý"
-                             Icon="@Icons.Material.Filled.ManageAccounts"
-                             Expanded="true">
-                    <MudNavLink Href="users"
-                                Icon="@Icons.Material.Filled.People"
-                                Class="rounded-lg mx-2">
-                        Người Dùng
-                    </MudNavLink>
-                    <MudNavLink Href="departments"
-                                Icon="@Icons.Material.Filled.Business"
-                                Class="rounded-lg mx-2">
-                        Đơn Vị
-                    </MudNavLink>
-                </MudNavGroup>
-
-                <MudNavGroup Title="Báo Cáo"
-                             Icon="@Icons.Material.Filled.Assessment"
-                             Expanded="false">
-                    <MudNavLink Href="reports"
-                                Icon="@Icons.Material.Filled.BarChart"
-                                Class="rounded-lg mx-2">
-                        Thống Kê
-                    </MudNavLink>
-                    <MudNavLink Href="analytics"
-                                Icon="@Icons.Material.Filled.Analytics"
-                                Class="rounded-lg mx-2">
-                        Phân Tích
-                    </MudNavLink>
-                </MudNavGroup>
-
-                <MudNavLink Href="settings"
-                            Icon="@Icons.Material.Filled.Settings"
-                            Class="rounded-lg mx-2">
-                    Cài Đặt
+                <div class="menu-section">QUẢN LÝ</div>
+                <MudNavLink Href="users" Icon="@Icons.Material.Filled.People">
+                    Người dùng
+                </MudNavLink>
+                <MudNavLink Href="departments" Icon="@Icons.Material.Filled.Business">
+                    Đơn vị
                 </MudNavLink>
 
-                <div class="mt-auto">
-                    <MudDivider Class="my-2" />
-                    <MudNavLink OnClick="@HandleLogout"
-                                Icon="@Icons.Material.Filled.Logout"
-                                Class="rounded-lg mx-2">
-                        <div class="d-flex align-center">
-                            <MudText>Đăng xuất</MudText>
-                            <MudIcon Icon="@Icons.Material.Filled.ExitToApp"
-                                     Class="ml-auto" />
-                        </div>
-                    </MudNavLink>
-                </div>
+                <div class="menu-section">BÁO CÁO</div>
+                <MudNavLink Href="reports" Icon="@Icons.Material.Filled.BarChart">
+                    Thống kê
+                </MudNavLink>
+                <MudNavLink Href="analytics" Icon="@Icons.Material.Filled.Analytics">
+                    Phân tích
+                </MudNavLink>
+
+                <div class="menu-section">OTHER</div>
+                <MudNavLink Href="settings" Icon="@Icons.Material.Filled.Settings">
+                    Cài đặt
+                </MudNavLink>
+                <MudNavLink OnClick="@HandleLogout" Icon="@Icons.Material.Filled.Logout">
+                    Đăng xuất
+                </MudNavLink>
             </Authorized>
 
             <NotAuthorized>
-                <MudPaper Class="pa-4" Elevation="0">
-                    <MudText Typo="Typo.h6" Color="Color.Primary"
-                             Class="mb-4 text-center">
+                <div class="menu-header">
+                    <MudText Typo="Typo.h6">
+                        <MudIcon Icon="@Icons.Material.Filled.School" Class="mr-2" Size="Size.Small" />
                         KhaoThi 2024
                     </MudText>
+                </div>
+                <div class="pa-4">
                     <MudButton Href="login"
                                Variant="Variant.Filled"
                                Color="Color.Primary"
@@ -104,11 +74,12 @@
                                FullWidth="true">
                         Đăng nhập
                     </MudButton>
-                </MudPaper>
+                </div>
             </NotAuthorized>
         </AuthorizeView>
     </MudNavMenu>
-</MudLayout>
+</div>
+
 @code {
     private void HandleLogout()
     {
@@ -116,21 +87,20 @@
         {
             if (AuthState.Value.CurrentUser != null)
             {
-                var username = AuthState.Value.CurrentUser.TenDangNhap ?? "Unknown"; // Xử lý null
+                var username = AuthState.Value.CurrentUser.TenDangNhap ?? "Unknown";
                 Logger.LogInformation($"Người dùng {username} đang đăng xuất");
                 Dispatcher.Dispatch(new LogoutAction());
             }
             else
             {
                 Logger.LogWarning("Cố gắng đăng xuất khi không có người dùng đăng nhập");
-                // Vẫn dispatch action để đảm bảo state được reset
                 Dispatcher.Dispatch(new LogoutAction());
             }
         }
         catch (Exception ex)
         {
             Logger.LogError(ex, "Lỗi trong quá trình đăng xuất");
-            throw; // Re-throw exception để error boundary có thể xử lý
+            throw;
         }
     }
 }

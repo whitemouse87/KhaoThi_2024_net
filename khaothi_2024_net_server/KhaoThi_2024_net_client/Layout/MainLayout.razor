@@ -1,5 +1,4 @@
-﻿
-@inherits LayoutComponentBase
+﻿@inherits LayoutComponentBase
 @using KhaoThi_2024_net_client.Models.Auth
 @using KhaoThi_2024_net_client.Components.Auth
 @using Microsoft.AspNetCore.Components
@@ -9,159 +8,169 @@
 @inject NavigationManager NavigationManager
 @inject ISnackbar Snackbar
 
-        <MudLayout>
-
-
-            @if (_isLoading)
-            {
-                <div class="mud-overlay" style="z-index: 9999;">
-                    <MudPaper Class="pa-8 mud-background-gray" Style="border-radius: 25px;">
-                        <div class="d-flex flex-column align-center">
-                            <MudProgressCircular Color="Color.Primary"
-                                                 Size="Size.Large"
-                                                 Indeterminate="true"
-                                                 Class="my-2" />
-                            <MudText Typo="Typo.subtitle1" Color="Color.Primary" Class="mt-4">
-                                @_loadingText
-                            </MudText>
-                        </div>
-                    </MudPaper>
-                </div>
-            }
-
-            <AuthorizeView>
-                <Authorized>
-                    <MudAppBar Elevation="1">
-                        <MudIconButton Icon="@Icons.Material.Filled.Menu"
-                                       Color="Color.Inherit"
-                                       Edge="Edge.Start"
-                                       OnClick="@ToggleDrawer" />
-                        <MudSpacer />
-                        @if (AuthState.Value.CurrentUser != null)
-                        {
-                            <MudStack Row="true" Spacing="2" AlignItems="AlignItems.Center">
-                                <MudText>
-                                    <MudText Typo="Typo.caption">Đơn vị:</MudText>
-                                    <MudText Typo="Typo.body1" Inline="true" Class="ml-1">
-                                        @AuthState.Value.CurrentUser.MaDonVi
-                                    </MudText>
-                                </MudText>
-                                <MudDivider Vertical="true" FlexItem="true" Class="mx-2" />
-                                <MudText>
-                                    <MudText Typo="Typo.caption">Chức vụ:</MudText>
-                                    <MudText Typo="Typo.body1" Inline="true" Class="ml-1">
-                                        @AuthState.Value.CurrentUser.MaChucVu
-                                    </MudText>
-                                </MudText>
-                                <MudDivider Vertical="true" FlexItem="true" Class="mx-2" />
-                                <MudButton StartIcon="@Icons.Material.Filled.Logout"
-                                           Color="Color.Inherit"
-                                           OnClick="HandleLogout">
-                                    Đăng xuất
-                                </MudButton>
-                            </MudStack>
-                        }
-                    </MudAppBar>
-
-                    <MudDrawer @bind-Open="@_drawerOpen" Elevation="2" ClipMode="DrawerClipMode.Always">
-                        <NavMenu />
-                    </MudDrawer>
-
-                    <MudMainContent>
-                        <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pa-6">
-                            @Body
-                        </MudContainer>
-                    </MudMainContent>
-                </Authorized>
-                <NotAuthorized>
-                    @if (IsPublicPage)
-                    {
-                        <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="min-height: 100vh;">
-                            @Body
-                        </MudContainer>
-                    }
-                    else
-                    {
-                        <LoginRedirect />
-                    }
-                </NotAuthorized>
-            </AuthorizeView>
-
-
-        </MudLayout>
-
-
-    @code {
-        [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
-        private bool _drawerOpen = true;
-        private bool _isLoading = false;
-        private string _loadingText = "Loading...";
-
-        private bool IsPublicPage =>
-            NavigationManager.Uri.EndsWith("/login", StringComparison.OrdinalIgnoreCase) ||
-            NavigationManager.Uri.EndsWith("/", StringComparison.OrdinalIgnoreCase);
-
-        private void ToggleDrawer()
+<div class="main-layout">
+    <MudLayout>
+        @if (_isLoading)
         {
-            _drawerOpen = !_drawerOpen;
+            <div class="loading-overlay">
+                <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
+                <MudText Typo="Typo.subtitle1" Color="Color.Primary" Class="mt-4">
+                    @_loadingText
+                </MudText>
+            </div>
         }
 
-        protected override void OnInitialized()
-        {
-            NavigationManager.LocationChanged += HandleLocationChanged;
-        }
+        <AuthorizeView>
+            <Authorized>
+                <MudAppBar Elevation="0">
+                    <MudIconButton Icon="@Icons.Material.Filled.Menu"
+                                   Color="Color.Dark"
+                                   Edge="Edge.Start"
+                                   OnClick="@ToggleDrawer" />
 
-        private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
-        {
-            StateHasChanged();
-        }
+                    <MudText Typo="Typo.subtitle1" Color="Color.Dark" Class="ml-4 mr-4">
+                        @GetCurrentPageTitle()
+                    </MudText>
 
-        public void ShowLoading(string text = "Loading...")
-        {
-            _isLoading = true;
-            _loadingText = text;
-            StateHasChanged();
-        }
+                    <MudBreadcrumbs Items="_items" Class="flex-grow-1"></MudBreadcrumbs>
 
-        public void HideLoading()
-        {
-            _isLoading = false;
-            StateHasChanged();
-        }
+                    <MudSpacer />
 
-        private async Task HandleLogout()
-        {
-            try
-            {
-                ShowLoading("Đang đăng xuất...");
-                if (AuthenticationStateProvider is CustomAuthStateProvider authStateProvider)
+                    <MudStack Row="true" Spacing="3">
+                        <MudIconButton Icon="@Icons.Material.Filled.Search" Color="Color.Dark" Size="Size.Medium" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Notifications" Color="Color.Dark" Size="Size.Medium" />
+                        <MudDivider Vertical="true" FlexItem="true" Class="mx-3" />
+                        <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
+                            <ActivatorContent>
+                                <MudAvatar Color="Color.Primary" Size="Size.Medium">
+                                    @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
+                                        ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
+                                        : "U")
+                                </MudAvatar>
+                            </ActivatorContent>
+                            <ChildContent>
+                                <MudMenuItem OnClick="HandleLogout">
+                                    <div class="d-flex align-center">
+                                        <MudIcon Icon="@Icons.Material.Filled.Logout" Class="mr-2" />
+                                        Đăng xuất
+                                    </div>
+                                </MudMenuItem>
+                            </ChildContent>
+                        </MudMenu>
+                    </MudStack>
+                </MudAppBar>
+
+                <MudDrawer @bind-Open="@_drawerOpen"
+                           ClipMode="DrawerClipMode.Always"
+                           Elevation="0"
+                           Variant="@DrawerVariant.Persistent"
+                           DisableOverlay="true">
+                    <NavMenu />
+                </MudDrawer>
+
+                <MudMainContent>
+                    <MudContainer>
+                        @Body
+                    </MudContainer>
+                </MudMainContent>
+            </Authorized>
+            <NotAuthorized>
+                @if (IsPublicPage)
                 {
-                    await authStateProvider.MarkUserAsLoggedOut();
-                    NavigationManager.NavigateTo("/", true);
-                    Snackbar.Add("Đăng xuất thành công", Severity.Success);
+                    <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="min-height: 100vh;">
+                        @Body
+                    </MudContainer>
                 }
-            }
-            catch (Exception ex)
-            {
-                Snackbar.Add($"Lỗi khi đăng xuất: {ex.Message}", Severity.Error);
-                Console.WriteLine($"Error during logout: {ex.Message}");
-            }
-            finally
-            {
-                HideLoading();
-            }
-        }
+                else
+                {
+                    <LoginRedirect />
+                }
+            </NotAuthorized>
+        </AuthorizeView>
+    </MudLayout>
+</div>
 
-        public void Dispose()
+@code {
+    [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
+    private bool _drawerOpen = true;
+    private bool _isLoading = false;
+    private string _loadingText = "Loading...";
+
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+{
+        new BreadcrumbItem("Home", href: "/"),
+        new BreadcrumbItem("Dashboard", href: null)
+    };
+
+    private string GetCurrentPageTitle()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var segments = uri.Segments;
+        if (segments.Length > 1)
         {
-            try
+            var lastSegment = segments.Last().Trim('/');
+            return char.ToUpper(lastSegment[0]) + lastSegment.Substring(1);
+        }
+        return "Dashboard";
+    }
+
+    private bool IsPublicPage =>
+        NavigationManager.Uri.EndsWith("/login", StringComparison.OrdinalIgnoreCase) ||
+        NavigationManager.Uri.EndsWith("/", StringComparison.OrdinalIgnoreCase);
+
+    private void ToggleDrawer()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += HandleLocationChanged;
+    }
+
+    private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    public void ShowLoading(string text = "Loading...")
+    {
+        _isLoading = true;
+        _loadingText = text;
+        StateHasChanged();
+    }
+
+    public void HideLoading()
+    {
+        _isLoading = false;
+        StateHasChanged();
+    }
+
+    private async Task HandleLogout()
+    {
+        try
+        {
+            ShowLoading("Đang đăng xuất...");
+            if (AuthenticationStateProvider is CustomAuthStateProvider authStateProvider)
             {
-                NavigationManager.LocationChanged -= HandleLocationChanged;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in Dispose: {ex.Message}");
+                await authStateProvider.MarkUserAsLoggedOut();
+                NavigationManager.NavigateTo("/", true);
+                Snackbar.Add("Đăng xuất thành công", Severity.Success);
             }
         }
-
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Lỗi khi đăng xuất: {ex.Message}", Severity.Error);
+            Console.WriteLine($"Error during logout: {ex.Message}");
+        }
+        finally
+        {
+            HideLoading();
+        }
     }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= HandleLocationChanged;
+    }
+}

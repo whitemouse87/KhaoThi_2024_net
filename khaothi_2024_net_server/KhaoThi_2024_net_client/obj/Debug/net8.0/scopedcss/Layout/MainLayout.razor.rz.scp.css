@@ -1,120 +1,102 @@
-.page[b-qh6uac1aei] {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-main[b-qh6uac1aei] {
-    flex: 1;
-}
-
-.sidebar[b-qh6uac1aei] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
-.top-row[b-qh6uac1aei] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-    .top-row[b-qh6uac1aei]  a, .top-row[b-qh6uac1aei]  .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
-
-        .top-row[b-qh6uac1aei]  a:hover, .top-row[b-qh6uac1aei]  .btn-link:hover {
-            text-decoration: underline;
-        }
-
-        .top-row[b-qh6uac1aei]  a:first-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-    .top-row .text-muted[b-qh6uac1aei] {
-        font-size: 0.85rem;
-        color: #6c757d;
-    }
-
-.login-layout[b-qh6uac1aei] {
+.main-layout[b-qh6uac1aei] {
     min-height: 100vh;
+    background-color: #F8F9FA;
+}
+
+/* App Bar */
+[b-qh6uac1aei] .mud-appbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid #E5E7EB;
+    height: 64px;
+    padding: 0 24px;
+}
+
+    [b-qh6uac1aei] .mud-appbar .mud-toolbar {
+        min-height: 64px;
+        padding: 0;
+    }
+
+/* Breadcrumbs */
+[b-qh6uac1aei] .mud-breadcrumbs {
+    padding: 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+[b-qh6uac1aei] .mud-breadcrumb-item {
+    color: #374151;
+    font-size: 14px;
+}
+
+[b-qh6uac1aei] .mud-breadcrumb-separator {
+    color: #9CA3AF;
+    margin: 0 8px;
+}
+
+/* Main Content */
+[b-qh6uac1aei] .mud-main-content {
+    margin-left: 280px !important;
+    padding-top: 64px;
+    min-height: calc(100vh - 64px);
+    background-color: #F8F9FA;
+}
+
+[b-qh6uac1aei] .mud-container {
+    padding: 24px !important;
+    max-width: none !important;
+}
+
+/* Loading Overlay */
+.loading-overlay[b-qh6uac1aei] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 2000;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
-    padding: 1rem;
 }
 
-article[b-qh6uac1aei] {
-    padding: 1.5rem;
+/* Custom Scrollbar */
+[b-qh6uac1aei]::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-@media (max-width: 640.98px) {
-    .top-row[b-qh6uac1aei] {
-        justify-content: space-between;
-    }
-
-        .top-row[b-qh6uac1aei]  a, .top-row[b-qh6uac1aei]  .btn-link {
-            margin-left: 0;
-        }
-
-        .top-row span[b-qh6uac1aei] {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+[b-qh6uac1aei]::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-@media (min-width: 641px) {
-    .page[b-qh6uac1aei] {
-        flex-direction: row;
+[b-qh6uac1aei]::-webkit-scrollbar-thumb {
+    background: #C1C9D2;
+    border-radius: 3px;
+}
+
+    [b-qh6uac1aei]::-webkit-scrollbar-thumb:hover {
+        background: #9299A4;
     }
 
-    .sidebar[b-qh6uac1aei] {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
+/* Responsive */
+@media (max-width: 960px) {
+    [b-qh6uac1aei] .mud-main-content {
+        margin-left: 0 !important;
     }
 
-    .top-row[b-qh6uac1aei] {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-        .top-row.auth[b-qh6uac1aei]  a:first-child {
-            flex: 1;
-            text-align: right;
-            width: 0;
-        }
-
-    .top-row[b-qh6uac1aei], article[b-qh6uac1aei] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
-
-        .top-row span[b-qh6uac1aei] {
-            margin-left: 1rem;
-        }
-
-    .login-layout[b-qh6uac1aei] {
-        padding: 2rem;
+    [b-qh6uac1aei] .mud-appbar {
+        padding: 0 16px;
     }
 }
 
-/* Style cho các thông tin user ở top-row */
-.top-row span small[b-qh6uac1aei] {
-    display: block;
-    line-height: 1.2;
-}
+@media (max-width: 600px) {
+    [b-qh6uac1aei] .mud-container {
+        padding: 16px !important;
+    }
 
-.top-row span[b-qh6uac1aei] {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
+    [b-qh6uac1aei] .mud-breadcrumbs {
+        display: none;
+    }
 }
