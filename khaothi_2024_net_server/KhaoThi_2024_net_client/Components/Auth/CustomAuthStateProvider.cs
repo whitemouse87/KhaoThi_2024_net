@@ -1,7 +1,10 @@
-﻿using Blazored.LocalStorage;
+﻿using AutoMapper;
+using Blazored.LocalStorage;
 using KhaoThi_2024_net_client.Models.Auth;
+using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Services.Auth;
 using KhaoThi_2024_net_client.Services.Logging;
+using KhaoThi_2024_net_client.Services.User;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
 
@@ -15,14 +18,22 @@ namespace KhaoThi_2024_net_client.Components.Auth
         private AuthenticationState? _lastAuthState;
         private const string AUTH_TOKEN_KEY = "authToken";
         private const string REFRESH_TOKEN_KEY = "refreshToken";  // Thêm dòng này
+        private readonly IUserService _khaoThiUserService;
+        private readonly IMapper _mapper;
         public CustomAuthStateProvider(
             ILocalStorageService localStorage,
             IAuthService authService,
-            ILoggingService loggingService)
+            ILoggingService loggingService,
+            IUserService khaoThiUserService,
+            IMapper mapper
+            )
         {
             _localStorage = localStorage;
             _authService = authService;
             _loggingService = loggingService;
+            _khaoThiUserService = khaoThiUserService;
+            _mapper = mapper;
+
         }
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
@@ -45,18 +56,21 @@ namespace KhaoThi_2024_net_client.Components.Auth
                         if (refreshResult.Success && refreshResult.Token != null)
                         {
                             token = refreshResult.Token;
+
                             await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, token);
                             await _localStorage.SetItemAsync(REFRESH_TOKEN_KEY, refreshResult.RefreshToken);
                         }
                         else
                         {
-                            await HandleTokenExpired();
+                            // Refresh token thất bại. Xử lý lỗi ở đây.
+                            await HandleTokenExpired(); // Xóa token và refresh token cũ
+                            await Logger.Error($"Refresh token failed: {refreshResult?.ErrorMessage}"); // Ghi log lỗi (nếu có)
                             return CreateAnonymousState();
                         }
                     }
                     else
                     {
-                        await HandleTokenExpired();
+                      //  await HandleTokenExpired();
                         return CreateAnonymousState();
                     }
                 }
@@ -68,8 +82,22 @@ namespace KhaoThi_2024_net_client.Components.Auth
                     return CreateAnonymousState();
                 }
 
-                var userInfo = await _authService.GetUserInfo(token);
+                // Lấy thông tin người dùng mới nhất
+                var userInfo = await GetLatestUserInfo(token); // Hàm mới
+                if (userInfo == null)
+                {
+                    await HandleTokenExpired(); // Xử lý nếu userInfo là null
+                    _lastAuthState = CreateAnonymousState(); // Cập nhật _lastAuthState trước khi trả về
+                    return _lastAuthState; // Trả về trạng thái ẩn danh
+                }
+
+
                 var claims = BuildUserClaims(userInfo);
+                // Log claims để debug
+                foreach (var claim in claims)
+                {
+                    await Logger.Info($"Claim - Type: {claim.Type}, Value: {claim.Value}");
+                }
                 var identity = new ClaimsIdentity(claims, "jwt");
                 var user = new ClaimsPrincipal(identity);
                 var newAuthState = new AuthenticationState(user);
@@ -90,6 +118,51 @@ namespace KhaoThi_2024_net_client.Components.Auth
                 return _lastAuthState;
             }
         }
+        private UserInfo MapKhaoThiUserToUserInfo(KhaoThiUserModel khaoThiUser)
+        {
+            try
+            {
+                var userInfo = _mapper.Map<UserInfo>(khaoThiUser);
+                // Log để debug
+                Console.WriteLine($"Mapping result - HoTen: {userInfo.HoTen}, TenDangNhap: {userInfo.TenDangNhap}");
+                return userInfo;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Mapping error: {ex.Message}");
+                throw;
+            }
+        }
+        private async Task<UserInfo?> GetLatestUserInfo(string token)
+        {
+            try
+            {
+                var userInfoFromToken = await _authService.GetUserInfo(token);
+                await Logger.Info($"UserInfoFromToken: {System.Text.Json.JsonSerializer.Serialize(userInfoFromToken)}");
+
+                if (userInfoFromToken != null)
+                {
+                    var khaoThiUser = await _khaoThiUserService.GetByIdAsync(userInfoFromToken.Id);
+                    await Logger.Info($"KhaoThiUser: {System.Text.Json.JsonSerializer.Serialize(khaoThiUser)}");
+
+                    if (khaoThiUser != null)
+                    {
+                        var userInfo = MapKhaoThiUserToUserInfo(khaoThiUser);
+                        await Logger.Info($"Mapped UserInfo: {System.Text.Json.JsonSerializer.Serialize(userInfo)}");
+                        return userInfo;
+                    }
+                    await Logger.Warning($"Không tìm thấy KhaoThiUser với ID: {userInfoFromToken.Id}");
+                }
+                await Logger.Warning("UserInfoFromToken is null");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                await Logger.Error("Lỗi trong GetLatestUserInfo", ex);
+                return null;
+            }
+        }
+
 
         public async Task MarkUserAsAuthenticated(string token, string refreshToken)
         {
@@ -152,19 +225,44 @@ namespace KhaoThi_2024_net_client.Components.Auth
         }
         private List<Claim> BuildUserClaims(UserInfo userInfo)
         {
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, userInfo.Id.ToString()),
-                new Claim(ClaimTypes.Name, userInfo.TenDangNhap),
-                new Claim("hoTen", userInfo.HoTen ?? string.Empty),
-                new Claim("maDonVi", userInfo.MaDonVi ?? string.Empty),
-                new Claim("maChucVu", userInfo.MaChucVu ?? string.Empty)
-            };
+            var claims = new List<Claim>();
 
-            // Thêm role cho admin
-            if (userInfo.MaChucVu == "01")
+            if (userInfo.Id != 0)
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, userInfo.Id.ToString()));
+
+            if (!string.IsNullOrEmpty(userInfo.TenDangNhap))
+                claims.Add(new Claim(ClaimTypes.Name, userInfo.TenDangNhap));
+
+            if (!string.IsNullOrEmpty(userInfo.HoTen))
             {
-                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+                claims.Add(new Claim("hoTen", userInfo.HoTen));
+                // Log để debug
+                Console.WriteLine($"Adding hoTen claim: {userInfo.HoTen}");
+            }
+
+            if (!string.IsNullOrEmpty(userInfo.MaDonVi))
+                claims.Add(new Claim("maDonVi", userInfo.MaDonVi));
+
+            if (!string.IsNullOrEmpty(userInfo.TenDonVi))
+                claims.Add(new Claim("tenDonVi", userInfo.TenDonVi));
+
+            if (!string.IsNullOrEmpty(userInfo.MaChucVu))
+            {
+                claims.Add(new Claim("maChucVu", userInfo.MaChucVu));
+                if (userInfo.MaChucVu == "01")
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+                }
+            }
+
+            if (!string.IsNullOrEmpty(userInfo.Email))
+                claims.Add(new Claim(ClaimTypes.Email, userInfo.Email));
+
+            // Log tất cả claims để debug
+            Console.WriteLine("All claims:");
+            foreach (var claim in claims)
+            {
+                Console.WriteLine($"Type: {claim.Type}, Value: {claim.Value}");
             }
 
             return claims;

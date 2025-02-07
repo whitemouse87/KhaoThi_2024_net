@@ -6,21 +6,30 @@ namespace KhaoThi_2024_net_client.Services.Auth
     [FeatureState]
     public class AuthState
     {
-        // Properties
-        public bool IsAuthenticated { get; }
-        public bool IsLoading { get; }
-        public UserInfo? CurrentUser { get; }
-        public string? Token { get; }
-        public string? Error { get; }
+        public bool IsAuthenticated { get; init; }
+        public bool IsLoading { get; init; }
+        public UserInfo? CurrentUser { get; init; }
+        public string? Token { get; init; }
+        public string? RefreshToken { get; init; } // Added RefreshToken
+        public string? Error { get; init; }
 
-        private AuthState() { } // Required for Fluxor
+        public static AuthState InitialState => new AuthState(false, false, null, null, null, null);
 
-        public AuthState(bool isAuthenticated, bool isLoading, UserInfo? user, string? token, string? error)
+        private AuthState() { }
+
+        public AuthState(
+            bool isAuthenticated,
+            bool isLoading,
+            UserInfo? user,
+            string? token,
+            string? refreshToken, // Added RefreshToken to constructor
+            string? error)
         {
             IsAuthenticated = isAuthenticated;
             IsLoading = isLoading;
             CurrentUser = user;
             Token = token;
+            RefreshToken = refreshToken; // Initialize RefreshToken
             Error = error;
         }
     }

@@ -216,6 +216,9 @@ using Serilog.Events;
 using System.Runtime.Intrinsics.Arm;
 using System.Security.Claims;
 using Microsoft.Extensions.Hosting;
+using AutoMapper;
+using KhaoThi_2024_net_client.Models.Users;
+using KhaoThi_2024_net_client.Models.Auth;
 
 public class Program
 {
@@ -273,6 +276,7 @@ public class Program
 
         ConfigureApplicationServices(services);
         ConfigureRouting(services);
+        ConfigureAutoMapper(services); // Gọi hàm cấu hình AutoMapper
         // Add WebAssembly specific services
         services.AddScoped<CircularProgress>();
         services.AddScoped<IWebAssemblyHostEnvironment>(sp =>
@@ -339,7 +343,9 @@ public class Program
         var localStorage = provider.GetRequiredService<ILocalStorageService>();
         var authService = provider.GetRequiredService<IAuthService>();
         var loggingService = provider.GetRequiredService<ILoggingService>();
-        return new CustomAuthStateProvider(localStorage, authService, loggingService);
+        var khaothiuserService = provider.GetRequiredService<IUserService>();
+        var mapper = provider.GetRequiredService<IMapper>();
+        return new CustomAuthStateProvider(localStorage, authService, loggingService,khaothiuserService,mapper);
     }
 
     private static void ConfigureStateManagement(IServiceCollection services)
@@ -399,7 +405,27 @@ public class Program
         // Add any additional application-specific services here
         // Example: services.AddScoped<IMyService, MyService>();
     }
-
+    private static void ConfigureAutoMapper(IServiceCollection services)
+    {
+        services.AddAutoMapper(config =>
+        {
+            config.CreateMap<KhaoThiUserModel, UserInfo>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ID))
+                .ForMember(dest => dest.TenDangNhap, opt => opt.MapFrom(src => src.TenDangNhap))
+                .ForMember(dest => dest.HoTen, opt => opt.MapFrom(src => src.HoTen))
+                .ForMember(dest => dest.MaDonVi, opt => opt.MapFrom(src => src.MaDonVi))
+                .ForMember(dest => dest.TenDonVi, opt => opt.MapFrom(src => src.TenDonVi))
+                .ForMember(dest => dest.MaChucVu, opt => opt.MapFrom(src => src.MaChucVu))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .AfterMap((src, dest) =>
+                {
+                    // Thêm logging để debug
+                    Console.WriteLine($"AutoMapper Mapping:");
+                    Console.WriteLine($"Source - ID: {src.ID}, HoTen: {src.HoTen}");
+                    Console.WriteLine($"Destination - Id: {dest.Id}, HoTen: {dest.HoTen}");
+                });
+        });
+    }
     private static void ConfigureRouting(IServiceCollection services)
     {
         services.Configure<RouteOptions>(options =>
@@ -413,19 +439,7 @@ public class Program
     private static void ConfigureLogging()
     {
 
-        //        var logConfig = new LoggerConfiguration()
-        //                .MinimumLevel.Error()  // Chỉ ghi lại các log lỗi (Error)
-        //                .WriteTo.BrowserConsole(
-        //                    restrictedToMinimumLevel: LogEventLevel.Error,  // Chỉ log error trên browser console
-        //                    outputTemplate: "[{Level}] {Message}{Exception}"
-        //                );
-
-        //        // Write to Debug window only in Development environment, if needed.
-        //#if DEBUG
-        //        logConfig.WriteTo.Debug(outputTemplate: "[{Level}] {Message}{Exception}");
-        //#endif
-
-        //        Log.Logger = logConfig.CreateLogger();
+     
         var logConfig = new LoggerConfiguration()
                 .MinimumLevel.Warning()  // Tăng mức log tối thiểu lên Warning thay vì Error
                 .Filter.ByExcluding(e => e.Properties.ContainsKey("SourceContext") &&

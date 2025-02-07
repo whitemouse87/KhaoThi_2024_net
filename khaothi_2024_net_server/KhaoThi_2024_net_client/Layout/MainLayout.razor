@@ -32,7 +32,7 @@
                         @GetCurrentPageTitle()
                     </MudText>
 
-                    <MudBreadcrumbs Items="_items" Class="flex-grow-1"></MudBreadcrumbs>
+                    <MudBreadcrumbs Items="@_breadcrumbItems" Class="flex-grow-1"></MudBreadcrumbs>
 
                     <MudSpacer />
 
@@ -43,9 +43,10 @@
                         <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight">
                             <ActivatorContent>
                                 <MudAvatar Color="Color.Primary" Size="Size.Medium">
-                                    @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
-                                        ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
-                                        : "U")
+                                    @{
+                                        var initial = GetUserInitial(context);
+                                        <text>@initial</text>
+                                    }
                                 </MudAvatar>
                             </ActivatorContent>
                             <ChildContent>
@@ -94,13 +95,46 @@
     [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
     private bool _drawerOpen = true;
     private bool _isLoading = false;
-    private string _loadingText = "Loading...";
+    private string _loadingText = "Đang tải...";
+    private List<BreadcrumbItem> _breadcrumbItems = new();
 
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
-{
-        new BreadcrumbItem("Home", href: "/"),
-        new BreadcrumbItem("Dashboard", href: null)
-    };
+    private string GetUserInitial(AuthenticationState context)
+    {
+        try
+        {
+            // Log để debug
+            foreach (var claim in context.User.Claims)
+            {
+                Console.WriteLine($"Claim found - Type: {claim.Type}, Value: {claim.Value}");
+            }
+
+            // Thử tìm theo nhiều loại claim type khác nhau
+            var hoTen = context.User.Claims.FirstOrDefault(c => c.Type == "hoTen")?.Value ??
+                       context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value ??
+                       context.User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
+
+            if (!string.IsNullOrEmpty(hoTen))
+            {
+                Console.WriteLine($"Found hoTen: {hoTen}");
+                return hoTen[0].ToString().ToUpper();
+            }
+
+            // Fallback to AuthState if claim not found
+            if (AuthState.Value.CurrentUser?.HoTen != null)
+            {
+                Console.WriteLine($"Using AuthState HoTen: {AuthState.Value.CurrentUser.HoTen}");
+                return AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper();
+            }
+
+            Console.WriteLine("No name found, returning U");
+            return "U";
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in GetUserInitial: {ex.Message}");
+            return "U";
+        }
+    }
 
     private string GetCurrentPageTitle()
     {
@@ -109,31 +143,66 @@
         if (segments.Length > 1)
         {
             var lastSegment = segments.Last().Trim('/');
-            return char.ToUpper(lastSegment[0]) + lastSegment.Substring(1);
+            return char.ToUpper(lastSegment[0]) + lastSegment[1..];
         }
         return "Dashboard";
+    }
+
+    private void UpdateBreadcrumbs()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var segments = uri.Segments.Skip(1).ToList();
+
+        _breadcrumbItems.Clear();
+        _breadcrumbItems.Add(new BreadcrumbItem("Home", "/"));
+
+        var currentPath = "";
+        foreach (var segment in segments.Where(s => !string.IsNullOrWhiteSpace(s)))
+        {
+            currentPath += "/" + segment.TrimEnd('/');
+            var title = char.ToUpper(segment[0]) + segment[1..].TrimEnd('/');
+            _breadcrumbItems.Add(new BreadcrumbItem(title, currentPath));
+        }
     }
 
     private bool IsPublicPage =>
         NavigationManager.Uri.EndsWith("/login", StringComparison.OrdinalIgnoreCase) ||
         NavigationManager.Uri.EndsWith("/", StringComparison.OrdinalIgnoreCase);
 
-    private void ToggleDrawer()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
+    private void ToggleDrawer() => _drawerOpen = !_drawerOpen;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            if (authState.User.Identity?.IsAuthenticated == true)
+            {
+                // Log tất cả claims hiện có
+                foreach (var claim in authState.User.Claims)
+                {
+                    Console.WriteLine($"Initial Claim - Type: {claim.Type}, Value: {claim.Value}");
+                }
+
+                UpdateBreadcrumbs();
+            }
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Lỗi khi khởi tạo: {ex.Message}", Severity.Error);
+            Console.WriteLine($"Error in OnInitializedAsync: {ex}");
+        }
+
         NavigationManager.LocationChanged += HandleLocationChanged;
     }
 
     private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
     {
+        UpdateBreadcrumbs();
         StateHasChanged();
     }
 
-    public void ShowLoading(string text = "Loading...")
+    public void ShowLoading(string text = "Đang tải...")
     {
         _isLoading = true;
         _loadingText = text;
@@ -161,7 +230,7 @@
         catch (Exception ex)
         {
             Snackbar.Add($"Lỗi khi đăng xuất: {ex.Message}", Severity.Error);
-            Console.WriteLine($"Error during logout: {ex.Message}");
+            Console.WriteLine($"Lỗi trong quá trình đăng xuất: {ex.Message}");
         }
         finally
         {

@@ -34,13 +34,16 @@ namespace KhaoThi_2024_net_client.State.Auth
             try
             {
                 dispatcher.Dispatch(new SetLoadingAction(true));
+                
                 var response = await _authService.Login(action.Request);
 
                 if (response.Success && response.Token != null)
                 {
                     await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, response.Token);
                     var userInfo = await _authService.GetUserInfo(response.Token);
-                    dispatcher.Dispatch(new LoginSuccessAction(response.Token, userInfo));
+
+                    //  Cập nhật cả token và refresh token trong state
+                    dispatcher.Dispatch(new LoginSuccessAction(response.Token, response.RefreshToken, userInfo));
                     await Logger.Info($"[CLIENT] user đăng nhập thành công: {userInfo.TenDangNhap}");
                     dispatcher.Dispatch(new ShowNotificationAction("Đăng nhập thành công", "success"));
                     _navigationManager.NavigateTo("/dashboard", forceLoad: true);
@@ -110,37 +113,10 @@ namespace KhaoThi_2024_net_client.State.Auth
             finally
             {
                 dispatcher.Dispatch(new SetLoadingAction(false));
+                await _localStorage.RemoveItemAsync(AUTH_TOKEN_KEY); // Xóa token khỏi local storage
             }
         }
-        //[EffectMethod]
-        //public async Task HandleRefreshTokenAction(RefreshTokenAction action, IDispatcher dispatcher)
-        //{
-        //    try
-        //    {
-        //        dispatcher.Dispatch(new SetLoadingAction(true));
-        //        var result = await _authService.RefreshToken();
-
-        //        if (result.Success)
-        //        {
-        //            var userInfo = await _authService.GetUserInfo(result.Token);
-        //            dispatcher.Dispatch(new RefreshTokenSuccessAction(result.Token, userInfo));
-        //        }
-        //        else
-        //        {
-        //            dispatcher.Dispatch(new RefreshTokenFailureAction(result.ErrorMessage));
-        //            dispatcher.Dispatch(new LogoutAction());
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        dispatcher.Dispatch(new RefreshTokenFailureAction(ex.Message));
-        //        dispatcher.Dispatch(new LogoutAction());
-        //    }
-        //    finally
-        //    {
-        //        dispatcher.Dispatch(new SetLoadingAction(false));
-        //    }
-        //}
+        
       
         [EffectMethod]
         public async Task HandleRefreshTokenAction(RefreshTokenAction action, IDispatcher dispatcher)
@@ -150,14 +126,25 @@ namespace KhaoThi_2024_net_client.State.Auth
                 dispatcher.Dispatch(new SetLoadingAction(true));
                 await Logger.Info("[CLIENT] Bắt đầu quy trình refresh token");
 
+                var refreshToken = _authState.Value.RefreshToken; // Lấy refresh token từ state
+
+                if (string.IsNullOrEmpty(refreshToken))
+                {
+                    // Xử lý trường hợp không có refresh token (ví dụ: người dùng chưa đăng nhập)
+                    await Logger.Warning("[CLIENT] Không tìm thấy refresh token");
+                    dispatcher.Dispatch(new RefreshTokenFailureAction("Không tìm thấy refresh token"));
+                    dispatcher.Dispatch(new LogoutAction()); // Đăng xuất người dùng
+                    return;
+                }
                 var response = await _authService.RefreshToken();
+
 
                 if (response.Success && response.Token != null)
                 {
                     await _localStorage.SetItemAsync(AUTH_TOKEN_KEY, response.Token);
                     var userInfo = await _authService.GetUserInfo(response.Token);
 
-                    dispatcher.Dispatch(new RefreshTokenSuccessAction(response.Token, userInfo));
+                    dispatcher.Dispatch(new RefreshTokenSuccessAction(response.Token, response.RefreshToken, userInfo));
                     await Logger.Info($"[CLIENT] Refresh token thành công cho user: {userInfo.TenDangNhap}");
                     dispatcher.Dispatch(new ShowNotificationAction("Làm mới phiên thành công", "success"));
                 }
@@ -168,8 +155,9 @@ namespace KhaoThi_2024_net_client.State.Auth
                     dispatcher.Dispatch(new ShowNotificationAction("Phiên làm việc hết hạn", "error"));
 
                     // Chuyển về trang login khi refresh thất bại
-                    await _authService.Logout();
-                    _navigationManager.NavigateTo("/login", forceLoad: true);
+                    //await _authService.Logout();
+                    //_navigationManager.NavigateTo("/login", forceLoad: true);
+                    dispatcher.Dispatch(new LogoutAction());
                 }
             }
             catch (Exception ex)

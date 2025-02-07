@@ -17,6 +17,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: true,
                 user: null,
                 token: null,
+                refreshToken: null,
                 error: null
             );
 
@@ -25,13 +26,14 @@ namespace KhaoThi_2024_net_client.State.Auth
         /// </summary>
         [ReducerMethod]
         public static AuthState ReduceLoginSuccessAction(AuthState state, LoginSuccessAction action) =>
-            new AuthState(
-                isAuthenticated: true,
-                isLoading: false,
-                user: action.User,
-                token: action.Token,
-                error: null
-            );
+    new AuthState(
+        isAuthenticated: true,
+        isLoading: false,
+        user: action.User,
+        token: action.Token,
+        refreshToken: action.RefreshToken, //  Thêm RefreshToken
+        error: null
+    );
 
         /// <summary>
         /// Reducer xử lý đăng nhập thất bại
@@ -43,6 +45,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: false,
                 user: null,
                 token: null,
+                refreshToken:null,
                 error: action.ErrorMessage
             );
 
@@ -56,6 +59,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: true,
                 user: state.CurrentUser,
                 token: state.Token,
+                refreshToken: null,
                 error: null
             );
 
@@ -69,6 +73,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: false,
                 user: null,
                 token: null,
+                refreshToken: null,
                 error: null
             );
 
@@ -82,6 +87,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: false,
                 user: state.CurrentUser,
                 token: state.Token,
+                refreshToken: null,
                 error: action.ErrorMessage
             );
 
@@ -95,6 +101,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: action.IsLoading,
                 user: state.CurrentUser,
                 token: state.Token,
+                refreshToken: null,
                 error: state.Error
             );
 
@@ -108,6 +115,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: state.IsLoading,
                 user: state.CurrentUser,
                 token: state.Token,
+                  refreshToken: null,
                 error: null
             );
         // Trong AuthReducers.cs
@@ -116,13 +124,14 @@ namespace KhaoThi_2024_net_client.State.Auth
         /// </summary>
         [ReducerMethod]
         public static AuthState ReduceRefreshTokenSuccessAction(AuthState state, RefreshTokenSuccessAction action) =>
-            new AuthState(
-                isAuthenticated: true,
-                isLoading: false,
-                user: action.User,
-                token: action.Token,
-                error: null
-            );
+     new AuthState(
+         isAuthenticated: true,
+         isLoading: false,
+         user: action.User,
+         token: action.Token,
+         refreshToken: action.RefreshToken, //  Thêm RefreshToken
+         error: null
+     );
 
         /// <summary>
         /// Reducer xử lý refresh token thất bại
@@ -134,7 +143,18 @@ namespace KhaoThi_2024_net_client.State.Auth
                 isLoading: false,
                 user: null,
                 token: null,
+                refreshToken: null,
                 error: action.ErrorMessage
             );
+        [ReducerMethod]
+        public static AuthState ReduceRefreshTokenAction(AuthState state, RefreshTokenAction action) =>
+     new AuthState(
+         isAuthenticated: state.IsAuthenticated,
+         isLoading: true,
+         user: state.CurrentUser,
+         token: state.Token,
+         refreshToken: state.RefreshToken, //  Thêm refreshToken 
+         error: state.Error
+     );
     }
 }

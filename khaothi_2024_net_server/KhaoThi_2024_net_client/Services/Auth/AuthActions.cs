@@ -19,7 +19,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
     {
         // Login actions - Các actions liên quan đến đăng nhập
         public record LoginAction(LoginRequest Request);
-        public record LoginSuccessAction(string Token, UserInfo User);
+        public record LoginSuccessAction(string Token, string RefreshToken, UserInfo User);
         public record LoginFailureAction(string ErrorMessage);
 
         // Logout actions - Các actions liên quan đến đăng xuất
@@ -34,7 +34,10 @@ namespace KhaoThi_2024_net_client.Services.Auth
         
         // Refresh token actions - Các actions liên quan đến làm mới token
         public record RefreshTokenAction();  // Action khởi tạo quá trình refresh token
-        public record RefreshTokenSuccessAction(string Token, UserInfo User);  // Action khi refresh thành công
+        public record RefreshTokenSuccessAction(string Token, string RefreshToken, UserInfo User);  // Action khi refresh thành công
         public record RefreshTokenFailureAction(string ErrorMessage);  // Action khi refresh thất bại
+
+        public record SetCurrentUserAction(UserInfo? User);
+        public record SetIsAuthenticatedAction(bool IsAuthenticated);
     }
 }

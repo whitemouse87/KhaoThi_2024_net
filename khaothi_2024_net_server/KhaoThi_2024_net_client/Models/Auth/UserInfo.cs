@@ -4,6 +4,8 @@ namespace KhaoThi_2024_net_client.Models.Auth
 {
     public class UserInfo
     {
+
+
         [JsonPropertyName("id")]
         public int Id { get; set; }
 
@@ -15,6 +17,8 @@ namespace KhaoThi_2024_net_client.Models.Auth
 
         [JsonPropertyName("maDonVi")]
         public string MaDonVi { get; set; }
+        [JsonPropertyName("tenDonVi")]
+        public string TenDonVi { get; set; } = string.Empty;
 
         [JsonPropertyName("maChucVu")]
         public string MaChucVu { get; set; }
