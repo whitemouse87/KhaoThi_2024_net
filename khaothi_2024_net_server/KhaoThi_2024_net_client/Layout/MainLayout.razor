@@ -61,7 +61,6 @@
                         </MudMenu>
                     </MudStack>
                 </MudAppBar>
-
                 <MudDrawer @bind-Open="@_drawerOpen"
                            ClipMode="DrawerClipMode.Always"
                            Elevation="0"
@@ -71,13 +70,34 @@
                     <NavMenu />
                 </MudDrawer>
 
-                <MudMainContent Class="pt-16">
-                    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="my-4">
-                        @Body
-                    </MudContainer>
+
+                <MudMainContent>
+                    <div class="content-wrapper">
+                        <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="px-4">
+                            <MudPaper Class="pa-4" Elevation="0">
+                                @Body
+                            </MudPaper>
+                        </MudContainer>
+                    </div>
+                    <footer class="footer">
+                        <div class="footer-content">
+                            <div class="footer-left">
+                                2025 © Osen -
+                                <MudLink Href="https://coderthemes.com" Target="_blank" Class="footer-link">
+                                    Coderthemes.com
+                                </MudLink>
+                            </div>
+                            <div class="footer-right">
+                                <MudLink Href="/about" Class="footer-link">About</MudLink>
+                                <MudLink Href="/support" Class="footer-link">Support</MudLink>
+                                <MudLink Href="/contact" Class="footer-link">Contact Us</MudLink>
+                            </div>
+                        </div>
+                    </footer>
                 </MudMainContent>
             </Authorized>
             <NotAuthorized>
+
                 @if (IsPublicPage)
                 {
                     <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="min-height: 100vh;">
@@ -88,11 +108,13 @@
                 {
                     <LoginRedirect />
                 }
+              
             </NotAuthorized>
         </AuthorizeView>
+       
     </MudLayout>
+  
 </div>
-
 @code {
     [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
     private bool _drawerOpen = true;
@@ -245,4 +267,7 @@
     {
         NavigationManager.LocationChanged -= HandleLocationChanged;
     }
+    @* ... rest of the code remains the same until MudMainContent ... *@
+
+
 }

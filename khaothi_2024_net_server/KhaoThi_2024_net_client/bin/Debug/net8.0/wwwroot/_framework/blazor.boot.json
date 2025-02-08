@@ -1,20 +1,15 @@
 {
   "mainAssemblyName": "KhaoThi_2024_net_client",
   "resources": {
-    "hash": "sha256-wyGIPmPhb31f/1at5V59H3cLyAuH0SeuM4LGWpoe4PU=",
+    "hash": "sha256-poFfVJkEz8kdIXyWsSqGuDqHE1uSu/jgtmc8nux/tQU=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-B6DNRvFeCUi3jbx9uKpuj+hV9cN0KG4RdZj1FgBZwj8="
+      "dotnet.native.js": "sha256-uYeOuxwAyj0/LdsVbAvVqzduuTEBoqAJLxR+lWCBPic="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.js": "sha256-aTAnT1r/EAWev8oI/mTFI9nH3RsfA5M822bNiGhok6U="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-4X9eav+Ak45oe3jDiM7H2gSxg1ZRzmhn9QfZURenUbE="
-    },
-    "icu": {
-      "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
-      "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
-      "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
+      "dotnet.native.wasm": "sha256-BvOxBdWOqRiga5acUuYgDDbtHPAMv8H4UvmwHgBw0RU="
     },
     "coreAssembly": {},
     "assembly": {
@@ -265,10 +260,10 @@
       "mscorlib.wasm": "sha256-QoC5hTKpDNO6efLnEvYwV9OJBXvYRq8/1yGhNZKiNCw=",
       "netstandard.wasm": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "System.Private.CoreLib.wasm": "sha256-fvIPBcvgvsRuWrKi2LGQsLYvcKUSnyIuBUsE3LJu/0Y=",
-      "KhaoThi_2024_net_client.wasm": "sha256-405A5dN3T8BNimmicQ4a4XPmGin6u0FBU4t/K5VSi+Q="
+      "KhaoThi_2024_net_client.wasm": "sha256-bEyBmrJUuc4P9ylu++cddZjzoN/Qav7qwdOeUh/ntkE="
     },
     "pdb": {
-      "KhaoThi_2024_net_client.pdb": "sha256-IYJe0OMIOys2Hng/XV7ABH+zzb37vRrAqW7IPM/uV44="
+      "KhaoThi_2024_net_client.pdb": "sha256-bvCsTEgq7DxAULAc2DemuiFk3UQeczvHzng6OMLu6og="
     },
     "libraryInitializers": {
       "_content/BlazorJS/BlazorJS.o5pk8zvhtc.lib.module.js": "sha256-pJ9th4xzJ1OMZjS4dv7BMz2u879ku+Hu3qkTZk+1LGw=",
@@ -281,7 +276,7 @@
   },
   "cacheBootResources": true,
   "debugLevel": -1,
-  "globalizationMode": "sharded",
+  "globalizationMode": "invariant",
   "extensions": {
     "blazor": {}
   }

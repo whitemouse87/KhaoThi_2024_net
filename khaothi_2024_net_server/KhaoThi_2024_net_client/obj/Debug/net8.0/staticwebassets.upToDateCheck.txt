@@ -7,4 +7,5 @@ wwwroot\images\background.jpg
 wwwroot\images\logo_NEW.png
 wwwroot\index.html
 wwwroot\js\security.js
+wwwroot\manifest.json
 wwwroot\sample-data\weather.json
