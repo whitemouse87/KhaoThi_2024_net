@@ -78,22 +78,27 @@ namespace KhaoThi_2024_net_client.Services.Auth
             {
                 var claims = ParseJwtClaims(token);
 
-                if (!claims.ContainsKey("id") || !claims.ContainsKey("tenDangNhap"))
+                if (!claims.ContainsKey("ID") || !claims.ContainsKey("TenDangNhap"))
+                {
+                    await Logger.Error("Token does not contain valid user information",null, this.GetType().Name);
                     throw new InvalidOperationException("Token does not contain valid user information");
+                    
+                }
+                   
 
                 return new UserInfo
                 {
-                    Id = int.Parse(claims["id"]),
-                    TenDangNhap = claims["tenDangNhap"],
-                    HoTen = claims.GetValueOrDefault("hoTen", string.Empty),
-                    MaDonVi = claims.GetValueOrDefault("maDonVi", string.Empty),
-                    MaChucVu = claims.GetValueOrDefault("maChucVu", string.Empty)
+                    ID = int.Parse(claims["ID"]),
+                    TenDangNhap = claims["TenDangNhap"],
+                    HoTen = claims.GetValueOrDefault("HoTen", string.Empty),
+                    MaDonVi = claims.GetValueOrDefault("MaDonVi", string.Empty),
+                    MaChucVu = claims.GetValueOrDefault("MaChucVu", string.Empty)
                 };
             }
             catch (Exception ex)
             {
               
-                await Logger.Error($"[Error] Failed to parse token:"+ ex.Message);
+                await Logger.Error($"[Error] Failed to parse token:"+ ex.Message,ex, this.GetType().Name);
                 throw new InvalidOperationException("Invalid token", ex);
             }
         }
@@ -110,7 +115,8 @@ namespace KhaoThi_2024_net_client.Services.Auth
             }
             catch (Exception ex)
             {
-                await Logger.Error($"[Error] Failed to logout:" + ex.Message);
+               
+                await Logger.Error($"[Error] Failed to logout:" + ex.Message, ex, this.GetType().Name);
                 throw new InvalidOperationException("Logout failed", ex);
             }
         }
@@ -131,18 +137,18 @@ namespace KhaoThi_2024_net_client.Services.Auth
                     IsValid = true,
                     UserClaims = new Dictionary<string, string>
                     {
-                        { "id", userInfo.Id.ToString() },
-                        { "tenDangNhap", userInfo.TenDangNhap },
-                        { "hoTen", userInfo.HoTen ?? string.Empty },
-                        { "maDonVi", userInfo.MaDonVi ?? string.Empty },
-                        { "maChucVu", userInfo.MaChucVu ?? string.Empty }
+                        { "ID", userInfo.ID.ToString() },
+                        { "TenDangNhap", userInfo.TenDangNhap },
+                        { "HoTen", userInfo.HoTen ?? string.Empty },
+                        { "MaDonVi", userInfo.MaDonVi ?? string.Empty },
+                        { "MaChucVu", userInfo.MaChucVu ?? string.Empty }
                     }
                 };
             }
             catch (Exception ex)
             {
                
-                await Logger.Error($"[Error] Token validation failed:" + ex.Message);
+                await Logger.Error($"[Error] Token validation failed:" + ex.Message,ex,this.GetType().Name);
                 return new ValidateTokenResponse { IsValid = false };
             }
         }
@@ -156,11 +162,11 @@ namespace KhaoThi_2024_net_client.Services.Auth
             return jwtToken.Claims.ToDictionary(
                 c => c.Type switch
                 {
-                    "nameid" => "id",
-                    "unique_name" => "tenDangNhap",
-                    "MaDonVi" => "maDonVi",
-                    "MaChucVu" => "maChucVu",
-                    "HoTen" => "hoTen",
+                    "nameid" => "ID",
+                    "unique_name" => "TenDangNhap",
+                    "MaDonVi" => "MaDonVi",
+                    "MaChucVu" => "MaChucVu",
+                    "HoTen" => "HoTen",
                     _ => c.Type.ToLower()
                 },
                 c => c.Value
@@ -191,7 +197,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
             }
             catch (Exception ex)
             {
-                await Logger.Error($"[Error] Lỗi lấy UserId từ token: {ex.Message}");
+                await Logger.Error($"[Error] Lỗi lấy UserId từ token: {ex.Message}",ex,this.GetType().Name);
                 return null;
             }
         }

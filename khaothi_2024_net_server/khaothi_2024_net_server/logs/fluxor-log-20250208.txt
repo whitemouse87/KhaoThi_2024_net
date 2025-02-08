@@ -1,0 +1,109 @@
+2025-02-08 09:06:53 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 09:07:47 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-02-08 09:07:48 [INF] User "nvdkhoa" logged in successfully from IP: "::1"
+2025-02-08 09:07:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:07:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:07:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:07:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:07:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:07:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:08:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:08:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:08:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:08:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:08:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:08:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:22:28 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 09:22:32 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:22:32 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:22:32 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:22:32 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:22:33 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:22:33 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:23:13 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 09:23:17 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:23:17 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:23:17 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:23:17 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:23:18 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:23:18 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:28:53 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 09:28:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:28:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:28:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:28:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:28:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:28:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:33:24 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 09:33:27 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:33:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:33:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:33:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:33:29 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:33:29 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:38:31 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 09:38:34 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:38:35 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:38:35 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:38:35 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 09:38:35 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 09:38:35 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:00:56 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 10:01:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:01 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:01 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:18 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:18 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:18 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:18 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:18 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:18 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:27 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:27 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:27 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:27 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:01:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:01:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:11:35 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 10:11:39 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:11:39 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:11:39 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:11:39 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:11:39 [INF] ["CustomAuthStateProvider"] "Auth state updated - User: nvdkhoa" ""
+2025-02-08 10:11:39 [INF] ["CustomAuthStateProvider"] "Auth state updated - User: nvdkhoa" ""
+2025-02-08 10:11:40 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:11:40 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:12:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:12:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:12:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:12:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:12:00 [INF] ["CustomAuthStateProvider"] "Auth state updated - User: nvdkhoa" ""
+2025-02-08 10:12:00 [INF] ["CustomAuthStateProvider"] "Auth state updated - User: nvdkhoa" ""
+2025-02-08 10:12:01 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:12:01 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:17:28 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 10:17:32 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:17:32 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:17:32 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:17:32 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:17:33 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:17:33 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:45:51 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 10:45:55 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:45:55 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:45:55 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:45:55 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 10:45:56 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 10:45:56 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 11:20:58 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-08 11:21:02 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 11:21:02 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 11:21:27 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-02-08 11:21:28 [INF] User "nvdkhoa" logged in successfully from IP: "::1"
+2025-02-08 11:21:33 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 11:21:33 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-08 11:22:24 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-08 11:22:24 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa

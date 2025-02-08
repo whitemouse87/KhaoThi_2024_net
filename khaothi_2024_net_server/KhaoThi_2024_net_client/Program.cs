@@ -219,6 +219,7 @@ using Microsoft.Extensions.Hosting;
 using AutoMapper;
 using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Models.Auth;
+using KhaoThi_2024_net_client.Services.Shares;
 
 public class Program
 {
@@ -271,9 +272,6 @@ public class Program
         ConfigureAuth(services);
         ConfigureStateManagement(services);
         ConfigureMudBlazor(services);
-
-      
-
         ConfigureApplicationServices(services);
         ConfigureRouting(services);
         ConfigureAutoMapper(services); // Gọi hàm cấu hình AutoMapper
@@ -334,18 +332,17 @@ public class Program
 
     private static bool IsUserAdmin(AuthorizationHandlerContext context)
     {
-        var maChucVu = context.User.FindFirst("maChucVu")?.Value;
+        var maChucVu = context.User.FindFirst("MaChucVu")?.Value;
         return maChucVu == "01";
     }
 
     private static CustomAuthStateProvider CreateCustomAuthStateProvider(IServiceProvider provider)
     {
         var localStorage = provider.GetRequiredService<ILocalStorageService>();
-        var authService = provider.GetRequiredService<IAuthService>();
-        var loggingService = provider.GetRequiredService<ILoggingService>();
+        var authService = provider.GetRequiredService<IAuthService>();       
         var khaothiuserService = provider.GetRequiredService<IUserService>();
         var mapper = provider.GetRequiredService<IMapper>();
-        return new CustomAuthStateProvider(localStorage, authService, loggingService,khaothiuserService,mapper);
+        return new CustomAuthStateProvider(localStorage, authService, khaothiuserService,mapper);
     }
 
     private static void ConfigureStateManagement(IServiceCollection services)
@@ -380,6 +377,13 @@ public class Program
             config.SnackbarConfiguration.HideTransitionDuration = 500;
             config.SnackbarConfiguration.ShowTransitionDuration = 500;
             config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
+            config.ResizeOptions = new ResizeOptions
+            {
+                ReportRate = 100,            // Milliseconds between Resize updates
+                EnableLogging = false,        // Log resize events to console
+                SuppressInitEvent = true,    // Don't raise initial event on startup
+                NotifyOnBreakpointOnly = true // Notify only on breakpoint change
+            };
         });
 
         services.AddMudMarkdownServices();
@@ -395,7 +399,7 @@ public class Program
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ILoggingService, LoggingService>();
         services.AddScoped<IUserService, KhaoThiUserService>();
-
+        services.AddScoped<IPageTitleService, PageTitleService>();
         // Add other application services here
         ConfigureAdditionalServices(services);
     }
@@ -410,20 +414,20 @@ public class Program
         services.AddAutoMapper(config =>
         {
             config.CreateMap<KhaoThiUserModel, UserInfo>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ID))
+                .ForMember(dest => dest.ID, opt => opt.MapFrom(src => src.ID))
                 .ForMember(dest => dest.TenDangNhap, opt => opt.MapFrom(src => src.TenDangNhap))
                 .ForMember(dest => dest.HoTen, opt => opt.MapFrom(src => src.HoTen))
                 .ForMember(dest => dest.MaDonVi, opt => opt.MapFrom(src => src.MaDonVi))
                 .ForMember(dest => dest.TenDonVi, opt => opt.MapFrom(src => src.TenDonVi))
                 .ForMember(dest => dest.MaChucVu, opt => opt.MapFrom(src => src.MaChucVu))
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                .AfterMap((src, dest) =>
-                {
-                    // Thêm logging để debug
-                    Console.WriteLine($"AutoMapper Mapping:");
-                    Console.WriteLine($"Source - ID: {src.ID}, HoTen: {src.HoTen}");
-                    Console.WriteLine($"Destination - Id: {dest.Id}, HoTen: {dest.HoTen}");
-                });
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
+                //.AfterMap((src, dest) =>
+                //{
+                //    // Thêm logging để debug
+                //    Console.WriteLine($"AutoMapper Mapping:");
+                //    Console.WriteLine($"Source - ID: {src.ID}, HoTen: {src.HoTen}");
+                //    Console.WriteLine($"Destination - Id: {dest.ID}, HoTen: {dest.HoTen}");
+                //});
         });
     }
     private static void ConfigureRouting(IServiceCollection services)

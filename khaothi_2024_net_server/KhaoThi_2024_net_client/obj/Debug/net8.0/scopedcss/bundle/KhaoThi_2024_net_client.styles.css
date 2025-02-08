@@ -3,9 +3,19 @@
 
 /* /Layout/MainLayout.razor.rz.scp.css */
 .main-layout[b-qh6uac1aei] {
-    min-height: 100vh;
+/*    min-height: 100vh;*/
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
     background-color: #F8F9FA;
 }
+
+.mud-avatar[b-qh6uac1aei] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* App Bar */
 [b-qh6uac1aei] .mud-appbar {

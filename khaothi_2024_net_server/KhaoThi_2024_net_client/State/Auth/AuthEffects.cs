@@ -57,7 +57,7 @@ namespace KhaoThi_2024_net_client.State.Auth
             }
             catch (Exception ex)
             {
-                await Logger.Error($"[CLIENT] Lỗi trong Effects: {ex}");
+                await Logger.Error($"[CLIENT] Lỗi trong Effects:"+ex.Message,ex,this.GetType().Name);
                 dispatcher.Dispatch(new LoginFailureAction("Lỗi hệ thống"));
                 dispatcher.Dispatch(new ShowNotificationAction("Lỗi hệ thống", "error"));
             }
@@ -95,7 +95,7 @@ namespace KhaoThi_2024_net_client.State.Auth
                     ? $"Lỗi đăng xuất cho người dùng {currentUser.TenDangNhap}"
                     : "Lỗi trong quá trình đăng xuất";
 
-                await Logger.Error(errorMessage, ex);
+                await Logger.Error(errorMessage, ex,this.GetType().Name);
                 dispatcher.Dispatch(new LogoutFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction("Đăng xuất thất bại", "error"));
 
@@ -163,7 +163,7 @@ namespace KhaoThi_2024_net_client.State.Auth
             catch (Exception ex)
             {
                 string errorMessage = "Lỗi trong quá trình làm mới phiên";
-                await Logger.Error(errorMessage, ex);
+                await Logger.Error(errorMessage, ex,this.GetType().Name);
                 dispatcher.Dispatch(new RefreshTokenFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction(errorMessage, "error"));
 

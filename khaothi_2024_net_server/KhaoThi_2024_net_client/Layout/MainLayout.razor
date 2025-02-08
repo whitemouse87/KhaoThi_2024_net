@@ -7,7 +7,8 @@
 @inject IState<AuthState> AuthState
 @inject NavigationManager NavigationManager
 @inject ISnackbar Snackbar
-
+@inject ILogger<MainLayout> _logger
+@inject IPageTitleService PageTitleService
 <div class="main-layout">
     <MudLayout>
         @if (_isLoading)
@@ -22,7 +23,7 @@
 
         <AuthorizeView>
             <Authorized>
-                <MudAppBar Elevation="0">
+                <MudAppBar Elevation="0" Fixed="true">
                     <MudIconButton Icon="@Icons.Material.Filled.Menu"
                                    Color="Color.Dark"
                                    Edge="Edge.Start"
@@ -65,12 +66,13 @@
                            ClipMode="DrawerClipMode.Always"
                            Elevation="0"
                            Variant="@DrawerVariant.Persistent"
-                           DisableOverlay="true">
+                           DisableOverlay="true"
+                           Fixed="true">
                     <NavMenu />
                 </MudDrawer>
 
-                <MudMainContent>
-                    <MudContainer>
+                <MudMainContent Class="pt-16">
+                    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="my-4">
                         @Body
                     </MudContainer>
                 </MudMainContent>
@@ -102,31 +104,28 @@
     {
         try
         {
-            // Log để debug
-            foreach (var claim in context.User.Claims)
-            {
-                Console.WriteLine($"Claim found - Type: {claim.Type}, Value: {claim.Value}");
-            }
-
-            // Thử tìm theo nhiều loại claim type khác nhau
-            var hoTen = context.User.Claims.FirstOrDefault(c => c.Type == "hoTen")?.Value ??
-                       context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)?.Value ??
-                       context.User.Claims.FirstOrDefault(c => c.Type == "name")?.Value;
-
-            if (!string.IsNullOrEmpty(hoTen))
-            {
-                Console.WriteLine($"Found hoTen: {hoTen}");
-                return hoTen[0].ToString().ToUpper();
-            }
-
-            // Fallback to AuthState if claim not found
+            // Đầu tiên kiểm tra từ AuthState
             if (AuthState.Value.CurrentUser?.HoTen != null)
             {
-                Console.WriteLine($"Using AuthState HoTen: {AuthState.Value.CurrentUser.HoTen}");
-                return AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper();
+                var HoTen = AuthState.Value.CurrentUser.HoTen.Trim();
+                var parts = HoTen.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                // Lấy phần tử cuối cùng (tên)
+                return parts.Last()[0].ToString().ToUpper();
             }
 
-            Console.WriteLine("No name found, returning U");
+            // Nếu không có trong AuthState, thử tìm trong Claims
+            var nameClaims = new[] { "HoTen", ClaimTypes.GivenName, "name" };
+            foreach (var claimType in nameClaims)
+            {
+                var claim = context.User.Claims.FirstOrDefault(c => c.Type == claimType);
+                if (!string.IsNullOrEmpty(claim?.Value))
+                {
+                    var parts = claim.Value.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    // Lấy phần tử cuối cùng (tên)
+                    return parts.Last()[0].ToString().ToUpper();
+                }
+            }
+
             return "U";
         }
         catch (Exception ex)
@@ -138,14 +137,16 @@
 
     private string GetCurrentPageTitle()
     {
-        var uri = new Uri(NavigationManager.Uri);
-        var segments = uri.Segments;
-        if (segments.Length > 1)
+        try
         {
-            var lastSegment = segments.Last().Trim('/');
-            return char.ToUpper(lastSegment[0]) + lastSegment[1..];
+            var uri = new Uri(NavigationManager.Uri);
+            var tenPage = PageTitleService.GetPageTitle(uri.AbsolutePath);
+            return !string.IsNullOrEmpty(tenPage) ? tenPage : "Dashboard";
         }
-        return "Dashboard";
+        catch (Exception)
+        {
+            return "Dashboard";
+        }
     }
 
     private void UpdateBreadcrumbs()
@@ -179,10 +180,10 @@
             if (authState.User.Identity?.IsAuthenticated == true)
             {
                 // Log tất cả claims hiện có
-                foreach (var claim in authState.User.Claims)
-                {
-                    Console.WriteLine($"Initial Claim - Type: {claim.Type}, Value: {claim.Value}");
-                }
+                //foreach (var claim in authState.User.Claims)
+                //{
+                //    Console.WriteLine($"Initial Claim - Type: {claim.Type}, Value: {claim.Value}");
+                //}
 
                 UpdateBreadcrumbs();
             }
@@ -194,6 +195,8 @@
         }
 
         NavigationManager.LocationChanged += HandleLocationChanged;
+
+
     }
 
     private void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
@@ -230,7 +233,7 @@
         catch (Exception ex)
         {
             Snackbar.Add($"Lỗi khi đăng xuất: {ex.Message}", Severity.Error);
-            Console.WriteLine($"Lỗi trong quá trình đăng xuất: {ex.Message}");
+            await Logger.Error($"Lỗi khi đăng xuất: {ex.Message}", ex, this.GetType().Name);
         }
         finally
         {

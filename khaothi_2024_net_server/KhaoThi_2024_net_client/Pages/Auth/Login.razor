@@ -183,7 +183,7 @@
         catch (Exception ex)
         {
             Dispatcher.Dispatch(new LoginFailureAction("Lỗi khi xử lý đăng nhập"));
-            await Logger.Error($"[CLIENT] Login error for user: {loginRequest.TenDangNhap}", ex);
+            await Logger.Error($"[CLIENT] Login error for user: {loginRequest.TenDangNhap}", ex, this.GetType().Name);
             Snackbar.Add("Đăng nhập thất bại", Severity.Error);
         }
     }
