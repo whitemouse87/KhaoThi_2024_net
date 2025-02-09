@@ -126,6 +126,13 @@
     overflow-y: auto;
 }
 
+@media (max-width: 768px) {
+    .nav-container[b-0x2883fcsu] {
+        width: 70vw; /* Điều chỉnh giá trị này nếu cần */
+    }
+}
+
+
 [b-0x2883fcsu] .mud-drawer {
     width: 280px !important;
     height: 100vh !important;
@@ -224,6 +231,10 @@
 /* For nested menu items */
 [b-0x2883fcsu] .mud-nav-group .mud-nav-link {
     padding-left: 3.5rem !important;
+}
+.company-logo[b-0x2883fcsu] {
+    width: 50%; /* Thu nhỏ theo 50% chiều rộng của vùng chứa cha */
+    height: auto; /* Giữ nguyên tỷ lệ khung hình */
 }
 /* /Pages/Auth/Login.razor.rz.scp.css */
 /* Reset styles */

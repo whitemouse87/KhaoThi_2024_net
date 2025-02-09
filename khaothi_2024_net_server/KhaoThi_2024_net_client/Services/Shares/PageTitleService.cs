@@ -6,7 +6,7 @@
     {
         { "/", "Trang chủ" },
         { "/dashboard", "Quản lý hệ thống" },
-        { "/users", "Quản lý người dùng" },
+        { "/profile", "Quản lý người dùng" },
         { "/roles", "Quản lý vai trò" },
         { "/permissions", "Phân quyền" },
         // Thêm các mapping khác

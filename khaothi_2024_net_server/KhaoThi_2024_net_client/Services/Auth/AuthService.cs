@@ -174,18 +174,51 @@ namespace KhaoThi_2024_net_client.Services.Auth
         }
         public async Task<int?> GetUserIdFromToken()
         {
+            //try
+            //{
+            //    var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
+            //    if (string.IsNullOrWhiteSpace(token)) return null;
+
+            //    // Kiểm tra token hết hạn
+            //    if (IsTokenExpired(token))
+            //    {
+            //        // Thử refresh token
+            //        var refreshResult = await RefreshToken();
+            //        if (!refreshResult.Success)
+            //        {
+            //            await Logout();
+            //            return null;
+            //        }
+            //        token = refreshResult.Token;
+            //    }
+
+            //    var claims = ParseJwtClaims(token);
+            //    return claims.ContainsKey("ID") ? int.Parse(claims["id"]) : null;
+            //}
+            //catch (Exception ex)
+            //{
+            //    await Logger.Error($"[Error] Lỗi lấy UserId từ token: {ex.Message}",ex,this.GetType().Name);
+            //    return null;
+            //}
             try
             {
                 var token = await _localStorage.GetItemAsync<string>(AUTH_TOKEN_KEY);
-                if (string.IsNullOrWhiteSpace(token)) return null;
+                Console.WriteLine($"Token exists: {!string.IsNullOrEmpty(token)}"); // Debug log
+
+                if (string.IsNullOrWhiteSpace(token))
+                {
+                    Console.WriteLine("Token is empty"); // Debug log
+                    return null;
+                }
 
                 // Kiểm tra token hết hạn
                 if (IsTokenExpired(token))
                 {
-                    // Thử refresh token
+                    Console.WriteLine("Token is expired, trying to refresh"); // Debug log
                     var refreshResult = await RefreshToken();
                     if (!refreshResult.Success)
                     {
+                        Console.WriteLine("Token refresh failed"); // Debug log
                         await Logout();
                         return null;
                     }
@@ -193,11 +226,23 @@ namespace KhaoThi_2024_net_client.Services.Auth
                 }
 
                 var claims = ParseJwtClaims(token);
-                return claims.ContainsKey("id") ? int.Parse(claims["id"]) : null;
+                Console.WriteLine($"Claims found: {string.Join(", ", claims.Keys)}"); // Debug log
+
+                // Thay đổi từ "id" thành "ID" để match với ParseJwtClaims
+                if (claims.ContainsKey("ID"))
+                {
+                    var userId = int.Parse(claims["ID"]);
+                    Console.WriteLine($"Found userId: {userId}"); // Debug log
+                    return userId;
+                }
+
+                Console.WriteLine("ID claim not found in token"); // Debug log
+                return null;
             }
             catch (Exception ex)
             {
-                await Logger.Error($"[Error] Lỗi lấy UserId từ token: {ex.Message}",ex,this.GetType().Name);
+                await Logger.Error($"[Error] Lỗi lấy UserId từ token: {ex.Message}", ex, nameof(AuthService));
+                Console.WriteLine($"Error in GetUserIdFromToken: {ex.Message}"); // Debug log
                 return null;
             }
         }

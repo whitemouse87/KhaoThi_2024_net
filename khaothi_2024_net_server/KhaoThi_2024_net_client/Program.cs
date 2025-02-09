@@ -279,27 +279,76 @@ public class Program
         });
     }
 
+    //    private static void ConfigureLogging()
+    //    {
+
+
+    //        var logConfig = new LoggerConfiguration()
+    //                .MinimumLevel.Warning()  // Tăng mức log tối thiểu lên Warning thay vì Error
+    //                .Filter.ByExcluding(e => e.Properties.ContainsKey("SourceContext") &&
+    //                    e.Properties["SourceContext"].ToString().Contains("Microsoft.AspNetCore"))
+    //                .WriteTo.BrowserConsole(
+    //                    restrictedToMinimumLevel: LogEventLevel.Warning,
+    //                    outputTemplate: "[{Level}] {Message}{Exception}"
+    //                )
+    //                .Enrich.FromLogContext();
+
+    //#if DEBUG
+    //        logConfig.WriteTo.Debug(
+    //            restrictedToMinimumLevel: LogEventLevel.Warning,
+    //            outputTemplate: "[{Level}] {Message}{Exception}"
+    //        );
+    //#endif
+
+    //        Log.Logger = logConfig.CreateLogger();
+    //    }
     private static void ConfigureLogging()
     {
+        const string outputTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
 
-     
         var logConfig = new LoggerConfiguration()
-                .MinimumLevel.Warning()  // Tăng mức log tối thiểu lên Warning thay vì Error
-                .Filter.ByExcluding(e => e.Properties.ContainsKey("SourceContext") &&
-                    e.Properties["SourceContext"].ToString().Contains("Microsoft.AspNetCore"))
-                .WriteTo.BrowserConsole(
-                    restrictedToMinimumLevel: LogEventLevel.Warning,
-                    outputTemplate: "[{Level}] {Message}{Exception}"
-                )
-                .Enrich.FromLogContext();
+            // Cấu hình mức log tối thiểu
+            .MinimumLevel.Warning()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
+            .MinimumLevel.Override("System", LogEventLevel.Error)
 
+            // Lọc các log không cần thiết
+            .Filter.ByExcluding(e =>
+                e.Properties.ContainsKey("SourceContext") &&
+                (e.Properties["SourceContext"].ToString().Contains("Microsoft.AspNetCore") ||
+                 e.Properties["SourceContext"].ToString().Contains("System.Net.Http")))
+
+            // Thêm các thuộc tính từ context
+            .Enrich.FromLogContext()
+
+            // Cấu hình đầu ra cho Browser Console
+            .WriteTo.BrowserConsole(
+                restrictedToMinimumLevel: LogEventLevel.Warning,
+                outputTemplate: outputTemplate
+            );
+
+        // Cấu hình cho môi trường Development
 #if DEBUG
-        logConfig.WriteTo.Debug(
-            restrictedToMinimumLevel: LogEventLevel.Warning,
-            outputTemplate: "[{Level}] {Message}{Exception}"
-        );
+        logConfig
+            .WriteTo.Debug(
+                restrictedToMinimumLevel: LogEventLevel.Warning,
+                outputTemplate: outputTemplate
+            )
+            .MinimumLevel.Override("KhaoThi_2024_net_client", LogEventLevel.Debug); // Log chi tiết cho namespace của ứng dụng
 #endif
 
-        Log.Logger = logConfig.CreateLogger();
+        try
+        {
+            Log.Logger = logConfig.CreateLogger();
+            Log.Information("Logging configuration initialized successfully");
+        }
+        catch (Exception ex)
+        {
+            // Fallback logger trong trường hợp không thể tạo logger chính
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.BrowserConsole()
+                .CreateLogger();
+            Log.Error(ex, "Failed to create logger configuration");
+        }
     }
 }

@@ -10,32 +10,37 @@
     <MudNavMenu Color="Color.Dark" Class="mud-navmenu">
         <AuthorizeView>
             <Authorized>
-                <div class="menu-header">
-                    <MudText Typo="Typo.h6" Class="d-flex align-center">
-                        <MudIcon Icon="@Icons.Material.Filled.School" Class="mr-2" Size="Size.Small" />
-                        KhaoThi 2024
+                @*<div class="menu-header">
+            <MudText Typo="Typo.h6" Class="d-flex align-center">
+                <MudIcon Icon="@Icons.Material.Filled.School" Class="mr-2" Size="Size.Large" />
+                Hệ thống quản lý công việc
+            </MudText>
+        </div>*@
+                <div class="menu-header d-flex flex-column align-center">
+                    @*<MudIcon Icon="@Icons.Material.Filled.School" Size="Size.Large" />*@
+                    <img src="/images/logo_NEW.png" alt="Logo Sở Giáo dục và Đào tạo" class="company-logo" style="width: 100px; height: 100px;" />
+                    <MudText Typo="Typo.h6">
+                        Hệ thống quản lý
                     </MudText>
                 </div>
-
                 <div class="profile-section d-flex align-center">
                     <MudAvatar Color="Color.Primary" Size="Size.Medium">
-                        @((!string.IsNullOrEmpty(AuthState.Value.CurrentUser?.HoTen))
-                            ? AuthState.Value.CurrentUser.HoTen[0].ToString().ToUpper()
-                            : "U")
+
+                        @(GetFirstCharsOfName(@context.User.FindFirst("HoTen")?.Value.ToString().ToUpper()))
                     </MudAvatar>
                     <div class="user-info">
-                        <div class="user-name">@(AuthState.Value.CurrentUser?.HoTen ?? "Người dùng")</div>
-                        <div class="user-role">@(AuthState.Value.CurrentUser?.MaChucVu ?? "Chưa có chức vụ")</div>
+                        <div class="user-name">@(@context.User.FindFirst("HoTen")?.Value ?? "Người dùng")</div>
+                        <div class="user-role"> @GetChucVuDisplay(context.User.FindFirst("MaChucVu")?.Value ?? "Chưa có chức vụ")</div>
                     </div>
                 </div>
 
-                <div class="menu-section">GETTING STARTED</div>
+                <div class="menu-section">CÔNG CỤ QUẢN LÝ</div>
                 <MudNavLink Href="dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Dashboard">
-                    Dashboard
+                    Thông tin hệ thống
                 </MudNavLink>
 
                 <div class="menu-section">QUẢN LÝ</div>
-                <MudNavLink Href="users" Icon="@Icons.Material.Filled.People">
+                <MudNavLink Href="/profile" Icon="@Icons.Material.Filled.People">
                     Người dùng
                 </MudNavLink>
                 <MudNavLink Href="departments" Icon="@Icons.Material.Filled.Business">
@@ -81,6 +86,7 @@
 </div>
 
 @code {
+    [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
     private void HandleLogout()
     {
         try
@@ -88,7 +94,7 @@
             if (AuthState.Value.CurrentUser != null)
             {
                 var username = AuthState.Value.CurrentUser.TenDangNhap ?? "Unknown";
-                Logger.LogInformation($"Người dùng {username} đang đăng xuất");
+                //Logger.LogInformation($"Người dùng {username} đang đăng xuất");
                 Dispatcher.Dispatch(new LogoutAction());
             }
             else
@@ -103,4 +109,32 @@
             throw;
         }
     }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        var maChucVu = user.FindFirst("MaChucVu")?.Value;
+
+    }
+
+    private string GetChucVuDisplay(string? maChucVu)
+    {
+        return maChucVu switch
+        {
+            "01" => "Quản trị viên",
+            "02" => "Người dùng",
+            _ => maChucVu ?? "Không xác định"
+        };
+    }
+    private string GetFirstCharsOfName(string? HoTen)
+    {
+        var parts = HoTen?.ToUpper().Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        // Lấy phần tử cuối cùng (tên)
+        return parts?.Last()[0].ToString().ToUpper()??"U";
+
+    }
+
+
+
 }

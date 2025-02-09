@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "zxlyzHvA",
+  "version": "GnOuI73u",
   "assets": [
     {
-      "hash": "sha256-8OOr+N/kA4JesP8vpOWigN0qrCeqiECJONdZQ1IeO68=",
+      "hash": "sha256-s06CSg1mbC3vUdrrqUYbe6Zd1QiRlU7P+P34ckLJ8HY=",
       "url": "KhaoThi_2024_net_client.styles.css"
     },
     {
@@ -1614,11 +1614,11 @@ self.assetsManifest = {
       "url": "_framework/Fluxor.wasm"
     },
     {
-      "hash": "sha256-bvCsTEgq7DxAULAc2DemuiFk3UQeczvHzng6OMLu6og=",
+      "hash": "sha256-2NpQhTJi/5d7otPSZA81693VJhoLHsr5/j6nns0bhj4=",
       "url": "_framework/KhaoThi_2024_net_client.pdb"
     },
     {
-      "hash": "sha256-bEyBmrJUuc4P9ylu++cddZjzoN/Qav7qwdOeUh/ntkE=",
+      "hash": "sha256-2So5H7zme+4p1eEZJWb59GyjBpcxAjOBWzZwILkZ3w4=",
       "url": "_framework/KhaoThi_2024_net_client.wasm"
     },
     {
@@ -2554,7 +2554,7 @@ self.assetsManifest = {
       "url": "_framework/ZstdSharp.wasm"
     },
     {
-      "hash": "sha256-iaiTTxCktRxyoAHuNkXqzLuZOEiXOrQX1UEWGk7iR4E=",
+      "hash": "sha256-LI4JBSKrODTQdLoC/4p/9W87jvf+uzbo2+Plz1lvjSc=",
       "url": "_framework/blazor.boot.json"
     },
     {
