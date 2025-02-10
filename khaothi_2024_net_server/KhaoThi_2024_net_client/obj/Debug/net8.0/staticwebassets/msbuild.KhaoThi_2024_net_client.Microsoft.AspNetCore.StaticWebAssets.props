@@ -138,8 +138,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>s4byutcwi5</Fingerprint>
-      <Integrity>3J5QVNWA6ss04NhQcPi+qoZ01E4SxIpHGaU7SYrqdqE=</Integrity>
+      <Fingerprint>97c042kzfg</Fingerprint>
+      <Integrity>xQmrYyZOAURQ0aLYQim7TGoBdI+py5YHq/fncJIMe0U=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
@@ -174,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>tka3d3k87e</Fingerprint>
-      <Integrity>s06CSg1mbC3vUdrrqUYbe6Zd1QiRlU7P+P34ckLJ8HY=</Integrity>
+      <Fingerprint>tldt5haam6</Fingerprint>
+      <Integrity>IRNdhSVMbiI6kR5X2uxO1g5b6mWMJxasy+T6Hm9drAM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KhaoThi_2024_net_client.styles.css'))</OriginalItemSpec>

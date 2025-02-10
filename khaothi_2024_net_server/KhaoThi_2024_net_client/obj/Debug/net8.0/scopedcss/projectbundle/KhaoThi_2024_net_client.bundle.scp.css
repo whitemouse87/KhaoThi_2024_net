@@ -398,16 +398,101 @@
     }
 }
 /* /Pages/Profile/Profile.razor.rz.scp.css */
-.mud-nav-link[b-i8juruxc1o] {
-    transition: all 0.2s ease-in-out;
+/* Profile.razor.css */
+.profile-header[b-i8juruxc1o] {
+    background: linear-gradient(135deg, #313a46 0%, #4a525d 100%);
+    padding: 1rem;
+    color: white;
+    border-radius: 8px 8px 0 0;
 }
 
-    .mud-nav-link:hover[b-i8juruxc1o] {
-        background-color: var(--mud-palette-primary-lighten);
+.avatar-section[b-i8juruxc1o] {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-name[b-i8juruxc1o] {
+    color: #313a46;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.user-username[b-i8juruxc1o] {
+    color: #8391a2;
+    font-size: 0.9rem;
+}
+
+.section-title[b-i8juruxc1o] {
+    color: #313a46;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eef2f7;
+    margin-bottom: 1.5rem;
+}
+
+.info-list .mud-list-item[b-i8juruxc1o] {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+    .info-list .mud-list-item:hover[b-i8juruxc1o] {
+        background-color: #f8f9fa;
         transform: translateX(4px);
     }
 
-    .mud-nav-link.active[b-i8juruxc1o] {
-        background-color: var(--mud-palette-primary-darken);
-        color: var(--mud-palette-primary-text);
+    .info-list .mud-list-item .mud-icon-root[b-i8juruxc1o] {
+        color: #727cf5;
+        font-size: 1.25rem;
+    }
+
+    .info-list .mud-list-item strong[b-i8juruxc1o] {
+        color: #313a46;
+        font-weight: 600;
+        display: inline-block;
+        min-width: 140px;
+        margin-right: 1rem;
+    }
+
+    .info-list .mud-list-item .mud-typography[b-i8juruxc1o] {
+        color: #6c757d;
+    }
+
+.action-buttons[b-i8juruxc1o] {
+    padding-top: 2rem;
+    border-top: 1px solid #eef2f7;
+    margin-top: 2rem;
+}
+
+    .action-buttons .mud-button[b-i8juruxc1o] {
+        min-width: 180px;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0.3px;
+        border-radius: 6px;
+        padding: 0.5rem 1.5rem;
+    }
+
+.edit-button[b-i8juruxc1o] {
+    background-color: #727cf5 !important;
+    box-shadow: 0 2px 6px rgba(114, 124, 245, 0.25);
+}
+
+    .edit-button:hover[b-i8juruxc1o] {
+        background-color: #5965f3 !important;
+        box-shadow: 0 4px 12px rgba(114, 124, 245, 0.35);
+    }
+
+.password-button[b-i8juruxc1o] {
+    color: #fa6767 !important;
+    border-color: #fa6767 !important;
+}
+
+    .password-button:hover[b-i8juruxc1o] {
+        background-color: rgba(250, 103, 103, 0.08) !important;
     }

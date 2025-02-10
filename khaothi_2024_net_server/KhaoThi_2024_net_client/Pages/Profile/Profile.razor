@@ -10,96 +10,213 @@
 
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
     <MudPaper Elevation="3" Class="rounded-lg overflow-hidden">
-        <!-- Header -->
-        <MudPaper Elevation="0" Class="d-flex align-center pa-4" Style="background-color: rgb(98, 88, 252);">
-            <MudIcon Icon="@Icons.Material.Filled.School" Color="Color.Surface" Class="mr-3" />
-            <MudText Typo="Typo.h6" Color="Color.Surface">HỒ SƠ GIÁO VIÊN</MudText>
-            <MudSpacer />
-            <MudTooltip Text="Làm mới thông tin">
-                <MudIconButton Icon="@Icons.Material.Filled.Refresh"
-                               Color="Color.Surface"
-                               OnClick="@(() => LoadUserProfile())"
-                               Disabled="@UserState.Value.IsLoading" />
-            </MudTooltip>
+        <!-- Header với gradient và avatar -->
+        <MudPaper Elevation="0" Style="background: linear-gradient(135deg, #594ae2 0%, #5042cb 100%); ">
+            <div class="d-flex align-center py-4 px-6">
+                <div class="mr-4">
+                    <MudAvatar Style="background-color: rgba(255,255,255,0.2); width: 52px; height: 52px;">
+                        <MudIcon Icon="@Icons.Material.Filled.School"
+                                 Color="Color.Surface"
+                                 Style="font-size: 32px; color: white;" />
+                    </MudAvatar>
+                </div>
+                <div>
+                    <MudText Typo="Typo.h5"
+                             Style="color: white; font-weight: 600; letter-spacing: 0.5px;">
+                       THÔNG TIN TÀI KHOẢN
+                    </MudText>
+                    <MudText Typo="Typo.body2"
+                             Style="color: rgba(255,255,255,0.85); margin-top: 4px;">
+                        Thông tin chi tiết và tài chính
+                    </MudText>
+                </div>
+                <MudSpacer />
+                <MudTooltip Text="Làm mới thông tin" Color="Color.Primary">
+                    <MudIconButton Icon="@Icons.Material.Filled.Refresh"
+                                   Style="background-color: rgba(255,255,255,0.15); margin-left: 8px; color: white;"
+                                   OnClick="@(() => LoadUserProfile())"
+                                   Disabled="@UserState.Value.IsLoading">
+                        @if (UserState.Value.IsLoading)
+                        {
+                            <MudProgressCircular Size="Size.Small"
+                                                 Indeterminate="true"
+                                                 Color="Color.Surface" />
+                        }
+                    </MudIconButton>
+                </MudTooltip>
+            </div>
         </MudPaper>
 
+        <!-- Content -->
         @if (UserState.Value.IsLoading)
         {
-            <div class="d-flex justify-center align-center" style="height: 300px;">
-                <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+            <div class="d-flex justify-center align-center" style="height: 400px;">
+                <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
             </div>
         }
         else if (!string.IsNullOrEmpty(_errorMessage))
         {
-            <MudAlert Severity="Severity.Error" Variant="Variant.Filled">@_errorMessage</MudAlert>
+            <div class="pa-4">
+                <MudAlert Severity="Severity.Error" Variant="Variant.Filled"
+                          Class="my-2 rounded-lg">
+                    @_errorMessage
+                </MudAlert>
+            </div>
         }
         else if (UserState.Value.SelectedUser is not null)
         {
             <div class="pa-6">
-                <!-- Thông tin cơ bản -->
+                <!-- Thông tin cơ bản với Avatar -->
                 <div class="d-flex flex-column align-center mb-8">
-                    <MudAvatar Style="width: 100px; height: 100px; background-color: rgb(98, 88, 252);" Class="mb-4">
-                        <MudText Typo="Typo.h4" Color="Color.Surface">
+                    <MudAvatar Style="background-color: #594AE2; color: white; width: 120px; height: 120px; "
+                               Class="mud-elevation-4 mb-4">
+                        <MudText Typo="Typo.h3" Style="color: white;">
                             @(UserState.Value.SelectedUser.HoTen?.Substring(0, 1).ToUpper() ?? "U")
                         </MudText>
                     </MudAvatar>
-                    <MudText Typo="Typo.h5" Align="Align.Center" Style="color: rgb(98, 88, 252);" Class="mb-2">
-                        @UserState.Value.SelectedUser.HoTen.ToUpper()
+                    <MudText Typo="Typo.h4" Style="color: #313a46; font-weight: 600;" Class="mb-2">
+                        @UserState.Value.SelectedUser.HoTen
                     </MudText>
-                    <MudText Typo="Typo.subtitle1" Color="Color.Secondary">
+                    <MudText Typo="Typo.subtitle1" Style="color: #6c757d;">
                         @UserState.Value.SelectedUser.TenDangNhap
                     </MudText>
                 </div>
 
-                <MudGrid>
-                    <!-- Thông tin chi tiết -->
+                <!-- Thông tin chi tiết -->
+                <MudGrid Spacing="4">
+                    <!-- Cột thông tin cá nhân -->
                     <MudItem xs="12" md="6">
-                        <MudText Typo="Typo.h6" Class="mb-4">Thông Tin Chi Tiết</MudText>
-                        <MudList T="string" Dense="true" DisablePadding="true">
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Badge">
-                                <MudText><strong>Mã số:</strong> @UserState.Value.SelectedUser.ID</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Work">
-                                <MudText><strong>Chức vụ:</strong> @UserState.Value.SelectedUser.MaChucVu</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Business">
-                                <MudText><strong>Đơn vị:</strong> @UserState.Value.SelectedUser.TenDonVi</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Numbers">
-                                <MudText><strong>Mã đơn vị:</strong> @UserState.Value.SelectedUser.MaDonVi</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Email">
-                                <MudText><strong>Email:</strong> @UserState.Value.SelectedUser.Email</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Phone">
-                                <MudText><strong>Số điện thoại:</strong> @(UserState.Value.SelectedUser.SDT ?? "Chưa cập nhật")</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Cake">
-                                <MudText><strong>Ngày sinh:</strong> @(UserState.Value.SelectedUser.NgaySinh?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật")</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Home">
-                                <MudText><strong>Địa chỉ:</strong> @(UserState.Value.SelectedUser.DiaChi ?? "Chưa cập nhật")</MudText>
-                            </MudListItem>
-                        </MudList>
+                        <MudPaper Elevation="0" Class="pa-4 rounded-lg" Style="background-color: #f8f9fa; ">
+                            <MudText Typo="Typo.h6" Style="color: #313a46; font-weight: 600;" Class="mb-4 d-flex align-center">
+                                <MudIcon Icon="@Icons.Material.Filled.Person"
+                                         Style="color: #727cf5;" Class="mr-2" />
+                                Thông Tin Chi Tiết
+                            </MudText>
+
+                            <MudList T="string" Dense="true" Clickable="false" DisablePadding="true">
+                                <MudListItem Icon="@Icons.Material.Filled.Badge" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Mã số:
+                                        </strong>
+                                        @UserState.Value.SelectedUser.ID
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Work" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Chức vụ:
+                                        </strong>
+                                        @UserState.Value.SelectedUser.MaChucVu
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Business" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Đơn vị:
+                                        </strong>
+                                        @UserState.Value.SelectedUser.TenDonVi
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Numbers" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Mã đơn vị:
+                                        </strong>
+                                        @UserState.Value.SelectedUser.MaDonVi
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Email" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Email:
+                                        </strong>
+                                        @UserState.Value.SelectedUser.Email
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Phone" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Số điện thoại:
+                                        </strong>
+                                        @(UserState.Value.SelectedUser.SDT ?? "Chưa cập nhật")
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Cake" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Ngày sinh:
+                                        </strong>
+                                        @(UserState.Value.SelectedUser.NgaySinh?.ToString("dd/MM/yyyy") ?? "Chưa cập nhật")
+                                    </MudText>
+                                </MudListItem>
+
+                                <MudListItem Icon="@Icons.Material.Filled.Home" IconColor="Color.Primary">
+                                    <MudText>
+                                        <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                            Địa chỉ:
+                                        </strong>
+                                        @(UserState.Value.SelectedUser.DiaChi ?? "Chưa cập nhật")
+                                    </MudText>
+                                </MudListItem>
+                            </MudList>
+                        </MudPaper>
                     </MudItem>
 
-                    <!-- Thông tin tài chính -->
+                    <!-- Cột thông tin tài chính -->
                     <MudItem xs="12" md="6">
-                        <MudText Typo="Typo.h6" Class="mb-4">Thông Tin Tài Chính</MudText>
-                        <MudList T="string" Dense="true" DisablePadding="true">
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.AccountBalance">
-                                <MudText><strong>Số tài khoản:</strong> @(UserState.Value.SelectedUser.SoTaiKhoan ?? "Chưa cập nhật")</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Business">
-                                <MudText><strong>Ngân hàng:</strong> @(UserState.Value.SelectedUser.TenNganHang ?? "Chưa cập nhật")</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Receipt">
-                                <MudText><strong>Mã số thuế:</strong> @(UserState.Value.SelectedUser.MaSoThue ?? "Chưa cập nhật")</MudText>
-                            </MudListItem>
-                            <MudListItem T="string" Icon="@Icons.Material.Filled.Today">
-                                <MudText><strong>Ngày tạo tài khoản:</strong> @UserState.Value.SelectedUser.NgayTao.ToString("dd/MM/yyyy")</MudText>
-                            </MudListItem>
-                        </MudList>
+                        <MudPaper Elevation="0" Class="pa-4 rounded-lg" Style="background-color: #f8f9fa;">
+                            <MudText Typo="Typo.h6" Style="color: #313a46; font-weight: 600;" Class="mb-4 d-flex align-center">
+                                <MudIcon Icon="@Icons.Material.Filled.AccountBalance"
+                                         Style="color: #727cf5;" Class="mr-2" />
+                                Thông Tin Tài Chính
+                            </MudText>
+                            <MudList T="string" Dense="true" Clickable="false" DisablePadding="true">
+                                <MudList Dense="true" Clickable="false" DisablePadding="true">
+                                    <MudListItem Icon="@Icons.Material.Filled.AccountBalance" IconColor="Color.Primary">
+                                        <MudText>
+                                            <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                                Số tài khoản:
+                                            </strong>
+                                            @(UserState.Value.SelectedUser.SoTaiKhoan ?? "Chưa cập nhật")
+                                        </MudText>
+                                    </MudListItem>
+
+                                    <MudListItem Icon="@Icons.Material.Filled.Business" IconColor="Color.Primary">
+                                        <MudText>
+                                            <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                                Ngân hàng:
+                                            </strong>
+                                            @(UserState.Value.SelectedUser.TenNganHang ?? "Chưa cập nhật")
+                                        </MudText>
+                                    </MudListItem>
+
+                                    <MudListItem Icon="@Icons.Material.Filled.Receipt" IconColor="Color.Primary">
+                                        <MudText>
+                                            <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                                Mã số thuế:
+                                            </strong>
+                                            @(UserState.Value.SelectedUser.MaSoThue ?? "Chưa cập nhật")
+                                        </MudText>
+                                    </MudListItem>
+
+                                    <MudListItem Icon="@Icons.Material.Filled.Today" IconColor="Color.Primary">
+                                        <MudText>
+                                            <strong style="color: #313a46; min-width: 150px; display: inline-block;">
+                                                Ngày tạo tài khoản:
+                                            </strong>
+                                            @UserState.Value.SelectedUser.NgayTao.ToString("dd/MM/yyyy")
+                                        </MudText>
+                                    </MudListItem>
+                                </MudList>
+                            </MudList>
+                        </MudPaper>
                     </MudItem>
                 </MudGrid>
 
@@ -109,6 +226,7 @@
                                Color="Color.Primary"
                                StartIcon="@Icons.Material.Filled.Edit"
                                OnClick="EditProfile"
+                               Style="min-width: 200px; text-transform: none; font-weight: 500;"
                                Size="Size.Large">
                         Chỉnh Sửa Thông Tin
                     </MudButton>
@@ -116,6 +234,7 @@
                                Color="Color.Error"
                                StartIcon="@Icons.Material.Filled.Password"
                                OnClick="ChangePassword"
+                               Style="min-width: 200px; text-transform: none; font-weight: 500;"
                                Size="Size.Large">
                         Đổi Mật Khẩu
                     </MudButton>
@@ -124,14 +243,16 @@
         }
         else
         {
-            <MudAlert Severity="Severity.Warning" Variant="Variant.Filled">
-                Không tìm thấy thông tin người dùng
-                <MudButton Color="Color.Inherit"
-                           Variant="Variant.Text"
-                           OnClick="@(() => LoadUserProfile())">
-                    Tải Lại
-                </MudButton>
-            </MudAlert>
+            <div class="pa-4">
+                <MudAlert Severity="Severity.Warning" Variant="Variant.Filled"
+                          Class="rounded-lg">
+                    Không tìm thấy thông tin người dùng
+                    <MudButton Color="Color.Inherit" Variant="Variant.Text"
+                               OnClick="@(() => LoadUserProfile())" Class="ml-auto">
+                        Tải Lại
+                    </MudButton>
+                </MudAlert>
+            </div>
         }
     </MudPaper>
 </MudContainer>
@@ -183,10 +304,10 @@
     /// </summary>
     private async void OnUserStateChanged(object? sender, EventArgs e)
     {
-        Console.WriteLine("State changed event received"); // Debug log
-        Console.WriteLine($"New loading state: {UserState.Value.IsLoading}");
-        Console.WriteLine($"New error message: {UserState.Value.ErrorMessage}");
-        Console.WriteLine($"New selected user exists: {UserState.Value.SelectedUser != null}");
+        //Console.WriteLine("State changed event received"); // Debug log
+        //Console.WriteLine($"New loading state: {UserState.Value.IsLoading}");
+        //Console.WriteLine($"New error message: {UserState.Value.ErrorMessage}");
+        //Console.WriteLine($"New selected user exists: {UserState.Value.SelectedUser != null}");
         await InvokeAsync(StateHasChanged); await InvokeAsync(StateHasChanged);
     }
 
@@ -210,24 +331,26 @@
             if (_userId.HasValue && _userId > 0)
             {
                 _errorMessage = null;
-                Console.WriteLine($"Dispatching GetUserByIdAction for userId: {_userId}"); // Debug log
+                //Console.WriteLine($"Dispatching GetUserByIdAction for userId: {_userId}"); // Debug log
                 Dispatcher.Dispatch(new GetUserByIdAction(_userId.Value));
-
-                // Log state changes
-                Console.WriteLine($"Current loading state: {UserState.Value.IsLoading}");
-                Console.WriteLine($"Current error message: {UserState.Value.ErrorMessage}");
-                Console.WriteLine($"Selected user exists: {UserState.Value.SelectedUser != null}");
+                await InvokeAsync(StateHasChanged);
+                //// Log state changes
+                //Console.WriteLine($"Current loading state: {UserState.Value.IsLoading}");
+                //Console.WriteLine($"Current error message: {UserState.Value.ErrorMessage}");
+                //Console.WriteLine($"Selected user exists: {UserState.Value.SelectedUser != null}");
             }
             else
             {
                 _errorMessage = "Không thể xác định ID người dùng.";
-                Console.WriteLine("Invalid userId in LoadUserProfile"); // Debug log
+                await InvokeAsync(StateHasChanged);
+                //Console.WriteLine("Invalid userId in LoadUserProfile"); // Debug log
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in LoadUserProfile: {ex}"); // Debug log
+            //Console.WriteLine($"Error in LoadUserProfile: {ex}"); // Debug log
             _errorMessage = "Có lỗi xảy ra khi tải thông tin. Vui lòng thử lại.";
+            await InvokeAsync(StateHasChanged);
         }
     }
 
