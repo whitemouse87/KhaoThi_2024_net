@@ -1,0 +1,785 @@
+2025-02-15 17:07:32 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:07:35 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:07:35 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:07:38 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:07:38 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:08:20 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:08:20 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:08:21 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:08:21 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:10:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:10:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:10:52 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:10:52 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:16:27 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:16:27 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:16:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:16:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:17:15 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:17:15 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:17:16 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:17:16 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:17:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:17:43 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:17:43 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:17:46 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:17:46 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:20:07 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:20:11 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:20:11 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:20:12 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:20:12 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:20:41 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:22:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:22:22 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:22:23 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:22:24 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:22:24 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:23:38 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:23:38 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:23:39 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:23:39 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:29:38 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:29:38 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:29:39 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:29:39 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:32:03 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:32:03 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:32:04 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:32:04 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:35:08 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:35:12 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:35:12 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:35:13 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:35:13 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:35:56 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:35:56 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:35:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:35:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:40:30 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:40:34 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:40:34 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:40:35 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:40:35 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:56:43 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 17:56:47 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:56:48 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 17:56:48 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 17:56:48 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 18:00:32 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 18:00:36 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 18:00:36 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 18:00:37 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 18:00:37 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 18:00:47 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 18:00:47 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 18:05:38 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 18:05:42 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 18:05:43 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 18:05:43 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 18:05:43 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 18:06:12 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 18:06:12 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 19:40:55 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 19:40:58 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 19:40:58 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 19:41:01 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 19:41:01 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:02:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:02:21 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:02:21 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:02:22 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:02:22 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:14:37 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:14:41 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:14:41 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:14:42 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:14:42 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:28:46 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:28:50 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:28:50 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:28:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:28:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:34:31 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:34:35 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:34:35 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:34:36 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:34:36 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:37:26 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:37:30 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:37:31 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:37:31 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:37:31 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:41:37 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:41:45 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:41:49 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:41:50 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:41:50 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:41:50 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:46:51 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:46:55 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:46:55 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:46:55 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:46:55 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:55:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:55:43 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:55:44 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:55:44 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:55:44 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:56:25 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 20:56:29 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:56:29 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 20:56:30 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 20:56:30 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:30:36 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:30:36 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:30:36 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:30:36 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:30:36 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:30:36 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:30:36 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:30:36 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:31:49 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:31:49 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:31:49 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:31:49 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:31:49 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:31:49 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:31:49 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:31:49 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:52:05 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 21:52:56 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 21:53:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:53:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:53:03 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:53:03 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:53:13 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:53:13 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:53:13 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:53:13 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:53:13 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:53:13 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:53:13 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:53:13 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:54:58 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:54:58 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:54:58 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:54:58 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:54:58 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:54:58 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:54:58 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:54:58 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:55:14 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:55:14 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:55:14 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:55:14 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:55:14 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:55:14 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:55:14 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:55:14 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:58:07 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 21:58:14 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:58:14 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:59:05 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:59:06 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:59:11 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:59:11 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:59:11 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:59:11 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:59:11 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:59:12 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:59:12 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:59:12 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:59:45 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:59:45 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 21:59:45 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 21:59:45 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 21:59:45 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 21:59:45 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 21:59:45 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 21:59:45 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:02:33 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 22:02:33 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:02:33 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 22:02:33 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 22:02:33 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 22:02:33 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 22:02:34 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 22:02:34 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:22:50 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-02-15 22:22:55 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 22:22:55 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:22:59 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 22:22:59 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:23:05 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 22:23:05 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:23:05 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 22:23:05 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 22:23:05 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 22:23:05 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""
+2025-02-15 22:23:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-15 22:23:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-15 22:23:28 [ERR] Error executing command: "
+            UPDATE KhaoThi_User 
+            SET TenDangNhap = @TenDangNhap,
+                MatKhau = @MatKhau,
+                HoTen = @HoTen,
+                NgaySinh = @NgaySinh,
+                MaDonVi = @MaDonVi,
+                TenDonVi = @TenDonVi,
+                MaChucVu = @MaChucVu,
+                Email = @Email,
+                SDT = @SDT,
+                SoTaiKhoan = @SoTaiKhoan,
+                TenNganHang = @TenNganHang,
+                DiaChi = @DiaChi,
+                MaSoThue = @MaSoThue,
+                Active = @Active,
+                RefreshToken = @RefreshToken,
+                RefreshTokenExpiryTime = @RefreshTokenExpiryTime
+            WHERE ID = @Id"
+System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+2025-02-15 22:23:28 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+2025-02-15 22:23:28 [ERR] Lỗi khi cập nhật người dùng ID: 2
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing command
+ ---> System.NotSupportedException: The member RefreshToken of type System.DBNull cannot be used as a parameter value
+   at Dapper.SqlMapper.LookupDbType(Type type, String name, Boolean demand, ITypeHandler& handler) in /_/Dapper/SqlMapper.cs:line 497
+   at Dapper.DynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 238
+   at Dapper.DynamicParameters.Dapper.SqlMapper.IDynamicParameters.AddParameters(IDbCommand command, Identity identity) in /_/Dapper/DynamicParameters.cs:line 150
+   at Dapper.SqlMapper.<>c__DisplayClass172_0.<GetCacheInfo>b__0(IDbCommand cmd, Object obj) in /_/Dapper/SqlMapper.cs:line 1835
+   at Dapper.CommandDefinition.SetupCommand(IDbConnection cnn, Action`2 paramReader) in /_/Dapper/CommandDefinition.cs:line 144
+   at Dapper.SqlMapper.TrySetupAsyncCommand(CommandDefinition command, IDbConnection cnn, Action`2 paramReader) in /_/Dapper/SqlMapper.Async.cs:line 412
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 658
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 62
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.ExecuteAsync(String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 67
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 163
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.UpdateAsync(KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 167
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.Update(Int32 id, KhaoThiUser user) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 140
+2025-02-15 22:23:28 [INF] ["BaseService - PUT https://localhost:7168/api/KhaoThiUser/2"] "API Error: InternalServerError - {\"message\":\"Đã xảy ra lỗi khi xử lý yêu cầu\"}" ""

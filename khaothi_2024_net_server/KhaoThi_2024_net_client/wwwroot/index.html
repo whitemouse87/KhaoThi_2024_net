@@ -15,8 +15,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
     <!-- Tắt cache thông qua HTTP Headers -->
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -24,6 +25,7 @@
 
     <!-- Styles -->
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="css/blazored-modal.css" rel="stylesheet" />
     <link href="css/app.css?v=123456" rel="stylesheet" /> <!-- Thêm query string để tránh cache -->
     <link href="KhaoThi_2024_net_client.styles.css?v=123456" rel="stylesheet" />
 
@@ -151,7 +153,7 @@
     </script>
 
     <script src="_framework/blazor.webassembly.js?v=123456" defer></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js?v=123456" defer></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js')

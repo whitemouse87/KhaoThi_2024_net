@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FBWxHhfJ/z4=",
+  "dgSpecHash": "GluYu8LyUM4=",
   "success": true,
   "projectFilePath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\TRY\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\blazored.fluentvalidation\\2.2.0\\blazored.fluentvalidation.2.2.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
+    "C:\\Users\\TRY\\.nuget\\packages\\blazored.modal\\7.3.1\\blazored.modal.7.3.1.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\blazorjs\\2.2.0\\blazorjs.2.2.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\blazorparametercastingmagic\\1.2.23060811\\blazorparametercastingmagic.1.2.23060811.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",

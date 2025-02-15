@@ -2,11 +2,14 @@
 using KhaoThi_2024_net_client.Services.User;
 using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions;
 
+
 namespace KhaoThi_2024_net_client.State.User
 {
     /// <summary>
     /// Class chứa các reducers để xử lý và cập nhật state người dùng
     /// </summary>
+    /// 
+
     public static class KhaoThiUserReducers
     {
         #region Load Users Reducers
@@ -394,14 +397,16 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceShowNotificationAction(KhaoThiUserState state, ShowNotificationAction action) =>
-        new(isLoading: state.IsLoading,
-       errorMessage: state.ErrorMessage,
-       users: state.Users,
-       selectedUser: state.SelectedUser,
-       paginatedUsers: state.PaginatedUsers,
-       isInitialized: state.IsInitialized);
+     new(
+         isLoading: state.IsLoading,
+         errorMessage: state.ErrorMessage,
+         users: state.Users,
+         selectedUser: state.SelectedUser,
+         paginatedUsers: state.PaginatedUsers,
+         isInitialized: state.IsInitialized,
+         notificationMessage: action.Message,
+         notificationType: action.Type
+     );
         #endregion
-
-
     }
 }

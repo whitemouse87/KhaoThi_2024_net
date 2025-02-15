@@ -7,7 +7,9 @@
 @inject IState<KhaoThiUserState> UserState
 @inject NavigationManager Navigation
 @inject IAuthService AuthService
-
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+@inject IModalService ModalService 
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
     <MudPaper Elevation="3" Class="rounded-lg overflow-hidden">
         <!-- Header với gradient và avatar -->
@@ -23,7 +25,7 @@
                 <div>
                     <MudText Typo="Typo.h5"
                              Style="color: white; font-weight: 600; letter-spacing: 0.5px;">
-                       THÔNG TIN TÀI KHOẢN
+                        THÔNG TIN TÀI KHOẢN
                     </MudText>
                     <MudText Typo="Typo.body2"
                              Style="color: rgba(255,255,255,0.85); margin-top: 4px;">
@@ -354,11 +356,150 @@
         }
     }
 
-    /// <summary>
-    /// Điều hướng đến trang chỉnh sửa profile
-    /// </summary>
-    private void EditProfile() => Navigation.NavigateTo("/profile/edit");
 
+    //private async Task EditProfile()
+    //{
+    //    // 1. Tạo parameters để truyền dữ liệu vào modal.
+    //    var parameters = new ModalParameters();
+    //    parameters.Add(nameof(EditUserForm.User), UserState.Value.SelectedUser); // Truyền user hiện tại vào
+
+    //    // 2. (Tùy chọn) Cấu hình modal (ví dụ: kích thước, không cho đóng khi click bên ngoài).
+    //    var options = new ModalOptions()
+    //    {
+    //        DisableBackgroundCancel = true, // Ngăn đóng modal khi click bên ngoài
+    //        HideCloseButton=false,        //  CloseButton = true,           // Hiển thị nút đóng (dấu X)
+    //        Size = ModalSize.Medium,                              //   MaxWidth = MaxWidth.Medium, // Set max width
+    //        Position = ModalPosition.Middle, // Đặt vị trí ở giữa
+    //    };
+
+    //    // 3. Hiển thị modal.  <EditUserForm> là tên component modal của bạn.
+    //    var modalRef = ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
+
+    //    // 4. (Tùy chọn) Xử lý kết quả trả về từ modal.
+    //    var result = await modalRef.Result;
+    //    if (!result.Cancelled) // Kiểm tra xem người dùng có nhấn nút "Hủy" không.
+    //    {
+
+    //    }
+    //}
+
+    //private async Task EditProfile()
+    //{
+    //    try
+    //    {
+    //        // 1. Kiểm tra user hiện tại
+    //        if (UserState.Value.SelectedUser == null)
+    //        {
+    //            Snackbar.Add("Không tìm thấy thông tin người dùng!", Severity.Error);
+    //            return;
+    //        }
+
+    //        // 2. Cấu hình modal parameters
+    //        var parameters = new ModalParameters()
+    //            .Add(nameof(EditUserForm.User), UserState.Value.SelectedUser);
+
+    //        // 3. Cấu hình modal options
+    //        var options = new ModalOptions
+    //        {
+
+
+    //            DisableBackgroundCancel = true,
+    //            HideCloseButton = false,
+    //            Position = ModalPosition.Middle,
+    //            Size = ModalSize.ExtraLarge,
+    //            Class = "profile-modal" // Class này sẽ giới hạn scope của CSS
+    //        };
+
+    //        // 4. Hiển thị modal
+    //        var modalRef = ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
+    //        var result = await modalRef.Result;
+
+    //        // 5. Xử lý kết quả từ modal
+    //        if (!result.Cancelled)
+    //        {
+    //            if (result.Data is KhaoThiUserModel updatedUser)
+    //            {
+    //                // Có thể thêm xử lý thành công ở đây nếu cần
+    //                Snackbar.Add("Cập nhật thông tin thành công!", Severity.Success);
+
+    //                // Refresh data nếu cần
+    //                await LoadUserProfile();  // Giả sử bạn có method này
+    //            }
+    //            else
+    //            {
+    //                Snackbar.Add("Dữ liệu trả về không hợp lệ!", Severity.Warning);
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+    //    }
+    //}
+    private async Task EditProfile()
+    {
+        try
+        {
+            var user = GetUserForEditing();
+            if (user == null) return;
+
+            var modalRef = ShowEditModal(user);
+            await HandleModalResult(modalRef);
+        }
+        catch (Exception ex)
+        {
+            HandleError(ex);
+        }
+    }
+
+    private KhaoThiUserModel GetUserForEditing()
+    {
+        if (UserState?.Value?.SelectedUser == null)
+        {
+            Snackbar.Add("Không tìm thấy thông tin người dùng!", Severity.Error);
+            return null;
+        }
+        return UserState.Value.SelectedUser;
+    }
+
+    private IModalReference ShowEditModal(KhaoThiUserModel user)
+    {
+        var parameters = new ModalParameters()
+            .Add(nameof(EditUserForm.User), user);
+
+        var options = new ModalOptions
+        {
+            DisableBackgroundCancel = true,
+            HideCloseButton = false,
+            Position = ModalPosition.Middle,
+            Size = ModalSize.ExtraLarge,
+            Class = "profile-modal",
+
+            AnimationType = ModalAnimationType.FadeInOut
+        };
+
+        return ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
+    }
+
+    private async Task HandleModalResult(IModalReference modalRef)
+    {
+        var result = await modalRef.Result;
+        if (!result.Cancelled && result.Data is KhaoThiUserModel updatedUser)
+        {
+            Snackbar.Add("Cập nhật thông tin thành công!", Severity.Success);
+            await LoadUserProfile();
+        }
+        else if (!result.Cancelled)
+        {
+            Snackbar.Add("Dữ liệu trả về không hợp lệ!", Severity.Warning);
+        }
+    }
+
+    private void HandleError(Exception ex)
+    {
+        Console.Error.WriteLine($"Error in EditProfile: {ex}");
+        Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+    }
     /// <summary>
     /// Điều hướng đến trang đổi mật khẩu
     /// </summary>

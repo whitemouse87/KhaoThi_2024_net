@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "KhaoThi_2024_net_client",
   "resources": {
-    "hash": "sha256-2Pp+EiYM+wSEiBbchuLoIWosq7jS/GEqZ7k464FsUz8=",
+    "hash": "sha256-Pv6Pc/lfXYh2KE2L5o3PNqPZVYGn4zePD4GexAA+/OM=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-uYeOuxwAyj0/LdsVbAvVqzduuTEBoqAJLxR+lWCBPic="
+      "dotnet.native.js": "sha256-gz7ix3NXLEx+MdL3O78f9UB+CYWZpFtYw1bvCGf+lro="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.js": "sha256-aTAnT1r/EAWev8oI/mTFI9nH3RsfA5M822bNiGhok6U="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-BvOxBdWOqRiga5acUuYgDDbtHPAMv8H4UvmwHgBw0RU="
+      "dotnet.native.wasm": "sha256-BkTi2GzJmrE1Rwmc07GP0zk7EJe1Kjt24SpXhZiSWrE="
     },
     "coreAssembly": {},
     "assembly": {
@@ -17,6 +17,7 @@
       "AutoMapper.wasm": "sha256-pQ4Xf706xSWYtP4HFejje/2xeMx82yLD1hKlKL3JR1I=",
       "Blazored.FluentValidation.wasm": "sha256-MSQuUWmw/uBMui2/n4kdEKi0h5j0G+EuO1sM6KK6ltM=",
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
+      "Blazored.Modal.wasm": "sha256-Y6pVrSnmzq2FCEnAkNngv+mtNlIljEmH3BEmGpr5jEQ=",
       "BlazorJS.wasm": "sha256-U+9kS2WhwK61Szm8unRDgEpOwXC+e98oMhby2DTknVw=",
       "BlazorParameterCastingMagic.wasm": "sha256-VRMmPe5UhhftT+KBdp3O7hX0C8h1l5qQGjKGrRYf+Lg=",
       "ExcelDataReader.wasm": "sha256-p2z9GHuyV5pTFXT+GKmexXTO4ltRggPcT9q47Kjwzvg=",
@@ -260,10 +261,10 @@
       "mscorlib.wasm": "sha256-QoC5hTKpDNO6efLnEvYwV9OJBXvYRq8/1yGhNZKiNCw=",
       "netstandard.wasm": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "System.Private.CoreLib.wasm": "sha256-fvIPBcvgvsRuWrKi2LGQsLYvcKUSnyIuBUsE3LJu/0Y=",
-      "KhaoThi_2024_net_client.wasm": "sha256-zYaXTsv2zE+r8UHGCUdRJAPyVYcIYHe/YRf5ZYtxhmU="
+      "KhaoThi_2024_net_client.wasm": "sha256-ehsEurxhfP+YrA7lZJcPZnUy5L5AzOBCHIGPrdV4G1k="
     },
     "pdb": {
-      "KhaoThi_2024_net_client.pdb": "sha256-dEAq61wDqOMpQAQTAltqh9aFYmImrs9DL8CxBi53SVA="
+      "KhaoThi_2024_net_client.pdb": "sha256-r7a0MoBkPtSmjR519qR8dOntp+UUbTaEPVgdfNdWEKQ="
     },
     "libraryInitializers": {
       "_content/BlazorJS/BlazorJS.o5pk8zvhtc.lib.module.js": "sha256-pJ9th4xzJ1OMZjS4dv7BMz2u879ku+Hu3qkTZk+1LGw=",

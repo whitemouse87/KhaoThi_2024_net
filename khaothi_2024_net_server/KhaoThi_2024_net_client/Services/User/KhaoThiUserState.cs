@@ -13,21 +13,17 @@ namespace KhaoThi_2024_net_client.Services.User
     [FeatureState]
     public class KhaoThiUserState
     {
-        /// <summary>
-        /// Constructor mặc định cho Fluxor serialization
-        /// </summary>
         public KhaoThiUserState() { }
 
-        /// <summary>
-        /// Constructor với tham số để khởi tạo state
-        /// </summary>
         public KhaoThiUserState(
             bool isLoading,
             string? errorMessage,
             IEnumerable<KhaoThiUserModel>? users,
             KhaoThiUserModel? selectedUser,
             PaginatedResult<KhaoThiUserModel>? paginatedUsers,
-            bool isInitialized)
+            bool isInitialized,
+            string? notificationMessage = null,
+            string? notificationType = null)
         {
             IsLoading = isLoading;
             ErrorMessage = errorMessage;
@@ -35,48 +31,28 @@ namespace KhaoThi_2024_net_client.Services.User
             SelectedUser = selectedUser;
             PaginatedUsers = paginatedUsers;
             IsInitialized = isInitialized;
+            NotificationMessage = notificationMessage;
+            NotificationType = notificationType;
         }
 
-        /// <summary>
-        /// Flag đánh dấu trạng thái đang tải dữ liệu
-        /// </summary>
         public bool IsLoading { get; }
-
-        /// <summary>
-        /// Thông báo lỗi nếu có
-        /// </summary>
         public string? ErrorMessage { get; }
-
-        /// <summary>
-        /// Danh sách người dùng hiện tại
-        /// </summary>
         public IEnumerable<KhaoThiUserModel>? Users { get; }
-
-        /// <summary>
-        /// Người dùng đang được chọn
-        /// </summary>
         public KhaoThiUserModel? SelectedUser { get; }
-
-        /// <summary>
-        /// Kết quả phân trang
-        /// </summary>
         public PaginatedResult<KhaoThiUserModel>? PaginatedUsers { get; }
-
-        /// <summary>
-        /// Flag đánh dấu state đã được khởi tạo
-        /// </summary>
         public bool IsInitialized { get; }
+        public string? NotificationMessage { get; }
+        public string? NotificationType { get; }
 
-        /// <summary>
-        /// State mặc định ban đầu
-        /// </summary>
         public static KhaoThiUserState GetInitialState() => new(
             isLoading: false,
             errorMessage: null,
             users: null,
             selectedUser: null,
             paginatedUsers: null,
-            isInitialized: false
+            isInitialized: false,
+            notificationMessage: null,
+            notificationType: null
         );
     }
 

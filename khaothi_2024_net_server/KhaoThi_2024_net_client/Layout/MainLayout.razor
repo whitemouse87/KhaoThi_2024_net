@@ -3,12 +3,14 @@
 @using KhaoThi_2024_net_client.Components.Auth
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Authorization
+
 @implements IDisposable
 @inject IState<AuthState> AuthState
 @inject NavigationManager NavigationManager
 @inject ISnackbar Snackbar
 @inject ILogger<MainLayout> _logger
 @inject IPageTitleService PageTitleService
+@inject IModalService ModalService
 <div class="main-layout">
     <MudLayout>
         @if (_isLoading)
@@ -108,13 +110,14 @@
                 {
                     <LoginRedirect />
                 }
-              
+
             </NotAuthorized>
         </AuthorizeView>
-       
+
     </MudLayout>
-  
+
 </div>
+
 @code {
     [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
     private bool _drawerOpen = true;

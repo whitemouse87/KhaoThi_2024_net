@@ -26,6 +26,7 @@ using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Models.Auth;
 using KhaoThi_2024_net_client.Services.Shares;
 using KhaoThi_2024_net_client.Services.PWA;
+using Blazored.Modal;
 
 public class Program
 {
@@ -109,6 +110,7 @@ public class Program
         ConfigureAuth(services);
         ConfigureStateManagement(services);
         ConfigureMudBlazor(services);
+        ConfigureBlazoredModal(services); // Gọi hàm cấu hình BlazoredModal
         ConfigureApplicationServices(services);
         ConfigureRouting(services);
         ConfigureAutoMapper(services); // Gọi hàm cấu hình AutoMapper
@@ -207,7 +209,7 @@ public class Program
     {
         services.AddMudServices(config =>
         {
-            config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
+            config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.TopRight;
             config.SnackbarConfiguration.PreventDuplicates = false;
             config.SnackbarConfiguration.NewestOnTop = true;
             config.SnackbarConfiguration.ShowCloseIcon = true;
@@ -260,13 +262,7 @@ public class Program
                 .ForMember(dest => dest.TenDonVi, opt => opt.MapFrom(src => src.TenDonVi))
                 .ForMember(dest => dest.MaChucVu, opt => opt.MapFrom(src => src.MaChucVu))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
-                //.AfterMap((src, dest) =>
-                //{
-                //    // Thêm logging để debug
-                //    Console.WriteLine($"AutoMapper Mapping:");
-                //    Console.WriteLine($"Source - ID: {src.ID}, HoTen: {src.HoTen}");
-                //    Console.WriteLine($"Destination - Id: {dest.ID}, HoTen: {dest.HoTen}");
-                //});
+               
         });
     }
     private static void ConfigureRouting(IServiceCollection services)
@@ -277,6 +273,11 @@ public class Program
 
             options.AppendTrailingSlash = false;
         });
+    }
+    private static void ConfigureBlazoredModal(IServiceCollection services)
+    {
+        services.AddBlazoredModal();
+       
     }
 
     //    private static void ConfigureLogging()

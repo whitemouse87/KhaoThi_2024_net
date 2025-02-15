@@ -1,0 +1,252 @@
+﻿@using KhaoThi_2024_net_client.Models.Users
+@using MudBlazor
+@inject IDispatcher Dispatcher
+@inject ISnackbar Snackbar
+@using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions
+@using Blazored.Modal
+@using Blazored.Modal.Services
+@using System.ComponentModel.DataAnnotations
+
+<div class="profile-modal blazored-modal-container">
+    <div class="blazored-modal">
+        <MudPaper Elevation="0" Class="purple-header">
+            <MudIcon Icon="@Icons.Material.Filled.School" Color="Color.Inherit" Size="Size.Large" Class="mb-3" />
+            <MudText Typo="Typo.h5" Color="Color.Inherit" Class="mb-1">THÔNG TIN TÀI KHOẢN</MudText>
+            <MudText Typo="Typo.body2" Color="Color.Inherit">Thông tin chi tiết và tài chính</MudText>
+        </MudPaper>
+
+        <div class="avatar-section">
+            <MudAvatar Color="Color.Primary" Size="Size.Large" Class="mud-elevation-4">
+                @(User?.HoTen?.FirstOrDefault().ToString().ToUpper() ?? "N")
+            </MudAvatar>
+        </div>
+
+        <div class="user-info">
+            <MudText Typo="Typo.h5" Class="mb-1">@User?.HoTen</MudText>
+            <MudText Typo="Typo.body2" Color="Color.Default">@User?.TenDangNhap</MudText>
+        </div>
+
+        @if (User == null)
+        {
+            <div class="d-flex justify-center align-center" style="height: 200px;">
+                <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+            </div>
+        }
+        else
+        {
+            <MudForm @ref="_form" Model="@User" @bind-IsValid="@_success">
+                <MudGrid Spacing="3" Class="mud-grid">
+                    <MudItem xs="12">
+                        <div class="section-title d-flex align-items-center mb-3">
+                            <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Small" Class="mr-2" />
+                            <MudText Typo="Typo.h6">Thông Tin Khách Hàng</MudText>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Họ và tên</MudText>
+                                <MudTextField @bind-Value="User.HoTen"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Required="true"
+                                              RequiredError="Họ và tên là bắt buộc!"
+                                              Validation="@(new Func<string, IEnumerable<string>>(ValidateName))"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Badge" />
+                            </div>
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Email</MudText>
+                                <MudTextField @bind-Value="User.Email"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Required="true"
+                                              RequiredError="Email là bắt buộc"
+                                              Validation="@(new EmailAddressAttribute() { ErrorMessage = "Email không hợp lệ" })"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Email" />
+                            </div>
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Ngày sinh</MudText>
+                                <MudDatePicker Label=""
+                                               @bind-Date="User.NgaySinh"
+                                               Variant="Variant.Outlined"
+                                               DateFormat="dd/MM/yyyy"
+                                               Adornment="Adornment.Start"
+                                               AdornmentIcon="@Icons.Material.Filled.Cake" />
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Số điện thoại</MudText>
+                                <MudTextField @bind-Value="User.SDT"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Phone" />
+                            </div>
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Địa chỉ</MudText>
+                                <MudTextField @bind-Value="User.DiaChi"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Lines="3"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Home" />
+                            </div>
+                        </div>
+                    </MudItem>
+
+                    <MudItem xs="12">
+                        <div class="section-title d-flex align-items-center mb-3">
+                            <MudIcon Icon="@Icons.Material.Filled.AccountBalance" Size="Size.Small" Class="mr-2" />
+                            <MudText Typo="Typo.h6">Thông Tin Ngân Hàng</MudText>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Số tài khoản</MudText>
+                                <MudTextField @bind-Value="User.SoTaiKhoan"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              HelperText="Vui lòng nhập đủ số tài khoản"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Numbers" />
+                            </div>
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Tên ngân hàng</MudText>
+                                <MudTextField @bind-Value="User.TenNganHang"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.AccountBalance" />
+                            </div>
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Số tài khoản</MudText>
+                                <MudTextField @bind-Value="User.SoTaiKhoan" // Lặp lại trường "Số tài khoản" - kiểm tra lại model nếu cần
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Numbers" />
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Mã số thuế</MudText>
+                                <MudTextField @bind-Value="User.MaSoThue"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Percent" />
+                            </div>
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Ngày tạo tài khoản</MudText>
+                                <MudTextField Value="@User.NgayTao.ToString("dd/MM/yyyy")"
+                                              Label=""
+                                              Variant="Variant.Outlined"
+                                              ReadOnly="true"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.CalendarMonth" />
+                            </div>
+                        </div>
+                    </MudItem>
+                </MudGrid>
+            </MudForm>
+        }
+
+        <div class="action-buttons">
+            <MudButton OnClick="CancelAsync"
+                       Variant="Variant.Text"
+                       Color="Color.Default"
+                       Class="px-6">
+                Hủy
+            </MudButton>
+            <MudButton Color="Color.Primary"
+                       Variant="Variant.Filled"
+                       OnClick="Submit"
+                       Disabled="@(!_success || IsLoading)"
+                       Class="px-6">
+                @if (IsLoading)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <MudText Class="ms-2">Đang xử lý...</MudText>
+                }
+                else
+                {
+                    @("Lưu thay đổi")
+                }
+            </MudButton>
+        </div>
+    </div>
+</div>
+@code {
+    [Inject] private IState<KhaoThiUserState> UserState { get; set; }
+    [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public KhaoThiUserModel User { get; set; } = null!;
+    private MudForm _form;
+    private bool _success;
+    private bool IsLoading => UserState.Value.IsLoading;
+    private bool _hasUpdateSucceeded = false;
+
+    protected override void OnInitialized()
+    {
+        UserState.StateChanged += HandleStateChanged;
+    }
+
+    private void HandleStateChanged(object? sender, EventArgs e)
+    {
+        var state = UserState.Value;
+
+        if (!string.IsNullOrEmpty(state.NotificationMessage))
+        {
+            var severity = state.NotificationType == "success" ?
+                Severity.Success : Severity.Error;
+            Snackbar.Add(state.NotificationMessage, severity);
+
+            if (state.NotificationType == "success")
+            {
+                _hasUpdateSucceeded = true;
+                CloseModalIfUpdateSucceeded();
+            }
+
+            StateHasChanged();
+        }
+    }
+
+    private async void CloseModalIfUpdateSucceeded()
+    {
+        if (_hasUpdateSucceeded)
+        {
+            await BlazoredModal.CloseAsync(ModalResult.Ok(User));
+        }
+    }
+
+    private IEnumerable<string> ValidateName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            yield return "Họ và tên là bắt buộc!";
+            yield break;
+        }
+        if (name.Length < 3)
+            yield return "Họ và tên phải có ít nhất 3 kí tự.";
+    }
+
+    private async Task Submit()
+    {
+        await _form.Validate();
+        if (_success)
+        {
+            _hasUpdateSucceeded = false;
+            Dispatcher.Dispatch(new SetLoadingAction(true));
+            Dispatcher.Dispatch(new UpdateUserAction(User));
+        }
+    }
+
+    private async Task CancelAsync()
+    {
+        await BlazoredModal.CancelAsync();
+    }
+
+    public void Dispose()
+    {
+        UserState.StateChanged -= HandleStateChanged;
+    }
+}
