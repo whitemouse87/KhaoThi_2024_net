@@ -1298,6 +1298,39 @@
           }
         }
       },
+      "Serilog.Sinks.File/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "4.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Serilog.Sinks.File.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.File.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Serilog.Sinks.Http/9.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Serilog.Sinks.File": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Serilog.Sinks.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Serilog.Sinks.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SharpCompress/0.38.0": {
         "type": "package",
         "dependencies": {
@@ -2878,6 +2911,39 @@
         },
         "runtime": {
           "lib/net8.0/Serilog.Sinks.Debug.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Serilog.Sinks.File/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "4.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Serilog.Sinks.File.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.File.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Serilog.Sinks.Http/9.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Serilog.Sinks.File": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Serilog.Sinks.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Serilog.Sinks.Http.dll": {
             "related": ".xml"
           }
         }
@@ -5524,6 +5590,48 @@
         "serilog.sinks.debug.nuspec"
       ]
     },
+    "Serilog.Sinks.File/6.0.0": {
+      "sha512": "lxjg89Y8gJMmFxVkbZ+qDgjl+T4yC5F7WSLTvA+5q0R04tfKVLRL/EHpYoJ/MEQd2EeCKDuylBIVnAYMotmh2A==",
+      "type": "package",
+      "path": "serilog.sinks.file/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/Serilog.Sinks.File.dll",
+        "lib/net462/Serilog.Sinks.File.xml",
+        "lib/net471/Serilog.Sinks.File.dll",
+        "lib/net471/Serilog.Sinks.File.xml",
+        "lib/net6.0/Serilog.Sinks.File.dll",
+        "lib/net6.0/Serilog.Sinks.File.xml",
+        "lib/net8.0/Serilog.Sinks.File.dll",
+        "lib/net8.0/Serilog.Sinks.File.xml",
+        "lib/netstandard2.0/Serilog.Sinks.File.dll",
+        "lib/netstandard2.0/Serilog.Sinks.File.xml",
+        "serilog-sink-nuget.png",
+        "serilog.sinks.file.6.0.0.nupkg.sha512",
+        "serilog.sinks.file.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Http/9.1.0": {
+      "sha512": "3j2sBStInJzI5TQMw3crxrs/qTuBWliJespgj1GHQ1dLOam0niBuSILZQArVHMTaNL5k7HtJPSCb0miVKXkucg==",
+      "type": "package",
+      "path": "serilog.sinks.http/9.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/Serilog.Sinks.Http.dll",
+        "lib/net462/Serilog.Sinks.Http.xml",
+        "lib/netstandard2.0/Serilog.Sinks.Http.dll",
+        "lib/netstandard2.0/Serilog.Sinks.Http.xml",
+        "lib/netstandard2.1/Serilog.Sinks.Http.dll",
+        "lib/netstandard2.1/Serilog.Sinks.Http.xml",
+        "serilog-sink-nuget.png",
+        "serilog.sinks.http.9.1.0.nupkg.sha512",
+        "serilog.sinks.http.nuspec"
+      ]
+    },
     "SharpCompress/0.38.0": {
       "sha512": "8i6KqjAFI3mvya8W8rnQrf5h4vz6ilw4zqk2AzInVqqqZ25TD6fmVeYBnlisjTWwP26eltZc0buSmJ8a3YIGxg==",
       "type": "package",
@@ -6162,6 +6270,7 @@
       "Serilog.Sinks.BrowserConsole >= 8.0.0",
       "Serilog.Sinks.Console >= 6.0.0",
       "Serilog.Sinks.Debug >= 3.0.0",
+      "Serilog.Sinks.Http >= 9.1.0",
       "System.IdentityModel.Tokens.Jwt >= 7.3.1",
       "System.Net.Http.Json >= 8.0.0"
     ]
@@ -6310,6 +6419,10 @@
           "Serilog.Sinks.Debug": {
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "Serilog.Sinks.Http": {
+            "target": "Package",
+            "version": "[9.1.0, )"
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",

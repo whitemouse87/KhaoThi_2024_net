@@ -219,5 +219,53 @@ namespace khaothi_2024_net_server.Infrastructure.Repositories
             const string sql = @"SELECT * FROM KhaoThi_User WHERE RefreshToken = @RefreshToken";
             return await _dataAccess.QueryFirstOrDefaultAsync<KhaoThiUser>(sql, "@RefreshToken", refreshToken);
         }
+        public async Task<bool> UpdatePasswordAsync(int userId, string newHashedPassword)
+        {
+            try
+            {
+                const string sql = @"
+                UPDATE KhaoThi_User 
+                SET MatKhau = @MatKhau
+                   
+                WHERE ID = @Id";
+
+                var result = await _dataAccess.ExecuteAsync(sql,
+                    "@Id", userId,
+                    "@MatKhau", newHashedPassword
+
+                );
+
+                _logger.LogInformation($"✅ Đã cập nhật mật khẩu cho user ID: {userId}");
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"🔥 Lỗi khi cập nhật mật khẩu cho user ID: {userId}");
+                throw;
+            }
+        }
+
+        public async Task<string> GetPasswordHashAsync(int userId)
+        {
+            try
+            {
+                const string sql = @"SELECT MatKhau FROM KhaoThi_User WHERE ID = @Id";
+
+                var hashedPassword = await _dataAccess.ExecuteScalarAsync<string>(sql, "@Id", userId);
+
+                if (string.IsNullOrEmpty(hashedPassword))
+                {
+                    _logger.LogWarning($"⚠️ Không tìm thấy mật khẩu cho user ID: {userId}");
+                    return null;
+                }
+
+                return hashedPassword;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"🔥 Lỗi khi lấy mật khẩu cho user ID: {userId}");
+                throw;
+            }
+        }
     }
 }

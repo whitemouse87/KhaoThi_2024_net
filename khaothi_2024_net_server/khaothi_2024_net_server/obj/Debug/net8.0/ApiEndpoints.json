@@ -378,6 +378,42 @@
   },
   {
     "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/KhaoThiUser/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "khaothi_2024_net_server.Features.UserManagement.DTOs.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
     "Method": "CheckUsername",
     "RelativePath": "api/KhaoThiUser/check-username/{username}",
     "HttpMethod": "GET",

@@ -9,7 +9,7 @@
 @inject IAuthService AuthService
 @inject IDialogService DialogService
 @inject ISnackbar Snackbar
-@inject IModalService ModalService 
+@inject IModalService ModalService
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
     <MudPaper Elevation="3" Class="rounded-lg overflow-hidden">
         <!-- Header với gradient và avatar -->
@@ -235,7 +235,7 @@
                     <MudButton Variant="Variant.Outlined"
                                Color="Color.Error"
                                StartIcon="@Icons.Material.Filled.Password"
-                               OnClick="ChangePassword"
+                               OnClick="ChangePasswordProfile"
                                Style="min-width: 200px; text-transform: none; font-weight: 500;"
                                Size="Size.Large">
                         Đổi Mật Khẩu
@@ -258,63 +258,246 @@
         }
     </MudPaper>
 </MudContainer>
+@*@code {
+        private string? _errorMessage;
+        private int? _userId;
+
+        /// <summary>
+        /// Khởi tạo component và lấy thông tin người dùng từ token
+        /// </summary>
+        protected override async Task OnInitializedAsync()
+        {
+
+            try
+            {
+                //Console.WriteLine("OnInitializedAsync started"); // Debug log
+
+                _userId = await AuthService.GetUserIdFromToken();
+                //Console.WriteLine($"Got userId: {_userId}"); // Debug log
+
+                if (!_userId.HasValue || _userId <= 0)
+                {
+                    _errorMessage = "Không thể xác định người dùng. Vui lòng đăng nhập lại.";
+                    //Console.WriteLine("Invalid userId, setting error message"); // Debug log
+                    return;
+                }
+
+                await LoadUserProfile();
+                //Console.WriteLine("OnInitializedAsync completed"); // Debug log
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Error in OnInitializedAsync: {ex}"); // Debug log
+                _errorMessage = $"Đã xảy ra lỗi: {ex.Message}";
+            }
+        }
+
+        /// <summary>
+        /// Đăng ký theo dõi thay đổi state
+        /// </summary>
+        protected override void OnInitialized()
+        {
+            Console.WriteLine("Subscribing to state changes"); // Debug log
+            UserState.StateChanged += OnUserStateChanged;
+        }
+
+        /// <summary>
+        /// Xử lý khi state thay đổi
+        /// </summary>
+        private async void OnUserStateChanged(object? sender, EventArgs e)
+        {
+            //Console.WriteLine("State changed event received"); // Debug log
+            //Console.WriteLine($"New loading state: {UserState.Value.IsLoading}");
+            //Console.WriteLine($"New error message: {UserState.Value.ErrorMessage}");
+            //Console.WriteLine($"New selected user exists: {UserState.Value.SelectedUser != null}");
+            await InvokeAsync(StateHasChanged); await InvokeAsync(StateHasChanged);
+        }
+
+        /// <summary>
+        /// Hủy đăng ký theo dõi state khi component bị hủy
+        /// </summary>
+        public void Dispose()
+        {
+            UserState.StateChanged -= OnUserStateChanged;
+        }
+
+        /// <summary>
+        /// Tải thông tin profile người dùng
+        /// </summary>
+        private async Task LoadUserProfile()
+        {
+            try
+            {
+                Console.WriteLine("LoadUserProfile started"); // Debug log
+
+                if (_userId.HasValue && _userId > 0)
+                {
+                    _errorMessage = null;
+                    //Console.WriteLine($"Dispatching GetUserByIdAction for userId: {_userId}"); // Debug log
+                    Dispatcher.Dispatch(new GetUserByIdAction(_userId.Value));
+                    await InvokeAsync(StateHasChanged);
+                    //// Log state changes
+                    //Console.WriteLine($"Current loading state: {UserState.Value.IsLoading}");
+                    //Console.WriteLine($"Current error message: {UserState.Value.ErrorMessage}");
+                    //Console.WriteLine($"Selected user exists: {UserState.Value.SelectedUser != null}");
+                }
+                else
+                {
+                    _errorMessage = "Không thể xác định ID người dùng.";
+                    await InvokeAsync(StateHasChanged);
+                    //Console.WriteLine("Invalid userId in LoadUserProfile"); // Debug log
+                }
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Error in LoadUserProfile: {ex}"); // Debug log
+                _errorMessage = "Có lỗi xảy ra khi tải thông tin. Vui lòng thử lại.";
+                await InvokeAsync(StateHasChanged);
+            }
+        }
+
+
+
+        private async Task EditProfile()
+        {
+            try
+            {
+                var user = GetUserForEditing();
+                if (user == null) return;
+
+                var modalRef = ShowEditModal(user);
+                await HandleModalResult(modalRef);
+            }
+            catch (Exception ex)
+            {
+                HandleError(ex);
+            }
+        }
+        private async Task ChangePasswordProfile()
+        {
+            try
+            {
+                var user = GetUserForEditing();
+                if (user == null) return;
+                var modalRef = ShowEditModal(user);
+                await HandleModalResult(modalRef);
+            }
+            catch (Exception ex)
+            {
+                HandleError(ex);
+            }
+        }
+
+        private KhaoThiUserModel GetUserForEditing()
+        {
+            if (UserState?.Value?.SelectedUser == null)
+            {
+                Snackbar.Add("Không tìm thấy thông tin người dùng!", Severity.Error);
+                return null;
+            }
+            return UserState.Value.SelectedUser;
+        }
+
+        private IModalReference ShowEditModal(KhaoThiUserModel user)
+        {
+            var parameters = new ModalParameters()
+                .Add(nameof(EditUserForm.User), user);
+
+            var options = new ModalOptions
+            {
+                DisableBackgroundCancel = true,
+                HideCloseButton = false,
+                Position = ModalPosition.Middle,
+                Size = ModalSize.ExtraLarge,
+                Class = "profile-modal",
+
+                AnimationType = ModalAnimationType.FadeInOut
+            };
+
+            return ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
+        }
+
+        private async Task HandleModalResult(IModalReference modalRef)
+        {
+            var result = await modalRef.Result;
+            if (!result.Cancelled && result.Data is KhaoThiUserModel updatedUser)
+            {
+                Snackbar.Add("Cập nhật thông tin thành công!", Severity.Success);
+                await LoadUserProfile();
+            }
+            else if (!result.Cancelled)
+            {
+                Snackbar.Add("Dữ liệu trả về không hợp lệ!", Severity.Warning);
+            }
+        }
+
+        private void HandleError(Exception ex)
+        {
+            Console.Error.WriteLine($"Error in EditProfile: {ex}");
+            Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+        }
+        /// <summary>
+        /// Điều hướng đến trang đổi mật khẩu
+        /// </summary>
+        private void ChangePassword() => Navigation.NavigateTo("/profile/change-password");
+    }*@
+
 @code {
+        // Biến lưu thông báo lỗi
     private string? _errorMessage;
+    // Biến lưu ID người dùng
     private int? _userId;
 
     /// <summary>
-    /// Khởi tạo component và lấy thông tin người dùng từ token
+    /// Phương thức khởi tạo component và lấy thông tin người dùng từ token xác thực
+    /// Được gọi khi component được tạo lần đầu
     /// </summary>
     protected override async Task OnInitializedAsync()
     {
-
         try
         {
-            //Console.WriteLine("OnInitializedAsync started"); // Debug log
-
+            // Lấy ID người dùng từ token xác thực
             _userId = await AuthService.GetUserIdFromToken();
-            //Console.WriteLine($"Got userId: {_userId}"); // Debug log
 
+            // Kiểm tra nếu ID không hợp lệ
             if (!_userId.HasValue || _userId <= 0)
             {
                 _errorMessage = "Không thể xác định người dùng. Vui lòng đăng nhập lại.";
-                //Console.WriteLine("Invalid userId, setting error message"); // Debug log
                 return;
             }
 
+            // Tải thông tin profile người dùng
             await LoadUserProfile();
-            //Console.WriteLine("OnInitializedAsync completed"); // Debug log
         }
         catch (Exception ex)
         {
-            //Console.WriteLine($"Error in OnInitializedAsync: {ex}"); // Debug log
             _errorMessage = $"Đã xảy ra lỗi: {ex.Message}";
         }
     }
 
     /// <summary>
-    /// Đăng ký theo dõi thay đổi state
+    /// Đăng ký lắng nghe sự kiện thay đổi trạng thái
+    /// Được gọi sau khi component được khởi tạo
     /// </summary>
     protected override void OnInitialized()
     {
-        Console.WriteLine("Subscribing to state changes"); // Debug log
+        // Đăng ký theo dõi sự thay đổi của UserState
         UserState.StateChanged += OnUserStateChanged;
     }
 
     /// <summary>
-    /// Xử lý khi state thay đổi
+    /// Xử lý khi trạng thái thay đổi
+    /// Cập nhật lại giao diện người dùng
     /// </summary>
     private async void OnUserStateChanged(object? sender, EventArgs e)
     {
-        //Console.WriteLine("State changed event received"); // Debug log
-        //Console.WriteLine($"New loading state: {UserState.Value.IsLoading}");
-        //Console.WriteLine($"New error message: {UserState.Value.ErrorMessage}");
-        //Console.WriteLine($"New selected user exists: {UserState.Value.SelectedUser != null}");
-        await InvokeAsync(StateHasChanged); await InvokeAsync(StateHasChanged);
+        // Cập nhật lại giao diện khi có thay đổi
+        await InvokeAsync(StateHasChanged);
     }
 
     /// <summary>
-    /// Hủy đăng ký theo dõi state khi component bị hủy
+    /// Hủy đăng ký lắng nghe sự kiện khi component bị hủy
+    /// Tránh memory leak
     /// </summary>
     public void Dispose()
     {
@@ -322,128 +505,48 @@
     }
 
     /// <summary>
-    /// Tải thông tin profile người dùng
+    /// Tải thông tin profile của người dùng
+    /// Gửi action để lấy thông tin từ API
     /// </summary>
     private async Task LoadUserProfile()
     {
         try
         {
-            Console.WriteLine("LoadUserProfile started"); // Debug log
-
             if (_userId.HasValue && _userId > 0)
             {
                 _errorMessage = null;
-                //Console.WriteLine($"Dispatching GetUserByIdAction for userId: {_userId}"); // Debug log
+                // Gửi action để lấy thông tin người dùng
                 Dispatcher.Dispatch(new GetUserByIdAction(_userId.Value));
                 await InvokeAsync(StateHasChanged);
-                //// Log state changes
-                //Console.WriteLine($"Current loading state: {UserState.Value.IsLoading}");
-                //Console.WriteLine($"Current error message: {UserState.Value.ErrorMessage}");
-                //Console.WriteLine($"Selected user exists: {UserState.Value.SelectedUser != null}");
             }
             else
             {
                 _errorMessage = "Không thể xác định ID người dùng.";
                 await InvokeAsync(StateHasChanged);
-                //Console.WriteLine("Invalid userId in LoadUserProfile"); // Debug log
             }
         }
         catch (Exception ex)
         {
-            //Console.WriteLine($"Error in LoadUserProfile: {ex}"); // Debug log
             _errorMessage = "Có lỗi xảy ra khi tải thông tin. Vui lòng thử lại.";
             await InvokeAsync(StateHasChanged);
         }
     }
 
-
-    //private async Task EditProfile()
-    //{
-    //    // 1. Tạo parameters để truyền dữ liệu vào modal.
-    //    var parameters = new ModalParameters();
-    //    parameters.Add(nameof(EditUserForm.User), UserState.Value.SelectedUser); // Truyền user hiện tại vào
-
-    //    // 2. (Tùy chọn) Cấu hình modal (ví dụ: kích thước, không cho đóng khi click bên ngoài).
-    //    var options = new ModalOptions()
-    //    {
-    //        DisableBackgroundCancel = true, // Ngăn đóng modal khi click bên ngoài
-    //        HideCloseButton=false,        //  CloseButton = true,           // Hiển thị nút đóng (dấu X)
-    //        Size = ModalSize.Medium,                              //   MaxWidth = MaxWidth.Medium, // Set max width
-    //        Position = ModalPosition.Middle, // Đặt vị trí ở giữa
-    //    };
-
-    //    // 3. Hiển thị modal.  <EditUserForm> là tên component modal của bạn.
-    //    var modalRef = ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
-
-    //    // 4. (Tùy chọn) Xử lý kết quả trả về từ modal.
-    //    var result = await modalRef.Result;
-    //    if (!result.Cancelled) // Kiểm tra xem người dùng có nhấn nút "Hủy" không.
-    //    {
-
-    //    }
-    //}
-
-    //private async Task EditProfile()
-    //{
-    //    try
-    //    {
-    //        // 1. Kiểm tra user hiện tại
-    //        if (UserState.Value.SelectedUser == null)
-    //        {
-    //            Snackbar.Add("Không tìm thấy thông tin người dùng!", Severity.Error);
-    //            return;
-    //        }
-
-    //        // 2. Cấu hình modal parameters
-    //        var parameters = new ModalParameters()
-    //            .Add(nameof(EditUserForm.User), UserState.Value.SelectedUser);
-
-    //        // 3. Cấu hình modal options
-    //        var options = new ModalOptions
-    //        {
-
-
-    //            DisableBackgroundCancel = true,
-    //            HideCloseButton = false,
-    //            Position = ModalPosition.Middle,
-    //            Size = ModalSize.ExtraLarge,
-    //            Class = "profile-modal" // Class này sẽ giới hạn scope của CSS
-    //        };
-
-    //        // 4. Hiển thị modal
-    //        var modalRef = ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
-    //        var result = await modalRef.Result;
-
-    //        // 5. Xử lý kết quả từ modal
-    //        if (!result.Cancelled)
-    //        {
-    //            if (result.Data is KhaoThiUserModel updatedUser)
-    //            {
-    //                // Có thể thêm xử lý thành công ở đây nếu cần
-    //                Snackbar.Add("Cập nhật thông tin thành công!", Severity.Success);
-
-    //                // Refresh data nếu cần
-    //                await LoadUserProfile();  // Giả sử bạn có method này
-    //            }
-    //            else
-    //            {
-    //                Snackbar.Add("Dữ liệu trả về không hợp lệ!", Severity.Warning);
-    //            }
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
-    //    }
-    //}
+    /// <summary>
+    /// Xử lý chức năng chỉnh sửa profile
+    /// Hiển thị modal chỉnh sửa thông tin
+    /// </summary>
     private async Task EditProfile()
     {
         try
         {
+            // Lấy thông tin người dùng để chỉnh sửa
             var user = GetUserForEditing();
             if (user == null) return;
 
+            // Hiển thị modal chỉnh sửa
             var modalRef = ShowEditModal(user);
+            // Xử lý kết quả sau khi modal đóng
             await HandleModalResult(modalRef);
         }
         catch (Exception ex)
@@ -452,6 +555,29 @@
         }
     }
 
+    /// <summary>
+    /// Xử lý chức năng đổi mật khẩu
+    /// Tương tự như EditProfile
+    /// </summary>
+    private async Task ChangePasswordProfile()
+    {
+        try
+        {
+            var user = GetUserForEditing();
+            if (user == null) return;
+            var modalRef = ChangePasswordModal(user.ID,user.HoTen);
+            await HandleModalResult(modalRef);
+        }
+        catch (Exception ex)
+        {
+            HandleError(ex);
+        }
+    }
+
+    /// <summary>
+    /// Lấy thông tin người dùng để chỉnh sửa
+    /// Kiểm tra và trả về null nếu không tìm thấy
+    /// </summary>
     private KhaoThiUserModel GetUserForEditing()
     {
         if (UserState?.Value?.SelectedUser == null)
@@ -462,46 +588,82 @@
         return UserState.Value.SelectedUser;
     }
 
+    /// <summary>
+    /// Hiển thị modal chỉnh sửa thông tin
+    /// Cấu hình các tham số và tùy chọn cho modal
+    /// </summary>
     private IModalReference ShowEditModal(KhaoThiUserModel user)
     {
+        // Thiết lập tham số cho modal
         var parameters = new ModalParameters()
             .Add(nameof(EditUserForm.User), user);
 
+        // Cấu hình tùy chọn cho modal
         var options = new ModalOptions
         {
-            DisableBackgroundCancel = true,
-            HideCloseButton = false,
-            Position = ModalPosition.Middle,
-            Size = ModalSize.ExtraLarge,
-            Class = "profile-modal",
-
-            AnimationType = ModalAnimationType.FadeInOut
+            DisableBackgroundCancel = true, // Không cho phép đóng khi click nền
+            HideCloseButton = false,        // Hiển thị nút đóng
+            Position = ModalPosition.Middle, // Vị trí giữa màn hình
+            Size = ModalSize.ExtraLarge,    // Kích thước lớn
+            Class = "profile-modal",        // CSS class
+            AnimationType = ModalAnimationType.FadeInOut // Hiệu ứng
         };
 
         return ModalService.Show<EditUserForm>("Chỉnh Sửa Thông Tin", parameters, options);
     }
 
+    /// <summary>
+    /// Xử lý kết quả trả về từ modal
+    /// Cập nhật thông tin nếu thành công
+    /// </summary>
     private async Task HandleModalResult(IModalReference modalRef)
     {
         var result = await modalRef.Result;
         if (!result.Cancelled && result.Data is KhaoThiUserModel updatedUser)
         {
+            // Thông báo thành công và tải lại thông tin
             Snackbar.Add("Cập nhật thông tin thành công!", Severity.Success);
             await LoadUserProfile();
         }
         else if (!result.Cancelled)
         {
+            // Thông báo lỗi nếu dữ liệu không hợp lệ
             Snackbar.Add("Dữ liệu trả về không hợp lệ!", Severity.Warning);
         }
     }
 
+    /// <summary>
+    /// Xử lý lỗi chung
+    /// Hiển thị thông báo lỗi cho người dùng
+    /// </summary>
     private void HandleError(Exception ex)
     {
         Console.Error.WriteLine($"Error in EditProfile: {ex}");
         Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
     }
+
     /// <summary>
-    /// Điều hướng đến trang đổi mật khẩu
+    /// Chuyển hướng đến trang đổi mật khẩu
     /// </summary>
-    private void ChangePassword() => Navigation.NavigateTo("/profile/change-password");
+    //private void ChangePassword() => Navigation.NavigateTo("/profile/change-password");
+    private IModalReference ChangePasswordModal(int UserID,string HoTen)
+    {
+        // Thiết lập tham số cho modal
+        var parameters = new ModalParameters()
+            .Add(nameof(ChangePasswordForm.UserID), UserID)
+            .Add(nameof(ChangePasswordForm.TenUser), HoTen);
+
+        // Cấu hình tùy chọn cho modal
+        var options = new ModalOptions
+        {
+            DisableBackgroundCancel = true, // Không cho phép đóng khi click nền
+            HideCloseButton = false,        // Hiển thị nút đóng
+            Position = ModalPosition.Middle, // Vị trí giữa màn hình
+            Size = ModalSize.ExtraLarge,    // Kích thước lớn
+            Class = "profile-modal",        // CSS class
+            AnimationType = ModalAnimationType.FadeInOut // Hiệu ứng
+        };
+
+        return ModalService.Show<ChangePasswordForm>("Thay đổi mật khẩu", parameters, options);
+    }
 }

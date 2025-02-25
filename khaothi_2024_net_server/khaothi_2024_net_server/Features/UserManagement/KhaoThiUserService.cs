@@ -312,5 +312,60 @@ namespace khaothi_2024_net_server.Features.UserManagement
 
             // Có thể thêm các validation khác tùy theo yêu cầu nghiệp vụ
         }
+        public async Task<bool> ChangePasswordAsync(int userId, ChangePasswordRequest request)
+        {
+            try
+            {
+                _logger.LogInformation($"🔄 Bắt đầu xử lý đổi mật khẩu cho user ID: {userId}");
+
+                // Validate request
+                if (request == null)
+                {
+                    throw new ArgumentNullException(nameof(request));
+                }
+
+                // Validate current password
+                var currentHashedPassword = await _userRepository.GetPasswordHashAsync(userId);
+                if (currentHashedPassword == null)
+                {
+                    throw new InvalidOperationException("Không tìm thấy thông tin người dùng");
+                }
+
+                // Verify current password
+                if (!BCrypt.Net.BCrypt.Verify(request.CurrentPassword, currentHashedPassword))
+                {
+                    _logger.LogWarning($"❌ Mật khẩu hiện tại không đúng cho user ID: {userId}");
+                    throw new InvalidOperationException("Mật khẩu hiện tại không đúng");
+                }
+
+                // Check if new password is same as current
+                if (BCrypt.Net.BCrypt.Verify(request.NewPassword, currentHashedPassword))
+                {
+                    throw new InvalidOperationException("Mật khẩu mới không được trùng với mật khẩu hiện tại");
+                }
+
+                // Hash new password
+                string newHashedPassword = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+
+                // Update password
+                var result = await _userRepository.UpdatePasswordAsync(userId, newHashedPassword);
+
+                if (result)
+                {
+                    _logger.LogInformation($"✅ Đổi mật khẩu thành công cho user ID: {userId}");
+                }
+                else
+                {
+                    _logger.LogWarning($"⚠️ Không thể cập nhật mật khẩu cho user ID: {userId}");
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"🔥 Lỗi khi đổi mật khẩu cho user ID: {userId}");
+                throw;
+            }
+        }
     }
 }

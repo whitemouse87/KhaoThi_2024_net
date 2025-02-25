@@ -29,5 +29,8 @@
         // Trạng thái
         public bool Active { get; set; } = true;
         public DateTime NgayTao { get; set; }
+
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }

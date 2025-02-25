@@ -178,10 +178,10 @@ public class Program
     private static CustomAuthStateProvider CreateCustomAuthStateProvider(IServiceProvider provider)
     {
         var localStorage = provider.GetRequiredService<ILocalStorageService>();
-        var authService = provider.GetRequiredService<IAuthService>();       
+        var authService = provider.GetRequiredService<IAuthService>();
         var khaothiuserService = provider.GetRequiredService<IUserService>();
         var mapper = provider.GetRequiredService<IMapper>();
-        return new CustomAuthStateProvider(localStorage, authService, khaothiuserService,mapper);
+        return new CustomAuthStateProvider(localStorage, authService, khaothiuserService, mapper);
     }
 
     private static void ConfigureStateManagement(IServiceCollection services)
@@ -232,15 +232,15 @@ public class Program
 
     private static void ConfigureApplicationServices(IServiceCollection services)
     {
-        
-     
+
+
         // Core Services
 
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<ILoggingService, LoggingService>();
         services.AddScoped<IUserService, KhaoThiUserService>();
         services.AddScoped<IPageTitleService, PageTitleService>();
-       
+
         // Add other application services here
         ConfigureAdditionalServices(services);
     }
@@ -262,7 +262,7 @@ public class Program
                 .ForMember(dest => dest.TenDonVi, opt => opt.MapFrom(src => src.TenDonVi))
                 .ForMember(dest => dest.MaChucVu, opt => opt.MapFrom(src => src.MaChucVu))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
-               
+
         });
     }
     private static void ConfigureRouting(IServiceCollection services)
@@ -277,7 +277,7 @@ public class Program
     private static void ConfigureBlazoredModal(IServiceCollection services)
     {
         services.AddBlazoredModal();
-       
+
     }
 
     //    private static void ConfigureLogging()
@@ -303,39 +303,130 @@ public class Program
 
     //        Log.Logger = logConfig.CreateLogger();
     //    }
+    //    private static void ConfigureLogging()
+    //    {
+    //        const string outputTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
+
+    //        var logConfig = new LoggerConfiguration()
+    //            // Cấu hình mức log tối thiểu
+    //            .MinimumLevel.Warning()
+    //            .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
+    //            .MinimumLevel.Override("System", LogEventLevel.Error)
+
+    //            // Lọc các log không cần thiết
+    //            .Filter.ByExcluding(e =>
+    //                e.Properties.ContainsKey("SourceContext") &&
+    //                (e.Properties["SourceContext"].ToString().Contains("Microsoft.AspNetCore") ||
+    //                 e.Properties["SourceContext"].ToString().Contains("System.Net.Http")))
+
+    //            // Thêm các thuộc tính từ context
+    //            .Enrich.FromLogContext()
+
+    //            // Cấu hình đầu ra cho Browser Console
+    //            .WriteTo.BrowserConsole(
+    //                restrictedToMinimumLevel: LogEventLevel.Warning,
+    //                outputTemplate: outputTemplate
+    //            );
+
+    //        // Cấu hình cho môi trường Development
+    //#if DEBUG
+    //        logConfig
+    //            .WriteTo.Debug(
+    //                restrictedToMinimumLevel: LogEventLevel.Warning,
+    //                outputTemplate: outputTemplate
+    //            )
+    //            .MinimumLevel.Override("KhaoThi_2024_net_client", LogEventLevel.Debug); // Log chi tiết cho namespace của ứng dụng
+    //#endif
+
+    //        try
+    //        {
+    //            Log.Logger = logConfig.CreateLogger();
+    //            Log.Information("Logging configuration initialized successfully");
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            // Fallback logger trong trường hợp không thể tạo logger chính
+    //            Log.Logger = new LoggerConfiguration()
+    //                .WriteTo.BrowserConsole()
+    //                .CreateLogger();
+    //            Log.Error(ex, "Failed to create logger configuration");
+    //        }
+    //    }
+    //    private static void ConfigureLogging()
+    //    {
+    //        const string outputTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
+    //        var logConfig = new LoggerConfiguration()
+    //            // Thay đổi mức log tối thiểu thành Verbose (mức thấp nhất)
+    //            .MinimumLevel.Verbose()
+    //            // Ghi đè mức log cho thư viện Microsoft và System ở mức Information
+    //            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    //            .MinimumLevel.Override("System", LogEventLevel.Information)
+    //            // Bỏ filter lọc các log - để ghi tất cả log
+    //            // .Filter.ByExcluding(...) - đã bỏ dòng này
+    //            // Thêm các thuộc tính từ context
+    //            .Enrich.FromLogContext()
+    //            // Cấu hình đầu ra cho Browser Console - thay đổi mức log
+    //            .WriteTo.BrowserConsole(
+    //                restrictedToMinimumLevel: LogEventLevel.Verbose,
+    //                outputTemplate: outputTemplate
+    //            );
+
+    //        // Cấu hình cho môi trường Development
+    //#if DEBUG
+    //        logConfig
+    //            .WriteTo.Debug(
+    //                restrictedToMinimumLevel: LogEventLevel.Verbose,
+    //                outputTemplate: outputTemplate
+    //            )
+    //            .MinimumLevel.Override("KhaoThi_2024_net_client", LogEventLevel.Verbose); // Log chi tiết cho namespace của ứng dụng
+    //#endif
+
+    //        try
+    //        {
+    //            Log.Logger = logConfig.CreateLogger();
+    //            Log.Information("Logging configuration initialized successfully");
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            // Fallback logger trong trường hợp không thể tạo logger chính
+    //            Log.Logger = new LoggerConfiguration()
+    //                .MinimumLevel.Verbose() // Đảm bảo fallback logger cũng ghi tất cả log
+    //                .WriteTo.BrowserConsole()
+    //                .CreateLogger();
+    //            Log.Error(ex, "Failed to create logger configuration");
+    //        }
+    //    }
     private static void ConfigureLogging()
     {
         const string outputTemplate = "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
 
+        var baseAddress = API_BASE_URL;  // Đổi thành base URL thích hợp
+
         var logConfig = new LoggerConfiguration()
-            // Cấu hình mức log tối thiểu
-            .MinimumLevel.Warning()
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
-            .MinimumLevel.Override("System", LogEventLevel.Error)
-
-            // Lọc các log không cần thiết
-            .Filter.ByExcluding(e =>
-                e.Properties.ContainsKey("SourceContext") &&
-                (e.Properties["SourceContext"].ToString().Contains("Microsoft.AspNetCore") ||
-                 e.Properties["SourceContext"].ToString().Contains("System.Net.Http")))
-
-            // Thêm các thuộc tính từ context
+            .MinimumLevel.Verbose()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+            .MinimumLevel.Override("System", LogEventLevel.Information)
             .Enrich.FromLogContext()
-
-            // Cấu hình đầu ra cho Browser Console
             .WriteTo.BrowserConsole(
-                restrictedToMinimumLevel: LogEventLevel.Warning,
+                restrictedToMinimumLevel: LogEventLevel.Verbose,
                 outputTemplate: outputTemplate
+            )
+            // Thêm HTTP sink để gửi logs về API endpoint 'logs'
+            .WriteTo.Http(
+                requestUri: $"{baseAddress}logs",
+                queueLimitBytes: 10 * 1024 * 1024, // 10MB queue limit
+                                                   // Số lượng events tối đa trong một batch
+                period: TimeSpan.FromSeconds(5),   // Khoảng thời gian giữa các lần gửi
+                restrictedToMinimumLevel: LogEventLevel.Warning
             );
 
-        // Cấu hình cho môi trường Development
 #if DEBUG
         logConfig
             .WriteTo.Debug(
-                restrictedToMinimumLevel: LogEventLevel.Warning,
+                restrictedToMinimumLevel: LogEventLevel.Verbose,
                 outputTemplate: outputTemplate
             )
-            .MinimumLevel.Override("KhaoThi_2024_net_client", LogEventLevel.Debug); // Log chi tiết cho namespace của ứng dụng
+            .MinimumLevel.Override("KhaoThi_2024_net_client", LogEventLevel.Verbose);
 #endif
 
         try
@@ -345,8 +436,8 @@ public class Program
         }
         catch (Exception ex)
         {
-            // Fallback logger trong trường hợp không thể tạo logger chính
             Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
                 .WriteTo.BrowserConsole()
                 .CreateLogger();
             Log.Error(ex, "Failed to create logger configuration");

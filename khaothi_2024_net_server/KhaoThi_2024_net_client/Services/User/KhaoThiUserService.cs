@@ -5,6 +5,7 @@ using KhaoThi_2024_net_client.Services.Logging;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions;
 
 namespace KhaoThi_2024_net_client.Services.User
 {
@@ -244,6 +245,43 @@ namespace KhaoThi_2024_net_client.Services.User
                 throw;
             }
         }
+
+        public async Task<bool> ChangePassword(int id, ChangePasswordModel model)
+        {
+            try
+            {
+
+                var changePasswordRequest = new ChangePasswordModel
+                {
+                    UserId = null, // Có thể null nếu muốn lấy từ token (trong API)
+                    CurrentPassword = model.CurrentPassword,
+                    NewPassword = model.NewPassword,
+                    ConfirmPassword = model.ConfirmPassword
+                };
+                await AddAuthenticationHeader();
+                var response = await _httpClient.PostAsJsonAsync($"{API_ENDPOINT}/change-password", changePasswordRequest, _jsonOptions);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    await _logger.LogInfoAsync($"Đổi mật khẩu thành công cho user ID: {id}");
+                    return true;
+                }
+                else
+                {
+
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    await _logger.LogErrorAsync($"Lỗi đổi mật khẩu cho user ID: {id}. Status code: {response.StatusCode}, Error: {errorContent}");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi HTTP khi đổi mật khẩu cho user ID: {id}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+
+        }
+
 
     }
 }

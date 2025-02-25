@@ -68,6 +68,11 @@ namespace KhaoThi_2024_net_client.Services.User
         public record DeleteUserSuccessAction(int Id);
         public record DeleteUserFailureAction(string ErrorMessage);
 
+        //Actions cập nhật mật khẩu
+        public record ChangePasswordAction(int id, ChangePasswordModel info);
+        public record ChangePasswordSuccessAction(int Id);
+        public record ChangePasswordFailureAction(string ErrorMessage);
+
         // Actions cho thao tác theo đơn vị
         public record LoadUsersByDonViAction(string MaDonVi);
         public record LoadUsersByDonViSuccessAction(IEnumerable<KhaoThiUserModel> Users);
@@ -101,11 +106,18 @@ namespace KhaoThi_2024_net_client.Services.User
             {
                 if (string.IsNullOrWhiteSpace(message))
                     throw new ArgumentException("Nội dung thông báo không được để trống", nameof(message));
-                if (string.IsNullOrWhiteSpace(notificationType))
-                    throw new ArgumentException("Loại thông báo không được để trống", nameof(notificationType));
 
                 Message = message;
-                NotificationType = notificationType;
+                NotificationType = notificationType.ToLower().Trim(); // Normalize type
+
+                // Validate notification type
+                if (NotificationType != "success" && NotificationType != "error")
+                {
+                    throw new ArgumentException(
+                        "Loại thông báo phải là 'success' hoặc 'error'",
+                        nameof(notificationType)
+                    );
+                }
             }
         }
 

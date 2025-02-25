@@ -15,5 +15,6 @@ namespace khaothi_2024_net_server.Core.Interfaces
         Task<IEnumerable<KhaoThiUser>> GetByMaDonViAsync(string maDonVi);
         Task BulkInsertUsersAsync(IEnumerable<KhaoThiUser> users);
         Task BulkUpdateUsersAsync(IEnumerable<KhaoThiUser> users);
+        Task<bool> ChangePasswordAsync(int userId, ChangePasswordRequest request);
     }
 }

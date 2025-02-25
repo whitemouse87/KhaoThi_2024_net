@@ -13,12 +13,12 @@ namespace KhaoThi_2024_net_client.State.User
     public class KhaoThiUserEffects
     {
         private readonly IUserService _userService;
-        private readonly ILoggingService _logger;
 
-        public KhaoThiUserEffects(IUserService userService, ILoggingService logger)
+
+        public KhaoThiUserEffects(IUserService userService)
         {
             _userService = userService;
-            _logger = logger;
+
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync("Lỗi khi tải danh sách người dùng phân trang", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error("Lỗi khi tải danh sách người dùng phân trang", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new LoadPaginatedUsersFailureAction(ex.Message));
             }
             finally
@@ -65,7 +65,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync($"Lỗi khi lấy thông tin người dùng ID: {action.Id}", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error($"Lỗi khi lấy thông tin người dùng ID: {action.Id}", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new GetUserByIdFailureAction(ex.Message));
             }
             finally
@@ -89,7 +89,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync("Lỗi khi tạo mới người dùng", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error("Lỗi khi tạo mới người dùng", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new CreateUserFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction("Tạo mới người dùng thất bại", "error"));
             }
@@ -99,9 +99,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
         }
 
-        /// <summary>
-        /// Effect xử lý cập nhật thông tin người dùng
-        /// </summary>
+
         [EffectMethod]
         public async Task HandleUpdateUser(UpdateUserAction action, IDispatcher dispatcher)
         {
@@ -109,27 +107,40 @@ namespace KhaoThi_2024_net_client.State.User
             {
                 dispatcher.Dispatch(new SetLoadingAction(true));
                 var success = await _userService.UpdateAsync(action.User);
+
                 if (success)
                 {
                     dispatcher.Dispatch(new UpdateUserSuccessAction(action.User));
-                    dispatcher.Dispatch(new ShowNotificationAction("Cập nhật người dùng thành công", "success"));
+                    dispatcher.Dispatch(new ShowNotificationAction(
+                        "Cập nhật người dùng thành công",
+                        "success"
+                    ));
                 }
                 else
                 {
                     dispatcher.Dispatch(new UpdateUserFailureAction("Không thể cập nhật người dùng"));
-                    dispatcher.Dispatch(new ShowNotificationAction("Cập nhật người dùng thất bại", "error"));
+                    dispatcher.Dispatch(new ShowNotificationAction(
+                        "Không thể cập nhật người dùng. Vui lòng thử lại",
+                        "error"
+                    ));
                 }
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync($"Lỗi khi cập nhật người dùng ID: {action.User.ID}", ex, nameof(KhaoThiUserEffects));
-                dispatcher.Dispatch(new UpdateUserFailureAction(ex.Message));
-                dispatcher.Dispatch(new ShowNotificationAction("Cập nhật người dùng thất bại", "error"));
+                var errorMessage = "Có lỗi xảy ra khi cập nhật người dùng";
+                await Logger.Error(
+                    $"Lỗi khi cập nhật người dùng ID: {action.User.ID}",
+                    ex,
+                    nameof(KhaoThiUserEffects)
+                );
+
+                dispatcher.Dispatch(new UpdateUserFailureAction(errorMessage));
+                dispatcher.Dispatch(new ShowNotificationAction(
+                    $"{errorMessage}: {ex.Message}",
+                    "error"
+                ));
             }
-            finally
-            {
-                dispatcher.Dispatch(new SetLoadingAction(false));
-            }
+
         }
 
         /// <summary>
@@ -155,7 +166,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync($"Lỗi khi xóa người dùng ID: {action.Id}", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error($"Lỗi khi xóa người dùng ID: {action.Id}", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new DeleteUserFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction("Xóa người dùng thất bại", "error"));
             }
@@ -179,7 +190,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync($"Lỗi khi lấy danh sách người dùng theo mã đơn vị: {action.MaDonVi}", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error($"Lỗi khi lấy danh sách người dùng theo mã đơn vị: {action.MaDonVi}", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new LoadUsersByDonViFailureAction(ex.Message));
             }
             finally
@@ -203,7 +214,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync("Lỗi khi thêm nhiều người dùng", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error("Lỗi khi thêm nhiều người dùng", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new BulkInsertUsersFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction("Thêm nhiều người dùng thất bại", "error"));
             }
@@ -228,7 +239,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync("Lỗi khi cập nhật nhiều người dùng", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error("Lỗi khi cập nhật nhiều người dùng", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new BulkUpdateUsersFailureAction(ex.Message));
                 dispatcher.Dispatch(new ShowNotificationAction("Cập nhật nhiều người dùng thất bại", "error"));
             }
@@ -252,7 +263,7 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync($"Lỗi khi kiểm tra tên đăng nhập: {action.Username}", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error($"Lỗi khi kiểm tra tên đăng nhập: {action.Username}", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new CheckUsernameFailureAction(ex.Message));
             }
             finally
@@ -271,8 +282,38 @@ namespace KhaoThi_2024_net_client.State.User
             }
             catch (Exception ex)
             {
-                await _logger.LogErrorAsync("Lỗi khi tải danh sách người dùng", ex, nameof(KhaoThiUserEffects));
+                await Logger.Error("Lỗi khi tải danh sách người dùng", ex, nameof(KhaoThiUserEffects));
                 dispatcher.Dispatch(new LoadUsersFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
+        [EffectMethod]
+        public async Task HandleChangePassword(ChangePasswordAction action, IDispatcher dispatcher)
+        {
+
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true)); // Bắt đầu loading
+                var isSuccess = await _userService.ChangePassword(action.id, action.info);
+
+                if (isSuccess)
+                {
+                    // Chỉ dispatch action thành công nếu service trả về true
+                    dispatcher.Dispatch(new ChangePasswordSuccessAction(action.id));
+                }
+                else
+                {
+                    // Nếu service trả về false, dispatch action thất bại
+                    dispatcher.Dispatch(new ChangePasswordFailureAction("Không thể thay đổi mật khẩu. Vui lòng kiểm tra lại thông tin."));
+                }
+            }
+            catch (Exception ex)
+            {
+                await Logger.Error("Lỗi khi điều chỉnh mật khẩu", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new ChangePasswordFailureAction(ex.Message));
             }
             finally
             {

@@ -723,6 +723,60 @@
         }
       }
     },
+    "/api/KhaoThiUser/change-password": {
+      "post": {
+        "tags": [
+          "KhaoThiUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.ChangePasswordRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.ChangePasswordRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.ChangePasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
     "/api/Logs": {
       "post": {
         "tags": [
@@ -1027,6 +1081,33 @@
             "nullable": true
           },
           "Exception": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "khaothi_2024_net_server.Features.UserManagement.DTOs.ChangePasswordRequest": {
+        "required": [
+          "CurrentPassword",
+          "NewPassword"
+        ],
+        "type": "object",
+        "properties": {
+          "UserId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "CurrentPassword": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "NewPassword": {
+            "minLength": 8,
+            "type": "string"
+          },
+          "ConfirmPassword": {
             "type": "string",
             "nullable": true
           }

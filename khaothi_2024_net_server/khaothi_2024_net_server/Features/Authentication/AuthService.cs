@@ -19,19 +19,23 @@ namespace khaothi_2024_net_server.Features.Authentication
         private readonly ILogger<AuthService> _logger;
         private readonly IDistributedCache _cache;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IPasswordHasher _passwordHasher;
 
         public AuthService(
             IKhaoThiUserRepository userRepository,
             IConfiguration configuration,
             ILogger<AuthService> logger,
             IDistributedCache cache,
-            IHttpContextAccessor httpContextAccessor)
+            IHttpContextAccessor httpContextAccessor,
+            IPasswordHasher passwordHasher
+            )
         {
             _userRepository = userRepository;
             _configuration = configuration;
             _logger = logger;
             _cache = cache;
             _httpContextAccessor = httpContextAccessor;
+            _passwordHasher = passwordHasher;
         }
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
         {
@@ -59,13 +63,15 @@ namespace khaothi_2024_net_server.Features.Authentication
                 }
 
                 // Verify password (assuming password is hashed)
-                if (!BCrypt.Net.BCrypt.Verify(request.MatKhau, user.MatKhau))
+                if (!_passwordHasher.VerifyPassword(request.MatKhau, user.MatKhau))
                 {
+
+
                     return new LoginResponse
                     {
                         Success = false,
                         ErrorType = LoginErrorType.InvalidCredentials,
-                        ErrorMessage = "Mật khẩu không đúng"
+                        ErrorMessage = "Mật khẩu không đúng:" + request.MatKhau.ToString() + "-" + user.MatKhau
                     };
                 }
 
@@ -393,7 +399,8 @@ namespace khaothi_2024_net_server.Features.Authentication
 
             // Xóa các session hết hạn trước khi kiểm tra
             var tokenHandler = new JwtSecurityTokenHandler();
-            sessionList = sessionList.Where(token => {
+            sessionList = sessionList.Where(token =>
+            {
                 try
                 {
                     var jwt = tokenHandler.ReadJwtToken(token);

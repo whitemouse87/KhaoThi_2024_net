@@ -176,6 +176,7 @@
         </div>
     </div>
 </div>
+
 @code {
     [Inject] private IState<KhaoThiUserState> UserState { get; set; }
     [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; } = default!;
@@ -183,7 +184,7 @@
     private MudForm _form;
     private bool _success;
     private bool IsLoading => UserState.Value.IsLoading;
-    private bool _hasUpdateSucceeded = false;
+    private string? _lastNotificationMessage;
 
     protected override void OnInitialized()
     {
@@ -194,27 +195,26 @@
     {
         var state = UserState.Value;
 
-        if (!string.IsNullOrEmpty(state.NotificationMessage))
+        if (!string.IsNullOrEmpty(state.NotificationMessage) &&
+            state.NotificationMessage != _lastNotificationMessage)
         {
-            var severity = state.NotificationType == "success" ?
-                Severity.Success : Severity.Error;
+            _lastNotificationMessage = state.NotificationMessage;
+
+            var severity = state.NotificationType?.ToLower() == "success"
+                ? Severity.Success
+                : Severity.Error;
+
             Snackbar.Add(state.NotificationMessage, severity);
 
-            if (state.NotificationType == "success")
+            if (state.NotificationType?.ToLower() == "success")
             {
-                _hasUpdateSucceeded = true;
-                CloseModalIfUpdateSucceeded();
+                InvokeAsync(async () =>
+                {
+                    await BlazoredModal.CloseAsync(ModalResult.Ok(state.SelectedUser));
+                });
             }
 
             StateHasChanged();
-        }
-    }
-
-    private async void CloseModalIfUpdateSucceeded()
-    {
-        if (_hasUpdateSucceeded)
-        {
-            await BlazoredModal.CloseAsync(ModalResult.Ok(User));
         }
     }
 
@@ -234,8 +234,12 @@
         await _form.Validate();
         if (_success)
         {
-            _hasUpdateSucceeded = false;
-            Dispatcher.Dispatch(new SetLoadingAction(true));
+            _lastNotificationMessage = null; // Reset notification tracker
+            if (UserState.Value.SelectedUser != null)
+            {
+                User.RefreshToken = UserState.Value.SelectedUser.RefreshToken;
+                User.RefreshTokenExpiryTime = UserState.Value.SelectedUser.RefreshTokenExpiryTime;
+            }
             Dispatcher.Dispatch(new UpdateUserAction(User));
         }
     }

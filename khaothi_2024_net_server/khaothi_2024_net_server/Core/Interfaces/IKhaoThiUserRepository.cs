@@ -15,6 +15,7 @@ namespace khaothi_2024_net_server.Core.Interfaces
         Task<KhaoThiUser> GetByRefreshTokenAsync(string refreshToken);
         Task BulkInsertUsers(IEnumerable<KhaoThiUser> users);
         Task BulkUpdateUsers(IEnumerable<KhaoThiUser> users);
-
+        Task<bool> UpdatePasswordAsync(int userId, string newHashedPassword);
+        Task<string> GetPasswordHashAsync(int userId);
     }
 }

@@ -20,7 +20,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
             _httpClient = httpClient;
             _localStorage = localStorage;
         }
-        public  bool IsTokenExpired(string token)
+        public bool IsTokenExpired(string token)
         {
             try
             {
@@ -80,11 +80,11 @@ namespace KhaoThi_2024_net_client.Services.Auth
 
                 if (!claims.ContainsKey("ID") || !claims.ContainsKey("TenDangNhap"))
                 {
-                    await Logger.Error("Token does not contain valid user information",null, this.GetType().Name);
+                    await Logger.Error("Token does not contain valid user information", null, this.GetType().Name);
                     throw new InvalidOperationException("Token does not contain valid user information");
-                    
+
                 }
-                   
+
 
                 return new UserInfo
                 {
@@ -97,8 +97,8 @@ namespace KhaoThi_2024_net_client.Services.Auth
             }
             catch (Exception ex)
             {
-              
-                await Logger.Error($"[Error] Failed to parse token:"+ ex.Message,ex, this.GetType().Name);
+
+                await Logger.Error($"[Error] Failed to parse token:" + ex.Message, ex, this.GetType().Name);
                 throw new InvalidOperationException("Invalid token", ex);
             }
         }
@@ -115,7 +115,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
             }
             catch (Exception ex)
             {
-               
+
                 await Logger.Error($"[Error] Failed to logout:" + ex.Message, ex, this.GetType().Name);
                 throw new InvalidOperationException("Logout failed", ex);
             }
@@ -147,13 +147,13 @@ namespace KhaoThi_2024_net_client.Services.Auth
             }
             catch (Exception ex)
             {
-               
-                await Logger.Error($"[Error] Token validation failed:" + ex.Message,ex,this.GetType().Name);
+
+                await Logger.Error($"[Error] Token validation failed:" + ex.Message, ex, this.GetType().Name);
                 return new ValidateTokenResponse { IsValid = false };
             }
         }
 
-      
+
 
         private Dictionary<string, string> ParseJwtClaims(string token)
         {

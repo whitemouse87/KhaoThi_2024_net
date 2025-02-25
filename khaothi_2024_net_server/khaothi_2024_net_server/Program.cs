@@ -4,8 +4,10 @@ using khaothi_2024_net_server.Features.Authentication;
 using khaothi_2024_net_server.Features.UserManagement;
 using khaothi_2024_net_server.Infrastructure.Data;
 using khaothi_2024_net_server.Infrastructure.Repositories;
+using khaothi_2024_net_server.Infrastructure.Security;
 using khaothi_2024_net_server.Infrastructure.TypeHandlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
@@ -140,7 +142,7 @@ public class Program
                 }
             };
 
-          
+
             options.AddSecurityRequirement(new OpenApiSecurityRequirement
         {
             {
@@ -263,7 +265,16 @@ public class Program
             .AddSingleton<IDataAccessLayer, MyDataAccessLayer>()
             .AddScoped<IKhaoThiUserRepository, KhaoThiUserRepository>()
             .AddScoped<IKhaoThiUserService, KhaoThiUserService>()
-            .AddScoped<IAuthService, AuthService>();
+            .AddScoped<IAuthService, AuthService>()
+            .AddScoped<IPasswordHasher, BCryptPasswordHasher>();
+        builder.Services.Configure<PasswordOptions>(options =>
+        {
+            options.RequiredLength = 6;
+            options.RequireNonAlphanumeric = true;
+            options.RequireDigit = true;
+            options.RequireLowercase = true;
+            options.RequireUppercase = true;
+        });
     }
     #endregion
 

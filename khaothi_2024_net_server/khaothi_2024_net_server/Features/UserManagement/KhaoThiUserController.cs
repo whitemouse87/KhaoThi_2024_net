@@ -1,9 +1,11 @@
 ﻿using khaothi_2024_net_server.Core.Interfaces;
+using khaothi_2024_net_server.Core.Models;
 using khaothi_2024_net_server.Core.Models.Common;
 using khaothi_2024_net_server.Features.UserManagement.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Security.Claims;
 
 namespace khaothi_2024_net_server.Features.UserManagement
 {
@@ -268,8 +270,91 @@ namespace khaothi_2024_net_server.Features.UserManagement
                 return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
+
+
+        [HttpPost("change-password")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(new ApiResponse
+                    {
+                        Success = false,
+                        Message = "Dữ liệu không hợp lệ",
+                        Errors = ModelState.Values
+                            .SelectMany(v => v.Errors)
+                            .Select(e => e.ErrorMessage)
+                            .ToList()
+                    });
+                }
+
+                // Lấy ID từ request hoặc token
+                int userId;
+                if (request.UserId.HasValue)
+                {
+                    // Nếu có ID trong request, kiểm tra quyền admin
+                    if (!User.IsInRole("Admin"))
+                    {
+                        return Forbid();
+                    }
+                    userId = request.UserId.Value;
+                }
+                else
+                {
+                    // Nếu không có ID, lấy từ token
+                    var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out userId))
+                    {
+                        return Unauthorized(new ApiResponse
+                        {
+                            Success = false,
+                            Message = "Không thể xác thực người dùng"
+                        });
+                    }
+                }
+
+                var result = await _userService.ChangePasswordAsync(userId, request);
+
+                if (result)
+                {
+                    return Ok(new ApiResponse
+                    {
+                        Success = true,
+                        Message = "Đổi mật khẩu thành công"
+                    });
+                }
+
+                return BadRequest(new ApiResponse
+                {
+                    Success = false,
+                    Message = "Không thể thay đổi mật khẩu"
+                });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new ApiResponse
+                {
+                    Success = false,
+                    Message = ex.Message
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi không xác định khi đổi mật khẩu");
+                return StatusCode(500, new ApiResponse
+                {
+                    Success = false,
+                    Message = "Đã xảy ra lỗi khi xử lý yêu cầu"
+                });
+            }
+        }
     }
 
-  
+
 }
 

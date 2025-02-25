@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GluYu8LyUM4=",
+  "dgSpecHash": "LN0Khzjr5wI=",
   "success": true,
   "projectFilePath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
   "expectedPackageFiles": [
@@ -81,6 +81,8 @@
     "C:\\Users\\TRY\\.nuget\\packages\\serilog.sinks.browserconsole\\8.0.0\\serilog.sinks.browserconsole.8.0.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\serilog.sinks.console\\6.0.0\\serilog.sinks.console.6.0.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\serilog.sinks.debug\\3.0.0\\serilog.sinks.debug.3.0.0.nupkg.sha512",
+    "C:\\Users\\TRY\\.nuget\\packages\\serilog.sinks.file\\6.0.0\\serilog.sinks.file.6.0.0.nupkg.sha512",
+    "C:\\Users\\TRY\\.nuget\\packages\\serilog.sinks.http\\9.1.0\\serilog.sinks.http.9.1.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\sharpcompress\\0.38.0\\sharpcompress.0.38.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\sixlabors.imagesharp\\3.1.6\\sixlabors.imagesharp.3.1.6.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\system.buffers\\4.6.0\\system.buffers.4.6.0.nupkg.sha512",
