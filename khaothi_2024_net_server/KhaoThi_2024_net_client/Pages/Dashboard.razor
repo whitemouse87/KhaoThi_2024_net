@@ -1,104 +1,350 @@
-﻿@page "/dashboard"
+﻿@*@page "/dashboard"
+    @attribute [Authorize]
+
+    @using KhaoThi_2024_net_client.Components.Auth
+
+    @inject AuthenticationStateProvider AuthenticationStateProvider
+
+    @inject NavigationManager NavigationManager
+
+    @inject ILoggingService LoggingService
+
+    <PageTitle>Dashboard - KhaoThi</PageTitle>
+
+    <div class="container-fluid">
+        <AuthorizeView>
+            <Authorized>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="mb-4">Dashboard</h3>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Thông tin người dùng</h5>
+                                <div class="user-info">
+                                    <p><strong>Họ tên:</strong> @context.User.FindFirst("hoTen")?.Value</p>
+                                    <p><strong>Đơn vị:</strong> @context.User.FindFirst("maDonVi")?.Value</p>
+                                    <p><strong>Chức vụ:</strong> @GetChucVuDisplay(context.User.FindFirst("maChucVu")?.Value)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        @{
+                            var maChucVu = context.User.FindFirst("maChucVu")?.Value;
+                        }
+
+                        @if (maChucVu == "01") // Admin
+                        {
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Quản lý người dùng</h5>
+                                            <p class="card-text">Quản lý tài khoản và phân quyền người dùng</p>
+                                            <a href="/admin/users" class="btn btn-primary">Truy cập</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Cấu hình hệ thống</h5>
+                                            <p class="card-text">Thiết lập các thông số hệ thống</p>
+                                            <a href="/admin/settings" class="btn btn-primary">Truy cập</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nhật ký hệ thống</h5>
+                                            <p class="card-text">Xem lịch sử hoạt động</p>
+                                            <a href="/admin/logs" class="btn btn-primary">Truy cập</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else // User thường
+                        {
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Công việc của tôi</h5>
+                                            <p class="card-text">Xem và cập nhật công việc</p>
+                                            <a href="/tasks" class="btn btn-primary">Xem công việc</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Báo cáo</h5>
+                                            <p class="card-text">Xem báo cáo công việc</p>
+                                            <a href="/reports" class="btn btn-primary">Xem báo cáo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                <LoginRedirect></LoginRedirect>
+            </NotAuthorized>
+        </AuthorizeView>
+    </div>
+
+
+    @code {
+        protected override async Task OnInitializedAsync()
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            if (!authState.User.Identity?.IsAuthenticated ?? true)
+            {
+                await Logger.Warning("Unauthorized access attempt to dashboard");
+                NavigationManager.NavigateTo("/login", true);
+                return;
+            }
+
+            var user = authState.User;
+            var maChucVu = user.FindFirst("maChucVu")?.Value;
+            await Logger.Info($"Dashboard accessed - User: {user.FindFirst("tenDangNhap")?.Value}, Role: {maChucVu}");
+        }
+
+        private string GetChucVuDisplay(string? maChucVu)
+        {
+            return maChucVu switch
+            {
+                "01" => "Quản trị viên",
+                "02" => "Người dùng",
+                _ => maChucVu ?? "Không xác định"
+            };
+        }
+
+    }*@
+
+
+@page "/dashboard"
 @attribute [Authorize]
 
 @using KhaoThi_2024_net_client.Components.Auth
+@using MudBlazor
 
 @inject AuthenticationStateProvider AuthenticationStateProvider
-
 @inject NavigationManager NavigationManager
-
 @inject ILoggingService LoggingService
 
 <PageTitle>Dashboard - KhaoThi</PageTitle>
 
-<div class="container-fluid">
+@* MudLayout cung cấp bố cục tổng thể cho trang *@
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
     <AuthorizeView>
         <Authorized>
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="mb-4">Dashboard</h3>
+            @* Tiêu đề trang với icon *@
+            <MudText Typo="Typo.h4" Class="mb-4">
+                <MudIcon Icon="@Icons.Material.Filled.Dashboard" Class="mr-2" />
+                Dashboard
+            </MudText>
 
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Thông tin người dùng</h5>
-                            <div class="user-info">
-                                <p><strong>Họ tên:</strong> @context.User.FindFirst("hoTen")?.Value</p>
-                                <p><strong>Đơn vị:</strong> @context.User.FindFirst("maDonVi")?.Value</p>
-                                <p><strong>Chức vụ:</strong> @GetChucVuDisplay(context.User.FindFirst("maChucVu")?.Value)</p>
-                            </div>
-                        </div>
-                    </div>
+            @* Thẻ thông tin người dùng với đường viền, bóng đổ và màu sắc *@
+            <MudCard Elevation="3" Class="mb-6" Style="border-left: 4px solid var(--mud-palette-primary);">
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Primary">
+                            <MudIcon Icon="@Icons.Material.Filled.Person" />
+                        </MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5">Thông tin người dùng</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="12" md="4">
+                            <MudField Label="Họ tên" Variant="Variant.Outlined" FullWidth="true">
+                                @context.User.FindFirst("hoTen")?.Value
+                            </MudField>
+                        </MudItem>
+                        <MudItem xs="12" md="4">
+                            <MudField Label="Đơn vị" Variant="Variant.Outlined" FullWidth="true">
+                                @context.User.FindFirst("maDonVi")?.Value
+                            </MudField>
+                        </MudItem>
+                        <MudItem xs="12" md="4">
+                            <MudField Label="Chức vụ" Variant="Variant.Outlined" FullWidth="true">
+                                @GetChucVuDisplay(context.User.FindFirst("maChucVu")?.Value)
+                            </MudField>
+                        </MudItem>
+                    </MudGrid>
+                </MudCardContent>
+            </MudCard>
 
-                    @{
-                        var maChucVu = context.User.FindFirst("maChucVu")?.Value;
-                    }
+            @{
+                var maChucVu = context.User.FindFirst("maChucVu")?.Value;
+            }
 
-                    @if (maChucVu == "01") // Admin
-                    {
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Quản lý người dùng</h5>
-                                        <p class="card-text">Quản lý tài khoản và phân quyền người dùng</p>
-                                        <a href="/admin/users" class="btn btn-primary">Truy cập</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Cấu hình hệ thống</h5>
-                                        <p class="card-text">Thiết lập các thông số hệ thống</p>
-                                        <a href="/admin/settings" class="btn btn-primary">Truy cập</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Nhật ký hệ thống</h5>
-                                        <p class="card-text">Xem lịch sử hoạt động</p>
-                                        <a href="/admin/logs" class="btn btn-primary">Truy cập</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    else // User thường
-                    {
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Công việc của tôi</h5>
-                                        <p class="card-text">Xem và cập nhật công việc</p>
-                                        <a href="/tasks" class="btn btn-primary">Xem công việc</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Báo cáo</h5>
-                                        <p class="card-text">Xem báo cáo công việc</p>
-                                        <a href="/reports" class="btn btn-primary">Xem báo cáo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
+            @* Hiển thị các thẻ chức năng cho Admin *@
+            @if (maChucVu == "01") // Admin
+            {
+                <MudGrid>
+                    <MudItem xs="12" md="4">
+                        <MudCard Elevation="2" Class="mud-theme-primary h-100">
+                            <MudCardHeader>
+                                <CardHeaderAvatar>
+                                    <MudAvatar Color="Color.Primary">
+                                        <MudIcon Icon="@Icons.Material.Filled.People" />
+                                    </MudAvatar>
+                                </CardHeaderAvatar>
+                                <CardHeaderContent>
+                                    <MudText Typo="Typo.h6">Quản lý người dùng</MudText>
+                                </CardHeaderContent>
+                            </MudCardHeader>
+                            <MudCardContent>
+                                <MudText>Quản lý tài khoản và phân quyền người dùng</MudText>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           StartIcon="@Icons.Material.Filled.Login"
+                                           Link="/admin/users">
+                                    Truy cập
+                                </MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+
+                    <MudItem xs="12" md="4">
+                        <MudCard Elevation="2" Class="mud-theme-secondary h-100">
+                            <MudCardHeader>
+                                <CardHeaderAvatar>
+                                    <MudAvatar Color="Color.Secondary">
+                                        <MudIcon Icon="@Icons.Material.Filled.Settings" />
+                                    </MudAvatar>
+                                </CardHeaderAvatar>
+                                <CardHeaderContent>
+                                    <MudText Typo="Typo.h6">Cấu hình hệ thống</MudText>
+                                </CardHeaderContent>
+                            </MudCardHeader>
+                            <MudCardContent>
+                                <MudText>Thiết lập các thông số hệ thống</MudText>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Secondary"
+                                           StartIcon="@Icons.Material.Filled.Login"
+                                           Link="/admin/settings">
+                                    Truy cập
+                                </MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+
+                    <MudItem xs="12" md="4">
+                        <MudCard Elevation="2" Class="mud-theme-tertiary h-100">
+                            <MudCardHeader>
+                                <CardHeaderAvatar>
+                                    <MudAvatar Color="Color.Tertiary">
+                                        <MudIcon Icon="@Icons.Material.Filled.History" />
+                                    </MudAvatar>
+                                </CardHeaderAvatar>
+                                <CardHeaderContent>
+                                    <MudText Typo="Typo.h6">Nhật ký hệ thống</MudText>
+                                </CardHeaderContent>
+                            </MudCardHeader>
+                            <MudCardContent>
+                                <MudText>Xem lịch sử hoạt động</MudText>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Tertiary"
+                                           StartIcon="@Icons.Material.Filled.Login"
+                                           Link="/admin/logs">
+                                    Truy cập
+                                </MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+                </MudGrid>
+            }
+            else // User thường
+            {
+                <MudGrid>
+                    <MudItem xs="12" md="6">
+                        <MudCard Elevation="2" Class="mud-theme-primary h-100">
+                            <MudCardHeader>
+                                <CardHeaderAvatar>
+                                    <MudAvatar Color="Color.Primary">
+                                        <MudIcon Icon="@Icons.Material.Filled.Assignment" />
+                                    </MudAvatar>
+                                </CardHeaderAvatar>
+                                <CardHeaderContent>
+                                    <MudText Typo="Typo.h6">Công việc của tôi</MudText>
+                                </CardHeaderContent>
+                            </MudCardHeader>
+                            <MudCardContent>
+                                <MudText>Xem và cập nhật công việc</MudText>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           StartIcon="@Icons.Material.Filled.Login"
+                                           Link="/tasks">
+                                    Xem công việc
+                                </MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+
+                    <MudItem xs="12" md="6">
+                        <MudCard Elevation="2" Class="mud-theme-secondary h-100">
+                            <MudCardHeader>
+                                <CardHeaderAvatar>
+                                    <MudAvatar Color="Color.Secondary">
+                                        <MudIcon Icon="@Icons.Material.Filled.Assessment" />
+                                    </MudAvatar>
+                                </CardHeaderAvatar>
+                                <CardHeaderContent>
+                                    <MudText Typo="Typo.h6">Báo cáo</MudText>
+                                </CardHeaderContent>
+                            </MudCardHeader>
+                            <MudCardContent>
+                                <MudText>Xem báo cáo công việc</MudText>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Secondary"
+                                           StartIcon="@Icons.Material.Filled.Login"
+                                           Link="/reports">
+                                    Xem báo cáo
+                                </MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+                </MudGrid>
+            }
         </Authorized>
         <NotAuthorized>
             <LoginRedirect></LoginRedirect>
         </NotAuthorized>
     </AuthorizeView>
-</div>
-
+</MudContainer>
 
 @code {
+    //// Hàm này cần được giữ lại từ mã gốc
+    //private string GetChucVuDisplay(string maChucVu)
+    //{
+    //    return maChucVu switch
+    //    {
+    //        "01" => "Quản trị viên",
+    //        "02" => "Giáo viên",
+    //        "03" => "Nhân viên",
+    //        _ => "Không xác định"
+    //    };
+    //}
+
     protected override async Task OnInitializedAsync()
     {
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -123,5 +369,4 @@
             _ => maChucVu ?? "Không xác định"
         };
     }
-
-} 
+}

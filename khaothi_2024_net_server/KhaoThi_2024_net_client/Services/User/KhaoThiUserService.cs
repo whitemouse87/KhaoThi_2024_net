@@ -24,11 +24,38 @@ namespace KhaoThi_2024_net_client.Services.User
                 PropertyNameCaseInsensitive = true
             };
         }
+        public async Task<IEnumerable<KhaoThiUserModel>> GetAllAsync()
+        {
+            try
+            {
+                await _logger.LogInfoAsync("Đang truy vấn danh sách tất cả người dùng");
+                var response = await _httpClient.GetAsync($"{API_ENDPOINT}/all");
+
+                response.EnsureSuccessStatusCode();
+
+                var users = await response.Content.ReadFromJsonAsync<IEnumerable<KhaoThiUserModel>>(_jsonOptions);
+                return users ?? Array.Empty<KhaoThiUserModel>();
+            }
+            catch (HttpRequestException ex)
+            {
+                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách người dùng: {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách người dùng: {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+        }
         public async Task<PaginatedResult<KhaoThiUserModel>> GetPaginatedAsync(int page, int pageSize, string? searchTerm)
         {
             try
             {
                 await AddAuthenticationHeader();
+                await _logger.LogInfoAsync($"Đang truy vấn danh sách người dùng phân trang. Page: {page}, PageSize: {pageSize}, SearchTerm: {searchTerm}");
+
+                // Xây dựng query string
+
                 var url = $"{API_ENDPOINT}?page={page}&pageSize={pageSize}";
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
@@ -48,12 +75,20 @@ namespace KhaoThi_2024_net_client.Services.User
                 await HandleErrorResponse(response);
                 throw new Exception("Không thể lấy danh sách người dùng");
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
-                await _logger.LogErrorAsync("Lỗi khi lấy danh sách người dùng phân trang", ex, nameof(KhaoThiUserService));
+                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách người dùng phân trang: {Message}", ex, nameof(KhaoThiUserService));
                 throw;
             }
+            catch (Exception ex)
+            {
+
+                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách người dùng phân trang: {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+
         }
+
         public async Task<KhaoThiUserModel?> GetByIdAsync(int id)
         {
             try

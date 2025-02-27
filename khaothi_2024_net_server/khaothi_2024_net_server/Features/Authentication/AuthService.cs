@@ -1,4 +1,5 @@
-﻿using khaothi_2024_net_server.Core.Exceptions;
+﻿using Azure.Core;
+using khaothi_2024_net_server.Core.Exceptions;
 using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.Authentication.DTOs;
 using khaothi_2024_net_server.Features.UserManagement.DTOs;
@@ -61,7 +62,7 @@ namespace khaothi_2024_net_server.Features.Authentication
                         ErrorMessage = "Tên đăng nhập không tồn tại"
                     };
                 }
-
+                //_logger.LogError(_passwordHasher.HashPassword(request.MatKhau));
                 // Verify password (assuming password is hashed)
                 if (!_passwordHasher.VerifyPassword(request.MatKhau, user.MatKhau))
                 {
@@ -71,7 +72,8 @@ namespace khaothi_2024_net_server.Features.Authentication
                     {
                         Success = false,
                         ErrorType = LoginErrorType.InvalidCredentials,
-                        ErrorMessage = "Mật khẩu không đúng:" + request.MatKhau.ToString() + "-" + user.MatKhau
+                        //ErrorMessage = "Mật khẩu không đúng:" + request.MatKhau.ToString() + "-" + user.MatKhau
+                        ErrorMessage = "Mật khẩu không đúng:"
                     };
                 }
 

@@ -99,13 +99,13 @@ namespace khaothi_2024_net_server.Infrastructure.Security
                     return false;
                 }
 
-                //_logger.LogDebug("Verifying password:");
-                //_logger.LogDebug("- Password length: {Length}", password.Length);
-                //_logger.LogDebug("- Hash length: {Length}", hashedPassword.Length);
-                //_logger.LogDebug("- Hash format: {Format}", hashedPassword.Substring(0, 7));
+                //_logger.LogError("Verifying password:");
+                //_logger.LogError("- Password length: {Length}", password.Length);
+                //_logger.LogError("- Hash length: {Length}", hashedPassword.Length);
+                //_logger.LogError("- Hash format: {Format}", hashedPassword.Substring(0, 7));
 
                 var isValid = BCrypt.Net.BCrypt.Verify(password, hashedPassword);
-                //_logger.LogDebug("Password verification result: {Result}", isValid);
+                _logger.LogError("Password verification result: {Result}", isValid);
 
                 return isValid;
             }

@@ -15,8 +15,8 @@ namespace KhaoThi_2024_net_client.Services.User
         /// <param name="pageSize">Số lượng item trên một trang</param>
         /// <param name="searchTerm">Từ khóa tìm kiếm</param>
         /// <returns>Tuple chứa danh sách user và tổng số lượng</returns>
-        Task<PaginatedResult<KhaoThiUserModel>> GetPaginatedAsync(int page, int pageSize, string? searchTerm);
-
+        Task<PaginatedResult<KhaoThiUserModel>> GetPaginatedAsync(int page, int pageSize, string? searchTerm = null);
+        Task<IEnumerable<KhaoThiUserModel>> GetAllAsync();
         /// <summary>
         /// Lấy thông tin người dùng theo ID
         /// </summary>

@@ -49,12 +49,34 @@ namespace khaothi_2024_net_server.Features.UserManagement
                 return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
-
+        /// <summary>
+        /// Lấy danh sách tất cả người dùng
+        /// </summary>
+        /// <returns>Danh sách người dùng</returns>
+        [HttpGet("all")]
+        [Authorize(Roles = "Admin")] // Chỉ Admin mới có quyền xem tất cả
+        [ProducesResponseType(typeof(IEnumerable<KhaoThiUser>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var users = await _userService.GetAllAsync();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi truy xuất tất cả người dùng");
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
+            }
+        }
         /// <summary>
         /// Lấy danh sách người dùng có phân trang và tìm kiếm
         /// </summary>
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PaginatedResult<KhaoThiUser>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetPaginated(
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10,
@@ -88,6 +110,7 @@ namespace khaothi_2024_net_server.Features.UserManagement
                 return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
+
 
         /// <summary>
         /// Tạo mới người dùng
