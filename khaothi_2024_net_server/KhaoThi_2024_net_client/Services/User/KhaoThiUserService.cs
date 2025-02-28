@@ -2,6 +2,7 @@
 using KhaoThi_2024_net_client.Components;
 using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Services.Logging;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
@@ -51,8 +52,36 @@ namespace KhaoThi_2024_net_client.Services.User
         {
             try
             {
+                var token = await GetToken();
+                //await _logger.LogInfoAsync($"Token exists: {!string.IsNullOrEmpty(token)}");
+
+                //if (!string.IsNullOrEmpty(token))
+                //{
+                //    try
+                //    {
+                //        var handler = new JwtSecurityTokenHandler();
+                //        var jwtToken = handler.ReadJwtToken(token);
+
+                //        await _logger.LogInfoAsync("Token Claims:");
+                //        foreach (var claim in jwtToken.Claims)
+                //        {
+                //            await _logger.LogInfoAsync($"{claim.Type}: {claim.Value}");
+                //        }
+
+                //        var roleClaims = jwtToken.Claims.Where(c => c.Type.Contains("role"));
+                //        await _logger.LogInfoAsync($"Role claims count: {roleClaims.Count()}");
+                //        foreach (var role in roleClaims)
+                //        {
+                //            await _logger.LogInfoAsync($"Role: {role.Type} = {role.Value}");
+                //        }
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        await _logger.LogErrorAsync("Error parsing token", ex, nameof(KhaoThiUserService));
+                //    }
+                //}
                 await AddAuthenticationHeader();
-                await _logger.LogInfoAsync($"Đang truy vấn danh sách người dùng phân trang. Page: {page}, PageSize: {pageSize}, SearchTerm: {searchTerm}");
+                //  await _logger.LogInfoAsync($"Đang truy vấn danh sách người dùng phân trang. Page: {page}, PageSize: {pageSize}, SearchTerm: {searchTerm}");
 
                 // Xây dựng query string
 

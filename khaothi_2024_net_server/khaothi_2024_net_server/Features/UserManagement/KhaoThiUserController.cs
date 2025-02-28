@@ -54,7 +54,7 @@ namespace khaothi_2024_net_server.Features.UserManagement
         /// </summary>
         /// <returns>Danh sách người dùng</returns>
         [HttpGet("all")]
-        [Authorize(Roles = "Admin")] // Chỉ Admin mới có quyền xem tất cả
+        [Authorize(Roles = "01")] // Chỉ Admin mới có quyền xem tất cả
         [ProducesResponseType(typeof(IEnumerable<KhaoThiUser>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetAll()
@@ -74,7 +74,7 @@ namespace khaothi_2024_net_server.Features.UserManagement
         /// Lấy danh sách người dùng có phân trang và tìm kiếm
         /// </summary>
         [HttpGet("all-phantrang")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "01")]
         [ProducesResponseType(typeof(PaginatedResult<KhaoThiUser>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetPaginated(

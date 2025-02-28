@@ -18,7 +18,9 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadUsersAction(KhaoThiUserState state, LoadUsersAction action) =>
-            new(isLoading: true,
+            new(
+                id: 1,
+                isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -29,7 +31,8 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadUsersSuccessAction(KhaoThiUserState state, LoadUsersSuccessAction action) =>
-            new(isLoading: false,
+            new(id: 2,
+                isLoading: false,
                 errorMessage: null,
                 users: action.Users,
                 selectedUser: state.SelectedUser,
@@ -41,7 +44,8 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadUsersFailureAction(KhaoThiUserState state, LoadUsersFailureAction action) =>
-            new(isLoading: false,
+            new(id: 3,
+                isLoading: false,
                 errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -57,7 +61,8 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadPaginatedUsersAction(KhaoThiUserState state, LoadPaginatedUsersAction action) =>
-            new(isLoading: true,
+            new(id: 4,
+                isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -68,7 +73,8 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadPaginatedUsersSuccessAction(KhaoThiUserState state, LoadPaginatedUsersSuccessAction action) =>
-            new(isLoading: false,
+            new(id: 5,
+                isLoading: false,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -78,15 +84,20 @@ namespace KhaoThi_2024_net_client.State.User
                 notificationType: null);
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceLoadPaginatedUsersFailureAction(KhaoThiUserState state, LoadPaginatedUsersFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
-                users: state.Users,
-                selectedUser: state.SelectedUser,
-                paginatedUsers: state.PaginatedUsers,
-                isInitialized: state.IsInitialized,
-                notificationMessage: $"Lỗi: {action.ErrorMessage}",
-                notificationType: "error");
+        public static KhaoThiUserState ReduceLoadPaginatedUsersFailureAction(KhaoThiUserState state, LoadPaginatedUsersFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            string? notificationMsg = errorMsg == null ? null : $"Lỗi: {action.ErrorMessage}";
+            return new(id: 6,
+                 isLoading: false,
+                 errorMessage: errorMsg,
+                 users: state.Users,
+                 selectedUser: state.SelectedUser,
+                 paginatedUsers: state.PaginatedUsers,
+                 isInitialized: state.IsInitialized,
+                 notificationMessage: notificationMsg,
+                 notificationType: errorMsg == null ? null : "error");
+        }
         #endregion
 
         #region Single User Management Reducers
@@ -95,7 +106,8 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceSelectUserAction(KhaoThiUserState state, SelectUserAction action) =>
-            new(isLoading: false,
+            new(id: 7,
+                isLoading: false,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: action.User,
@@ -107,7 +119,8 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceGetUserByIdAction(KhaoThiUserState state, GetUserByIdAction action) =>
-            new(isLoading: true,
+            new(id: 8,
+                isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -116,7 +129,8 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceGetUserByIdSuccessAction(KhaoThiUserState state, GetUserByIdSuccessAction action) =>
-            new(isLoading: false,
+            new(id: 9,
+                isLoading: false,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: action.User,
@@ -124,13 +138,18 @@ namespace KhaoThi_2024_net_client.State.User
                 isInitialized: state.IsInitialized);
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceGetUserByIdFailureAction(KhaoThiUserState state, GetUserByIdFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
+        public static KhaoThiUserState ReduceGetUserByIdFailureAction(KhaoThiUserState state, GetUserByIdFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 10,
+                isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
                 isInitialized: state.IsInitialized);
+        }
+
         #endregion
 
         #region Create User Reducers
@@ -139,7 +158,8 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceCreateUserAction(KhaoThiUserState state, CreateUserAction action) =>
-            new(isLoading: true,
+            new(id: 23,
+                isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -160,7 +180,7 @@ namespace KhaoThi_2024_net_client.State.User
                     state.PaginatedUsers.Page
                 );
 
-            return new(isLoading: false,
+            return new(id: 24, isLoading: false,
                 errorMessage: null,
                 users: updatedUsers,
                 selectedUser: action.CreatedUser,
@@ -171,15 +191,20 @@ namespace KhaoThi_2024_net_client.State.User
         }
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceCreateUserFailureAction(KhaoThiUserState state, CreateUserFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: action.ErrorMessage,
+        public static KhaoThiUserState ReduceCreateUserFailureAction(KhaoThiUserState state, CreateUserFailureAction action)
+        {
+
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 25, isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
                 isInitialized: state.IsInitialized,
                 notificationMessage: $"Lỗi tạo người dùng: {action.ErrorMessage}",
                 notificationType: "error");
+        }
+
         #endregion
 
         #region Update User Reducers
@@ -206,7 +231,7 @@ namespace KhaoThi_2024_net_client.State.User
                 updatedUser.RefreshTokenExpiryTime = state.SelectedUser.RefreshTokenExpiryTime;
             }
 
-            return new KhaoThiUserState(
+            return new KhaoThiUserState(id: 11,
                 isLoading: true,
                 errorMessage: null,
                 users: state.Users,
@@ -230,7 +255,8 @@ namespace KhaoThi_2024_net_client.State.User
                     state.PaginatedUsers.Page
                 );
 
-            return new(isLoading: false,
+            return new(id: 12,
+                isLoading: false,
                 errorMessage: null,
                 users: updatedUsers,
                 selectedUser: action.UpdatedUser,
@@ -243,9 +269,13 @@ namespace KhaoThi_2024_net_client.State.User
         }
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceUpdateUserFailureAction(KhaoThiUserState state, UpdateUserFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: action.ErrorMessage,
+        public static KhaoThiUserState ReduceUpdateUserFailureAction(KhaoThiUserState state, UpdateUserFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(
+                id: 13,
+                isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
@@ -253,13 +283,15 @@ namespace KhaoThi_2024_net_client.State.User
                 notificationMessage: $"Lỗi cập nhật: {action.ErrorMessage}",  // Thêm thông báo lỗi
                 notificationType: "error"  // Thêm loại thông báo
                 );
+        }
+
         #endregion
 
         #region Change Password User Reducers
         [ReducerMethod]
         public static KhaoThiUserState ReduceChangePasswordAction(KhaoThiUserState state, ChangePasswordAction action)
         {
-            return new KhaoThiUserState(
+            return new KhaoThiUserState(id: 14,
                 isLoading: true,
                 errorMessage: null,
                 users: state.Users,
@@ -276,7 +308,9 @@ namespace KhaoThi_2024_net_client.State.User
         {
 
 
-            return new(isLoading: false,
+            return new(
+                 id: 15,
+                isLoading: false,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -291,9 +325,11 @@ namespace KhaoThi_2024_net_client.State.User
         public static KhaoThiUserState ReduceChangPasswordFailureAction(KhaoThiUserState state, ChangePasswordFailureAction action)
         {
 
-
-            return new(isLoading: false,
-                errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(
+                 id: 16,
+                isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
@@ -312,7 +348,7 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceDeleteUserAction(KhaoThiUserState state, DeleteUserAction action) =>
-            new(isLoading: true,
+            new(id: 25, isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -333,7 +369,7 @@ namespace KhaoThi_2024_net_client.State.User
                     state.PaginatedUsers.Page
                 );
 
-            return new(isLoading: false,
+            return new(id: 26, isLoading: false,
                 errorMessage: null,
                 users: updatedUsers,
                 selectedUser: state.SelectedUser?.ID == action.Id ? null : state.SelectedUser,
@@ -345,8 +381,10 @@ namespace KhaoThi_2024_net_client.State.User
         }
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceDeleteUserFailureAction(KhaoThiUserState state, DeleteUserFailureAction action) =>
-            new(isLoading: false,
+        public static KhaoThiUserState ReduceDeleteUserFailureAction(KhaoThiUserState state, DeleteUserFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 27, isLoading: false,
                 errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -354,6 +392,8 @@ namespace KhaoThi_2024_net_client.State.User
                 isInitialized: state.IsInitialized,
                 notificationMessage: $"Lỗi xóa người dùng: {action.ErrorMessage}",
                 notificationType: "error");
+        }
+
         #endregion
 
         //[ReducerMethod]
@@ -376,7 +416,9 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadUsersByDonViAction(KhaoThiUserState state, LoadUsersByDonViAction action) =>
-            new(isLoading: true,
+            new(
+                 id: 17,
+                isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -385,7 +427,8 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadUsersByDonViSuccessAction(KhaoThiUserState state, LoadUsersByDonViSuccessAction action) =>
-            new(isLoading: false,
+            new(id: 18,
+                isLoading: false,
                 errorMessage: null,
                 users: action.Users,
                 selectedUser: state.SelectedUser,
@@ -393,13 +436,20 @@ namespace KhaoThi_2024_net_client.State.User
                 isInitialized: true);
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceLoadUsersByDonViFailureAction(KhaoThiUserState state, LoadUsersByDonViFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
+        public static KhaoThiUserState ReduceLoadUsersByDonViFailureAction(KhaoThiUserState state, LoadUsersByDonViFailureAction action)
+        {
+
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(
+                id: 19,
+                isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
                 isInitialized: state.IsInitialized);
+        }
+
         #endregion
 
         #region Bulk Operations Reducers
@@ -408,7 +458,7 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceBulkInsertUsersAction(KhaoThiUserState state, BulkInsertUsersAction action) =>
-            new(isLoading: true,
+            new(id: 27, isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -417,7 +467,7 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceBulkInsertUsersSuccessAction(KhaoThiUserState state, BulkInsertUsersSuccessAction action) =>
-            new(isLoading: false,
+            new(id: 28, isLoading: false,
                 errorMessage: null,
                 users: null, // Reset users để tải lại
                 selectedUser: state.SelectedUser,
@@ -425,20 +475,24 @@ namespace KhaoThi_2024_net_client.State.User
                 isInitialized: false);
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceBulkInsertUsersFailureAction(KhaoThiUserState state, BulkInsertUsersFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
+        public static KhaoThiUserState ReduceBulkInsertUsersFailureAction(KhaoThiUserState state, BulkInsertUsersFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 29, isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
                 isInitialized: state.IsInitialized);
+        }
+
 
         /// <summary>
         /// Reducer xử lý action cập nhật nhiều người dùng
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceBulkUpdateUsersAction(KhaoThiUserState state, BulkUpdateUsersAction action) =>
-            new(isLoading: true,
+            new(id: 30, isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -447,7 +501,7 @@ namespace KhaoThi_2024_net_client.State.User
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceBulkUpdateUsersSuccessAction(KhaoThiUserState state, BulkUpdateUsersSuccessAction action) =>
-            new(isLoading: false,
+            new(id: 31, isLoading: false,
                 errorMessage: null,
                 users: null, // Reset users để tải lại
                 selectedUser: state.SelectedUser,
@@ -455,13 +509,17 @@ namespace KhaoThi_2024_net_client.State.User
                 isInitialized: false);
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceBulkUpdateUsersFailureAction(KhaoThiUserState state, BulkUpdateUsersFailureAction action) =>
-            new(isLoading: false,
-                errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
+        public static KhaoThiUserState ReduceBulkUpdateUsersFailureAction(KhaoThiUserState state, BulkUpdateUsersFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 32, isLoading: false,
+                errorMessage: errorMsg,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
                 isInitialized: state.IsInitialized);
+        }
+
         #endregion
 
         #region Username Check Reducers
@@ -470,7 +528,7 @@ namespace KhaoThi_2024_net_client.State.User
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceCheckUsernameAction(KhaoThiUserState state, CheckUsernameAction action) =>
-            new(isLoading: true,
+            new(id: 33, isLoading: true,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -482,13 +540,17 @@ namespace KhaoThi_2024_net_client.State.User
             state; // Không cần thay đổi state vì kết quả được xử lý trực tiếp bởi component
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceCheckUsernameFailureAction(KhaoThiUserState state, CheckUsernameFailureAction action) =>
-            new(isLoading: false,
+        public static KhaoThiUserState ReduceCheckUsernameFailureAction(KhaoThiUserState state, CheckUsernameFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 34, isLoading: false,
                 errorMessage: $"{action.ErrorMessage} [{DateTime.Now.Ticks}]",
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
                 isInitialized: state.IsInitialized);
+        }
+
         #endregion
 
         #region Utility Reducers
@@ -496,23 +558,29 @@ namespace KhaoThi_2024_net_client.State.User
         /// Reducer xử lý action set loading
         /// </summary>
         [ReducerMethod]
-        public static KhaoThiUserState ReduceSetLoadingAction(KhaoThiUserState state, SetLoadingAction action) =>
-            new(isLoading: action.IsLoading,
-                errorMessage: $"{state.ErrorMessage} [{DateTime.Now.Ticks}]",
-                users: state.Users,
-                selectedUser: state.SelectedUser,
-                paginatedUsers: state.PaginatedUsers,
-                isInitialized: state.IsInitialized,
-                notificationMessage: state.NotificationMessage,
-                notificationType: state.NotificationType
-                );
+        public static KhaoThiUserState ReduceSetLoadingAction(KhaoThiUserState state, SetLoadingAction action)
+        {
+
+            var errorMsg = string.IsNullOrEmpty(state.ErrorMessage) ? null : $"{state.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 20, isLoading: action.IsLoading,
+               errorMessage: errorMsg,
+               users: state.Users,
+               selectedUser: state.SelectedUser,
+               paginatedUsers: state.PaginatedUsers,
+               isInitialized: state.IsInitialized,
+               notificationMessage: state.NotificationMessage,
+               notificationType: state.NotificationType
+               );
+        }
+
+
 
         /// <summary>
         /// Reducer xử lý action clear error
         /// </summary>
         [ReducerMethod]
         public static KhaoThiUserState ReduceClearErrorAction(KhaoThiUserState state, ClearErrorAction action) =>
-            new(isLoading: state.IsLoading,
+            new(id: 21, isLoading: state.IsLoading,
                 errorMessage: null,
                 users: state.Users,
                 selectedUser: state.SelectedUser,
@@ -522,17 +590,21 @@ namespace KhaoThi_2024_net_client.State.User
                 notificationType: null);
 
         [ReducerMethod]
-        public static KhaoThiUserState ReduceShowNotificationAction(KhaoThiUserState state, ShowNotificationAction action) =>
-     new(
-         isLoading: state.IsLoading,
-         errorMessage: $"{state.ErrorMessage} [{DateTime.Now.Ticks}]",
-         users: state.Users,
-         selectedUser: state.SelectedUser,
-         paginatedUsers: state.PaginatedUsers,
-         isInitialized: state.IsInitialized,
-         notificationMessage: action.Message,
-         notificationType: action.Type
-     );
+        public static KhaoThiUserState ReduceShowNotificationAction(KhaoThiUserState state, ShowNotificationAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(state.ErrorMessage) ? null : $"{state.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 22,
+                isLoading: state.IsLoading,
+                errorMessage: errorMsg,
+                users: state.Users,
+                selectedUser: state.SelectedUser,
+                paginatedUsers: state.PaginatedUsers,
+                isInitialized: state.IsInitialized,
+                notificationMessage: action.Message,
+                notificationType: action.Type
+            );
+        }
+
         #endregion
     }
 }

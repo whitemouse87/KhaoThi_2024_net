@@ -160,6 +160,7 @@ namespace khaothi_2024_net_server.Features.Authentication
             new Claim(ClaimTypes.Name, user.TenDangNhap),
             new Claim("MaDonVi", user.MaDonVi),
             new Claim("MaChucVu", user.MaChucVu),
+
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new Claim("DeviceInfo", deviceInfo ?? "unknown"),
             new Claim("IpAddress", ipAddress ?? "unknown")

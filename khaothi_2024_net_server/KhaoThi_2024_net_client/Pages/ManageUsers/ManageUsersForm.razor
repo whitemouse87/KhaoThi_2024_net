@@ -10,7 +10,7 @@
 @inject IDialogService DialogService
 @inject ISnackbar Snackbar
 @inject IModalService ModalService
-
+@inject AuthenticationStateProvider AuthenticationStateProvider
 <PageTitle>Quản lý người dùng</PageTitle>
 <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
     <MudPaper Elevation="3" Class="rounded-lg overflow-hidden">
@@ -76,8 +76,16 @@
                                   Margin="Margin.Dense" />
                 </MudItem>
                 <MudItem xs="12" md="4" Class="d-flex align-center">
-                    <MudSelect T="int" Label="Hiển thị" Value="_pageSize" ValueChanged="OnPageSizeChanged"
-                               Variant="Variant.Outlined" Margin="Margin.Dense" Class="mr-2" Style="width: 120px;">
+
+                    <MudSelect T="int"
+                               Label="Hiển thị"
+                               Value="_pageSize"
+                               ValueChanged="OnPageSizeChanged"
+                               Variant="Variant.Outlined"
+                               Margin="Margin.Dense"
+                               Class="mr-2"
+                               Style="width: 120px;"
+                               InputId="page-size-select">
                         <MudSelectItem Value="5">5 dòng</MudSelectItem>
                         <MudSelectItem Value="10">10 dòng</MudSelectItem>
                         <MudSelectItem Value="25">25 dòng</MudSelectItem>
@@ -94,8 +102,9 @@
             </MudGrid>
         </MudPaper>
 
-        <!-- Thông báo lỗi -->
-        @if (!string.IsNullOrEmpty(UserState.Value.ErrorMessage))
+      
+
+        @if (!string.IsNullOrEmpty(UserState.Value.ErrorMessage) && !UserState.Value.ErrorMessage.Contains("Forbidden"))
         {
             <div class="pa-4">
                 <MudAlert Severity="Severity.Error"
@@ -111,7 +120,6 @@
                 </MudAlert>
             </div>
         }
-
         <!-- Content -->
         @if (UserState.Value.IsLoading)
         {
@@ -201,8 +209,7 @@
                                 <MudTooltip Text="@(context.Active ? "Khóa tài khoản" : "Kích hoạt")">
                                     <MudIconButton Icon="@(context.Active ? Icons.Material.Filled.Lock : Icons.Material.Filled.LockOpen)"
                                                    Color="@(context.Active ? Color.Warning : Color.Success)"
-                                                   Size="Size.Small"
-                                                   />
+                                                   Size="Size.Small" />
                                 </MudTooltip>
                             </div>
                         </MudTd>
@@ -276,7 +283,8 @@
             });
 
             // Xóa thông báo sau khi đã hiển thị
-            // Dispatcher.Dispatch(new ClearNotificationAction());
+            Dispatcher.Dispatch(new ClearErrorAction());
+
         }
     }
     /// <summary>
@@ -290,9 +298,17 @@
     /// <summary>
     /// Tải danh sách người dùng
     /// </summary>
-    private void LoadUsers()
+    private async void LoadUsers()
     {
-        Dispatcher.Dispatch(new LoadPaginatedUsersAction(_page, _pageSize, _searchTerm));
+        try
+        {
+            Dispatcher.Dispatch(new LoadPaginatedUsersAction(_page, _pageSize, _searchTerm));
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Lỗi khi tải dữ liệu: {ex.Message}", Severity.Error);
+            await Logger.Error("Có lỗi khi tải dữ liệu", ex, nameof(ManageUsersForm));
+        }
     }
     /// <summary>
     /// Lấy danh sách người dùng từ state
@@ -530,4 +546,3 @@
     }
 
 }
-

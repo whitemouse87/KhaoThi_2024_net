@@ -16,6 +16,7 @@ namespace KhaoThi_2024_net_client.Services.User
         public KhaoThiUserState() { }
 
         public KhaoThiUserState(
+            int id,
             bool isLoading,
             string? errorMessage,
             IEnumerable<KhaoThiUserModel>? users,
@@ -25,6 +26,7 @@ namespace KhaoThi_2024_net_client.Services.User
             string? notificationMessage = null,
             string? notificationType = null)
         {
+            _id = id;
             IsLoading = isLoading;
             ErrorMessage = errorMessage;
             Users = users;
@@ -34,7 +36,7 @@ namespace KhaoThi_2024_net_client.Services.User
             NotificationMessage = notificationMessage;
             NotificationType = notificationType;
         }
-
+        public int _id { get; }
         public bool IsLoading { get; }
         public string? ErrorMessage { get; }
         public IEnumerable<KhaoThiUserModel>? Users { get; }
@@ -45,6 +47,7 @@ namespace KhaoThi_2024_net_client.Services.User
         public string? NotificationType { get; }
 
         public static KhaoThiUserState GetInitialState() => new(
+            id: 0,
             isLoading: false,
             errorMessage: null,
             users: null,
