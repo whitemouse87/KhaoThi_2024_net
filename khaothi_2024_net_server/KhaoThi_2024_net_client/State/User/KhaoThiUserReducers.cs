@@ -62,7 +62,9 @@ namespace KhaoThi_2024_net_client.State.User
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
-                isInitialized: state.IsInitialized);
+                isInitialized: state.IsInitialized,
+                notificationMessage: null,
+                notificationType: null);
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadPaginatedUsersSuccessAction(KhaoThiUserState state, LoadPaginatedUsersSuccessAction action) =>
@@ -71,7 +73,9 @@ namespace KhaoThi_2024_net_client.State.User
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: action.PaginatedUsers,
-                isInitialized: true);
+                isInitialized: true,
+                notificationMessage: null,
+                notificationType: null);
 
         [ReducerMethod]
         public static KhaoThiUserState ReduceLoadPaginatedUsersFailureAction(KhaoThiUserState state, LoadPaginatedUsersFailureAction action) =>
@@ -80,7 +84,9 @@ namespace KhaoThi_2024_net_client.State.User
                 users: state.Users,
                 selectedUser: state.SelectedUser,
                 paginatedUsers: state.PaginatedUsers,
-                isInitialized: state.IsInitialized);
+                isInitialized: state.IsInitialized,
+                notificationMessage: $"Lỗi: {action.ErrorMessage}",
+                notificationType: "error");
         #endregion
 
         #region Single User Management Reducers

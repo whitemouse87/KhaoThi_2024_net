@@ -1,5 +1,533 @@
-﻿<h3>ManageUsersForm</h3>
+﻿@page "/users"
+@attribute [Authorize(Roles = "Admin")]
+@using MudBlazor
+@using KhaoThi_2024_net_client.Services.User
+@using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions
+@inject IDispatcher Dispatcher
+@inject IState<KhaoThiUserState> UserState
+@inject NavigationManager Navigation
+@inject IAuthService AuthService
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+@inject IModalService ModalService
 
+<PageTitle>Quản lý người dùng</PageTitle>
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <MudPaper Elevation="3" Class="rounded-lg overflow-hidden">
+        <!-- Header với gradient -->
+        <MudPaper Elevation="0" Style="background: linear-gradient(135deg, #594ae2 0%, #5042cb 100%);">
+            <div class="d-flex align-center py-4 px-6">
+                <div class="mr-4">
+                    <MudAvatar Style="background-color: rgba(255,255,255,0.2); width: 52px; height: 52px;">
+                        <MudIcon Icon="@Icons.Material.Filled.ManageAccounts"
+                                 Color="Color.Surface"
+                                 Style="font-size: 32px; color: white;" />
+                    </MudAvatar>
+                </div>
+                <div>
+                    <MudText Typo="Typo.h5"
+                             Style="color: white; font-weight: 600; letter-spacing: 0.5px;">
+                        QUẢN LÝ NGƯỜI DÙNG
+                    </MudText>
+                    <MudText Typo="Typo.body2"
+                             Style="color: rgba(255,255,255,0.85); margin-top: 4px;">
+                        Quản lý tài khoản và phân quyền người dùng
+                    </MudText>
+                </div>
+                <MudSpacer />
+                <MudTooltip Text="Thêm người dùng mới" Color="Color.Primary">
+                    <MudIconButton Icon="@Icons.Material.Filled.Add"
+                                   Style="background-color: rgba(255,255,255,0.15); margin-left: 8px; color: white;"
+                                   OnClick="@OpenCreateDialog"
+                                   Disabled="@UserState.Value.IsLoading" />
+                </MudTooltip>
+                <MudTooltip Text="Làm mới dữ liệu" Color="Color.Primary">
+                    <MudIconButton Icon="@Icons.Material.Filled.Refresh"
+                                   Style="background-color: rgba(255,255,255,0.15); margin-left: 8px; color: white;"
+                                   OnClick="@RefreshUsers"
+                                   Disabled="@UserState.Value.IsLoading">
+                        @if (UserState.Value.IsLoading)
+                        {
+                            <MudProgressCircular Size="Size.Small"
+                                                 Indeterminate="true"
+                                                 Color="Color.Surface" />
+                        }
+                    </MudIconButton>
+                </MudTooltip>
+            </div>
+        </MudPaper>
+
+        <!-- Search Box -->
+        <MudPaper Elevation="0" Class="pa-4" Style="border-bottom: 1px solid #eee;">
+            <MudGrid>
+                <MudItem xs="12" md="8">
+                    <MudTextField @bind-Value="_searchTerm"
+                                  Label="Tìm kiếm người dùng"
+                                  Placeholder="Nhập tên, tên đăng nhập, email..."
+                                  Variant="Variant.Outlined"
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Search"
+                                  AdornmentColor="Color.Primary"
+                                  Immediate="true"
+                                  DebounceInterval="500"
+                                  OnDebounceIntervalElapsed="SearchUsers"
+                                  FullWidth="true"
+                                  Class="rounded-lg"
+                                  Margin="Margin.Dense" />
+                </MudItem>
+                <MudItem xs="12" md="4" Class="d-flex align-center">
+                    <MudSelect T="int" Label="Hiển thị" Value="_pageSize" ValueChanged="OnPageSizeChanged"
+                               Variant="Variant.Outlined" Margin="Margin.Dense" Class="mr-2" Style="width: 120px;">
+                        <MudSelectItem Value="5">5 dòng</MudSelectItem>
+                        <MudSelectItem Value="10">10 dòng</MudSelectItem>
+                        <MudSelectItem Value="25">25 dòng</MudSelectItem>
+                        <MudSelectItem Value="50">50 dòng</MudSelectItem>
+                    </MudSelect>
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               StartIcon="@Icons.Material.Filled.Add"
+                               OnClick="OpenCreateDialog"
+                               Style="text-transform: none; font-weight: 500; border-radius: 6px;">
+                        Thêm người dùng
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+        </MudPaper>
+
+        <!-- Thông báo lỗi -->
+        @if (!string.IsNullOrEmpty(UserState.Value.ErrorMessage))
+        {
+            <div class="pa-4">
+                <MudAlert Severity="Severity.Error"
+                          Variant="Variant.Filled"
+                          Class="rounded-lg">
+                    @UserState.Value.ErrorMessage
+                    <MudButton Color="Color.Inherit"
+                               Variant="Variant.Text"
+                               OnClick="@DismissError"
+                               Class="ml-auto">
+                        Đóng
+                    </MudButton>
+                </MudAlert>
+            </div>
+        }
+
+        <!-- Content -->
+        @if (UserState.Value.IsLoading)
+        {
+            <div class="d-flex justify-center align-center" style="height: 400px;">
+                <MudProgressCircular Color="Color.Primary" Size="Size.Large" Indeterminate="true" />
+            </div>
+        }
+        else if (UserState.Value.PaginatedUsers?.Items == null || !UserState.Value.PaginatedUsers.Items.Any())
+        {
+            <div class="pa-6 d-flex flex-column align-center">
+                <MudIcon Icon="@Icons.Material.Filled.SearchOff" Color="Color.Default" Size="Size.Large" Class="mb-4" />
+                <MudText Typo="Typo.h6" Align="Align.Center">Không tìm thấy người dùng nào</MudText>
+                <MudText Typo="Typo.body2" Align="Align.Center" Class="mt-1 mb-4">
+                    Không có kết quả phù hợp với tiêu chí tìm kiếm
+                </MudText>
+                <MudButton Variant="Variant.Outlined"
+                           Color="Color.Primary"
+                           OnClick="@ClearFilters"
+                           StartIcon="@Icons.Material.Filled.Clear">
+                    Xóa bộ lọc
+                </MudButton>
+            </div>
+        }
+        else
+        {
+            <div class="pa-0">
+                <MudTable Items="@GetUsers()"
+                          Hover="true"
+                          Breakpoint="Breakpoint.Sm"
+                          Loading="@UserState.Value.IsLoading"
+                          LoadingProgressColor="Color.Primary"
+                          T="KhaoThiUserModel"
+                          Class="users-table"
+                          Style="box-shadow: none;">
+                    <HeaderContent>
+                        <MudTh Style="width: 60px; text-align: center;">ID</MudTh>
+                        <MudTh>Tài khoản</MudTh>
+                        <MudTh Style="min-width: 180px;">Họ tên</MudTh>
+                        <MudTh>Email</MudTh>
+                        <MudTh>Đơn vị</MudTh>
+                        <MudTh Style="width: 120px;">Chức vụ</MudTh>
+                        <MudTh Style="width: 100px; text-align: center;">Trạng thái</MudTh>
+                        <MudTh Style="width: 140px; text-align: center;">Thao tác</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="ID" Style="text-align: center;">@context.ID</MudTd>
+                        <MudTd DataLabel="Tài khoản">
+                            <div class="d-flex align-center">
+                                <MudAvatar Color="Color.Primary" Size="Size.Small" Class="mr-2">
+                                    @(context.HoTen?.Substring(0, 1).ToUpper() ?? "?")
+                                </MudAvatar>
+                                <div>
+                                    <MudText Typo="Typo.body2" Style="font-weight: 500;">@context.TenDangNhap</MudText>
+                                    <MudText Typo="Typo.caption" Style="color: #6c757d;">
+                                        @context.NgayTao.ToString("dd/MM/yyyy")
+                                    </MudText>
+                                </div>
+                            </div>
+                        </MudTd>
+                        <MudTd DataLabel="Họ tên">@context.HoTen</MudTd>
+                        <MudTd DataLabel="Email">@context.Email</MudTd>
+                        <MudTd DataLabel="Đơn vị">@context.TenDonVi</MudTd>
+                        <MudTd DataLabel="Chức vụ">@GetChucVuDisplay(context.MaChucVu)</MudTd>
+                        <MudTd DataLabel="Trạng thái" Style="text-align: center;">
+                            <MudChip Color="@(context.Active ? Color.Success : Color.Error)"
+                                     Size="Size.Small"
+                                     Label="true"
+                                     Style="font-weight: 500; min-width: 80px; justify-content: center;"
+                                     T="string">
+                                @(context.Active ? "Hoạt động" : "Khóa")
+                            </MudChip>
+                        </MudTd>
+                        <MudTd DataLabel="Thao tác" Style="text-align: center;">
+                            <div class="d-flex justify-center">
+                                <MudTooltip Text="Xem chi tiết">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Visibility"
+                                                   Color="Color.Info"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => OpenViewDialog(context))" />
+                                </MudTooltip>
+                                <MudTooltip Text="Chỉnh sửa">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                                   Color="Color.Primary"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => OpenEditDialog(context))" />
+                                </MudTooltip>
+                                <MudTooltip Text="@(context.Active ? "Khóa tài khoản" : "Kích hoạt")">
+                                    <MudIconButton Icon="@(context.Active ? Icons.Material.Filled.Lock : Icons.Material.Filled.LockOpen)"
+                                                   Color="@(context.Active ? Color.Warning : Color.Success)"
+                                                   Size="Size.Small"
+                                                   />
+                                </MudTooltip>
+                            </div>
+                        </MudTd>
+                    </RowTemplate>
+                </MudTable>
+
+                <!-- Pagination -->
+                <div class="d-flex justify-center align-center pa-4" Style="border-top: 1px solid #eee;">
+                    <MudText Typo="Typo.body2" Style="color: #6c757d;">
+                        Hiển thị @(_pageSize * (_page - 1) + 1) - @Math.Min(_pageSize * _page, UserState.Value.PaginatedUsers.TotalCount)
+                        trong số @UserState.Value.PaginatedUsers.TotalCount người dùng
+                    </MudText>
+                    <MudSpacer />
+                    <MudPagination Count="@GetTotalPages()"
+                                   SelectedChanged="@OnPageChanged"
+                                   Color="Color.Primary"
+                                   Variant="Variant.Filled"
+                                   ShowFirstButton="true"
+                                   ShowLastButton="true"
+                                   Size="Size.Medium"
+                                   Rectangular="true" />
+                </div>
+            </div>
+        }
+    </MudPaper>
+</MudContainer>
 @code {
 
+    private string _searchTerm = string.Empty;
+    private int _page = 1;
+    private int _pageSize = 10;
+
+    /// <summary>
+    /// Phương thức khởi tạo component và tải dữ liệu
+    /// Được gọi khi component được tạo lần đầu
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        // Đăng ký theo dõi sự thay đổi của UserState
+        UserState.StateChanged += OnUserStateChanged;
+
+        // Tải dữ liệu ban đầu
+        LoadUsers();
+    }
+    /// <summary>
+    /// Xử lý khi trạng thái thay đổi
+    /// Cập nhật lại giao diện người dùng
+    /// </summary>
+    private async void OnUserStateChanged(object? sender, EventArgs e)
+    {
+        // Cập nhật lại giao diện khi có thay đổi
+        await InvokeAsync(StateHasChanged);
+
+        // Hiển thị thông báo nếu có
+        if (UserState.Value.NotificationMessage != null)
+        {
+            Severity severity = UserState.Value.NotificationType switch
+            {
+                "success" => Severity.Success,
+                "error" => Severity.Error,
+                "warning" => Severity.Warning,
+                "info" => Severity.Info,
+                _ => Severity.Info
+            };
+
+            Snackbar.Add(UserState.Value.NotificationMessage, severity, config =>
+            {
+                config.VisibleStateDuration = 5000;
+                config.HideTransitionDuration = 200;
+                config.ShowTransitionDuration = 200;
+            });
+
+            // Xóa thông báo sau khi đã hiển thị
+            // Dispatcher.Dispatch(new ClearNotificationAction());
+        }
+    }
+    /// <summary>
+    /// Hủy đăng ký lắng nghe sự kiện khi component bị hủy
+    /// Tránh memory leak
+    /// </summary>
+    public void Dispose()
+    {
+        UserState.StateChanged -= OnUserStateChanged;
+    }
+    /// <summary>
+    /// Tải danh sách người dùng
+    /// </summary>
+    private void LoadUsers()
+    {
+        Dispatcher.Dispatch(new LoadPaginatedUsersAction(_page, _pageSize, _searchTerm));
+    }
+    /// <summary>
+    /// Lấy danh sách người dùng từ state
+    /// </summary>
+    private IEnumerable<KhaoThiUserModel> GetUsers()
+    {
+        return UserState.Value.PaginatedUsers?.Items ?? Array.Empty<KhaoThiUserModel>();
+    }
+    /// <summary>
+    /// Tính tổng số trang dựa trên dữ liệu
+    /// </summary>
+    private int GetTotalPages()
+    {
+        if (UserState.Value.PaginatedUsers == null)
+            return 1;
+
+        int totalItems = UserState.Value.PaginatedUsers.TotalCount;
+        return (int)Math.Ceiling((double)totalItems / _pageSize);
+    }
+
+    /// <summary>
+    /// Xử lý sự kiện thay đổi trang
+    /// </summary>
+    private void OnPageChanged(int page)
+    {
+        _page = page;
+        LoadUsers();
+    }
+
+    /// <summary>
+    /// Xử lý sự kiện thay đổi số lượng hiển thị
+    /// </summary>
+    private void OnPageSizeChanged(int pageSize)
+    {
+        _pageSize = pageSize;
+        _page = 1; // Reset về trang đầu tiên khi thay đổi kích thước trang
+        LoadUsers();
+    }
+
+    /// <summary>
+    /// Tìm kiếm người dùng
+    /// </summary>
+    private void SearchUsers()
+    {
+        _page = 1; // Reset về trang đầu tiên khi tìm kiếm
+        LoadUsers();
+    }
+
+    /// <summary>
+    /// Làm mới danh sách người dùng
+    /// </summary>
+    private void RefreshUsers()
+    {
+        LoadUsers();
+    }
+
+    /// <summary>
+    /// Xóa thông báo lỗi
+    /// </summary>
+    private void DismissError()
+    {
+        Dispatcher.Dispatch(new ClearErrorAction());
+    }
+
+    /// <summary>
+    /// Xóa bộ lọc tìm kiếm
+    /// </summary>
+    private void ClearFilters()
+    {
+        _searchTerm = string.Empty;
+        _page = 1;
+        LoadUsers();
+    }
+
+    /// <summary>
+    /// Hiển thị dialog xem chi tiết người dùng
+    /// </summary>
+    private async Task OpenViewDialog(KhaoThiUserModel user)
+    {
+        try
+        {
+            // Cập nhật người dùng được chọn vào state
+            Dispatcher.Dispatch(new SelectUserAction(user));
+
+            // Thiết lập tham số cho modal
+            //var parameters = new ModalParameters()
+            //    .Add(nameof(UserDetailDialog.User), user);
+
+            // Cấu hình tùy chọn cho modal
+            var options = new ModalOptions
+            {
+                DisableBackgroundCancel = false,
+                HideCloseButton = false,
+                Position = ModalPosition.Middle,
+                Size = ModalSize.Large,
+                Class = "user-detail-modal",
+                AnimationType = ModalAnimationType.FadeInOut
+            };
+
+            //var dialog = await ModalService.Show<UserDetailDialog>("Chi tiết người dùng", parameters, options).Result;
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+        }
+    }
+
+    /// <summary>
+    /// Hiển thị dialog tạo người dùng mới
+    /// </summary>
+    private async Task OpenCreateDialog()
+    {
+        try
+        {
+            // Thiết lập tùy chọn cho modal
+            var options = new ModalOptions
+            {
+                DisableBackgroundCancel = true,
+                HideCloseButton = false,
+                Position = ModalPosition.Middle,
+                Size = ModalSize.Large,
+                Class = "create-user-modal",
+                AnimationType = ModalAnimationType.FadeInOut
+            };
+
+            //var result = await ModalService.Show<CreateUserDialog>("Thêm người dùng mới", options).Result;
+
+            //if (!result.Cancelled)
+            //{
+            //    // Nếu tạo thành công, tải lại danh sách
+            //    LoadUsers();
+            //}
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+        }
+    }
+
+    /// <summary>
+    /// Hiển thị dialog chỉnh sửa người dùng
+    /// </summary>
+    private async Task OpenEditDialog(KhaoThiUserModel user)
+    {
+        try
+        {
+            // Cập nhật người dùng được chọn vào state
+            Dispatcher.Dispatch(new SelectUserAction(user));
+
+            // Thiết lập tham số cho modal
+            var parameters = new ModalParameters()
+                .Add(nameof(KhaoThi_2024_net_client.Pages.Profile.EditUserForm.User), user);
+
+            // Cấu hình tùy chọn cho modal
+            var options = new ModalOptions
+            {
+                DisableBackgroundCancel = true,
+                HideCloseButton = false,
+                Position = ModalPosition.Middle,
+                Size = ModalSize.Large,
+                Class = "edit-user-modal",
+                AnimationType = ModalAnimationType.FadeInOut
+            };
+
+            var result = await ModalService.Show<KhaoThi_2024_net_client.Pages.Profile.EditUserForm>("Cập nhật thông tin người dùng", parameters, options).Result;
+
+            if (!result.Cancelled)
+            {
+                // Nếu cập nhật thành công, tải lại danh sách
+                LoadUsers();
+            }
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+        }
+    }
+
+    /// <summary>
+    /// Thay đổi trạng thái người dùng (khóa/mở khóa)
+    /// </summary>
+    //private async Task ToggleUserStatus(KhaoThiUserModel user)
+    //{
+    //    try
+    //    {
+    //        string action = user.Active ? "khóa" : "kích hoạt";
+
+    //        // Thiết lập tham số cho modal
+    //        var parameters = new ModalParameters()
+    //            .Add(nameof(ConfirmDialog.ContentText), $"Bạn có chắc chắn muốn {action} tài khoản của người dùng \"{user.HoTen}\" không?")
+    //            .Add(nameof(ConfirmDialog.ButtonText), user.Active ? "Khóa" : "Kích hoạt")
+    //            .Add(nameof(ConfirmDialog.Color), user.Active ? Color.Warning : Color.Success);
+
+    //        // Cấu hình tùy chọn cho modal
+    //        var options = new ModalOptions
+    //        {
+    //            DisableBackgroundCancel = false,
+    //            HideCloseButton = false,
+    //            Position = ModalPosition.Middle,
+    //            Size = ModalSize.Small,
+    //            Class = "confirm-modal",
+    //            AnimationType = ModalAnimationType.FadeInOut
+    //        };
+
+    //        var result = await ModalService.Show<ConfirmDialog>($"Xác nhận {action}", parameters, options).Result;
+
+    //        if (!result.Cancelled)
+    //        {
+    //            // Tạo model cập nhật để chỉ thay đổi trạng thái
+    //            var updateModel = new UpdateUserModel
+    //            {
+    //                TrangThai = !user.Active
+    //            };
+
+    //            Dispatcher.Dispatch(new UpdateUserAction(user.ID, updateModel));
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
+    //    }
+    //}
+
+    /// <summary>
+    /// Lấy tên hiển thị của chức vụ
+    /// </summary>
+    private string GetChucVuDisplay(string? maChucVu)
+    {
+        return maChucVu switch
+        {
+            "01" => "Quản trị viên",
+            "02" => "Người dùng",
+            _ => maChucVu ?? "Không xác định"
+        };
+    }
+
 }
+

@@ -397,6 +397,23 @@
         width: 90%;
     }
 }
+/* /Pages/ManageUsers/ManageUsersForm.razor.rz.scp.css */
+.users-table .mud-table-container[b-lb85opyhdm] {
+    border-radius: 0;
+}
+
+.users-table .mud-table-head[b-lb85opyhdm] {
+    background-color: #f8f9fa;
+}
+
+    .users-table .mud-table-head .mud-table-cell[b-lb85opyhdm] {
+        font-weight: 600;
+        color: #495057;
+    }
+
+.users-table .mud-table-body .mud-table-row:hover[b-lb85opyhdm] {
+    background-color: rgba(89, 74, 226, 0.04);
+}
 /* /Pages/Profile/Profile.razor.rz.scp.css */
 /* Profile.razor.css */
 .profile-header[b-i8juruxc1o] {

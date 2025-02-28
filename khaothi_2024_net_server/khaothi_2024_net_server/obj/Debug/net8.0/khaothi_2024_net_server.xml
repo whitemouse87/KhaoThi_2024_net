@@ -131,6 +131,12 @@
             Lấy thông tin người dùng theo ID
             </summary>
         </member>
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetAll">
+            <summary>
+            Lấy danh sách tất cả người dùng
+            </summary>
+            <returns>Danh sách người dùng</returns>
+        </member>
         <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetPaginated(System.Int32,System.Int32,System.String)">
             <summary>
             Lấy danh sách người dùng có phân trang và tìm kiếm

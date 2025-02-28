@@ -1,0 +1,65 @@
+2025-02-28 10:52:22.867 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-28 10:52:29.051 +07:00 [INF] [Client] Token hết hạn 
+2025-02-28 10:52:42.024 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-02-28 10:52:42.841 +07:00 [ERR] Password verification result: false
+2025-02-28 10:52:42.916 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-02-28 10:52:50.232 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-02-28 10:52:50.551 +07:00 [ERR] Password verification result: true
+2025-02-28 10:52:50.648 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-02-28 10:52:54.104 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 10:52:54.112 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 10:55:13.750 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 10:55:13.760 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 10:55:28.071 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-28 10:55:32.789 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 10:55:33.007 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 10:55:34.683 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 10:55:49.019 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 10:55:49.032 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 10:55:49.488 +07:00 [INF] [Client] Token hết hạn 
+2025-02-28 10:55:49.532 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 10:55:49.572 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: , URL: https://localhost:44386/users 
+2025-02-28 10:55:49.792 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: , URL: https://localhost:44386/users 
+2025-02-28 10:55:59.732 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-02-28 10:56:00.233 +07:00 [ERR] Password verification result: true
+2025-02-28 10:56:00.301 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-02-28 10:56:03.612 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 10:56:03.619 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 10:56:05.538 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 10:56:11.570 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 10:56:11.580 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 10:56:12.058 +07:00 [INF] [Client] Token hết hạn 
+2025-02-28 10:56:12.102 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 10:56:12.142 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: , URL: https://localhost:44386/users 
+2025-02-28 10:56:12.339 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: , URL: https://localhost:44386/users 
+2025-02-28 14:35:45.406 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-28 14:36:40.740 +07:00 [INF] Login attempt for user: nvdkhoa from IP: ::1
+2025-02-28 14:36:41.528 +07:00 [ERR] Password verification result: true
+2025-02-28 14:36:41.611 +07:00 [INF] User nvdkhoa logged in successfully from IP: ::1
+2025-02-28 14:36:45.244 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 14:36:45.280 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 14:36:49.282 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 14:36:49.290 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 14:36:51.526 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 14:36:51.533 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 14:36:56.033 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 14:36:56.041 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 14:47:06.333 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-28 14:47:10.968 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 14:47:11.185 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 14:47:11.820 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 14:47:27.281 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 14:47:27.293 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 14:47:27.937 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 15:03:32.597 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-28 15:03:37.181 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 15:03:37.435 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 15:03:38.150 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 15:03:45.112 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 15:03:55.120 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=10] API Error: Forbidden -  
+2025-02-28 15:04:00.618 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=25] API Error: Forbidden -  
+2025-02-28 15:04:02.184 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser?page=1&pageSize=25] API Error: Forbidden -  
+2025-02-28 15:09:42.076 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-02-28 15:09:49.330 +07:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-02-28 15:09:49.562 +07:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-02-28 15:09:50.760 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/all-phantrang?page=1&pageSize=10] API Error: Forbidden -  

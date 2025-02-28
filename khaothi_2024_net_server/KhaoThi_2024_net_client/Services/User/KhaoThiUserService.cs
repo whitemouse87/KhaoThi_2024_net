@@ -56,7 +56,7 @@ namespace KhaoThi_2024_net_client.Services.User
 
                 // Xây dựng query string
 
-                var url = $"{API_ENDPOINT}?page={page}&pageSize={pageSize}";
+                var url = $"{API_ENDPOINT}/all-phantrang?page={page}&pageSize={pageSize}";
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
                     url += $"&searchTerm={Uri.EscapeDataString(searchTerm)}";

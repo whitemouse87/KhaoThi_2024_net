@@ -33,9 +33,24 @@ namespace KhaoThi_2024_net_client.State.User
                 var result = await _userService.GetPaginatedAsync(action.Page, action.PageSize, action.SearchTerm);
                 dispatcher.Dispatch(new LoadPaginatedUsersSuccessAction(result));
             }
+            catch (HttpRequestException ex)
+            {
+                // Xử lý lỗi mạng cụ thể
+                await Logger.Error(
+                    $"Lỗi kết nối khi tải danh sách người dùng: Page={action.Page}, PageSize={action.PageSize}",
+                    ex,
+                    nameof(KhaoThiUserEffects));
+
+                dispatcher.Dispatch(new LoadPaginatedUsersFailureAction("Lỗi kết nối đến máy chủ. Vui lòng thử lại sau."));
+            }
             catch (Exception ex)
             {
-                await Logger.Error("Lỗi khi tải danh sách người dùng phân trang", ex, nameof(KhaoThiUserEffects));
+                // Xử lý các lỗi khác
+                await Logger.Error(
+                    $"Lỗi xử lý khi tải danh sách người dùng: Page={action.Page}, PageSize={action.PageSize}",
+                    ex,
+                    nameof(KhaoThiUserEffects));
+
                 dispatcher.Dispatch(new LoadPaginatedUsersFailureAction(ex.Message));
             }
             finally

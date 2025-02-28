@@ -73,7 +73,7 @@ namespace khaothi_2024_net_server.Features.UserManagement
         /// <summary>
         /// Lấy danh sách người dùng có phân trang và tìm kiếm
         /// </summary>
-        [HttpGet]
+        [HttpGet("all-phantrang")]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(typeof(PaginatedResult<KhaoThiUser>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]

@@ -388,7 +388,49 @@
         }
       }
     },
-    "/api/KhaoThiUser": {
+    "/api/KhaoThiUser/all": {
+      "get": {
+        "tags": [
+          "KhaoThiUser"
+        ],
+        "summary": "Lấy danh sách tất cả người dùng",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/KhaoThiUser/all-phantrang": {
       "get": {
         "tags": [
           "KhaoThiUser"
@@ -441,9 +483,14 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Server Error"
           }
         }
-      },
+      }
+    },
+    "/api/KhaoThiUser": {
       "post": {
         "tags": [
           "KhaoThiUser"
