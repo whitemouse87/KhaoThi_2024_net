@@ -335,6 +335,38 @@ namespace KhaoThi_2024_net_client.State.User
                 dispatcher.Dispatch(new SetLoadingAction(false));
             }
         }
+        [EffectMethod]
+        public async Task HandleChangeActive(ChangeActiveAction action, IDispatcher dispatcher)
+        {
+
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true)); // Bắt đầu loading
+                var isSuccess = await _userService.ChangeActive(action.id, action.active);
+
+                if (isSuccess)
+                {
+                    // Chỉ dispatch action thành công nếu service trả về true
+                    dispatcher.Dispatch(new ChangeActiveSuccessAction(action.id));
+                    //dispatcher.Dispatch(new LoadUsersAction());
+                    dispatcher.Dispatch(new GetUserByIdAction(action.id));
+                }
+                else
+                {
+                    // Nếu service trả về false, dispatch action thất bại
+                    dispatcher.Dispatch(new ChangeActiveFailureAction("Không thể thay đổi trạng thái tài khoản. Vui lòng kiểm tra lại thông tin."));
+                }
+            }
+            catch (Exception ex)
+            {
+                await Logger.Error($"Lỗi khi điều chỉnh trạng thái tài khoản {action.id}", ex, nameof(KhaoThiUserEffects));
+                dispatcher.Dispatch(new ChangeActiveFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
     }
 }
 

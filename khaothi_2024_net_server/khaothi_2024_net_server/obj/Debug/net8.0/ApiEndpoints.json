@@ -254,6 +254,27 @@
   },
   {
     "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
+    "Method": "UpdateUserActiveStatus",
+    "RelativePath": "api/KhaoThiUser/{id}/active",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "activeStatus",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
     "Method": "GetAll",
     "RelativePath": "api/KhaoThiUser/all",
     "HttpMethod": "GET",

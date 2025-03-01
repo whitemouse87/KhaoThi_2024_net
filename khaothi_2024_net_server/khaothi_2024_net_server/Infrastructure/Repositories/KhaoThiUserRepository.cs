@@ -183,6 +183,36 @@ namespace khaothi_2024_net_server.Infrastructure.Repositories
             return result > 0;
         }
 
+        public async Task<bool> UpdateActive(int id, bool active)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("ID must be greater than 0", nameof(id));
+            }
+
+            try
+            {
+                const string sql = @"UPDATE KhaoThi_User 
+                                    SET Active = @Active
+                                    WHERE ID = @Id";
+
+                // Giả sử _dataAccess.ExecuteAsync có thể nhận parameters theo cách này
+                var result = await _dataAccess.ExecuteAsync(sql,
+                    "@Id", id,
+                    "@Active", active
+                );
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                // Log exception - phụ thuộc vào logging framework của bạn
+                _logger.LogError(ex, "Error updating active status for user {UserId}", id);
+
+                // Tùy theo thiết kế của bạn, có thể throw lại exception hoặc trả về false
+                throw; // hoặc return false;
+            }
+        }
 
         public async Task<bool> DeleteAsync(int id)
         {

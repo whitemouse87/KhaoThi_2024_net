@@ -367,5 +367,45 @@ namespace khaothi_2024_net_server.Features.UserManagement
                 throw;
             }
         }
+        public async Task<bool> UpdateUserActiveStatus(int userId, bool activeStatus)
+        {
+            try
+            {
+                if (userId <= 0)
+                {
+                    _logger.LogWarning("Attempted to update user with invalid ID: {UserId}", userId);
+                    throw new ArgumentException("User ID must be greater than zero", nameof(userId));
+                }
+
+                // Kiểm tra xem user có tồn tại không
+                //var userExists = await _userRepository.UserExistsAsync(userId);
+                //if (!userExists)
+                //{
+                //    _logger.LogWarning("Attempted to update non-existent user: {UserId}", userId);
+                //    return false;
+                //}
+
+                // Thực hiện cập nhật trạng thái
+                var result = await _userRepository.UpdateActive(userId, activeStatus);
+
+                if (result)
+                {
+                    _logger.LogInformation("Successfully updated active status to {ActiveStatus} for user {UserId}",
+                        activeStatus, userId);
+                }
+                else
+                {
+                    _logger.LogWarning("Failed to update active status for user {UserId}", userId);
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while updating active status for user {UserId}", userId);
+                throw; // Re-throw để controller xử lý
+            }
+        }
+
     }
 }

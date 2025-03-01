@@ -68,6 +68,7 @@ namespace KhaoThi_2024_net_client.Services.User
         /// <returns>true nếu tên đăng nhập đã tồn tại</returns>
         Task<bool> IsUsernameExistAsync(string username);
         Task<bool> ChangePassword(int id, ChangePasswordModel model);
+        Task<bool> ChangeActive(int id, bool active);
     }
 
 }

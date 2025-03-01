@@ -346,6 +346,40 @@ namespace KhaoThi_2024_net_client.Services.User
 
         }
 
+        public async Task<bool> ChangeActive(int id, bool active)
+        {
+            try
+            {
+                await AddAuthenticationHeader();
+                var response = await _httpClient.PutAsJsonAsync($"{API_ENDPOINT}/{id}/active", active, _jsonOptions);
+
+
+                if (response.IsSuccessStatusCode)
+                {
+                    //await _logger.LogInfoAsync("Successfully updated active status for user {UserId}"+ id);
+                    return true;
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    //_logger.LogWarning("User with ID {UserId} not found when updating active status", id);
+                    return false;
+                }
+                else
+                {
+                    // Đọc error message từ response
+                    var content = await response.Content.ReadAsStringAsync();
+                    await _logger.LogErrorAsync($"Lỗi khi cập nhật active cho user user {id}. Status code: {response.StatusCode}, Response: {response.Content.ToString()}", null
+                        , nameof(KhaoThiUserService));
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi cập nhật active cho user {id}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+        }
+
 
     }
 }

@@ -209,7 +209,9 @@
                                 <MudTooltip Text="@(context.Active ? "Khóa tài khoản" : "Kích hoạt")">
                                     <MudIconButton Icon="@(context.Active ? Icons.Material.Filled.Lock : Icons.Material.Filled.LockOpen)"
                                                    Color="@(context.Active ? Color.Warning : Color.Success)"
-                                                   Size="Size.Small" />
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => ToggleUserStatus(context.ID, context.Active))"
+                                                   Disabled="@UserState.Value.IsLoading" />
                                 </MudTooltip>
                             </div>
                         </MudTd>
@@ -531,6 +533,13 @@
     //        Snackbar.Add($"Có lỗi xảy ra: {ex.Message}", Severity.Error);
     //    }
     //}
+    private void ToggleUserStatus(int userId, bool currentActive)
+    {
+       
+        Dispatcher.Dispatch(new ChangeActiveAction(userId, !currentActive));
+      
+        
+    }
 
     /// <summary>
     /// Lấy tên hiển thị của chức vụ

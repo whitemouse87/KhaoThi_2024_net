@@ -376,6 +376,36 @@ namespace khaothi_2024_net_server.Features.UserManagement
                 });
             }
         }
+        [HttpPut("{id}/active")]
+        public async Task<IActionResult> UpdateUserActiveStatus(int id, [FromBody] bool activeStatus)
+        {
+            try
+            {
+                _logger.LogInformation("Received request to update active status to {ActiveStatus} for user {UserId}",
+                    activeStatus, id);
+
+                var result = await _userService.UpdateUserActiveStatus(id, activeStatus);
+
+                if (result)
+                {
+                    return Ok(new { success = true, message = $"User active status updated successfully." });
+                }
+                else
+                {
+                    return NotFound(new { success = false, message = $"User with ID {id} not found or update failed." });
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                _logger.LogWarning(ex, "Invalid argument when updating user active status");
+                return BadRequest(new { success = false, message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Unexpected error when updating active status for user {UserId}", id);
+                return StatusCode(500, new { success = false, message = "An unexpected error occurred while processing your request." });
+            }
+        }
     }
 
 

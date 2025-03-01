@@ -73,6 +73,11 @@ namespace KhaoThi_2024_net_client.Services.User
         public record ChangePasswordSuccessAction(int Id);
         public record ChangePasswordFailureAction(string ErrorMessage);
 
+        //Actions cập active
+        public record ChangeActiveAction(int id, bool active);
+        public record ChangeActiveSuccessAction(int Id);
+        public record ChangeActiveFailureAction(string ErrorMessage);
+
         // Actions cho thao tác theo đơn vị
         public record LoadUsersByDonViAction(string MaDonVi);
         public record LoadUsersByDonViSuccessAction(IEnumerable<KhaoThiUserModel> Users);

@@ -1,4 +1,5 @@
 ﻿using Fluxor;
+using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Services.User;
 using static KhaoThi_2024_net_client.Services.User.KhaoThiUserActions;
 
@@ -99,6 +100,71 @@ namespace KhaoThi_2024_net_client.State.User
                  notificationType: errorMsg == null ? null : "error");
         }
         #endregion
+        #region Update active
+        /// <summary>
+        /// Reducer xử lý action tải danh sách người dùng phân trang
+        /// </summary>
+        /// //Actions cập active
+        //public record ChangeActiveAction(int id, bool active);
+        //public record ChangeActiveSuccessAction(int Id);
+        //public record ChangeActiveFailureAction(string ErrorMessage);
+        [ReducerMethod]
+        public static KhaoThiUserState ReduceChangeActiveAction(KhaoThiUserState state, ChangeActiveAction action) =>
+            new(id: 50,
+                isLoading: true,
+                errorMessage: null,
+                users: state.Users,
+                selectedUser: state.SelectedUser,
+                paginatedUsers: state.PaginatedUsers,
+                isInitialized: state.IsInitialized,
+                notificationMessage: null,
+                notificationType: null);
+
+        [ReducerMethod]
+        public static KhaoThiUserState ReduceChangeActiveSuccessAction(KhaoThiUserState state, ChangeActiveSuccessAction action)
+        {
+            if (state.PaginatedUsers != null)
+            {
+                // Tìm user cần cập nhật trong danh sách
+                var userToUpdate = state.PaginatedUsers.Items.FirstOrDefault(u => u.ID == action.Id);
+                if (userToUpdate != null)
+                {
+                    // Đảo ngược trạng thái Active trực tiếp
+                    userToUpdate.Active = !userToUpdate.Active;
+                }
+            }
+
+
+            return new(id: 51,
+                isLoading: false,
+                errorMessage: null,
+                users: state.Users,
+                selectedUser: state.SelectedUser,
+                paginatedUsers: state.PaginatedUsers, // Dùng lại PaginatedUsers đã được cập nhật
+                isInitialized: true,
+                notificationMessage: "Đổi trạng thái thành công",
+                notificationType: "success");
+
+        }
+
+
+        [ReducerMethod]
+        public static KhaoThiUserState ReduceLoadPaginatedUsersFailureAction(KhaoThiUserState state, ChangeActiveFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            string? notificationMsg = errorMsg == null ? null : $"Lỗi: {action.ErrorMessage}";
+            return new(id: 52,
+                 isLoading: false,
+                 errorMessage: errorMsg,
+                 users: state.Users,
+                 selectedUser: state.SelectedUser,
+                 paginatedUsers: state.PaginatedUsers,
+                 isInitialized: state.IsInitialized,
+                 notificationMessage: notificationMsg,
+                 notificationType: errorMsg == null ? null : "error");
+        }
+        #endregion
+
 
         #region Single User Management Reducers
         /// <summary>
