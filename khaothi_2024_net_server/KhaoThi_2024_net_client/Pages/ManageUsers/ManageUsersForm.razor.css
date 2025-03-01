@@ -14,3 +14,26 @@
 .users-table .mud-table-body .mud-table-row:hover {
     background-color: rgba(89, 74, 226, 0.04);
 }
+.mud-table {
+    font-size: 13px;
+}
+
+.mud-table-cell {
+    font-size: 13px;
+}
+
+.mud-input {
+    font-size: 13px;
+}
+
+.mud-input-label {
+    font-size: 13px;
+}
+
+.mud-select {
+    font-size: 13px;
+}
+
+.mud-chip {
+    font-size: 12px;
+}

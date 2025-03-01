@@ -13,11 +13,32 @@
 <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
     <AuthorizeView>
         <Authorized>
+            <MudPaper Elevation="0" Style="background: linear-gradient(135deg, #594ae2 0%, #5042cb 100%);">
+                <div class="d-flex align-center py-4 px-6">
+                    <div class="mr-4">
+                        <MudAvatar Style="background-color: rgba(255,255,255,0.2); width: 52px; height: 52px;">
+                            <MudIcon Icon="@Icons.Material.Filled.ManageAccounts"
+                                     Color="Color.Surface"
+                                     Style="font-size: 32px; color: white;" />
+                        </MudAvatar>
+                    </div>
+                    <div>
+                        <MudText Typo="Typo.h5"
+                                 Style="color: white; font-weight: 600; letter-spacing: 0.5px;">
+                            Trang quản trị
+                        </MudText>
+                        <MudText Typo="Typo.body2"
+                                 Style="color: rgba(255,255,255,0.85); margin-top: 4px;">
+                            Công cụ quản trị
+                        </MudText>
+                    </div>
+                    <MudSpacer />
+                    
+                  
+                </div>
+            </MudPaper>
             @* Tiêu đề trang với icon *@
-            <MudText Typo="Typo.h4" Class="mb-4">
-                <MudIcon Icon="@Icons.Material.Filled.Dashboard" Class="mr-2" />
-                Dashboard
-            </MudText>
+           
 
             @* Thẻ thông tin người dùng với đường viền, bóng đổ và màu sắc *@
             <MudCard Elevation="3" Class="mb-6" Style="border-left: 4px solid var(--mud-palette-primary);">
