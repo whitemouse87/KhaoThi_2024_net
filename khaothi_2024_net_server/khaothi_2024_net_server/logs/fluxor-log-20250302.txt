@@ -1,0 +1,113 @@
+2025-03-02 20:31:51 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 20:31:54 [INF] ["Client"] "Token hết hạn" ""
+2025-03-02 21:41:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 21:42:20 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:42:21 [ERR] Password verification result: False
+2025-03-02 21:42:21 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng:" ""
+2025-03-02 21:42:28 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:42:28 [ERR] Password verification result: True
+2025-03-02 21:42:28 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Tài khoản không hoạt động" ""
+2025-03-02 21:42:32 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:42:32 [ERR] Password verification result: False
+2025-03-02 21:42:32 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng:" ""
+2025-03-02 21:42:36 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:42:37 [ERR] Password verification result: False
+2025-03-02 21:42:37 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng:" ""
+2025-03-02 21:42:46 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:42:46 [ERR] Password verification result: False
+2025-03-02 21:42:46 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng:" ""
+2025-03-02 21:42:53 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:42:53 [WRN] Too many login attempts for user "nvdkhoa" from IP "::1"
+2025-03-02 21:42:53 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Quá nhiều lần đăng nhập thất bại. Vui lòng thử lại sau." ""
+2025-03-02 21:46:50 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 21:47:10 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:47:12 [ERR] $2a$12$I3uQOEgd/4AGJRC1GUduDu1il7SpOfVNLC7f459z9nxwZ93TVz6sC
+2025-03-02 21:47:12 [ERR] Password verification result: True
+2025-03-02 21:47:12 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Tài khoản không hoạt động" ""
+2025-03-02 21:47:38 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:47:39 [ERR] $2a$12$EzzlL/30JXPD.wt0XngAQOjQB0fUtUYAEywGeAcFKyikoPbHhpFI2
+2025-03-02 21:47:39 [ERR] Password verification result: True
+2025-03-02 21:47:39 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Tài khoản không hoạt động" ""
+2025-03-02 21:48:04 [INF] Login attempt for user: "nvdkhoa" from IP: "::1"
+2025-03-02 21:48:05 [ERR] $2a$12$8gPnxwOOTN6P.95sHelh4u2jLikR/TJzpjFBkaa8RFpIG0z/yrc0G
+2025-03-02 21:48:05 [ERR] Password verification result: True
+2025-03-02 21:48:05 [INF] User "nvdkhoa" logged in successfully from IP: "::1"
+2025-03-02 21:48:09 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:48:09 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:48:16 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:48:16 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:53:01 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 21:53:05 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:53:05 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:53:06 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:53:06 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:55:46 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 21:55:50 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:55:50 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:55:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:55:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:58:00 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 21:58:04 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:58:05 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:58:05 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:58:05 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:59:04 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 21:59:08 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:59:08 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 21:59:09 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 21:59:09 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:07:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:07:25 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:07:25 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:07:26 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:07:26 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:11:26 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:11:30 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:11:30 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:11:31 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:11:31 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:14:57 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:15:01 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:15:02 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:15:02 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:15:02 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:16:10 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:16:14 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:16:14 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:16:15 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:16:15 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:18:24 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:18:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:18:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:18:29 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:18:29 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:20:49 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:20:53 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:20:53 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:20:54 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:20:54 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:36:41 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:36:45 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:36:45 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:36:46 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:36:46 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:39:32 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:39:37 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:39:37 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:39:37 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:39:37 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:40:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:40:25 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:40:25 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:40:26 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:40:26 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:41:49 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:41:53 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:41:53 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:41:54 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:41:54 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:42:53 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-02 22:42:57 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:42:57 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-02 22:43:00 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-02 22:43:00 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa

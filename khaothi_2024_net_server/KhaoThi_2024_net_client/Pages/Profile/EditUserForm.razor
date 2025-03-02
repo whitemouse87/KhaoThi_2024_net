@@ -110,17 +110,36 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Numbers" />
                             </div>
+
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Tên ngân hàng</MudText>
-                                <MudTextField @bind-Value="User.TenNganHang"
-                                              Label=""
-                                              Variant="Variant.Outlined"
-                                              Adornment="Adornment.Start"
-                                              AdornmentIcon="@Icons.Material.Filled.AccountBalance" />
+                                <MudSelect T="string"
+                                           @bind-Value="selectedBankCode"
+                                           Label=""
+                                           Variant="Variant.Outlined"
+                                           Adornment="Adornment.Start"
+                                           AdornmentIcon="@Icons.Material.Filled.AccountBalance"
+                                           AnchorOrigin="Origin.BottomCenter"
+                                        
+                                           Dense="true"
+                                           OffsetY="true"
+                                           SearchBox="true">
+                                    @if (Banks != null && Banks.Any())
+                                    {
+                                        @foreach (var bank in Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang)))
+                                        {
+                                            <MudSelectItem T="string" Value="@bank.TenNganHang" Text="@bank.TenNganHang" />
+                                        }
+                                    }
+                                </MudSelect>
+                                @if (Banks == null || !Banks.Any())
+                                {
+                                    <MudText Color="Color.Error" Class="mt-2">Không có dữ liệu ngân hàng</MudText>
+                                }
                             </div>
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Số tài khoản</MudText>
-                                <MudTextField @bind-Value="User.SoTaiKhoan" // Lặp lại trường "Số tài khoản" - kiểm tra lại model nếu cần
+                                <MudTextField @bind-Value="User.SoTaiKhoan"
                                               Label=""
                                               Variant="Variant.Outlined"
                                               Adornment="Adornment.Start"
@@ -185,10 +204,53 @@
     private bool _success;
     private bool IsLoading => UserState.Value.IsLoading;
     private string? _lastNotificationMessage;
-
-    protected override void OnInitialized()
+    private List<NganHangModel> Banks { get; set; } = new List<NganHangModel>();
+    [Inject] private IUserService UserService { get; set; }
+    private string selectedBankCode;
+    protected override async Task OnInitializedAsync()
     {
         UserState.StateChanged += HandleStateChanged;
+        await LoadBanks(); // Sử dụng await bên trong phương thức async
+    }
+    protected override void OnParametersSet()
+    {
+        // Khi User được load, set selectedBankCode từ TenNganHang hiện tại
+        if (User != null && !string.IsNullOrEmpty(User.TenNganHang) && Banks.Any())
+        {
+            var bank = Banks.FirstOrDefault(b => b.TenNganHang == User.TenNganHang);
+            if (bank != null)
+            {
+                selectedBankCode = bank.MaNganHang;
+            }
+        }
+    }
+
+    private async Task LoadBanks()
+    {
+        try
+        {
+            var result = await UserService.LoadDanhSachNganHang();
+            if (result != null)
+            {
+                Banks = result.ToList();
+
+                // Cập nhật selectedBankCode nếu đã có TenNganHang
+                if (User != null && !string.IsNullOrEmpty(User.TenNganHang))
+                {
+                    var bank = Banks.FirstOrDefault(b => b.TenNganHang == User.TenNganHang);
+                    if (bank != null)
+                    {
+                        selectedBankCode = bank.MaNganHang;
+                    }
+                }
+
+                StateHasChanged();
+            }
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Lỗi khi tải danh sách ngân hàng: {ex.Message}", Severity.Error);
+        }
     }
 
     private void HandleStateChanged(object? sender, EventArgs e)

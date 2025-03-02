@@ -1,4 +1,5 @@
 ﻿using KhaoThi_2024_net_client.Components;
+using KhaoThi_2024_net_client.Models.Shares;
 using KhaoThi_2024_net_client.Models.Users;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -69,6 +70,7 @@ namespace KhaoThi_2024_net_client.Services.User
         Task<bool> IsUsernameExistAsync(string username);
         Task<bool> ChangePassword(int id, ChangePasswordModel model);
         Task<bool> ChangeActive(int id, bool active);
+        Task<IEnumerable<NganHangModel>> LoadDanhSachNganHang();
     }
 
 }

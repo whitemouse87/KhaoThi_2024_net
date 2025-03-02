@@ -1,6 +1,7 @@
 ﻿using DotSwashbuckle.AspNetCore.SwaggerUI;
 using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.Authentication;
+using khaothi_2024_net_server.Features.Shares;
 using khaothi_2024_net_server.Features.UserManagement;
 using khaothi_2024_net_server.Infrastructure.Data;
 using khaothi_2024_net_server.Infrastructure.Repositories;
@@ -32,6 +33,7 @@ public class Program
         ConfigureServices(builder);
 
         var app = builder.Build();
+        app.MapBankEndpoints();
         ConfigureMiddleware(app);
 
         app.Run();

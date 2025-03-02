@@ -1,5 +1,6 @@
 ﻿using Blazored.LocalStorage;
 using KhaoThi_2024_net_client.Components;
+using KhaoThi_2024_net_client.Models.Shares;
 using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Services.Logging;
 using System.IdentityModel.Tokens.Jwt;
@@ -380,6 +381,28 @@ namespace KhaoThi_2024_net_client.Services.User
             }
         }
 
+        public async Task<IEnumerable<NganHangModel>> LoadDanhSachNganHang()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"/banks");
 
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadFromJsonAsync<IEnumerable<NganHangModel>>();
+                return content ?? Array.Empty<NganHangModel>();
+
+
+            }
+            catch (HttpRequestException ex)
+            {
+                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách ngân hàng: {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách ngân hàng: {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+        }
     }
 }
