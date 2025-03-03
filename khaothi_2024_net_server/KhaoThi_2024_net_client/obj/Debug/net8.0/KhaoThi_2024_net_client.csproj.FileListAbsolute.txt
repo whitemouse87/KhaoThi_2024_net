@@ -2698,11 +2698,13 @@ C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\scopedcss\Pages\ManageUsers\ManageUsersForm.razor.rz.scp.css
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\xf17bbpexa-7hbok1dinv.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\x14o5acamb-ba5vgrvkuo.gz
-C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-t00n6v45n6.gz
-C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-p4tgdsukot.gz
-C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-ty42ieehco.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\scopedcss\Pages\Profile\ChangePasswordForm.razor.rz.scp.css
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\scopedcss\Pages\Profile\EditUserForm.razor.rz.scp.css
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-63o2ic0ytd.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-33fisgl7es.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-8ztytcazxg.gz
+C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\scopedcss\Pages\Profile\ChangePasswordForm.razor.rz.scp.css
+C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\bin\Debug\net8.0\wwwroot\css\BankSelect.css
+C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-u4ozgpdiye.gz
+C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-i42q0exg7v.gz
+C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-8x4nizae2o.gz

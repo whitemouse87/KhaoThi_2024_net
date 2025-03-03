@@ -1,0 +1,129 @@
+2025-03-03 14:03:29.148 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:03:35.980 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:03:36.503 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:03:58.901 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:03:58.915 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:19:18.197 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:19:22.615 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:19:22.861 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:19:23.352 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:19:23.361 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:20:38.114 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:20:41.637 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:20:41.895 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:20:42.553 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:20:42.562 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:29:46.891 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:29:51.318 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:29:51.633 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:29:52.164 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:29:52.176 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:30:40.927 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:30:45.407 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:30:45.636 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:30:46.144 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:30:46.152 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:38:40.846 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:38:45.527 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:38:45.767 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:38:46.210 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:38:46.219 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:39:28.788 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:39:33.026 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:39:33.288 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:39:33.767 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:39:33.777 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:40:16.047 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:40:20.633 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:40:20.871 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:40:21.393 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:40:21.400 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:41:49.406 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:41:53.943 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:41:54.177 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:41:54.621 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:41:54.631 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:43:47.388 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:43:51.813 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:43:52.055 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:43:52.560 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:43:52.569 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:44:48.718 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:44:48.725 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:44:49.529 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:44:49.535 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:48:41.132 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:48:46.890 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:48:47.117 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:48:47.627 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:48:47.638 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:50:27.839 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:50:32.798 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:50:33.037 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:50:33.582 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:50:33.591 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:53:33.117 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:53:37.565 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:53:37.796 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:53:38.321 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:53:38.330 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:54:17.997 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:54:22.833 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:54:23.064 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:54:23.530 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:54:23.541 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:59:02.942 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 14:59:07.442 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:59:07.680 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 14:59:08.109 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 14:59:08.176 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:04:02.948 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 15:04:07.911 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:04:08.350 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:04:08.855 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:04:08.867 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:06:28.098 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 15:06:32.759 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:06:33.012 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:06:33.505 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:06:33.514 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:07:13.831 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 15:07:17.987 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:07:18.239 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:07:18.782 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:07:18.792 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:11:04.795 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 15:11:09.631 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:11:09.873 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:11:10.352 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:11:10.360 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:11:22.279 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:11:22.294 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:11:22.901 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:11:22.907 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:13:13.091 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:13:13.100 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:13:13.590 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:13:13.596 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:17:09.587 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 15:17:14.585 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:17:14.858 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:17:15.438 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:17:15.469 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:17:23.207 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:17:23.215 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:17:23.734 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:17:23.740 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:17:55.439 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-03 15:18:33.532 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:18:33.771 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:19:07.262 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:19:07.275 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:19:15.397 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:19:15.408 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:19:15.984 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:19:15.991 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:19:20.992 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:19:21.000 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-03 15:19:21.504 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-03 15:19:21.512 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa

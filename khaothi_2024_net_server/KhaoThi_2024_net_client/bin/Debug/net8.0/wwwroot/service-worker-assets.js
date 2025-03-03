@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "Z9j+qWyQ",
+  "version": "tGZHHCsM",
   "assets": [
     {
-      "hash": "sha256-BF7QWiT5AN4X3ZCHBoA552EwHkB1LUH4jyx0Nz9B2gI=",
+      "hash": "sha256-a2Iz63NGHJpUegZNFg7oXXJnMzEkJnom420RLPX7QDw=",
       "url": "KhaoThi_2024_net_client.styles.css"
     },
     {
@@ -1626,11 +1626,11 @@ self.assetsManifest = {
       "url": "_framework/Fluxor.wasm"
     },
     {
-      "hash": "sha256-3whzbT/Fh2AvgyiCh/T15NhqimTxxFc87+RcpOoiWlo=",
+      "hash": "sha256-vmowAT3c1ZGmbICke0V0lFIrOEaOaYFvx4zyqtTSGBI=",
       "url": "_framework/KhaoThi_2024_net_client.pdb"
     },
     {
-      "hash": "sha256-cmi0Fa25HJ9WjcBU5PYYTIx3ItWMEmT5mx3Al8EiGmY=",
+      "hash": "sha256-7sgb/aW0MilbMcL36QMZK2Y/hUXc2fQvKZKbUIqZdoY=",
       "url": "_framework/KhaoThi_2024_net_client.wasm"
     },
     {
@@ -2574,7 +2574,7 @@ self.assetsManifest = {
       "url": "_framework/ZstdSharp.wasm"
     },
     {
-      "hash": "sha256-vOaFmtsGperXKJjYzQQvDWRKJ9h8179hFhwuVHCPxEk=",
+      "hash": "sha256-rFaCkAsTxNpD2ytQO5I3oceo35MYgAQoIwMxf9949xA=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -2594,7 +2594,7 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-5SeMjfEFfkru7qsOIahtFhDqBUtL2+xPWyccMIFQ3Hw=",
+      "hash": "sha256-fHX+FRL0e4H5QmNI/f7yH9LHm+id/8gfSQ0CCHvyV1M=",
       "url": "_framework/dotnet.native.wasm"
     },
     {
@@ -2616,6 +2616,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "url": "_framework/netstandard.wasm"
+    },
+    {
+      "hash": "sha256-rN3nppkpjc6senoK1v3jpSEXkOaRLOle+pdGULpyBxE=",
+      "url": "css/BankSelect.css"
     },
     {
       "hash": "sha256-e4Gz+FmAGMVtEFkaIPV0VNoRCxRp5bGIi9NpsfPOUi0=",
@@ -2650,7 +2654,7 @@ self.assetsManifest = {
       "url": "images/logo_NEW.png"
     },
     {
-      "hash": "sha256-ADj1T+5BCjWJGwpdemcpbFlMPmEQ2fQ82YDqT58lilI=",
+      "hash": "sha256-+UO0oU2syccrFD2xfVoAaEJnL/f9xLmBlUDXunzElTA=",
       "url": "index.html"
     },
     {

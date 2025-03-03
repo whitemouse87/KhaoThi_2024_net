@@ -83,6 +83,9 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Phone" />
                             </div>
+                            
+                        </div>
+                        <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Địa chỉ</MudText>
                                 <MudTextField @bind-Value="User.DiaChi"
@@ -101,15 +104,7 @@
                             <MudText Typo="Typo.h6">Thông Tin Ngân Hàng</MudText>
                         </div>
                         <div class="field-row">
-                            <div class="field-col">
-                                <MudText Class="mud-input-label">Số tài khoản</MudText>
-                                <MudTextField @bind-Value="User.SoTaiKhoan"
-                                              Label=""
-                                              Variant="Variant.Outlined"
-                                              HelperText="Vui lòng nhập đủ số tài khoản"
-                                              Adornment="Adornment.Start"
-                                              AdornmentIcon="@Icons.Material.Filled.Numbers" />
-                            </div>
+                            
 
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Tên ngân hàng</MudText>
@@ -119,16 +114,14 @@
                                            Variant="Variant.Outlined"
                                            Adornment="Adornment.Start"
                                            AdornmentIcon="@Icons.Material.Filled.AccountBalance"
-                                           AnchorOrigin="Origin.BottomCenter"
-                                        
                                            Dense="true"
                                            OffsetY="true"
-                                           SearchBox="true">
+                                           Class="custom-bank-select">
                                     @if (Banks != null && Banks.Any())
                                     {
                                         @foreach (var bank in Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang)))
                                         {
-                                            <MudSelectItem T="string" Value="@bank.TenNganHang" Text="@bank.TenNganHang" />
+                                            <MudSelectItem T="string" Value="@bank.MaNganHang">@bank.TenNganHang</MudSelectItem>
                                         }
                                     }
                                 </MudSelect>
@@ -137,6 +130,9 @@
                                     <MudText Color="Color.Error" Class="mt-2">Không có dữ liệu ngân hàng</MudText>
                                 }
                             </div>
+                           
+                        </div>
+                        <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Số tài khoản</MudText>
                                 <MudTextField @bind-Value="User.SoTaiKhoan"
@@ -145,8 +141,6 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Numbers" />
                             </div>
-                        </div>
-                        <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Mã số thuế</MudText>
                                 <MudTextField @bind-Value="User.MaSoThue"
@@ -155,6 +149,9 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Percent" />
                             </div>
+                           
+                        </div>
+                        <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Ngày tạo tài khoản</MudText>
                                 <MudTextField Value="@User.NgayTao.ToString("dd/MM/yyyy")"
@@ -200,12 +197,12 @@
     [Inject] private IState<KhaoThiUserState> UserState { get; set; }
     [CascadingParameter] public BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [Parameter] public KhaoThiUserModel User { get; set; } = null!;
+    [Inject] private IUserService UserService { get; set; }
     private MudForm _form;
     private bool _success;
     private bool IsLoading => UserState.Value.IsLoading;
     private string? _lastNotificationMessage;
     private List<NganHangModel> Banks { get; set; } = new List<NganHangModel>();
-    [Inject] private IUserService UserService { get; set; }
     private string selectedBankCode;
     protected override async Task OnInitializedAsync()
     {
@@ -224,6 +221,7 @@
             }
         }
     }
+
 
     private async Task LoadBanks()
     {
@@ -301,6 +299,11 @@
             {
                 User.RefreshToken = UserState.Value.SelectedUser.RefreshToken;
                 User.RefreshTokenExpiryTime = UserState.Value.SelectedUser.RefreshTokenExpiryTime;
+            }
+            // Cập nhật TenNganHang từ selectedBankCode trước khi submit
+            if (!string.IsNullOrEmpty(selectedBankCode))
+            {
+                User.TenNganHang = Banks.FirstOrDefault(b => b.MaNganHang == selectedBankCode)?.TenNganHang ?? "";
             }
             Dispatcher.Dispatch(new UpdateUserAction(User));
         }

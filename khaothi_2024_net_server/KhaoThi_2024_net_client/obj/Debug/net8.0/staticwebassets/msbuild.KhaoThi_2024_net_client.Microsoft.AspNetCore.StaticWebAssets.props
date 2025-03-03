@@ -18,6 +18,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\BankSelect.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>KhaoThi_2024_net_client</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>/</BasePath>
+      <RelativePath>css/BankSelect.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>g124bl6ajw</Fingerprint>
+      <Integrity>rN3nppkpjc6senoK1v3jpSEXkOaRLOle+pdGULpyBxE=</Integrity>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\BankSelect.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\blazored-modal.css'))">
       <SourceType>Package</SourceType>
       <SourceId>KhaoThi_2024_net_client</SourceId>
@@ -156,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>c5k4d3zx11</Fingerprint>
-      <Integrity>ADj1T+5BCjWJGwpdemcpbFlMPmEQ2fQ82YDqT58lilI=</Integrity>
+      <Fingerprint>597deghv8a</Fingerprint>
+      <Integrity>+UO0oU2syccrFD2xfVoAaEJnL/f9xLmBlUDXunzElTA=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
@@ -192,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>ko9wlox34c</Fingerprint>
-      <Integrity>BF7QWiT5AN4X3ZCHBoA552EwHkB1LUH4jyx0Nz9B2gI=</Integrity>
+      <Fingerprint>fjbcp5vjz0</Fingerprint>
+      <Integrity>a2Iz63NGHJpUegZNFg7oXXJnMzEkJnom420RLPX7QDw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KhaoThi_2024_net_client.styles.css'))</OriginalItemSpec>
