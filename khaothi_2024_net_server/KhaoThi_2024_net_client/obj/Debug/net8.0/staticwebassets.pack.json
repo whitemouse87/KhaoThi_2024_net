@@ -1,63 +1,63 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\scopedcss\\bundle\\KhaoThi_2024_net_client.styles.css",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\scopedcss\\bundle\\KhaoThi_2024_net_client.styles.css",
       "PackagePath": "staticwebassets\\KhaoThi_2024_net_client.styles.css"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\BankSelect.css",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\BankSelect.css",
       "PackagePath": "staticwebassets\\css\\BankSelect.css"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\blazored-modal.css",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\blazored-modal.css",
       "PackagePath": "staticwebassets\\css\\blazored-modal.css"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\icon-192.png",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\images\\background.jpg",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\images\\background.jpg",
       "PackagePath": "staticwebassets\\images\\background.jpg"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\images\\logo_NEW.png",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\images\\logo_NEW.png",
       "PackagePath": "staticwebassets\\images\\logo_NEW.png"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\index.html",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\js\\security.js",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\js\\security.js",
       "PackagePath": "staticwebassets\\js\\security.js"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\manifest.json",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\manifest.json",
       "PackagePath": "staticwebassets\\manifest.json"
     },
     {
-      "Id": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\sample-data\\weather.json",
+      "Id": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

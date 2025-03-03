@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>g124bl6ajw</Fingerprint>
-      <Integrity>rN3nppkpjc6senoK1v3jpSEXkOaRLOle+pdGULpyBxE=</Integrity>
+      <Fingerprint>lmo4vxkpwe</Fingerprint>
+      <Integrity>rXi2hA0s0Y5rgj9Ivt7Xz6y1ipUV/nRsUU0d0rJ299U=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\BankSelect.css'))</OriginalItemSpec>
@@ -174,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>597deghv8a</Fingerprint>
-      <Integrity>+UO0oU2syccrFD2xfVoAaEJnL/f9xLmBlUDXunzElTA=</Integrity>
+      <Fingerprint>p6m7a4a30c</Fingerprint>
+      <Integrity>EaahPqROQDoL/OgQnAHQ5DvWUuRACQwymxMLxJjR0rM=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>

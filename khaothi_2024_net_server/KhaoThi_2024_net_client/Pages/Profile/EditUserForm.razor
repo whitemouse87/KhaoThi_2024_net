@@ -6,7 +6,8 @@
 @using Blazored.Modal
 @using Blazored.Modal.Services
 @using System.ComponentModel.DataAnnotations
-
+@using Radzen
+@using Radzen.Blazor
 <div class="profile-modal blazored-modal-container">
     <div class="blazored-modal">
         <MudPaper Elevation="0" Class="purple-header">
@@ -46,7 +47,7 @@
                                 <MudText Class="mud-input-label">Họ và tên</MudText>
                                 <MudTextField @bind-Value="User.HoTen"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               Required="true"
                                               RequiredError="Họ và tên là bắt buộc!"
                                               Validation="@(new Func<string, IEnumerable<string>>(ValidateName))"
@@ -57,7 +58,7 @@
                                 <MudText Class="mud-input-label">Email</MudText>
                                 <MudTextField @bind-Value="User.Email"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               Required="true"
                                               RequiredError="Email là bắt buộc"
                                               Validation="@(new EmailAddressAttribute() { ErrorMessage = "Email không hợp lệ" })"
@@ -68,7 +69,7 @@
                                 <MudText Class="mud-input-label">Ngày sinh</MudText>
                                 <MudDatePicker Label=""
                                                @bind-Date="User.NgaySinh"
-                                               Variant="Variant.Outlined"
+                                               Variant="MudBlazor.Variant.Outlined"
                                                DateFormat="dd/MM/yyyy"
                                                Adornment="Adornment.Start"
                                                AdornmentIcon="@Icons.Material.Filled.Cake" />
@@ -79,18 +80,18 @@
                                 <MudText Class="mud-input-label">Số điện thoại</MudText>
                                 <MudTextField @bind-Value="User.SDT"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Phone" />
                             </div>
-                            
+
                         </div>
                         <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Địa chỉ</MudText>
                                 <MudTextField @bind-Value="User.DiaChi"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               Lines="3"
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Home" />
@@ -104,40 +105,38 @@
                             <MudText Typo="Typo.h6">Thông Tin Ngân Hàng</MudText>
                         </div>
                         <div class="field-row">
-                            
+
 
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Tên ngân hàng</MudText>
-                                <MudSelect T="string"
-                                           @bind-Value="selectedBankCode"
-                                           Label=""
-                                           Variant="Variant.Outlined"
-                                           Adornment="Adornment.Start"
-                                           AdornmentIcon="@Icons.Material.Filled.AccountBalance"
-                                           Dense="true"
-                                           OffsetY="true"
-                                           Class="custom-bank-select">
-                                    @if (Banks != null && Banks.Any())
-                                    {
-                                        @foreach (var bank in Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang)))
-                                        {
-                                            <MudSelectItem T="string" Value="@bank.MaNganHang">@bank.TenNganHang</MudSelectItem>
-                                        }
-                                    }
-                                </MudSelect>
+                                <RadzenDropDown Data="@Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang))"
+                                                TextProperty="TenNganHang"
+                                                ValueProperty="MaNganHang"
+                                                @bind-Value="selectedBankCode"
+                                                Placeholder="Chọn ngân hàng"
+                                                Style="width: 100%;"
+                                                Class="custom-bank-select">
+                                    <Template Context="bank">
+                                        <div style="display: flex; justify-content: left; align-items: inherit;">
+                                            <RadzenIcon Icon="account_balance" Style="margin-right: 8px;" />
+                                            @bank.TenNganHang
+                                        </div>
+                                     
+                                    </Template>
+                                </RadzenDropDown>
                                 @if (Banks == null || !Banks.Any())
                                 {
-                                    <MudText Color="Color.Error" Class="mt-2">Không có dữ liệu ngân hàng</MudText>
+                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">Không có dữ liệu ngân hàng</RadzenText>
                                 }
                             </div>
-                           
+                            
                         </div>
                         <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Số tài khoản</MudText>
                                 <MudTextField @bind-Value="User.SoTaiKhoan"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Numbers" />
                             </div>
@@ -145,18 +144,18 @@
                                 <MudText Class="mud-input-label">Mã số thuế</MudText>
                                 <MudTextField @bind-Value="User.MaSoThue"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Percent" />
                             </div>
-                           
+
                         </div>
                         <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Ngày tạo tài khoản</MudText>
                                 <MudTextField Value="@User.NgayTao.ToString("dd/MM/yyyy")"
                                               Label=""
-                                              Variant="Variant.Outlined"
+                                              Variant="MudBlazor.Variant.Outlined"
                                               ReadOnly="true"
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.CalendarMonth" />
@@ -169,13 +168,13 @@
 
         <div class="action-buttons">
             <MudButton OnClick="CancelAsync"
-                       Variant="Variant.Text"
+                       Variant="MudBlazor.Variant.Text"
                        Color="Color.Default"
                        Class="px-6">
                 Hủy
             </MudButton>
             <MudButton Color="Color.Primary"
-                       Variant="Variant.Filled"
+                       Variant="MudBlazor.Variant.Filled"
                        OnClick="Submit"
                        Disabled="@(!_success || IsLoading)"
                        Class="px-6">

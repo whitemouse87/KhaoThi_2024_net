@@ -27,6 +27,7 @@ using KhaoThi_2024_net_client.Models.Auth;
 using KhaoThi_2024_net_client.Services.Shares;
 using KhaoThi_2024_net_client.Services.PWA;
 using Blazored.Modal;
+using Radzen;
 
 public class Program
 {
@@ -111,6 +112,7 @@ public class Program
         ConfigureStateManagement(services);
         ConfigureMudBlazor(services);
         ConfigureBlazoredModal(services); // Gọi hàm cấu hình BlazoredModal
+        ConfigureRadzenBlazor(services);
         ConfigureApplicationServices(services);
         ConfigureRouting(services);
         ConfigureAutoMapper(services); // Gọi hàm cấu hình AutoMapper
@@ -216,7 +218,7 @@ public class Program
             config.SnackbarConfiguration.VisibleStateDuration = 5000;
             config.SnackbarConfiguration.HideTransitionDuration = 500;
             config.SnackbarConfiguration.ShowTransitionDuration = 500;
-            config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
+            config.SnackbarConfiguration.SnackbarVariant = MudBlazor.Variant.Filled;
             config.ResizeOptions = new ResizeOptions
             {
                 ReportRate = 100,            // Milliseconds between Resize updates
@@ -277,6 +279,11 @@ public class Program
     private static void ConfigureBlazoredModal(IServiceCollection services)
     {
         services.AddBlazoredModal();
+
+    }
+    private static void ConfigureRadzenBlazor(IServiceCollection services)
+    {
+        services.AddRadzenComponents();
 
     }
 
