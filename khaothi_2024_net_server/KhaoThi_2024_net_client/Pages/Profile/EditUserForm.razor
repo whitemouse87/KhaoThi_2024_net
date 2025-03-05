@@ -106,31 +106,32 @@
                         </div>
                         <div class="field-row">
 
+                            <MudText Class="mud-input-label">Tên ngân hàng</MudText>
+                           
 
-                            <div class="field-col">
-                                <MudText Class="mud-input-label">Tên ngân hàng</MudText>
                                 <RadzenDropDown Data="@Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang))"
                                                 TextProperty="TenNganHang"
                                                 ValueProperty="MaNganHang"
                                                 @bind-Value="selectedBankCode"
                                                 Placeholder="Chọn ngân hàng"
-                                                Style="width: 100%;"
+                                                Style="width: 100%; height: 42px; font-size: 16px;"
                                                 Class="custom-bank-select">
                                     <Template Context="bank">
-                                        <div style="display: flex; justify-content: left; align-items: inherit;">
-                                            <RadzenIcon Icon="account_balance" Style="margin-right: 8px;" />
-                                            @bank.TenNganHang
+                                        <div style="display: flex; align-items: center; height: 36px;">
+                                            <RadzenIcon Icon="account_balance" Style="margin-right: 12px; font-size: 22px;" />
+                                            <span style="font-size: 16px; font-weight: 500;">@bank.TenNganHang</span>
                                         </div>
-                                     
                                     </Template>
                                 </RadzenDropDown>
+
                                 @if (Banks == null || !Banks.Any())
                                 {
-                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">Không có dữ liệu ngân hàng</RadzenText>
+                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
+                                        Không có dữ liệu ngân hàng
+                                    </RadzenText>
                                 }
                             </div>
-                            
-                        </div>
+               
                         <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Số tài khoản</MudText>

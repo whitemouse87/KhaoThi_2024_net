@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>lmo4vxkpwe</Fingerprint>
-      <Integrity>rXi2hA0s0Y5rgj9Ivt7Xz6y1ipUV/nRsUU0d0rJ299U=</Integrity>
+      <Fingerprint>8ieulryvsn</Fingerprint>
+      <Integrity>8AWhvksP6KR1ouaFC7/Y+7kJhYwO9pP1gz7BUWV6WBs=</Integrity>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\BankSelect.css'))</OriginalItemSpec>

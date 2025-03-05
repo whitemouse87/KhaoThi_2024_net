@@ -34,6 +34,7 @@ public class Program
 
         var app = builder.Build();
         app.MapBankEndpoints();
+        app.MapTruongEndpoints();
         ConfigureMiddleware(app);
 
         app.Run();

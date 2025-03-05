@@ -81,3 +81,7 @@
     color: #757575; /* Màu chữ placeholder */
     opacity: 1; /* Đảm bảo placeholder hiển thị */
 }
+
+.bank-dropdown-container {
+    padding: 0.5rem;
+}

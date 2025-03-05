@@ -598,5 +598,43 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.Shares.TruongEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTruongEndpoints\u003Eb__0_0",
+    "RelativePath": "truong",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.Shares.TruongEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTruongEndpoints\u003Eb__0_1",
+    "RelativePath": "truong/{matruong}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matruong",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

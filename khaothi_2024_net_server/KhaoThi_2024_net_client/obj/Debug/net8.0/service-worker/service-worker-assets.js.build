@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "9B1ubQAs",
+  "version": "tDHRAA5M",
   "assets": [
     {
       "hash": "sha256-a2Iz63NGHJpUegZNFg7oXXJnMzEkJnom420RLPX7QDw=",
@@ -1798,11 +1798,11 @@ self.assetsManifest = {
       "url": "_framework/Fluxor.wasm"
     },
     {
-      "hash": "sha256-zxQdUECfbUvcnx7E2b0b/Cy5TMq5sVAy9Ak2gcC65+M=",
+      "hash": "sha256-jS0cnDTti9n52q49+NSNoAahnfGfndpmICYJIzpWSto=",
       "url": "_framework/KhaoThi_2024_net_client.pdb"
     },
     {
-      "hash": "sha256-3StyUDYBGOnqhcCgxO8mSdBIZmOFDAF4Pv/IGJ1QQZM=",
+      "hash": "sha256-0lPugcL5J4Th1YRxNyyxHz0RNNfO8M74GpDSgISUcgo=",
       "url": "_framework/KhaoThi_2024_net_client.wasm"
     },
     {
@@ -2758,7 +2758,7 @@ self.assetsManifest = {
       "url": "_framework/ZstdSharp.wasm"
     },
     {
-      "hash": "sha256-kd6914BhN6pt0gM3TseFekoUlLwtpFOhaPl/j9Ib6Hs=",
+      "hash": "sha256-zMRsA1FIHcQ/3SIXR13m3cr+CAGbY5a0GPmkMgF5Nb8=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -2906,7 +2906,7 @@ self.assetsManifest = {
       "url": "_framework/zh-Hant/Microsoft.CodeAnalysis.resources.wasm"
     },
     {
-      "hash": "sha256-rXi2hA0s0Y5rgj9Ivt7Xz6y1ipUV/nRsUU0d0rJ299U=",
+      "hash": "sha256-8AWhvksP6KR1ouaFC7/Y+7kJhYwO9pP1gz7BUWV6WBs=",
       "url": "css/BankSelect.css"
     },
     {

@@ -239,6 +239,40 @@
         }
       }
     },
+    "/truong": {
+      "get": {
+        "tags": [
+          "khaothi_2024_net_server"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/truong/{matruong}": {
+      "get": {
+        "tags": [
+          "khaothi_2024_net_server"
+        ],
+        "parameters": [
+          {
+            "name": "matruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/KhaoThiUser/{id}": {
       "get": {
         "tags": [

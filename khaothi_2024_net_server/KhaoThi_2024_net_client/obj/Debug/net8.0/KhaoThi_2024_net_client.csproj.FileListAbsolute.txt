@@ -2850,6 +2850,6 @@ C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\p81qoh71kn-g0tdy5e2jj.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\xf17bbpexa-sdq3hv2bu7.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\x14o5acamb-67vfmbec3v.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-zoymb094rm.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-18x0ra664g.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-dxqhsc3by6.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-egqpakgp1h.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-3wfklcu667.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-4mj2tmyeio.gz
