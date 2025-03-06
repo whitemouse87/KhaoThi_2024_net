@@ -62,7 +62,7 @@ namespace khaothi_2024_net_server.Features.Authentication
                         ErrorMessage = "Tên đăng nhập không tồn tại"
                     };
                 }
-                //_logger.LogError(_passwordHasher.HashPassword(request.MatKhau));
+                _logger.LogError(_passwordHasher.HashPassword(request.MatKhau));
                 // Verify password (assuming password is hashed)
                 if (!_passwordHasher.VerifyPassword(request.MatKhau, user.MatKhau))
                 {

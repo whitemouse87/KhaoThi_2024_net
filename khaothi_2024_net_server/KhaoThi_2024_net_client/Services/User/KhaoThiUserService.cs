@@ -404,5 +404,28 @@ namespace KhaoThi_2024_net_client.Services.User
                 throw;
             }
         }
+        public async Task<IEnumerable<TruongModel>> LoadDanhSachTruong()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"/truong");
+
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadFromJsonAsync<IEnumerable<TruongModel>>();
+                return content ?? Array.Empty<TruongModel>();
+
+
+            }
+            catch (HttpRequestException ex)
+            {
+                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách trường: {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách trường {Message}", ex, nameof(KhaoThiUserService));
+                throw;
+            }
+        }
     }
 }

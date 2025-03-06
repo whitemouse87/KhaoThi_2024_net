@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "tDHRAA5M",
+  "version": "nJvcYMWp",
   "assets": [
     {
       "hash": "sha256-a2Iz63NGHJpUegZNFg7oXXJnMzEkJnom420RLPX7QDw=",
@@ -1798,11 +1798,11 @@ self.assetsManifest = {
       "url": "_framework/Fluxor.wasm"
     },
     {
-      "hash": "sha256-jS0cnDTti9n52q49+NSNoAahnfGfndpmICYJIzpWSto=",
+      "hash": "sha256-fV2rcnq/zbnVcUxPfS7wuWJTgl5Kk3FnUfEcwzih6sY=",
       "url": "_framework/KhaoThi_2024_net_client.pdb"
     },
     {
-      "hash": "sha256-0lPugcL5J4Th1YRxNyyxHz0RNNfO8M74GpDSgISUcgo=",
+      "hash": "sha256-Po5O4rlCogh6glwwjnwfxYjgoUVFDTDzQEI4sZJXK+0=",
       "url": "_framework/KhaoThi_2024_net_client.wasm"
     },
     {
@@ -2758,7 +2758,7 @@ self.assetsManifest = {
       "url": "_framework/ZstdSharp.wasm"
     },
     {
-      "hash": "sha256-zMRsA1FIHcQ/3SIXR13m3cr+CAGbY5a0GPmkMgF5Nb8=",
+      "hash": "sha256-92Qs2tiLcRSxhRUknNpkENPfDud/flfVflLyW5rl/Vc=",
       "url": "_framework/blazor.boot.json"
     },
     {

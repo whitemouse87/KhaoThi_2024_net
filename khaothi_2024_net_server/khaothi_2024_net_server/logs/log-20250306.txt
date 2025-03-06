@@ -1,0 +1,60 @@
+2025-03-06 18:24:55.192 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 18:24:58.855 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] Token hết hạn 
+2025-03-06 18:25:27.825 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 18:54:47.233 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 18:54:59.091 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 18:54:59.603 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 18:54:59.714 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 18:55:10.445 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 18:55:10.460 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 18:55:10.485 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 18:55:13.560 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 18:55:13.568 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 18:55:13.598 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 18:55:26.821 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 18:55:26.828 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 18:55:26.857 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 18:55:32.661 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 18:55:32.669 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 18:55:32.715 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 19:05:45.218 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 19:05:45.820 +07:00 [ERR] [khaothi_2024_net_server.Features.Authentication.AuthService] $2a$12$AVNEUIzxhqmovMi/B/CweuGx8tJFVsHHHrSTGoQIyMOgo3QKL5say
+2025-03-06 19:05:45.821 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 19:05:45.840 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 19:06:03.471 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 19:06:03.844 +07:00 [ERR] [khaothi_2024_net_server.Features.Authentication.AuthService] $2a$12$mIDeWdv3hFv575fBOGtPXOsRUKID4IJ9lijvkpFz5RLRZ1X1MoCfa
+2025-03-06 19:06:03.846 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Attempt to verify against empty hash
+2025-03-06 19:06:03.857 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng: 
+2025-03-06 19:06:26.837 +07:00 [INF] [AuthController] Login attempt for user: nvdkhoa from IP: ::1
+2025-03-06 19:06:27.253 +07:00 [ERR] [khaothi_2024_net_server.Features.Authentication.AuthService] $2a$12$YP7xOQJcnrMUYbXmzbYMlu9J7DsQhUt252G3JGtLIQzyHVALR7lLe
+2025-03-06 19:06:27.615 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
+2025-03-06 19:06:27.750 +07:00 [INF] [AuthController] User nvdkhoa logged in successfully from IP: ::1
+2025-03-06 19:06:31.800 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 19:06:31.811 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 19:09:24.724 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 19:09:28.815 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 19:09:29.170 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 19:11:13.495 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 19:11:17.626 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 19:11:17.974 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 21:11:57.798 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 21:11:59.884 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 21:12:00.215 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 21:14:48.040 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 21:14:52.497 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 21:14:52.826 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 21:16:59.999 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 21:17:04.118 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 21:17:04.450 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 21:18:46.240 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 21:18:50.427 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 21:18:50.761 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 21:23:50.675 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 21:23:54.947 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 21:23:55.275 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 21:25:17.148 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 21:25:21.349 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 21:25:21.703 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-06 22:36:25.396 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-06 22:36:29.689 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 2
+2025-03-06 22:36:30.057 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa

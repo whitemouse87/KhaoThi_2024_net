@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\shares\\dtos\\truongmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\shares\\dtos\\truongmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\shares\\truongendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\shares\\truongendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\shares\\bankendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\shares\\bankendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\shares\\dtos\\nganhangmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\shares\\dtos\\nganhangmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\pages\\profile\\edituserform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\profile\\edituserform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\models\\users\\khaothiusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\models\\users\\khaothiusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\pages\\manageusers\\manageusersform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\manageusers\\manageusersform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\services\\user\\khaothiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\services\\user\\khaothiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,106 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Program.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Program.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Program.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T15:19:05.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NganHangModel.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\DTOs\\NganHangModel.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\Shares\\DTOs\\NganHangModel.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\DTOs\\NganHangModel.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\Shares\\DTOs\\NganHangModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T15:00:28.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TruongModel.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\DTOs\\TruongModel.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\Shares\\DTOs\\TruongModel.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\DTOs\\TruongModel.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\Shares\\DTOs\\TruongModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Title": "KhaoThiUserService.cs",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\User\\KhaoThiUserService.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Services\\User\\KhaoThiUserService.cs",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\User\\KhaoThiUserService.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\Services\\User\\KhaoThiUserService.cs",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAUwJ4BAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T15:00:25.246Z",
+              "WhenOpened": "2025-03-06T12:19:00.317Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TruongEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\TruongEndpoints.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\Shares\\TruongEndpoints.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\TruongEndpoints.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\Shares\\TruongEndpoints.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T14:56:45.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BankEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\BankEndpoints.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\Shares\\BankEndpoints.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\Shares\\BankEndpoints.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\Shares\\BankEndpoints.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T14:55:42.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "KhaoThiUserModel.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Models\\Users\\KhaoThiUserModel.cs",
-              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Models\\Users\\KhaoThiUserModel.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Models\\Users\\KhaoThiUserModel.cs",
-              "RelativeToolTip": "KhaoThi_2024_net_client\\Models\\Users\\KhaoThiUserModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T13:48:07Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "EditUserForm.razor",
               "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
               "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
               "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
               "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAJMAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAiwGsAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-05T13:47:57.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ManageUsersForm.razor",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\ManageUsers\\ManageUsersForm.razor",
-              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\ManageUsers\\ManageUsersForm.razor",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\ManageUsers\\ManageUsersForm.razor",
-              "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\ManageUsers\\ManageUsersForm.razor",
-              "ViewState": "AgIAAN8BAAAAAAAAAAAcwA4CAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-05T13:33:38.037Z",
+              "WhenOpened": "2025-03-06T11:25:50.418Z",
               "EditorCaption": ""
             }
           ]

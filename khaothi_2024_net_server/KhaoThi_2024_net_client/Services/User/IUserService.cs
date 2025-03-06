@@ -71,6 +71,7 @@ namespace KhaoThi_2024_net_client.Services.User
         Task<bool> ChangePassword(int id, ChangePasswordModel model);
         Task<bool> ChangeActive(int id, bool active);
         Task<IEnumerable<NganHangModel>> LoadDanhSachNganHang();
+        Task<IEnumerable<TruongModel>> LoadDanhSachTruong();
     }
 
 }

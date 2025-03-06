@@ -92,9 +92,39 @@
                                 <MudTextField @bind-Value="User.DiaChi"
                                               Label=""
                                               Variant="MudBlazor.Variant.Outlined"
-                                              Lines="3"
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Home" />
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field-col">
+                                <MudText Class="mud-input-label">Tên đơn vị</MudText>
+                                @*<div class="section-title d-flex align-items-center mb-3">
+                                    <MudIcon Icon="@Icons.Material.Filled.ChromeReaderMode" Size="Size.Small" Class="mr-2" />
+                                </div>*@
+
+                                <RadzenDropDown Data="@Truongs.Where(b => !string.IsNullOrEmpty(b.TenTruong))"
+                                                TextProperty="TenDonVi"
+                                                ValueProperty="MaDonVi"
+                                                @bind-Value="selectedMaTruong"
+                                                Placeholder="Chọn đơn vị"
+                                                Style="width: 100%; height: 42px; font-size: 16px;"
+                                                Class="custom-bank-select">
+                                    <Template Context="truong">
+                                        <div style="display: flex; align-items: center; height: 36px;">
+                                            <RadzenIcon Icon="chrome_reader_mode" Style="margin-right: 12px; font-size: 22px;" />
+                                            <span style="font-size: 16px; font-weight: 500;">@truong.TenTruong</span>
+                                        </div>
+                                    </Template>
+                                </RadzenDropDown>
+
+                                @if (Truongs == null || !Truongs.Any())
+                                {
+                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
+                                        Không có dữ liệu trường
+                                    </RadzenText>
+                                }
                             </div>
                         </div>
                     </MudItem>
@@ -107,31 +137,31 @@
                         <div class="field-row">
 
                             <MudText Class="mud-input-label">Tên ngân hàng</MudText>
-                           
 
-                                <RadzenDropDown Data="@Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang))"
-                                                TextProperty="TenNganHang"
-                                                ValueProperty="MaNganHang"
-                                                @bind-Value="selectedBankCode"
-                                                Placeholder="Chọn ngân hàng"
-                                                Style="width: 100%; height: 42px; font-size: 16px;"
-                                                Class="custom-bank-select">
-                                    <Template Context="bank">
-                                        <div style="display: flex; align-items: center; height: 36px;">
-                                            <RadzenIcon Icon="account_balance" Style="margin-right: 12px; font-size: 22px;" />
-                                            <span style="font-size: 16px; font-weight: 500;">@bank.TenNganHang</span>
-                                        </div>
-                                    </Template>
-                                </RadzenDropDown>
 
-                                @if (Banks == null || !Banks.Any())
-                                {
-                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
-                                        Không có dữ liệu ngân hàng
-                                    </RadzenText>
-                                }
-                            </div>
-               
+                            <RadzenDropDown Data="@Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang))"
+                                            TextProperty="TenNganHang"
+                                            ValueProperty="MaNganHang"
+                                            @bind-Value="selectedBankCode"
+                                            Placeholder="Chọn ngân hàng"
+                                            Style="width: 100%; height: 42px; font-size: 16px;"
+                                            Class="custom-bank-select">
+                                <Template Context="bank">
+                                    <div style="display: flex; align-items: center; height: 36px;">
+                                        <RadzenIcon Icon="account_balance" Style="margin-right: 12px; font-size: 22px;" />
+                                        <span style="font-size: 16px; font-weight: 500;">@bank.TenNganHang</span>
+                                    </div>
+                                </Template>
+                            </RadzenDropDown>
+
+                            @if (Banks == null || !Banks.Any())
+                            {
+                                <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
+                                    Không có dữ liệu ngân hàng
+                                </RadzenText>
+                            }
+                        </div>
+
                         <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Số tài khoản</MudText>
@@ -149,9 +179,6 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Percent" />
                             </div>
-
-                        </div>
-                        <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Ngày tạo tài khoản</MudText>
                                 <MudTextField Value="@User.NgayTao.ToString("dd/MM/yyyy")"
@@ -162,6 +189,7 @@
                                               AdornmentIcon="@Icons.Material.Filled.CalendarMonth" />
                             </div>
                         </div>
+
                     </MudItem>
                 </MudGrid>
             </MudForm>
@@ -203,11 +231,14 @@
     private bool IsLoading => UserState.Value.IsLoading;
     private string? _lastNotificationMessage;
     private List<NganHangModel> Banks { get; set; } = new List<NganHangModel>();
+    private List<TruongModel> Truongs { get; set; } = new List<TruongModel>();
     private string selectedBankCode;
+    private string selectedMaTruong;
     protected override async Task OnInitializedAsync()
     {
         UserState.StateChanged += HandleStateChanged;
         await LoadBanks(); // Sử dụng await bên trong phương thức async
+        await LoadTruongs();
     }
     protected override void OnParametersSet()
     {
@@ -218,6 +249,14 @@
             if (bank != null)
             {
                 selectedBankCode = bank.MaNganHang;
+            }
+        }
+        if (User != null && !string.IsNullOrEmpty(User.MaDonVi) && Truongs.Any())
+        {
+            var bank = Truongs.FirstOrDefault(b => b.MaTruong == User.MaDonVi);
+            if (bank != null)
+            {
+                selectedMaTruong = bank.MaTruong;
             }
         }
     }
@@ -248,6 +287,33 @@
         catch (Exception ex)
         {
             Snackbar.Add($"Lỗi khi tải danh sách ngân hàng: {ex.Message}", Severity.Error);
+        }
+    }
+    private async Task LoadTruongs()
+    {
+        try
+        {
+            var result = await UserService.LoadDanhSachTruong();
+            if (result != null)
+            {
+                Truongs = result.ToList();
+
+                // Cập nhật selectedBankCode nếu đã có TenNganHang
+                if (User != null && !string.IsNullOrEmpty(User.MaDonVi))
+                {
+                    var truong = Truongs.FirstOrDefault(b => b.MaTruong == User.MaDonVi);
+                    if (truong != null)
+                    {
+                        selectedMaTruong = truong.MaTruong;
+                    }
+                }
+
+                StateHasChanged();
+            }
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Lỗi khi tải danh sách trường: {ex.Message}", Severity.Error);
         }
     }
 
