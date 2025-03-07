@@ -1,0 +1,72 @@
+2025-03-07 20:46:24 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 20:46:29 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:46:29 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 20:48:48 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:48:48 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 20:49:40 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 20:49:44 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:49:45 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 20:52:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 20:52:27 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:52:27 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 20:53:41 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:53:41 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 20:55:49 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 20:55:54 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:55:54 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 20:58:58 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 20:59:02 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 20:59:02 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:18:51 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:18:51 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:19:15 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 21:19:18 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:19:18 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:22:10 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 21:22:15 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:22:15 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:24:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 21:24:43 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:24:43 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:32:18 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:32:18 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:32:59 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 21:33:03 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:33:03 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:34:39 [INF] Received request to update active status to False for user 2
+2025-03-07 21:34:39 [INF] Successfully updated active status to False for user 2
+2025-03-07 21:34:39 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:34:39 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:34:42 [INF] Received request to update active status to True for user 2
+2025-03-07 21:34:42 [INF] Successfully updated active status to True for user 2
+2025-03-07 21:34:42 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:34:42 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:51:28 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:51:28 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:53:35 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 21:53:37 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:53:37 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 21:53:49 [INF] ["Client"] "01HB05 - THPT LƯƠNG THẾ VINH" ""
+2025-03-07 21:53:49 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 21:53:49 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:06:51 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 22:06:55 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:06:55 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:07:10 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:07:10 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:07:26 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:07:26 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:29:20 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 22:29:24 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:29:25 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:47:43 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-07 22:47:47 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:47:48 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:51:07 [INF] Received request to update active status to False for user 2
+2025-03-07 22:51:07 [INF] Successfully updated active status to False for user 2
+2025-03-07 22:51:07 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:51:07 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa
+2025-03-07 22:51:16 [INF] Received request to update active status to True for user 2
+2025-03-07 22:51:16 [INF] Successfully updated active status to True for user 2
+2025-03-07 22:51:16 [INF] 🔍 Đang tìm user với ID: 2
+2025-03-07 22:51:16 [INF] ✅ Tìm thấy user với ID 2: Nguyễn Văn D Khoa

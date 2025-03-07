@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("khaothi_2024_net_server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2ec8d6291d869bbcb3e42636999d20da62651de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c14a12ecfe87c759fba5026d579f7ec80ee97d29")]
 [assembly: System.Reflection.AssemblyProductAttribute("khaothi_2024_net_server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("khaothi_2024_net_server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

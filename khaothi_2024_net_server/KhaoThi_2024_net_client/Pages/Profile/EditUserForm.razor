@@ -12,7 +12,7 @@
     <div class="blazored-modal">
         <MudPaper Elevation="0" Class="purple-header">
             <MudIcon Icon="@Icons.Material.Filled.School" Color="Color.Inherit" Size="Size.Large" Class="mb-3" />
-            <MudText Typo="Typo.h5" Color="Color.Inherit" Class="mb-1">THÔNG TIN TÀI KHOẢN</MudText>
+            <MudText Typo="Typo.h5" style="color: #FFFFFF;" Class="mb-1">THÔNG TIN TÀI KHOẢN</MudText>
             <MudText Typo="Typo.body2" Color="Color.Inherit">Thông tin chi tiết và tài chính</MudText>
         </MudPaper>
 
@@ -42,8 +42,8 @@
                             <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Small" Class="mr-2" />
                             <MudText Typo="Typo.h6">Thông Tin Khách Hàng</MudText>
                         </div>
-                        <div class="field-row">
-                            <div class="field-col">
+                        <div class="field-row-3" style="display: flex; width: 100%; gap: 16px;">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Họ và tên</MudText>
                                 <MudTextField @bind-Value="User.HoTen"
                                               Label=""
@@ -54,7 +54,7 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Badge" />
                             </div>
-                            <div class="field-col">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Email</MudText>
                                 <MudTextField @bind-Value="User.Email"
                                               Label=""
@@ -65,7 +65,7 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Email" />
                             </div>
-                            <div class="field-col">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Ngày sinh</MudText>
                                 <MudDatePicker Label=""
                                                @bind-Date="User.NgaySinh"
@@ -74,9 +74,10 @@
                                                Adornment="Adornment.Start"
                                                AdornmentIcon="@Icons.Material.Filled.Cake" />
                             </div>
+
                         </div>
-                        <div class="field-row">
-                            <div class="field-col">
+                        <div class="field-row-3" style="display: flex; width: 100%; gap: 16px;">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Số điện thoại</MudText>
                                 <MudTextField @bind-Value="User.SDT"
                                               Label=""
@@ -84,10 +85,7 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Phone" />
                             </div>
-
-                        </div>
-                        <div class="field-row">
-                            <div class="field-col">
+                            <div class="field-col" style="flex: 2; min-width: 0;">
                                 <MudText Class="mud-input-label">Địa chỉ</MudText>
                                 <MudTextField @bind-Value="User.DiaChi"
                                               Label=""
@@ -97,33 +95,42 @@
                             </div>
                         </div>
 
+
                         <div class="field-row">
                             <div class="field-col">
                                 <MudText Class="mud-input-label">Tên đơn vị</MudText>
-                                @*<div class="section-title d-flex align-items-center mb-3">
-                                    <MudIcon Icon="@Icons.Material.Filled.ChromeReaderMode" Size="Size.Small" Class="mr-2" />
-                                </div>*@
 
-                                <RadzenDropDown Data="@Truongs.Where(b => !string.IsNullOrEmpty(b.TenTruong))"
-                                                TextProperty="TenDonVi"
-                                                ValueProperty="MaDonVi"
-                                                @bind-Value="selectedMaTruong"
-                                                Placeholder="Chọn đơn vị"
-                                                Style="width: 100%; height: 42px; font-size: 16px;"
-                                                Class="custom-bank-select">
-                                    <Template Context="truong">
-                                        <div style="display: flex; align-items: center; height: 36px;">
-                                            <RadzenIcon Icon="chrome_reader_mode" Style="margin-right: 12px; font-size: 22px;" />
-                                            <span style="font-size: 16px; font-weight: 500;">@truong.TenTruong</span>
-                                        </div>
-                                    </Template>
-                                </RadzenDropDown>
 
-                                @if (Truongs == null || !Truongs.Any())
+                                @if (isTruongsLoading)
                                 {
-                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
-                                        Không có dữ liệu trường
-                                    </RadzenText>
+                                    <div class="d-flex align-items-center my-2">
+                                        <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-3" />
+                                        <MudText Typo="Typo.body2">Đang tải danh sách trường...</MudText>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <RadzenDropDown Data="@Truongs.Where(b => !string.IsNullOrEmpty(b.TenTruong))"
+                                                    TextProperty="TenTruong"
+                                                    ValueProperty="MaTruong"
+                                                    @bind-Value="selectedMaTruong"
+                                                    Placeholder="Chọn đơn vị"
+                                                    Style="width: 100%; height: 42px; font-size: 16px;"
+                                                    Class="custom-bank-select">
+                                        <Template Context="truong">
+                                            <div style="display: flex; align-items: center; height: 36px;">
+                                                <RadzenIcon Icon="chrome_reader_mode" Style="margin-right: 12px; font-size: 22px;" />
+                                                <span style="font-size: 16px; font-weight: 500;">@truong.TenTruong</span>
+                                            </div>
+                                        </Template>
+                                    </RadzenDropDown>
+
+                                    @if (Truongs == null || !Truongs.Any())
+                                    {
+                                        <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
+                                            Không có dữ liệu trường
+                                        </RadzenText>
+                                    }
                                 }
                             </div>
                         </div>
@@ -137,33 +144,43 @@
                         <div class="field-row">
 
                             <MudText Class="mud-input-label">Tên ngân hàng</MudText>
-
-
-                            <RadzenDropDown Data="@Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang))"
-                                            TextProperty="TenNganHang"
-                                            ValueProperty="MaNganHang"
-                                            @bind-Value="selectedBankCode"
-                                            Placeholder="Chọn ngân hàng"
-                                            Style="width: 100%; height: 42px; font-size: 16px;"
-                                            Class="custom-bank-select">
-                                <Template Context="bank">
-                                    <div style="display: flex; align-items: center; height: 36px;">
-                                        <RadzenIcon Icon="account_balance" Style="margin-right: 12px; font-size: 22px;" />
-                                        <span style="font-size: 16px; font-weight: 500;">@bank.TenNganHang</span>
-                                    </div>
-                                </Template>
-                            </RadzenDropDown>
-
-                            @if (Banks == null || !Banks.Any())
+                            @if (isBanksLoading)
                             {
-                                <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
-                                    Không có dữ liệu ngân hàng
-                                </RadzenText>
+                                <div class="d-flex align-items-center my-2">
+                                    <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-3" />
+                                    <MudText Typo="Typo.body2">Đang tải danh sách ngân hàng...</MudText>
+                                </div>
                             }
+                            else
+                            {
+                                <RadzenDropDown Data="@Banks.Where(b => !string.IsNullOrEmpty(b.MaNganHang))"
+                                                TextProperty="TenNganHang"
+                                                ValueProperty="MaNganHang"
+                                                @bind-Value="selectedBankCode"
+                                                Placeholder="Chọn ngân hàng"
+                                                Style="width: 100%; height: 42px; font-size: 16px;"
+                                                Class="custom-bank-select">
+                                    <Template Context="bank">
+                                        <div style="display: flex; align-items: center; height: 36px;">
+                                            <RadzenIcon Icon="account_balance" Style="margin-right: 12px; font-size: 22px;" />
+                                            <span style="font-size: 16px; font-weight: 500;">@bank.TenNganHang</span>
+                                        </div>
+                                    </Template>
+                                </RadzenDropDown>
+
+                                @if (Banks == null || !Banks.Any())
+                                {
+                                    <RadzenText TextStyle="TextStyle.Caption" Style="color: var(--rz-danger);" Class="mt-2">
+                                        Không có dữ liệu ngân hàng
+                                    </RadzenText>
+                                }
+                            }
+
+
                         </div>
 
-                        <div class="field-row">
-                            <div class="field-col">
+                        <div class="field-row-3" style="display: flex; width: 100%; gap: 16px;">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Số tài khoản</MudText>
                                 <MudTextField @bind-Value="User.SoTaiKhoan"
                                               Label=""
@@ -171,7 +188,7 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Numbers" />
                             </div>
-                            <div class="field-col">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Mã số thuế</MudText>
                                 <MudTextField @bind-Value="User.MaSoThue"
                                               Label=""
@@ -179,7 +196,7 @@
                                               Adornment="Adornment.Start"
                                               AdornmentIcon="@Icons.Material.Filled.Percent" />
                             </div>
-                            <div class="field-col">
+                            <div class="field-col" style="flex: 1; min-width: 0;">
                                 <MudText Class="mud-input-label">Ngày tạo tài khoản</MudText>
                                 <MudTextField Value="@User.NgayTao.ToString("dd/MM/yyyy")"
                                               Label=""
@@ -196,6 +213,20 @@
         }
 
         <div class="action-buttons">
+            @if (User?.Active == true)
+            {
+                <div style="display: flex; align-items: center; color: #28a745; font-size: 20px; font-weight: bold; margin-right: 20px;">
+                   <RadzenIcon Icon="check_circle" Style="font-size: 32px;" />
+                    <span style="margin-left: 10px;">Trạng thái: Active</span>
+                </div>
+            }
+            else
+            {
+                <div style="display: flex; align-items: center; color: #dc3545; font-size: 20px; font-weight: bold; margin-right: 20px;">
+                    <RadzenIcon Icon="cancel" Style="font-size: 32px;"   />
+                    <span style="margin-left: 10px;">Trạng thái: Inactive</span>
+                </div>
+            }
             <MudButton OnClick="CancelAsync"
                        Variant="MudBlazor.Variant.Text"
                        Color="Color.Default"
@@ -234,6 +265,9 @@
     private List<TruongModel> Truongs { get; set; } = new List<TruongModel>();
     private string selectedBankCode;
     private string selectedMaTruong;
+    private bool isTruongsLoading = true;
+    private bool isBanksLoading = true;
+
     protected override async Task OnInitializedAsync()
     {
         UserState.StateChanged += HandleStateChanged;
@@ -253,10 +287,10 @@
         }
         if (User != null && !string.IsNullOrEmpty(User.MaDonVi) && Truongs.Any())
         {
-            var bank = Truongs.FirstOrDefault(b => b.MaTruong == User.MaDonVi);
-            if (bank != null)
+            var truong = Truongs.FirstOrDefault(b => b.MaTruong == User.MaDonVi);
+            if (truong != null)
             {
-                selectedMaTruong = bank.MaTruong;
+                selectedMaTruong = truong.MaTruong;
             }
         }
     }
@@ -266,6 +300,7 @@
     {
         try
         {
+            isBanksLoading = true;
             var result = await UserService.LoadDanhSachNganHang();
             if (result != null)
             {
@@ -280,25 +315,30 @@
                         selectedBankCode = bank.MaNganHang;
                     }
                 }
-
-                StateHasChanged();
             }
         }
         catch (Exception ex)
         {
             Snackbar.Add($"Lỗi khi tải danh sách ngân hàng: {ex.Message}", Severity.Error);
         }
+        finally
+        {
+            isBanksLoading = false;
+            StateHasChanged();
+        }
     }
+
     private async Task LoadTruongs()
     {
         try
         {
+            isTruongsLoading = true;
             var result = await UserService.LoadDanhSachTruong();
             if (result != null)
             {
                 Truongs = result.ToList();
 
-                // Cập nhật selectedBankCode nếu đã có TenNganHang
+                // Cập nhật selectedMaTruong nếu đã có MaDonVi
                 if (User != null && !string.IsNullOrEmpty(User.MaDonVi))
                 {
                     var truong = Truongs.FirstOrDefault(b => b.MaTruong == User.MaDonVi);
@@ -307,13 +347,16 @@
                         selectedMaTruong = truong.MaTruong;
                     }
                 }
-
-                StateHasChanged();
             }
         }
         catch (Exception ex)
         {
             Snackbar.Add($"Lỗi khi tải danh sách trường: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            isTruongsLoading = false;
+            StateHasChanged();
         }
     }
 
@@ -360,6 +403,8 @@
         await _form.Validate();
         if (_success)
         {
+            var selectedTruong = Truongs.FirstOrDefault(t => t.MaTruong == selectedMaTruong);
+            var selectedText = selectedTruong?.TenTruong;
             _lastNotificationMessage = null; // Reset notification tracker
             if (UserState.Value.SelectedUser != null)
             {
@@ -370,6 +415,12 @@
             if (!string.IsNullOrEmpty(selectedBankCode))
             {
                 User.TenNganHang = Banks.FirstOrDefault(b => b.MaNganHang == selectedBankCode)?.TenNganHang ?? "";
+            }
+            if (!string.IsNullOrEmpty(selectedText))
+            {
+                var split_parts = selectedText.Split('-');
+                User.MaDonVi = split_parts[0].Trim().ToUpper();
+                User.TenDonVi = split_parts[1].Trim().ToUpper();
             }
             Dispatcher.Dispatch(new UpdateUserAction(User));
         }
