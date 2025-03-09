@@ -115,7 +115,8 @@ namespace khaothi_2024_net_server.Features.UserManagement
         /// <summary>
         /// Tạo mới người dùng
         /// </summary>
-        [HttpPost]
+
+        [HttpPost("create-user")]
         [ProducesResponseType(typeof(KhaoThiUser), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Create([FromBody] KhaoThiUser user)

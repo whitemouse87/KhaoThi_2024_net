@@ -62,7 +62,7 @@ namespace khaothi_2024_net_server.Features.Authentication
                         ErrorMessage = "Tên đăng nhập không tồn tại"
                     };
                 }
-                // _logger.LogError(_passwordHasher.HashPassword(request.MatKhau));
+                //_logger.LogError(_passwordHasher.HashPassword(request.MatKhau));
                 // Verify password (assuming password is hashed)
                 if (!_passwordHasher.VerifyPassword(request.MatKhau, user.MatKhau))
                 {
@@ -133,7 +133,7 @@ namespace khaothi_2024_net_server.Features.Authentication
                 return new LoginResponse
                 {
                     Success = false,
-                    ErrorMessage = "Đã xảy ra lỗi trong quá trình đăng nhập"
+                    ErrorMessage = "Đã xảy ra lỗi trong quá trình đăng nhập: " + ex.Message
                 };
             }
         }
@@ -177,7 +177,7 @@ namespace khaothi_2024_net_server.Features.Authentication
             return tokenHandler.WriteToken(token);
         }
 
-        private string GenerateRefreshToken()
+        public string GenerateRefreshToken()
         {
             var randomNumber = new byte[32];
             using var rng = RandomNumberGenerator.Create();

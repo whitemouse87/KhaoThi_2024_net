@@ -1,5 +1,7 @@
 ﻿using khaothi_2024_net_server.Core.Interfaces;
+using khaothi_2024_net_server.Features.Authentication.DTOs;
 using khaothi_2024_net_server.Features.UserManagement.DTOs;
+using System;
 
 namespace khaothi_2024_net_server.Features.UserManagement
 {
@@ -7,16 +9,22 @@ namespace khaothi_2024_net_server.Features.UserManagement
     {
         private readonly IKhaoThiUserRepository _userRepository;
         private readonly ILogger<KhaoThiUserService> _logger;
-
+        private readonly IPasswordHasher _passwordHasher;
+        private readonly IAuthService _authService;
         /// <summary>
         /// Constructor với Dependency Injection
         /// </summary>
         public KhaoThiUserService(
             IKhaoThiUserRepository userRepository,
-            ILogger<KhaoThiUserService> logger)
+            ILogger<KhaoThiUserService> logger,
+             IPasswordHasher passwordHasher,
+             IAuthService authService
+            )
         {
             _userRepository = userRepository;
             _logger = logger;
+            _passwordHasher = passwordHasher;
+            _authService = authService;
         }
         /// <summary>
         /// Lấy thông tin người dùng theo ID
@@ -126,9 +134,24 @@ namespace khaothi_2024_net_server.Features.UserManagement
                 }
 
                 // Set các giá trị mặc định
+                user.TenDangNhap = "user_" + DateTime.Now.ToString("yyyyMMddHHmmss"); // Tạo username tự động               
+                user.HoTen = "Người dùng mới";
+                user.NgaySinh = DateTime.Now;
+                user.Email = "";
+                user.SDT = "";
+                user.DiaChi = "";
+                user.MaDonVi = "01EA00";
+                user.TenDonVi = "TEST";
+                user.MaChucVu = "02";
+                user.SoTaiKhoan = "";
+                user.TenNganHang = "";
+                user.MaSoThue = "";
                 user.NgayTao = DateTime.Now;
                 user.Active = true;
-
+                user.MatKhau = _passwordHasher.HashPassword("MatKhau@123");
+                string refreshToken = _authService.GenerateRefreshToken();
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
                 var id = await _userRepository.CreateAsync(user);
                 user.ID = id;
                 return user;

@@ -177,7 +177,7 @@
             Kiểm tra tên đăng nhập đã tồn tại
             </summary>
         </member>
-        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.#ctor(khaothi_2024_net_server.Core.Interfaces.IKhaoThiUserRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService})">
+        <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.#ctor(khaothi_2024_net_server.Core.Interfaces.IKhaoThiUserRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService},khaothi_2024_net_server.Core.Interfaces.IPasswordHasher,khaothi_2024_net_server.Core.Interfaces.IAuthService)">
             <summary>
             Constructor với Dependency Injection
             </summary>

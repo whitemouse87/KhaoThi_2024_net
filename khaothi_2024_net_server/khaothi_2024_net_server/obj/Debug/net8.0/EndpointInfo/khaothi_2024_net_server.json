@@ -559,7 +559,7 @@
         }
       }
     },
-    "/api/KhaoThiUser": {
+    "/api/KhaoThiUser/create-user": {
       "post": {
         "tags": [
           "KhaoThiUser"

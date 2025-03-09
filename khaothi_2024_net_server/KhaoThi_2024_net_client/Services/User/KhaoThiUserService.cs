@@ -150,7 +150,7 @@ namespace KhaoThi_2024_net_client.Services.User
             try
             {
                 await AddAuthenticationHeader();
-                var response = await _httpClient.PostAsJsonAsync(API_ENDPOINT, user, _jsonOptions);
+                var response = await _httpClient.PostAsJsonAsync($"{API_ENDPOINT}/create-user", user, _jsonOptions);
 
                 if (response.IsSuccessStatusCode)
                 {

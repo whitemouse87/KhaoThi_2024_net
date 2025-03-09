@@ -49,7 +49,7 @@
                         </MudAvatar>
                     </CardHeaderAvatar>
                     <CardHeaderContent>
-                        <MudText Typo="Typo.h5">Thông tin người dùng</MudText>
+                        <MudText Typo="Typo.h5" Style="font-weight:600">Thông tin người dùng</MudText>
                     </CardHeaderContent>
                 </MudCardHeader>
                 <MudCardContent>
@@ -61,7 +61,7 @@
                         </MudItem>
                         <MudItem xs="12" md="4">
                             <MudField Label="Đơn vị" Variant="Variant.Outlined" FullWidth="true">
-                                @context.User.FindFirst("maDonVi")?.Value
+                                @context.User.FindFirst("maDonVi")?.Value - @context.User.FindFirst("tenDonVi")?.Value
                             </MudField>
                         </MudItem>
                         <MudItem xs="12" md="4">
@@ -90,7 +90,11 @@
                                     </MudAvatar>
                                 </CardHeaderAvatar>
                                 <CardHeaderContent>
-                                    <MudText Typo="Typo.h6">Quản lý người dùng</MudText>
+                                    <MudText Typo="Typo.h6"
+                                             Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                        QUẢN LÝ NGƯỜI DÙNG
+                                    </MudText>
+                                    @*<MudText Typo="Typo.h6">Quản lý người dùng</MudText>*@
                                 </CardHeaderContent>
                             </MudCardHeader>
                             <MudCardContent>
@@ -116,11 +120,14 @@
                                     </MudAvatar>
                                 </CardHeaderAvatar>
                                 <CardHeaderContent>
-                                    <MudText Typo="Typo.h6">Cấu hình hệ thống</MudText>
+                                    <MudText Typo="Typo.h6"
+                                             Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                        QUẢN LÝ BÁO CÁO
+                                    </MudText>                                  
                                 </CardHeaderContent>
                             </MudCardHeader>
                             <MudCardContent>
-                                <MudText>Thiết lập các thông số hệ thống</MudText>
+                                <MudText>Quản lý và kiểm tra dữ liệu báo cáo</MudText>
                             </MudCardContent>
                             <MudCardActions>
                                 <MudButton Variant="Variant.Filled"
@@ -142,7 +149,11 @@
                                     </MudAvatar>
                                 </CardHeaderAvatar>
                                 <CardHeaderContent>
-                                    <MudText Typo="Typo.h6">Nhật ký hệ thống</MudText>
+                                    <MudText Typo="Typo.h6"
+                                             Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                        NHẬT KÝ HỆ THỐNG
+                                    </MudText>
+                                    @*<MudText Typo="Typo.h6">Nhật ký hệ thống</MudText>*@
                                 </CardHeaderContent>
                             </MudCardHeader>
                             <MudCardContent>
@@ -172,11 +183,14 @@
                                     </MudAvatar>
                                 </CardHeaderAvatar>
                                 <CardHeaderContent>
-                                    <MudText Typo="Typo.h6">Công việc của tôi</MudText>
+                                    <MudText Typo="Typo.h6"
+                                             Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                        BÁO CÁO SỐ LIỆU PHỤC VỤ CÔNG TÁC TỔ CHỨC THI
+                                    </MudText>
                                 </CardHeaderContent>
                             </MudCardHeader>
                             <MudCardContent>
-                                <MudText>Xem và cập nhật công việc</MudText>
+                                <MudText>Báo cáo số liệu, cơ sở vật chất, nhân sự, và các nội dung liên quan công tác tổ chức thi</MudText>
                             </MudCardContent>
                             <MudCardActions>
                                 <MudButton Variant="Variant.Filled"
@@ -198,18 +212,21 @@
                                     </MudAvatar>
                                 </CardHeaderAvatar>
                                 <CardHeaderContent>
-                                    <MudText Typo="Typo.h6">Báo cáo</MudText>
+                                    <MudText Typo="Typo.h6"
+                                             Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                        IN BÁO CÁO
+                                    </MudText>
                                 </CardHeaderContent>
                             </MudCardHeader>
                             <MudCardContent>
-                                <MudText>Xem báo cáo công việc</MudText>
+                                <MudText>Kiểm tra và in báo cáo chuẩn bị công tác thi</MudText>
                             </MudCardContent>
                             <MudCardActions>
                                 <MudButton Variant="Variant.Filled"
                                            Color="Color.Secondary"
                                            StartIcon="@Icons.Material.Filled.Login"
                                            Link="/reports">
-                                    Xem báo cáo
+                                     In báo cáo
                                 </MudButton>
                             </MudCardActions>
                         </MudCard>
@@ -255,8 +272,8 @@
     {
         return maChucVu switch
         {
-            "01" => "Quản trị viên",
-            "02" => "Người dùng",
+            "01" => "Quản trị viên - SGDĐT",
+            "02" => "Quản trị viên - Đơn vị",
             _ => maChucVu ?? "Không xác định"
         };
     }

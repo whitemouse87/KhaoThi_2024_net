@@ -54,74 +54,164 @@ namespace khaothi_2024_net_server.Infrastructure.Repositories
                 parameters.ToArray());
         }
 
+        //public async Task<int> CreateAsync(KhaoThiUser user)
+        //{
+        //    const string sql = @"
+        //    INSERT INTO KhaoThi_User (
+        //        TenDangNhap, MatKhau, HoTen, NgaySinh, 
+        //        MaDonVi, TenDonVi, NgayTao, MaChucVu, 
+        //        Email, SDT, SoTaiKhoan, TenNganHang, 
+        //        DiaChi, MaSoThue, Active, RefreshToken, 
+        //        RefreshTokenExpiryTime
+        //    ) VALUES (
+        //        @TenDangNhap, @MatKhau, @HoTen, @NgaySinh,
+        //        @MaDonVi, @TenDonVi, @NgayTao, @MaChucVu,
+        //        @Email, @SDT, @SoTaiKhoan, @TenNganHang,
+        //        @DiaChi, @MaSoThue, @Active, @RefreshToken,
+        //        @RefreshTokenExpiryTime
+        //    );
+        //    SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        //    // Xử lý giá trị mặc định và null
+        //    user.NgayTao = DateTime.Now;
+
+        //    var parameters = new
+        //    {
+        //        TenDangNhap = user.TenDangNhap ?? string.Empty,
+        //        MatKhau = user.MatKhau ?? string.Empty,
+        //        HoTen = user.HoTen ?? string.Empty,
+        //        NgaySinh = user.NgaySinh ?? (object)DBNull.Value,
+        //        MaDonVi = user.MaDonVi ?? string.Empty,
+        //        TenDonVi = user.TenDonVi ?? string.Empty,
+        //        NgayTao = user.NgayTao,
+        //        MaChucVu = user.MaChucVu ?? string.Empty,
+        //        Email = user.Email ?? string.Empty,
+        //        SDT = user.SDT ?? string.Empty,
+        //        SoTaiKhoan = user.SoTaiKhoan ?? string.Empty,
+        //        TenNganHang = user.TenNganHang ?? string.Empty,
+        //        DiaChi = user.DiaChi ?? string.Empty,
+        //        MaSoThue = user.MaSoThue ?? string.Empty,
+        //        Active = user.Active,
+        //        RefreshToken = user.RefreshToken,
+        //        RefreshTokenExpiryTime = user.RefreshTokenExpiryTime
+        //    };
+
+        //    return await _dataAccess.ExecuteScalarAsync<int>(sql,
+        //        "@TenDangNhap", parameters.TenDangNhap,
+        //        "@MatKhau", parameters.MatKhau,
+        //        "@HoTen", parameters.HoTen,
+        //        "@NgaySinh", parameters.NgaySinh,
+        //        "@MaDonVi", parameters.MaDonVi,
+        //        "@TenDonVi", parameters.TenDonVi,
+        //        "@NgayTao", parameters.NgayTao,
+        //        "@MaChucVu", parameters.MaChucVu,
+        //        "@Email", parameters.Email,
+        //        "@SDT", parameters.SDT,
+        //        "@SoTaiKhoan", parameters.SoTaiKhoan,
+        //        "@TenNganHang", parameters.TenNganHang,
+        //        "@DiaChi", parameters.DiaChi,
+        //        "@MaSoThue", parameters.MaSoThue,
+        //        "@Active", parameters.Active,
+        //        "@RefreshToken", parameters.RefreshToken,
+        //        "@RefreshTokenExpiryTime", parameters.RefreshTokenExpiryTime
+        //    );
+        //}
         public async Task<int> CreateAsync(KhaoThiUser user)
         {
-            const string sql = @"
-            INSERT INTO KhaoThi_User (
-                TenDangNhap, MatKhau, HoTen, NgaySinh, 
-                MaDonVi, TenDonVi, NgayTao, MaChucVu, 
-                Email, SDT, SoTaiKhoan, TenNganHang, 
-                DiaChi, MaSoThue, Active, RefreshToken, 
-                RefreshTokenExpiryTime
-            ) VALUES (
-                @TenDangNhap, @MatKhau, @HoTen, @NgaySinh,
-                @MaDonVi, @TenDonVi, @NgayTao, @MaChucVu,
-                @Email, @SDT, @SoTaiKhoan, @TenNganHang,
-                @DiaChi, @MaSoThue, @Active, @RefreshToken,
-                @RefreshTokenExpiryTime
-            );
-            SELECT CAST(SCOPE_IDENTITY() as int)";
+            // Chuẩn bị câu lệnh SQL động dựa vào việc RefreshToken có tồn tại hay không
+            string sql;
+
+            // Kiểm tra nếu RefreshToken và RefreshTokenExpiryTime là null
+            if (user.RefreshToken == null && user.RefreshTokenExpiryTime == null)
+            {
+                // Câu lệnh SQL không bao gồm RefreshToken và RefreshTokenExpiryTime
+                sql = @"
+        INSERT INTO KhaoThi_User (
+            TenDangNhap, MatKhau, HoTen, NgaySinh, 
+            MaDonVi, TenDonVi, NgayTao, MaChucVu, 
+            Email, SDT, SoTaiKhoan, TenNganHang, 
+            DiaChi, MaSoThue, Active
+        ) VALUES (
+            @TenDangNhap, @MatKhau, @HoTen, @NgaySinh,
+            @MaDonVi, @TenDonVi, @NgayTao, @MaChucVu,
+            @Email, @SDT, @SoTaiKhoan, @TenNganHang,
+            @DiaChi, @MaSoThue, @Active
+        );
+        SELECT CAST(SCOPE_IDENTITY() as int)";
+            }
+            else
+            {
+                // Câu lệnh SQL bao gồm RefreshToken và RefreshTokenExpiryTime
+                sql = @"
+        INSERT INTO KhaoThi_User (
+            TenDangNhap, MatKhau, HoTen, NgaySinh, 
+            MaDonVi, TenDonVi, NgayTao, MaChucVu, 
+            Email, SDT, SoTaiKhoan, TenNganHang, 
+            DiaChi, MaSoThue, Active, RefreshToken, 
+            RefreshTokenExpiryTime
+        ) VALUES (
+            @TenDangNhap, @MatKhau, @HoTen, @NgaySinh,
+            @MaDonVi, @TenDonVi, @NgayTao, @MaChucVu,
+            @Email, @SDT, @SoTaiKhoan, @TenNganHang,
+            @DiaChi, @MaSoThue, @Active, @RefreshToken,
+            @RefreshTokenExpiryTime
+        );
+        SELECT CAST(SCOPE_IDENTITY() as int)";
+            }
 
             // Xử lý giá trị mặc định và null
             user.NgayTao = DateTime.Now;
-            var parameters = new
+
+            // Nếu không bao gồm RefreshToken và RefreshTokenExpiryTime
+            if (user.RefreshToken == null && user.RefreshTokenExpiryTime == null)
             {
-                TenDangNhap = user.TenDangNhap ?? string.Empty,
-                MatKhau = user.MatKhau ?? string.Empty,
-                HoTen = user.HoTen ?? string.Empty,
-                NgaySinh = user.NgaySinh ?? (object)DBNull.Value,
-                MaDonVi = user.MaDonVi ?? string.Empty,
-                TenDonVi = user.TenDonVi ?? string.Empty,
-                NgayTao = user.NgayTao,
-                MaChucVu = user.MaChucVu ?? string.Empty,
-                Email = user.Email ?? string.Empty,
-                SDT = user.SDT ?? string.Empty,
-                SoTaiKhoan = user.SoTaiKhoan ?? string.Empty,
-                TenNganHang = user.TenNganHang ?? string.Empty,
-                DiaChi = user.DiaChi ?? string.Empty,
-                MaSoThue = user.MaSoThue ?? string.Empty,
-                Active = user.Active,
-                RefreshToken = user.RefreshToken ?? (object)DBNull.Value,
-                RefreshTokenExpiryTime = user.RefreshTokenExpiryTime ?? (object)DBNull.Value
-            };
-
-            return await _dataAccess.ExecuteScalarAsync<int>(sql,
-                "@TenDangNhap", parameters.TenDangNhap,
-                "@MatKhau", parameters.MatKhau,
-                "@HoTen", parameters.HoTen,
-                "@NgaySinh", parameters.NgaySinh,
-                "@MaDonVi", parameters.MaDonVi,
-                "@TenDonVi", parameters.TenDonVi,
-                "@NgayTao", parameters.NgayTao,
-                "@MaChucVu", parameters.MaChucVu,
-                "@Email", parameters.Email,
-                "@SDT", parameters.SDT,
-                "@SoTaiKhoan", parameters.SoTaiKhoan,
-                "@TenNganHang", parameters.TenNganHang,
-                "@DiaChi", parameters.DiaChi,
-                "@MaSoThue", parameters.MaSoThue,
-                "@Active", parameters.Active,
-                "@RefreshToken", parameters.RefreshToken,
-                "@RefreshTokenExpiryTime", parameters.RefreshTokenExpiryTime
-            );
+                return await _dataAccess.ExecuteScalarAsync<int>(sql,
+                    "@TenDangNhap", user.TenDangNhap ?? string.Empty,
+                    "@MatKhau", user.MatKhau ?? string.Empty,
+                    "@HoTen", user.HoTen ?? string.Empty,
+                    "@NgaySinh", user.NgaySinh,
+                    "@MaDonVi", user.MaDonVi ?? string.Empty,
+                    "@TenDonVi", user.TenDonVi ?? string.Empty,
+                    "@NgayTao", user.NgayTao,
+                    "@MaChucVu", user.MaChucVu ?? string.Empty,
+                    "@Email", user.Email ?? string.Empty,
+                    "@SDT", user.SDT ?? string.Empty,
+                    "@SoTaiKhoan", user.SoTaiKhoan ?? string.Empty,
+                    "@TenNganHang", user.TenNganHang ?? string.Empty,
+                    "@DiaChi", user.DiaChi ?? string.Empty,
+                    "@MaSoThue", user.MaSoThue ?? string.Empty,
+                    "@Active", user.Active
+                );
+            }
+            else
+            {
+                // Bao gồm RefreshToken và RefreshTokenExpiryTime
+                return await _dataAccess.ExecuteScalarAsync<int>(sql,
+                    "@TenDangNhap", user.TenDangNhap ?? string.Empty,
+                    "@MatKhau", user.MatKhau ?? string.Empty,
+                    "@HoTen", user.HoTen ?? string.Empty,
+                    "@NgaySinh", user.NgaySinh,
+                    "@MaDonVi", user.MaDonVi ?? string.Empty,
+                    "@TenDonVi", user.TenDonVi ?? string.Empty,
+                    "@NgayTao", user.NgayTao,
+                    "@MaChucVu", user.MaChucVu ?? string.Empty,
+                    "@Email", user.Email ?? string.Empty,
+                    "@SDT", user.SDT ?? string.Empty,
+                    "@SoTaiKhoan", user.SoTaiKhoan ?? string.Empty,
+                    "@TenNganHang", user.TenNganHang ?? string.Empty,
+                    "@DiaChi", user.DiaChi ?? string.Empty,
+                    "@MaSoThue", user.MaSoThue ?? string.Empty,
+                    "@Active", user.Active,
+                    "@RefreshToken", user.RefreshToken,
+                    "@RefreshTokenExpiryTime", user.RefreshTokenExpiryTime
+                );
+            }
         }
-
         public async Task<bool> UpdateAsync(KhaoThiUser user)
         {
             const string sql = @"
             UPDATE KhaoThi_User 
             SET TenDangNhap = @TenDangNhap,
-                MatKhau = @MatKhau,
                 HoTen = @HoTen,
                 NgaySinh = @NgaySinh,
                 MaDonVi = @MaDonVi,
@@ -143,7 +233,6 @@ namespace khaothi_2024_net_server.Infrastructure.Repositories
             {
                 Id = user.ID,
                 TenDangNhap = user.TenDangNhap ?? string.Empty,
-                MatKhau = user.MatKhau ?? string.Empty,
                 HoTen = user.HoTen ?? string.Empty,
                 NgaySinh = user.NgaySinh ?? (object)DBNull.Value,
                 MaDonVi = user.MaDonVi ?? string.Empty,
@@ -163,7 +252,6 @@ namespace khaothi_2024_net_server.Infrastructure.Repositories
             var result = await _dataAccess.ExecuteAsync(sql,
                 "@Id", parameters.Id,
                 "@TenDangNhap", parameters.TenDangNhap,
-                "@MatKhau", parameters.MatKhau,
                 "@HoTen", parameters.HoTen,
                 "@NgaySinh", parameters.NgaySinh,
                 "@MaDonVi", parameters.MaDonVi,

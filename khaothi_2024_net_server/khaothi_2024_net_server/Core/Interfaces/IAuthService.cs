@@ -8,5 +8,7 @@ namespace khaothi_2024_net_server.Core.Interfaces
         Task<bool> LogoutAsync(int userId);
         Task<LoginResponse> RefreshTokenAsync(string refreshToken);
         Task<bool> LogoutAllDevicesAsync(int userId); // Add this method to the interface
+
+        string GenerateRefreshToken();
     }
 }

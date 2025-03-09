@@ -47,7 +47,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
                     return new LoginResponse
                     {
                         Success = false,
-                        ErrorMessage = error?.Message ?? "Lỗi đăng nhập"
+                        ErrorMessage = error?.Message ?? "Lỗi đăng nhập: " + response.StatusCode
                     };
                 }
 
@@ -55,7 +55,7 @@ namespace KhaoThi_2024_net_client.Services.Auth
                 return loginResponse ?? new LoginResponse
                 {
                     Success = false,
-                    ErrorMessage = "Không thể đọc phản hồi từ server"
+                    ErrorMessage = "Không thể đọc phản hồi từ server: " + response.StatusCode
                 };
             }
             catch (Exception ex)

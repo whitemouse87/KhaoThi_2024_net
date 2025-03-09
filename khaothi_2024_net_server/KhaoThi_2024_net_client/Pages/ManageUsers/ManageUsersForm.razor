@@ -38,7 +38,7 @@
                 <MudTooltip Text="Thêm người dùng mới" Color="Color.Primary">
                     <MudIconButton Icon="@Icons.Material.Filled.Add"
                                    Style="background-color: rgba(255,255,255,0.15); margin-left: 8px; color: white;"
-                                   OnClick="@OpenCreateDialog"
+                                   OnClick="AddNewUser"
                                    Disabled="@UserState.Value.IsLoading" />
                 </MudTooltip>
                 <MudTooltip Text="Làm mới dữ liệu" Color="Color.Primary">
@@ -94,7 +94,8 @@
                     <MudButton Variant="Variant.Filled"
                                Color="Color.Primary"
                                StartIcon="@Icons.Material.Filled.Add"
-                               OnClick="OpenCreateDialog"
+                               OnClick="AddNewUser"
+                               Disabled="@IsLoading"
                                Style="text-transform: none; font-weight: 500; border-radius: 6px;">
                         Thêm người dùng
                     </MudButton>
@@ -243,7 +244,9 @@
     private string _searchTerm = string.Empty;
     private int _page = 1;
     private int _pageSize = 10;
-
+    private bool _success;
+    private bool IsLoading => UserState.Value.IsLoading;
+    private string? _lastNotificationMessage;
     /// <summary>
     /// Phương thức khởi tạo component và tải dữ liệu
     /// Được gọi khi component được tạo lần đầu
@@ -421,28 +424,33 @@
     /// <summary>
     /// Hiển thị dialog tạo người dùng mới
     /// </summary>
-    private async Task OpenCreateDialog()
+    private async Task AddNewUser()
     {
         try
         {
-            // Thiết lập tùy chọn cho modal
-            var options = new ModalOptions
+            KhaoThiUserModel newUser = new KhaoThiUserModel
             {
-                DisableBackgroundCancel = true,
-                HideCloseButton = false,
-                Position = ModalPosition.Middle,
-                Size = ModalSize.Large,
-                Class = "create-user-modal",
-                AnimationType = ModalAnimationType.FadeInOut
+                // Các trường bắt buộc
+                TenDangNhap = "user_" + DateTime.Now.ToString("yyyyMMddHHmmss"), // Tạo username tự động               
+                HoTen = "Người dùng mới",
+                NgaySinh = DateTime.Now,
+                Email = "",
+                SDT = "",
+                DiaChi = "",
+                MaDonVi = "01EA00",
+                TenDonVi = "TEST",
+                MaChucVu = "03",
+                SoTaiKhoan = "",
+                TenNganHang = "",
+                MaSoThue = "",
+                Active = true,
+                RefreshToken = null,
+                RefreshTokenExpiryTime = null,
             };
+            _lastNotificationMessage = null; // Reset notification tracker
+            Dispatcher.Dispatch(new CreateUserAction(newUser));
 
-            //var result = await ModalService.Show<CreateUserDialog>("Thêm người dùng mới", options).Result;
-
-            //if (!result.Cancelled)
-            //{
-            //    // Nếu tạo thành công, tải lại danh sách
-            //    LoadUsers();
-            //}
+            Snackbar.Add("Đang tạo người dùng mới...", Severity.Info);
         }
         catch (Exception ex)
         {
@@ -535,10 +543,10 @@
     //}
     private void ToggleUserStatus(int userId, bool currentActive)
     {
-       
+
         Dispatcher.Dispatch(new ChangeActiveAction(userId, !currentActive));
-      
-        
+
+
     }
 
     /// <summary>

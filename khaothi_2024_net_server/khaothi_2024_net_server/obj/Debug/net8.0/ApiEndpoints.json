@@ -108,41 +108,6 @@
   },
   {
     "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
-    "Method": "Create",
-    "RelativePath": "api/KhaoThiUser",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "user",
-        "Type": "khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 201
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      }
-    ]
-  },
-  {
-    "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
     "Method": "GetById",
     "RelativePath": "api/KhaoThiUser/{id}",
     "HttpMethod": "GET",
@@ -486,6 +451,41 @@
           "text/json"
         ],
         "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController",
+    "Method": "Create",
+    "RelativePath": "api/KhaoThiUser/create-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
       }
     ]
   },
