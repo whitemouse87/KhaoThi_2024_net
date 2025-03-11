@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces;
 using khaothi_2024_net_server.Features.Logging.DTOs;
 using khaothi_2024_net_server.Features.UserManagement.DTOs;
 using khaothi_2024_net_server.Infrastructure.Repositories;
@@ -18,12 +19,54 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
             _dataAccess = dataAccess;
             _logger = logger;
         }
-        public async Task<KhaoThiUser> GetByIdAsync(int id)
+        public async Task<KhaoThi_1_THPT_ThongTin_DonViModel> GetByMaTruongAsync(string MaTruong)
         {
-            const string sql = @"SELECT * FROM KhaoThi_1_THPT_ThongTin_DonVi WHERE ID = @Id";
-            return await _dataAccess.QueryFirstOrDefaultAsync<KhaoThiUser>(sql, "@Id", id);
-        }
+            try
+            {
+                const string sql = @"SELECT KhaoThi_1_THPT_ThongTin_DonVi.*,MaTruong_New.TenTruong
+                                    FROM KhaoThi_1_THPT_ThongTin_DonVi 
+                                    inner join MaTruong_New on MaTruong_New.MaTruong=KhaoThi_1_THPT_ThongTin_DonVi.MaTruong     
+                                    WHERE KhaoThi_1_THPT_ThongTin_DonVi.MaTruong = @MaTruong";
+                return await _dataAccess.QueryFirstOrDefaultAsync<KhaoThi_1_THPT_ThongTin_DonViModel>(sql, "@MaTruong", MaTruong);
+            }
+            catch (Exception ex)
+            {
+                var logEntry = new LogEntry
+                {
+                    Timestamp = DateTime.Now,
+                    Level = "Error",
+                    Component = nameof(BCThongTinDonViRepository),
+                    Message = "Lỗi khi Load dữ liệu theo Mã trường",
+                    Exception = ex.ToString()
+                };
 
+                _logger.LogError(ex, message: $"[{logEntry.Timestamp}] {logEntry.Level} - {logEntry.Component}: {logEntry.Message}. Exception: {logEntry.Exception}");
+                return null; // Trả về null khi có lỗi
+            }
+        }
+        public async Task<(IEnumerable<KhaoThi_1_THPT_ThongTin_DonViModel> Items, int TotalCount)> GetPaginatedAsync(
+            int page,
+            int pageSize,
+            string? searchTerm = null)
+        {
+            var sql = @"SELECT KhaoThi_1_THPT_ThongTin_DonVi.*,MaTruong_New.TenTruong
+                                    FROM KhaoThi_1_THPT_ThongTin_DonVi 
+                                    inner join MaTruong_New on MaTruong_New.MaTruong=KhaoThi_1_THPT_ThongTin_DonVi.MaTruong     
+                                    WHERE 1=1";
+            var parameters = new List<object>();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                sql += " AND (TenTruong LIKE @Search OR MaTruong LIKE @Search)";
+                parameters.AddRange(new[] { "@Search", $"%{searchTerm}%" });
+            }
+
+            return await _dataAccess.QueryPaginatedAsync<KhaoThi_1_THPT_ThongTin_DonViModel>(
+                sql,
+                page,
+                pageSize,
+                parameters.ToArray());
+        }
         public async Task<bool> UpdateAsync(KhaoThi_1_THPT_ThongTin_DonViModel ThongTin)
         {
             try
@@ -123,7 +166,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
 
                 return result > 0;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var logEntry = new LogEntry
                 {
@@ -138,7 +181,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
 
                 return false;
             }
-         
+
         }
     }
 }

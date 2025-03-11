@@ -126,6 +126,21 @@
             Tạo một PaginatedResult trống
             </summary>
         </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViController.GetByMaTruong(System.String)">
+            <summary>
+            Lấy thông tin đơn vị theo mã trường
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViController.Update(System.String,khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel)">
+            <summary>
+            Cập nhật thông tin người dùng
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService.#ctor(khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces.IBCThongTinDonViRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel})">
+            <summary>
+            Constructor với Dependency Injection
+            </summary>
+        </member>
         <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(System.Int32)">
             <summary>
             Lấy thông tin người dùng theo ID

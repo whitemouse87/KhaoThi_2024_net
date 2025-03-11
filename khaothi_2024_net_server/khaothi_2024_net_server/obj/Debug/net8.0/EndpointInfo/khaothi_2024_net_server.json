@@ -204,6 +204,205 @@
         }
       }
     },
+    "/api/BCThongTinDonVi/{MaTruong}": {
+      "get": {
+        "tags": [
+          "BCThongTinDonVi"
+        ],
+        "summary": "Lấy thông tin đơn vị theo mã trường",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BCThongTinDonVi"
+        ],
+        "summary": "Cập nhật thông tin người dùng",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/BCThongTinDonVi/all-phantrang": {
+      "get": {
+        "tags": [
+          "BCThongTinDonVi"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
     "/banks": {
       "get": {
         "tags": [
@@ -1091,6 +1290,52 @@
         },
         "additionalProperties": { }
       },
+      "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "Items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel"
+            },
+            "description": "Danh sách items trong trang hiện tại",
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "description": "Tổng số bản ghi (toàn bộ, không phải trong trang hiện tại)",
+            "format": "int32"
+          },
+          "Page": {
+            "type": "integer",
+            "description": "Số trang hiện tại",
+            "format": "int32"
+          },
+          "PageSize": {
+            "type": "integer",
+            "description": "Số bản ghi trên mỗi trang",
+            "format": "int32"
+          },
+          "TotalPages": {
+            "type": "integer",
+            "description": "Tổng số trang",
+            "format": "int32",
+            "readOnly": true
+          },
+          "HasPreviousPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang trước không",
+            "readOnly": true
+          },
+          "HasNextPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang sau không",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Generic class để xử lý kết quả phân trang cho mọi loại entity"
+      },
       "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -1215,6 +1460,126 @@
           "Email": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel": {
+        "type": "object",
+        "properties": {
+          "MaTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "TenTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "EmailNhanThongBao": {
+            "type": "string",
+            "nullable": true
+          },
+          "QuanDangKyDuThi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LoaiHinhDaoTao": {
+            "type": "string",
+            "nullable": true
+          },
+          "MaTruongBo": {
+            "type": "string",
+            "nullable": true
+          },
+          "DiaChiTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "SDTTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "SDTPhongHoiDong": {
+            "type": "string",
+            "nullable": true
+          },
+          "HoTenNhapLieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "ChucVuNhapLieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "SDTDiDongNhapLieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "EmailNhapLieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "TongHieuTruong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongPhoHieuTruong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongGiaoVien": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongNhanVien": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongGiaoVien_ToTruong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongSoPhongToiDa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongGiaoVien_CoiThi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TongSoPhongCoiThi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Tong_HS_12": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Tong_HS_KhuyetTat_Nhe": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Tong_HS_KhuyetTat_Nang": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Tong_HS_KhiemThi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Tong_HS_CanHoTroDacBiet": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "NoiDung_HoTro_HS": {
+            "type": "string",
+            "nullable": true
+          },
+          "Active": {
+            "type": "boolean"
+          },
+          "Lock": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

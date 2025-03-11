@@ -1,6 +1,6 @@
 ﻿using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs;
 
-namespace khaothi_2024_net_server.Core.Interfaces
+namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces
 {
     public interface IBCThongTinDonViRepository
     {
