@@ -54,33 +54,7 @@ namespace KhaoThi_2024_net_client.Services.User
             try
             {
                 var token = await GetToken();
-                //await _logger.LogInfoAsync($"Token exists: {!string.IsNullOrEmpty(token)}");
-
-                //if (!string.IsNullOrEmpty(token))
-                //{
-                //    try
-                //    {
-                //        var handler = new JwtSecurityTokenHandler();
-                //        var jwtToken = handler.ReadJwtToken(token);
-
-                //        await _logger.LogInfoAsync("Token Claims:");
-                //        foreach (var claim in jwtToken.Claims)
-                //        {
-                //            await _logger.LogInfoAsync($"{claim.Type}: {claim.Value}");
-                //        }
-
-                //        var roleClaims = jwtToken.Claims.Where(c => c.Type.Contains("role"));
-                //        await _logger.LogInfoAsync($"Role claims count: {roleClaims.Count()}");
-                //        foreach (var role in roleClaims)
-                //        {
-                //            await _logger.LogInfoAsync($"Role: {role.Type} = {role.Value}");
-                //        }
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        await _logger.LogErrorAsync("Error parsing token", ex, nameof(KhaoThiUserService));
-                //    }
-                //}
+               
                 await AddAuthenticationHeader();
                 //  await _logger.LogInfoAsync($"Đang truy vấn danh sách người dùng phân trang. Page: {page}, PageSize: {pageSize}, SearchTerm: {searchTerm}");
 
@@ -107,13 +81,13 @@ namespace KhaoThi_2024_net_client.Services.User
             }
             catch (HttpRequestException ex)
             {
-                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách người dùng phân trang: {Message}", ex, nameof(KhaoThiUserService));
+                await _logger.LogErrorAsync($"Lỗi HTTP khi lấy danh sách người dùng phân trang: {ex.Message}", ex, nameof(KhaoThiUserService));
                 throw;
             }
             catch (Exception ex)
             {
 
-                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách người dùng phân trang: {Message}", ex, nameof(KhaoThiUserService));
+                await _logger.LogErrorAsync($"Lỗi không xác định khi lấy danh sách người dùng phân trang: {ex.Message}", ex, nameof(KhaoThiUserService));
                 throw;
             }
 
