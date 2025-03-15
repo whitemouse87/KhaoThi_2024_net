@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "KhaoThi_2024_net_client",
   "resources": {
-    "hash": "sha256-ju1JeyfdSdru84b8p2ggMxOc2V3vbBnJWkYSJbCdskY=",
+    "hash": "sha256-k5HXxOJtqzdjzKtx8Tha18hsWvADVlWNqQcRwolk8Ko=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-C8YP71UQofcA/NGsshc7/6MPIGiqM8QWWRP5CEgKBmw="
+      "dotnet.native.js": "sha256-kodH6o4G3Dx2EoiXHV4SVFK3fD8xv8UfsCrxgUVrKzM="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.js": "sha256-aTAnT1r/EAWev8oI/mTFI9nH3RsfA5M822bNiGhok6U="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-tyry3wxY0AGhq3enCJufObSO7iF9LvNKe5zaSvbxxqI="
+      "dotnet.native.wasm": "sha256-wCCJsZnduUtISbMn0PZVtV7iQvIJelnh+X1a21wMI+s="
     },
     "coreAssembly": {},
     "assembly": {
@@ -267,10 +267,10 @@
       "mscorlib.wasm": "sha256-QoC5hTKpDNO6efLnEvYwV9OJBXvYRq8/1yGhNZKiNCw=",
       "netstandard.wasm": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "System.Private.CoreLib.wasm": "sha256-fvIPBcvgvsRuWrKi2LGQsLYvcKUSnyIuBUsE3LJu/0Y=",
-      "KhaoThi_2024_net_client.wasm": "sha256-caSyL7x8q7j6QR4ProQOoNrUEeLkuXowzGOM2CDf+0k="
+      "KhaoThi_2024_net_client.wasm": "sha256-uY2hyC9oLNtqElEcnWvlCNYwDMJlAtUbxp9HI98BgCU="
     },
     "pdb": {
-      "KhaoThi_2024_net_client.pdb": "sha256-5QLzFKQF4nfcqKwG05fX4SpMkOl31O14SD9flOR+2a8="
+      "KhaoThi_2024_net_client.pdb": "sha256-ZYwYEGXcoHBLd51HZTnmCFzgiuxGcvIHcY7gLehARAs="
     },
     "satelliteResources": {
       "cs": {

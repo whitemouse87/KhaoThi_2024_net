@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\bc_1_thongtindonvi\\bcthongtindonvi.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\pages\\profile\\edituserform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\profile\\edituserform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\pages\\baocaolayout_thpt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\baocaolayout_thpt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,23 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EditUserForm.razor",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
-              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
-              "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\Profile\\EditUserForm.razor",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAABSAAAAAAAAAA==",
+              "Title": "BaoCaoLayout_THPT.razor",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BaoCaoLayout_THPT.razor",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\BaoCaoLayout_THPT.razor",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BaoCaoLayout_THPT.razor",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\BaoCaoLayout_THPT.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-15T09:52:45.244Z",
+              "WhenOpened": "2025-03-15T16:41:42.683Z",
               "EditorCaption": ""
             },
             {
@@ -45,7 +41,7 @@
               "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
               "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
               "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAAI0AAABZAAAAAAAAAA==",
+              "ViewState": "AgIAAEkCAAAAAAAAAAAAAHACAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-15T04:46:07.211Z",
               "EditorCaption": ""

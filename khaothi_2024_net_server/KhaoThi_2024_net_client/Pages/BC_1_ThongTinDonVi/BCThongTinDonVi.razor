@@ -28,6 +28,603 @@
             <MudAlert Severity="Severity.Error" Class="my-4">@_errorMessage</MudAlert>
         }
 
+
+
+        @if (IsLoading)
+        {
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-4" />
+        }
+
+        <EditForm Model="@DonVi" OnValidSubmit="SaveData">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <MudGrid>
+                <MudItem xs="12">
+                    <MudCard Elevation="0" Class="border-none">
+                        <MudCardHeader Class="py-3 mud-theme-primary">
+                            <CardHeaderAvatar>
+                                <MudIcon Icon="@Icons.Material.Filled.Edit" Color="Color.Inherit" />
+                            </CardHeaderAvatar>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5"
+                                         Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                    Thông tin chung
+                                </MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudDivider Class="mb-4" />
+                            <MudGrid>
+                                <!-- Hàng 1: 4 cột -->
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Mã Trường"
+                                                      @bind-Value="DonVi.MaTruong"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="100" Required="true"
+                                                      Counter="100"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.School"
+                                                      HelperText="Mã trường của phòng Khảo thí cấp" Disabled="true" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Tên Trường"
+                                                      @bind-Value="DonVi.TenTruong"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="255" Required="true"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.BusinessCenter" Disabled="true" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Email Nhận Thông Báo"
+                                                      @bind-Value="DonVi.EmailNhanThongBao"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="100" Required="true"
+                                                      Counter="100"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Email" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudSelect T="string" Label="Loại Hình Đào Tạo"
+                                                   @bind-Value="DonVi.LoaiHinhDaoTao"
+                                                   Variant="MudBlazor.Variant.Outlined"
+                                                   Required="true"
+                                                   Adornment="Adornment.Start"
+                                                   AdornmentIcon="@Icons.Material.Filled.Category">
+                                            <MudSelectItem Value="@("Công lập")">Công lập</MudSelectItem>
+                                            <MudSelectItem Value="@("Dân lập")">Dân lập</MudSelectItem>
+                                            <MudSelectItem Value="@("Tư thục")">Tư thục</MudSelectItem>
+                                            <MudSelectItem Value="@("Quốc tế")">Quốc tế</MudSelectItem>
+                                        </MudSelect>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Hàng 2: 4 cột -->
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Mã Trường Bộ"
+                                                      @bind-Value="DonVi.MaTruongBo"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="100" Required="true"
+                                                      Counter="100"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Code" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="int" Label="Quận huyện"
+                                                      @bind-Value="DonVi.QuanDangKyDuThi"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Min="0"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.LocationCity" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Số Điện Thoại Trường"
+                                                      @bind-Value="DonVi.SDTTruong"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="100" Required="true"
+                                                      Counter="100"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Phone" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="3">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Số Điện Thoại Phòng Hội Đồng"
+                                                      @bind-Value="DonVi.SDTPhongHoiDong"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="100"
+                                                      Counter="100"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.PhonelinkRing" />
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Hàng 3: 1 cột chiếm toàn bộ -->
+                                <MudItem xs="12">
+                                    <MudPaper Elevation="0" Class="pa-3 rounded-lg">
+                                        <MudTextField T="string" Label="Địa Chỉ Trường"
+                                                      @bind-Value="DonVi.DiaChiTruong"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      MaxLength="255" Required="true"
+                                                      Counter="255"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Place" />
+                                    </MudPaper>
+                                </MudItem>
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+
+                <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="my-4">
+                    <!-- THÔNG TIN NGƯỜI NHẬP LIỆU -->
+                    <MudCard Elevation="2" Class="rounded-lg mb-6">
+                        <MudCardHeader Class="py-3 mud-theme-primary">
+                            <CardHeaderAvatar>
+                                <MudIcon Icon="@Icons.Material.Filled.Edit" Color="Color.Inherit" />
+                            </CardHeaderAvatar>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5"
+                                         Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                    Thông tin người nhập liệu
+                                </MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent Class="pa-4">
+                            <MudGrid Spacing="2">
+                                <MudItem xs="12" md="6" lg="3">
+                                    <MudTextField T="string" Label="Họ Tên Người Nhập Liệu"
+                                                  @bind-Value="DonVi.HoTenNhapLieu"
+                                                  Variant="MudBlazor.Variant.Outlined"
+                                                  MaxLength="255" Required="true"
+                                                  Counter="255"
+                                                  Adornment="Adornment.Start"
+                                                  AdornmentIcon="@Icons.Material.Filled.Person"
+                                                  FullWidth="true" />
+                                </MudItem>
+
+                                <MudItem xs="12" md="6" lg="3">
+                                    <MudTextField T="string" Label="Chức Vụ Nhập Liệu"
+                                                  @bind-Value="DonVi.ChucVuNhapLieu"
+                                                  Variant="MudBlazor.Variant.Outlined"
+                                                  MaxLength="255" Required="true"
+                                                  Counter="255"
+                                                  Adornment="Adornment.Start"
+                                                  AdornmentIcon="@Icons.Material.Filled.WorkOutline"
+                                                  FullWidth="true" />
+                                </MudItem>
+
+                                <MudItem xs="12" md="6" lg="3">
+                                    <MudTextField T="string" Label="Số Điện Thoại Di Động"
+                                                  @bind-Value="DonVi.SDTDiDongNhapLieu"
+                                                  Variant="MudBlazor.Variant.Outlined"
+                                                  MaxLength="100" Required="true"
+                                                  Counter="100"
+                                                  Adornment="Adornment.Start"
+                                                  AdornmentIcon="@Icons.Material.Filled.Smartphone"
+                                                  FullWidth="true" />
+                                </MudItem>
+
+                                <MudItem xs="12" md="6" lg="3">
+                                    <MudTextField T="string" Label="Email Nhập Liệu"
+                                                  @bind-Value="DonVi.EmailNhapLieu"
+                                                  Variant="MudBlazor.Variant.Outlined"
+                                                  MaxLength="100" Required="true"
+                                                  Counter="100"
+                                                  Adornment="Adornment.Start"
+                                                  AdornmentIcon="@Icons.Material.Filled.AlternateEmail"
+                                                  FullWidth="true" />
+                                </MudItem>
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+
+                    <!-- THÔNG TIN NHÂN SỰ -->
+                    <MudCard Elevation="2" Class="rounded-lg">
+                        <MudCardHeader Class="py-3 mud-theme-primary">
+                            <CardHeaderAvatar>
+                                <MudIcon Icon="@Icons.Material.Filled.People" Color="Color.Inherit" />
+                            </CardHeaderAvatar>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5"
+                                         Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                    Thông tin nhân sự
+                                </MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent Class="pa-4">
+                            <!-- Phần 1: Thống kê chính (4 ô chính) -->
+                            <MudText Typo="Typo.subtitle1" Class="mb-3 d-flex align-center">
+                                <MudIcon Icon="@Icons.Material.Filled.BarChart" Class="mr-2" Size="Size.Small" /> Thống Kê Chính
+                            </MudText>
+                            <MudGrid Spacing="2">
+                                <!-- Hiệu Trưởng -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #6366F1;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.SupervisorAccount" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Tổng Hiệu Trưởng</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongHieuTruong"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Phó Hiệu Trưởng -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #8B5CF6;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.ManageAccounts" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Tổng Phó Hiệu Trưởng</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongPhoHieuTruong"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Giáo Viên -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #EC4899;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.Groups" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Tổng Giáo Viên</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongGiaoVien"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Nhân Viên -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #F43F5E;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.PeopleAlt" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Tổng Nhân Viên</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongNhanVien"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+                            </MudGrid>
+
+                            <!-- Phần 2: Thông tin chi tiết (4 ô phụ) -->
+                            <MudText Typo="Typo.subtitle1" Class="mt-6 mb-3 d-flex align-center">
+                                <MudIcon Icon="@Icons.Material.Filled.Insights" Class="mr-2" Size="Size.Small" /> Thông Tin Chi Tiết
+                            </MudText>
+                            <MudGrid Spacing="2">
+                                <!-- Giáo Viên Tổ Trưởng -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #10B981;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.AssignmentInd" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Giáo Viên Tổ Trưởng</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongGiaoVien_ToTruong"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Giáo Viên Coi Thi -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #06B6D4;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.AssignmentTurnedIn" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Giáo Viên Coi Thi</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongGiaoVien_CoiThi"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Tổng Số Phòng Tối Đa -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #F59E0B;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.MeetingRoom" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Tổng số phòng Tối Đa</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongSoPhongToiDa"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <!-- Tổng Số Phòng Coi Thi -->
+                                <MudItem xs="12" sm="6" md="3">
+                                    <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                        <MudGrid Spacing="0">
+                                            <MudItem xs="4" Style="background-color: #3B82F6;">
+                                                <div class="d-flex justify-center align-center" style="height:100%; padding: 16px;">
+                                                    <MudIcon Icon="@Icons.Material.Filled.DoorFront" Color="Color.Inherit" Size="Size.Large" />
+                                                </div>
+                                            </MudItem>
+                                            <MudItem xs="8" Class="pa-3">
+                                                <MudText Typo="Typo.subtitle2" Class="mb-1">Tổng số phòng coi Thi</MudText>
+                                                <MudNumericField T="int" @bind-Value="@DonVi.TongSoPhongCoiThi"
+                                                                 Min="0"
+                                                                 Variant="MudBlazor.Variant.Outlined"
+                                                                 FullWidth="true"
+                                                                 Class="my-0" />
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudPaper>
+                                </MudItem>
+                            </MudGrid>
+
+                            <!-- Nút lưu -->
+                            @*<MudItem xs="12" Class="d-flex justify-end mt-6">
+                                <MudButton Variant="MudBlazor.Variant.Filled"
+                                           Color="Color.Primary"
+                                           StartIcon="@Icons.Material.Filled.Save"
+                                           Size="Size.Large"
+                                           Class="px-6">
+                                    Lưu Thông Tin
+                                </MudButton>
+                            </MudItem>*@
+                        </MudCardContent>
+                    </MudCard>
+                </MudContainer>
+
+
+                <MudItem xs="12">
+                    <MudCard Elevation="0" Class="border-none mt-6">
+                        <MudCardHeader Class="py-3 mud-theme-primary">
+                            <CardHeaderAvatar>
+                                <MudIcon Icon="@Icons.Material.Filled.Edit" Color="Color.Inherit" />
+                            </CardHeaderAvatar>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5"
+                                         Style="color: white; font-weight: 500; letter-spacing: 0.5px;">
+                                    Thông tin học sinh
+                                </MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudDivider Class="mb-4" />
+                            <!-- Hàng đầu tiên với 2 phần chính -->
+                            <MudGrid Spacing="3">
+                                <!-- Cột 1: Tổng Học Sinh Lớp 12 -->
+                                <MudItem xs="12" md="6">
+                                    <MudCard Elevation="2" Class="rounded-lg overflow-hidden">
+                                        <MudCardHeader Class="py-2 mud-theme-primary">
+                                            <CardHeaderAvatar>
+                                                <MudIcon Icon="@Icons.Material.Filled.School" />
+                                            </CardHeaderAvatar>
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.h6" Color="Color.Inherit" Style="color: white;">Tổng Học Sinh Lớp 12</MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pt-3">
+                                            <MudGrid Justify="Justify.Center" Class="gap-4">
+                                                <MudItem xs="12" sm="6" Class="d-flex justify-center">
+                                                    <div class="d-flex flex-column align-center">
+                                                        <MudIcon Icon="@Icons.Material.Filled.School" Color="Color.Primary" Size="Size.Large"
+                                                                 Class="mb-3" Style="width: 64px; height: 64px;" />
+                                                        <MudNumericField T="int" @bind-Value="DonVi.Tong_HS_12"
+                                                                         Min="0"
+                                                                         Variant="MudBlazor.Variant.Outlined"
+                                                                         Label="Số lượng học sinh lớp 12"
+                                                                         HelperText="Nhập tổng số học sinh lớp 12"
+                                                                         Class="mt-2"
+                                                                         Style="min-width: 300px;"
+                                                                         Adornment="Adornment.Start"
+                                                                         AdornmentIcon="@Icons.Material.Filled.Groups" />
+                                                    </div>
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardContent>
+                                    </MudCard>
+                                </MudItem>
+
+                                <!-- Cột 2: Học sinh đặc biệt -->
+                                <MudItem xs="12" md="6">
+                                    <MudCard Elevation="2" Class="rounded-lg overflow-hidden">
+                                        <MudCardHeader Class="py-2 mud-theme-primary">
+                                            <CardHeaderAvatar>
+                                                <MudIcon Icon="@Icons.Material.Filled.ChildCare" />
+                                            </CardHeaderAvatar>
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.h6" Style="color: white;">Học Sinh Đặc Biệt</MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pt-3">
+                                            <MudGrid Spacing="2">
+                                                <MudItem xs="12" sm="6">
+                                                    <MudNumericField T="int" Label="HS Khuyết Tật Nhẹ"
+                                                                     @bind-Value="DonVi.Tong_HS_KhuyetTat_Nhe"
+                                                                     Variant="MudBlazor.Variant.Outlined"
+                                                                     Adornment="Adornment.Start"
+                                                                     AdornmentIcon="@Icons.Material.Filled.Accessibility"
+                                                                     Min="0"
+                                                                     HelperText="Nhập số học sinh khuyết tật nhẹ"
+                                                                     FullWidth="true" />
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6">
+                                                    <MudNumericField T="int" Label="HS Khuyết Tật Nặng"
+                                                                     @bind-Value="DonVi.Tong_HS_KhuyetTat_Nang"
+                                                                     Variant="MudBlazor.Variant.Outlined"
+                                                                     Adornment="Adornment.Start"
+                                                                     AdornmentIcon="@Icons.Material.Filled.AccessibilityNew"
+                                                                     Min="0"
+                                                                     HelperText="Nhập số học sinh khuyết tật nặng"
+                                                                     FullWidth="true" />
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6">
+                                                    <MudNumericField T="int" Label="HS Khiếm Thị"
+                                                                     @bind-Value="DonVi.Tong_HS_KhiemThi"
+                                                                     Variant="MudBlazor.Variant.Outlined"
+                                                                     Adornment="Adornment.Start"
+                                                                     AdornmentIcon="@Icons.Material.Filled.Visibility"
+                                                                     Min="0"
+                                                                     HelperText="Nhập số học sinh khiếm thị"
+                                                                     FullWidth="true" />
+                                                </MudItem>
+                                                <MudItem xs="12" sm="6">
+                                                    <MudNumericField T="int" Label="HS Cần Hỗ Trợ Đặc Biệt"
+                                                                     @bind-Value="DonVi.Tong_HS_CanHoTroDacBiet"
+                                                                     Variant="MudBlazor.Variant.Outlined"
+                                                                     Adornment="Adornment.Start"
+                                                                     AdornmentIcon="@Icons.Material.Filled.SupportAgent"
+                                                                     Min="0"
+                                                                     HelperText="Nhập số học sinh cần hỗ trợ đặc biệt"
+                                                                     FullWidth="true" />
+                                                </MudItem>
+                                            </MudGrid>
+                                        </MudCardContent>
+                                    </MudCard>
+                                </MudItem>
+                            </MudGrid>
+
+                            <!-- Hàng thứ hai với nội dung hỗ trợ -->
+                            <MudGrid Spacing="3" Class="mt-3">
+                                <MudItem xs="12">
+                                    <MudCard Elevation="2" Class="rounded-lg overflow-hidden">
+                                        <MudCardHeader Class="py-2 mud-theme-primary">
+                                            <CardHeaderAvatar>
+                                                <MudIcon Icon="@Icons.Material.Filled.Comment" />
+                                            </CardHeaderAvatar>
+                                            <CardHeaderContent>
+                                                <MudText Typo="Typo.h6" Color="Color.Inherit" Style="color: white;">Nội Dung Hỗ Trợ Học Sinh</MudText>
+                                            </CardHeaderContent>
+                                        </MudCardHeader>
+                                        <MudCardContent Class="pt-3">
+                                            <MudTextField T="string"
+                                                          @bind-Value="DonVi.NoiDung_HoTro_HS"
+                                                          Variant="MudBlazor.Variant.Outlined"
+                                                          Lines="6"
+                                                          Adornment="Adornment.Start"
+                                                          AdornmentIcon="@Icons.Material.Filled.Comment"
+                                                          HelperText="Nhập chi tiết về hỗ trợ dành cho học sinh đặc biệt"
+                                                          Placeholder="Mô tả chi tiết các hình thức hỗ trợ học sinh..."
+                                                          FullWidth="true" />
+                                        </MudCardContent>
+                                    </MudCard>
+                                </MudItem>
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+
+                <MudItem xs="12">
+                    <MudCard Elevation="0" Class="border-none mt-6">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h5" Class="primary-text font-weight-bold">TRẠNG THÁI</MudText>
+                            </CardHeaderContent>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudDivider Class="mb-4" />
+                            <MudGrid>
+                                <MudItem xs="12" md="6">
+                                    <MudPaper Elevation="0" Class="pa-6 rounded-lg">
+                                        <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center" Justify="Justify.Center">
+                                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Large" Class="mr-3" Color="@(DonVi.Active ? Color.Success : Color.Default)" />
+                                            <div>
+                                                <MudText Typo="Typo.h6">Kích Hoạt (Active)</MudText>
+                                                <MudSwitch T="bool" @bind-Checked="DonVi.Active" Color="Color.Success" Class="mt-1" />
+                                            </div>
+                                        </MudStack>
+                                    </MudPaper>
+                                </MudItem>
+
+                                <MudItem xs="12" md="6">
+                                    <MudPaper Elevation="0" Class="pa-6 rounded-lg">
+                                        <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center" Justify="Justify.Center">
+                                            <MudIcon Icon="@Icons.Material.Filled.Lock" Size="Size.Large" Class="mr-3" Color="@(DonVi.Lock ? Color.Error : Color.Default)" />
+                                            <div>
+                                                <MudText Typo="Typo.h6">Khóa (Lock)</MudText>
+                                                <MudSwitch T="bool" @bind-Checked="DonVi.Lock" Color="Color.Error" Class="mt-1" />
+                                            </div>
+                                        </MudStack>
+                                    </MudPaper>
+                                </MudItem>
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+            </MudGrid>
+
+        </EditForm>
         <div class="d-flex justify-start mb-6">
             <MudButton Variant="MudBlazor.Variant.Filled"
                        Color="Color.Primary"
@@ -38,435 +635,6 @@
                 LƯU DỮ LIỆU
             </MudButton>
         </div>
-
-        @if (IsLoading)
-        {
-            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-4" />
-        }
-
-    <EditForm Model="@DonVi" OnValidSubmit="SaveData">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-
-        <MudGrid>
-            <MudItem xs="12">
-                <MudCard Elevation="0" Class="border-none">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText Typo="Typo.h5" Class="primary-text font-weight-bold">THÔNG TIN CHUNG</MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                    <MudCardContent>
-                        <MudDivider Class="mb-4" />
-                        <MudGrid>
-                            <!-- Hàng 1: 4 cột -->
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Mã Trường"
-                                                  @bind-Value="DonVi.MaTruong"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100" Required="true"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.School"
-                                                  HelperText="Mã trường của phòng Khảo thí cấp" Disabled="true" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Tên Trường"
-                                                  @bind-Value="DonVi.TenTruong"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="255" Required="true"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.BusinessCenter" Disabled="true" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Email Nhận Thông Báo"
-                                                  @bind-Value="DonVi.EmailNhanThongBao"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100" Required="true"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.Email" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudSelect T="string" Label="Loại Hình Đào Tạo"
-                                               @bind-Value="DonVi.LoaiHinhDaoTao"
-                                               Variant="MudBlazor.Variant.Outlined"
-                                               Required="true"
-                                               Adornment="Adornment.Start"
-                                               AdornmentIcon="@Icons.Material.Filled.Category">
-                                        <MudSelectItem Value="@("Công lập")">Công lập</MudSelectItem>
-                                        <MudSelectItem Value="@("Dân lập")">Dân lập</MudSelectItem>
-                                        <MudSelectItem Value="@("Tư thục")">Tư thục</MudSelectItem>
-                                        <MudSelectItem Value="@("Quốc tế")">Quốc tế</MudSelectItem>
-                                    </MudSelect>
-                                </MudPaper>
-                            </MudItem>
-
-                            <!-- Hàng 2: 4 cột -->
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Mã Trường Bộ"
-                                                  @bind-Value="DonVi.MaTruongBo"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100" Required="true"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.Code" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="int" Label="Quận huyện"
-                                                  @bind-Value="DonVi.QuanDangKyDuThi"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  Min="0"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.LocationCity" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Số Điện Thoại Trường"
-                                                  @bind-Value="DonVi.SDTTruong"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100" Required="true"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.Phone" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Số Điện Thoại Phòng Hội Đồng"
-                                                  @bind-Value="DonVi.SDTPhongHoiDong"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.PhonelinkRing" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <!-- Hàng 3: 1 cột chiếm toàn bộ -->
-                            <MudItem xs="12">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Địa Chỉ Trường"
-                                                  @bind-Value="DonVi.DiaChiTruong"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="255" Required="true"
-                                                  Counter="255"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.Place" />
-                                </MudPaper>
-                            </MudItem>
-                        </MudGrid>
-                    </MudCardContent>
-                </MudCard>
-            </MudItem>
-
-            <MudItem xs="12">
-                <MudCard Elevation="0" Class="border-none mt-6">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText Typo="Typo.h5" Class="primary-text font-weight-bold">THÔNG TIN NGƯỜI NHẬP LIỆU</MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                    <MudCardContent>
-                        <MudDivider Class="mb-4" />
-                        <MudGrid>
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Họ Tên Người Nhập Liệu"
-                                                  @bind-Value="DonVi.HoTenNhapLieu"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="255" Required="true"
-                                                  Counter="255"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.Person" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Chức Vụ Nhập Liệu"
-                                                  @bind-Value="DonVi.ChucVuNhapLieu"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="255" Required="true"
-                                                  Counter="255"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.WorkOutline" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Số Điện Thoại Di Động"
-                                                  @bind-Value="DonVi.SDTDiDongNhapLieu"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100" Required="true"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.Smartphone" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudTextField T="string" Label="Email Nhập Liệu"
-                                                  @bind-Value="DonVi.EmailNhapLieu"
-                                                  Variant="MudBlazor.Variant.Outlined"
-                                                  MaxLength="100" Required="true"
-                                                  Counter="100"
-                                                  Adornment="Adornment.Start"
-                                                  AdornmentIcon="@Icons.Material.Filled.AlternateEmail" />
-                                </MudPaper>
-                            </MudItem>
-                        </MudGrid>
-                    </MudCardContent>
-                </MudCard>
-            </MudItem>
-
-            <MudItem xs="12">
-                <MudCard Elevation="0" Class="border-none mt-6">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText Typo="Typo.h5" Class="primary-text font-weight-bold">THÔNG TIN NHÂN SỰ</MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                    <MudCardContent>
-                        <MudDivider Class="mb-4" />
-                        <MudGrid>
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="2" Class="pa-4 rounded-lg mud-theme-primary">
-                                    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.SupervisorAccount" Size="Size.Large" Class="mr-3" />
-                                        <div>
-                                            <MudText Typo="Typo.subtitle2">Tổng Hiệu Trưởng</MudText>
-                                            <MudNumericField T="int" @bind-Value="DonVi.TongHieuTruong" Min="0" Variant="MudBlazor.Variant.Outlined" Class="mt-1" />
-                                        </div>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="2" Class="pa-4 rounded-lg mud-theme-secondary">
-                                    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.ManageAccounts" Size="Size.Large" Class="mr-3" />
-                                        <div>
-                                            <MudText Typo="Typo.subtitle2">Tổng Phó Hiệu Trưởng</MudText>
-                                            <MudNumericField T="int" @bind-Value="DonVi.TongPhoHieuTruong" Min="0" Variant="MudBlazor.Variant.Outlined" Class="mt-1" />
-                                        </div>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="2" Class="pa-4 rounded-lg mud-theme-tertiary">
-                                    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.Groups" Size="Size.Large" Class="mr-3" />
-                                        <div>
-                                            <MudText Typo="Typo.subtitle2">Tổng Giáo Viên</MudText>
-                                            <MudNumericField T="int" @bind-Value="DonVi.TongGiaoVien" Min="0" Variant="MudBlazor.Variant.Outlined" Class="mt-1" />
-                                        </div>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="2" Class="pa-4 rounded-lg mud-theme-info">
-                                    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.PeopleAlt" Size="Size.Large" Class="mr-3" />
-                                        <div>
-                                            <MudText Typo="Typo.subtitle2">Tổng Nhân Viên</MudText>
-                                            <MudNumericField T="int" @bind-Value="DonVi.TongNhanVien" Min="0" Variant="MudBlazor.Variant.Outlined" Class="mt-1" />
-                                        </div>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudNumericField T="int" Label="Tổng Giáo Viên Tổ Trưởng"
-                                                     @bind-Value="DonVi.TongGiaoVien_ToTruong"
-                                                     Variant="MudBlazor.Variant.Outlined"
-                                                     Min="0"
-                                                     Adornment="Adornment.Start"
-                                                     AdornmentIcon="@Icons.Material.Filled.AssignmentInd" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudNumericField T="int" Label="Tổng Giáo Viên Coi Thi"
-                                                     @bind-Value="DonVi.TongGiaoVien_CoiThi"
-                                                     Variant="MudBlazor.Variant.Outlined"
-                                                     Min="0"
-                                                     Adornment="Adornment.Start"
-                                                     AdornmentIcon="@Icons.Material.Filled.AssignmentTurnedIn" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudNumericField T="int" Label="Tổng Số Phòng Tối Đa"
-                                                     @bind-Value="DonVi.TongSoPhongToiDa"
-                                                     Variant="MudBlazor.Variant.Outlined"
-                                                     Min="0"
-                                                     Adornment="Adornment.Start"
-                                                     AdornmentIcon="@Icons.Material.Filled.MeetingRoom" />
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="3">
-                                <MudPaper Elevation="0" Class="pa-3 rounded-lg">
-                                    <MudNumericField T="int" Label="Tổng Số Phòng Coi Thi"
-                                                     @bind-Value="DonVi.TongSoPhongCoiThi"
-                                                     Variant="MudBlazor.Variant.Outlined"
-                                                     Min="0"
-                                                     Adornment="Adornment.Start"
-                                                     AdornmentIcon="@Icons.Material.Filled.DoorFront" />
-                                </MudPaper>
-                            </MudItem>
-                        </MudGrid>
-                    </MudCardContent>
-                </MudCard>
-            </MudItem>
-
-            <MudItem xs="12">
-                <MudCard Elevation="0" Class="border-none mt-6">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText Typo="Typo.h5" Class="primary-text font-weight-bold">THÔNG TIN HỌC SINH</MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                    <MudCardContent>
-                        <MudDivider Class="mb-4" />
-                        <MudGrid>
-                            <MudItem xs="12" md="4">
-                                <MudPaper Elevation="3" Class="pa-4 rounded-lg">
-                                    <MudStack AlignItems="MudBlazor.AlignItems.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.School" Color="Color.Primary" Size="Size.Large" />
-                                        <MudText Typo="Typo.h6" Class="mt-2">Tổng Học Sinh Lớp 12</MudText>
-                                        <MudNumericField T="int" @bind-Value="DonVi.Tong_HS_12" Min="0" Variant="MudBlazor.Variant.Filled" Class="mt-1" />
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="4">
-                                <MudExpansionPanels>
-                                    <MudExpansionPanel>
-                                        <TitleContent>
-                                            <MudText Typo="Typo.h6">Học sinh đặc biệt</MudText>
-                                        </TitleContent>
-                                        <ChildContent>
-                                            <MudGrid>
-                                                <MudItem xs="12">
-                                                    <MudNumericField T="int" Label="HS Khuyết Tật Nhẹ"
-                                                                     @bind-Value="DonVi.Tong_HS_KhuyetTat_Nhe"
-                                                                     Variant="MudBlazor.Variant.Outlined"
-                                                                     Adornment="Adornment.Start"
-                                                                     AdornmentIcon="@Icons.Material.Filled.Accessibility"
-                                                                     Min="0" />
-                                                </MudItem>
-
-                                                <MudItem xs="12">
-                                                    <MudNumericField T="int" Label="HS Khuyết Tật Nặng"
-                                                                     @bind-Value="DonVi.Tong_HS_KhuyetTat_Nang"
-                                                                     Variant="MudBlazor.Variant.Outlined"
-                                                                     Adornment="Adornment.Start"
-                                                                     AdornmentIcon="@Icons.Material.Filled.AccessibilityNew"
-                                                                     Min="0" />
-                                                </MudItem>
-
-                                                <MudItem xs="12">
-                                                    <MudNumericField T="int" Label="HS Khiếm Thị"
-                                                                     @bind-Value="DonVi.Tong_HS_KhiemThi"
-                                                                     Variant="MudBlazor.Variant.Outlined"
-                                                                     Adornment="Adornment.Start"
-                                                                     AdornmentIcon="@Icons.Material.Filled.Visibility"
-                                                                     Min="0" />
-                                                </MudItem>
-
-                                                <MudItem xs="12">
-                                                    <MudNumericField T="int" Label="HS Cần Hỗ Trợ Đặc Biệt"
-                                                                     @bind-Value="DonVi.Tong_HS_CanHoTroDacBiet"
-                                                                     Variant="MudBlazor.Variant.Outlined"
-                                                                     Adornment="Adornment.Start"
-                                                                     AdornmentIcon="@Icons.Material.Filled.SupportAgent"
-                                                                     Min="0" />
-                                                </MudItem>
-                                            </MudGrid>
-                                        </ChildContent>
-                                    </MudExpansionPanel>
-                                </MudExpansionPanels>
-                            </MudItem>
-
-                            <MudItem xs="12" md="4">
-                                <MudTextField T="string" Label="Nội Dung Hỗ Trợ Học Sinh"
-                                              @bind-Value="DonVi.NoiDung_HoTro_HS"
-                                              Variant="MudBlazor.Variant.Outlined"
-                                              Lines="7"
-                                              Adornment="Adornment.Start"
-                                              AdornmentIcon="@Icons.Material.Filled.Comment" />
-                            </MudItem>
-                        </MudGrid>
-                    </MudCardContent>
-                </MudCard>
-            </MudItem>
-
-            <MudItem xs="12">
-                <MudCard Elevation="0" Class="border-none mt-6">
-                    <MudCardHeader>
-                        <CardHeaderContent>
-                            <MudText Typo="Typo.h5" Class="primary-text font-weight-bold">TRẠNG THÁI</MudText>
-                        </CardHeaderContent>
-                    </MudCardHeader>
-                    <MudCardContent>
-                        <MudDivider Class="mb-4" />
-                        <MudGrid>
-                            <MudItem xs="12" md="6">
-                                <MudPaper Elevation="0" Class="pa-6 rounded-lg">
-                                    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center" Justify="Justify.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Large" Class="mr-3" Color="@(DonVi.Active ? Color.Success : Color.Default)" />
-                                        <div>
-                                            <MudText Typo="Typo.h6">Kích Hoạt (Active)</MudText>
-                                            <MudSwitch T="bool" @bind-Checked="DonVi.Active" Color="Color.Success" Class="mt-1" />
-                                        </div>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="12" md="6">
-                                <MudPaper Elevation="0" Class="pa-6 rounded-lg">
-                                    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center" Justify="Justify.Center">
-                                        <MudIcon Icon="@Icons.Material.Filled.Lock" Size="Size.Large" Class="mr-3" Color="@(DonVi.Lock ? Color.Error : Color.Default)" />
-                                        <div>
-                                            <MudText Typo="Typo.h6">Khóa (Lock)</MudText>
-                                            <MudSwitch T="bool" @bind-Checked="DonVi.Lock" Color="Color.Error" Class="mt-1" />
-                                        </div>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                        </MudGrid>
-                    </MudCardContent>
-                </MudCard>
-            </MudItem>
-        </MudGrid>
-
-    </EditForm>
     </MudPaper>
 </MudContainer>
 
@@ -570,7 +738,7 @@
                 state.NotificationMessage != _lastNotificationMessage)
             {
                 _lastNotificationMessage = state.NotificationMessage;
-               //Console.WriteLine($"HandleStateChanged - Hiển thị thông báo: {state.NotificationMessage}, Loại: {state.NotificationType}");
+                //Console.WriteLine($"HandleStateChanged - Hiển thị thông báo: {state.NotificationMessage}, Loại: {state.NotificationType}");
 
                 var severity = state.NotificationType?.ToLower() == "success"
                     ? Severity.Success

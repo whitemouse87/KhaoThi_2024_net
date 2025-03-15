@@ -1,4 +1,4 @@
-/* Manifest version: EhcTCDFA */
+/* Manifest version: 9Jlfs4tE */
 // service-worker.js
 self.addEventListener('install', event => {
     self.skipWaiting();

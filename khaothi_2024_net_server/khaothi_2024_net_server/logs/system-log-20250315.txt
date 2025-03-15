@@ -278,3 +278,303 @@
 2025-03-15 17:16:17.363 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
 2025-03-15 17:16:17.374 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
 2025-03-15 17:16:17.381 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 20:32:46.308 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 20:32:51.070 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 20:32:51.497 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 20:32:54.658 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 20:32:54.669 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 20:32:59.789 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 20:32:59.835 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 20:32:59.847 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 20:32:59.854 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 20:38:46.732 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 20:38:51.169 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 20:38:51.488 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 20:38:52.700 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 20:38:52.748 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 20:38:52.748 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 20:38:52.768 +07:00 [INF] [BaseService] Token expired, cleared from storage 
+2025-03-15 20:38:52.772 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: , URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 20:38:52.777 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:17:02.692 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:17:03.409 +07:00 [ERR] Password verification result: false
+2025-03-15 22:17:03.496 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-03-15 22:17:12.877 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:17:13.318 +07:00 [ERR] Password verification result: false
+2025-03-15 22:17:13.335 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-03-15 22:17:40.598 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:17:40.973 +07:00 [ERR] Password verification result: false
+2025-03-15 22:17:40.993 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-03-15 22:17:41.739 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:17:42.133 +07:00 [ERR] Password verification result: false
+2025-03-15 22:17:42.147 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-03-15 22:18:01.227 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:18:01.680 +07:00 [ERR] Password verification result: true
+2025-03-15 22:18:01.817 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:18:05.650 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:18:05.661 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:18:08.296 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:18:08.334 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:18:08.349 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:18:08.355 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:29:05.499 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 22:29:10.009 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:29:10.352 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:29:11.553 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 22:29:11.586 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:29:11.589 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:29:11.596 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:29:11.610 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:29:23.902 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:29:24.526 +07:00 [ERR] Password verification result: true
+2025-03-15 22:29:24.617 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:29:28.456 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:29:28.465 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:29:31.513 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:29:31.526 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:29:31.543 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:29:31.549 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:34:54.881 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 22:34:59.155 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:34:59.472 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:35:00.746 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 22:35:00.791 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:35:00.791 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:35:00.808 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:35:00.813 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:35:22.081 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:35:22.672 +07:00 [ERR] Password verification result: true
+2025-03-15 22:35:22.756 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:35:26.678 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:35:26.687 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:35:29.691 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:35:29.705 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:35:29.722 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:35:29.728 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:40:38.145 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 22:40:42.585 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:40:42.916 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:40:44.178 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 22:40:44.211 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:40:44.222 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:40:44.226 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:40:59.927 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:41:00.537 +07:00 [ERR] Password verification result: true
+2025-03-15 22:41:00.669 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:41:04.722 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:41:04.731 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:41:07.209 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:41:07.222 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:41:07.234 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:41:07.240 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:45:12.579 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 22:45:17.275 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:45:17.600 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:45:18.769 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 22:45:18.828 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:45:18.833 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:45:32.230 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:45:32.891 +07:00 [ERR] Password verification result: true
+2025-03-15 22:45:32.991 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:45:37.059 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:45:37.067 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:45:39.685 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:45:39.699 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:45:39.710 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:45:39.716 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:51:28.529 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 22:51:33.118 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:51:33.454 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:51:34.792 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 22:51:34.827 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:51:34.827 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:51:34.844 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:51:34.846 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:51:45.302 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:51:45.915 +07:00 [ERR] Password verification result: true
+2025-03-15 22:51:46.044 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:51:50.082 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:51:50.090 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:51:52.553 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:51:52.567 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:51:52.579 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:51:52.585 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:57:22.971 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 22:57:27.628 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:57:27.953 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:57:29.226 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 22:57:29.292 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 22:57:29.299 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:57:29.303 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 22:57:39.819 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 22:57:40.422 +07:00 [ERR] Password verification result: true
+2025-03-15 22:57:40.522 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 22:57:44.445 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 22:57:44.452 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 22:57:47.791 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:57:47.805 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 22:57:47.815 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 22:57:47.821 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:01:37.998 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:01:42.167 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:01:42.476 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:01:43.683 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:01:43.735 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:01:43.740 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:01:43.751 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:01:43.754 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:01:54.464 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:01:55.141 +07:00 [ERR] Password verification result: true
+2025-03-15 23:01:55.258 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:01:58.948 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:01:58.957 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:02:01.606 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:02:01.627 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:02:01.639 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:02:01.645 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:06:24.727 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:06:28.816 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:06:29.165 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:06:30.409 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:06:30.469 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:06:30.476 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:06:30.482 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:06:40.476 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:06:41.060 +07:00 [ERR] Password verification result: true
+2025-03-15 23:06:41.145 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:06:45.037 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:06:45.048 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:06:48.238 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:06:48.253 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:06:48.265 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:06:48.271 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:12:02.303 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:12:06.597 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:12:06.929 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:12:08.216 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:12:08.245 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:12:08.245 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:12:08.256 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:12:08.259 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:12:20.305 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:12:20.921 +07:00 [ERR] Password verification result: true
+2025-03-15 23:12:21.052 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:12:25.106 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:12:25.113 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:12:27.648 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:12:27.665 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:12:27.679 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:12:27.685 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:17:07.156 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:17:11.586 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:17:11.925 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:17:13.261 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:17:13.288 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:17:13.291 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:17:13.301 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:17:13.304 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:17:28.902 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:17:29.473 +07:00 [ERR] Password verification result: true
+2025-03-15 23:17:29.557 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:17:33.430 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:17:33.438 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:17:37.239 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:17:37.251 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:17:37.261 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:17:37.267 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:21:57.525 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:22:01.698 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:22:02.030 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:22:03.375 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:22:03.402 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:22:03.402 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:22:03.415 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:22:03.417 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:22:40.949 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:22:52.311 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:22:53.345 +07:00 [ERR] Password verification result: false
+2025-03-15 23:22:53.473 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-03-15 23:22:58.912 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:22:59.285 +07:00 [ERR] Password verification result: true
+2025-03-15 23:22:59.377 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:23:03.370 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:23:03.380 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:23:05.893 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:23:05.911 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:23:05.925 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:23:05.931 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:26:50.254 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:26:54.377 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:26:54.702 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:26:55.911 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:26:55.954 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:26:55.954 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:26:55.965 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:26:55.973 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:27:07.832 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:27:08.476 +07:00 [ERR] Password verification result: true
+2025-03-15 23:27:08.584 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:27:12.680 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:27:12.689 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:27:16.319 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:27:16.330 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:27:16.341 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:27:16.348 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:30:01.364 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:30:05.739 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:30:06.090 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:30:07.422 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:30:07.484 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:30:07.490 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:30:07.496 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:30:18.860 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:30:19.444 +07:00 [ERR] Password verification result: true
+2025-03-15 23:30:19.533 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:30:23.597 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:30:23.606 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:30:26.348 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:30:26.361 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:30:26.374 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:30:26.381 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:39:07.205 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:39:11.932 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:39:12.235 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:39:13.473 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:39:13.510 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:39:13.517 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:39:13.520 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:39:24.383 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:39:25.053 +07:00 [ERR] Password verification result: true
+2025-03-15 23:39:25.158 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:39:29.097 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:39:29.105 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:39:31.901 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:39:31.917 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:39:31.928 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:39:31.934 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:41:26.394 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:41:26.403 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:43:37.570 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-15 23:43:41.969 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:43:42.301 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:43:43.569 +07:00 [INF] [Client] Token hết hạn 
+2025-03-15 23:43:43.611 +07:00 [INF] [BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60] API Error: Unauthorized -  
+2025-03-15 23:43:43.619 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:43:43.622 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-03-15 23:43:53.662 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-15 23:43:54.230 +07:00 [ERR] Password verification result: true
+2025-03-15 23:43:54.328 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-15 23:43:58.392 +07:00 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-15 23:43:58.400 +07:00 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-15 23:44:00.922 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:44:00.934 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:44:00.946 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:44:00.953 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:44:06.766 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:44:06.774 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:44:11.847 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:44:11.855 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:44:16.146 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:44:16.153 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-15 23:44:16.159 +07:00 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-15 23:44:16.165 +07:00 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
