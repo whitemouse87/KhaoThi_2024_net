@@ -1,0 +1,40 @@
+﻿.border-none {
+    border: none !important;
+}
+
+.primary-text {
+    color: var(--mud-palette-primary);
+}
+
+.mud-card {
+    transition: all 0.3s ease;
+}
+
+.mud-paper {
+    transition: all 0.3s ease;
+}
+
+    .mud-paper:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.mud-theme-primary {
+    background-color: var(--mud-palette-primary-lighten);
+    color: var(--mud-palette-primary-darken);
+}
+
+.mud-theme-secondary {
+    background-color: var(--mud-palette-secondary-lighten);
+    color: var(--mud-palette-secondary-darken);
+}
+
+.mud-theme-tertiary {
+    background-color: var(--mud-palette-tertiary-lighten);
+    color: var(--mud-palette-tertiary-darken);
+}
+
+.mud-theme-info {
+    background-color: var(--mud-palette-info-lighten);
+    color: var(--mud-palette-info-darken);
+}

@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "zzjn/0Zd",
+  "version": "EhcTCDFA",
   "assets": [
     {
-      "hash": "sha256-a2Iz63NGHJpUegZNFg7oXXJnMzEkJnom420RLPX7QDw=",
+      "hash": "sha256-xrahoWSNPGm7+N2REB82cZ6/q4oRB2fKME95/hMvnxA=",
       "url": "KhaoThi_2024_net_client.styles.css"
     },
     {
@@ -1798,11 +1798,11 @@ self.assetsManifest = {
       "url": "_framework/Fluxor.wasm"
     },
     {
-      "hash": "sha256-0Y2bqHGlWDUM5aZH76zcC5SIJIdoL6r6mIb2hcuE/9w=",
+      "hash": "sha256-5QLzFKQF4nfcqKwG05fX4SpMkOl31O14SD9flOR+2a8=",
       "url": "_framework/KhaoThi_2024_net_client.pdb"
     },
     {
-      "hash": "sha256-DHZQELzn6SA+GigN5in0fdp+vB9GrxLf72AowIQyXyw=",
+      "hash": "sha256-caSyL7x8q7j6QR4ProQOoNrUEeLkuXowzGOM2CDf+0k=",
       "url": "_framework/KhaoThi_2024_net_client.wasm"
     },
     {
@@ -1864,6 +1864,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-jJmi/NxlyHHBUsjNbdV6wFuewaDCNut1c0H8z289WWI=",
       "url": "_framework/Microsoft.AspNetCore.Routing.wasm"
+    },
+    {
+      "hash": "sha256-NYD68fXjsCv0W53AFZOcBQXGdtr42mH1qbwz4DmwwJM=",
+      "url": "_framework/Microsoft.AspNetCore.WebUtilities.wasm"
     },
     {
       "hash": "sha256-zohYihZLqZl3Vs/WUXlbmBw6sSRhBg6suf/7sRlQmto=",
@@ -2758,7 +2762,7 @@ self.assetsManifest = {
       "url": "_framework/ZstdSharp.wasm"
     },
     {
-      "hash": "sha256-L6tPKz8WCqrvuWEnhdXsdoPNfmgmC0wxtKaay65GVrk=",
+      "hash": "sha256-hB8uhoy8tC986NNC/B/6NZW+lIVBiKzrtSh1y8FDrDU=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -2790,11 +2794,11 @@ self.assetsManifest = {
       "url": "_framework/dotnet.js.map"
     },
     {
-      "hash": "sha256-TvK+kzTX/xD2yEUsWesq2x1yKhbnd+SO/4N4H9l5PmQ=",
+      "hash": "sha256-C8YP71UQofcA/NGsshc7/6MPIGiqM8QWWRP5CEgKBmw=",
       "url": "_framework/dotnet.native.js"
     },
     {
-      "hash": "sha256-7pJ+Mfp1SdFwWEvMfx+c+ZaTTszbSY0UH2uud2B41Mk=",
+      "hash": "sha256-tyry3wxY0AGhq3enCJufObSO7iF9LvNKe5zaSvbxxqI=",
       "url": "_framework/dotnet.native.wasm"
     },
     {

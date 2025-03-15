@@ -1,0 +1,203 @@
+﻿
+
+@page "/bao-cao-ky-thi"
+@using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
+@using KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
+@using Fluxor
+@using Radzen
+@using Radzen.Blazor
+@using static KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.BCThongTinDonViAction
+@using static KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.BCThongTinDonViState
+@using KhaoThi_2024_net_client.Pages.BC_1_ThongTinDonVi
+@inject IState<BCThongTinDonViState> DonViState
+@inject IDispatcher Dispatcher
+@inject NotificationService NotificationService
+@inject NavigationManager NavigationManager
+@inject IDialogService DialogService
+
+
+
+<!-- Header -->
+<MudPaper Elevation="0" Style="background: linear-gradient(135deg, #594ae2 0%, #5042cb 100%);">
+    <div class="d-flex align-center py-4 px-6">
+        <div class="mr-4">
+            <MudAvatar Style="background-color: rgba(255,255,255,0.2); width: 52px; height: 52px;">
+                <MudIcon Icon="@Icons.Material.Filled.Analytics"
+                         Color="Color.Surface"
+                         Style="font-size: 32px; color: white;" />
+            </MudAvatar>
+        </div>
+        <div>
+            <MudText Typo="Typo.h5"
+                     Style="color: white; font-weight: 600; letter-spacing: 0.5px;">
+                BÁO CÁO SỐ LIỆU TRỰC TUYẾN PHỤC VỤ KỲ THI TỐT NGHIỆP THPT NĂM 2025 VÀ TUYỂN SINH LỚP 10 NĂM HỌC 2025-2026
+            </MudText>
+            <MudText Typo="Typo.body2"
+                     Style="color: rgba(255,255,255,0.85); margin-top: 4px;">
+                Đề nghị làm đủ 5 bước. Mọi vấn đề liên hệ với Phòng Khảo thí và KĐLCGD - Sở GDĐT qua SĐT xxxxx
+            </MudText>
+        </div>
+        <MudSpacer />
+    </div>
+</MudPaper>
+
+<!-- Steps -->
+<div class="steps-container">
+    @foreach (var step in steps)
+    {
+        <div class="step-item @(currentTab == step.Index ? "active" : "")" @onclick="@(() => SwitchTab(step.Index))">
+            <RadzenIcon Icon="@step.Icon" Style="font-size: 48px; margin-bottom: 16px;" />
+            <div class="step-number">Bước @step.Index</div>
+            <div class="step-title">@step.Title</div>
+        </div>
+    }
+</div>
+
+<!-- Content -->
+<div class="content-container">
+    @switch (currentTab)
+    {
+        case 1:
+            <BCThongTinDonVi />
+            break;
+        case 2:
+            <MudText>Đang phát triển - Bước 2: Số liệu học sinh</MudText>
+            break;
+        case 3:
+            <MudText>Đang phát triển - Bước 3: Hội đồng thi</MudText>
+            break;
+        case 4:
+            <MudText>Đang phát triển - Bước 4: Điểm thi</MudText>
+            break;
+        case 5:
+            <MudText>Đang phát triển - Bước 5: Tổng kết</MudText>
+            break;
+        default:
+            <BCThongTinDonVi />
+            break;
+    }
+</div>
+
+<!-- Buttons -->
+<div class="buttons-container">
+    @if (currentTab > 1)
+    {
+        <RadzenButton Click="@(() => SwitchTab(currentTab - 1))"
+                      ButtonStyle="ButtonStyle.Light"
+                      Icon="arrow_back"
+                      Text="Quay lại"
+                      class="btn-back" />
+    }
+
+    <RadzenButton Click="@SaveDraft"
+                  ButtonStyle="ButtonStyle.Light"
+                  Icon="save"
+                  Text="Lưu nháp"
+                  class="btn-save"
+                  Disabled="@(DonViState.Value.IsLoading)" />
+
+    @if (currentTab < 5)
+    {
+        <RadzenButton Click="@(() => SwitchTab(currentTab + 1))"
+                      ButtonStyle="ButtonStyle.Primary"
+                      Icon="arrow_forward"
+                      Text="Tiếp theo"
+                      class="btn-next" />
+    }
+    else
+    {
+        <RadzenButton Click="@SubmitForm"
+                      ButtonStyle="ButtonStyle.Success"
+                      Icon="check"
+                      Text="Hoàn thành"
+                      class="btn-next" />
+    }
+</div>
+
+@code {
+    private int currentTab = 1;
+    private string _lastNotificationMessage;
+
+    private class StepInfo
+    {
+        public int Index { get; set; }
+        public string Icon { get; set; }
+        public string Title { get; set; }
+    }
+
+    private List<StepInfo> steps = new List<StepInfo>
+{
+        new StepInfo { Index = 1, Icon = "school", Title = "Thông tin đơn vị và số liệu học sinh" },
+        new StepInfo { Index = 2, Icon = "school", Title = "Số liệu học sinh" },
+        new StepInfo { Index = 3, Icon = "groups", Title = "Hội đồng thi" },
+        new StepInfo { Index = 4, Icon = "analytics", Title = "Điểm thi" },
+        new StepInfo { Index = 5, Icon = "summarize", Title = "Tổng kết" }
+    };
+
+    protected override void OnInitialized()
+    {
+        DonViState.StateChanged += HandleStateChanged;
+    }
+
+    private void HandleStateChanged(object? sender, EventArgs e)
+    {
+        // State management logic
+        var state = DonViState.Value;
+
+        if (!string.IsNullOrEmpty(state.NotificationMessage) &&
+            state.NotificationMessage != _lastNotificationMessage)
+        {
+            _lastNotificationMessage = state.NotificationMessage;
+
+            var notificationSeverity = state.NotificationType?.ToLower() == "success"
+                ? NotificationSeverity.Success
+                : NotificationSeverity.Error;
+
+            NotificationService.Notify(new NotificationMessage
+            {
+                Severity = notificationSeverity,
+                Summary = state.NotificationType?.ToLower() == "success" ? "Thành công" : "Lỗi",
+                Detail = state.NotificationMessage,
+                Duration = 4000
+            });
+
+            StateHasChanged();
+        }
+    }
+
+    private void SwitchTab(int tabIndex)
+    {
+        currentTab = tabIndex;
+        // Khi cần thêm dispatcher thực tế
+        // Dispatcher.Dispatch(new SwitchStepAction(tabIndex));
+    }
+
+    private void SaveDraft()
+    {
+        // Lưu nháp logic - sẽ thêm sau khi đã có actions tương ứng
+        NotificationService.Notify(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Success,
+            Summary = "Thành công",
+            Detail = "Đã lưu nháp báo cáo",
+            Duration = 4000
+        });
+    }
+
+    private void SubmitForm()
+    {
+        // Submit form logic - sẽ thêm sau khi đã có actions tương ứng
+        NotificationService.Notify(new NotificationMessage
+        {
+            Severity = NotificationSeverity.Success,
+            Summary = "Thành công",
+            Detail = "Đã hoàn thành báo cáo",
+            Duration = 4000
+        });
+    }
+
+    public void Dispose()
+    {
+        DonViState.StateChanged -= HandleStateChanged;
+    }
+}

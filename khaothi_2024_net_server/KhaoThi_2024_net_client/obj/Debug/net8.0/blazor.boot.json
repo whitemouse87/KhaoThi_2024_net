@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "KhaoThi_2024_net_client",
   "resources": {
-    "hash": "sha256-f3mdYn7KkcFLzNVoRAr40Kp0c+FQiAvOze7lKiIGkyE=",
+    "hash": "sha256-ju1JeyfdSdru84b8p2ggMxOc2V3vbBnJWkYSJbCdskY=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-TvK+kzTX/xD2yEUsWesq2x1yKhbnd+SO/4N4H9l5PmQ="
+      "dotnet.native.js": "sha256-C8YP71UQofcA/NGsshc7/6MPIGiqM8QWWRP5CEgKBmw="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.js": "sha256-aTAnT1r/EAWev8oI/mTFI9nH3RsfA5M822bNiGhok6U="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-7pJ+Mfp1SdFwWEvMfx+c+ZaTTszbSY0UH2uud2B41Mk="
+      "dotnet.native.wasm": "sha256-tyry3wxY0AGhq3enCJufObSO7iF9LvNKe5zaSvbxxqI="
     },
     "coreAssembly": {},
     "assembly": {
@@ -41,6 +41,7 @@
       "Microsoft.AspNetCore.Metadata.wasm": "sha256-WRtYKmT2sKtl1zuD8t8PG9hqpsNTxwYEw2c/oHknGVo=",
       "Microsoft.AspNetCore.Routing.wasm": "sha256-jJmi/NxlyHHBUsjNbdV6wFuewaDCNut1c0H8z289WWI=",
       "Microsoft.AspNetCore.Routing.Abstractions.wasm": "sha256-P40QIMDnLSgSyIDX+T6b/vJp3BAHSY9fCgOHP7xz0tA=",
+      "Microsoft.AspNetCore.WebUtilities.wasm": "sha256-NYD68fXjsCv0W53AFZOcBQXGdtr42mH1qbwz4DmwwJM=",
       "Microsoft.CodeAnalysis.wasm": "sha256-UrCKIA7ySpcVuJFCzqzHYPujBSMtSeyQCqfCmliSttY=",
       "Microsoft.CodeAnalysis.CSharp.wasm": "sha256-VcpjgiVQGVhlsFFL+GzVh/tl1ycxkiTzhb3zMyKI0Yg=",
       "Microsoft.Extensions.Configuration.wasm": "sha256-UDGEQR7J3WTfzYMgOzxVIBwFQtKEeJvO8UgrWagypdE=",
@@ -266,10 +267,10 @@
       "mscorlib.wasm": "sha256-QoC5hTKpDNO6efLnEvYwV9OJBXvYRq8/1yGhNZKiNCw=",
       "netstandard.wasm": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "System.Private.CoreLib.wasm": "sha256-fvIPBcvgvsRuWrKi2LGQsLYvcKUSnyIuBUsE3LJu/0Y=",
-      "KhaoThi_2024_net_client.wasm": "sha256-DHZQELzn6SA+GigN5in0fdp+vB9GrxLf72AowIQyXyw="
+      "KhaoThi_2024_net_client.wasm": "sha256-caSyL7x8q7j6QR4ProQOoNrUEeLkuXowzGOM2CDf+0k="
     },
     "pdb": {
-      "KhaoThi_2024_net_client.pdb": "sha256-0Y2bqHGlWDUM5aZH76zcC5SIJIdoL6r6mIb2hcuE/9w="
+      "KhaoThi_2024_net_client.pdb": "sha256-5QLzFKQF4nfcqKwG05fX4SpMkOl31O14SD9flOR+2a8="
     },
     "satelliteResources": {
       "cs": {

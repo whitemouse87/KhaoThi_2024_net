@@ -1,6 +1,8 @@
 ﻿using DotSwashbuckle.AspNetCore.SwaggerUI;
 using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.Authentication;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces;
 using khaothi_2024_net_server.Features.Shares;
 using khaothi_2024_net_server.Features.UserManagement;
 using khaothi_2024_net_server.Infrastructure.Data;
@@ -269,6 +271,8 @@ public class Program
             .AddSingleton<IDataAccessLayer, MyDataAccessLayer>()
             .AddScoped<IKhaoThiUserRepository, KhaoThiUserRepository>()
             .AddScoped<IKhaoThiUserService, KhaoThiUserService>()
+            .AddScoped<IBCThongTinDonViRepository, BCThongTinDonViRepository>()
+            .AddScoped<IBCThongTinDonViService, BCThongTinDonViService>()
             .AddScoped<IAuthService, AuthService>()
             .AddScoped<IPasswordHasher, BCryptPasswordHasher>();
         builder.Services.Configure<PasswordOptions>(options =>

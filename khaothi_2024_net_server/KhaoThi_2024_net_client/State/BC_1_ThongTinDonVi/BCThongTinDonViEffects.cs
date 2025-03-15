@@ -13,7 +13,7 @@ namespace KhaoThi_2024_net_client.State.BC_1_ThongTinDonVi
 
         }
         [EffectMethod]
-        public async Task HandleLoadPaginatedUsers(LoadPaginatedDonVisAction action, IDispatcher dispatcher)
+        public async Task HandleLoadPaginatedDonVis(LoadPaginatedDonVisAction action, IDispatcher dispatcher)
         {
             try
             {
@@ -82,6 +82,7 @@ namespace KhaoThi_2024_net_client.State.BC_1_ThongTinDonVi
 
                 if (success)
                 {
+
                     dispatcher.Dispatch(new UpdateDonViSuccessAction(action.DonVi));
                     dispatcher.Dispatch(new ShowNotificationAction(
                         "Cập nhật người dùng thành công",
@@ -90,6 +91,7 @@ namespace KhaoThi_2024_net_client.State.BC_1_ThongTinDonVi
                 }
                 else
                 {
+
                     dispatcher.Dispatch(new UpdateDonViFailureAction("Không thể cập nhật đơn vị"));
                     dispatcher.Dispatch(new ShowNotificationAction(
                         "Không thể cập nhật đơn vị. Vui lòng thử lại",
@@ -112,7 +114,43 @@ namespace KhaoThi_2024_net_client.State.BC_1_ThongTinDonVi
                     "error"
                 ));
             }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
 
         }
+        //[EffectMethod]
+        //public async Task HandleChangeActive(ChangeActiveAction action, IDispatcher dispatcher)
+        //{
+
+        //    try
+        //    {
+        //        dispatcher.Dispatch(new SetLoadingAction(true)); // Bắt đầu loading
+        //        var isSuccess = await _bcttdonviService.ChangeActive(action.id, action.active);
+
+        //        if (isSuccess)
+        //        {
+        //            // Chỉ dispatch action thành công nếu service trả về true
+        //            dispatcher.Dispatch(new ChangeActiveSuccessAction(action.id));
+        //            //dispatcher.Dispatch(new LoadUsersAction());
+        //            dispatcher.Dispatch(new GetUserByIdAction(action.id));
+        //        }
+        //        else
+        //        {
+        //            // Nếu service trả về false, dispatch action thất bại
+        //            dispatcher.Dispatch(new ChangeActiveFailureAction("Không thể thay đổi trạng thái tài khoản. Vui lòng kiểm tra lại thông tin."));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        await Logger.Error($"Lỗi khi điều chỉnh trạng thái tài khoản {action.id}", ex, nameof(KhaoThiUserEffects));
+        //        dispatcher.Dispatch(new ChangeActiveFailureAction(ex.Message));
+        //    }
+        //    finally
+        //    {
+        //        dispatcher.Dispatch(new SetLoadingAction(false));
+        //    }
+        //}
     }
 }

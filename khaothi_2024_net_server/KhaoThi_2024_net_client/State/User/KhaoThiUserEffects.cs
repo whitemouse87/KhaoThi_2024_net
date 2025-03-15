@@ -155,6 +155,10 @@ namespace KhaoThi_2024_net_client.State.User
                     "error"
                 ));
             }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
 
         }
 

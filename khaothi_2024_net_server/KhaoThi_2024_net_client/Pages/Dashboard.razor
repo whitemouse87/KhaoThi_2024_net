@@ -196,7 +196,7 @@
                                 <MudButton Variant="Variant.Filled"
                                            Color="Color.Primary"
                                            StartIcon="@Icons.Material.Filled.Login"
-                                           Link="/tasks">
+                                            Href="@($"/bao-cao-ky-thi?maDonVi={context.User.FindFirst("maDonVi")?.Value}")">>
                                     Xem công việc
                                 </MudButton>
                             </MudCardActions>
@@ -265,7 +265,8 @@
 
         var user = authState.User;
         var maChucVu = user.FindFirst("maChucVu")?.Value;
-        await Logger.Info($"Dashboard accessed - User: {user.FindFirst("tenDangNhap")?.Value}, Role: {maChucVu}");
+        var MaDonVi = user.FindFirst("MaDonVi")?.Value;
+        //await Logger.Info($"Dashboard accessed - User: {user.FindFirst("tenDangNhap")?.Value}, Role: {maChucVu}");
     }
 
     private string GetChucVuDisplay(string? maChucVu)

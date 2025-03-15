@@ -1,2 +1,0 @@
-2025-03-11 22:33:31.193 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
-2025-03-11 22:33:34.238 +07:00 [INF] [Client] Token hết hạn 

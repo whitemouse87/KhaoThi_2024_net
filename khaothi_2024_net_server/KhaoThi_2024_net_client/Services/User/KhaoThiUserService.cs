@@ -54,7 +54,7 @@ namespace KhaoThi_2024_net_client.Services.User
             try
             {
                 var token = await GetToken();
-               
+
                 await AddAuthenticationHeader();
                 //  await _logger.LogInfoAsync($"Đang truy vấn danh sách người dùng phân trang. Page: {page}, PageSize: {pageSize}, SearchTerm: {searchTerm}");
 
@@ -119,6 +119,7 @@ namespace KhaoThi_2024_net_client.Services.User
                 throw;
             }
         }
+
         public async Task<KhaoThiUserModel> CreateAsync(KhaoThiUserModel user)
         {
             try

@@ -10,6 +10,19 @@ namespace KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
 {
     public class BCThongTinDonViService : BaseService, IBCThongTinDonViService
     {
+        // private const string API_ENDPOINT = "BCThongTinDonVi";
+        // private readonly JsonSerializerOptions _jsonOptions;
+        // public BCThongTinDonViService(
+        //IHttpClientFactory httpClientFactory,
+        //ILocalStorageService localStorage,
+        //ILoggingService logger)
+        //: base(httpClientFactory, localStorage, logger)
+        // {
+        //     _jsonOptions = new JsonSerializerOptions
+        //     {
+        //         PropertyNameCaseInsensitive = true
+        //     };
+        // }
         private const string API_ENDPOINT = "BCThongTinDonVi";
         private readonly JsonSerializerOptions _jsonOptions;
         public BCThongTinDonViService(
@@ -23,8 +36,7 @@ namespace KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
                 PropertyNameCaseInsensitive = true
             };
         }
-       
-        public async Task<KhaoThi_1_THPT_ThongTin_DonViModel?>  GetByMaTruongAsync(string MaTruong)
+        public async Task<KhaoThi_1_THPT_ThongTin_DonViModel?> GetByMaTruongAsync(string MaTruong)
         {
             try
             {
@@ -55,8 +67,8 @@ namespace KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
             try
             {
                 var token = await GetToken();
-             
-                await AddAuthenticationHeader();            
+
+                await AddAuthenticationHeader();
                 var url = $"{API_ENDPOINT}/all-phantrang?page={page}&pageSize={pageSize}";
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
@@ -89,7 +101,7 @@ namespace KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
             }
 
         }
-      
+
 
         public async Task<bool> UpdateAsync(KhaoThi_1_THPT_ThongTin_DonViModel DonVi)
         {
