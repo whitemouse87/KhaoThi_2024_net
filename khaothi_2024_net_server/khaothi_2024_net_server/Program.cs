@@ -3,6 +3,8 @@ using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.Authentication;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.Interfaces;
 using khaothi_2024_net_server.Features.Shares;
 using khaothi_2024_net_server.Features.UserManagement;
 using khaothi_2024_net_server.Infrastructure.Data;
@@ -37,6 +39,7 @@ public class Program
         var app = builder.Build();
         app.MapBankEndpoints();
         app.MapTruongEndpoints();
+        app.MapQuanEndpoints();
         ConfigureMiddleware(app);
 
         app.Run();
@@ -273,6 +276,8 @@ public class Program
             .AddScoped<IKhaoThiUserService, KhaoThiUserService>()
             .AddScoped<IBCThongTinDonViRepository, BCThongTinDonViRepository>()
             .AddScoped<IBCThongTinDonViService, BCThongTinDonViService>()
+            .AddScoped<IBCThongTinNhomMonRepository, BCThongTinNhomMonRepository>()
+            .AddScoped<IBCThongTinNhomMonService, BCThongTinNhomMonService>()
             .AddScoped<IAuthService, AuthService>()
             .AddScoped<IPasswordHasher, BCryptPasswordHasher>();
         builder.Services.Configure<PasswordOptions>(options =>

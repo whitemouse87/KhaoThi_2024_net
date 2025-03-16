@@ -8,13 +8,13 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
     public class BCThongTinDonViService : IBCThongTinDonViService
     {
         private readonly IBCThongTinDonViRepository _TTDonViRepository;
-        private readonly ILogger<KhaoThi_1_THPT_ThongTin_DonViModel> _logger;
+        private readonly ILogger<BCThongTinDonViService> _logger;
         /// <summary>
         /// Constructor với Dependency Injection
         /// </summary>
         public BCThongTinDonViService(
             IBCThongTinDonViRepository TTDonViRepository,
-            ILogger<KhaoThi_1_THPT_ThongTin_DonViModel> logger)
+            ILogger<BCThongTinDonViService> logger)
         {
             _TTDonViRepository = TTDonViRepository;
             _logger = logger;
@@ -24,7 +24,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
         {
             if (MaTruong == null)
             {
-                _logger.LogWarning($"[Warning] Mã trường không hợp lệ: {MaTruong}");
+                _logger.LogError($"[Warning] Mã trường không hợp lệ: {MaTruong}");
                 throw new ArgumentException("Nhập lại mã trường của Sở (6 ký tự)", nameof(MaTruong));
             }
 
@@ -36,7 +36,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
 
                 if (DonVi is null)
                 {
-                    _logger.LogWarning($"❌ Không tìm thấy đơn vị với mã trường {MaTruong}");
+                    _logger.LogError($"❌ Không tìm thấy đơn vị với mã trường {MaTruong}");
                     return null; // Trả về null thay vì throw
                 }
 

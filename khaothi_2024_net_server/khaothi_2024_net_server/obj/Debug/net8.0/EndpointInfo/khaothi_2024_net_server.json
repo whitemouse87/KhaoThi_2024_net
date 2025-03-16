@@ -403,6 +403,433 @@
         }
       }
     },
+    "/api/BCThongTinNhomMon/all-phantrang": {
+      "get": {
+        "tags": [
+          "BCThongTinNhomMon"
+        ],
+        "summary": "Lấy danh sách nhóm môn có phân trang và tìm kiếm",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "maTruong",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "minSoLuong",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCThongTinNhomMon/truong/{maTruong}": {
+      "get": {
+        "tags": [
+          "BCThongTinNhomMon"
+        ],
+        "summary": "Lấy danh sách nhóm môn theo mã trường",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCThongTinNhomMon": {
+      "post": {
+        "tags": [
+          "BCThongTinNhomMon"
+        ],
+        "summary": "Tạo mới nhóm môn",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCThongTinNhomMon/{id}": {
+      "put": {
+        "tags": [
+          "BCThongTinNhomMon"
+        ],
+        "summary": "Cập nhật số lượng cho nhóm môn",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BCThongTinNhomMon"
+        ],
+        "summary": "Xóa nhóm môn",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCThongTinNhomMon/check-exist": {
+      "get": {
+        "tags": [
+          "BCThongTinNhomMon"
+        ],
+        "summary": "Kiểm tra nhóm môn đã tồn tại chưa",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "monLuaChon1",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "monLuaChon2",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
     "/banks": {
       "get": {
         "tags": [
@@ -458,6 +885,40 @@
         "parameters": [
           {
             "name": "matruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/quan": {
+      "get": {
+        "tags": [
+          "khaothi_2024_net_server"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/quan/{maquan}": {
+      "get": {
+        "tags": [
+          "khaothi_2024_net_server"
+        ],
+        "parameters": [
+          {
+            "name": "maquan",
             "in": "path",
             "required": true,
             "schema": {
@@ -1336,6 +1797,52 @@
         "additionalProperties": false,
         "description": "Generic class để xử lý kết quả phân trang cho mọi loại entity"
       },
+      "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "Items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel"
+            },
+            "description": "Danh sách items trong trang hiện tại",
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "description": "Tổng số bản ghi (toàn bộ, không phải trong trang hiện tại)",
+            "format": "int32"
+          },
+          "Page": {
+            "type": "integer",
+            "description": "Số trang hiện tại",
+            "format": "int32"
+          },
+          "PageSize": {
+            "type": "integer",
+            "description": "Số bản ghi trên mỗi trang",
+            "format": "int32"
+          },
+          "TotalPages": {
+            "type": "integer",
+            "description": "Tổng số trang",
+            "format": "int32",
+            "readOnly": true
+          },
+          "HasPreviousPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang trước không",
+            "readOnly": true
+          },
+          "HasNextPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang sau không",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Generic class để xử lý kết quả phân trang cho mọi loại entity"
+      },
       "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -1577,6 +2084,39 @@
           },
           "Active": {
             "type": "boolean"
+          },
+          "Lock": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MaTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "TenNhom": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "MonLuaChon_1": {
+            "type": "string",
+            "nullable": true
+          },
+          "MonLuaChon_2": {
+            "type": "string",
+            "nullable": true
+          },
+          "SoLuong": {
+            "type": "integer",
+            "format": "int32"
           },
           "Lock": {
             "type": "boolean"

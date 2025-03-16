@@ -136,7 +136,42 @@
             Cập nhật thông tin người dùng
             </summary>
         </member>
-        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService.#ctor(khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces.IBCThongTinDonViRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel})">
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService.#ctor(khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces.IBCThongTinDonViRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService})">
+            <summary>
+            Constructor với Dependency Injection
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonController.GetPaginated(System.Int32,System.Int32,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Lấy danh sách nhóm môn có phân trang và tìm kiếm
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonController.GetByMaDonVi(System.String)">
+            <summary>
+            Lấy danh sách nhóm môn theo mã trường
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonController.Create(khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel)">
+            <summary>
+            Tạo mới nhóm môn
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonController.Update(System.Int32,khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.DTOs.KhaoThi_2_THPT_NhomMonModel)">
+            <summary>
+            Cập nhật số lượng cho nhóm môn
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonController.Delete(System.Int32)">
+            <summary>
+            Xóa nhóm môn
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonController.CheckExist(System.String,System.String,System.String)">
+            <summary>
+            Kiểm tra nhóm môn đã tồn tại chưa
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonService.#ctor(khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.Interfaces.IBCThongTinNhomMonRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.BCThongTinNhomMonService})">
             <summary>
             Constructor với Dependency Injection
             </summary>

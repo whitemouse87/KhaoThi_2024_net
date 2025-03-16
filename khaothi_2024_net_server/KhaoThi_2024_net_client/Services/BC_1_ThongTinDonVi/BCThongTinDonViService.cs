@@ -1,6 +1,7 @@
 ﻿using Blazored.LocalStorage;
 using KhaoThi_2024_net_client.Components;
 using KhaoThi_2024_net_client.Models.BaoCaoSoLieu;
+using KhaoThi_2024_net_client.Models.Shares;
 using KhaoThi_2024_net_client.Models.Users;
 using KhaoThi_2024_net_client.Services.Logging;
 using System.Net.Http.Json;
@@ -127,6 +128,29 @@ namespace KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
             catch (Exception ex)
             {
                 await _logger.LogErrorAsync($"Lỗi khi cập nhật đơn vị: {DonVi.MaTruong}", ex, nameof(BCThongTinDonViService));
+                throw;
+            }
+        }
+        public async Task<IEnumerable<QuanModel>> LoadDanhSachQuan()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"/quan");
+
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadFromJsonAsync<IEnumerable<QuanModel>>();
+                return content ?? Array.Empty<QuanModel>();
+
+
+            }
+            catch (HttpRequestException ex)
+            {
+                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách quận: {Message}", ex, nameof(BCThongTinDonViService));
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách quận {Message}", ex, nameof(BCThongTinDonViService));
                 throw;
             }
         }

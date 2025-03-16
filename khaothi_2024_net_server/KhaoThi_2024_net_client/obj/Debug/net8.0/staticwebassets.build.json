@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RhNMgXz0ME02QItSO0VeXkhlLzGGyN6pUDJT0NN04qw=",
+  "Hash": "0ZzTBFGbPPixGUCKfNKJfINr7dHm3q98cRj3ZHW/IOY=",
   "Source": "KhaoThi_2024_net_client",
   "BasePath": "/",
   "Mode": "Root",
@@ -9208,8 +9208,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "buw8mhvw6d",
-      "Integrity": "QwL0FueEo9RRtCQ2mJNn89W8hY0MCvEjbAr32Q3yZh8=",
+      "Fingerprint": "o10b6nqpto",
+      "Integrity": "/DY/X15Exc0iQP9RM7vKqvMlCUnfSGWeMxtSJxlswo8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\blazor.boot.json"
@@ -9922,8 +9922,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "pbk2xugzuy",
-      "Integrity": "ZYwYEGXcoHBLd51HZTnmCFzgiuxGcvIHcY7gLehARAs=",
+      "Fingerprint": "hvgqt43o75",
+      "Integrity": "EysNVJPjYJTgx+0rhz4qoBr7+pILRsBptqmTq4pQbfM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\KhaoThi_2024_net_client.pdb"
@@ -9943,8 +9943,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "1i38yi6acw",
-      "Integrity": "uY2hyC9oLNtqElEcnWvlCNYwDMJlAtUbxp9HI98BgCU=",
+      "Fingerprint": "0lltqupp2u",
+      "Integrity": "hHR1oBlHo7xImucY59eGg6BsqG+rDwSqhin2sbpk4Jw=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\webcil\\KhaoThi_2024_net_client.wasm"
@@ -15809,7 +15809,7 @@
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IdentityModel.Tokens.Jwt.wasm"
     },
     {
-      "Identity": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\2572vs5zkx-1i38yi6acw.gz",
+      "Identity": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\2572vs5zkx-0lltqupp2u.gz",
       "SourceId": "KhaoThi_2024_net_client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\",
@@ -15823,8 +15823,8 @@
       "RelatedAsset": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\KhaoThi_2024_net_client.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "274thk3sbc",
-      "Integrity": "fmvUPuFXXvhl8EjtJacC+OyfmIqja4WF27aU+wpaGZE=",
+      "Fingerprint": "xaaxf54uw6",
+      "Integrity": "aRUdu4dhYLFlNQ1QmDZBSmADgUERWsSrtnJM5/55GhA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\KhaoThi_2024_net_client.wasm"
@@ -18392,7 +18392,7 @@
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\fr\\Microsoft.CodeAnalysis.CSharp.resources.wasm"
     },
     {
-      "Identity": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\ihu25dxigh-pbk2xugzuy.gz",
+      "Identity": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\ihu25dxigh-hvgqt43o75.gz",
       "SourceId": "KhaoThi_2024_net_client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\",
@@ -18406,8 +18406,8 @@
       "RelatedAsset": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\KhaoThi_2024_net_client.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "k8qqc2w7uk",
-      "Integrity": "rGRgFzaBOwuuX9Y9y0KVu2YGAt4oWFgyBqPzPwY0tUQ=",
+      "Fingerprint": "2wgwpm6xqs",
+      "Integrity": "go6cjnvwK7B9cNzRkGkVBPlbJsxn0lZEt6wgc6Qnguw=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\KhaoThi_2024_net_client.pdb"
@@ -18581,7 +18581,7 @@
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.StackTrace.wasm"
     },
     {
-      "Identity": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\jmqpilqo8d-buw8mhvw6d.gz",
+      "Identity": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\jmqpilqo8d-o10b6nqpto.gz",
       "SourceId": "KhaoThi_2024_net_client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\",
@@ -18595,8 +18595,8 @@
       "RelatedAsset": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "943qoj4ss6",
-      "Integrity": "SRYjGrrZ5lIvrGDOzZUpRy5yeCvcfxD9pwE+yaOnPxc=",
+      "Fingerprint": "m8ylok3me8",
+      "Integrity": "ljgASrKacOQSWSSvcq4VQCXw+gzOf1nVjuI2rGvG8eI=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -21430,8 +21430,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "BlazorServiceWorker",
       "AssetTraitValue": "ServiceWorkerJs",
-      "Fingerprint": "nwxdiumuu9",
-      "Integrity": "GakgGTAGW+OrgsBxQLV8SyLDstw9n0fwofdC/G6NxMk=",
+      "Fingerprint": "iu2gtvf42t",
+      "Integrity": "loTC63u1d/ydqgrt6iG4jEQhkVd13wMaT24QaGfA3ac=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "wwwroot\\service-worker.js"
@@ -21451,8 +21451,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "BlazorServiceWorker",
       "AssetTraitValue": "ServiceWorkerManifest",
-      "Fingerprint": "bf37esakjn",
-      "Integrity": "6ZS3XMf42tekpsJT2X0H1cTpGEq/DZjBSiEuDCAh37o=",
+      "Fingerprint": "fzc5en3yv2",
+      "Integrity": "BfWX6HHO6TGfg6Lm1cF0f6tZDBg6L+mUdqQgDbnvCSs=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\service-worker\\service-worker-assets.js.build"
@@ -40926,11 +40926,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QwL0FueEo9RRtCQ2mJNn89W8hY0MCvEjbAr32Q3yZh8=\""
+          "Value": "\"/DY/X15Exc0iQP9RM7vKqvMlCUnfSGWeMxtSJxlswo8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:43:32 GMT"
+          "Value": "Sun, 16 Mar 2025 15:26:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -40940,18 +40940,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QwL0FueEo9RRtCQ2mJNn89W8hY0MCvEjbAr32Q3yZh8="
+          "Value": "sha256-/DY/X15Exc0iQP9RM7vKqvMlCUnfSGWeMxtSJxlswo8="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\jmqpilqo8d-buw8mhvw6d.gz",
+      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\jmqpilqo8d-o10b6nqpto.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000079484938"
+          "Quality": "0.000079472304"
         }
       ],
       "ResponseHeaders": [
@@ -40961,15 +40961,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12580"
+          "Value": "12582"
         },
         {
           "Name": "ETag",
-          "Value": "\"SRYjGrrZ5lIvrGDOzZUpRy5yeCvcfxD9pwE+yaOnPxc=\""
+          "Value": "\"ljgASrKacOQSWSSvcq4VQCXw+gzOf1nVjuI2rGvG8eI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:39:02 GMT"
+          "Value": "Sun, 16 Mar 2025 15:22:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -40989,19 +40989,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"QwL0FueEo9RRtCQ2mJNn89W8hY0MCvEjbAr32Q3yZh8=\""
+          "Value": "W/\"/DY/X15Exc0iQP9RM7vKqvMlCUnfSGWeMxtSJxlswo8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QwL0FueEo9RRtCQ2mJNn89W8hY0MCvEjbAr32Q3yZh8="
+          "Value": "sha256-/DY/X15Exc0iQP9RM7vKqvMlCUnfSGWeMxtSJxlswo8="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\jmqpilqo8d-buw8mhvw6d.gz",
+      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\jmqpilqo8d-o10b6nqpto.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -41010,7 +41010,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12580"
+          "Value": "12582"
         },
         {
           "Name": "Content-Type",
@@ -41018,11 +41018,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SRYjGrrZ5lIvrGDOzZUpRy5yeCvcfxD9pwE+yaOnPxc=\""
+          "Value": "\"ljgASrKacOQSWSSvcq4VQCXw+gzOf1nVjuI2rGvG8eI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:39:02 GMT"
+          "Value": "Sun, 16 Mar 2025 15:22:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -41040,7 +41040,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SRYjGrrZ5lIvrGDOzZUpRy5yeCvcfxD9pwE+yaOnPxc="
+          "Value": "sha256-ljgASrKacOQSWSSvcq4VQCXw+gzOf1nVjuI2rGvG8eI="
         }
       ]
     },
@@ -45576,7 +45576,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "230940"
+          "Value": "236680"
         },
         {
           "Name": "Content-Type",
@@ -45584,11 +45584,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZYwYEGXcoHBLd51HZTnmCFzgiuxGcvIHcY7gLehARAs=\""
+          "Value": "\"EysNVJPjYJTgx+0rhz4qoBr7+pILRsBptqmTq4pQbfM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:43:26 GMT"
+          "Value": "Sun, 16 Mar 2025 15:26:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -45598,18 +45598,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZYwYEGXcoHBLd51HZTnmCFzgiuxGcvIHcY7gLehARAs="
+          "Value": "sha256-EysNVJPjYJTgx+0rhz4qoBr7+pILRsBptqmTq4pQbfM="
         }
       ]
     },
     {
       "Route": "_framework/KhaoThi_2024_net_client.pdb",
-      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\ihu25dxigh-pbk2xugzuy.gz",
+      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\ihu25dxigh-hvgqt43o75.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000006160860"
+          "Quality": "0.000006021303"
         }
       ],
       "ResponseHeaders": [
@@ -45619,15 +45619,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "162314"
+          "Value": "166076"
         },
         {
           "Name": "ETag",
-          "Value": "\"rGRgFzaBOwuuX9Y9y0KVu2YGAt4oWFgyBqPzPwY0tUQ=\""
+          "Value": "\"go6cjnvwK7B9cNzRkGkVBPlbJsxn0lZEt6wgc6Qnguw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:38:56 GMT"
+          "Value": "Sun, 16 Mar 2025 15:22:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -45647,19 +45647,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZYwYEGXcoHBLd51HZTnmCFzgiuxGcvIHcY7gLehARAs=\""
+          "Value": "W/\"EysNVJPjYJTgx+0rhz4qoBr7+pILRsBptqmTq4pQbfM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZYwYEGXcoHBLd51HZTnmCFzgiuxGcvIHcY7gLehARAs="
+          "Value": "sha256-EysNVJPjYJTgx+0rhz4qoBr7+pILRsBptqmTq4pQbfM="
         }
       ]
     },
     {
       "Route": "_framework/KhaoThi_2024_net_client.pdb.gz",
-      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\ihu25dxigh-pbk2xugzuy.gz",
+      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\ihu25dxigh-hvgqt43o75.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -45668,7 +45668,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "162314"
+          "Value": "166076"
         },
         {
           "Name": "Content-Type",
@@ -45676,11 +45676,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rGRgFzaBOwuuX9Y9y0KVu2YGAt4oWFgyBqPzPwY0tUQ=\""
+          "Value": "\"go6cjnvwK7B9cNzRkGkVBPlbJsxn0lZEt6wgc6Qnguw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:38:56 GMT"
+          "Value": "Sun, 16 Mar 2025 15:22:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -45698,7 +45698,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rGRgFzaBOwuuX9Y9y0KVu2YGAt4oWFgyBqPzPwY0tUQ="
+          "Value": "sha256-go6cjnvwK7B9cNzRkGkVBPlbJsxn0lZEt6wgc6Qnguw="
         }
       ]
     },
@@ -45713,7 +45713,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "531221"
+          "Value": "547093"
         },
         {
           "Name": "Content-Type",
@@ -45721,11 +45721,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uY2hyC9oLNtqElEcnWvlCNYwDMJlAtUbxp9HI98BgCU=\""
+          "Value": "\"hHR1oBlHo7xImucY59eGg6BsqG+rDwSqhin2sbpk4Jw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:43:31 GMT"
+          "Value": "Sun, 16 Mar 2025 15:26:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -45735,18 +45735,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uY2hyC9oLNtqElEcnWvlCNYwDMJlAtUbxp9HI98BgCU="
+          "Value": "sha256-hHR1oBlHo7xImucY59eGg6BsqG+rDwSqhin2sbpk4Jw="
         }
       ]
     },
     {
       "Route": "_framework/KhaoThi_2024_net_client.wasm",
-      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\2572vs5zkx-1i38yi6acw.gz",
+      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\2572vs5zkx-0lltqupp2u.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000006047046"
+          "Quality": "0.000005912262"
         }
       ],
       "ResponseHeaders": [
@@ -45756,15 +45756,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "165369"
+          "Value": "169139"
         },
         {
           "Name": "ETag",
-          "Value": "\"fmvUPuFXXvhl8EjtJacC+OyfmIqja4WF27aU+wpaGZE=\""
+          "Value": "\"aRUdu4dhYLFlNQ1QmDZBSmADgUERWsSrtnJM5/55GhA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:39:00 GMT"
+          "Value": "Sun, 16 Mar 2025 15:22:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -45784,19 +45784,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"uY2hyC9oLNtqElEcnWvlCNYwDMJlAtUbxp9HI98BgCU=\""
+          "Value": "W/\"hHR1oBlHo7xImucY59eGg6BsqG+rDwSqhin2sbpk4Jw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uY2hyC9oLNtqElEcnWvlCNYwDMJlAtUbxp9HI98BgCU="
+          "Value": "sha256-hHR1oBlHo7xImucY59eGg6BsqG+rDwSqhin2sbpk4Jw="
         }
       ]
     },
     {
       "Route": "_framework/KhaoThi_2024_net_client.wasm.gz",
-      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\2572vs5zkx-1i38yi6acw.gz",
+      "AssetFile": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\Debug\\net8.0\\compressed\\2572vs5zkx-0lltqupp2u.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -45805,7 +45805,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "165369"
+          "Value": "169139"
         },
         {
           "Name": "Content-Type",
@@ -45813,11 +45813,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fmvUPuFXXvhl8EjtJacC+OyfmIqja4WF27aU+wpaGZE=\""
+          "Value": "\"aRUdu4dhYLFlNQ1QmDZBSmADgUERWsSrtnJM5/55GhA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:39:00 GMT"
+          "Value": "Sun, 16 Mar 2025 15:22:31 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -45835,7 +45835,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fmvUPuFXXvhl8EjtJacC+OyfmIqja4WF27aU+wpaGZE="
+          "Value": "sha256-aRUdu4dhYLFlNQ1QmDZBSmADgUERWsSrtnJM5/55GhA="
         }
       ]
     },
@@ -81757,7 +81757,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GakgGTAGW+OrgsBxQLV8SyLDstw9n0fwofdC/G6NxMk=\""
+          "Value": "\"loTC63u1d/ydqgrt6iG4jEQhkVd13wMaT24QaGfA3ac=\""
         },
         {
           "Name": "Last-Modified",
@@ -81771,7 +81771,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GakgGTAGW+OrgsBxQLV8SyLDstw9n0fwofdC/G6NxMk="
+          "Value": "sha256-loTC63u1d/ydqgrt6iG4jEQhkVd13wMaT24QaGfA3ac="
         }
       ]
     },
@@ -81794,11 +81794,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6ZS3XMf42tekpsJT2X0H1cTpGEq/DZjBSiEuDCAh37o=\""
+          "Value": "\"BfWX6HHO6TGfg6Lm1cF0f6tZDBg6L+mUdqQgDbnvCSs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 16:43:33 GMT"
+          "Value": "Sun, 16 Mar 2025 15:26:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -81808,7 +81808,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6ZS3XMf42tekpsJT2X0H1cTpGEq/DZjBSiEuDCAh37o="
+          "Value": "sha256-BfWX6HHO6TGfg6Lm1cF0f6tZDBg6L+mUdqQgDbnvCSs="
         }
       ]
     }

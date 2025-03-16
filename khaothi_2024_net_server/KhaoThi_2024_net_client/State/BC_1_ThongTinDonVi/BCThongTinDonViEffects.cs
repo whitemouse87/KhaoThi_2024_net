@@ -84,19 +84,19 @@ namespace KhaoThi_2024_net_client.State.BC_1_ThongTinDonVi
                 {
 
                     dispatcher.Dispatch(new UpdateDonViSuccessAction(action.DonVi));
-                    dispatcher.Dispatch(new ShowNotificationAction(
-                        "Cập nhật người dùng thành công",
-                        "success"
-                    ));
+                    //dispatcher.Dispatch(new ShowNotificationAction(
+                    //    "Cập nhật người dùng thành công",
+                    //    "success"
+                    //));
                 }
                 else
                 {
 
                     dispatcher.Dispatch(new UpdateDonViFailureAction("Không thể cập nhật đơn vị"));
-                    dispatcher.Dispatch(new ShowNotificationAction(
-                        "Không thể cập nhật đơn vị. Vui lòng thử lại",
-                        "error"
-                    ));
+                    //dispatcher.Dispatch(new ShowNotificationAction(
+                    //    "Không thể cập nhật đơn vị. Vui lòng thử lại",
+                    //    "error"
+                    //));
                 }
             }
             catch (Exception ex)

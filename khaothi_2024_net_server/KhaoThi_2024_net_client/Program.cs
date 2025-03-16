@@ -29,6 +29,7 @@ using KhaoThi_2024_net_client.Services.PWA;
 using Blazored.Modal;
 using Radzen;
 using KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi;
+using KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi;
 
 public class Program
 {
@@ -184,6 +185,7 @@ public class Program
         var authService = provider.GetRequiredService<IAuthService>();
         var khaothiuserService = provider.GetRequiredService<IUserService>();
         var BCThongTinDonVi = provider.GetRequiredService<IBCThongTinDonViService>();
+        var BCNhomMonDonVi = provider.GetRequiredService<IBCNhomMonDonViService>();
         var mapper = provider.GetRequiredService<IMapper>();
         return new CustomAuthStateProvider(localStorage, authService, khaothiuserService, mapper);
     }
@@ -245,7 +247,7 @@ public class Program
         services.AddScoped<IUserService, KhaoThiUserService>();
         services.AddScoped<IPageTitleService, PageTitleService>();
         services.AddScoped<IBCThongTinDonViService, BCThongTinDonViService>();
-
+        services.AddScoped<IBCNhomMonDonViService, BCNhomMonDonViService>();
         // Add other application services here
         ConfigureAdditionalServices(services);
     }
