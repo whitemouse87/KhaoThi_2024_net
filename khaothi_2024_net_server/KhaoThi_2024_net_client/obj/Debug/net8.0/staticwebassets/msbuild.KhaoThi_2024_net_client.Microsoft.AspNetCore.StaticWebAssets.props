@@ -210,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>2ecac0yhtt</Fingerprint>
-      <Integrity>xrahoWSNPGm7+N2REB82cZ6/q4oRB2fKME95/hMvnxA=</Integrity>
+      <Fingerprint>3if3idzyy5</Fingerprint>
+      <Integrity>xTh804d5+WaQBpQZLeZxjeNwdljt6ZB0kgCUjRZsN2U=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\KhaoThi_2024_net_client.styles.css'))</OriginalItemSpec>

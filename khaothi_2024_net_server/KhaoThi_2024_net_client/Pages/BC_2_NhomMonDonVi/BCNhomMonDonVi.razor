@@ -1,0 +1,474 @@
+﻿@page "/bcnhommon"
+@page "/bcnhommon/{MaTruong}"
+@using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
+@using KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi
+@using Fluxor
+@using MudBlazor
+@using KhaoThi_2024_net_client.Models.Shares
+@using System.Text.RegularExpressions
+@using Microsoft.AspNetCore.WebUtilities
+@using BCNhomMonAction = KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi.BCNhomMonDonViActions
+
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@inject IState<BCNhomMonDonViState> NhomMonState
+@inject IDispatcher Dispatcher
+@inject IBCNhomMonDonViService NhomMonService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavigationManager
+@inject IDialogService DialogService
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <MudCard Elevation="3" Class="mb-6">
+        <MudCardHeader Class="header-gradient">
+            <CardHeaderAvatar>
+                <MudAvatar Size="Size.Large" Color="Color.Primary" Class="mr-2">
+                    <MudImage Src="/images/logo-khaothi.png" Alt="Logo Khảo Thí" />
+                </MudAvatar>
+            </CardHeaderAvatar>
+            <CardHeaderContent>
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.School" Class="mr-2" Color="Color.Surface" />
+                    <MudText Typo="Typo.h5" Color="Color.Surface">Bước 2: Quản lý nhóm môn</MudText>
+                </div>
+                <MudText Typo="Typo.body2" Color="Color.Surface">Nhập thông tin nhóm môn và số lượng học sinh cho từng nhóm môn</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            @if (NhomMonState.Value.IsLoading)
+            {
+                <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-2" />
+            }
+
+            <MudGrid Class="mb-4">
+                <MudItem xs="12">
+                    <MudPaper Elevation="2" Class="pa-4 info-paper rounded-lg">
+                        <MudGrid>
+                            <MudItem xs="12" md="6">
+                                <MudText Typo="Typo.subtitle1" Class="mb-2 d-flex align-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.School" Class="mr-2" Color="Color.Primary" />
+                                    Mã trường:
+                                </MudText>
+                                <MudTextField @bind-Value="@maTruong" ReadOnly="true" Variant="Variant.Outlined"
+                                              FullWidth="true" Class="school-code"
+                                              Adornment="Adornment.Start"
+                                              AdornmentIcon="@Icons.Material.Filled.Badge" />
+                            </MudItem>
+                            <MudItem xs="12" md="6" Class="d-flex align-center justify-end">
+                                <MudButton StartIcon="@Icons.Material.Filled.Refresh"
+                                           Color="Color.Primary" Variant="Variant.Filled"
+                                           OnClick="LoadNhomMonsByMaTruong"
+                                           Class="rounded-lg">
+                                    Tải lại dữ liệu
+                                </MudButton>
+                            </MudItem>
+                        </MudGrid>
+                    </MudPaper>
+                </MudItem>
+            </MudGrid>
+
+            <MudPaper Elevation="3" Class="pa-4 mb-6 add-form-section rounded-lg" Style="background: linear-gradient(to right, #f0f9ff, #e0f2fe); border-left: 4px solid #0ea5e9;">
+                <MudText Typo="Typo.h6" Class="mb-4 primary-text d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.Add" Class="mr-2" /> Thêm nhóm môn mới
+                </MudText>
+
+                <MudForm @ref="form" Model="@newNhomMon" @onsubmit="CreateNhomMon">
+                    <MudGrid>
+                        <MudItem xs="12" md="3">
+                            <MudNumericField @bind-Value="newNhomMon.TenNhom" Label="Nhóm môn"
+                                             Required="true" Min="1" Max="10" Immediate="true"
+                                             ErrorText="@(string.IsNullOrEmpty(nhomMonError) ? null : nhomMonError)"
+                                             Variant="Variant.Outlined"
+                                             Adornment="Adornment.Start"
+                                             AdornmentIcon="@Icons.Material.Filled.Tag" />
+                        </MudItem>
+                        <MudItem xs="12" md="3">
+                            <MudSelect @bind-Value="newNhomMon.MonLuaChon_1" Label="Môn lựa chọn 1"
+                                       Required="true" Variant="Variant.Outlined"
+                                       ErrorText="@(string.IsNullOrEmpty(mon1Error) ? null : mon1Error)"
+                                       Adornment="Adornment.Start"
+                                       AdornmentIcon="@Icons.Material.Filled.MenuBook">
+                                <MudSelectItem Value="@("Tiếng Anh")">Tiếng Anh</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Pháp")">Tiếng Pháp</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Trung")">Tiếng Trung</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Nhật")">Tiếng Nhật</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Đức")">Tiếng Đức</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Hàn")">Tiếng Hàn</MudSelectItem>
+                                <MudSelectItem Value="@("Lịch sử")">Lịch sử</MudSelectItem>
+                                <MudSelectItem Value="@("Vật lý")">Vật lý</MudSelectItem>
+                                <MudSelectItem Value="@("Hóa học")">Hóa học</MudSelectItem>
+                                <MudSelectItem Value="@("Sinh học")">Sinh học</MudSelectItem>
+                                <MudSelectItem Value="@("Địa lý")">Địa lý</MudSelectItem>
+                                <MudSelectItem Value="@("Giáo dục kinh tế và pháp luật")">Giáo dục kinh tế và pháp luật</MudSelectItem>
+                                <MudSelectItem Value="@("Tin học")">Tin học</MudSelectItem>
+                                <MudSelectItem Value="@("Công nghệ")">Công nghệ</MudSelectItem>
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12" md="3">
+                            <MudSelect @bind-Value="newNhomMon.MonLuaChon_2" Label="Môn lựa chọn 2"
+                                       Required="true" Variant="Variant.Outlined"
+                                       ErrorText="@(string.IsNullOrEmpty(mon2Error) ? null : mon2Error)"
+                                       Adornment="Adornment.Start"
+                                       AdornmentIcon="@Icons.Material.Filled.MenuBook">
+                                <MudSelectItem Value="@("Tiếng Anh")">Tiếng Anh</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Pháp")">Tiếng Pháp</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Trung")">Tiếng Trung</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Nhật")">Tiếng Nhật</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Đức")">Tiếng Đức</MudSelectItem>
+                                <MudSelectItem Value="@("Tiếng Hàn")">Tiếng Hàn</MudSelectItem>
+                                <MudSelectItem Value="@("Lịch sử")">Lịch sử</MudSelectItem>
+                                <MudSelectItem Value="@("Vật lý")">Vật lý</MudSelectItem>
+                                <MudSelectItem Value="@("Hóa học")">Hóa học</MudSelectItem>
+                                <MudSelectItem Value="@("Sinh học")">Sinh học</MudSelectItem>
+                                <MudSelectItem Value="@("Địa lý")">Địa lý</MudSelectItem>
+                                <MudSelectItem Value="@("Giáo dục kinh tế và pháp luật")">Giáo dục kinh tế và pháp luật</MudSelectItem>
+                                <MudSelectItem Value="@("Tin học")">Tin học</MudSelectItem>
+                                <MudSelectItem Value="@("Công nghệ")">Công nghệ</MudSelectItem>
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12" md="2">
+                            <MudNumericField @bind-Value="newNhomMon.SoLuong" Label="Số lượng học sinh"
+                                             Required="true" Min="0" Variant="Variant.Outlined"
+                                             Adornment="Adornment.Start"
+                                             AdornmentIcon="@Icons.Material.Filled.Groups" />
+                        </MudItem>
+                        <MudItem xs="12" md="1" Class="d-flex align-center">
+                            <MudButton Class="mt-2 rounded-lg" Variant="Variant.Filled" Color="Color.Success" FullWidth="true"
+                                       OnClick="@CreateNhomMon" Disabled="@(string.IsNullOrEmpty(maTruong) || NhomMonState.Value.IsLoading)"
+                                       StartIcon="@Icons.Material.Filled.Add">
+                                Thêm
+                            </MudButton>
+                        </MudItem>
+                    </MudGrid>
+                </MudForm>
+            </MudPaper>
+
+            @if (NhomMonState.Value.DonVis != null && NhomMonState.Value.DonVis.Any())
+            {
+                <MudPaper Elevation="3" Class="pa-4 mb-4 data-section rounded-lg">
+                    <MudText Typo="Typo.h6" Class="mb-4 primary-text d-flex align-center">
+                        <MudIcon Icon="@Icons.Material.Filled.List" Class="mr-2" /> Danh sách nhóm môn đã đăng ký
+                    </MudText>
+
+                    <MudTable Items="@NhomMonState.Value.DonVis" Hover="true" Bordered="true" Striped="true"
+                              Class="nhom-mon-table rounded-lg" Elevation="0">
+                        <HeaderContent>
+                            <MudTh Style="background-color: var(--mud-palette-primary-lighten); color: var(--mud-palette-primary-darken);">STT</MudTh>
+                            <MudTh Style="background-color: var(--mud-palette-primary-lighten); color: var(--mud-palette-primary-darken);">Nhóm môn</MudTh>
+                            <MudTh Style="background-color: var(--mud-palette-primary-lighten); color: var(--mud-palette-primary-darken);">Môn lựa chọn 1</MudTh>
+                            <MudTh Style="background-color: var(--mud-palette-primary-lighten); color: var(--mud-palette-primary-darken);">Môn lựa chọn 2</MudTh>
+                            <MudTh Style="background-color: var(--mud-palette-primary-lighten); color: var(--mud-palette-primary-darken);">Số lượng</MudTh>
+                            <MudTh Style="text-align: center; background-color: var(--mud-palette-primary-lighten); color: var(--mud-palette-primary-darken);">Thao tác</MudTh>
+                        </HeaderContent>
+                        <RowTemplate>
+                            <MudTd DataLabel="STT">@(context.TenNhom)</MudTd>
+                            <MudTd DataLabel="Nhóm môn">
+                                <MudText Typo="Typo.subtitle2" Color="Color.Primary">
+                                    <strong>Nhóm @(context.TenNhom)</strong>
+                                </MudText>
+                            </MudTd>
+                            <MudTd DataLabel="Môn lựa chọn 1">
+                                <span class="mud-chip mud-chip-outlined mud-chip-color-primary mud-chip-size-small">
+                                    @context.MonLuaChon_1
+                                </span>
+                            </MudTd>
+                            <MudTd DataLabel="Môn lựa chọn 2">
+                                <span class="mud-chip mud-chip-outlined mud-chip-color-secondary mud-chip-size-small">
+                                    @context.MonLuaChon_2
+                                </span>
+                            </MudTd>
+                            <MudTd DataLabel="Số lượng">
+                                @if (editingNhomMonId == context.ID)
+                                {
+                                    <MudNumericField @bind-Value="editNhomMon.SoLuong" Min="0"
+                                                     Immediate="true" Style="width: 100px" Variant="Variant.Outlined" />
+                                }
+                                else
+                                {
+                                    <MudBadge Color="Color.Info" Content="@context.SoLuong.ToString()"
+                                              Overlap="true" Bordered="true">
+                                        <MudIcon Icon="@Icons.Material.Filled.People" />
+                                    </MudBadge>
+                                }
+                            </MudTd>
+                            <MudTd Style="text-align: center">
+                                @if (editingNhomMonId == context.ID)
+                                {
+                                    <MudButtonGroup Size="Size.Small" Variant="Variant.Outlined" Class="rounded-lg">
+                                        <MudButton Color="Color.Success" OnClick="@(() => SaveNhomMon(context))" Class="px-2">
+                                            <MudIcon Icon="@Icons.Material.Filled.Save" Size="Size.Small" Class="mr-1" />
+                                            Lưu
+                                        </MudButton>
+                                        <MudButton Color="Color.Default" OnClick="@CancelEditing" Class="px-2">
+                                            <MudIcon Icon="@Icons.Material.Filled.Cancel" Size="Size.Small" Class="mr-1" />
+                                            Hủy
+                                        </MudButton>
+                                    </MudButtonGroup>
+                                }
+                                else
+                                {
+                                    <MudButtonGroup Size="Size.Small" Variant="Variant.Outlined" Class="rounded-lg">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary"
+                                                       OnClick="@(() => StartEditing(context))" Disabled="@context.Lock"
+                                                       Title="Sửa" Size="Size.Small" Class="pa-1" />
+                                        <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error"
+                                                       OnClick="@(() => DeleteNhomMon(context))" Disabled="@context.Lock"
+                                                       Title="Xóa" Size="Size.Small" Class="pa-1" />
+                                        <MudIconButton Icon="@(context.Lock ? Icons.Material.Filled.LockOpen : Icons.Material.Filled.Lock)"
+                                                       Color="@(context.Lock ? Color.Success : Color.Warning)"
+                                                       OnClick="@(() => ToggleLockNhomMon(context))"
+                                                       Title="@(context.Lock ? "Mở khóa" : "Khóa")" Size="Size.Small" Class="pa-1" />
+                                    </MudButtonGroup>
+                                }
+                            </MudTd>
+                        </RowTemplate>
+                        <FooterContent>
+                            <MudTh Style="text-align: right" colspan="4" Class="mud-table-cell-custom-group">
+                                <MudText Typo="Typo.body1" Class="d-flex align-center justify-end">
+                                    <MudIcon Icon="@Icons.Material.Filled.Calculate" Class="mr-2" />
+                                    Tổng số học sinh:
+                                </MudText>
+                            </MudTh>
+                            <MudTh>
+                                <MudText Typo="Typo.h6" Color="Color.Success">
+                                    <strong>@totalSoLuong</strong>
+                                </MudText>
+                            </MudTh>
+                            <MudTh></MudTh>
+                        </FooterContent>
+                    </MudTable>
+                </MudPaper>
+            }
+            else if (NhomMonState.Value.IsInitialized && !NhomMonState.Value.IsLoading && string.IsNullOrEmpty(NhomMonState.Value.ErrorMessage))
+            {
+                <MudAlert Severity="Severity.Info" Class="my-4 rounded-lg" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Info">
+                    Chưa có dữ liệu nhóm môn cho trường này. Vui lòng thêm thông tin nhóm môn.
+                </MudAlert>
+            }
+            else if (!string.IsNullOrEmpty(NhomMonState.Value.ErrorMessage))
+            {
+                <MudAlert Severity="Severity.Error" Class="my-4 rounded-lg" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Error">
+                    @NhomMonState.Value.ErrorMessage
+                </MudAlert>
+            }
+        </MudCardContent>
+        <MudCardActions Class="pa-4 gap-2">
+            <MudButton Variant="Variant.Outlined" Color="Color.Secondary" OnClick="@GoBack"
+                       StartIcon="@Icons.Material.Filled.ArrowBack" Class="rounded-lg">
+                Quay lại Bước 1
+            </MudButton>
+            <MudSpacer />
+            @*<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@SubmitForm"
+                       Disabled="@(NhomMonState.Value.DonVis == null || !NhomMonState.Value.DonVis.Any() || NhomMonState.Value.IsLoading)"
+                       StartIcon="@Icons.Material.Filled.Save" Class="rounded-lg">
+                Hoàn thành Bước 2
+            </MudButton>*@
+        </MudCardActions>
+    </MudCard>
+
+    @if (!string.IsNullOrEmpty(NhomMonState.Value.NotificationMessage))
+    {
+        <MudAlert Severity="@(NhomMonState.Value.NotificationType == "error" ? Severity.Error : Severity.Success)"
+                  ShowCloseIcon="true" CloseIconClicked="@ClearNotification" Class="mt-4 rounded-lg" Variant="Variant.Filled">
+            @NhomMonState.Value.NotificationMessage
+        </MudAlert>
+    }
+</MudContainer>
+
+@code {
+    [Parameter]
+    public string MaTruong { get; set; }
+
+    private string maTruong = string.Empty;
+    private int totalSoLuong => NhomMonState.Value.DonVis?.Sum(d => d.SoLuong) ?? 0;
+    private MudForm form;
+
+    // Form validation errors
+    private string nhomMonError = string.Empty;
+    private string mon1Error = string.Empty;
+    private string mon2Error = string.Empty;
+
+    // Editing state
+    private int editingNhomMonId = -1;
+    private KhaoThi_2_THPT_NhomMon_DonViModel editNhomMon = new();
+
+    // New nhóm môn form
+    private KhaoThi_2_THPT_NhomMon_DonViModel newNhomMon = new();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        // Check if maTruong is in route parameter
+        if (!string.IsNullOrEmpty(MaTruong))
+        {
+            maTruong = MaTruong;
+        }
+        else
+        {
+            // Extract maTruong from query string
+            ExtractMaDonViFromQueryString();
+        }
+
+        if (!string.IsNullOrEmpty(maTruong))
+        {
+            newNhomMon.MaTruong = maTruong;
+            LoadNhomMonsByMaTruong();
+        }
+    }
+
+    private void ExtractMaDonViFromQueryString()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("MaDonVi", out var maDonViParam))
+        {
+            maTruong = maDonViParam.First();
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (!string.IsNullOrEmpty(NhomMonState.Value.NotificationMessage))
+        {
+            var severity = NhomMonState.Value.NotificationType == "error"
+                ? Severity.Error
+                : Severity.Success;
+
+            Snackbar.Add(NhomMonState.Value.NotificationMessage, severity);
+            Dispatcher.Dispatch(new BCNhomMonAction.ClearErrorAction());
+        }
+    }
+
+    private void ClearNotification()
+    {
+        Dispatcher.Dispatch(new BCNhomMonAction.ClearErrorAction());
+    }
+
+    private void ResetNewNhomMonForm()
+    {
+        newNhomMon = new KhaoThi_2_THPT_NhomMon_DonViModel
+        {
+            MaTruong = maTruong
+        };
+        nhomMonError = string.Empty;
+        mon1Error = string.Empty;
+        mon2Error = string.Empty;
+    }
+
+    private async Task LoadNhomMonsByMaTruong()
+    {
+        if (string.IsNullOrEmpty(maTruong))
+            return;
+
+        newNhomMon.MaTruong = maTruong;
+        Dispatcher.Dispatch(new BCNhomMonAction.GetNhomMonByMaTruongAction(maTruong));
+    }
+
+    private async Task CreateNhomMon()
+    {
+        nhomMonError = string.Empty;
+        mon1Error = string.Empty;
+        mon2Error = string.Empty;
+
+        // Basic validation
+        if (newNhomMon.TenNhom <= 0)
+        {
+            nhomMonError = "Nhóm môn phải lớn hơn 0";
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(newNhomMon.MonLuaChon_1))
+        {
+            mon1Error = "Vui lòng chọn môn lựa chọn 1";
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(newNhomMon.MonLuaChon_2))
+        {
+            mon2Error = "Vui lòng chọn môn lựa chọn 2";
+            return;
+        }
+
+        if (newNhomMon.MonLuaChon_1 == newNhomMon.MonLuaChon_2)
+        {
+            mon2Error = "Môn lựa chọn 2 không được trùng với môn lựa chọn 1";
+            return;
+        }
+
+        // Check if the combination already exists
+        if (NhomMonState.Value.DonVis != null)
+        {
+            var existingNhomMon = NhomMonState.Value.DonVis.FirstOrDefault(n =>
+                n.TenNhom == newNhomMon.TenNhom ||
+                (n.MonLuaChon_1 == newNhomMon.MonLuaChon_1 && n.MonLuaChon_2 == newNhomMon.MonLuaChon_2) ||
+                (n.MonLuaChon_1 == newNhomMon.MonLuaChon_2 && n.MonLuaChon_2 == newNhomMon.MonLuaChon_1)
+            );
+
+            if (existingNhomMon != null)
+            {
+                nhomMonError = "Nhóm môn hoặc tổ hợp môn đã tồn tại";
+                return;
+            }
+        }
+
+        newNhomMon.MaTruong = maTruong;
+        Dispatcher.Dispatch(new BCNhomMonAction.CreateNhomMonAction(newNhomMon));
+        ResetNewNhomMonForm();
+    }
+
+    private void StartEditing(KhaoThi_2_THPT_NhomMon_DonViModel nhomMon)
+    {
+        editingNhomMonId = nhomMon.ID;
+        editNhomMon = new KhaoThi_2_THPT_NhomMon_DonViModel
+        {
+            ID = nhomMon.ID,
+            MaTruong = nhomMon.MaTruong,
+            TenNhom = nhomMon.TenNhom,
+            MonLuaChon_1 = nhomMon.MonLuaChon_1,
+            MonLuaChon_2 = nhomMon.MonLuaChon_2,
+            SoLuong = nhomMon.SoLuong,
+            Lock = nhomMon.Lock
+        };
+    }
+
+    private void CancelEditing()
+    {
+        editingNhomMonId = -1;
+    }
+
+    private void SaveNhomMon(KhaoThi_2_THPT_NhomMon_DonViModel nhomMon)
+    {
+        // Update only soLuong value
+        nhomMon.SoLuong = editNhomMon.SoLuong;
+        Dispatcher.Dispatch(new BCNhomMonAction.UpdateNhomMonAction(nhomMon));
+        Snackbar.Add("Đang cập nhật số lượng học sinh", Severity.Info);
+        editingNhomMonId = -1;
+    }
+
+    private void DeleteNhomMon(KhaoThi_2_THPT_NhomMon_DonViModel nhomMon)
+    {
+        Dispatcher.Dispatch(new BCNhomMonAction.DeleteNhomMonAction(nhomMon.ID));
+        Snackbar.Add($"Đang xóa nhóm môn {nhomMon.TenNhom}", Severity.Info);
+    }
+
+    private void ToggleLockNhomMon(KhaoThi_2_THPT_NhomMon_DonViModel nhomMon)
+    {
+        Dispatcher.Dispatch(new BCNhomMonAction.ChangeLockAction(nhomMon.ID, !nhomMon.Lock));
+        string actionText = nhomMon.Lock ? "mở khóa" : "khóa";
+        Snackbar.Add($"Đang {actionText} nhóm môn {nhomMon.TenNhom}", Severity.Info);
+    }
+
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/bcthongtin");
+    }
+
+    private void SubmitForm()
+    {
+        // In a real application, you might want to save the state or navigate to next step
+        Snackbar.Add("Đã hoàn thành Bước 2!", Severity.Success);
+        // Navigate to step 3
+        NavigationManager.NavigateTo("/bcnext");
+    }
+}

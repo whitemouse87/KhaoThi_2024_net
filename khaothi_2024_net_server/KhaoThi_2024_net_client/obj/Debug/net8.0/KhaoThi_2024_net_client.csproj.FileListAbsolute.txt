@@ -3002,8 +3002,9 @@ C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.WebUtilities.wasm
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\3w23xr1nhs-bwk4xb3x8l.gz
 C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\scopedcss\Pages\BC_1_ThongTinDonVi\BCThongTinDonVi.razor.rz.scp.css
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\xf17bbpexa-wo0t8gb6ai.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\x14o5acamb-am70lnrjnf.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-0lltqupp2u.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-hvgqt43o75.gz
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-o10b6nqpto.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\scopedcss\Pages\BC_2_NhomMonDonVi\BCNhomMonDonVi.razor.rz.scp.css
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\xf17bbpexa-kymqp4h8gm.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\x14o5acamb-7es20s3vkp.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\2572vs5zkx-4s16bqp5x2.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\ihu25dxigh-uiemgnih19.gz
+C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Debug\net8.0\compressed\jmqpilqo8d-7wwb5gkliz.gz

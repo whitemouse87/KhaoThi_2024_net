@@ -9,12 +9,12 @@
 @using static KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.BCThongTinDonViAction
 @using static KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.BCThongTinDonViState
 @using KhaoThi_2024_net_client.Pages.BC_1_ThongTinDonVi
+@using KhaoThi_2024_net_client.Pages.BC_2_NhomMonDonVi
 @inject IState<BCThongTinDonViState> DonViState
 @inject IDispatcher Dispatcher
 @inject NotificationService NotificationService
 @inject NavigationManager NavigationManager
 @inject IDialogService DialogService
-
 
 
 <!-- Header -->
@@ -61,7 +61,7 @@
             <BCThongTinDonVi />
             break;
         case 2:
-            <MudText>Đang phát triển - Bước 2: Số liệu học sinh lớp 12 chọn nhóm môn</MudText>
+            <BCNhomMonDonVi />
             break;
         case 3:
             <MudText>Đang phát triển - Bước 3: Hội đồng thi</MudText>
@@ -90,11 +90,11 @@
     }
 
     @*<RadzenButton Click="@SaveDraft"
-                  ButtonStyle="ButtonStyle.Light"
-                  Icon="save"
-                  Text="Lưu nháp"
-                  class="btn-save"
-                  Disabled="@(DonViState.Value.IsLoading)" />*@
+        ButtonStyle="ButtonStyle.Light"
+        Icon="save"
+        Text="Lưu nháp"
+        class="btn-save"
+        Disabled="@(DonViState.Value.IsLoading)" />*@
 
     @if (currentTab < 5)
     {
