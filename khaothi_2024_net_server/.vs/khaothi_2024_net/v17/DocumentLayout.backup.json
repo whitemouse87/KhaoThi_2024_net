@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\state\\bc_2_nhommondonvi\\bcnhommondonvieffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\state\\bc_2_nhommondonvi\\bcnhommondonvieffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\pages\\bc_2_nhommondonvi\\bcnhommondonvi.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\bc_2_nhommondonvi\\bcnhommondonvi.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\pages\\bc_1_thongtindonvi\\bcthongtindonvi.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\pages\\bc_1_thongtindonvi\\bcthongtindonvi.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\services\\bc_2_nhommondonvi\\bcnhommondonvistate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\services\\bc_2_nhommondonvi\\bcnhommondonvistate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\state\\bc_2_nhommondonvi\\bcnhommondonvireducers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\state\\bc_2_nhommondonvi\\bcnhommondonvireducers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\state\\bc_1_thongtindonvi\\bcthongtindonvireducers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\state\\bc_1_thongtindonvi\\bcthongtindonvireducers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BCThongTinDonVi.razor",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
-              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
-              "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\BC_1_ThongTinDonVi\\BCThongTinDonVi.razor",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAAAGEBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-18T07:54:37.937Z",
+              "DocumentIndex": 2,
+              "Title": "BCNhomMonDonViState.cs",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\BC_2_NhomMonDonVi\\BCNhomMonDonViState.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Services\\BC_2_NhomMonDonVi\\BCNhomMonDonViState.cs",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\BC_2_NhomMonDonVi\\BCNhomMonDonViState.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\Services\\BC_2_NhomMonDonVi\\BCNhomMonDonViState.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA5wDIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:28:28.191Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BCNhomMonDonVi.razor",
               "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BC_2_NhomMonDonVi\\BCNhomMonDonVi.razor",
               "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\BC_2_NhomMonDonVi\\BCNhomMonDonVi.razor",
               "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BC_2_NhomMonDonVi\\BCNhomMonDonVi.razor",
               "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\BC_2_NhomMonDonVi\\BCNhomMonDonVi.razor",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAAABgBAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAHEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T15:18:49.057Z",
+              "WhenOpened": "2025-03-18T12:24:33.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BCNhomMonDonViEffects.cs",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViEffects.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViEffects.cs",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViEffects.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViEffects.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAwwIgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:20:02.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BCNhomMonDonViReducers.cs",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViReducers.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViReducers.cs",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViReducers.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\State\\BC_2_NhomMonDonVi\\BCNhomMonDonViReducers.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwM8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:19:20.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BCThongTinDonViReducers.cs",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\State\\BC_1_ThongTinDonVi\\BCThongTinDonViReducers.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\State\\BC_1_ThongTinDonVi\\BCThongTinDonViReducers.cs",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\State\\BC_1_ThongTinDonVi\\BCThongTinDonViReducers.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\State\\BC_1_ThongTinDonVi\\BCThongTinDonViReducers.cs",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAewC4BAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T12:18:57.433Z",
               "EditorCaption": ""
             }
           ]

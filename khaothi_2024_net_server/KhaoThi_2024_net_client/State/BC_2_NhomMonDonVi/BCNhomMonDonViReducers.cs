@@ -199,7 +199,7 @@ namespace KhaoThi_2024_net_client.State.BC_2_NhomMonDonVi
             return new(id: 12,
                 maTruong: state.MaTruong,
                 isLoading: false,
-                errorMessage: null,
+                errorMessage: string.Empty, // Xóa thông báo lỗi
                 donVis: state.DonVis,
                 selectedDonVi: state.SelectedDonVi,
                 paginatedDonVis: state.PaginatedDonVis,
@@ -215,7 +215,7 @@ namespace KhaoThi_2024_net_client.State.BC_2_NhomMonDonVi
             return new(id: 13,
                 maTruong: state.MaTruong,
                 isLoading: false,
-                errorMessage: errorMsg,
+                errorMessage: errorMsg, // Lưu thông báo lỗi từ action
                 donVis: state.DonVis,
                 selectedDonVi: state.SelectedDonVi,
                 paginatedDonVis: state.PaginatedDonVis,

@@ -109,9 +109,10 @@ namespace KhaoThi_2024_net_client.State.BC_2_NhomMonDonVi
                 }
                 else
                 {
-                    dispatcher.Dispatch(new CreateNhomMonFailureAction("Không thể tạo nhóm môn. Nhóm môn này có thể đã tồn tại."));
+                    var errorMessage = "Không thể tạo nhóm môn. Nhóm môn này có thể đã tồn tại.";
+                    dispatcher.Dispatch(new CreateNhomMonFailureAction(errorMessage));
                     dispatcher.Dispatch(new ShowNotificationAction(
-                        "Không thể tạo nhóm môn. Vui lòng kiểm tra lại thông tin.",
+                        errorMessage,
                         "error"
                     ));
                 }

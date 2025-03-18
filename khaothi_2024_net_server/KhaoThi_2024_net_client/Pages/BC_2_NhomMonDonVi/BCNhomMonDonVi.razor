@@ -115,6 +115,10 @@
                                                          Variant="MudBlazor.Variant.Outlined"
                                                          Dense="true"
                                                          FullWidth="true" />
+                                        @if (!string.IsNullOrEmpty(nhomMonError))
+                                        {
+                                            <MudText Color="Color.Error">@nhomMonError</MudText>
+                                        }
                                     </MudItem>
                                 </MudGrid>
                             </MudPaper>
@@ -395,6 +399,8 @@
     private string maTruong = string.Empty;
     private int totalSoLuong => NhomMonState.Value.DonVis?.Sum(d => d.SoLuong) ?? 0;
     private MudForm form;
+    // 4. Thêm một Timer để tự động xóa thông báo sau khoảng thời gian
+    private System.Threading.Timer _clearNotificationTimer;
 
     // Form validation errors
     private string nhomMonError = string.Empty;
@@ -450,8 +456,14 @@
                 : Severity.Success;
 
             Snackbar.Add(NhomMonState.Value.NotificationMessage, severity);
-            Dispatcher.Dispatch(new BCNhomMonAction.ClearErrorAction());
+            // Không xóa thông báo ngay lập tức
+            // Dispatcher.Dispatch(new BCNhomMonAction.ClearErrorAction());
         }
+    }
+    private void ShowNotification(string message, string type)
+    {
+        var severity = type == "error" ? Severity.Error : Severity.Success;
+        Snackbar.Add(message, severity);
     }
 
     private void ClearNotification()
@@ -468,6 +480,7 @@
         nhomMonError = string.Empty;
         mon1Error = string.Empty;
         mon2Error = string.Empty;
+
     }
 
     private async Task LoadNhomMonsByMaTruong()
@@ -489,24 +502,28 @@
         if (newNhomMon.TenNhom <= 0)
         {
             nhomMonError = "Nhóm môn phải lớn hơn 0";
+            ShowNotification("Nhóm môn phải lớn hơn 0", "error");
             return;
         }
 
         if (string.IsNullOrWhiteSpace(newNhomMon.MonLuaChon_1))
         {
             mon1Error = "Vui lòng chọn môn lựa chọn 1";
+            ShowNotification("Vui lòng chọn môn lựa chọn 1", "error");
             return;
         }
 
         if (string.IsNullOrWhiteSpace(newNhomMon.MonLuaChon_2))
         {
             mon2Error = "Vui lòng chọn môn lựa chọn 2";
+            ShowNotification("Vui lòng chọn môn lựa chọn 2", "error");
             return;
         }
 
         if (newNhomMon.MonLuaChon_1 == newNhomMon.MonLuaChon_2)
         {
             mon2Error = "Môn lựa chọn 2 không được trùng với môn lựa chọn 1";
+            ShowNotification("Môn lựa chọn 2 không được trùng với môn lựa chọn 1", "error");
             return;
         }
 
@@ -522,13 +539,32 @@
             if (existingNhomMon != null)
             {
                 nhomMonError = "Nhóm môn hoặc tổ hợp môn đã tồn tại";
+                ShowNotification("Nhóm môn hoặc tổ hợp môn đã tồn tại", "error");
                 return;
             }
         }
 
         newNhomMon.MaTruong = maTruong;
         Dispatcher.Dispatch(new BCNhomMonAction.CreateNhomMonAction(newNhomMon));
+        ShowNotification("Đang tạo nhóm môn...", "success");
         ResetNewNhomMonForm();
+    }
+
+
+    private void ClearNotificationAfterDelay()
+    {
+        // Xóa timer cũ nếu có
+        _clearNotificationTimer?.Dispose();
+
+        // Tạo timer mới để xóa thông báo sau 5 giây
+        _clearNotificationTimer = new System.Threading.Timer(_ =>
+        {
+            InvokeAsync(() =>
+            {
+                Dispatcher.Dispatch(new BCNhomMonAction.ClearErrorAction());
+                StateHasChanged();
+            });
+        }, null, 5000, Timeout.Infinite);
     }
 
     private void StartEditing(KhaoThi_2_THPT_NhomMon_DonViModel nhomMon)

@@ -300,7 +300,7 @@ namespace KhaoThi_2024_net_client.State.BC_1_ThongTinDonVi
                 paginatedDonVis: state.PaginatedDonVis,
                 isInitialized: state.IsInitialized,
                 notificationMessage: action.Message,
-                notificationType: action.Type
+                notificationType: action.NotificationType
             );
         }
         #endregion
