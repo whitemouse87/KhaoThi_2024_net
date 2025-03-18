@@ -621,4 +621,8 @@
         // Navigate to step 3
         NavigationManager.NavigateTo("/bcnext");
     }
+    public void Dispose()
+    {
+        _clearNotificationTimer?.Dispose();
+    }
 }
