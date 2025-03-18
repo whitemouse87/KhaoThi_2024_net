@@ -1,154 +1,76 @@
 ﻿.header-gradient {
-    background: linear-gradient(90deg, #2563EB, #3B82F6);
-    border-radius: 8px 8px 0 0;
-    color: white;
+    background: linear-gradient(135deg, var(--mud-palette-primary) 0%, var(--mud-palette-primary-darken) 100%);
+    padding: 1.5rem;
 }
 
-.border-none {
-    border: none !important;
-}
-
-.primary-text {
-    color: var(--mud-palette-primary);
-}
-
-.mud-card {
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.mud-paper {
-    transition: all 0.3s ease;
-    border-radius: 8px;
-}
-
-    .mud-paper:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-
-.info-paper {
-    background-color: #f0f9ff;
-    border-left: 4px solid #3B82F6;
-}
-
-.add-form-section {
-    background: linear-gradient(to right, #f0f9ff, #e0f2fe);
-    border-left: 4px solid #0ea5e9;
-}
-
-.data-section {
-    background-color: white;
-    border: 1px solid #e5e7eb;
-}
-
-.school-code {
+/* Định dạng header của bảng */
+.table-header {
+    background-color: rgba(var(--mud-palette-primary-rgb), 0.1);
+    color: var(--mud-palette-primary-darken);
     font-weight: 500;
-    color: #1e40af;
 }
 
+/* Badges thay thế MudChip */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 16px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.success-badge {
+    background-color: rgba(var(--mud-palette-success-rgb), 0.1);
+    color: var(--mud-palette-success);
+    border: 1px solid var(--mud-palette-success-lighten);
+}
+
+.warning-badge {
+    background-color: rgba(var(--mud-palette-warning-rgb), 0.1);
+    color: var(--mud-palette-warning-darken);
+    border: 1px solid var(--mud-palette-warning-lighten);
+}
+
+.subject-badge {
+    display: inline-block;
+    border-radius: 16px;
+    padding: 0.15rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.primary-badge {
+    background-color: rgba(var(--mud-palette-primary-rgb), 0.1);
+    color: var(--mud-palette-primary-darken);
+    border: 1px solid var(--mud-palette-primary-lighten);
+}
+
+.secondary-badge {
+    background-color: rgba(var(--mud-palette-secondary-rgb), 0.1);
+    color: var(--mud-palette-secondary-darken);
+    border: 1px solid var(--mud-palette-secondary-lighten);
+}
+
+/* Bo góc cho bảng */
 .nhom-mon-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
     overflow: hidden;
 }
 
-    .nhom-mon-table th {
-        font-weight: 600;
-        letter-spacing: 0.5px;
-    }
-
-.mud-button {
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
-
-.mud-button-filled {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-    .mud-button-filled:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-
-.mud-icon-button {
-    transition: all 0.2s ease;
-}
-
-    .mud-icon-button:hover {
-        transform: scale(1.05);
-    }
-
-.mud-chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 8px;
-    height: 24px;
-    border-radius: 16px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin: 2px;
-}
-
-.mud-chip-outlined {
-    background-color: transparent;
-    border: 1px solid;
-}
-
-.mud-chip-color-primary {
-    color: var(--mud-palette-primary);
-    border-color: var(--mud-palette-primary);
-}
-
-.mud-chip-color-secondary {
-    color: var(--mud-palette-secondary);
-    border-color: var(--mud-palette-secondary);
-}
-
-.mud-chip-size-small {
-    height: 24px;
-    font-size: 0.75rem;
-}
-
-.mud-theme-primary {
-    background-color: var(--mud-palette-primary-lighten);
-    color: var(--mud-palette-primary-darken);
-}
-
-.mud-theme-secondary {
-    background-color: var(--mud-palette-secondary-lighten);
-    color: var(--mud-palette-secondary-darken);
-}
-
-.mud-theme-tertiary {
-    background-color: var(--mud-palette-tertiary-lighten);
-    color: var(--mud-palette-tertiary-darken);
-}
-
-.mud-theme-info {
-    background-color: var(--mud-palette-info-lighten);
-    color: var(--mud-palette-info-darken);
-}
-
-.mud-alert {
-    border-radius: 8px;
-}
-
-.rounded-lg {
-    border-radius: 8px !important;
-}
-
-/* Mobile responsiveness improvements */
+/* Cải thiện UI hiển thị trên màn hình nhỏ */
 @media (max-width: 600px) {
-    .mud-container {
-        padding: 8px;
+    .header-gradient {
+        padding: 1rem;
     }
 
-    .mud-card-content {
-        padding: 12px;
-    }
-
-    .mud-table {
-        overflow-x: auto;
+    .subject-badge {
+        max-width: 120px;
     }
 }

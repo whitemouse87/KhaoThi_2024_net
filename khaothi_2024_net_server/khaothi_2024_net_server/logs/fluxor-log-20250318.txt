@@ -1,0 +1,312 @@
+2025-03-18 13:57:16 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 13:57:21 [INF] ["Client"] "Token hết hạn" ""
+2025-03-18 13:58:23 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 13:58:24 [ERR] Password verification result: True
+2025-03-18 13:58:24 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 13:58:31 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 13:58:31 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 13:58:52 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 13:58:52 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 13:58:53 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 13:58:53 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 13:59:32 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 13:59:32 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:00:54 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:00:54 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:00:58 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:00:58 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:02:11 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:02:11 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:02:16 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:02:16 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:03:37 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:03:37 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:04:59 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:05:04 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:05:04 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:05:06 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:05:06 [INF] ["BaseService"] "Token expired, cleared from storage" ""
+2025-03-18 14:05:06 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:05:06 [INF] ["BaseService"] "Token expired, cleared from storage" ""
+2025-03-18 14:09:27 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:09:28 [ERR] Password verification result: True
+2025-03-18 14:09:28 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:09:32 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:09:32 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:09:40 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:09:40 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:09:40 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:09:40 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:16:42 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:16:47 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:16:47 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:17:02 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:17:02 [ERR] Password verification result: True
+2025-03-18 14:17:03 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:17:07 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:17:07 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:17:09 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:17:09 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:17:10 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:17:10 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:25:34 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:25:38 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:25:38 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:25:40 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:26:17 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:26:18 [ERR] Password verification result: True
+2025-03-18 14:26:18 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:26:24 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:26:24 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:26:28 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:26:28 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:26:28 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:26:28 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:33:10 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:33:15 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:33:15 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:33:41 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:33:42 [ERR] Password verification result: True
+2025-03-18 14:33:42 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:33:47 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:33:47 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:33:49 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:33:49 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:33:49 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:33:49 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:37:43 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:37:47 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:37:48 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:37:49 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:38:00 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:38:00 [ERR] Password verification result: True
+2025-03-18 14:38:00 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:38:05 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:38:05 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:38:08 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:38:08 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:38:08 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:38:08 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:42:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:42:44 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:42:44 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:42:47 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:42:47 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:42:50 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:42:50 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:42:51 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:42:51 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:44:25 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:44:29 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:44:30 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:44:40 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:44:41 [ERR] Password verification result: False
+2025-03-18 14:44:41 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng" ""
+2025-03-18 14:44:49 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:44:49 [ERR] Password verification result: True
+2025-03-18 14:44:49 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:44:53 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:44:53 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:44:55 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:44:55 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:44:56 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:44:56 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:45:58 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:46:03 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:46:03 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:46:04 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:51:11 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:51:12 [ERR] Password verification result: True
+2025-03-18 14:51:12 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:51:16 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:51:16 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:51:19 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:51:19 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:51:19 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:51:19 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:53:38 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:53:43 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:53:43 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:53:44 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:53:45 [INF] ["BaseService"] "Token expired, cleared from storage" ""
+2025-03-18 14:53:45 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:53:45 [INF] ["BaseService"] "Token expired, cleared from storage" ""
+2025-03-18 14:53:56 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:53:57 [ERR] Password verification result: True
+2025-03-18 14:53:57 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:54:01 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:54:01 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:54:04 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:54:04 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:54:04 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:54:04 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:54:31 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:54:31 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:58:40 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 14:58:45 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:58:45 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:58:47 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 14:58:58 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 14:58:58 [ERR] Password verification result: True
+2025-03-18 14:58:59 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 14:59:04 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 14:59:04 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 14:59:08 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:59:08 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 14:59:09 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 14:59:09 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:01:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:01:44 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:01:44 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:01:56 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:01:56 [ERR] Password verification result: True
+2025-03-18 15:01:56 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:02:01 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:02:01 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:02:04 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:02:04 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:02:04 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:02:04 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:05:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:05:25 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:05:26 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:05:29 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:05:29 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:05:32 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:05:32 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:05:32 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:05:32 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:09:26 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:09:30 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:09:31 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:09:44 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:09:44 [ERR] Password verification result: True
+2025-03-18 15:09:45 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:09:49 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:09:49 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:09:52 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:09:52 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:09:52 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:09:52 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:13:40 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:13:44 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:13:45 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:13:46 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:13:58 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:13:58 [ERR] Password verification result: True
+2025-03-18 15:13:58 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:14:03 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:14:03 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:14:07 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:14:07 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:14:07 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:14:07 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:16:16 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:16:20 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:16:21 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:16:22 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:16:32 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:16:33 [ERR] Password verification result: True
+2025-03-18 15:16:33 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:16:37 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:16:37 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:16:39 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:16:39 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:16:40 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:16:40 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:16:58 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:16:58 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:22:32 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:22:37 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:22:37 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:22:38 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:22:39 [INF] ["BaseService"] "Token expired, cleared from storage" ""
+2025-03-18 15:22:39 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:22:39 [INF] ["BaseService"] "Token expired, cleared from storage" ""
+2025-03-18 15:22:56 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:22:57 [ERR] Password verification result: True
+2025-03-18 15:22:57 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:23:01 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:23:01 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:23:09 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:23:09 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:23:09 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:23:09 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:25:31 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:25:31 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:25:37 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:25:37 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:27:09 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:27:09 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:27:13 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:27:13 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:30:24 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:30:29 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:30:29 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:30:31 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:30:49 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:30:49 [ERR] Password verification result: True
+2025-03-18 15:30:49 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:30:54 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:30:54 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:30:58 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:30:58 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:30:58 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:30:58 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:32:16 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:32:16 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:37:04 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:37:09 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:37:09 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:37:21 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:37:22 [ERR] Password verification result: True
+2025-03-18 15:37:22 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:37:25 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:37:25 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:37:30 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:37:30 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:37:31 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:37:31 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:37:34 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:37:34 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:42:22 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:42:27 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:42:27 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:42:28 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:42:39 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:42:40 [ERR] Password verification result: True
+2025-03-18 15:42:40 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:42:44 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:42:44 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:42:47 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:42:47 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:42:47 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:42:47 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:47:09 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:47:13 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:47:14 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:47:15 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:47:25 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:47:25 [ERR] Password verification result: True
+2025-03-18 15:47:25 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:47:29 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:47:29 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:47:32 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:47:32 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:47:32 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:47:32 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:51:11 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-18 15:51:16 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:51:16 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:51:18 [INF] ["BaseService - GET https://localhost:7168/api/BCThongTinDonVi/01EA60"] "API Error: Unauthorized - " ""
+2025-03-18 15:51:28 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-18 15:51:29 [ERR] Password verification result: True
+2025-03-18 15:51:29 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-18 15:51:34 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-18 15:51:34 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-18 15:51:37 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:51:37 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:51:38 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:51:38 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-18 15:52:48 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-18 15:52:48 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO

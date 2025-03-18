@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "bQ1YtJb4",
+  "version": "Tb33Emgi",
   "assets": [
     {
-      "hash": "sha256-xTh804d5+WaQBpQZLeZxjeNwdljt6ZB0kgCUjRZsN2U=",
+      "hash": "sha256-nk1Tch1xChhjUDd/zB9CfkY+bs/5dCU86NQGBBi6A/4=",
       "url": "KhaoThi_2024_net_client.styles.css"
     },
     {
@@ -1798,11 +1798,11 @@ self.assetsManifest = {
       "url": "_framework/Fluxor.wasm"
     },
     {
-      "hash": "sha256-Bh8lVIZmj84id8cjyqylmVjkuSW9DR5tAfPc0Yy5iNk=",
+      "hash": "sha256-cWz0xvcGkAuXndR3foyEKOk3NOm0dsJ555fPRdw1mSE=",
       "url": "_framework/KhaoThi_2024_net_client.pdb"
     },
     {
-      "hash": "sha256-fE5UpBqnBaS+GSAEzC+e81PtA/rthcXasv/Op1DiG+8=",
+      "hash": "sha256-WdMg16PcjPq/mtam9re9c56yJSWsJJPJatZ7T0aMj+Q=",
       "url": "_framework/KhaoThi_2024_net_client.wasm"
     },
     {
@@ -2762,7 +2762,7 @@ self.assetsManifest = {
       "url": "_framework/ZstdSharp.wasm"
     },
     {
-      "hash": "sha256-R2D54SzLadlskoyV/FurTCp+zQK8iW7ETwBRqtfCdig=",
+      "hash": "sha256-+uTdMVU/AMAj+3T2+6aYyYuaTSY8Iiirpil1UTD8JPQ=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -2940,6 +2940,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-kvWa67WDef2disqaM+d30LEkoOesQDm61Jgx9fAUMzM=",
       "url": "images/background.jpg"
+    },
+    {
+      "hash": "sha256-ROwiwXtZm6poNr9J56hYC4sqZytr2CCv7ErSleA1Gjg=",
+      "url": "images/image_nhommon.png"
     },
     {
       "hash": "sha256-BVZgJX1U4nDBKNo+K1L+Bi2/qPiv6NsrAlaoNUKXZM0=",

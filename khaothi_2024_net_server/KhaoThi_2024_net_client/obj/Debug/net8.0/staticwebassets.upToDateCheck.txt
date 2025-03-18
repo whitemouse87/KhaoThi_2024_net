@@ -6,6 +6,7 @@ wwwroot\css\bootstrap\bootstrap.min.css.map
 wwwroot\favicon.png
 wwwroot\icon-192.png
 wwwroot\images\background.jpg
+wwwroot\images\image_nhommon.png
 wwwroot\images\logo_NEW.png
 wwwroot\index.html
 wwwroot\js\security.js
