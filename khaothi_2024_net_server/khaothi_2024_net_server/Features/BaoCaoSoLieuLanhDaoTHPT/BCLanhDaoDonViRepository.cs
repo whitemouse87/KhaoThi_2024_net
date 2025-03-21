@@ -10,7 +10,9 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT
         private readonly ILogger<BCLanhDaoDonViRepository> _logger;
         private const string TableName = "KhaoThi_4_THPT_ThongTin_LanhDao";
 
-        public BCLanhDaoDonViRepository(IDataAccessLayer dataAccess, ILogger<BCLanhDaoDonViRepository> logger)
+        public BCLanhDaoDonViRepository(
+            IDataAccessLayer dataAccess,
+            ILogger<BCLanhDaoDonViRepository> logger)
         {
             _dataAccess = dataAccess;
             _logger = logger;
@@ -18,114 +20,166 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT
 
         public async Task<KhaoThi_4_THPT_ThongTin_LanhDaoModel?> GetByMaTruongAndCCCDAsync(string maTruong, string cccd)
         {
-            try
-            {
-                const string sql = @"SELECT * FROM KhaoThi_4_THPT_ThongTin_LanhDao WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
-                return await _dataAccess.QueryFirstOrDefaultAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(sql, new { MaTruong = maTruong, CCCD = cccd });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi lấy thông tin lãnh đạo theo mã trường và CCCD: {MaTruong}, {CCCD}", maTruong, cccd);
-                return null;
-            }
+            string sql = $@"SELECT * FROM {TableName} 
+                           WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
+
+            var result = await _dataAccess.QueryFirstOrDefaultAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
+                sql,
+                "@MaTruong", maTruong,
+                "@CCCD", cccd
+            );
+
+            return result;
         }
 
         public async Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetByMaTruongAsync(string maTruong)
         {
-            try
-            {
-                const string sql = @"SELECT * FROM KhaoThi_4_THPT_ThongTin_LanhDao WHERE MaTruong = @MaTruong";
-                return await _dataAccess.QueryAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(sql, new { MaTruong = maTruong });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi lấy thông tin lãnh đạo theo mã trường: {MaTruong}", maTruong);
-                return new List<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
-            }
+            string sql = $@"SELECT * FROM {TableName} 
+                           WHERE MaTruong = @MaTruong
+                           ORDER BY HoTen ASC";
+
+            var result = await _dataAccess.QueryAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
+                sql,
+                "@MaTruong", maTruong
+            );
+
+            return result;
         }
 
         public async Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetAllAsync()
         {
-            try
-            {
-                const string sql = @"SELECT * FROM KhaoThi_4_THPT_ThongTin_LanhDao";
-                return await _dataAccess.QueryAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(sql);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi lấy tất cả thông tin lãnh đạo");
-                return new List<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
-            }
+            string sql = $@"SELECT * FROM {TableName} ORDER BY MaTruong ASC, HoTen ASC";
+
+            var result = await _dataAccess.QueryAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(sql);
+
+            return result;
         }
 
         public async Task<bool> CreateAsync(KhaoThi_4_THPT_ThongTin_LanhDaoModel lanhDao)
         {
-            try
+            // Kiểm tra trùng lặp trước khi tạo mới
+            bool exists = await ExistsAsync(lanhDao.MaTruong, lanhDao.CCCD);
+            if (exists)
             {
-                const string sql = @"
-                    INSERT INTO KhaoThi_4_THPT_ThongTin_LanhDao (MaTruong, CCCD, HoTen, NamSinh, ChucVuDonVi, DiaChiNha, QuanNha, SDTDiDong, Email, CoiThiTS10, ChucVuCoiThiTS10, LyDoKhongThamGiaTS10, CoiThiTHPT, ChucVuCoiThiTHPT, LyDoKhongThamGiaTHPT, CumChuyenMon, ChucVuCumChuyenMon)
-                    VALUES (@MaTruong, @CCCD, @HoTen, @NamSinh, @ChucVuDonVi, @DiaChiNha, @QuanNha, @SDTDiDong, @Email, @CoiThiTS10, @ChucVuCoiThiTS10, @LyDoKhongThamGiaTS10, @CoiThiTHPT, @ChucVuCoiThiTHPT, @LyDoKhongThamGiaTHPT, @CumChuyenMon, @ChucVuCumChuyenMon)";
+                throw new InvalidOperationException("Thông tin lãnh đạo với CCCD này đã tồn tại cho trường này!");
+            }
 
-                int rowsAffected = await _dataAccess.ExecuteAsync(sql, lanhDao);
-                return rowsAffected > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi tạo thông tin lãnh đạo: {MaTruong}, {CCCD}", lanhDao.MaTruong, lanhDao.CCCD);
-                return false;
-            }
+            string sql = $@"INSERT INTO {TableName} (
+                            MaTruong,
+                            CCCD,
+                            HoTen,
+                            NamSinh,
+                            ChucVuDonVi,
+                            DiaChiNha,
+                            QuanNha,
+                            SDTDiDong,
+                            Email,
+                            CoiThiTS10,
+                            ChucVuCoiThiTS10,
+                            LyDoKhongThamGiaTS10,
+                            CoiThiTHPT,
+                            ChucVuCoiThiTHPT,
+                            LyDoKhongThamGiaTHPT,
+                            CumChuyenMon,
+                            ChucVuCumChuyenMon
+                        ) VALUES (
+                            @MaTruong,
+                            @CCCD,
+                            @HoTen,
+                            @NamSinh,
+                            @ChucVuDonVi,
+                            @DiaChiNha,
+                            @QuanNha,
+                            @SDTDiDong,
+                            @Email,
+                            @CoiThiTS10,
+                            @ChucVuCoiThiTS10,
+                            @LyDoKhongThamGiaTS10,
+                            @CoiThiTHPT,
+                            @ChucVuCoiThiTHPT,
+                            @LyDoKhongThamGiaTHPT,
+                            @CumChuyenMon,
+                            @ChucVuCumChuyenMon
+                        )";
+
+            int rowsAffected = await _dataAccess.ExecuteAsync(sql,
+                "@MaTruong", lanhDao.MaTruong,
+                "@CCCD", lanhDao.CCCD,
+                "@HoTen", lanhDao.HoTen,
+                "@NamSinh", lanhDao.NamSinh,
+                "@ChucVuDonVi", lanhDao.ChucVuDonVi,
+                "@DiaChiNha", lanhDao.DiaChiNha,
+                "@QuanNha", lanhDao.QuanNha,
+                "@SDTDiDong", lanhDao.SDTDiDong,
+                "@Email", lanhDao.Email,
+                "@CoiThiTS10", lanhDao.CoiThiTS10,
+                "@ChucVuCoiThiTS10", lanhDao.ChucVuCoiThiTS10,
+                "@LyDoKhongThamGiaTS10", lanhDao.LyDoKhongThamGiaTS10,
+                "@CoiThiTHPT", lanhDao.CoiThiTHPT,
+                "@ChucVuCoiThiTHPT", lanhDao.ChucVuCoiThiTHPT,
+                "@LyDoKhongThamGiaTHPT", lanhDao.LyDoKhongThamGiaTHPT,
+                "@CumChuyenMon", lanhDao.CumChuyenMon,
+                "@ChucVuCumChuyenMon", lanhDao.ChucVuCumChuyenMon
+            );
+
+            return rowsAffected > 0;
         }
 
         public async Task<bool> UpdateAsync(KhaoThi_4_THPT_ThongTin_LanhDaoModel lanhDao)
         {
-            try
-            {
-                const string sql = @"
-                    UPDATE KhaoThi_4_THPT_ThongTin_LanhDao 
-                    SET HoTen = @HoTen, NamSinh = @NamSinh, ChucVuDonVi = @ChucVuDonVi, DiaChiNha = @DiaChiNha, QuanNha = @QuanNha, 
-                        SDTDiDong = @SDTDiDong, Email = @Email, CoiThiTS10 = @CoiThiTS10, ChucVuCoiThiTS10 = @ChucVuCoiThiTS10, 
-                        LyDoKhongThamGiaTS10 = @LyDoKhongThamGiaTS10, CoiThiTHPT = @CoiThiTHPT, ChucVuCoiThiTHPT = @ChucVuCoiThiTHPT, 
-                        LyDoKhongThamGiaTHPT = @LyDoKhongThamGiaTHPT, CumChuyenMon = @CumChuyenMon, ChucVuCumChuyenMon = @ChucVuCumChuyenMon
-                    WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
+            string sql = $@"UPDATE {TableName}
+                          SET HoTen = @HoTen,
+                              NamSinh = @NamSinh,
+                              ChucVuDonVi = @ChucVuDonVi,
+                              DiaChiNha = @DiaChiNha,
+                              QuanNha = @QuanNha,
+                              SDTDiDong = @SDTDiDong,
+                              Email = @Email,
+                              CoiThiTS10 = @CoiThiTS10,
+                              ChucVuCoiThiTS10 = @ChucVuCoiThiTS10,
+                              LyDoKhongThamGiaTS10 = @LyDoKhongThamGiaTS10,
+                              CoiThiTHPT = @CoiThiTHPT,
+                              ChucVuCoiThiTHPT = @ChucVuCoiThiTHPT,
+                              LyDoKhongThamGiaTHPT = @LyDoKhongThamGiaTHPT,
+                              CumChuyenMon = @CumChuyenMon,
+                              ChucVuCumChuyenMon = @ChucVuCumChuyenMon
+                          WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
 
-                int rowsAffected = await _dataAccess.ExecuteAsync(sql, lanhDao);
-                return rowsAffected > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi cập nhật thông tin lãnh đạo: {MaTruong}, {CCCD}", lanhDao.MaTruong, lanhDao.CCCD);
-                return false;
-            }
+            int rowsAffected = await _dataAccess.ExecuteAsync(sql,
+                "@MaTruong", lanhDao.MaTruong,
+                "@CCCD", lanhDao.CCCD,
+                "@HoTen", lanhDao.HoTen,
+                "@NamSinh", lanhDao.NamSinh,
+                "@ChucVuDonVi", lanhDao.ChucVuDonVi,
+                "@DiaChiNha", lanhDao.DiaChiNha,
+                "@QuanNha", lanhDao.QuanNha,
+                "@SDTDiDong", lanhDao.SDTDiDong,
+                "@Email", lanhDao.Email,
+                "@CoiThiTS10", lanhDao.CoiThiTS10,
+                "@ChucVuCoiThiTS10", lanhDao.ChucVuCoiThiTS10,
+                "@LyDoKhongThamGiaTS10", lanhDao.LyDoKhongThamGiaTS10,
+                "@CoiThiTHPT", lanhDao.CoiThiTHPT,
+                "@ChucVuCoiThiTHPT", lanhDao.ChucVuCoiThiTHPT,
+                "@LyDoKhongThamGiaTHPT", lanhDao.LyDoKhongThamGiaTHPT,
+                "@CumChuyenMon", lanhDao.CumChuyenMon,
+                "@ChucVuCumChuyenMon", lanhDao.ChucVuCumChuyenMon
+            );
+
+            return rowsAffected > 0;
         }
 
         public async Task<bool> DeleteAsync(string maTruong, string cccd)
         {
-            try
-            {
-                const string sql = @"DELETE FROM KhaoThi_4_THPT_ThongTin_LanhDao WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
-                int rowsAffected = await _dataAccess.ExecuteAsync(sql, new { MaTruong = maTruong, CCCD = cccd });
-                return rowsAffected > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi xóa thông tin lãnh đạo: {MaTruong}, {CCCD}", maTruong, cccd);
-                return false;
-            }
+            string sql = $"DELETE FROM {TableName} WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
+            int rowsAffected = await _dataAccess.ExecuteAsync(sql, "@MaTruong", maTruong, "@CCCD", cccd);
+            return rowsAffected > 0;
         }
 
         public async Task<bool> ExistsAsync(string maTruong, string cccd)
         {
-            try
-            {
-                const string sql = @"SELECT COUNT(1) FROM KhaoThi_4_THPT_ThongTin_LanhDao WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
-                int count = await _dataAccess.ExecuteScalarAsync<int>(sql, new { MaTruong = maTruong, CCCD = cccd });
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi kiểm tra sự tồn tại của thông tin lãnh đạo: {MaTruong}, {CCCD}", maTruong, cccd);
-                return false;
-            }
+            string sql = $"SELECT COUNT(1) FROM {TableName} WHERE MaTruong = @MaTruong AND CCCD = @CCCD";
+            int count = await _dataAccess.ExecuteScalarAsync<int>(sql, "@MaTruong", maTruong, "@CCCD", cccd);
+            return count > 0;
         }
 
         public async Task<(IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> Items, int TotalCount)> GetPaginatedAsync(
@@ -134,69 +188,47 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT
             string? searchTerm = null,
             string? maTruong = null,
             int? namSinh = null,
-            string? cccd = null
-        )
+            string? cccd = null)
         {
-            try
+            var sql = $"SELECT * FROM {TableName} WHERE 1=1";
+            var parameters = new List<object>();
+
+            // Tìm kiếm theo từ khóa
+            if (!string.IsNullOrEmpty(searchTerm))
             {
-                var sql = @"SELECT * FROM KhaoThi_4_THPT_ThongTin_LanhDao WHERE 1=1";
-                var parameters = new List<object>();
-                var parameterNames = new List<string>();
-
-                // Tìm kiếm tổng quát (HoTen, ChucVuDonVi, Email)
-                if (!string.IsNullOrEmpty(searchTerm))
-                {
-                    sql += " AND (HoTen LIKE @Search OR ChucVuDonVi LIKE @Search OR Email LIKE @Search)";
-                    parameters.Add($"%{searchTerm}%");
-                    parameterNames.Add("@Search");
-                }
-
-                // Lọc theo mã trường
-                if (!string.IsNullOrEmpty(maTruong))
-                {
-                    sql += " AND MaTruong = @MaTruong";
-                    parameters.Add(maTruong);
-                    parameterNames.Add("@MaTruong");
-                }
-
-                // Lọc theo năm sinh
-                if (namSinh.HasValue)
-                {
-                    sql += " AND NamSinh = @NamSinh";
-                    parameters.Add(namSinh.Value);
-                    parameterNames.Add("@NamSinh");
-                }
-
-                // Lọc theo CCCD
-                if (!string.IsNullOrEmpty(cccd))
-                {
-                    sql += " AND CCCD = @CCCD";
-                    parameters.Add(cccd);
-                    parameterNames.Add("@CCCD");
-                }
-
-                // Sắp xếp mặc định để đảm bảo kết quả nhất quán
-                sql += " ORDER BY HoTen";
-
-                // Convert parameters to array
-                object[] paramArray = parameters.ToArray();
-
-                // Convert parameter names to array
-                string[] paramNameArray = parameterNames.ToArray();
-
-                return await _dataAccess.QueryPaginatedAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
-                    sql,
-                    page,
-                    pageSize,
-                    paramNameArray, // Pass the parameter names
-                    paramArray      // Pass the parameter values
-                );
+                sql += " AND (HoTen LIKE @Search OR ChucVuDonVi LIKE @Search OR Email LIKE @Search)";
+                parameters.AddRange(new object[] { "@Search", $"%{searchTerm}%" });
             }
-            catch (Exception ex)
+
+            // Lọc theo mã trường
+            if (!string.IsNullOrEmpty(maTruong))
             {
-                _logger.LogError(ex, "Lỗi khi lấy danh sách lãnh đạo phân trang và tìm kiếm");
-                return (new List<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(), 0);
+                sql += " AND MaTruong = @MaTruong";
+                parameters.AddRange(new object[] { "@MaTruong", maTruong });
             }
+
+            // Lọc theo năm sinh
+            if (namSinh.HasValue && namSinh.Value > 0)
+            {
+                sql += " AND NamSinh = @NamSinh";
+                parameters.AddRange(new object[] { "@NamSinh", namSinh.Value });
+            }
+
+            // Lọc theo CCCD
+            if (!string.IsNullOrEmpty(cccd))
+            {
+                sql += " AND CCCD LIKE @CCCD";
+                parameters.AddRange(new object[] { "@CCCD", $"%{cccd}%" });
+            }
+
+            // Thêm sắp xếp để đảm bảo kết quả nhất quán
+            sql += " ORDER BY MaTruong ASC, HoTen ASC";
+
+            return await _dataAccess.QueryPaginatedAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
+                sql,
+                page,
+                pageSize,
+                parameters.ToArray());
         }
     }
 }

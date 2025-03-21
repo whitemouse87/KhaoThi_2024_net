@@ -204,6 +204,558 @@
         }
       }
     },
+    "/api/BCLanhDaoDonVi/all-phantrang-lanhdao": {
+      "get": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Lấy danh sách lãnh đạo có phân trang và tìm kiếm",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "maTruong",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "namSinh",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            }
+          },
+          {
+            "name": "cccd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCLanhDaoDonVi/all-lanhdao": {
+      "get": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Lấy tất cả lãnh đạo",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCLanhDaoDonVi/ldtruong/{maTruong}": {
+      "get": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Lấy danh sách lãnh đạo theo mã trường",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCLanhDaoDonVi/ldtruong/{maTruong}/cccd/{cccd}": {
+      "get": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Lấy thông tin lãnh đạo theo mã trường và CCCD",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cccd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Cập nhật thông tin lãnh đạo",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cccd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Xóa thông tin lãnh đạo",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cccd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCLanhDaoDonVi": {
+      "post": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Tạo mới thông tin lãnh đạo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCLanhDaoDonVi/check-exist-lanhdao": {
+      "get": {
+        "tags": [
+          "BCLanhDaoDonVi"
+        ],
+        "summary": "Kiểm tra thông tin lãnh đạo đã tồn tại chưa",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cccd",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
     "/api/BCThongTinDonVi/{MaTruong}": {
       "get": {
         "tags": [
@@ -1751,6 +2303,52 @@
         },
         "additionalProperties": { }
       },
+      "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "Items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+            },
+            "description": "Danh sách items trong trang hiện tại",
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "description": "Tổng số bản ghi (toàn bộ, không phải trong trang hiện tại)",
+            "format": "int32"
+          },
+          "Page": {
+            "type": "integer",
+            "description": "Số trang hiện tại",
+            "format": "int32"
+          },
+          "PageSize": {
+            "type": "integer",
+            "description": "Số bản ghi trên mỗi trang",
+            "format": "int32"
+          },
+          "TotalPages": {
+            "type": "integer",
+            "description": "Tổng số trang",
+            "format": "int32",
+            "readOnly": true
+          },
+          "HasPreviousPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang trước không",
+            "readOnly": true
+          },
+          "HasNextPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang sau không",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Generic class để xử lý kết quả phân trang cho mọi loại entity"
+      },
       "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.DTOs.KhaoThi_1_THPT_ThongTin_DonViModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -1965,6 +2563,78 @@
             "nullable": true
           },
           "Email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel": {
+        "type": "object",
+        "properties": {
+          "MaTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "CCCD": {
+            "type": "string",
+            "nullable": true
+          },
+          "HoTen": {
+            "type": "string",
+            "nullable": true
+          },
+          "NamSinh": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ChucVuDonVi": {
+            "type": "string",
+            "nullable": true
+          },
+          "DiaChiNha": {
+            "type": "string",
+            "nullable": true
+          },
+          "QuanNha": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SDTDiDong": {
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoiThiTS10": {
+            "type": "boolean"
+          },
+          "ChucVuCoiThiTS10": {
+            "type": "string",
+            "nullable": true
+          },
+          "LyDoKhongThamGiaTS10": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoiThiTHPT": {
+            "type": "boolean"
+          },
+          "ChucVuCoiThiTHPT": {
+            "type": "string",
+            "nullable": true
+          },
+          "LyDoKhongThamGiaTHPT": {
+            "type": "string",
+            "nullable": true
+          },
+          "CumChuyenMon": {
+            "type": "string",
+            "nullable": true
+          },
+          "ChucVuCumChuyenMon": {
             "type": "string",
             "nullable": true
           }

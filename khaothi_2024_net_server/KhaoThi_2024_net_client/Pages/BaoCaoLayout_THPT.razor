@@ -6,17 +6,14 @@
 @using Fluxor
 @using Radzen
 @using Radzen.Blazor
-@using static KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.BCThongTinDonViAction
-@using static KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.BCThongTinDonViState
+@inject IState<BCThongTinDonViState> DonViState
 @using KhaoThi_2024_net_client.Pages.BC_1_ThongTinDonVi
 @using KhaoThi_2024_net_client.Pages.BC_2_NhomMonDonVi
-@inject IState<BCThongTinDonViState> DonViState
+@using KhaoThi_2024_net_client.Pages.BC_4_LanhDaoDonVi
 @inject IDispatcher Dispatcher
 @inject NotificationService NotificationService
 @inject NavigationManager NavigationManager
 @inject IDialogService DialogService
-
-
 <!-- Header -->
 <MudPaper Elevation="0" Style="background: linear-gradient(135deg, #594ae2 0%, #5042cb 100%);">
     <div class="d-flex align-center py-4 px-6">
@@ -64,7 +61,7 @@
             <BCNhomMonDonVi />
             break;
         case 3:
-            <MudText>Đang phát triển - Bước 3: Hội đồng thi</MudText>
+            <BCLanhDaoDonVi />
             break;
         case 4:
             <MudText>Đang phát triển - Bước 4: Điểm thi</MudText>

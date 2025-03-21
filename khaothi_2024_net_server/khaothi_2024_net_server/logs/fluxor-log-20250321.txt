@@ -1,0 +1,85 @@
+2025-03-21 22:26:07 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-21 22:26:11 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 22:26:11 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 22:26:26 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:26:26 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:26:27 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:26:27 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:30:29 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-21 22:30:34 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 22:30:34 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 22:30:35 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:30:35 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:30:36 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:30:36 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:30:41 [INF] ["Client"] "[SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60" ""
+2025-03-21 22:30:57 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-21 22:30:58 [ERR] Password verification result: True
+2025-03-21 22:30:58 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-21 22:31:02 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 22:31:02 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 22:31:04 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:31:04 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:31:05 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:31:05 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:31:14 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:31:14 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:31:18 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:31:18 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:31:31 [INF] ["Client"] "[SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60" ""
+2025-03-21 22:54:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-21 22:54:59 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-21 22:55:00 [ERR] Password verification result: True
+2025-03-21 22:55:00 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-21 22:55:04 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 22:55:04 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 22:55:07 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:55:07 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 22:55:07 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 22:55:07 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:08:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-21 23:08:21 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 23:08:22 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 23:08:23 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:08:23 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:08:23 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:08:24 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:08:26 [INF] ["Client"] "[SECURITY] Unauthorized access attempt - IP: 115.74.26.120, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60" ""
+2025-03-21 23:08:44 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-21 23:08:45 [ERR] Password verification result: True
+2025-03-21 23:08:45 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-21 23:08:49 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 23:08:49 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 23:08:52 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:08:52 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:08:52 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:08:52 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:13:06 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-21 23:13:10 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 23:13:11 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 23:13:12 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:13:12 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:13:12 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:13:12 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:14:53 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:14:53 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:20:44 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-21 23:20:47 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 23:20:48 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 23:20:51 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 23:20:51 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 23:20:54 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:20:54 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:20:55 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:20:55 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:21:03 [INF] ["Client"] "[SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60" ""
+2025-03-21 23:21:22 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-21 23:21:22 [ERR] Password verification result: True
+2025-03-21 23:21:22 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-21 23:21:26 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-21 23:21:26 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-21 23:21:30 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:21:30 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:21:30 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-21 23:21:30 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-21 23:21:47 [INF] ["Client"] "[SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60" ""

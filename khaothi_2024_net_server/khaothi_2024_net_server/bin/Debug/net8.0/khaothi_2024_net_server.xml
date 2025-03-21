@@ -126,6 +126,96 @@
             Tạo một PaginatedResult trống
             </summary>
         </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.GetPaginated(System.Int32,System.Int32,System.String,System.String,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Lấy danh sách lãnh đạo có phân trang và tìm kiếm
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.GetAll">
+            <summary>
+            Lấy tất cả lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.GetByMaTruong(System.String)">
+            <summary>
+            Lấy danh sách lãnh đạo theo mã trường
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.GetByMaTruongAndCCCD(System.String,System.String)">
+            <summary>
+            Lấy thông tin lãnh đạo theo mã trường và CCCD
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.Create(khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel)">
+            <summary>
+            Tạo mới thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.Update(System.String,System.String,khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel)">
+            <summary>
+            Cập nhật thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.Delete(System.String,System.String)">
+            <summary>
+            Xóa thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController.CheckExist(System.String,System.String)">
+            <summary>
+            Kiểm tra thông tin lãnh đạo đã tồn tại chưa
+            </summary>
+        </member>
+        <member name="T:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService">
+            <summary>
+            Service xử lý nghiệp vụ thông tin lãnh đạo đơn vị
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.#ctor(khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.Interfaces.IBCLanhDaoDonViRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService})">
+            <summary>
+            Constructor với Dependency Injection
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.GetByMaTruongAndCCCDAsync(System.String,System.String)">
+            <summary>
+            Lấy thông tin lãnh đạo theo mã trường và CCCD
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.GetByMaTruongAsync(System.String)">
+            <summary>
+            Lấy danh sách lãnh đạo theo mã trường
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.GetAllAsync">
+            <summary>
+            Lấy toàn bộ danh sách lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.CreateAsync(khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel)">
+            <summary>
+            Tạo mới thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.UpdateAsync(khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel)">
+            <summary>
+            Cập nhật thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.DeleteAsync(System.String,System.String)">
+            <summary>
+            Xóa thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.ExistsAsync(System.String,System.String)">
+            <summary>
+            Kiểm tra sự tồn tại của thông tin lãnh đạo
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViService.GetPaginatedAsync(System.Int32,System.Int32,System.String,System.String,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Lấy danh sách lãnh đạo có phân trang và tìm kiếm
+            </summary>
+        </member>
         <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViController.GetByMaTruong(System.String)">
             <summary>
             Lấy thông tin đơn vị theo mã trường

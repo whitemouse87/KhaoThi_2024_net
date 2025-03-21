@@ -107,6 +107,353 @@
     ]
   },
   {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "Create",
+    "RelativePath": "api/BCLanhDaoDonVi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lanhDao",
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "GetAll",
+    "RelativePath": "api/BCLanhDaoDonVi/all-lanhdao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "GetPaginated",
+    "RelativePath": "api/BCLanhDaoDonVi/all-phantrang-lanhdao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "namSinh",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Core.Models.Common.PaginatedResult\u00601[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "CheckExist",
+    "RelativePath": "api/BCLanhDaoDonVi/check-exist-lanhdao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "GetByMaTruong",
+    "RelativePath": "api/BCLanhDaoDonVi/ldtruong/{maTruong}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "GetByMaTruongAndCCCD",
+    "RelativePath": "api/BCLanhDaoDonVi/ldtruong/{maTruong}/cccd/{cccd}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "Update",
+    "RelativePath": "api/BCLanhDaoDonVi/ldtruong/{maTruong}/cccd/{cccd}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "lanhDao",
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.BCLanhDaoDonViController",
+    "Method": "Delete",
+    "RelativePath": "api/BCLanhDaoDonVi/ldtruong/{maTruong}/cccd/{cccd}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
     "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViController",
     "Method": "GetByMaTruong",
     "RelativePath": "api/BCThongTinDonVi/{MaTruong}",
