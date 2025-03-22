@@ -301,5 +301,28 @@ namespace KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi
                 throw;
             }
         }
+        public async Task<IEnumerable<QuanModel>> LoadDanhSachQuan_LanhDaoDonVi()
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"/quan");
+
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadFromJsonAsync<IEnumerable<QuanModel>>();
+                return content ?? Array.Empty<QuanModel>();
+
+
+            }
+            catch (HttpRequestException ex)
+            {
+                await _logger.LogErrorAsync("Lỗi HTTP khi lấy danh sách quận: {Message}", ex, nameof(BCLanhDaoDonViService));
+                throw;
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync("Lỗi không xác định khi lấy danh sách quận {Message}", ex, nameof(BCLanhDaoDonViService));
+                throw;
+            }
+        }
     }
 }

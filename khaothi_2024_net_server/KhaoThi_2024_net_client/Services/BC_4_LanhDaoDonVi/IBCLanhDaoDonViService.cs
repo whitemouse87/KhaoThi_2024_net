@@ -79,6 +79,6 @@ namespace KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi
         /// Lấy danh sách quận
         /// </summary>
         /// <returns>Danh sách quận</returns>
-        Task<IEnumerable<QuanModel>> LoadDanhSachQuan();
+        Task<IEnumerable<QuanModel>> LoadDanhSachQuan_LanhDaoDonVi();
     }
 }
