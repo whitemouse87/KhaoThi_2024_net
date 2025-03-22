@@ -293,3 +293,10 @@
 2025-03-22 22:08:34 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
 2025-03-22 22:08:35 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
 2025-03-22 22:08:35 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-22 22:15:48 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-22 22:15:53 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-22 22:15:54 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-22 22:16:08 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-22 22:16:08 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-22 22:16:09 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-22 22:16:09 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO

@@ -24,8 +24,5 @@
 
         public string LyDoKhongThamGiaTHPT { get; set; } = string.Empty; // Checked
 
-        public string CumChuyenMon { get; set; } = string.Empty; // Checked
-
-        public string ChucVuCumChuyenMon { get; set; } = string.Empty; // Checked
     }
 }
