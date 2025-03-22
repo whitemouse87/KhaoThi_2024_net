@@ -218,10 +218,10 @@ public class Program
         services.AddMudServices(config =>
         {
             config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.TopRight;
-            config.SnackbarConfiguration.PreventDuplicates = false;
+            config.SnackbarConfiguration.PreventDuplicates = true;
             config.SnackbarConfiguration.NewestOnTop = true;
             config.SnackbarConfiguration.ShowCloseIcon = true;
-            config.SnackbarConfiguration.VisibleStateDuration = 5000;
+            config.SnackbarConfiguration.VisibleStateDuration = 3000;
             config.SnackbarConfiguration.HideTransitionDuration = 500;
             config.SnackbarConfiguration.ShowTransitionDuration = 500;
             config.SnackbarConfiguration.SnackbarVariant = MudBlazor.Variant.Filled;

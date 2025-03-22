@@ -73,7 +73,10 @@
                         </MudAvatar>
                         <div>
                             <MudText Typo="Typo.h5" Style="color: white; font-weight: 500; letter-spacing: 0.5px;" Class="font-weight-bold">Thông tin lãnh đạo đơn vị</MudText>
-                            <MudText Typo="Typo.body2" Style="color: yellow; font-weight: 500; letter-spacing: 0.5px;" Class="opacity-80">Đề nghị các đơn vị rà soát thật chính xác thông tin lãnh đạo để phục vụ công tác điều động tham gia kỳ thi</MudText>
+                            <MudText Typo="Typo.subtitle1" Style="color: yellow; font-weight: 700; letter-spacing: 0.7px; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);" Class="opacity-90 pa-2 my-2 d-block">
+                                <MudIcon Icon="@Icons.Material.Filled.Warning" Class="mr-2" />
+                                Đề nghị điền đầy đủ thông tin liên lạc (họ tên, chức vụ, số điện thoại, email và địa chỉ nhà) của tất cả thành viên trong BAN GIÁM HIỆU nhà trường để tiện liên hệ khi cần.
+                            </MudText>
                         </div>
                     </div>
                 </CardHeaderContent>
@@ -213,7 +216,7 @@
                             </MudPaper>
                         </MudItem>
 
-                        <!-- Fourth Row: Địa chỉ and Add Button -->
+                        <!-- Fourth Row: Địa chỉ nhà and Add Button -->
                         <MudItem xs="12" sm="6" lg="12">
                             <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
                                 <MudGrid Spacing="0">
@@ -257,8 +260,8 @@
     @if (LanhDaoState.Value.LanhDaos != null && LanhDaoState.Value.LanhDaos.Any())
     {
         <MudPaper Elevation="3" Class="pa-0 mb-4 rounded-lg">
-            <MudText Typo="Typo.h6" Class="pa-4 d-flex align-center primary--text" Style="background-color: #f0f4c3; border-bottom: 1px solid #e0e0e0;">
-                <MudIcon Icon="@Icons.Material.Filled.List" Class="mr-2" Color="Color.Primary" />
+            <MudText Typo="Typo.h5" Class="pa-4 d-flex align-center white--text" Style="background-color: #00296F; border-bottom: 2px solid #d4e157; color: white; ">
+                <MudIcon Icon="@Icons.Material.Filled.List" Class="mr-3" Color="Color.Inherit" Size="Size.Large" />
                 Danh sách lãnh đạo đã đăng ký
             </MudText>
 
@@ -266,31 +269,18 @@
                 <MudTable Items="@LanhDaoState.Value.LanhDaos" Hover="true" Bordered="true" Striped="true"
                           Dense="false" Class="rounded-lg" Elevation="1">
                     <HeaderContent>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem;">STT</MudTh>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem;">Họ và tên</MudTh>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem;">CCCD/CMND</MudTh>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem;">Chức vụ</MudTh>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem;">Số điện thoại</MudTh>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem;">Email</MudTh>
-                        <MudTh Style="background-color: #e6ee9c; font-weight: 600; font-size: 1rem; text-align: center;">Thao tác</MudTh>
+
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">CCCD/CMND</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Họ và tên</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Năm sinh</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Chức vụ</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Địa chỉ</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Số điện thoại</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Email</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Thao tác</MudTh>
                     </HeaderContent>
                     <RowTemplate Context="lanhdao">
-                        <MudTd DataLabel="STT" Style="font-size: 0.9rem;">@(rowIndex++)</MudTd>
-                        <MudTd DataLabel="Họ và tên" Style="font-size: 0.9rem;">
-                            @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
-                            {
-                                <MudTextField @bind-Value="editLanhDao.HoTen" Immediate="true"
-                                              Variant="Variant.Outlined" Dense="true" />
-                            }
-                            else
-                            {
-                                <div class="d-flex align-center">
-                                    <strong>@lanhdao.HoTen</strong>
-                                </div>
-                                <MudText Typo="Typo.caption">NS: @lanhdao.NamSinh</MudText>
-                            }
-                        </MudTd>
-                        <MudTd DataLabel="CCCD/CMND" Style="font-size: 0.9rem;">
+                        <MudTd DataLabel="CCCD/CMND" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
                             @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
                             {
                                 <MudTextField @bind-Value="editLanhDao.CCCD" Immediate="true"
@@ -298,17 +288,48 @@
                             }
                             else
                             {
-                                <div style="display: inline-block; background-color: #e3f2fd; color: #0d47a1;
-                                        padding: 4px 10px; border-radius: 14px; font-size: 0.85rem;">
-                                    @lanhdao.CCCD
+                                <MudChip T="string" Text="@lanhdao.CCCD" Color="Color.Primary" Variant="Variant.Outlined" Size="Size.Small" Style="font-size: 0.9rem;"></MudChip>
+
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Họ và tên" Style="font-size: 1rem; padding: 12px; vertical-align: middle;">
+                            @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
+                            {
+                                <MudTextField @bind-Value="editLanhDao.HoTen" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" />
+                            }
+                            else
+                            {
+                                <div class="d-flex align-items-center">
+                                    <MudAvatar Color="Color.Secondary" Size="Size.Small" Class="mr-2">
+                                        @(lanhdao.HoTen?.Substring(0, 1).ToUpper())
+                                    </MudAvatar>
+                                    <strong style="font-size: 1.1rem; color: #2e7d32;">@lanhdao.HoTen</strong>
                                 </div>
                             }
                         </MudTd>
-                        <MudTd DataLabel="Chức vụ" Style="font-size: 0.9rem;">
+                        <MudTd DataLabel="Năm sinh" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
+                            {
+                                <MudTextField @bind-Value="editLanhDao.NamSinh" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true"
+                                              InputAttributes="@(new Dictionary<string, object>() { { "style", "text-align: center;" } })" />
+                            }
+                            else
+                            {
+                                <div class="d-flex justify-center align-items-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.CalendarMonth" Size="Size.Small" Class="mr-1" Color="Color.Success" />
+                                    <a href="tel:@lanhdao.NamSinh" style="text-decoration: none; color: inherit;">
+                                        <span style="font-size: 1rem;">@lanhdao.NamSinh</span>
+                                    </a>
+                                </div>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Chức vụ" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
                             @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
                             {
                                 <MudSelect @bind-Value="editLanhDao.ChucVuDonVi" Immediate="true"
-                                           Variant="Variant.Outlined" Dense="true">
+                                           Variant="Variant.Outlined" Dense="true" FullWidth="true">
                                     <MudSelectItem Value="@("Hiệu trưởng")">Hiệu trưởng</MudSelectItem>
                                     <MudSelectItem Value="@("Phó Hiệu trưởng")">Phó Hiệu trưởng</MudSelectItem>
                                     <MudSelectItem Value="@("Trưởng bộ môn")">Trưởng bộ môn</MudSelectItem>
@@ -316,31 +337,62 @@
                             }
                             else
                             {
-                                <div style="display: inline-block;
-                                        @(lanhdao.ChucVuDonVi == "Hiệu trưởng" ? "background-color: #fce4ec; color: #c2185b;" :
-               lanhdao.ChucVuDonVi == "Phó Hiệu trưởng" ? "background-color: #fff8e1; color: #ff6f00;" :
-               "background-color: #e8f5e9; color: #2e7d32;")
-                                        padding: 4px 10px; border-radius: 14px; font-size: 0.85rem;">
+                                Color chipColor = lanhdao.ChucVuDonVi == "Hiệu trưởng" ? Color.Error :
+                                           lanhdao.ChucVuDonVi == "Phó Hiệu trưởng" ? Color.Warning :
+                                           Color.Success;
+
+                                string icon = lanhdao.ChucVuDonVi == "Hiệu trưởng" ? Icons.Material.Filled.School :
+                                        lanhdao.ChucVuDonVi == "Phó Hiệu trưởng" ? Icons.Material.Filled.AssignmentInd :
+                                        Icons.Material.Filled.Book;
+
+                                <MudChip T="string" Icon="@icon"
+                                         Color="@chipColor"
+                                         Variant="Variant.Outlined"
+                                         Size="Size.Small"
+                                         Style="font-size: 0.9rem; padding: 8px;">
                                     @lanhdao.ChucVuDonVi
-                                </div>
+                                </MudChip>
                             }
                         </MudTd>
-                        <MudTd DataLabel="Số điện thoại" Style="font-size: 0.9rem;">
+
+                        <!-- Cột địa chỉ mới -->
+                        <MudTd DataLabel="Địa chỉ" Style="font-size: 1rem; padding: 12px; vertical-align: middle;">
                             @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
                             {
-                                <MudTextField @bind-Value="editLanhDao.SDTDiDong" Immediate="true"
-                                              Variant="Variant.Outlined" Dense="true" />
+                                <MudTextField @bind-Value="editLanhDao.DiaChiNha" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" Lines="2" />
                             }
                             else
                             {
-                                <div class="d-flex align-center">
-                                    <MudIcon Icon="@Icons.Material.Filled.Phone" Size="Size.Small"
-                                             Class="mr-1" Color="Color.Success" />
-                                    @lanhdao.SDTDiDong
+                                <div class="d-flex align-items-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.Place" Size="Size.Small" Class="mr-1 flex-shrink-0" Color="Color.Info" />
+                                    <MudTooltip Text="@lanhdao.DiaChiNha" Placement="Placement.Top" Arrow="true">
+                                        <div style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                            @lanhdao.DiaChiNha
+                                        </div>
+                                    </MudTooltip>
                                 </div>
                             }
                         </MudTd>
-                        <MudTd DataLabel="Email" Style="font-size: 0.9rem;">
+
+                        <MudTd DataLabel="Số điện thoại" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
+                            {
+                                <MudTextField @bind-Value="editLanhDao.SDTDiDong" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true"
+                                              InputAttributes="@(new Dictionary<string, object>() { { "style", "text-align: center;" } })" />
+                            }
+                            else
+                            {
+                                <div class="d-flex justify-center align-items-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.Phone" Size="Size.Small" Class="mr-1" Color="Color.Success" />
+                                    <a href="tel:@lanhdao.SDTDiDong" style="text-decoration: none; color: inherit;">
+                                        <span style="font-size: 1rem;">@lanhdao.SDTDiDong</span>
+                                    </a>
+                                </div>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Email" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
                             @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
                             {
                                 <MudTextField @bind-Value="editLanhDao.Email" Immediate="true"
@@ -348,17 +400,20 @@
                             }
                             else
                             {
-                                <div class="d-flex align-center">
-                                    <MudIcon Icon="@Icons.Material.Filled.Email" Size="Size.Small"
-                                             Class="mr-1" Color="Color.Info" />
-                                    @lanhdao.Email
+                                <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
+                                    <MudIcon Icon="@Icons.Material.Filled.Email" Size="Size.Small" Class="mr-1" Color="Color.Info" />
+                                    <MudTooltip Text="@lanhdao.Email" Placement="Placement.Top" Arrow="true">
+                                        <a href="mailto:@lanhdao.Email" style="text-decoration: none; color: inherit; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block;">
+                                            <span style="font-size: 1rem;">@lanhdao.Email</span>
+                                        </a>
+                                    </MudTooltip>
                                 </div>
                             }
                         </MudTd>
-                        <MudTd Style="text-align: center">
+                        <MudTd Style="text-align: center; padding: 12px; vertical-align: middle; text-align: center; ">
                             @if (editingLanhDaoId == GetLanhDaoId(lanhdao))
                             {
-                                <div class="d-flex justify-center gap-2">
+                                <div class="d-flex justify-content-center gap-2">
                                     <MudIconButton Icon="@Icons.Material.Filled.Save"
                                                    Color="Color.Success"
                                                    OnClick="@(() => SaveLanhDao(lanhdao))"
@@ -375,7 +430,7 @@
                             }
                             else
                             {
-                                <div class="d-flex justify-center gap-2">
+                                <div class="d-flex justify-content-center gap-2" style="display: flex !important; justify-content: center !important;">
                                     <MudIconButton Icon="@Icons.Material.Filled.Edit"
                                                    Color="Color.Primary"
                                                    OnClick="@(() => StartEditing(lanhdao))"
@@ -441,10 +496,10 @@
 </MudContainer>
 
 @code {
-        [Parameter]
-        public string MaTruong { get; set; }
+    [Parameter]
+    public string MaTruong { get; set; }
 
-private string maTruong = string.Empty;
+    private string maTruong = string.Empty;
     private MudForm form;
     private System.Threading.Timer _clearNotificationTimer;
     private int rowIndex = 1;
@@ -461,6 +516,8 @@ private string maTruong = string.Empty;
 
     // New lãnh đạo form
     private KhaoThi_4_THPT_ThongTin_LanhDaoModel newLanhDao = new();
+
+    private bool _notificationShown = false; // Biến cờ để theo dõi
 
     protected override void OnInitialized()
     {
@@ -487,7 +544,9 @@ private string maTruong = string.Empty;
     private void ExtractMaDonViFromQueryString()
     {
         var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
-        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("MaDonVi", out var maDonViParam))
+        var query = QueryHelpers.ParseQuery(uri.Query); // Parse query string trước
+
+        if (query.TryGetValue("MaDonVi", out var maDonViParam))
         {
             maTruong = maDonViParam.First();
         }
@@ -497,13 +556,25 @@ private string maTruong = string.Empty;
     {
         base.OnAfterRender(firstRender);
 
-        if (!string.IsNullOrEmpty(LanhDaoState.Value.NotificationMessage))
+        // Kiểm tra xem thông báo đã được hiển thị chưa
+        if (!string.IsNullOrEmpty(LanhDaoState.Value.NotificationMessage) && !_notificationShown)
         {
             var severity = LanhDaoState.Value.NotificationType == "error"
                 ? Severity.Error
                 : Severity.Success;
 
             Snackbar.Add(LanhDaoState.Value.NotificationMessage, severity);
+
+            // Đánh dấu là đã hiển thị thông báo
+            _notificationShown = true;
+
+            // Clear thông báo để tránh lặp lại
+            Dispatcher.Dispatch(new BCLanhDaoAction.ClearErrorAction());
+        }
+        // Nếu không có thông báo, reset cờ
+        else if (string.IsNullOrEmpty(LanhDaoState.Value.NotificationMessage))
+        {
+            _notificationShown = false;
         }
     }
 
