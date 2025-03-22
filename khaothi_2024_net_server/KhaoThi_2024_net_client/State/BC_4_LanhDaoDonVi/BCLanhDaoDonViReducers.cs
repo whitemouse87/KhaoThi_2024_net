@@ -526,6 +526,69 @@ namespace KhaoThi_2024_net_client.State.BC_4_LanhDaoDonVi
         }
         #endregion
 
+        #region Check LanhDao Empty Reducers
+        /// <summary>
+        /// Reducer xử lý action kiểm tra danh sách lãnh đạo rỗng
+        /// </summary>
+        [ReducerMethod]
+        public static BCLanhDaoDonViState ReduceCheckLanhDaoEmptyAction(BCLanhDaoDonViState state, CheckLanhDaoEmptyAction action) =>
+            new(id: 28,
+                maTruong: action.MaTruong,
+                isLoading: true,
+                errorMessage: null,
+                lanhDaos: state.LanhDaos,
+                selectedLanhDao: state.SelectedLanhDao,
+                paginatedLanhDaos: state.PaginatedLanhDaos,
+                isInitialized: state.IsInitialized,
+                notificationMessage: null,
+                notificationType: null);
+
+        /// <summary>
+        /// Reducer xử lý khi kiểm tra danh sách lãnh đạo rỗng thành công
+        /// </summary>
+
+        [ReducerMethod]
+        public static BCLanhDaoDonViState ReduceCheckLanhDaoEmptySuccessAction(BCLanhDaoDonViState state, CheckLanhDaoEmptySuccessAction action)
+        {
+            // Nếu danh sách lãnh đạo rỗng, cập nhật state với thông báo lỗi
+            if (action.IsEmpty)
+            {
+                return new(id: 30,
+                    maTruong: state.MaTruong,
+                    isLoading: false,
+                    errorMessage: "Chưa có thông tin lãnh đạo",
+                    lanhDaos: state.LanhDaos, // Giữ nguyên danh sách (rỗng)
+                    selectedLanhDao: state.SelectedLanhDao,
+                    paginatedLanhDaos: state.PaginatedLanhDaos,
+                    isInitialized: true,
+                    notificationMessage: "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
+                    notificationType: "error"); // Đặt kiểu thông báo là error để hiển thị màu đỏ
+            }
+
+            // Nếu có dữ liệu, giữ nguyên state
+            return state;
+        }
+
+        /// <summary>
+        /// Reducer xử lý khi kiểm tra danh sách lãnh đạo rỗng thất bại
+        /// </summary>
+        [ReducerMethod]
+        public static BCLanhDaoDonViState ReduceCheckLanhDaoEmptyFailureAction(BCLanhDaoDonViState state, CheckLanhDaoEmptyFailureAction action)
+        {
+            var errorMsg = string.IsNullOrEmpty(action.ErrorMessage) ? null : $"{action.ErrorMessage} [{DateTime.Now.Ticks}]";
+            return new(id: 29,
+                maTruong: state.MaTruong,
+                isLoading: false,
+                errorMessage: errorMsg,
+                lanhDaos: state.LanhDaos,
+                selectedLanhDao: state.SelectedLanhDao,
+                paginatedLanhDaos: state.PaginatedLanhDaos,
+                isInitialized: state.IsInitialized,
+                notificationMessage: $"Lỗi kiểm tra danh sách lãnh đạo: {action.ErrorMessage}",
+                notificationType: "error");
+        }
+        #endregion
+
         #region Utility Reducers
         /// <summary>
         /// Reducer xử lý action set loading

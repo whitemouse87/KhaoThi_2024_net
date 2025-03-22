@@ -1,12 +1,13 @@
 ﻿
-
 @page "/bao-cao-ky-thi"
 @using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
 @using KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
+@using KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi
 @using Fluxor
 @using Radzen
 @using Radzen.Blazor
 @inject IState<BCThongTinDonViState> DonViState
+@inject IState<BCLanhDaoDonViState> LanhDaoState
 @using KhaoThi_2024_net_client.Pages.BC_1_ThongTinDonVi
 @using KhaoThi_2024_net_client.Pages.BC_2_NhomMonDonVi
 @using KhaoThi_2024_net_client.Pages.BC_4_LanhDaoDonVi
@@ -31,7 +32,7 @@
             </MudText>
             <MudText Typo="Typo.body2"
                      Style="color: rgba(255,255,255,0.85); margin-top: 4px;">
-                Đề nghị làm đủ 5 bước. Mọi vấn đề liên hệ với Phòng Khảo thí và KĐLCGD - Sở GDĐT qua SĐT xxxxx
+                Đề nghị làm đủ 5 bước. Mọi vấn đề liên hệ với Phòng Khảo thí và KĐCLGD - Sở GDĐT.
             </MudText>
         </div>
         <MudSpacer />
@@ -67,7 +68,13 @@
             <MudText>Đang phát triển - Bước 4: Điểm thi</MudText>
             break;
         case 5:
-            <MudText>Đang phát triển - Bước 5: Tổng kết</MudText>
+            <MudText>Đang phát triển - Bước 5: Khai báo thông tin con em cán bộ nhà trường có con tham gia kỳ thi TS10 và tốt nghiệp THPT</MudText>
+            break;
+        case 6:
+            <MudText>Đang phát triển - Bước 6: Khai báo thông tin phục vụ tuyển sinh"</MudText>
+            break;
+        case 7:
+            <MudText>Đang phát triển - Bước 7: In báo cáo</MudText>
             break;
         default:
             <BCThongTinDonVi />
@@ -79,7 +86,7 @@
 <div class="buttons-container">
     @if (currentTab > 1)
     {
-        <RadzenButton Click="@(() => SwitchTab(currentTab - 1))"
+        <RadzenButton Click="@(async () => await SwitchTab(currentTab - 1))"
                       ButtonStyle="ButtonStyle.Light"
                       Icon="arrow_back"
                       Text="Quay lại"
@@ -92,10 +99,9 @@
         Text="Lưu nháp"
         class="btn-save"
         Disabled="@(DonViState.Value.IsLoading)" />*@
-
-    @if (currentTab < 5)
+    @if (currentTab < 7)
     {
-        <RadzenButton Click="@(() => SwitchTab(currentTab + 1))"
+        <RadzenButton Click="@(async () => await SwitchTab(currentTab + 1))"
                       ButtonStyle="ButtonStyle.Primary"
                       Icon="arrow_forward"
                       Text="Tiếp theo"
@@ -114,7 +120,7 @@
 @code {
     private int currentTab = 1;
     private string _lastNotificationMessage;
-
+    @inject IState<BCLanhDaoDonViState> LanhDaoState;
     private class StepInfo
     {
         public int Index { get; set; }
@@ -124,11 +130,13 @@
 
     private List<StepInfo> steps = new List<StepInfo>
 {
-        new StepInfo { Index = 1, Icon = "school", Title = "Thông tin đơn vị và số liệu học sinh" },
-        new StepInfo { Index = 2, Icon = "school", Title = "Số liệu học sinh" },
-        new StepInfo { Index = 3, Icon = "groups", Title = "Hội đồng thi" },
-        new StepInfo { Index = 4, Icon = "analytics", Title = "Điểm thi" },
-        new StepInfo { Index = 5, Icon = "summarize", Title = "Tổng kết" }
+        new StepInfo { Index = 1, Icon = "school", Title = "Khai báo thông tin đơn vị và số liệu học sinh" },
+        new StepInfo { Index = 2, Icon = "score", Title = "Khảo sát nhóm môn thi phục vụ quy hoạch điểm coi thi" },
+        new StepInfo { Index = 3, Icon = "people", Title = "Khai báo thông tin lãnh đạo" },
+        new StepInfo { Index = 4, Icon = "psychology", Title = "Khai báo thông tin lãnh đạo tham gia coi thi" },
+        new StepInfo { Index = 5, Icon = "Face", Title = "Khai báo thông tin con em cán bộ nhà trường có con tham gia kỳ thi TS10 và tốt nghiệp THPT" },
+        new StepInfo { Index = 6, Icon = "assignment", Title = "Khai báo thông tin phục vụ tuyển sinh" },
+        new StepInfo { Index = 7, Icon = "print", Title = "In báo cáo" }
     };
 
     protected override void OnInitialized()
@@ -162,11 +170,51 @@
         }
     }
 
-    private void SwitchTab(int tabIndex)
+    private async Task SwitchTab(int tabIndex)
     {
+        // Kiểm tra nếu đang chuyển đến bước 4
+        if (tabIndex == 4)
+        {
+            // Lấy mã trường từ state
+            var maTruong = LanhDaoState.Value.MaTruong ?? "";
+
+            // Kiểm tra xem danh sách lãnh đạo có dữ liệu không
+            var lanhDaos = LanhDaoState.Value.LanhDaos;
+
+            // Nếu chưa có dữ liệu, thử tải từ server
+            if ((lanhDaos == null || !lanhDaos.Any()) && !string.IsNullOrEmpty(maTruong))
+            {
+
+                // Dispatch action để lấy danh sách lãnh đạo theo mã trường
+                Dispatcher.Dispatch(new BCLanhDaoDonViAction.CheckLanhDaoEmptyAction(maTruong));
+
+                // Đợi một chút để action được xử lý
+                await Task.Delay(500);
+
+                // Cập nhật lại danh sách sau khi đợi
+                lanhDaos = LanhDaoState.Value.LanhDaos;
+            }
+
+            // Kiểm tra lại sau khi đã thử tải dữ liệu
+            if (lanhDaos == null || !lanhDaos.Any())
+            {
+                // Hiển thị thông báo lỗi màu đỏ
+                NotificationService.Notify(new NotificationMessage
+                {
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Chưa có thông tin lãnh đạo",
+                    Detail = "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
+                    Duration = 6000
+                });
+
+                // Chuyển về bước 3
+                currentTab = 3;
+                return;
+            }
+        }
+
+        // Nếu không có vấn đề gì hoặc không phải bước 4, chuyển tab bình thường
         currentTab = tabIndex;
-        // Khi cần thêm dispatcher thực tế
-        // Dispatcher.Dispatch(new SwitchStepAction(tabIndex));
     }
 
     private void SaveDraft()
@@ -197,4 +245,5 @@
     {
         DonViState.StateChanged -= HandleStateChanged;
     }
+
 }

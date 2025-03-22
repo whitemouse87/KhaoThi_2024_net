@@ -52,6 +52,10 @@ namespace KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi
         public const string SHOW_NOTIFICATION = "[Lãnh đạo] Hiển thị thông báo";
         public const string SET_LOADING = "[Lãnh đạo] Đang tải";
         public const string CLEAR_ERROR = "[Lãnh đạo] Xóa lỗi";
+
+        public const string CHECK_LANHDAO_EMPTY = "[Lãnh đạo] Kiểm tra danh sách rỗng";
+        public const string CHECK_LANHDAO_EMPTY_SUCCESS = "[Lãnh đạo] Kiểm tra danh sách rỗng thành công";
+        public const string CHECK_LANHDAO_EMPTY_FAILURE = "[Lãnh đạo] Kiểm tra danh sách rỗng thất bại";
     }
 
     public interface IBCLanhDaoDonViAction
@@ -218,6 +222,24 @@ namespace KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi
         public record CheckLanhDaoExistFailureAction(string ErrorMessage) : IBCLanhDaoDonViAction
         {
             public string Type => BCLanhDaoDonViActionTypes.CHECK_LANHDAO_EXIST_FAILURE;
+            public DateTime Timestamp { get; } = DateTime.UtcNow;
+        }
+        // Các actions kiểm tra danh sách lãnh đạo rỗng
+        public record CheckLanhDaoEmptyAction(string MaTruong) : IBCLanhDaoDonViAction
+        {
+            public string Type => BCLanhDaoDonViActionTypes.CHECK_LANHDAO_EMPTY;
+            public DateTime Timestamp { get; } = DateTime.UtcNow;
+        }
+
+        public record CheckLanhDaoEmptySuccessAction(bool IsEmpty) : IBCLanhDaoDonViAction
+        {
+            public string Type => BCLanhDaoDonViActionTypes.CHECK_LANHDAO_EMPTY_SUCCESS;
+            public DateTime Timestamp { get; } = DateTime.UtcNow;
+        }
+
+        public record CheckLanhDaoEmptyFailureAction(string ErrorMessage) : IBCLanhDaoDonViAction
+        {
+            public string Type => BCLanhDaoDonViActionTypes.CHECK_LANHDAO_EMPTY_FAILURE;
             public DateTime Timestamp { get; } = DateTime.UtcNow;
         }
 

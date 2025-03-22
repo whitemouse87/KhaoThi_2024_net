@@ -316,5 +316,39 @@ namespace KhaoThi_2024_net_client.State.BC_4_LanhDaoDonVi
                 dispatcher.Dispatch(new SetLoadingAction(false));
             }
         }
+        [EffectMethod]
+        public async Task HandleCheckLanhDaoEmpty(CheckLanhDaoEmptyAction action, IDispatcher dispatcher)
+        {
+            try
+            {
+                dispatcher.Dispatch(new SetLoadingAction(true));
+                var lanhDaos = await _bcLanhDaoService.GetByMaTruongAsync(action.MaTruong);
+                bool isEmpty = lanhDaos == null || !lanhDaos.Any();
+
+                dispatcher.Dispatch(new CheckLanhDaoEmptySuccessAction(isEmpty));
+
+                if (isEmpty)
+                {
+                    // Hiển thị thông báo lỗi (màu đỏ) thay vì thông báo info
+                    dispatcher.Dispatch(new ShowNotificationAction(
+                        "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
+                        "error"
+                    ));
+                }
+            }
+            catch (Exception ex)
+            {
+                await Logger.Error(
+                    $"Lỗi khi kiểm tra danh sách lãnh đạo rỗng: {action.MaTruong}",
+                    ex,
+                    nameof(BCLanhDaoDonViEffects));
+
+                dispatcher.Dispatch(new CheckLanhDaoEmptyFailureAction(ex.Message));
+            }
+            finally
+            {
+                dispatcher.Dispatch(new SetLoadingAction(false));
+            }
+        }
     }
 }
