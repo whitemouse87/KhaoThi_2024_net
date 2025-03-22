@@ -1,0 +1,11 @@
+2025-03-22 08:48:14 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-03-22 08:48:22 [INF] ["Client"] "Token hết hạn" ""
+2025-03-22 08:49:03 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-03-22 08:49:04 [ERR] Password verification result: True
+2025-03-22 08:49:04 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-03-22 08:49:08 [INF] 🔍 Đang tìm user với ID: 5
+2025-03-22 08:49:08 [INF] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-22 08:49:10 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-22 08:49:10 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-22 08:49:11 [INF] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-22 08:49:11 [INF] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO

@@ -1,0 +1,11 @@
+2025-03-22 08:48:14.444 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-22 08:48:22.824 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] Token hết hạn 
+2025-03-22 08:49:03.675 +07:00 [INF] [AuthController] Login attempt for user: asdas from IP: ::1
+2025-03-22 08:49:04.614 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
+2025-03-22 08:49:04.709 +07:00 [INF] [AuthController] User asdas logged in successfully from IP: ::1
+2025-03-22 08:49:08.711 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] 🔍 Đang tìm user với ID: 5
+2025-03-22 08:49:08.724 +07:00 [INF] [khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService] ✅ Tìm thấy user với ID 5: Người dùng mới
+2025-03-22 08:49:10.927 +07:00 [INF] [khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-22 08:49:10.983 +07:00 [INF] [khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO
+2025-03-22 08:49:11.249 +07:00 [INF] [khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService] 🔍 Đang tìm đơn vị với mã trường: 01EA60
+2025-03-22 08:49:11.256 +07:00 [INF] [khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViService] ✅ Tìm thấy đơn vị với mã trường 01EA60: TT NNTH - SỞ GIÁO DỤC VÀ ĐÀO TẠO

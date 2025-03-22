@@ -7548,23 +7548,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TRY\\.nuget\\packages\\": {},
+    "C:\\Users\\K-PC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
+      "projectUniqueName": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
       "projectName": "KhaoThi_2024_net_client",
-      "projectPath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
-      "packagesPath": "C:\\Users\\TRY\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\",
+      "projectPath": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
+      "packagesPath": "C:\\Users\\K-PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\K-PC\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\TRY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\K-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
