@@ -33,23 +33,23 @@ namespace khaothi_2024_net_server.Features.UserManagement
         {
             if (id <= 0)
             {
-                _logger.LogWarning($"[Warning] ID không hợp lệ: {id}");
+                //_logger.LogWarning($"[Warning] ID không hợp lệ: {id}");
                 throw new ArgumentException("ID phải lớn hơn 0", nameof(id));
             }
 
             try
             {
-                _logger.LogInformation($"🔍 Đang tìm user với ID: {id}");
+                //_logger.LogInformation($"🔍 Đang tìm user với ID: {id}");
 
                 var user = await _userRepository.GetByIdAsync(id);
 
                 if (user is null)
                 {
-                    _logger.LogWarning($"❌ Không tìm thấy user với ID {id}");
+                    //_logger.LogWarning($"❌ Không tìm thấy user với ID {id}");
                     return null; // Trả về null thay vì throw
                 }
 
-                _logger.LogInformation($"✅ Tìm thấy user với ID {id}: {user.HoTen}");
+                //_logger.LogInformation($"✅ Tìm thấy user với ID {id}: {user.HoTen}");
                 return user;
             }
             catch (Exception ex)

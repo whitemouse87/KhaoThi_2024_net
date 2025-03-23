@@ -7,6 +7,8 @@ using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.Interfaces;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT_HS12_NhomMon.Interfaces;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.Interfaces;
 using khaothi_2024_net_server.Features.Shares;
 using khaothi_2024_net_server.Features.UserManagement;
 using khaothi_2024_net_server.Infrastructure.Data;
@@ -282,6 +284,8 @@ public class Program
             .AddScoped<IBCThongTinNhomMonService, BCThongTinNhomMonService>()
             .AddScoped<IBCLanhDaoDonViRepository, BCLanhDaoDonViRepository>()
             .AddScoped<IBCLanhDaoDonViService, BCLanhDaoDonViService>()
+            .AddScoped<IBCThongTinTruongDiemRepository, BCThongTinTruongDiemRepository>()
+            .AddScoped<IBCThongTinTruongDiemService, BCThongTinTruongDiemService>()
             .AddScoped<IAuthService, AuthService>()
             .AddScoped<IPasswordHasher, BCryptPasswordHasher>();
         builder.Services.Configure<PasswordOptions>(options =>

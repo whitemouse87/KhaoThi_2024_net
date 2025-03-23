@@ -27,7 +27,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
         /// Lấy danh sách thông tin trường điểm thi có phân trang và tìm kiếm
         /// </summary>
         [HttpGet("all-phantrang-truongdiem")]
-        [ProducesResponseType(typeof(PaginatedResult<KhaoThi_5_THPT_ThongTin_TruongDiemModel>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(PaginatedResult<KhaoThi_4_THPT_ThongTin_LanhDaoModel>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetPaginated(
             [FromQuery] int page = 1,
@@ -47,7 +47,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
                     page, pageSize, searchTerm, maTruong);
 
                 // Tạo kết quả phân trang
-                var result = new PaginatedResult<KhaoThi_5_THPT_ThongTin_TruongDiemModel>(
+                var result = new PaginatedResult<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
                     items: items,
                     count: totalCount,
                     page: page,
@@ -72,7 +72,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Update(string maTruong, string cccd, [FromBody] KhaoThi_5_THPT_ThongTin_TruongDiemModel truongDiem)
+        public async Task<IActionResult> Update(string maTruong, string cccd, [FromBody] KhaoThi_4_THPT_ThongTin_LanhDaoModel truongDiem)
         {
             try
             {

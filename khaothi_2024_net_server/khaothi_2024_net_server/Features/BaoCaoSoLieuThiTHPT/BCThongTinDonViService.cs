@@ -30,7 +30,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
 
             try
             {
-                _logger.LogInformation($"🔍 Đang tìm đơn vị với mã trường: {MaTruong}");
+                // _logger.LogInformation($"🔍 Đang tìm đơn vị với mã trường: {MaTruong}");
 
                 var DonVi = await _TTDonViRepository.GetByMaTruongAsync(MaTruong);
 
@@ -40,7 +40,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
                     return null; // Trả về null thay vì throw
                 }
 
-                _logger.LogInformation($"✅ Tìm thấy đơn vị với mã trường {MaTruong}: {DonVi.TenTruong.ToUpper().Trim()}");
+                //  _logger.LogInformation($"✅ Tìm thấy đơn vị với mã trường {MaTruong}: {DonVi.TenTruong.ToUpper().Trim()}");
                 return DonVi;
             }
             catch (Exception ex)

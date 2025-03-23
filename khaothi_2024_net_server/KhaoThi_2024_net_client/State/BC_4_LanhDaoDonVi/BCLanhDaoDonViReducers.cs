@@ -562,7 +562,7 @@ namespace KhaoThi_2024_net_client.State.BC_4_LanhDaoDonVi
                     paginatedLanhDaos: state.PaginatedLanhDaos,
                     isInitialized: true,
                     notificationMessage: "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
-                    notificationType: "error"); // Đặt kiểu thông báo là error để hiển thị màu đỏ
+                    notificationType: "success"); // Đặt kiểu thông báo là error để hiển thị màu đỏ
             }
 
             // Nếu có dữ liệu, giữ nguyên state

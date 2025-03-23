@@ -31,6 +31,7 @@ using Radzen;
 using KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi;
 using KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi;
 using KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi;
+using KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi;
 
 public class Program
 {
@@ -188,6 +189,7 @@ public class Program
         var BCThongTinDonVi = provider.GetRequiredService<IBCThongTinDonViService>();
         var BCNhomMonDonVi = provider.GetRequiredService<IBCNhomMonDonViService>();
         var BCLanhDaoDonVi = provider.GetRequiredService<IBCLanhDaoDonViService>();
+        var BCTruongDiemDonVi = provider.GetRequiredService<IBCThongTinTruongDiemDonViService>();
         var mapper = provider.GetRequiredService<IMapper>();
         return new CustomAuthStateProvider(localStorage, authService, khaothiuserService, mapper);
     }
@@ -251,6 +253,7 @@ public class Program
         services.AddScoped<IBCThongTinDonViService, BCThongTinDonViService>();
         services.AddScoped<IBCNhomMonDonViService, BCNhomMonDonViService>();
         services.AddScoped<IBCLanhDaoDonViService, BCLanhDaoDonViService>();
+        services.AddScoped<IBCThongTinTruongDiemDonViService, BCThongTinTruongDiemService>();
         // Add other application services here
         ConfigureAdditionalServices(services);
     }

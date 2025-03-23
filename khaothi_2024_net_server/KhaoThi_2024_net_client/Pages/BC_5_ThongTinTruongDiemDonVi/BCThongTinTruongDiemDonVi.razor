@@ -1,0 +1,797 @@
+﻿@page "/bctruongdiem"
+@page "/bctruongdiem/{MaTruong}"
+@using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
+@using KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi
+@using Fluxor
+@using MudBlazor
+@using System.Text.RegularExpressions
+@using Microsoft.AspNetCore.WebUtilities
+@using static KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi.BCThongTinTruongDiemAction
+@using KhaoThi_2024_net_client.State.BC_5_TruongDiemDonVi;
+@using Microsoft.AspNetCore.Components
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@inject IState<BCThongTinTruongDiemState> TruongDiemState
+@inject IDispatcher Dispatcher
+@inject IBCThongTinTruongDiemDonViService TruongDiemService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavigationManager
+@inject IDialogService DialogService
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <div class="d-flex flex-column">
+        <!-- Unit Information Section - Full Width -->
+        <!--<MudPaper Elevation="3" Class="rounded-lg overflow-hidden mb-4 w-100">-->
+            <!-- Header with Gradient -->
+            <!--<MudCardHeader Class="py-3" Style="background: linear-gradient(90deg, #059669, #10B981); border-radius: 8px 8px 0 0;">
+                <CardHeaderContent>
+                    <div class="d-flex align-center">
+                        <MudAvatar Color="Color.Primary" Size="Size.Medium" Class="mr-3" Style="background-color: rgba(255,255,255,0.2);">
+                            <MudIcon Icon="@Icons.Material.Filled.School" />
+                        </MudAvatar>
+                        <div>
+                            <MudText Typo="Typo.h5" Style="color: white; font-weight: 500; letter-spacing: 0.5px;" Class="font-weight-bold">Thông tin điểm thi</MudText>
+                        </div>
+                    </div>
+                </CardHeaderContent>
+            </MudCardHeader>-->
+
+            <!-- School Info and Status Section -->
+            <!--<div class="d-flex flex-wrap align-center justify-space-between pa-4" Style="background-color: #ffffff;">
+                <div class="d-flex align-center">
+                    <div class="d-flex align-center mx-4">
+                        <MudText Typo="Typo.body2" Class="mr-2">Mã trường:</MudText>
+                        <MudText Typo="Typo.h4" Class="font-weight-bold">@maTruong</MudText>
+                    </div>
+                </div>
+                <div class="d-flex align-center mx-4 ">
+                    <MudText Typo="Typo.body2" Class="mr-2">Trạng thái:</MudText>
+                    @if (!TruongDiemState.Value.IsLoading)
+                    {
+                        <div class="d-flex align-center" style="color: #2e7d32; background-color: #e8f5e9; border-radius: 16px; padding: 4px 8px;">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Small" Class="mr-1" />
+                            <span style="font-size: 12px;">Đã tải xong</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-center" style="color: #ed6c02; background-color: #fff4e5; border-radius: 16px; padding: 4px 8px;">
+                            <MudIcon Icon="@Icons.Material.Filled.Pending" Size="Size.Small" Class="mr-1" />
+                            <span style="font-size: 12px;">Đang tải dữ liệu</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </MudPaper>-->
+
+        <!-- Hiển thị theo mức độ ưu tiên: loading > error > data > empty -->
+        @if (TruongDiemState.Value.IsLoading)
+        {
+            <MudPaper Elevation="0" Class="pa-4 d-flex align-center justify-center rounded-md" Style="border: 1px solid #e0e0e0; background-color: #f5f5f5;">
+                <MudProgressCircular Color="Color.Primary" Indeterminate="true" Class="mr-2" />
+                <MudText>Đang tải dữ liệu...</MudText>
+            </MudPaper>
+        }
+        else if (!string.IsNullOrEmpty(TruongDiemState.Value.ErrorMessage))
+        {
+            <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #ffcdd2; background-color: #ffebee;">
+                <MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Class="mr-2" />
+                <MudText>@TruongDiemState.Value.ErrorMessage</MudText>
+            </MudPaper>
+        }
+        else if (TruongDiemState.Value.PaginatedTruongDiems != null && TruongDiemState.Value.PaginatedTruongDiems.Items.Any())
+        {
+            <MudPaper Elevation="3" Class="pa-0 mb-4 rounded-lg">
+                <div class="rounded-t-lg overflow-hidden">
+                    <MudText Typo="Typo.h5" Class="pa-4 d-flex align-center" Style="background-color: #1E88E5; color: white; border-bottom: 2px solid #d4e157;">
+                        <MudIcon Icon="@Icons.Material.Filled.List" Class="mr-3" Color="Color.Inherit" Size="Size.Large" />
+                        Đề cử lãnh đạo điểm thi
+                    </MudText>
+
+                    <MudAlert  Dense="false"
+                              Class="ma-2 rounded-md" Style="background-color: #ff9800; color: white; font-weight: 500;">
+                        <div class="d-flex align-center">
+                            <MudIcon Icon="@Icons.Material.Filled.Warning" Class="mr-3" />
+                            <MudText Typo="Typo.h5" Style="color:white">
+                                <strong>Lưu ý quan trọng:</strong> Đề nghị tất cả các đồng chí trong Ban giám hiệu bắt buộc tham dự đầy đủ. 
+                                Trường hợp vì lý do đặc biệt không thể tham gia, cần gửi văn bản báo cáo nêu rõ lý do, xin ý kiến và phải được sự phê duyệt chính thức bằng văn bản từ Ban giám đốc Sở GDĐT.
+                            </MudText>
+                        </div>
+                    </MudAlert>
+                </div>
+
+                <div class="pa-3">
+                    <MudTable Items="@TruongDiemState.Value.PaginatedTruongDiems.Items" Hover="true" Bordered="true" Striped="true"
+                              Dense="true" Class="rounded-lg" Elevation="1" @ref="table">
+                        <ToolBarContent>
+                            @*<MudTextField @bind-Value="searchTerm" Label="Tìm kiếm" Adornment="Adornment.Start" Immediate="true"
+                                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"
+                                          DebounceInterval="300" OnDebounceIntervalElapsed="@(EventCallback.Factory.Create(this, SearchTruongDiem))" />
+                            <MudSpacer />*@
+                            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => RefreshData())"
+                                       StartIcon="@Icons.Material.Filled.Refresh" Class="ml-2" Disabled="@isSaving">
+                                Làm mới
+                            </MudButton>
+                        </ToolBarContent>
+                        <HeaderContent>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Mã Trường</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">CCCD/CMND</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Họ và tên</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Năm sinh</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Chức vụ đơn vị</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Coi thi TS10</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Chức vụ TS10</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Lý do không tham gia TS10</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Coi thi THPT</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Chức vụ THPT</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Lý do không tham gia THPT</MudTh>
+                            <MudTh Style="background-color: #1E88E5; color: white; font-weight: 700;">Thao tác</MudTh>
+                        </HeaderContent>
+                        <RowTemplate Context="truongDiem">
+                            <MudTd DataLabel="Mã Trường">@truongDiem.MaTruong</MudTd>
+                            <MudTd DataLabel="CCCD/CMND">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudTextField @bind-Value="editTruongDiem.CCCD" Immediate="true"
+                                                  Variant="Variant.Outlined" Margin="Margin.Dense" ReadOnly="true"   Disabled="true" />
+                                }
+                                else
+                                {
+                                    <MudChip T="string" Text="@truongDiem.CCCD" Color="Color.Primary" Variant="Variant.Outlined" Size="Size.Small" Disabled="true"></MudChip>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Họ và tên">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudTextField @bind-Value="editTruongDiem.HoTen" Immediate="true"
+                                                  Variant="Variant.Outlined" Margin="Margin.Dense" Required="true" RequiredError="Họ tên không được để trống" Disabled="true" />
+                                }
+                                else
+                                {
+                                    <div class="d-flex align-items-center">
+                                        @if (!string.IsNullOrEmpty(truongDiem.HoTen))
+                                        {
+                                            <MudAvatar Color="Color.Secondary" Size="Size.Small" Class="mr-2" Disabled="true">
+                                                @(truongDiem.HoTen.Substring(0, 1).ToUpper())
+                                            </MudAvatar>
+                                        }
+                                        <strong>@truongDiem.HoTen</strong>
+                                    </div>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Năm sinh">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudNumericField @bind-Value="editTruongDiem.NamSinh" Immediate="true"
+                                                     Min="1950" Max="@DateTime.Now.Year"
+                                                     Variant="Variant.Outlined" Margin="Margin.Dense" Required="true" RequiredError="Năm sinh không hợp lệ" Disabled="true" />
+                                }
+                                else
+                                {
+                                    @truongDiem.NamSinh
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Chức vụ đơn vị">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudTextField @bind-Value="editTruongDiem.ChucVuDonVi" Immediate="true"
+                                                  Variant="Variant.Outlined" Margin="Margin.Dense" Disabled="true" />
+                                }
+                                else
+                                {
+                                    <MudChip T="string" Text="@truongDiem.ChucVuDonVi" Color="Color.Info" Variant="Variant.Outlined" Size="Size.Small" Disabled="true"></MudChip>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Coi thi TS10">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudSwitch @bind-Value="editTruongDiem.CoiThiTS10"
+                                               CheckedChanged="@((bool val) => { OnCoiThiTS10Changed(val); StateHasChanged(); })"
+                                               Color="Color.Primary" />
+                                }
+                                else
+                                {
+                                    <MudChip T="string" Text="@(truongDiem.CoiThiTS10 ? "Có" : "Không")"
+                                             Color="@(truongDiem.CoiThiTS10 ? Color.Success : Color.Error)"
+                                             Variant="Variant.Outlined" Size="Size.Small"></MudChip>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Chức vụ TS10">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudSelect @bind-Value="editTruongDiem.ChucVuCoiThiTS10"
+                                               Disabled="@(!editTruongDiem.CoiThiTS10)"
+                                               Variant="Variant.Outlined" Margin="Margin.Dense">
+                                        <MudSelectItem Value="@("Trưởng điểm")">Trưởng điểm</MudSelectItem>
+                                        <MudSelectItem Value="@("Phó trưởng điểm coi thi")">Phó trưởng điểm coi thi</MudSelectItem>
+                                        <MudSelectItem Value="@("Phó trưởng điểm cơ sở vật chất")">Phó trưởng điểm CSVC</MudSelectItem>
+                                        @if (!editTruongDiem.CoiThiTS10)
+                                        {
+                                            <MudSelectItem Value="@("Không áp dụng")">Không áp dụng</MudSelectItem>
+                                        }
+                                    </MudSelect>
+                                }
+                                else
+                                {
+                                    <MudChip T="string" Text="@(truongDiem.CoiThiTS10 ? truongDiem.ChucVuCoiThiTS10 : "-")"
+                                             Color="@(truongDiem.CoiThiTS10 ? Color.Info : Color.Default)"
+                                             Variant="Variant.Outlined" Size="Size.Small"></MudChip>
+                                }
+                            </MudTd>
+
+                            <MudTd DataLabel="Lý do không tham gia TS10">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudTextField @bind-Value="editTruongDiem.LyDoKhongThamGiaTS10" Disabled="@(editTruongDiem.CoiThiTS10)"
+                                                  Variant="Variant.Outlined" Margin="Margin.Dense" Lines="4" />
+                                }
+                                else
+                                {
+                                    <MudTooltip Text="@(truongDiem.LyDoKhongThamGiaTS10)" Arrow="true" Placement="Placement.Top">
+                                        <div class="text-truncate" style="max-width: 150px;">
+                                            @(truongDiem.CoiThiTS10 ? "-" : truongDiem.LyDoKhongThamGiaTS10)
+                                        </div>
+                                    </MudTooltip>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Coi thi THPT">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudSwitch @bind-Value="editTruongDiem.CoiThiTHPT"
+                                               CheckedChanged="@((bool val) => { OnCoiThiTHPTChanged(val); StateHasChanged(); })"
+                                               Color="Color.Primary" />
+                                }
+                                else
+                                {
+                                    <MudChip T="string" Text="@(truongDiem.CoiThiTHPT ? "Có" : "Không")"
+                                             Color="@(truongDiem.CoiThiTHPT ? Color.Success : Color.Error)"
+                                             Variant="Variant.Outlined" Size="Size.Small"></MudChip>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Chức vụ THPT">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <MudSelect @bind-Value="editTruongDiem.ChucVuCoiThiTHPT"
+                                               Disabled="@(!editTruongDiem.CoiThiTHPT)"
+                                               Variant="Variant.Outlined" Margin="Margin.Dense">
+                                        <MudSelectItem Value="@("Trưởng điểm")">Trưởng điểm</MudSelectItem>
+                                        <MudSelectItem Value="@("Phó trưởng điểm coi thi")">Phó trưởng điểm coi thi</MudSelectItem>
+                                        <MudSelectItem Value="@("Phó trưởng điểm cơ sở vật chất")">Phó trưởng điểm CSVC</MudSelectItem>
+                                        @if (!editTruongDiem.CoiThiTHPT)
+                                        {
+                                            <MudSelectItem Value="@("Không áp dụng")">Không áp dụng</MudSelectItem>
+                                        }
+                                    </MudSelect>
+                                }
+                                else
+                                {
+                                    <MudChip T="string" Text="@(truongDiem.CoiThiTHPT ? truongDiem.ChucVuCoiThiTHPT : "-")"
+                                             Color="@(truongDiem.CoiThiTHPT ? Color.Info : Color.Default)"
+                                             Variant="Variant.Outlined" Size="Size.Small"></MudChip>
+                                }
+                            </MudTd>
+                            <MudTd DataLabel="Lý do không tham gia THPT">
+                                <MudTd DataLabel="Lý do không tham gia THPT">
+                                    @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                    {
+                                        <MudTextField @bind-Value="editTruongDiem.LyDoKhongThamGiaTHPT" Disabled="@(editTruongDiem.CoiThiTHPT)"
+                                                      Variant="Variant.Outlined" Margin="Margin.Dense" Lines="4" />
+                                    }
+                                    else
+                                    {
+                                        <MudTooltip Text="@(truongDiem.LyDoKhongThamGiaTHPT)" Arrow="true" Placement="Placement.Top">
+                                            <div class="text-truncate" style="max-width: 150px;">
+                                                @(truongDiem.CoiThiTHPT ? "-" : truongDiem.LyDoKhongThamGiaTHPT)
+                                            </div>
+                                        </MudTooltip>
+                                    }
+                                </MudTd>
+                            </MudTd>
+                            <MudTd Style="text-align: center">
+                                @if (editingTruongDiemId == GetTruongDiemId(truongDiem))
+                                {
+                                    <div class="d-flex gap-2 justify-center">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Save"
+                                                       Color="Color.Success"
+                                                       OnClick="@(() => SaveTruongDiem(truongDiem))"
+                                                       Size="Size.Small"
+                                                       Title="Lưu" Disabled="@isSaving" />
+                                        <MudIconButton Icon="@Icons.Material.Filled.Cancel"
+                                                       Color="Color.Default"
+                                                       OnClick="@CancelEditing"
+                                                       Size="Size.Small"
+                                                       Title="Hủy" Disabled="@isSaving" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                                   Color="Color.Primary"
+                                                   OnClick="@(() => StartEditing(truongDiem))"
+                                                   Size="Size.Small"
+                                                   Title="Sửa" Disabled="@isSaving" />
+                                }
+                            </MudTd>
+                        </RowTemplate>
+                        <PagerContent>
+                            <MudTablePager PageSizeOptions="new int[] { 5, 10, 25, 50 }"
+                                           RowsPerPageString="Số dòng mỗi trang:"
+                                           InfoFormat="{first_item}-{last_item} / {all_items}"
+                                           OnPageChanged="@(EventCallback.Factory.Create<int>(this, OnPageChanged))" />
+                        </PagerContent>
+                    </MudTable>
+                </div>
+            </MudPaper>
+        }
+        else if (TruongDiemState.Value.IsInitialized)
+        {
+            <MudPaper Elevation="0" Class="pa-3 d-flex flex-column align-center rounded-md" Style="border: 1px solid #e0e0e0; background-color: #f5f5f5;">
+                <div class="d-flex align-center mb-2">
+                    <MudIcon Icon="@Icons.Material.Filled.Info" Color="Color.Info" Class="mr-2" />
+                    <MudText>Không có dữ liệu lãnh đạo điểm thi.</MudText>
+                </div>
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           StartIcon="@Icons.Material.Filled.Refresh"
+                           OnClick="@(async () => await LoadPaginatedTruongDiems())"
+                           Class="mt-2">
+                    Tải lại dữ liệu
+                </MudButton>
+            </MudPaper>
+        }
+
+        <!-- Hiển Thị Thông Báo -->
+        @if (!string.IsNullOrEmpty(TruongDiemState.Value.NotificationMessage))
+        {
+            <div class="mt-4">
+                @if (TruongDiemState.Value.NotificationType == "error")
+                {
+                    <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #ffcdd2; background-color: #ffebee;">
+                        <MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Class="mr-2" />
+                        <MudText>@TruongDiemState.Value.NotificationMessage</MudText>
+                        <MudSpacer />
+                        <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@ClearNotification" Size="Size.Small" />
+                    </MudPaper>
+                }
+                else
+                {
+                    <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #c8e6c9; background-color: #e8f5e9;">
+                        <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" />
+                        <MudText>@TruongDiemState.Value.NotificationMessage</MudText>
+                        <MudSpacer />
+                        <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@ClearNotification" Size="Size.Small" />
+                    </MudPaper>
+                }
+            </div>
+        }
+    </div>
+</MudContainer>
+
+@code {
+    [Parameter]
+    public string MaTruong { get; set; }
+
+    private string maTruong = string.Empty;
+    private string searchTerm = string.Empty;
+    private string editingTruongDiemId = string.Empty;
+    private KhaoThi_4_THPT_ThongTin_LanhDaoModel editTruongDiem = new();
+
+    private bool _notificationShown = false;
+    private System.Threading.Timer _clearNotificationTimer;
+    private int currentPage = 1;
+    private int pageSize = 10;
+    private bool isPageChanging = false;
+    private bool isSaving = false; // Cờ để vô hiệu hóa các nút khi đang lưu
+    private MudForm form;
+    private MudTable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> table;
+    private bool _isFirstLoad = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        Console.WriteLine("Bắt đầu OnInitializedAsync");
+
+        // Check maTruong từ route parameter
+        if (!string.IsNullOrEmpty(MaTruong))
+        {
+            maTruong = MaTruong;
+            //Console.WriteLine($"Lấy maTruong từ route parameter: {maTruong}");
+        }
+        else
+        {
+            // Trích xuất maTruong từ query string
+            ExtractMaDonViFromQueryString();
+        }
+
+        if (!string.IsNullOrEmpty(maTruong))
+        {
+            //Console.WriteLine($"Đã xác định maTruong: {maTruong}, tiến hành tải dữ liệu");
+
+            // Đảm bảo server API có thể gọi được
+            // Gửi ping request trước
+            try
+            {
+                await TruongDiemService.GetPaginatedAsync(1, 1);
+                //Console.WriteLine("Ping API thành công");
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Ping API thất bại: {ex.Message}");
+            }
+
+            await LoadTruongDiemsByMaTruong();
+        }
+        else
+        {
+            //Console.WriteLine("Không thể xác định maTruong");
+            Snackbar.Add("Không thể xác định mã trường", Severity.Warning);
+        }
+    }
+
+    private void ExtractMaDonViFromQueryString()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        var query = QueryHelpers.ParseQuery(uri.Query); // Parse query string trước
+
+        if (query.TryGetValue("MaDonVi", out var maDonViParam))
+        {
+            maTruong = maDonViParam.First();
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (firstRender)
+        {
+            Console.WriteLine($"State: IsLoading={TruongDiemState.Value.IsLoading}, " +
+                            $"IsInitialized={TruongDiemState.Value.IsInitialized}, " +
+                            $"HasItems={TruongDiemState.Value.PaginatedTruongDiems?.Items?.Count() ?? 0}, " +
+                            $"Error={TruongDiemState.Value.ErrorMessage ?? "None"}");
+
+            // Kiểm tra nếu không có dữ liệu và đã khởi tạo trạng thái
+            if (_isFirstLoad && !TruongDiemState.Value.IsLoading && TruongDiemState.Value.IsInitialized &&
+                (TruongDiemState.Value.PaginatedTruongDiems == null || !TruongDiemState.Value.PaginatedTruongDiems.Items.Any()))
+            {
+                _isFirstLoad = false;
+                InvokeAsync(async () => await LoadPaginatedTruongDiems());
+            }
+        }
+
+        // Hiển thị thông báo Snackbar và đặt cờ để tránh lặp lại
+        if (!string.IsNullOrEmpty(TruongDiemState.Value.NotificationMessage) && !_notificationShown)
+        {
+            var severity = TruongDiemState.Value.NotificationType == "error"
+                ? Severity.Error
+                : Severity.Success;
+
+            Snackbar.Add(TruongDiemState.Value.NotificationMessage, severity);
+            _notificationShown = true;
+
+            // Xóa thông báo sau 5 giây
+            _clearNotificationTimer?.Dispose();
+            _clearNotificationTimer = new System.Threading.Timer(_ =>
+            {
+                InvokeAsync(() =>
+                {
+                    Dispatcher.Dispatch(new KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi.BCThongTinTruongDiemAction.ClearErrorAction());
+                    StateHasChanged();
+                });
+            }, null, 5000, Timeout.Infinite);
+        }
+        else if (string.IsNullOrEmpty(TruongDiemState.Value.NotificationMessage))
+        {
+            _notificationShown = false;
+        }
+    }
+
+    private void ClearNotification()
+    {
+        Dispatcher.Dispatch(new KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi.BCThongTinTruongDiemAction.ClearErrorAction());
+    }
+
+    private async Task LoadTruongDiemsByMaTruong()
+    {
+        if (string.IsNullOrEmpty(maTruong))
+            return;
+
+        await LoadPaginatedTruongDiems();
+    }
+
+    private async Task LoadPaginatedTruongDiems()
+    {
+        try
+        {
+            // Log trước khi gọi API
+            //Console.WriteLine($"Đang gọi API LoadPaginatedTruongDiems: MaTruong={maTruong}, Page={currentPage}, PageSize={pageSize}, SearchTerm={searchTerm}");
+
+            // Dispatch action để tải dữ liệu
+            Dispatcher.Dispatch(new LoadPaginatedTruongDiemsAction(currentPage, pageSize, searchTerm, maTruong));
+
+            // Đợi một khoảng thời gian cho effect xử lý
+            await Task.Delay(1000);
+
+            // Kiểm tra kết quả để debug
+            var hasData = TruongDiemState.Value.PaginatedTruongDiems?.Items?.Any() == true;
+            var isError = !string.IsNullOrEmpty(TruongDiemState.Value.ErrorMessage);
+
+            //Console.WriteLine($"Kết quả tải dữ liệu: HasData={hasData}, IsError={isError}, ErrorMessage={TruongDiemState.Value.ErrorMessage ?? "None"}");
+        }
+        catch (Exception ex)
+        {
+            //Console.WriteLine($"Lỗi khi tải dữ liệu: {ex.Message}");
+            Snackbar.Add("Có lỗi xảy ra khi tải dữ liệu. Vui lòng thử lại", Severity.Error);
+        }
+
+        // Cập nhật giao diện
+        StateHasChanged();
+    }
+    private async Task OnPageChanged(int page)
+    {
+        if (isPageChanging) return;
+
+        try
+        {
+            isPageChanging = true;
+            currentPage = page;
+            await LoadPaginatedTruongDiems();
+        }
+        finally
+        {
+            isPageChanging = false;
+        }
+    }
+
+    private async Task SearchTruongDiem()
+    {
+        currentPage = 1; // Reset về trang đầu tiên khi tìm kiếm
+        await LoadPaginatedTruongDiems();
+    }
+
+    private async Task RefreshData()
+    {
+        // Luôn tải lại dữ liệu khi người dùng yêu cầu làm mới
+        searchTerm = string.Empty;
+        currentPage = 1;
+        await LoadPaginatedTruongDiems();
+    }
+
+    private string GetTruongDiemId(KhaoThi_4_THPT_ThongTin_LanhDaoModel truongDiem)
+    {
+        return $"{truongDiem.MaTruong}_{truongDiem.CCCD}";
+    }
+
+    private void StartEditing(KhaoThi_4_THPT_ThongTin_LanhDaoModel truongDiem)
+    {
+        editingTruongDiemId = GetTruongDiemId(truongDiem);
+
+        // Tạo đối tượng mới với các giá trị mặc định hợp lệ
+        editTruongDiem = new KhaoThi_4_THPT_ThongTin_LanhDaoModel
+        {
+            MaTruong = truongDiem.MaTruong,
+            CCCD = truongDiem.CCCD,
+            HoTen = truongDiem.HoTen ?? "",
+            NamSinh = truongDiem.NamSinh,
+            ChucVuDonVi = truongDiem.ChucVuDonVi ?? "",
+            CoiThiTS10 = truongDiem.CoiThiTS10,
+            ChucVuCoiThiTS10 = truongDiem.ChucVuCoiThiTS10 ?? (truongDiem.CoiThiTS10 ? "Trưởng điểm" : "Không áp dụng"),
+            // Đảm bảo LyDoKhongThamGiaTS10 luôn có giá trị
+            LyDoKhongThamGiaTS10 = truongDiem.LyDoKhongThamGiaTS10 ?? (truongDiem.CoiThiTS10 ? "N/A" : "Không tham gia"),
+            CoiThiTHPT = truongDiem.CoiThiTHPT,
+            ChucVuCoiThiTHPT = truongDiem.ChucVuCoiThiTHPT ?? (truongDiem.CoiThiTHPT ? "Trưởng điểm" : "Không áp dụng"),
+            // Đảm bảo LyDoKhongThamGiaTHPT luôn có giá trị
+            LyDoKhongThamGiaTHPT = truongDiem.LyDoKhongThamGiaTHPT ?? (truongDiem.CoiThiTHPT ? "N/A" : "Không tham gia")
+        };
+
+        // Log để debug
+        //Console.WriteLine($"Bắt đầu chỉnh sửa: MaTruong={editTruongDiem.MaTruong}");
+        //Console.WriteLine($"CoiThiTS10={editTruongDiem.CoiThiTS10}, ChucVuCoiThiTS10={editTruongDiem.ChucVuCoiThiTS10}, LyDoKhongThamGiaTS10={editTruongDiem.LyDoKhongThamGiaTS10}");
+        //Console.WriteLine($"CoiThiTHPT={editTruongDiem.CoiThiTHPT}, ChucVuCoiThiTHPT={editTruongDiem.ChucVuCoiThiTHPT}, LyDoKhongThamGiaTHPT={editTruongDiem.LyDoKhongThamGiaTHPT}");
+    }
+
+    private void CancelEditing()
+    {
+        editingTruongDiemId = string.Empty;
+        editTruongDiem = new KhaoThi_4_THPT_ThongTin_LanhDaoModel();
+    }
+
+    private async Task SaveTruongDiem(KhaoThi_4_THPT_ThongTin_LanhDaoModel truongDiem)
+    {
+        isSaving = true;  // Vô hiệu hóa nút lưu trong khi đang lưu
+        try
+        {
+            // Kiểm tra tên
+            if (string.IsNullOrWhiteSpace(editTruongDiem.HoTen))
+            {
+                Snackbar.Add("Họ tên không được để trống", Severity.Error);
+                return;
+            }
+
+            // Kiểm tra năm sinh
+            if (editTruongDiem.NamSinh < 1950 || editTruongDiem.NamSinh > DateTime.Now.Year)
+            {
+                Snackbar.Add("Năm sinh không hợp lệ", Severity.Error);
+                return;
+            }
+
+            // =====================================================================
+            // Xử lý dữ liệu cho TS10
+            // =====================================================================
+
+            // Nếu tham gia coi thi TS10
+            if (editTruongDiem.CoiThiTS10)
+            {
+                // Đảm bảo có chức vụ
+                editTruongDiem.LyDoKhongThamGiaTS10 = "N/A";
+
+                if (string.IsNullOrEmpty(editTruongDiem.ChucVuCoiThiTS10))
+                {
+                    editTruongDiem.ChucVuCoiThiTS10 = "Trưởng điểm";
+                }
+            }
+            // Nếu KHÔNG tham gia coi thi TS10
+            else
+            {
+                editTruongDiem.ChucVuCoiThiTS10 = "Không áp dụng";
+                editTruongDiem.LyDoKhongThamGiaTS10 = string.IsNullOrEmpty(editTruongDiem.LyDoKhongThamGiaTS10)
+                    ? "Không tham gia"
+                    : editTruongDiem.LyDoKhongThamGiaTS10;
+            }
+
+            // =====================================================================
+            // Xử lý dữ liệu cho THPT
+            // =====================================================================
+
+            // Nếu tham gia coi thi THPT
+            if (editTruongDiem.CoiThiTHPT)
+            {
+                editTruongDiem.LyDoKhongThamGiaTHPT = "N/A";
+
+                if (string.IsNullOrEmpty(editTruongDiem.ChucVuCoiThiTHPT))
+                {
+                    editTruongDiem.ChucVuCoiThiTHPT = "Trưởng điểm";
+                }
+            }
+            // Nếu KHÔNG tham gia coi thi THPT
+            else
+            {
+                editTruongDiem.ChucVuCoiThiTHPT = "Không áp dụng";
+                editTruongDiem.LyDoKhongThamGiaTHPT = string.IsNullOrEmpty(editTruongDiem.LyDoKhongThamGiaTHPT)
+                    ? "Không tham gia"
+                    : editTruongDiem.LyDoKhongThamGiaTHPT;
+            }
+
+            // Kiểm tra cuối cùng để đảm bảo không có trường nào là null
+            editTruongDiem.LyDoKhongThamGiaTS10 = editTruongDiem.LyDoKhongThamGiaTS10 ?? "Không tham gia";
+            editTruongDiem.LyDoKhongThamGiaTHPT = editTruongDiem.LyDoKhongThamGiaTHPT ?? "Không tham gia";
+
+            // Cập nhật giá trị từ editTruongDiem vào truongDiem
+            truongDiem.HoTen = editTruongDiem.HoTen;
+            truongDiem.NamSinh = editTruongDiem.NamSinh;
+            truongDiem.ChucVuDonVi = editTruongDiem.ChucVuDonVi;
+            truongDiem.CoiThiTS10 = editTruongDiem.CoiThiTS10;
+            truongDiem.ChucVuCoiThiTS10 = editTruongDiem.ChucVuCoiThiTS10;
+            truongDiem.LyDoKhongThamGiaTS10 = editTruongDiem.LyDoKhongThamGiaTS10;
+            truongDiem.CoiThiTHPT = editTruongDiem.CoiThiTHPT;
+            truongDiem.ChucVuCoiThiTHPT = editTruongDiem.ChucVuCoiThiTHPT;
+            truongDiem.LyDoKhongThamGiaTHPT = editTruongDiem.LyDoKhongThamGiaTHPT;
+
+            // Log các giá trị trước khi gửi đi
+            //Console.WriteLine($"Đang gửi cập nhật: MaTruong={truongDiem.MaTruong}, CCCD={truongDiem.CCCD}");
+            //Console.WriteLine($"CoiThiTS10={truongDiem.CoiThiTS10}, ChucVuCoiThiTS10={truongDiem.ChucVuCoiThiTS10}");
+            //Console.WriteLine($"LyDoKhongThamGiaTS10={truongDiem.LyDoKhongThamGiaTS10}");
+            //Console.WriteLine($"CoiThiTHPT={truongDiem.CoiThiTHPT}, ChucVuCoiThiTHPT={truongDiem.ChucVuCoiThiTHPT}");
+            //Console.WriteLine($"LyDoKhongThamGiaTHPT={truongDiem.LyDoKhongThamGiaTHPT}");
+
+            // Gửi action cập nhật
+            Dispatcher.Dispatch(new UpdateTruongDiemAction(truongDiem));
+            Snackbar.Add("Đang cập nhật thông tin...", Severity.Info);
+
+            // Thoát chế độ chỉnh sửa
+            editingTruongDiemId = string.Empty;
+
+            // Đợi action hoàn thành
+            await Task.Delay(500);
+
+            // Tải lại dữ liệu
+            await LoadPaginatedTruongDiems();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Lỗi khi lưu: {ex.Message}");
+            Snackbar.Add($"Lỗi: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            isSaving = false; // Bật lại nút lưu sau khi đã lưu xong
+        }
+    }
+    private void OnCoiThiTS10Changed(bool value)
+    {
+        editTruongDiem.CoiThiTS10 = value;
+
+        if (value) // Nếu chọn "Có"
+        {
+            // Khi tham gia thì không cần lý do không tham gia
+            editTruongDiem.LyDoKhongThamGiaTS10 = null;
+
+            // Đảm bảo chức vụ có giá trị hợp lệ
+            if (string.IsNullOrEmpty(editTruongDiem.ChucVuCoiThiTS10) ||
+                editTruongDiem.ChucVuCoiThiTS10 == "Không áp dụng")
+            {
+                editTruongDiem.ChucVuCoiThiTS10 = "Trưởng điểm";
+            }
+        }
+        else // Nếu chọn "Không"
+        {
+            // Khi không tham gia thì không cần chức vụ
+            editTruongDiem.ChucVuCoiThiTS10 = "Không áp dụng";
+
+            // Khi không tham gia PHẢI có lý do
+            if (string.IsNullOrEmpty(editTruongDiem.LyDoKhongThamGiaTS10))
+            {
+                editTruongDiem.LyDoKhongThamGiaTS10 = "Không tham gia";
+            }
+        }
+
+        // Kiểm tra lại một lần nữa để đảm bảo
+        if (!editTruongDiem.CoiThiTS10 && string.IsNullOrEmpty(editTruongDiem.LyDoKhongThamGiaTS10))
+        {
+            editTruongDiem.LyDoKhongThamGiaTS10 = "Không tham gia";
+        }
+
+        //Console.WriteLine($"Sau OnCoiThiTS10Changed: CoiThiTS10={editTruongDiem.CoiThiTS10}, " +
+        //                 $"ChucVuCoiThiTS10={editTruongDiem.ChucVuCoiThiTS10}, " +
+        //                 $"LyDoKhongThamGiaTS10={editTruongDiem.LyDoKhongThamGiaTS10 ?? "null"}");
+
+        StateHasChanged();
+    }
+
+    private void OnCoiThiTHPTChanged(bool value)
+    {
+        editTruongDiem.CoiThiTHPT = value;
+
+        if (value) // Nếu chọn "Có"
+        {
+            // Khi tham gia thì không cần lý do không tham gia
+            editTruongDiem.LyDoKhongThamGiaTHPT = null;
+
+            // Đảm bảo chức vụ có giá trị hợp lệ
+            if (string.IsNullOrEmpty(editTruongDiem.ChucVuCoiThiTHPT) ||
+                editTruongDiem.ChucVuCoiThiTHPT == "Không áp dụng")
+            {
+                editTruongDiem.ChucVuCoiThiTHPT = "Trưởng điểm";
+            }
+        }
+        else // Nếu chọn "Không"
+        {
+            // Khi không tham gia thì không cần chức vụ
+            editTruongDiem.ChucVuCoiThiTHPT = "Không áp dụng";
+
+            // Khi không tham gia PHẢI có lý do
+            if (string.IsNullOrEmpty(editTruongDiem.LyDoKhongThamGiaTHPT))
+            {
+                editTruongDiem.LyDoKhongThamGiaTHPT = "Không tham gia";
+            }
+        }
+
+        // Kiểm tra lại một lần nữa để đảm bảo
+        if (!editTruongDiem.CoiThiTHPT && string.IsNullOrEmpty(editTruongDiem.LyDoKhongThamGiaTHPT))
+        {
+            editTruongDiem.LyDoKhongThamGiaTHPT = "Không tham gia";
+        }
+
+        //Console.WriteLine($"Sau OnCoiThiTHPTChanged: CoiThiTHPT={editTruongDiem.CoiThiTHPT}, " +
+        //                 $"ChucVuCoiThiTHPT={editTruongDiem.ChucVuCoiThiTHPT}, " +
+        //                 $"LyDoKhongThamGiaTHPT={editTruongDiem.LyDoKhongThamGiaTHPT ?? "null"}");
+
+        StateHasChanged();
+    }
+
+
+    public void Dispose()
+    {
+        _clearNotificationTimer?.Dispose();
+    }
+}

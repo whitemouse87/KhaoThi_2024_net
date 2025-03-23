@@ -113,7 +113,7 @@ namespace KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi
 
                 if (response.IsSuccessStatusCode)
                 {
-                    await _logger.LogInfoAsync($"Cập nhật đơn vị thành công: {DonVi.MaTruong}", nameof(BCThongTinDonViService));
+                    // await _logger.LogInfoAsync($"Cập nhật đơn vị thành công: {DonVi.MaTruong}", nameof(BCThongTinDonViService));
                     return true;
                 }
 

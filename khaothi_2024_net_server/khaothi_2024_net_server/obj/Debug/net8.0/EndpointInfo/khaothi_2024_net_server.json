@@ -1382,6 +1382,166 @@
         }
       }
     },
+    "/api/BCThongTinTruongDiem/all-phantrang-truongdiem": {
+      "get": {
+        "tags": [
+          "BCThongTinTruongDiem"
+        ],
+        "summary": "Lấy danh sách thông tin trường điểm thi có phân trang và tìm kiếm",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "maTruong",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCThongTinTruongDiem/truongdiemtruong/{maTruong}/cccd/{cccd}": {
+      "put": {
+        "tags": [
+          "BCThongTinTruongDiem"
+        ],
+        "summary": "Cập nhật thông tin trường điểm thi",
+        "parameters": [
+          {
+            "name": "maTruong",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cccd",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
     "/banks": {
       "get": {
         "tags": [
@@ -2441,6 +2601,52 @@
         "additionalProperties": false,
         "description": "Generic class để xử lý kết quả phân trang cho mọi loại entity"
       },
+      "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "Items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel"
+            },
+            "description": "Danh sách items trong trang hiện tại",
+            "nullable": true
+          },
+          "TotalCount": {
+            "type": "integer",
+            "description": "Tổng số bản ghi (toàn bộ, không phải trong trang hiện tại)",
+            "format": "int32"
+          },
+          "Page": {
+            "type": "integer",
+            "description": "Số trang hiện tại",
+            "format": "int32"
+          },
+          "PageSize": {
+            "type": "integer",
+            "description": "Số bản ghi trên mỗi trang",
+            "format": "int32"
+          },
+          "TotalPages": {
+            "type": "integer",
+            "description": "Tổng số trang",
+            "format": "int32",
+            "readOnly": true
+          },
+          "HasPreviousPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang trước không",
+            "readOnly": true
+          },
+          "HasNextPage": {
+            "type": "boolean",
+            "description": "Kiểm tra có trang sau không",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Generic class để xử lý kết quả phân trang cho mọi loại entity"
+      },
       "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.UserManagement.DTOs.KhaoThiUser, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -2790,6 +2996,78 @@
           },
           "Lock": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel": {
+        "type": "object",
+        "properties": {
+          "MaTruong": {
+            "type": "string",
+            "nullable": true
+          },
+          "CCCD": {
+            "type": "string",
+            "nullable": true
+          },
+          "HoTen": {
+            "type": "string",
+            "nullable": true
+          },
+          "NamSinh": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ChucVuDonVi": {
+            "type": "string",
+            "nullable": true
+          },
+          "DiaChiNha": {
+            "type": "string",
+            "nullable": true
+          },
+          "QuanNha": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "SDTDiDong": {
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoiThiTS10": {
+            "type": "boolean"
+          },
+          "ChucVuCoiThiTS10": {
+            "type": "string",
+            "nullable": true
+          },
+          "LyDoKhongThamGiaTS10": {
+            "type": "string",
+            "nullable": true
+          },
+          "CoiThiTHPT": {
+            "type": "boolean"
+          },
+          "ChucVuCoiThiTHPT": {
+            "type": "string",
+            "nullable": true
+          },
+          "LyDoKhongThamGiaTHPT": {
+            "type": "string",
+            "nullable": true
+          },
+          "CumChuyenMon": {
+            "type": "string",
+            "nullable": true
+          },
+          "ChucVuCumChuyenMon": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

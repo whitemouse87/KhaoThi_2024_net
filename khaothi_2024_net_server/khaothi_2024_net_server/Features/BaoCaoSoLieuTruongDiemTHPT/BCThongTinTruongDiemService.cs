@@ -25,7 +25,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
         /// <summary>
         /// Cập nhật thông tin trường điểm thi
         /// </summary>
-        public async Task<bool> UpdateAsync(KhaoThi_5_THPT_ThongTin_TruongDiemModel lanhDaoDiemThi)
+        public async Task<bool> UpdateAsync(KhaoThi_4_THPT_ThongTin_LanhDaoModel lanhDaoDiemThi)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
         /// <summary>
         /// Lấy danh sách trường điểm thi có phân trang và tìm kiếm
         /// </summary>
-        public async Task<(IEnumerable<KhaoThi_5_THPT_ThongTin_TruongDiemModel> Items, int TotalCount)> GetPaginatedAsync(
+        public async Task<(IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> Items, int TotalCount)> GetPaginatedAsync(
             int page,
             int pageSize,
             string? searchTerm = null,
@@ -87,7 +87,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
             {
                 _logger.LogError(ex, "Lỗi khi lấy danh sách trường điểm thi có phân trang. Page: {Page}, PageSize: {PageSize}, SearchTerm: {SearchTerm}, MaTruong: {MaTruong}",
                     page, pageSize, searchTerm, maTruong);
-                return (new List<KhaoThi_5_THPT_ThongTin_TruongDiemModel>(), 0);
+                return (new List<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(), 0);
             }
         }
     }

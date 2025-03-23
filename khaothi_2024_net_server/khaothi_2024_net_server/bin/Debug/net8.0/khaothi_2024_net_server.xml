@@ -266,6 +266,36 @@
             Constructor với Dependency Injection
             </summary>
         </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemController.GetPaginated(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Lấy danh sách thông tin trường điểm thi có phân trang và tìm kiếm
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemController.Update(System.String,System.String,khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel)">
+            <summary>
+            Cập nhật thông tin trường điểm thi
+            </summary>
+        </member>
+        <member name="T:khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemService">
+            <summary>
+            Service xử lý nghiệp vụ thông tin trường điểm thi
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemService.#ctor(khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.Interfaces.IBCThongTinTruongDiemRepository,Microsoft.Extensions.Logging.ILogger{khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemService})">
+            <summary>
+            Constructor với Dependency Injection
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemService.UpdateAsync(khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.DTOs.KhaoThi_4_THPT_ThongTin_LanhDaoModel)">
+            <summary>
+            Cập nhật thông tin trường điểm thi
+            </summary>
+        </member>
+        <member name="M:khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.BCThongTinTruongDiemService.GetPaginatedAsync(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Lấy danh sách trường điểm thi có phân trang và tìm kiếm
+            </summary>
+        </member>
         <member name="M:khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(System.Int32)">
             <summary>
             Lấy thông tin người dùng theo ID

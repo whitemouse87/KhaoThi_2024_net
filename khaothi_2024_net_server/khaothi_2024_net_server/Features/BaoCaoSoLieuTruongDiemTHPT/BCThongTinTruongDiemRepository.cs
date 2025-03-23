@@ -18,7 +18,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
             _logger = logger;
         }
 
-        public async Task<bool> UpdateAsync(KhaoThi_5_THPT_ThongTin_TruongDiemModel lanhDaoDiemThi)
+        public async Task<bool> UpdateAsync(KhaoThi_4_THPT_ThongTin_LanhDaoModel lanhDaoDiemThi)
         {
             string sql = $@"UPDATE {TableName}
                           SET HoTen = @HoTen,
@@ -49,37 +49,50 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
             return rowsAffected > 0;
         }
 
-        public async Task<(IEnumerable<KhaoThi_5_THPT_ThongTin_TruongDiemModel> Items, int TotalCount)> GetPaginatedAsync(
+        public async Task<(IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> Items, int TotalCount)> GetPaginatedAsync(
             int page,
             int pageSize,
             string? searchTerm = null,
             string? maTruong = null)
         {
-            var sql = $"SELECT * FROM {TableName} WHERE 1=1";
-            var parameters = new List<object>();
-
-            // Tìm kiếm theo từ khóa
-            if (!string.IsNullOrEmpty(searchTerm))
+            try
             {
-                sql += " AND (HoTen LIKE @Search OR ChucVuDonVi LIKE @Search)";
-                parameters.AddRange(new object[] { "@Search", $"%{searchTerm}%" });
-            }
+                // Sử dụng SELECT TOP 100 PERCENT để cho phép ORDER BY trong subquery
+                var sql = $"SELECT * FROM {TableName}  WHERE 1=1";
+                var parameters = new List<object>();
 
-            // Lọc theo mã trường
-            if (!string.IsNullOrEmpty(maTruong))
+                // Tìm kiếm theo từ khóa
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    sql += " AND (HoTen LIKE @Search OR ChucVuDonVi LIKE @Search)";
+                    parameters.AddRange(new object[] { "@Search", $"%{searchTerm}%" });
+                }
+
+                // Lọc theo mã trường
+                if (!string.IsNullOrEmpty(maTruong))
+                {
+                    sql += " AND MaTruong = @MaTruong";
+                    parameters.AddRange(new object[] { "@MaTruong", maTruong });
+                }
+
+                // Log câu truy vấn để debug
+                //_logger.LogInformation($"Executing SQL: {sql}");
+                //_logger.LogInformation($"Parameters: {string.Join(", ", parameters.Where((p, i) => i % 2 == 0).Select(p => p.ToString()))}");
+
+                var result = await _dataAccess.QueryPaginatedAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
+                    sql,
+                    page,
+                    pageSize,
+                    parameters.ToArray());
+
+                //_logger.LogInformation($"Query completed. Items count: {result.Items.Count()}");
+                return result;
+            }
+            catch (Exception ex)
             {
-                sql += " AND MaTruong = @MaTruong";
-                parameters.AddRange(new object[] { "@MaTruong", maTruong });
+                _logger.LogError(ex, "Lỗi khi truy vấn dữ liệu từ bảng KhaoThi_4_THPT_ThongTin_LanhDao");
+                throw;
             }
-
-            // Thêm sắp xếp để đảm bảo kết quả nhất quán
-            sql += " ORDER BY MaTruong ASC, HoTen ASC";
-
-            return await _dataAccess.QueryPaginatedAsync<KhaoThi_5_THPT_ThongTin_TruongDiemModel>(
-                sql,
-                page,
-                pageSize,
-                parameters.ToArray());
         }
     }
 }
