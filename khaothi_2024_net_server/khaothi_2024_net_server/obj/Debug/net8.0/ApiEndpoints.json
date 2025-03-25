@@ -454,6 +454,309 @@
     ]
   },
   {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "Create",
+    "RelativePath": "api/BCThongTinConThi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conThi",
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "GetByKeys",
+    "RelativePath": "api/BCThongTinConThi/{maTruong}/{cccd}/{maDinhDanhCuaCon}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "maDinhDanhCuaCon",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "Update",
+    "RelativePath": "api/BCThongTinConThi/{maTruong}/{cccd}/{maDinhDanhCuaCon}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "maDinhDanhCuaCon",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "conThi",
+        "Type": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "Delete",
+    "RelativePath": "api/BCThongTinConThi/{maTruong}/{cccd}/{maDinhDanhCuaCon}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "maDinhDanhCuaCon",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "GetAll",
+    "RelativePath": "api/BCThongTinConThi/all-conthi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "GetPaginated",
+    "RelativePath": "api/BCThongTinConThi/all-phantrang-conthi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "khaothi_2024_net_server.Core.Models.Common.PaginatedResult\u00601[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.BCThongTinConThiController",
+    "Method": "Exists",
+    "RelativePath": "api/BCThongTinConThi/exists/{maTruong}/{cccd}/{maDinhDanhCuaCon}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "maTruong",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cccd",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "maDinhDanhCuaCon",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
     "ContainingType": "khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT.BCThongTinDonViController",
     "Method": "GetByMaTruong",
     "RelativePath": "api/BCThongTinDonVi/{MaTruong}",

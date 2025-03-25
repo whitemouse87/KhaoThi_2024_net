@@ -1,0 +1,5 @@
+2025-03-25 21:10:17.976 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-25 21:10:21.852 +07:00 [INF] [Client] Token hết hạn 
+2025-03-25 21:10:45.374 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-25 21:10:46.439 +07:00 [ERR] Password verification result: true
+2025-03-25 21:10:46.569 +07:00 [INF] User asdas logged in successfully from IP: ::1
