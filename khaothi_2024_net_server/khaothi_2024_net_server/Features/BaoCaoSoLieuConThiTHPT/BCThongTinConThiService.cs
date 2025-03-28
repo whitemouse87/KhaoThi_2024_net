@@ -1,9 +1,5 @@
 ﻿using khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.Interfaces;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
 {
@@ -12,6 +8,9 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
         private readonly IBCThongTinConThiRepository _conThiRepository;
         private readonly ILogger<BCThongTinConThiService> _logger;
 
+        /// <summary>
+        /// Constructor với Dependency Injection
+        /// </summary>
         public BCThongTinConThiService(
             IBCThongTinConThiRepository conThiRepository,
             ILogger<BCThongTinConThiService> logger)
@@ -20,154 +19,225 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
             _logger = logger;
         }
 
-        public async Task<bool> InsertAsync(KhaoThi_5_THPT_ThongTin_ConThi ThongTin)
+        public async Task<bool> CreateAsync(KhaoThi_5_THPT_ThongTin_ConThiModel conThi)
         {
+
+            //try
+            //{
+            //    if (conThi == null)
+            //    {
+            //        _logger.LogError("Không thể tạo thông tin con thi với dữ liệu null");
+            //        return -1;
+            //    }
+
+            //    if (string.IsNullOrEmpty(conThi.MaTruong) || string.IsNullOrEmpty(conThi.CCCD) ||
+            //        string.IsNullOrEmpty(conThi.MaDinhDanhCuaCon))
+            //    {
+            //        _logger.LogError("Không thể tạo thông tin con thi khi thiếu mã trường, CCCD hoặc mã định danh con");
+            //        return -1;
+            //    }
+
+            //    // Kiểm tra trùng lặp
+            //    bool exists = await _conThiRepository.IsConThiExistAsync(
+            //        conThi.MaTruong,
+            //        conThi.CCCD,
+            //        conThi.MaDinhDanhCuaCon);
+
+            //    if (exists)
+            //    {
+            //        _logger.LogError("Thông tin con thi đã tồn tại: HoTen: {HoTen}, HoTenCon: {HoTenCon}, MaTruong: {MaTruong}",
+            //            conThi.HoTen, conThi.HoTenCon, conThi.MaTruong);
+            //        return -1;
+            //    }
+
+            //    return await _conThiRepository.CreateAsync(conThi);
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex, "Lỗi khi tạo thông tin con thi: HoTen: {HoTen}, HoTenCon: {HoTenCon}",
+            //        conThi?.HoTen, conThi?.HoTenCon);
+            //    return -1;
+            //}
             try
             {
-                // Validate dữ liệu đầu vào (ví dụ: kiểm tra null, độ dài chuỗi, v.v.)
-                if (ThongTin == null)
+                // Kiểm tra dữ liệu đầu vào
+                if (conThi == null)
                 {
-                    _logger.LogError("Không thể thêm thông tin con thí sinh với dữ liệu null.");
+                    _logger.LogError("Không thể tạo thông tin con thi với dữ liệu null");
                     return false;
                 }
 
-                // Kiểm tra xem bản ghi đã tồn tại chưa
-                if (await _conThiRepository.ExistsAsync(ThongTin.MaTruong, ThongTin.CCCD, ThongTin.MaDinhDanhCuaCon))
+                if (string.IsNullOrEmpty(conThi.MaTruong) || string.IsNullOrEmpty(conThi.CCCD) || string.IsNullOrEmpty(conThi.MaDinhDanhCuaCon))
                 {
-                    _logger.LogWarning("Thông tin con thí sinh đã tồn tại (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", ThongTin.MaTruong, ThongTin.CCCD, ThongTin.MaDinhDanhCuaCon);
+                    _logger.LogError("Không thể tạo thông tin con thi khi thiếu mã trường, CCCD hoặc mã định danh con");
                     return false;
                 }
 
-                return await _conThiRepository.InsertAsync(ThongTin);
+                // Kiểm tra trùng lặp
+                bool exists = await _conThiRepository.IsConThiExistAsync(
+                   conThi.MaTruong,
+                    conThi.CCCD,
+                    conThi.MaDinhDanhCuaCon);
+                if (exists)
+                {
+                    _logger.LogError("Thông tin con thi đã tồn tại: HoTen: {HoTen}, HoTenCon: {HoTenCon}, MaTruong: {MaTruong}",
+                       conThi.HoTen, conThi.HoTenCon, conThi.MaTruong);
+                    return false;
+                }
+
+                // Thực hiện tạo mới
+                return await _conThiRepository.CreateAsync(conThi);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi thêm thông tin con thí sinh (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", ThongTin.MaTruong, ThongTin.CCCD, ThongTin.MaDinhDanhCuaCon);
+                _logger.LogError(ex, "Lỗi khi tạo thông tin con thi: HoTen: {HoTen}, HoTenCon: {HoTenCon}",
+                     conThi?.HoTen, conThi?.HoTenCon);
                 return false;
             }
         }
 
-        public async Task<bool> UpdateAsync(KhaoThi_5_THPT_ThongTin_ConThi ThongTin)
+        public async Task<bool> DeleteAsync(string maTruong, string cccd, string maDinhDanhCuaCon)
         {
             try
             {
-                // Validate dữ liệu đầu vào
-                if (ThongTin == null)
+                if (string.IsNullOrEmpty(maTruong) || string.IsNullOrEmpty(cccd) ||
+                    string.IsNullOrEmpty(maDinhDanhCuaCon))
                 {
-                    _logger.LogError("Không thể cập nhật thông tin con thí sinh với dữ liệu null.");
+                    _logger.LogWarning("Thiếu thông tin khi xóa con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                        maTruong, cccd, maDinhDanhCuaCon);
                     return false;
                 }
 
-                // Kiểm tra xem bản ghi có tồn tại không
-                if (!await _conThiRepository.ExistsAsync(ThongTin.MaTruong, ThongTin.CCCD, ThongTin.MaDinhDanhCuaCon))
-                {
-                    _logger.LogWarning("Không tìm thấy thông tin con thí sinh để cập nhật (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", ThongTin.MaTruong, ThongTin.CCCD, ThongTin.MaDinhDanhCuaCon);
-                    return false;
-                }
-
-                return await _conThiRepository.UpdateAsync(ThongTin);
+                return await _conThiRepository.DeleteAsync(maTruong, cccd, maDinhDanhCuaCon);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi cập nhật thông tin con thí sinh (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", ThongTin.MaTruong, ThongTin.CCCD, ThongTin.MaDinhDanhCuaCon);
+                _logger.LogError(ex, "Lỗi khi xóa thông tin con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    maTruong, cccd, maDinhDanhCuaCon);
                 return false;
             }
         }
 
-        public async Task<bool> DeleteAsync(string MaTruong, string CCCD, string MaDinhDanhCuaCon)
+        public async Task<KhaoThi_5_THPT_ThongTin_ConThiModel?> GetThongTinCaNhan(string maTruong, string cccd, string maDinhDanhCuaCon)
         {
             try
             {
-                // Kiểm tra xem các khóa có giá trị không
-                if (string.IsNullOrEmpty(MaTruong) || string.IsNullOrEmpty(CCCD) || string.IsNullOrEmpty(MaDinhDanhCuaCon))
+                if (string.IsNullOrEmpty(maTruong) || string.IsNullOrEmpty(cccd) ||
+                    string.IsNullOrEmpty(maDinhDanhCuaCon))
                 {
-                    _logger.LogError("Không thể xóa thông tin con thí sinh với MaTruong, CCCD hoặc MaDinhDanhCuaCon là null hoặc rỗng.");
-                    return false;
-                }
-
-                // Kiểm tra xem bản ghi có tồn tại không
-                if (!await _conThiRepository.ExistsAsync(MaTruong, CCCD, MaDinhDanhCuaCon))
-                {
-                    _logger.LogWarning("Không tìm thấy thông tin con thí sinh để xóa (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", MaTruong, CCCD, MaDinhDanhCuaCon);
-                    return false;
-                }
-
-                return await _conThiRepository.DeleteAsync(MaTruong, CCCD, MaDinhDanhCuaCon);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi xóa thông tin con thí sinh (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", MaTruong, CCCD, MaDinhDanhCuaCon);
-                return false;
-            }
-        }
-
-        public async Task<(IEnumerable<KhaoThi_5_THPT_ThongTin_ConThi> Items, int TotalCount)> GetPaginatedAsync(int page, int pageSize, string? searchTerm = null)
-        {
-            try
-            {
-                // Validate tham số đầu vào
-                if (page < 1) page = 1;
-                if (pageSize < 1) pageSize = 10;
-                if (pageSize > 100) pageSize = 100; // Giới hạn kích thước trang tối đa
-
-                return await _conThiRepository.GetPaginatedAsync(page, pageSize, searchTerm);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi lấy danh sách thông tin con thí sinh phân trang (page: {page}, pageSize: {pageSize}, searchTerm: {searchTerm}).", page, pageSize, searchTerm);
-                return (new List<KhaoThi_5_THPT_ThongTin_ConThi>(), 0);
-            }
-        }
-
-        public async Task<KhaoThi_5_THPT_ThongTin_ConThi?> GetByKeysAsync(string MaTruong, string CCCD, string MaDinhDanhCuaCon)
-        {
-            try
-            {
-                // Validate tham số đầu vào
-                if (string.IsNullOrEmpty(MaTruong) || string.IsNullOrEmpty(CCCD) || string.IsNullOrEmpty(MaDinhDanhCuaCon))
-                {
-                    _logger.LogWarning("Không thể lấy thông tin con thí sinh với MaTruong, CCCD hoặc MaDinhDanhCuaCon là null hoặc rỗng.");
+                    _logger.LogWarning("Thiếu thông tin khi lấy chi tiết con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                        maTruong, cccd, maDinhDanhCuaCon);
                     return null;
                 }
 
-                return await _conThiRepository.GetByKeysAsync(MaTruong, CCCD, MaDinhDanhCuaCon);
+                return await _conThiRepository.GetThongTinCaNhan(maTruong, cccd, maDinhDanhCuaCon);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi lấy thông tin con thí sinh theo khóa (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", MaTruong, CCCD, MaDinhDanhCuaCon);
+                _logger.LogError(ex, "Lỗi khi lấy chi tiết con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    maTruong, cccd, maDinhDanhCuaCon);
                 return null;
             }
         }
 
-        public async Task<IEnumerable<KhaoThi_5_THPT_ThongTin_ConThi>> GetAllAsync()
+        public async Task<IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel>> GetByMaTruongAsync(string maTruong)
         {
             try
             {
-                return await _conThiRepository.GetAllAsync();
+                if (string.IsNullOrEmpty(maTruong))
+                {
+                    _logger.LogWarning("Không thể lấy danh sách con thi khi mã trường trống");
+                    return new List<KhaoThi_5_THPT_ThongTin_ConThiModel>();
+                }
+
+                return await _conThiRepository.GetByMaTruongAsync(maTruong);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi lấy tất cả thông tin con thí sinh.");
-                return new List<KhaoThi_5_THPT_ThongTin_ConThi>();
+                _logger.LogError(ex, "Lỗi khi lấy danh sách con thi theo mã trường: {MaTruong}", maTruong);
+                return new List<KhaoThi_5_THPT_ThongTin_ConThiModel>();
             }
         }
 
-        public async Task<bool> ExistsAsync(string MaTruong, string CCCD, string MaDinhDanhCuaCon)
+        public async Task<(IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel> Items, int TotalCount)> GetPaginatedAsync(
+            int page,
+            int pageSize,
+            string? searchTerm = null,
+            string? maTruong = null,
+            string? kyThiThamDu = null)
         {
             try
             {
-                // Validate tham số đầu vào
-                if (string.IsNullOrEmpty(MaTruong) || string.IsNullOrEmpty(CCCD) || string.IsNullOrEmpty(MaDinhDanhCuaCon))
+                if (page < 1)
                 {
-                    _logger.LogWarning("Không thể kiểm tra sự tồn tại của thông tin con thí sinh với MaTruong, CCCD hoặc MaDinhDanhCuaCon là null hoặc rỗng.");
-                    return false;
+                    page = 1;
                 }
 
-                return await _conThiRepository.ExistsAsync(MaTruong, CCCD, MaDinhDanhCuaCon);
+                if (pageSize < 1)
+                {
+                    pageSize = 10;
+                }
+
+                if (pageSize > 100)
+                {
+                    pageSize = 100; // Giới hạn kích thước trang tối đa
+                }
+
+                return await _conThiRepository.GetPaginatedAsync(page, pageSize, searchTerm, maTruong, kyThiThamDu);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi kiểm tra sự tồn tại của thông tin con thí sinh (MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}).", MaTruong, CCCD, MaDinhDanhCuaCon);
+                _logger.LogError(ex, "Lỗi khi lấy danh sách con thi có phân trang. Page: {Page}, PageSize: {PageSize}, SearchTerm: {SearchTerm}, MaTruong: {MaTruong}, KyThiThamDu: {KyThiThamDu}",
+                    page, pageSize, searchTerm, maTruong, kyThiThamDu);
+                return (new List<KhaoThi_5_THPT_ThongTin_ConThiModel>(), 0);
+            }
+        }
+
+        public async Task<bool> IsConThiExistAsync(string maTruong, string cccd, string maDinhDanhCuaCon)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maTruong) || string.IsNullOrEmpty(cccd) ||
+                    string.IsNullOrEmpty(maDinhDanhCuaCon))
+                {
+                    _logger.LogWarning("Thiếu thông tin khi kiểm tra con thi tồn tại. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                        maTruong, cccd, maDinhDanhCuaCon);
+                    return false;
+                }
+
+                return await _conThiRepository.IsConThiExistAsync(maTruong, cccd, maDinhDanhCuaCon);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi kiểm tra con thi tồn tại. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    maTruong, cccd, maDinhDanhCuaCon);
+                return false;
+            }
+        }
+
+        public async Task<bool> UpdateAsync(KhaoThi_5_THPT_ThongTin_ConThiModel conThi)
+        {
+            try
+            {
+                if (conThi == null)
+                {
+                    _logger.LogWarning("Không thể cập nhật thông tin con thi với dữ liệu null");
+                    return false;
+                }
+
+                if (string.IsNullOrEmpty(conThi.MaTruong) || string.IsNullOrEmpty(conThi.CCCD) ||
+                    string.IsNullOrEmpty(conThi.MaDinhDanhCuaCon))
+                {
+                    _logger.LogWarning("Không thể cập nhật thông tin con thi khi thiếu mã trường, CCCD hoặc mã định danh con");
+                    return false;
+                }
+
+                return await _conThiRepository.UpdateAsync(conThi);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi cập nhật thông tin con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}, HoTen: {HoTen}, HoTenCon: {HoTenCon}",
+                    conThi?.MaTruong, conThi?.CCCD, conThi?.MaDinhDanhCuaCon, conThi?.HoTen, conThi?.HoTenCon);
                 return false;
             }
         }

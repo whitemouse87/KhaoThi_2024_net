@@ -12,6 +12,7 @@
 @using KhaoThi_2024_net_client.Pages.BC_2_NhomMonDonVi
 @using KhaoThi_2024_net_client.Pages.BC_4_LanhDaoDonVi
 @using KhaoThi_2024_net_client.Pages.BC_5_ThongTinTruongDiemDonVi
+@using KhaoThi_2024_net_client.Pages.BC_6_ThongTinConThiDonVi
 @inject IDispatcher Dispatcher
 @inject NotificationService NotificationService
 @inject NavigationManager NavigationManager
@@ -66,10 +67,10 @@
             <BCLanhDaoDonVi />
             break;
         case 4:
-            <BCThongTinTruongDiemDonVi/>
+            <BCThongTinTruongDiemDonVi />
             break;
         case 5:
-            <MudText>Đang phát triển - Bước 5: Khai báo thông tin con em cán bộ nhà trường có con tham gia kỳ thi TS10 và tốt nghiệp THPT</MudText>
+            <BCThongTinConDonVi />
             break;
         case 6:
             <MudText>Đang phát triển - Bước 6: Khai báo thông tin phục vụ tuyển sinh"</MudText>
@@ -81,55 +82,55 @@
             <BCThongTinDonVi />
             break;
     }
-        </div>
+</div>
 
-        <!-- Buttons -->
-        <div class="buttons-container">
-            @if (currentTab > 1)
-            {
-                <RadzenButton Click="@(async () => await SwitchTab(currentTab - 1))"
-                              ButtonStyle="ButtonStyle.Light"
-                              Icon="arrow_back"
-                              Text="Quay lại"
-                              class="btn-back" />
-            }
+<!-- Buttons -->
+<div class="buttons-container">
+    @if (currentTab > 1)
+    {
+        <RadzenButton Click="@(async () => await SwitchTab(currentTab - 1))"
+                      ButtonStyle="ButtonStyle.Light"
+                      Icon="arrow_back"
+                      Text="Quay lại"
+                      class="btn-back" />
+    }
 
-            @*<RadzenButton Click="@SaveDraft"
-                ButtonStyle="ButtonStyle.Light"
-                Icon="save"
-                Text="Lưu nháp"
-                class="btn-save"
-                Disabled="@(DonViState.Value.IsLoading)" />*@
-            @if (currentTab < 7)
-            {
-                <RadzenButton Click="@(async () => await SwitchTab(currentTab + 1))"
-                              ButtonStyle="ButtonStyle.Primary"
-                              Icon="arrow_forward"
-                              Text="Tiếp theo"
-                              class="btn-next" />
-            }
-            else
-            {
-                <RadzenButton Click="@SubmitForm"
-                              ButtonStyle="ButtonStyle.Success"
-                              Icon="check"
-                              Text="Hoàn thành"
-                              class="btn-next" />
-            }
-        </div>
+    @*<RadzenButton Click="@SaveDraft"
+        ButtonStyle="ButtonStyle.Light"
+        Icon="save"
+        Text="Lưu nháp"
+        class="btn-save"
+        Disabled="@(DonViState.Value.IsLoading)" />*@
+    @if (currentTab < 7)
+    {
+        <RadzenButton Click="@(async () => await SwitchTab(currentTab + 1))"
+                      ButtonStyle="ButtonStyle.Primary"
+                      Icon="arrow_forward"
+                      Text="Tiếp theo"
+                      class="btn-next" />
+    }
+    else
+    {
+        <RadzenButton Click="@SubmitForm"
+                      ButtonStyle="ButtonStyle.Success"
+                      Icon="check"
+                      Text="Hoàn thành"
+                      class="btn-next" />
+    }
+</div>
 
-        @code {
+@code {
     private int currentTab = 1;
-        private string _lastNotificationMessage;
-        @inject IState<BCLanhDaoDonViState> LanhDaoState;
-        private class StepInfo
-        {
-            public int Index { get; set; }
-            public string Icon { get; set; }
-            public string Title { get; set; }
-        }
+    private string _lastNotificationMessage;
+    @inject IState<BCLanhDaoDonViState> LanhDaoState;
+    private class StepInfo
+    {
+        public int Index { get; set; }
+        public string Icon { get; set; }
+        public string Title { get; set; }
+    }
 
-        private List<StepInfo> steps = new List<StepInfo>
+    private List<StepInfo> steps = new List<StepInfo>
 {
         new StepInfo { Index = 1, Icon = "school", Title = "Khai báo thông tin đơn vị và số liệu học sinh" },
         new StepInfo { Index = 2, Icon = "score", Title = "Khảo sát nhóm môn thi phục vụ quy hoạch điểm coi thi" },
@@ -140,111 +141,111 @@
         new StepInfo { Index = 7, Icon = "print", Title = "In báo cáo" }
     };
 
-        protected override void OnInitialized()
-        {
-            DonViState.StateChanged += HandleStateChanged;
-        }
+    protected override void OnInitialized()
+    {
+        DonViState.StateChanged += HandleStateChanged;
+    }
 
-        private void HandleStateChanged(object? sender, EventArgs e)
-        {
-            // State management logic
-            var state = DonViState.Value;
+    private void HandleStateChanged(object? sender, EventArgs e)
+    {
+        // State management logic
+        var state = DonViState.Value;
 
-            if (!string.IsNullOrEmpty(state.NotificationMessage) &&
-                state.NotificationMessage != _lastNotificationMessage)
+        if (!string.IsNullOrEmpty(state.NotificationMessage) &&
+            state.NotificationMessage != _lastNotificationMessage)
+        {
+            _lastNotificationMessage = state.NotificationMessage;
+
+            var notificationSeverity = state.NotificationType?.ToLower() == "success"
+                ? NotificationSeverity.Success
+                : NotificationSeverity.Error;
+
+            NotificationService.Notify(new NotificationMessage
             {
-                _lastNotificationMessage = state.NotificationMessage;
+                Severity = notificationSeverity,
+                Summary = state.NotificationType?.ToLower() == "success" ? "Thành công" : "Lỗi",
+                Detail = state.NotificationMessage,
+                Duration = 4000
+            });
 
-                var notificationSeverity = state.NotificationType?.ToLower() == "success"
-                    ? NotificationSeverity.Success
-                    : NotificationSeverity.Error;
+            StateHasChanged();
+        }
+    }
 
+    private async Task SwitchTab(int tabIndex)
+    {
+        // Kiểm tra nếu đang chuyển đến bước 4
+        if (tabIndex == 4)
+        {
+            // Lấy mã trường từ state
+            var maTruong = LanhDaoState.Value.MaTruong ?? "";
+
+            // Kiểm tra xem danh sách lãnh đạo có dữ liệu không
+            var lanhDaos = LanhDaoState.Value.LanhDaos;
+
+            // Nếu chưa có dữ liệu, thử tải từ server
+            if ((lanhDaos == null || !lanhDaos.Any()) && !string.IsNullOrEmpty(maTruong))
+            {
+
+                // Dispatch action để lấy danh sách lãnh đạo theo mã trường
+                Dispatcher.Dispatch(new BCLanhDaoDonViAction.CheckLanhDaoEmptyAction(maTruong));
+
+                // Đợi một chút để action được xử lý
+                await Task.Delay(500);
+
+                // Cập nhật lại danh sách sau khi đợi
+                lanhDaos = LanhDaoState.Value.LanhDaos;
+            }
+
+            // Kiểm tra lại sau khi đã thử tải dữ liệu
+            if (lanhDaos == null || !lanhDaos.Any())
+            {
+                // Hiển thị thông báo lỗi màu đỏ
                 NotificationService.Notify(new NotificationMessage
                 {
-                    Severity = notificationSeverity,
-                    Summary = state.NotificationType?.ToLower() == "success" ? "Thành công" : "Lỗi",
-                    Detail = state.NotificationMessage,
-                    Duration = 4000
+                    Severity = NotificationSeverity.Error,
+                    Summary = "Chưa có thông tin lãnh đạo",
+                    Detail = "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
+                    Duration = 6000
                 });
 
-                StateHasChanged();
+                // Chuyển về bước 3
+                currentTab = 3;
+                return;
             }
         }
 
-        private async Task SwitchTab(int tabIndex)
+        // Nếu không có vấn đề gì hoặc không phải bước 4, chuyển tab bình thường
+        currentTab = tabIndex;
+    }
+
+    private void SaveDraft()
+    {
+        // Lưu nháp logic - sẽ thêm sau khi đã có actions tương ứng
+        NotificationService.Notify(new NotificationMessage
         {
-            // Kiểm tra nếu đang chuyển đến bước 4
-            if (tabIndex == 4)
-            {
-                // Lấy mã trường từ state
-                var maTruong = LanhDaoState.Value.MaTruong ?? "";
+            Severity = NotificationSeverity.Success,
+            Summary = "Thành công",
+            Detail = "Đã lưu nháp báo cáo",
+            Duration = 4000
+        });
+    }
 
-                // Kiểm tra xem danh sách lãnh đạo có dữ liệu không
-                var lanhDaos = LanhDaoState.Value.LanhDaos;
-
-                // Nếu chưa có dữ liệu, thử tải từ server
-                if ((lanhDaos == null || !lanhDaos.Any()) && !string.IsNullOrEmpty(maTruong))
-                {
-
-                    // Dispatch action để lấy danh sách lãnh đạo theo mã trường
-                    Dispatcher.Dispatch(new BCLanhDaoDonViAction.CheckLanhDaoEmptyAction(maTruong));
-
-                    // Đợi một chút để action được xử lý
-                    await Task.Delay(500);
-
-                    // Cập nhật lại danh sách sau khi đợi
-                    lanhDaos = LanhDaoState.Value.LanhDaos;
-                }
-
-                // Kiểm tra lại sau khi đã thử tải dữ liệu
-                if (lanhDaos == null || !lanhDaos.Any())
-                {
-                    // Hiển thị thông báo lỗi màu đỏ
-                    NotificationService.Notify(new NotificationMessage
-                    {
-                        Severity = NotificationSeverity.Error,
-                        Summary = "Chưa có thông tin lãnh đạo",
-                        Detail = "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
-                        Duration = 6000
-                    });
-
-                    // Chuyển về bước 3
-                    currentTab = 3;
-                    return;
-                }
-            }
-
-            // Nếu không có vấn đề gì hoặc không phải bước 4, chuyển tab bình thường
-            currentTab = tabIndex;
-        }
-
-        private void SaveDraft()
+    private void SubmitForm()
+    {
+        // Submit form logic - sẽ thêm sau khi đã có actions tương ứng
+        NotificationService.Notify(new NotificationMessage
         {
-            // Lưu nháp logic - sẽ thêm sau khi đã có actions tương ứng
-            NotificationService.Notify(new NotificationMessage
-            {
-                Severity = NotificationSeverity.Success,
-                Summary = "Thành công",
-                Detail = "Đã lưu nháp báo cáo",
-                Duration = 4000
-            });
-        }
+            Severity = NotificationSeverity.Success,
+            Summary = "Thành công",
+            Detail = "Đã hoàn thành báo cáo",
+            Duration = 4000
+        });
+    }
 
-        private void SubmitForm()
-        {
-            // Submit form logic - sẽ thêm sau khi đã có actions tương ứng
-            NotificationService.Notify(new NotificationMessage
-            {
-                Severity = NotificationSeverity.Success,
-                Summary = "Thành công",
-                Detail = "Đã hoàn thành báo cáo",
-                Duration = 4000
-            });
-        }
+    public void Dispose()
+    {
+        DonViState.StateChanged -= HandleStateChanged;
+    }
 
-        public void Dispose()
-        {
-            DonViState.StateChanged -= HandleStateChanged;
-        }
-
-        }
+}

@@ -1,6 +1,6 @@
 ﻿namespace KhaoThi_2024_net_client.Models.BaoCaoSoLieu
 {
-    public class KhaoThi_5_THPT_ThongTin_ConThi
+    public class KhaoThi_5_THPT_ThongTin_ConThiModel
     {
         public string MaTruong { get; set; } = string.Empty; // Unchecked
 

@@ -756,12 +756,12 @@
         }
       }
     },
-    "/api/BCThongTinConThi/all-phantrang-conthi": {
+    "/api/BCThongTinConThi/all-phantrang": {
       "get": {
         "tags": [
           "BCThongTinConThi"
         ],
-        "summary": "Lấy danh sách thông tin con thí sinh phân trang.",
+        "summary": "Lấy danh sách thông tin con thi có phân trang và tìm kiếm",
         "parameters": [
           {
             "name": "page",
@@ -787,6 +787,20 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "maTruong",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kyThiThamDu",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -795,17 +809,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -816,54 +830,12 @@
         }
       }
     },
-    "/api/BCThongTinConThi/all-conthi": {
+    "/api/BCThongTinConThi/truong/{maTruong}": {
       "get": {
         "tags": [
           "BCThongTinConThi"
         ],
-        "summary": "Lấy tất cả thông tin con thí sinh.",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-                  }
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error"
-          }
-        }
-      }
-    },
-    "/api/BCThongTinConThi/{maTruong}/{cccd}/{maDinhDanhCuaCon}": {
-      "get": {
-        "tags": [
-          "BCThongTinConThi"
-        ],
-        "summary": "Lấy thông tin con thí sinh theo Mã trường, CCCD và Mã định danh của con.",
+        "summary": "Lấy danh sách con thi theo mã trường",
         "parameters": [
           {
             "name": "maTruong",
@@ -872,22 +844,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "cccd",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "maDinhDanhCuaCon",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -896,17 +852,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                  }
                 }
               }
             }
@@ -935,53 +900,195 @@
             "description": "Server Error"
           }
         }
-      },
-      "put": {
+      }
+    },
+    "/api/BCThongTinConThi/detailconthi": {
+      "get": {
         "tags": [
           "BCThongTinConThi"
         ],
-        "summary": "Cập nhật thông tin con thí sinh.",
+        "summary": "Lấy thông tin chi tiết của một con thi",
         "parameters": [
           {
             "name": "maTruong",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "cccd",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "maDinhDanhCuaCon",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/BCThongTinConThi": {
+      "post": {
+        "tags": [
+          "BCThongTinConThi"
+        ],
+        "summary": "Tạo mới thông tin con thi",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BCThongTinConThi"
+        ],
+        "summary": "Cập nhật thông tin con thi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
               }
             }
           }
@@ -1039,28 +1146,25 @@
         "tags": [
           "BCThongTinConThi"
         ],
-        "summary": "Xóa thông tin con thí sinh.",
+        "summary": "Xóa thông tin con thi",
         "parameters": [
           {
             "name": "maTruong",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "cccd",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "maDinhDanhCuaCon",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -1086,58 +1190,6 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server Error"
-          }
-        }
-      }
-    },
-    "/api/BCThongTinConThi": {
-      "post": {
-        "tags": [
-          "BCThongTinConThi"
-        ],
-        "summary": "Thêm mới thông tin con thí sinh.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
                 }
               }
             }
@@ -1168,33 +1220,30 @@
         }
       }
     },
-    "/api/BCThongTinConThi/exists/{maTruong}/{cccd}/{maDinhDanhCuaCon}": {
+    "/api/BCThongTinConThi/check-exist-conthi": {
       "get": {
         "tags": [
           "BCThongTinConThi"
         ],
-        "summary": "Kiểm tra xem thông tin con thí sinh đã tồn tại chưa.",
+        "summary": "Kiểm tra thông tin con thi đã tồn tại chưa",
         "parameters": [
           {
             "name": "maTruong",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "cccd",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "maDinhDanhCuaCon",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -1217,6 +1266,26 @@
               "text/json": {
                 "schema": {
                   "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               }
             }
@@ -2934,13 +3003,13 @@
         },
         "additionalProperties": { }
       },
-      "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "khaothi_2024_net_server.Core.Models.Common.PaginatedResult`1[[khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel, khaothi_2024_net_server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
           "Items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi"
+              "$ref": "#/components/schemas/khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel"
             },
             "description": "Danh sách items trong trang hiện tại",
             "nullable": true
@@ -3292,7 +3361,7 @@
         },
         "additionalProperties": false
       },
-      "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThi": {
+      "khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.DTOs.KhaoThi_5_THPT_ThongTin_ConThiModel": {
         "type": "object",
         "properties": {
           "MaTruong": {

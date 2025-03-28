@@ -1,6 +1,8 @@
 ﻿using DotSwashbuckle.AspNetCore.SwaggerUI;
 using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.Authentication;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT;
+using khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT.Interfaces;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT.Interfaces;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT;
@@ -286,6 +288,8 @@ public class Program
             .AddScoped<IBCLanhDaoDonViService, BCLanhDaoDonViService>()
             .AddScoped<IBCThongTinTruongDiemRepository, BCThongTinTruongDiemRepository>()
             .AddScoped<IBCThongTinTruongDiemService, BCThongTinTruongDiemService>()
+            .AddScoped<IBCThongTinConThiRepository, BCThongTinConThiRepository>()
+            .AddScoped<IBCThongTinConThiService, BCThongTinConThiService>()
             .AddScoped<IAuthService, AuthService>()
             .AddScoped<IPasswordHasher, BCryptPasswordHasher>();
         builder.Services.Configure<PasswordOptions>(options =>

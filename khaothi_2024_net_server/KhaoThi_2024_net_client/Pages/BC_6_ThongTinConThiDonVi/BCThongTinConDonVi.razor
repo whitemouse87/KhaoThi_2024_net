@@ -1,0 +1,972 @@
+﻿@page "/bcconthi"
+@page "/bcconthi/{MaTruong}"
+@using khaothi_2024_net_client.Services.BC_5_ThongTinConThi
+@using Fluxor
+@using MudBlazor
+@using System.Text.RegularExpressions
+@using Microsoft.AspNetCore.WebUtilities
+@using BCConThiAction = khaothi_2024_net_client.Services.BC_5_ThongTinConThi.BCThongTinConThiAction
+@using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@inject IState<BCThongTinConThiState> ConThiState
+@inject IDispatcher Dispatcher
+@inject IBCThongTinConThiService ConThiService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavigationManager
+@inject IDialogService DialogService
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <div class="d-flex flex-column">
+        <!-- Unit Information Section - Full Width -->
+        <MudPaper Elevation="3" Class="rounded-lg overflow-hidden mb-4 w-100">
+            <!-- Header with Gradient -->
+            <MudCardHeader Class="py-3" Style="background: linear-gradient(90deg, #059669, #10B981); border-radius: 8px 8px 0 0;">
+                <CardHeaderContent>
+                    <div class="d-flex align-center">
+                        <MudAvatar Color="Color.Primary" Size="Size.Medium" Class="mr-3" Style="background-color: rgba(255,255,255,0.2);">
+                            <MudIcon Icon="@Icons.Material.Filled.School" />
+                        </MudAvatar>
+                        <div>
+                            <MudText Typo="Typo.h5" Style="color: white; font-weight: 500; letter-spacing: 0.5px;" Class="font-weight-bold">Thông tin đơn vị</MudText>
+                        </div>
+                    </div>
+                </CardHeaderContent>
+            </MudCardHeader>
+
+            <!-- School Info and Status Section -->
+            <div class="d-flex flex-wrap align-center justify-space-between pa-4" Style="background-color: #ffffff;">
+                <div class="d-flex align-center">
+                    <div class="d-flex align-center mx-4">
+                        <MudText Typo="Typo.body2" Class="mr-2">Mã trường:</MudText>
+                        <MudText Typo="Typo.h4" Class="font-weight-bold">@maTruong</MudText>
+                    </div>
+                </div>
+                <div class="d-flex align-center mx-4">
+                    <MudText Typo="Typo.body2" Class="mr-2">Trạng thái:</MudText>
+                    @if (!ConThiState.Value.IsLoading)
+                    {
+                        <div class="d-flex align-center" style="color: #2e7d32; background-color: #e8f5e9; border-radius: 16px; padding: 4px 8px;">
+                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Small" Class="mr-1" />
+                            <span style="font-size: 12px;">Đã tải xong</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-center" style="color: #ed6c02; background-color: #fff4e5; border-radius: 16px; padding: 4px 8px;">
+                            <MudIcon Icon="@Icons.Material.Filled.Pending" Size="Size.Small" Class="mr-1" />
+                            <span style="font-size: 12px;">Đang tải dữ liệu</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </MudPaper>
+
+        <!-- Second Row: Con Thi Information Form -->
+        <MudPaper Elevation="0" Class="mb-5 rounded-md w-100" Style="border: 1px solid #e0e0e0;">
+            <MudCardHeader Class="py-3" Style="background: linear-gradient(90deg, #2563EB, #3B82F6); border-radius: 8px 8px 0 0;">
+                <CardHeaderContent>
+                    <div class="d-flex align-center">
+                        <MudAvatar Color="Color.Error" Size="Size.Medium" Class="mr-3" Style="background-color: rgba(255,255,255,0.2);">
+                            <MudIcon Icon="@Icons.Material.Filled.Person" />
+                        </MudAvatar>
+                        <div>
+                            <MudText Typo="Typo.h5" Style="color: white; font-weight: 500; letter-spacing: 0.5px;" Class="font-weight-bold">Thông tin con thi</MudText>
+                            <MudText Typo="Typo.subtitle1" Style="color: yellow; font-weight: 700; letter-spacing: 0.7px; font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);" Class="opacity-90 pa-2 my-2 d-block">
+                                <MudIcon Icon="@Icons.Material.Filled.Warning" Class="mr-2" />
+                                Đề nghị điền đầy đủ thông tin liên lạc của con em cán bộ, giáo viên, nhân viên đang học lớp 5, 9, 12 và sẽ tham dự kỳ thi các cấp THCS, THPT trong năm học 2024-2025.
+                            </MudText>
+                        </div>
+                    </div>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudForm @ref="form" Model="@newConThi" @onsubmit="CreateConThi">
+                <div class="pa-3">
+                    <MudGrid Spacing="3">
+                        <!-- CCCD phụ huynh -->
+                        <MudItem xs="12" sm="3" lg="3">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #3B82F6;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.CreditCard" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">CCCD/CMND phụ huynh*</MudText>
+                                        <MudTextField @bind-Value="newConThi.CCCD"
+                                                      Required="true"
+                                                      Validation="@(new Func<string, IEnumerable<string>>(ValidateCCCD))"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Họ tên phụ huynh -->
+                        <MudItem xs="12" sm="3" lg="7">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #EC4899;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.Badge" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Họ và tên phụ huynh*</MudText>
+                                        <MudTextField @bind-Value="newConThi.HoTen"
+                                                      Required="true"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Chức vụ đơn vị -->
+                        <MudItem xs="12" sm="3" lg="2">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #A855F7;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.Work" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Chức vụ trong đơn vị*</MudText>
+                                        <MudTextField @bind-Value="newConThi.ChucVuDonVi"
+                                                      Required="true"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Mã định danh của con -->
+                        <MudItem xs="12" sm="3" lg="3">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #EF4444;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.Pin" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Mã định danh của con*</MudText>
+                                        <MudTextField @bind-Value="newConThi.MaDinhDanhCuaCon"
+                                                      Required="true"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Họ tên con -->
+                        <MudItem xs="12" sm="3" lg="7">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #10B981;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.ChildCare" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Họ tên con*</MudText>
+                                        <MudTextField @bind-Value="newConThi.HoTenCon"
+                                                      Required="true"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Chức vụ gia đình -->
+                        <MudItem xs="12" sm="3" lg="2">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #F59E0B;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.People" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Mối quan hệ với con*</MudText>
+                                        <MudSelect @bind-Value="newConThi.ChucVuGiaDinh"
+                                                   Required="true"
+                                                   Variant="MudBlazor.Variant.Outlined"
+                                                   Dense="true"
+                                                   FullWidth="true">
+                                            <MudSelectItem Value="@("Cha")">Cha</MudSelectItem>
+                                            <MudSelectItem Value="@("Mẹ")">Mẹ</MudSelectItem>
+                                            <MudSelectItem Value="@("Người giám hộ")">Người giám hộ</MudSelectItem>
+                                        </MudSelect>
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Trường đang học -->
+                        <MudItem xs="12" sm="6" lg="4">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #14B8A6;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.School" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Trường đang học*</MudText>
+                                        <MudTextField @bind-Value="newConThi.TenTruongDangHoc"
+                                                      Required="true"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- SĐT di động -->
+                        <MudItem xs="12" sm="6" lg="4">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #64B5F6;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.Phone" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Số điện thoại liên hệ*</MudText>
+                                        <MudTextField @bind-Value="newConThi.SDTDiDong"
+                                                      Required="true"
+                                                      Validation="@(new Func<string, IEnumerable<string>>(ValidatePhone))"
+                                                      Variant="MudBlazor.Variant.Outlined"
+                                                      Dense="true"
+                                                      FullWidth="true" />
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <!-- Kỳ thi tham dự -->
+                        <MudItem xs="12" sm="6" lg="4">
+                            <MudPaper Elevation="2" Class="rounded-lg border-0 overflow-hidden">
+                                <MudGrid Spacing="0">
+                                    <MudItem xs="3" Style="background-color: #795548;">
+                                        <div class="d-flex justify-center align-center" style="height:100%; padding: 12px;">
+                                            <MudIcon Icon="@Icons.Material.Filled.Event" Style="color: white;" Size="Size.Large" />
+                                        </div>
+                                    </MudItem>
+                                    <MudItem xs="9" Class="pa-2">
+                                        <MudText Typo="Typo.subtitle1" Class="mb-1 font-weight-bold">Kỳ thi tham dự*</MudText>
+                                        <MudSelect @bind-Value="newConThi.KyThiThamDu"
+                                                   Required="true"
+                                                   Variant="MudBlazor.Variant.Outlined"
+                                                   Dense="true"
+                                                   FullWidth="true">
+                                            <MudSelectItem Value="@("Tuyển sinh lớp 6")">Tuyển sinh lớp 6</MudSelectItem>
+                                            <MudSelectItem Value="@("Tuyển sinh lớp 10")">Tuyển sinh lớp 10</MudSelectItem>
+                                            <MudSelectItem Value="@("Tốt nghiệp THPT")">Tốt nghiệp THPT</MudSelectItem>
+                                        </MudSelect>
+                                    </MudItem>
+                                </MudGrid>
+                            </MudPaper>
+                        </MudItem>
+
+                        <MudItem xs="12" sm="6" lg="6">
+                            <div class="d-flex flex-column h-100 justify-end">
+                                <MudButton Variant="Variant.Filled"
+                                           Color="Color.Success"
+                                           OnClick="@CreateConThi"
+                                           Disabled="@(string.IsNullOrEmpty(maTruong) || ConThiState.Value.IsLoading)"
+                                           StartIcon="@Icons.Material.Filled.Add"
+                                           Class="rounded-md py-2 mt-auto"
+                                           Style="height: 40px;">
+                                    Thêm thông tin con thi
+                                </MudButton>
+
+
+                            </div>
+                        </MudItem>
+                        <MudItem xs="12" sm="6" lg="3">
+                            <div class="d-flex flex-column h-100 justify-end">
+                                <MudTooltip Text="Làm mới dữ liệu">
+                                    @* Thêm Tooltip để hiển thị text khi hover *@
+                                    <MudIconButton Variant="Variant.Filled"
+                                                   Color="Color.Primary"
+                                                   OnClick="@RefreshData"
+                                                   Icon="@Icons.Material.Filled.Refresh"
+                                                   Class="ml-2"
+                                                   Size="Size.Medium" />
+                                </MudTooltip>
+
+
+                            </div>
+                        </MudItem>
+                    </MudGrid>
+                </div>
+            </MudForm>
+        </MudPaper>
+    </div>
+
+    <!-- Bảng danh sách con thi -->
+    @if (ConThiState.Value.ConThis != null && ConThiState.Value.ConThis.Any())
+    {
+        <MudPaper Elevation="3" Class="pa-0 mb-4 rounded-lg">
+            <MudText Typo="Typo.h5" Class="pa-4 d-flex align-center white--text" Style="background-color: #00296F; border-bottom: 2px solid #d4e157; color: white; ">
+                <MudIcon Icon="@Icons.Material.Filled.List" Class="mr-3" Color="Color.Inherit" Size="Size.Large" />
+                Danh sách con thi đã đăng ký
+            </MudText>
+
+            <div class="pa-3">
+                <MudTable Items="@ConThiState.Value.ConThis" Hover="true" Bordered="true" Striped="true"
+                          Dense="false" Class="rounded-lg" Elevation="1">
+                    <HeaderContent>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">CCCD phụ huynh</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Họ tên phụ huynh</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Chức vụ đơn vị</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Mã định danh</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Họ tên con</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Mối quan hệ</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Trường đang học</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Điện thoại</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Kỳ thi tham dự</MudTh>
+                        <MudTh Style="background-color: #00296F; font-weight: 700; font-size: 1.1rem; padding: 16px; text-transform: uppercase; letter-spacing: 0.5px; color: white; text-align: center; ">Thao tác</MudTh>
+                    </HeaderContent>
+                    <RowTemplate Context="conThi">
+                        <MudTd DataLabel="CCCD phụ huynh" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.CCCD" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" ReadOnly="true" />
+                            }
+                            else
+                            {
+                                <MudChip T="string" Text="@conThi.CCCD" Color="Color.Primary" Variant="Variant.Outlined" Size="Size.Small" Style="font-size: 0.9rem;"></MudChip>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Họ tên phụ huynh" Style="font-size: 1rem; padding: 12px; vertical-align: middle;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.HoTen" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" />
+                            }
+                            else
+                            {
+                                <div class="d-flex align-items-center">
+                                    <MudAvatar Color="Color.Secondary" Size="Size.Small" Class="mr-2">
+                                        @(conThi.HoTen?.Substring(0, 1).ToUpper())
+                                    </MudAvatar>
+                                    <strong style="font-size: 1.1rem; color: #2e7d32;">@conThi.HoTen</strong>
+                                </div>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Chức vụ đơn vị" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.ChucVuDonVi" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" />
+                            }
+                            else
+                            {
+                                <MudChip T="string" Text="@conThi.ChucVuDonVi" Color="Color.Info" Variant="Variant.Outlined" Size="Size.Small" Style="font-size: 0.9rem;"></MudChip>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Mã định danh" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.MaDinhDanhCuaCon" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" ReadOnly="true" />
+                            }
+                            else
+                            {
+                                <MudChip T="string" Text="@conThi.MaDinhDanhCuaCon" Color="Color.Error" Variant="Variant.Outlined" Size="Size.Small" Style="font-size: 0.9rem;"></MudChip>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Họ tên con" Style="font-size: 1rem; padding: 12px; vertical-align: middle;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.HoTenCon" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" />
+                            }
+                            else
+                            {
+                                <div class="d-flex align-items-center">
+                                    <MudAvatar Color="Color.Success" Size="Size.Small" Class="mr-2">
+                                        @(conThi.HoTenCon?.Substring(0, 1).ToUpper())
+                                    </MudAvatar>
+                                    <strong style="font-size: 1.1rem; color: #2e7d32;">@conThi.HoTenCon</strong>
+                                </div>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Mối quan hệ" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudSelect @bind-Value="editConThi.ChucVuGiaDinh" Immediate="true"
+                                           Variant="Variant.Outlined" Dense="true" FullWidth="true">
+                                    <MudSelectItem Value="@("Cha")">Cha</MudSelectItem>
+                                    <MudSelectItem Value="@("Mẹ")">Mẹ</MudSelectItem>
+                                    <MudSelectItem Value="@("Người giám hộ")">Người giám hộ</MudSelectItem>
+                                </MudSelect>
+                            }
+                            else
+                            {
+                                <MudChip T="string" Text="@conThi.ChucVuGiaDinh" Color="Color.Warning" Variant="Variant.Outlined" Size="Size.Small" Style="font-size: 0.9rem;"></MudChip>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Trường đang học" Style="font-size: 1rem; padding: 12px; vertical-align: middle;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.TenTruongDangHoc" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true" />
+                            }
+                            else
+                            {
+                                <div class="d-flex align-items-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.School" Size="Size.Small" Class="mr-1 flex-shrink-0" Color="Color.Info" />
+                                    <MudTooltip Text="@conThi.TenTruongDangHoc" Placement="Placement.Top" Arrow="true">
+                                        <div style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                            @conThi.TenTruongDangHoc
+                                        </div>
+                                    </MudTooltip>
+                                </div>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Điện thoại" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudTextField @bind-Value="editConThi.SDTDiDong" Immediate="true"
+                                              Variant="Variant.Outlined" Dense="true"
+                                              InputAttributes="@(new Dictionary<string, object>() { { "style", "text-align: center;" } })" />
+                            }
+                            else
+                            {
+                                <div class="d-flex justify-center align-items-center">
+                                    <MudIcon Icon="@Icons.Material.Filled.Phone" Size="Size.Small" Class="mr-1" Color="Color.Success" />
+                                    <a href="tel:@conThi.SDTDiDong" Style="text-decoration: none; color: inherit;">
+                                        <span Style="font-size: 1rem;">@conThi.SDTDiDong</span>
+                                    </a>
+                                </div>
+                            }
+                        </MudTd>
+                        <MudTd DataLabel="Kỳ thi tham dự" Style="font-size: 1rem; padding: 12px; vertical-align: middle; text-align: center;">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <MudSelect @bind-Value="editConThi.KyThiThamDu" Immediate="true"
+                                           Variant="Variant.Outlined" Dense="true" FullWidth="true">
+                                    <MudSelectItem Value="@("Tuyển sinh lớp 6")">Tuyển sinh lớp 6</MudSelectItem>
+                                    <MudSelectItem Value="@("Tuyển sinh lớp 10")">Tuyển sinh lớp 10</MudSelectItem>
+                                    <MudSelectItem Value="@("Tốt nghiệp THPT")">Tốt nghiệp THPT</MudSelectItem>
+                                </MudSelect>
+                            }
+                            else
+                            {
+                                <MudChip T="string" Text="@conThi.KyThiThamDu" Color="Color.Success" Variant="Variant.Outlined" Size="Size.Small" Style="font-size: 0.9rem;"></MudChip>
+                            }
+                        </MudTd>
+                        <MudTd Style="text-align: center; padding: 12px; vertical-align: middle; text-align: center; ">
+                            @if (editingConThiId == GetConThiId(conThi))
+                            {
+                                <div class="d-flex justify-content-center gap-2">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Save"
+                                                   Color="Color.Success"
+                                                   OnClick="@(() => SaveConThi(conThi))"
+                                                   Size="Size.Medium"
+                                                   Title="Lưu"
+                                                   Class="pa-2" />
+                                    <MudIconButton Icon="@Icons.Material.Filled.Cancel"
+                                                   Color="Color.Default"
+                                                   OnClick="@CancelEditing"
+                                                   Size="Size.Medium"
+                                                   Title="Hủy"
+                                                   Class="pa-2" />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="d-flex justify-content-center gap-2" Style="display: flex !important; justify-content: center !important;">
+                                    <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                                   Color="Color.Primary"
+                                                   OnClick="@(() => StartEditing(conThi))"
+                                                   Title="Sửa"
+                                                   Size="Size.Medium"
+                                                   Class="pa-2" />
+                                    <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                                   Color="Color.Error"
+                                                   OnClick="@(() => DeleteConThi(conThi))"
+                                                   Title="Xóa"
+                                                   Size="Size.Medium"
+                                                   Class="pa-2" />
+                                </div>
+                            }
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager PageSizeOptions="new int[] { 5, 10, 20, 50 }" />
+                    </PagerContent>
+                </MudTable>
+            </div>
+        </MudPaper>
+    }
+    else if (ConThiState.Value.IsInitialized && !ConThiState.Value.IsLoading && string.IsNullOrEmpty(ConThiState.Value.ErrorMessage))
+    {
+        <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #e0e0e0; background-color: #f5f5f5;">
+            <MudIcon Icon="@Icons.Material.Filled.Info" Color="Color.Info" Class="mr-2" />
+            <MudText>Chưa có dữ liệu con thi cho trường này. Vui lòng thêm thông tin con thi.</MudText>
+        </MudPaper>
+    }
+    else if (!string.IsNullOrEmpty(ConThiState.Value.ErrorMessage))
+    {
+        <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #ffcdd2; background-color: #ffebee;">
+            <MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Class="mr-2" />
+            <MudText>@ConThiState.Value.ErrorMessage</MudText>
+        </MudPaper>
+    }
+
+    <!-- Thông báo -->
+    @if (!string.IsNullOrEmpty(ConThiState.Value.NotificationMessage))
+    {
+        <div class="mt-4">
+            @if (ConThiState.Value.NotificationType == "error")
+            {
+                <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #ffcdd2; background-color: #ffebee;">
+                    <MudIcon Icon="@Icons.Material.Filled.Error" Color="Color.Error" Class="mr-2" />
+                    <MudText>@ConThiState.Value.NotificationMessage</MudText>
+                    <MudSpacer />
+                    <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@ClearNotification" Size="Size.Small" />
+                </MudPaper>
+            }
+            else
+            {
+                <MudPaper Elevation="0" Class="pa-3 d-flex align-center rounded-md" Style="border: 1px solid #c8e6c9; background-color: #e8f5e9;">
+                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" Class="mr-2" />
+                    <MudText>@ConThiState.Value.NotificationMessage</MudText>
+                    <MudSpacer />
+                    <MudIconButton Icon="@Icons.Material.Filled.Close" OnClick="@ClearNotification" Size="Size.Small" />
+                </MudPaper>
+            }
+        </div>
+    }
+</MudContainer>
+
+@code {
+    [Parameter]
+    public string MaTruong { get; set; }
+
+    // Private fields
+    private string maTruong = string.Empty;
+    private MudForm form; // For potential form validation integration
+    private MudTable<KhaoThi_5_THPT_ThongTin_ConThiModel> table; // Assuming a MudTable is used in the .razor file
+
+    // Editing state
+    private string editingConThiId = string.Empty;
+    private KhaoThi_5_THPT_ThongTin_ConThiModel editConThi = new();
+
+    // New con thi form
+    private KhaoThi_5_THPT_ThongTin_ConThiModel newConThi = new();
+
+    // UI State Flags
+    private bool _notificationShown = false;
+    private bool isLoading = false; // Flag for loading data
+    private bool isSaving = false; // Flag for save/create/delete operations
+    private bool _isFirstLoad = true;
+
+    // Timer for notifications
+    private System.Threading.Timer _clearNotificationTimer;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        Console.WriteLine("ConThi: Bắt đầu OnInitializedAsync");
+
+        // 1. Determine maTruong (Route Parameter or Query String)
+        if (!string.IsNullOrEmpty(MaTruong))
+        {
+            maTruong = MaTruong;
+            Console.WriteLine($"ConThi: Lấy maTruong từ route parameter: {maTruong}");
+        }
+        else
+        {
+            ExtractMaDonViFromQueryString();
+            Console.WriteLine($"ConThi: Lấy maTruong từ query string: {maTruong}");
+        }
+
+        // 2. Load data if maTruong is available
+        if (!string.IsNullOrEmpty(maTruong))
+        {
+            Console.WriteLine($"ConThi: Đã xác định maTruong: {maTruong}, tiến hành tải dữ liệu");
+            newConThi.MaTruong = maTruong; // Set MaTruong for the 'Add New' form
+            await LoadConThisByMaTruong();
+        }
+        else
+        {
+            Console.WriteLine("ConThi: Không thể xác định maTruong");
+            Snackbar.Add("Không thể xác định mã trường", Severity.Warning);
+        }
+    }
+
+    private void ExtractMaDonViFromQueryString()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        // Use QueryHelpers for robust parsing
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("MaDonVi", out var maDonViParam))
+        {
+            maTruong = maDonViParam.FirstOrDefault() ?? string.Empty;
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (firstRender)
+        {
+            Console.WriteLine($"ConThi State: IsLoading={ConThiState.Value.IsLoading}, " +
+                              $"IsInitialized={ConThiState.Value.IsInitialized}, " +
+                              $"HasItems={ConThiState.Value.ConThis?.Count() ?? 0}, " + // Adjust property name if needed
+                              $"Error={ConThiState.Value.ErrorMessage ?? "None"}"); // Adjust property name if needed
+
+            // Check if initial load might have missed data (similar to TruongDiem)
+            if (_isFirstLoad && !ConThiState.Value.IsLoading && ConThiState.Value.IsInitialized &&
+                (ConThiState.Value.ConThis == null || !ConThiState.Value.ConThis.Any())) // Adjust property name if needed
+            {
+                _isFirstLoad = false;
+                // Avoid potential infinite loop if maTruong is still missing
+                if (!string.IsNullOrEmpty(maTruong))
+                {
+                    Console.WriteLine("ConThi: First load check - no data found, attempting reload.");
+                    InvokeAsync(LoadConThisByMaTruong);
+                }
+            }
+            _isFirstLoad = false; // Ensure this runs only once after the first render cycle completes.
+        }
+
+
+        // Handle Notifications (Adopted from TruongDiem)
+        // Check state for notification message and ensure it hasn't been shown yet in this cycle
+        if (!string.IsNullOrEmpty(ConThiState.Value.NotificationMessage) && !_notificationShown)
+        {
+            var severity = ConThiState.Value.NotificationType == "error" // Adjust property name if needed
+                ? Severity.Error
+                : Severity.Success;
+
+            Snackbar.Add(ConThiState.Value.NotificationMessage, severity);
+            _notificationShown = true; // Mark as shown
+
+            // Set up a timer to clear the notification message from the state after a delay
+            _clearNotificationTimer?.Dispose(); // Dispose previous timer if any
+            _clearNotificationTimer = new System.Threading.Timer(_ =>
+            {
+                InvokeAsync(() => // Ensure execution on the UI thread
+                {
+                    Dispatcher.Dispatch(new BCConThiAction.ClearErrorAction()); // Clear the message in the state
+                                                                                // StateHasChanged(); // State change should be triggered by Fluxor
+                });
+            }, null, 5000, Timeout.Infinite); // 5 seconds delay
+        }
+        // If the notification message in the state is gone, reset the flag
+        else if (string.IsNullOrEmpty(ConThiState.Value.NotificationMessage))
+        {
+            _notificationShown = false;
+        }
+    }
+
+    // Method to explicitly clear notification state (can be called by UI if needed)
+    private void ClearNotification()
+    {
+        Dispatcher.Dispatch(new BCConThiAction.ClearErrorAction());
+        _clearNotificationTimer?.Dispose(); // Stop timer if manual clear happens
+        _notificationShown = false; // Reset flag
+    }
+
+    private async Task LoadConThisByMaTruong()
+    {
+        if (string.IsNullOrEmpty(maTruong) || isLoading) // Prevent concurrent loads
+            return;
+
+        isLoading = true;
+        StateHasChanged(); // Update UI to show loading state
+
+        try
+        {
+            Console.WriteLine($"ConThi: Đang gọi action LoadConThisByMaTruong: MaTruong={maTruong}");
+            // Dispatch action to load data
+            Dispatcher.Dispatch(new BCConThiAction.GetConThiByMaTruongAction(maTruong)); // Adjust action name if needed
+
+            // Optional: Wait a short period for the effect to potentially update the state,
+            // useful if immediate feedback relies on the state being updated quickly.
+            await Task.Delay(200);
+
+            // Debug log after dispatching
+            var hasData = ConThiState.Value.ConThis?.Any() == true;
+            var isError = !string.IsNullOrEmpty(ConThiState.Value.ErrorMessage);
+            Console.WriteLine($"ConThi: Kết quả tải dữ liệu (ngay sau dispatch): HasData={hasData}, IsError={isError}, ErrorMessage={ConThiState.Value.ErrorMessage ?? "None"}");
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ConThi: Lỗi khi dispatch action tải dữ liệu: {ex.Message}");
+            Snackbar.Add("Có lỗi xảy ra khi tải dữ liệu. Vui lòng thử lại", Severity.Error);
+            // Optionally dispatch an error action here if the error is before the effect runs
+            // Dispatcher.Dispatch(new BCConThiAction.LoadFailedAction(ex.Message)); // Example
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged(); // Update UI to hide loading state
+        }
+    }
+
+    // --- CRUD Operations ---
+
+    private async Task CreateConThi()
+    {
+        if (isSaving) return; // Prevent double-clicks
+
+        // Basic validation
+        if (!ValidateNewConThi()) return; // Use a helper for validation
+
+        isSaving = true;
+        StateHasChanged(); // Disable buttons
+
+        try
+        {
+            // Check if already exists (using the composite key)
+            if (ConThiState.Value.ConThis?.Any(ct => ct.MaTruong == newConThi.MaTruong && ct.CCCD == newConThi.CCCD && ct.MaDinhDanhCuaCon == newConThi.MaDinhDanhCuaCon) == true)
+            {
+                Snackbar.Add("Thông tin con thi này (Mã trường, CCCD, Mã định danh con) đã tồn tại.", Severity.Error);
+                return; // Exit without dispatching
+            }
+
+            // Ensure MaTruong is set correctly
+            newConThi.MaTruong = maTruong;
+
+            Console.WriteLine($"ConThi: Dispatching CreateConThiAction for CCCD: {newConThi.CCCD}, MaDinhDanh: {newConThi.MaDinhDanhCuaCon}");
+            Snackbar.Add("Đang thêm thông tin con thi...", Severity.Info);
+            Dispatcher.Dispatch(new BCConThiAction.CreateConThiAction(newConThi)); // Adjust action name
+
+            // Optimistically reset form, or wait for state confirmation
+            ResetNewConThiForm();
+            // Optionally await Task.Delay(500); to allow time for state update before potential reload
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ConThi: Lỗi khi dispatch CreateConThiAction: {ex.Message}");
+            Snackbar.Add($"Lỗi khi thêm: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            isSaving = false;
+            StateHasChanged(); // Re-enable buttons
+        }
+    }
+
+    private async Task SaveConThi(KhaoThi_5_THPT_ThongTin_ConThiModel originalConThi)
+    {
+        if (isSaving) return;
+
+        // Validate edited data
+        if (!ValidateEditConThi()) return; // Use a helper for validation
+
+        isSaving = true;
+        StateHasChanged();
+
+        try
+        {
+            // Update the original object passed from the table/list BEFORE dispatching
+            // Key fields (MaTruong, CCCD, MaDinhDanhCuaCon) should NOT be changed here usually.
+            originalConThi.HoTen = editConThi.HoTen;
+            originalConThi.ChucVuDonVi = editConThi.ChucVuDonVi;
+            originalConThi.HoTenCon = editConThi.HoTenCon;
+            originalConThi.ChucVuGiaDinh = editConThi.ChucVuGiaDinh;
+            originalConThi.TenTruongDangHoc = editConThi.TenTruongDangHoc;
+            originalConThi.SDTDiDong = editConThi.SDTDiDong;
+            originalConThi.KyThiThamDu = editConThi.KyThiThamDu;
+            // Ensure MaTruong is correct if needed, although it shouldn't change in an update
+            // originalConThi.MaTruong = this.maTruong;
+
+            Console.WriteLine($"ConThi: Dispatching UpdateConThiAction for CCCD: {originalConThi.CCCD}, MaDinhDanh: {originalConThi.MaDinhDanhCuaCon}");
+            Snackbar.Add("Đang cập nhật thông tin con thi...", Severity.Info);
+            Dispatcher.Dispatch(new BCConThiAction.UpdateConThiAction(originalConThi)); // Adjust action name
+
+            editingConThiId = string.Empty; // Exit editing mode optimistically
+
+            // Optionally await Task.Delay(500);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ConThi: Lỗi khi dispatch UpdateConThiAction: {ex.Message}");
+            Snackbar.Add($"Lỗi khi cập nhật: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            isSaving = false;
+            StateHasChanged();
+        }
+    }
+
+    // Note: Deletion might need confirmation dialog in real UI
+    private async Task DeleteConThi(KhaoThi_5_THPT_ThongTin_ConThiModel conThiToDelete)
+    {
+        if (isSaving) return;
+
+        isSaving = true;
+        StateHasChanged();
+
+        try
+        {
+            Console.WriteLine($"ConThi: Dispatching DeleteConThiAction for CCCD: {conThiToDelete.CCCD}, MaDinhDanh: {conThiToDelete.MaDinhDanhCuaCon}");
+            Snackbar.Add($"Đang xóa thông tin con thi {conThiToDelete.HoTenCon}...", Severity.Info);
+            Dispatcher.Dispatch(new BCConThiAction.DeleteConThiAction(conThiToDelete.MaTruong, conThiToDelete.CCCD, conThiToDelete.MaDinhDanhCuaCon)); // Adjust action name
+
+            // Optionally await Task.Delay(500);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ConThi: Lỗi khi dispatch DeleteConThiAction: {ex.Message}");
+            Snackbar.Add($"Lỗi khi xóa: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            isSaving = false;
+            StateHasChanged();
+        }
+    }
+
+    // --- Editing State ---
+
+    private void StartEditing(KhaoThi_5_THPT_ThongTin_ConThiModel conThi)
+    {
+        editingConThiId = GetConThiId(conThi); // Use the composite key generator
+                                               // Create a deep copy for editing to avoid modifying the original object directly
+        editConThi = new KhaoThi_5_THPT_ThongTin_ConThiModel
+        {
+            MaTruong = conThi.MaTruong, // Key part 1
+            CCCD = conThi.CCCD,         // Key part 2
+            MaDinhDanhCuaCon = conThi.MaDinhDanhCuaCon, // Key part 3
+            HoTen = conThi.HoTen ?? "", // Handle potential nulls
+            ChucVuDonVi = conThi.ChucVuDonVi ?? "",
+            HoTenCon = conThi.HoTenCon ?? "",
+            ChucVuGiaDinh = conThi.ChucVuGiaDinh ?? "",
+            TenTruongDangHoc = conThi.TenTruongDangHoc ?? "",
+            SDTDiDong = conThi.SDTDiDong ?? "",
+            KyThiThamDu = conThi.KyThiThamDu ?? ""
+        };
+        Console.WriteLine($"ConThi: Starting edit for ID: {editingConThiId}");
+        StateHasChanged(); // Update UI to show edit row
+    }
+
+    private void CancelEditing()
+    {
+        Console.WriteLine($"ConThi: Cancelling edit for ID: {editingConThiId}");
+        editingConThiId = string.Empty;
+        editConThi = new KhaoThi_5_THPT_ThongTin_ConThiModel(); // Clear edit model
+        StateHasChanged(); // Update UI to hide edit row
+    }
+
+    // --- UI Helpers ---
+
+    private async Task RefreshData()
+    {
+        Console.WriteLine("ConThi: Refreshing data...");
+        ResetNewConThiForm();
+        CancelEditing(); // Ensure edit mode is cancelled
+        await LoadConThisByMaTruong(); // Reload data
+                                       // Snackbar.Add("Đã làm mới dữ liệu", Severity.Success); // Notification will come from state if load is successful
+    }
+
+    private void ResetNewConThiForm()
+    {
+        newConThi = new KhaoThi_5_THPT_ThongTin_ConThiModel
+        {
+            MaTruong = maTruong // Pre-fill MaTruong
+        };
+        // Clear any specific form validation messages if used
+        // form?.ResetValidation(); // If using MudForm validation messages
+        StateHasChanged();
+    }
+
+    // Generates a unique ID for a row (used for tracking edits)
+    private string GetConThiId(KhaoThi_5_THPT_ThongTin_ConThiModel conThi)
+    {
+        // Use a combination that uniquely identifies the record
+        return $"{conThi?.MaTruong}_{conThi?.CCCD}_{conThi?.MaDinhDanhCuaCon}";
+    }
+
+    // --- Validation ---
+
+    // Combined validation for the 'Add New' form
+    private bool ValidateNewConThi()
+    {
+        bool isValid = true;
+        var messages = new List<string>();
+
+        if (string.IsNullOrWhiteSpace(newConThi.HoTen)) messages.Add("Họ tên phụ huynh không được để trống");
+        if (string.IsNullOrWhiteSpace(newConThi.HoTenCon)) messages.Add("Họ tên con không được để trống");
+        messages.AddRange(ValidateCCCD(newConThi.CCCD));
+        messages.AddRange(ValidatePhone(newConThi.SDTDiDong));
+        if (string.IsNullOrWhiteSpace(newConThi.MaDinhDanhCuaCon)) messages.Add("Mã định danh của con không được để trống");
+
+        if (messages.Any())
+        {
+            isValid = false;
+            Snackbar.Add(string.Join("; ", messages), Severity.Error);
+        }
+        return isValid;
+    }
+
+    // Combined validation for the 'Edit' form
+    private bool ValidateEditConThi()
+    {
+        bool isValid = true;
+        var messages = new List<string>();
+
+        // Key fields (CCCD, MaDinhDanh) usually aren't editable, but validate others
+        if (string.IsNullOrWhiteSpace(editConThi.HoTen)) messages.Add("Họ tên phụ huynh không được để trống");
+        if (string.IsNullOrWhiteSpace(editConThi.HoTenCon)) messages.Add("Họ tên con không được để trống");
+        messages.AddRange(ValidatePhone(editConThi.SDTDiDong)); // Validate phone on edit too
+
+        if (messages.Any())
+        {
+            isValid = false;
+            Snackbar.Add(string.Join("; ", messages), Severity.Error);
+        }
+        return isValid;
+    }
+
+
+    // Individual field validation logic (reusable)
+    private IEnumerable<string> ValidateCCCD(string cccd)
+    {
+        if (string.IsNullOrWhiteSpace(cccd))
+            yield return "CCCD/CMND không được để trống";
+        else if (cccd.Length != 9 && cccd.Length != 12)
+            yield return "CCCD/CMND phải có 9 hoặc 12 chữ số";
+        else if (!Regex.IsMatch(cccd, @"^\d+$"))
+            yield return "CCCD/CMND chỉ được chứa chữ số";
+    }
+
+    private IEnumerable<string> ValidatePhone(string phone)
+    {
+        if (string.IsNullOrWhiteSpace(phone))
+            yield return "Số điện thoại không được để trống";
+        // Simple validation: starts with 0, followed by 9 digits. Adjust regex if needed.
+        else if (!Regex.IsMatch(phone, @"^0\d{9}$"))
+            yield return "Số điện thoại phải bắt đầu bằng 0 và có 10 chữ số";
+    }
+
+    // --- Disposal ---
+
+    public void Dispose()
+    {
+        _clearNotificationTimer?.Dispose();
+    }
+}

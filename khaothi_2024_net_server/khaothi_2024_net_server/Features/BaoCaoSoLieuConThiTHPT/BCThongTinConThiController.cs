@@ -9,7 +9,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize]  // Yêu cầu Bearer token cho tất cả endpoints
     public class BCThongTinConThiController : ControllerBase
     {
         private readonly IBCThongTinConThiService _conThiService;
@@ -24,94 +24,117 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
         }
 
         /// <summary>
-        /// Lấy danh sách thông tin con thí sinh phân trang.
+        /// Lấy danh sách thông tin con thi có phân trang và tìm kiếm
         /// </summary>
-        [HttpGet("all-phantrang-conthi")]
-        [ProducesResponseType(typeof(PaginatedResult<KhaoThi_5_THPT_ThongTin_ConThi>), (int)HttpStatusCode.OK)]
+        [HttpGet("all-phantrang")]
+        [ProducesResponseType(typeof(PaginatedResult<KhaoThi_5_THPT_ThongTin_ConThiModel>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetPaginated(
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10,
-            [FromQuery] string? searchTerm = null)
+            [FromQuery] string? searchTerm = null,
+            [FromQuery] string? maTruong = null,
+            [FromQuery] string? kyThiThamDu = null)
         {
             try
             {
-                // Validate tham số đầu vào
+                // Validate input parameters
                 if (page < 1) page = 1;
                 if (pageSize < 1) pageSize = 10;
-                if (pageSize > 100) pageSize = 100;
+                if (pageSize > 100) pageSize = 100; // Giới hạn kích thước trang tối đa
 
-                var (items, totalCount) = await _conThiService.GetPaginatedAsync(page, pageSize, searchTerm);
+                // Gọi service để lấy dữ liệu
+                var (items, totalCount) = await _conThiService.GetPaginatedAsync(
+                    page, pageSize, searchTerm, maTruong, kyThiThamDu);
 
-                var result = new PaginatedResult<KhaoThi_5_THPT_ThongTin_ConThi>(
+                // Tạo kết quả phân trang
+                var result = new PaginatedResult<KhaoThi_5_THPT_ThongTin_ConThiModel>(
                     items: items,
                     count: totalCount,
                     page: page,
-                    pageSize: pageSize);
+                    pageSize: pageSize
+                );
 
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi lấy danh sách thông tin con thí sinh phân trang (page: {page}, pageSize: {pageSize}, searchTerm: {searchTerm}).", page, pageSize, searchTerm);
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi lấy danh sách con thi phân trang. SearchTerm: {SearchTerm}, Page: {Page}, PageSize: {PageSize}, MaTruong: {MaTruong}, KyThiThamDu: {KyThiThamDu}",
+                    searchTerm, page, pageSize, maTruong, kyThiThamDu);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
 
         /// <summary>
-        /// Lấy tất cả thông tin con thí sinh.
+        /// Lấy danh sách con thi theo mã trường
         /// </summary>
-        [HttpGet("all-conthi")]
-        [ProducesResponseType(typeof(IEnumerable<KhaoThi_5_THPT_ThongTin_ConThi>), (int)HttpStatusCode.OK)]
+        [HttpGet("truong/{maTruong}")]
+        [ProducesResponseType(typeof(IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetByMaDonVi(string maTruong)
         {
             try
             {
-                var conThiList = await _conThiService.GetAllAsync();
+                var conThiList = await _conThiService.GetByMaTruongAsync(maTruong);
+                if (conThiList == null || !conThiList.Any())
+                {
+                    return NotFound(new { message = $"Không tìm thấy thông tin con thi nào cho trường có mã: {maTruong}" });
+                }
+
                 return Ok(conThiList);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi lấy tất cả thông tin con thí sinh.");
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi lấy danh sách con thi theo mã trường: {MaTruong}", maTruong);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
 
         /// <summary>
-        /// Lấy thông tin con thí sinh theo Mã trường, CCCD và Mã định danh của con.
+        /// Lấy thông tin chi tiết của một con thi
         /// </summary>
-        [HttpGet("{maTruong}/{cccd}/{maDinhDanhCuaCon}")]
-        [ProducesResponseType(typeof(KhaoThi_5_THPT_ThongTin_ConThi), (int)HttpStatusCode.OK)]
+        [HttpGet("detailconthi")]
+        [ProducesResponseType(typeof(KhaoThi_5_THPT_ThongTin_ConThiModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> GetByKeys(string maTruong, string cccd, string maDinhDanhCuaCon)
+        public async Task<IActionResult> GetThongTinCaNhan(
+            [FromQuery] string maTruong,
+            [FromQuery] string cccd,
+            [FromQuery] string maDinhDanhCuaCon)
         {
             try
             {
-                var conThi = await _conThiService.GetByKeysAsync(maTruong, cccd, maDinhDanhCuaCon);
+                if (string.IsNullOrEmpty(maTruong) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(maDinhDanhCuaCon))
+                {
+                    return BadRequest(new { message = "Cần cung cấp đầy đủ mã trường, CCCD và mã định danh của con" });
+                }
+
+                var conThi = await _conThiService.GetThongTinCaNhan(maTruong, cccd, maDinhDanhCuaCon);
                 if (conThi == null)
                 {
-                    return NotFound(new { message = $"Không tìm thấy thông tin con thí sinh với (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon})." });
+                    return NotFound(new { message = $"Không tìm thấy thông tin con thi với mã trường: {maTruong}, CCCD: {cccd}, mã định danh: {maDinhDanhCuaCon}" });
                 }
 
                 return Ok(conThi);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi lấy thông tin con thí sinh theo khóa (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon}).", maTruong, cccd, maDinhDanhCuaCon);
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi lấy thông tin chi tiết con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    maTruong, cccd, maDinhDanhCuaCon);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
 
         /// <summary>
-        /// Thêm mới thông tin con thí sinh.
+        /// Tạo mới thông tin con thi
         /// </summary>
         [HttpPost]
-        [ProducesResponseType(typeof(KhaoThi_5_THPT_ThongTin_ConThi), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(KhaoThi_5_THPT_ThongTin_ConThiModel), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Create([FromBody] KhaoThi_5_THPT_ThongTin_ConThi conThi)
+        public async Task<IActionResult> Create([FromBody] KhaoThi_5_THPT_ThongTin_ConThiModel conThi)
         {
             try
             {
@@ -120,102 +143,148 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
                     return BadRequest(ModelState);
                 }
 
-                bool result = await _conThiService.InsertAsync(conThi);
-                if (!result)
+                // Kiểm tra thông tin đầu vào cần thiết
+                if (string.IsNullOrEmpty(conThi.MaTruong) || string.IsNullOrEmpty(conThi.CCCD) ||
+                    string.IsNullOrEmpty(conThi.MaDinhDanhCuaCon))
                 {
-                    return BadRequest(new { message = "Không thể tạo thông tin con thí sinh.  Có thể do trùng khóa hoặc dữ liệu không hợp lệ." });
+                    return BadRequest(new { message = "Cần cung cấp đầy đủ mã trường, CCCD và mã định danh của con" });
                 }
 
-                return CreatedAtAction(nameof(GetByKeys),
-                    new { maTruong = conThi.MaTruong, cccd = conThi.CCCD, maDinhDanhCuaCon = conThi.MaDinhDanhCuaCon }, conThi);
+                bool result = await _conThiService.CreateAsync(conThi);
+                if (!result)
+                {
+                    return BadRequest(new { message = "Không thể tạo thông tin con thi. Thông tin này có thể đã tồn tại." });
+                }
+
+                // Trả về đường dẫn đến resource mới
+                return CreatedAtAction(nameof(GetThongTinCaNhan), new
+                {
+                    maTruong = conThi.MaTruong,
+                    cccd = conThi.CCCD,
+                    maDinhDanhCuaCon = conThi.MaDinhDanhCuaCon
+                }, conThi);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi thêm thông tin con thí sinh (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon}).", conThi.MaTruong, conThi.CCCD, conThi.MaDinhDanhCuaCon);
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi tạo mới thông tin con thi");
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
 
         /// <summary>
-        /// Cập nhật thông tin con thí sinh.
+        /// Cập nhật thông tin con thi
         /// </summary>
-        [HttpPut("{maTruong}/{cccd}/{maDinhDanhCuaCon}")]
+        [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Update(string maTruong, string cccd, string maDinhDanhCuaCon, [FromBody] KhaoThi_5_THPT_ThongTin_ConThi conThi)
+        public async Task<IActionResult> Update([FromBody] KhaoThi_5_THPT_ThongTin_ConThiModel conThi)
         {
             try
             {
-                if (maTruong != conThi.MaTruong || cccd != conThi.CCCD || maDinhDanhCuaCon != conThi.MaDinhDanhCuaCon)
-                {
-                    return BadRequest(new { message = "Các khóa không khớp giữa URL và body." });
-                }
-
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
 
-                bool result = await _conThiService.UpdateAsync(conThi);
-                if (!result)
+                // Kiểm tra thông tin đầu vào cần thiết
+                if (string.IsNullOrEmpty(conThi.MaTruong) || string.IsNullOrEmpty(conThi.CCCD) ||
+                    string.IsNullOrEmpty(conThi.MaDinhDanhCuaCon))
                 {
-                    return NotFound(new { message = $"Không tìm thấy thông tin con thí sinh để cập nhật (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon})." });
+                    return BadRequest(new { message = "Cần cung cấp đầy đủ mã trường, CCCD và mã định danh của con" });
                 }
 
-                return Ok(new { message = "Cập nhật thông tin con thí sinh thành công." });
+                // Kiểm tra xem record đã tồn tại chưa
+                bool exists = await _conThiService.IsConThiExistAsync(conThi.MaTruong, conThi.CCCD, conThi.MaDinhDanhCuaCon);
+                if (!exists)
+                {
+                    return NotFound(new { message = $"Không tìm thấy thông tin con thi với mã trường: {conThi.MaTruong}, CCCD: {conThi.CCCD}, mã định danh: {conThi.MaDinhDanhCuaCon}" });
+                }
+
+                var result = await _conThiService.UpdateAsync(conThi);
+                if (!result)
+                {
+                    return StatusCode(500, new { message = "Cập nhật thông tin con thi không thành công" });
+                }
+
+                return Ok(new { message = "Cập nhật thông tin con thi thành công" });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi cập nhật thông tin con thí sinh (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon}).", maTruong, cccd, maDinhDanhCuaCon);
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi cập nhật thông tin con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    conThi?.MaTruong, conThi?.CCCD, conThi?.MaDinhDanhCuaCon);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
 
         /// <summary>
-        /// Xóa thông tin con thí sinh.
+        /// Xóa thông tin con thi
         /// </summary>
-        [HttpDelete("{maTruong}/{cccd}/{maDinhDanhCuaCon}")]
+        [HttpDelete]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Delete(string maTruong, string cccd, string maDinhDanhCuaCon)
+        public async Task<IActionResult> Delete(
+            [FromQuery] string maTruong,
+            [FromQuery] string cccd,
+            [FromQuery] string maDinhDanhCuaCon)
         {
             try
             {
-                bool result = await _conThiService.DeleteAsync(maTruong, cccd, maDinhDanhCuaCon);
-                if (!result)
+                if (string.IsNullOrEmpty(maTruong) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(maDinhDanhCuaCon))
                 {
-                    return NotFound(new { message = $"Không tìm thấy thông tin con thí sinh để xóa (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon})." });
+                    return BadRequest(new { message = "Cần cung cấp đầy đủ mã trường, CCCD và mã định danh của con" });
                 }
 
-                return Ok(new { message = "Xóa thông tin con thí sinh thành công." });
+                var result = await _conThiService.DeleteAsync(maTruong, cccd, maDinhDanhCuaCon);
+                if (!result)
+                {
+                    return NotFound(new { message = $"Không tìm thấy thông tin con thi với mã trường: {maTruong}, CCCD: {cccd}, mã định danh: {maDinhDanhCuaCon}" });
+                }
+
+                return Ok(new { message = "Xóa thông tin con thi thành công" });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi xóa thông tin con thí sinh (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon}).", maTruong, cccd, maDinhDanhCuaCon);
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi xóa thông tin con thi. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    maTruong, cccd, maDinhDanhCuaCon);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
 
         /// <summary>
-        /// Kiểm tra xem thông tin con thí sinh đã tồn tại chưa.
+        /// Kiểm tra thông tin con thi đã tồn tại chưa
         /// </summary>
-        [HttpGet("exists/{maTruong}/{cccd}/{maDinhDanhCuaCon}")]
+        [HttpGet("check-exist-conthi")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Exists(string maTruong, string cccd, string maDinhDanhCuaCon)
+        public async Task<IActionResult> CheckExist(
+            [FromQuery] string maTruong,
+            [FromQuery] string cccd,
+            [FromQuery] string maDinhDanhCuaCon)
         {
             try
             {
-                bool exists = await _conThiService.ExistsAsync(maTruong, cccd, maDinhDanhCuaCon);
+                if (string.IsNullOrEmpty(maTruong) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(maDinhDanhCuaCon))
+                {
+                    return BadRequest(new { message = "Cần cung cấp đầy đủ mã trường, CCCD và mã định danh của con" });
+                }
+
+                bool exists = await _conThiService.IsConThiExistAsync(maTruong, cccd, maDinhDanhCuaCon);
                 return Ok(new { exists });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi kiểm tra sự tồn tại của thông tin con thí sinh (MaTruong: {maTruong}, CCCD: {cccd}, MaDinhDanhCuaCon: {maDinhDanhCuaCon}).", maTruong, cccd, maDinhDanhCuaCon);
-                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu." });
+                _logger.LogError(ex, "Lỗi khi kiểm tra thông tin con thi tồn tại. MaTruong: {MaTruong}, CCCD: {CCCD}, MaDinhDanhCuaCon: {MaDinhDanhCuaCon}",
+                    maTruong, cccd, maDinhDanhCuaCon);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
             }
         }
     }
