@@ -36,7 +36,13 @@ using khaothi_2024_net_client.Services.BC_5_ThongTinConThi;
 
 public class Program
 {
+
+#if DEBUG
     private const string API_BASE_URL = "https://localhost:7168/api/";
+#else
+    private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
+#endif
+    //private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
     private const int HTTP_TIMEOUT_SECONDS = 59;
 
     public static async Task Main(string[] args)
@@ -257,7 +263,7 @@ public class Program
         services.AddScoped<IBCLanhDaoDonViService, BCLanhDaoDonViService>();
         services.AddScoped<IBCThongTinTruongDiemDonViService, BCThongTinTruongDiemService>();
         services.AddScoped<IBCThongTinConThiService, BCThongTinConThiService>();
-
+        services.AddScoped<PWAService>(); // Thêm dòng này
         // Add other application services here
         ConfigureAdditionalServices(services);
     }

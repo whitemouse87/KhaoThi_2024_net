@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "KhaoThi_2024_net_client",
   "resources": {
-    "hash": "sha256-J4ObpUbUSr/vJdU56gB4ANrEMDLTO0rU+WkjdN/eY9I=",
+    "hash": "sha256-0KePjKQC1OcCtWQp5BxAUG/4yccwIHLGm5AzXEKRYyY=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-wyxCFeWD00dwM/LCj6YiQ8Mqg3c19xuygZv0M5++4cg="
     },
@@ -42,6 +42,7 @@
       "Microsoft.AspNetCore.Routing.wasm": "sha256-jJmi/NxlyHHBUsjNbdV6wFuewaDCNut1c0H8z289WWI=",
       "Microsoft.AspNetCore.Routing.Abstractions.wasm": "sha256-P40QIMDnLSgSyIDX+T6b/vJp3BAHSY9fCgOHP7xz0tA=",
       "Microsoft.AspNetCore.WebUtilities.wasm": "sha256-NYD68fXjsCv0W53AFZOcBQXGdtr42mH1qbwz4DmwwJM=",
+      "Microsoft.Authentication.WebAssembly.Msal.wasm": "sha256-pYLSUaaTTj/RVIOMbREoPnVrjqNgcK4SFkNDxeqK3hg=",
       "Microsoft.CodeAnalysis.wasm": "sha256-UrCKIA7ySpcVuJFCzqzHYPujBSMtSeyQCqfCmliSttY=",
       "Microsoft.CodeAnalysis.CSharp.wasm": "sha256-VcpjgiVQGVhlsFFL+GzVh/tl1ycxkiTzhb3zMyKI0Yg=",
       "Microsoft.Extensions.Configuration.wasm": "sha256-UDGEQR7J3WTfzYMgOzxVIBwFQtKEeJvO8UgrWagypdE=",
@@ -73,7 +74,7 @@
       "Microsoft.IdentityModel.Tokens.wasm": "sha256-zeT3cX6Y16zZxEmgSukPOnPBPoQNq6jLsO0MOwYXg14=",
       "Microsoft.JSInterop.wasm": "sha256-Io6aK2hSUL4m2prTnsWGWosE7cw/c/7mj3BAxlDuDjY=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-hcEp3tuBjwv8iSHAFSZG7AZV1aZYHr9VqnSGg1D6WgI=",
-      "Microsoft.Net.Http.Headers.wasm": "sha256-jfXK+cfJd/PteHB+5Bay/NDY9b9VLvVw6G/Bm262Lpo=",
+      "Microsoft.Net.Http.Headers.wasm": "sha256-Y0/ZsHmjcS5O52hlkSeUNJyXxmTBDcrhRuxiJWF0NSw=",
       "MudBlazor.wasm": "sha256-9DyOEtgYYvJFh8PtTK8fKNmt3sHmtlZVUIeG1KH9b7M=",
       "MudBlazor.Extensions.wasm": "sha256-/kUcOTVC4zT42ZVLtgljWnA5c7x9yXIacrDRk9Y0qpc=",
       "MudBlazor.Markdown.wasm": "sha256-auOwsD9T5VWK2Sp7yqwAeqGPIQnPBm5sNnKTa3u8q6A=",
@@ -267,10 +268,10 @@
       "mscorlib.wasm": "sha256-QoC5hTKpDNO6efLnEvYwV9OJBXvYRq8/1yGhNZKiNCw=",
       "netstandard.wasm": "sha256-JT2F4bYWJpaSGq+iD0ITLpWxsDhMUjhqje9RpBtTg7w=",
       "System.Private.CoreLib.wasm": "sha256-fvIPBcvgvsRuWrKi2LGQsLYvcKUSnyIuBUsE3LJu/0Y=",
-      "KhaoThi_2024_net_client.wasm": "sha256-hcfrpCWOxV446WTU5cUOjF0uEBFfa+GruUGsgz8dX5Q="
+      "KhaoThi_2024_net_client.wasm": "sha256-6YUN4Na3n6wnAovr4NrdfOEjhV8JQ16r9SlY7jXtn+w="
     },
     "pdb": {
-      "KhaoThi_2024_net_client.pdb": "sha256-Mfq2oEB1/NQS9zG2QkwjN57xSJ6k1sCYaJEuqQe6Mvo="
+      "KhaoThi_2024_net_client.pdb": "sha256-pzORcuWrRYVjQAth02MJzCmD4jq08/og7815kVOogCs="
     },
     "satelliteResources": {
       "cs": {

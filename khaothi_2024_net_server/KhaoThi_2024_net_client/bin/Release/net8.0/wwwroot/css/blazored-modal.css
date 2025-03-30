@@ -1,0 +1,602 @@
+﻿/* Base modal container */
+/*.blazored-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;*/ /* Đảm bảo modal nằm trên các phần tử khác */
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}*/
+
+/* Overlay */
+/*.blazored-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3) !important;*/ /* Màu nền mờ - !important để chắc chắn ghi đè */
+    /*backdrop-filter: blur(8px) !important;*/ /* Hiệu ứng làm mờ - !important để chắc chắn ghi đè */
+    /*z-index: 999;*/ /* Đảm bảo overlay nằm dưới modal */
+/*}*/
+
+/* Define CSS variables for colors */
+/*:root {
+    --primary-color: #594ae2;*/ /* Màu tím chủ đạo */
+    /*--secondary-color: #5042cb;*/ /* Màu tím thứ cấp */
+    /*--background-color: #f8f9fa;*/ /* Màu nền xám nhạt */
+    /*--border-radius: 12px;*/ /* BorderRadius chung */
+    /*--box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);*/ /* BoxShadow chung */
+    /*--transition: all 0.3s ease-in-out;*/ /* Transition chung */
+/*}*/
+
+
+/* Profile modal */
+/*.profile-modal .blazored-modal {
+    max-width: 1200px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    animation: fadeIn 0.3s ease-in-out;*/ /* Animation khi hiện modal */
+/*}*/
+
+/* Header */
+/*.profile-modal .purple-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2.5rem 2rem;*/ /* Tăng padding header */
+    /*text-align: center;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+    .profile-modal .purple-header .mud-icon {
+        color: white;*/ /* Màu icon header */
+    /*}
+
+    .profile-modal .purple-header .mud-typography-h5 {
+        font-size: 2rem;*/ /* Tăng kích thước tiêu đề header */
+        /*font-weight: 700;*/ /* In đậm tiêu đề header */
+    /*}
+
+    .profile-modal .purple-header .mud-typography-body2 {
+        color: rgba(255, 255, 255, 0.8);*/ /* Màu subtitle header nhạt hơn */
+    /*}*/
+
+
+/* Avatar section */
+/*.profile-modal .avatar-section {
+    margin-top: -3rem;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+    .profile-modal .avatar-section .mud-avatar {
+        width: 120px;*/ /* Tăng kích thước avatar */
+        /*height: 120px;*/ /* Tăng kích thước avatar */
+        /*border: 4px solid white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);*/ /* Tăng shadow avatar */
+        /*border-radius: 50%;
+    }*/
+
+/* User info */
+/*.profile-modal .user-info {
+    text-align: center;
+    padding: 1.5rem 0 2rem 0;*/ /* Tăng padding bottom user info */
+/*}
+
+    .profile-modal .user-info .mud-typography-h5 {
+        font-size: 1.8rem;*/ /* Tăng kích thước tên user */
+        /*font-weight: 600;
+    }
+
+    .profile-modal .user-info .mud-typography-body2 {
+        color: var(--primary-color);*/ /* Màu tên đăng nhập */
+        /*font-weight: 500;
+    }*/
+
+/* Grid layout */
+/*.profile-modal .mud-grid {
+    padding: 2rem;
+}*/
+
+/* Section title */
+/*.profile-modal .section-title {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);*/ /* Màu tiêu đề section */
+    /*font-size: 1.2rem;*/ /* Tăng kích thước tiêu đề section */
+    /*font-weight: 700;*/ /* In đậm tiêu đề section */
+    /*margin-bottom: 1.2rem;*/ /* Tăng margin bottom section title */
+    /*text-transform: uppercase;*/ /* In hoa tiêu đề section */
+    /*letter-spacing: 0.5px;*/ /* Tăng khoảng cách chữ section title */
+/*}
+
+    .profile-modal .section-title .mud-icon {
+        margin-right: 0.7rem;*/ /* Tăng margin right icon section title */
+        /*color: var(--primary-color);*/ /* Màu icon section title */
+        /*font-size: 1.4rem;*/ /* Tăng kích thước icon section title */
+    /*}*/
+
+/* Input fields - **MODIFIED for horizontal layout with label on top** */
+/*.profile-modal .field-row {
+    display: flex;
+    flex-wrap: wrap;*/ /* Cho phép các field xuống hàng khi không đủ chỗ */
+    /*gap: 1.5rem;*/ /* Khoảng cách giữa các field trên cùng hàng */
+    /*margin-bottom: 1.5rem;*/ /* Khoảng cách giữa các hàng field */
+/*}
+
+.profile-modal .field-col {
+    flex: 1;*/ /* Chia đều không gian cho các cột field */
+    /*min-width: 200px;*/ /* Đảm bảo mỗi cột có chiều rộng tối thiểu */
+    /*margin-bottom: 1.2rem;*/ /* Tăng khoảng cách giữa các cột field theo chiều dọc */
+/*}
+
+    .profile-modal .field-col .mud-input,
+    .profile-modal .field-col .mud-input-control {
+        width: 100%;*/ /* Input field chiếm toàn bộ chiều rộng cột */
+        /*margin-bottom: 0.5rem;*/ /* Khoảng cách giữa input và label (nếu cần) */
+    /*}
+
+    .profile-modal .field-col label.mud-input-label {
+        display: block;*/ /* Label hiển thị dạng block để nằm trên input */
+        /*text-align: left;*/ /* Căn trái label */
+        /*margin-bottom: 0.5rem;*/ /* Tăng khoảng cách giữa label và input */
+        /*color: rgba(0, 0, 0, 0.7);*/ /* Màu label đậm hơn một chút */
+        /*font-weight: 600;*/ /* Font weight label đậm hơn */
+        /*font-size: 1rem;*/ /* Tăng kích thước label */
+    /*}
+
+    .profile-modal .field-col .mud-input-outlined {
+        border-radius: 8px;*/ /* BorderRadius cho input */
+        /*background-color: #f9fafa;*/ /* Màu nền input */
+        /*border: 1px solid #e0e0e0;*/ /* Border input */
+    /*}
+
+    .profile-modal .field-col .mud-input-adornment-start .mud-icon-root {
+        color: var(--primary-color);*/ /* Màu icon trong input */
+        /*margin-right: 0.5rem;*/ /* Khoảng cách icon và text trong input */
+    /*}*/
+
+
+/* Action buttons */
+/*.profile-modal .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 2rem;*/ /* Tăng padding action buttons */
+    /*background: var(--background-color);
+    border-top: 1px solid #eef2f7;
+}
+
+    .profile-modal .action-buttons .mud-button {
+        min-width: 160px;*/ /* Tăng min-width button */
+        /*padding: 0.6rem 2rem;*/ /* Tăng padding button */
+        /*transition: var(--transition);
+        border-radius: 8px;*/ /* BorderRadius button */
+        /*font-weight: 500;*/ /* Font weight button đậm hơn */
+    /*}
+
+    .profile-modal .action-buttons .mud-button-filled-primary {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: var(--box-shadow);*/ /* Thêm shadow button primary */
+    /*}
+
+        .profile-modal .action-buttons .mud-button-filled-primary:hover {
+            background: #4a3bba;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);*/ /* Tăng shadow khi hover */
+        /*}
+
+    .profile-modal .action-buttons .mud-button-text-default {
+        color: rgba(0, 0, 0, 0.7);*/ /* Màu button hủy */
+    /*}
+
+        .profile-modal .action-buttons .mud-button-text-default:hover {
+            background-color: rgba(0, 0, 0, 0.05);*/ /* Màu nền khi hover button hủy */
+        /*}*/
+
+
+/* Medium screens */
+/*@media (max-width: 960px) {
+    .profile-modal .mud-grid {
+        padding: 1.5rem;*/ /* Giảm padding grid trên medium screen */
+    /*}
+
+    .profile-modal .purple-header {
+        padding: 2rem 1.5rem;*/ /* Giảm padding header trên medium screen */
+    /*}
+
+    .profile-modal .action-buttons {
+        padding: 1.5rem;*/ /* Giảm padding action buttons trên medium screen */
+    /*}
+}
+
+@media (max-width: 600px) {
+    .profile-modal .mud-grid {
+        padding: 1rem;*/ /* Giảm padding grid trên mobile */
+    /*}
+
+    .profile-modal .purple-header {
+        padding: 1.5rem 1rem;*/ /* Giảm padding header trên mobile */
+    /*}
+
+    .profile-modal .avatar-section {
+        margin-top: -2rem;*/ /* Giảm margin top avatar trên mobile */
+    /*}
+
+        .profile-modal .avatar-section .mud-avatar {
+            width: 90px;*/ /* Giảm kích thước avatar trên mobile */
+            /*height: 90px;*/ /* Giảm kích thước avatar trên mobile */
+        /*}
+
+    .profile-modal .user-info {
+        padding: 1rem 0 1.5rem 0;*/ /* Giảm padding user info trên mobile */
+    /*}
+
+        .profile-modal .user-info .mud-typography-h5 {
+            font-size: 1.6rem;*/ /* Giảm kích thước tên user trên mobile */
+        /*}
+
+    .profile-modal .section-title {
+        font-size: 1.1rem;*/ /* Giảm kích thước section title trên mobile */
+        /*margin-bottom: 1rem;*/ /* Giảm margin bottom section title trên mobile */
+    /*}
+
+        .profile-modal .section-title .mud-icon {
+            font-size: 1.3rem;*/ /* Giảm kích thước icon section title trên mobile */
+        /*}
+
+
+    .profile-modal .field-row {
+        gap: 1rem;*/ /* Giảm gap field row trên mobile */
+        /*margin-bottom: 1rem;*/ /* Giảm margin bottom field row trên mobile */
+    /*}
+
+    .profile-modal .field-col {
+        margin-bottom: 1rem;*/ /* Giảm margin bottom field col trên mobile */
+        /*min-width: auto;*/ /* Auto min-width trên mobile */
+    /*}
+
+        .profile-modal .field-col label.mud-input-label {
+            font-size: 0.9rem;*/ /* Giảm kích thước label trên mobile */
+            /*margin-bottom: 0.3rem;*/ /* Giảm margin bottom label trên mobile */
+        /*}
+
+
+    .profile-modal .action-buttons {
+        flex-direction: column-reverse;
+        padding: 1rem;*/ /* Giảm padding action buttons trên mobile */
+    /*}
+
+        .profile-modal .action-buttons .mud-button {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            min-width: auto;*/ /* Auto min-width button trên mobile */
+        /*}
+}*/
+
+/* Animation */
+/*@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);*/ /* Scale nhỏ hơn khi bắt đầu animation */
+    /*}
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}*/
+
+
+/* Base modal container */
+.blazored-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Overlay */
+.blazored-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+    z-index: 999;
+}
+
+/* Define CSS variables for colors */
+:root {
+    --primary-color: #594ae2;
+    --secondary-color: #5042cb;
+    --background-color: #f8f9fa;
+    --border-radius: 10px; /* Giảm border-radius */
+    --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); /* Giảm shadow */
+    --transition: all 0.3s ease-in-out;
+}
+
+/* Profile modal */
+.profile-modal .blazored-modal {
+    max-width: 1000px; /* Giảm max-width modal */
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Header */
+.profile-modal .purple-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 1.5rem; /* Giảm padding header */
+    text-align: center;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+    .profile-modal .purple-header .mud-icon {
+        color: white;
+        font-size: 1.2rem; /* Giảm kích thước icon header */
+    }
+
+    .profile-modal .purple-header .mud-typography-h5 {
+        font-size: 1.6rem; /* Giảm kích thước tiêu đề header */
+        font-weight: 600;
+    }
+
+    .profile-modal .purple-header .mud-typography-body2 {
+        font-size: 0.9rem; /* Giảm kích thước subtitle header */
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+/* Avatar section */
+.profile-modal .avatar-section {
+    margin-top: -2rem; /* Giảm margin top avatar */
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+    .profile-modal .avatar-section .mud-avatar {
+        width: 90px; /* Giảm kích thước avatar */
+        height: 90px; /* Giảm kích thước avatar */
+        border: 3px solid white; /* Giảm border avatar */
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Giảm shadow avatar */
+        border-radius: 50%;
+    }
+
+/* User info */
+.profile-modal .user-info {
+    text-align: center;
+    padding: 1rem 0 1.5rem 0; /* Giảm padding user info */
+}
+
+    .profile-modal .user-info .mud-typography-h5 {
+        font-size: 1.5rem; /* Giảm kích thước tên user */
+        font-weight: 600;
+    }
+
+    .profile-modal .user-info .mud-typography-body2 {
+        font-size: 0.9rem; /* Giảm kích thước tên đăng nhập */
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+
+/* Grid layout */
+.profile-modal .mud-grid {
+    padding: 1.5rem; /* Giảm padding grid */
+}
+
+/* Section title */
+.profile-modal .section-title {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1rem; /* Giảm kích thước section title */
+    font-weight: 700;
+    margin-bottom: 1rem; /* Giảm margin bottom section title */
+    text-transform: uppercase;
+    letter-spacing: 0.4px; /* Giảm letter-spacing section title */
+}
+
+    .profile-modal .section-title .mud-icon {
+        margin-right: 0.6rem; /* Giảm margin right icon section title */
+        color: var(--primary-color);
+        font-size: 1.2rem; /* Giảm kích thước icon section title */
+    }
+
+/* Input fields */
+.profile-modal .field-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Giảm gap field row */
+    margin-bottom: 1rem; /* Giảm margin bottom field row */
+}
+
+.profile-modal .field-col {
+    flex: 1;
+    min-width: 180px; /* Giảm min-width field col */
+    margin-bottom: 0.8rem; /* Giảm margin bottom field col */
+}
+
+    .profile-modal .field-col .mud-input-control {
+        width: 100%;
+        margin-bottom: 0.4rem; /* Giảm margin bottom input */
+    }
+
+    /* Style cho MudTextField làm label */
+    .profile-modal .field-col .mud-input-label-textfield {
+        display: flex; /* Sử dụng flexbox để căn chỉnh icon và label */
+        align-items: center; /* Căn giữa icon và label theo chiều dọc */
+        text-align: left;
+        margin-bottom: 0.4rem; /* Giảm margin bottom label */
+        color: rgba(0, 0, 0, 0.7);
+        font-weight: 500;
+        font-size: 0.9rem; /* Giảm kích thước label */
+    }
+
+        /* Style cho icon trước label */
+        .profile-modal .field-col .mud-input-label-textfield .mud-icon-root {
+            margin-right: 0.4rem; /* Khoảng cách giữa icon và label */
+            color: var(--primary-color); /* Màu icon label */
+            font-size: 1rem; /* Kích thước icon label */
+        }
+
+
+    .profile-modal .field-col .mud-input-outlined {
+        border-radius: 6px; /* Giảm border-radius input */
+        background-color: #f9fafa;
+        border: 1px solid #e0e0e0;
+    }
+
+
+/* Action buttons */
+.profile-modal .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem; /* Giảm gap button */
+    padding: 1.5rem; /* Giảm padding button */
+    background: var(--background-color);
+    border-top: 1px solid #eef2f7;
+}
+
+    .profile-modal .action-buttons .mud-button {
+        min-width: 120px; /* Giảm min-width button */
+        padding: 0.4rem 1.2rem; /* Giảm padding button */
+        transition: var(--transition);
+        border-radius: 6px; /* Giảm border-radius button */
+        font-weight: 500;
+        font-size: 0.9rem; /* Giảm kích thước font button */
+    }
+
+    .profile-modal .action-buttons .mud-button-filled-primary {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: var(--box-shadow);
+    }
+
+        .profile-modal .action-buttons .mud-button-filled-primary:hover {
+            background: #4a3bba;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+    .profile-modal .action-buttons .mud-button-text-default {
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+        .profile-modal .action-buttons .mud-button-text-default:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+/* Medium screens */
+@media (max-width: 960px) {
+    .profile-modal .mud-grid {
+        padding: 1rem;
+    }
+
+    .profile-modal .purple-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .profile-modal .action-buttons {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-modal .mud-grid {
+        padding: 0.8rem;
+    }
+
+    .profile-modal .purple-header {
+        padding: 1rem 0.8rem;
+    }
+
+    .profile-modal .avatar-section {
+        margin-top: -1.5rem;
+    }
+
+        .profile-modal .avatar-section .mud-avatar {
+            width: 70px;
+            height: 70px;
+        }
+
+    .profile-modal .user-info {
+        padding: 0.8rem 0 1.2rem 0;
+    }
+
+        .profile-modal .user-info .mud-typography-h5 {
+            font-size: 1.3rem;
+        }
+
+    .profile-modal .section-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+        .profile-modal .section-title .mud-icon {
+            font-size: 1.1rem;
+        }
+
+    .profile-modal .field-row {
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .profile-modal .field-col {
+        margin-bottom: 0.8rem;
+        min-width: auto;
+    }
+
+    /* No change needed for label text size on mobile as it's already small */
+
+
+    .profile-modal .action-buttons {
+        flex-direction: column-reverse;
+        padding: 0.8rem;
+    }
+
+        .profile-modal .action-buttons .mud-button {
+            width: 100%;
+            margin-bottom: 0.4rem;
+            min-width: auto;
+            font-size: 0.8rem;
+        }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,28 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\baocaosolieuconthithpt\\bcthongtinconthicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\baocaosolieuconthithpt\\bcthongtinconthicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\baocaosolieulanhdaothpt\\bclanhdaodonvicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\baocaosolieulanhdaothpt\\bclanhdaodonvicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\baocaosolieuconthithpt\\bcthongtinconthirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\baocaosolieuconthithpt\\bcthongtinconthirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\baocaosolieulanhdaothpt\\bclanhdaodonvirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\baocaosolieulanhdaothpt\\bclanhdaodonvirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\features\\baocaosolieuconthithpt\\bcthongtinconthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{951309C8-78BB-4619-A44A-5C0D43F37444}|khaothi_2024_net_server\\khaothi_2024_net_server.csproj|solutionrelative:khaothi_2024_net_server\\features\\baocaosolieuconthithpt\\bcthongtinconthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\TRY\\Documents\\GitHub\\KhaoThi_2024_net\\khaothi_2024_net_server\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,76 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BCLanhDaoDonViController.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViController.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViController.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViController.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViController.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:50:21.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BCThongTinConThiController.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiController.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiController.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiController.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiController.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAUwJkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:49:59.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BCLanhDaoDonViRepository.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViRepository.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViRepository.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViRepository.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuLanhDaoTHPT\\BCLanhDaoDonViRepository.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwHwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:47:42.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BCThongTinConThiRepository.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiRepository.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiRepository.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiRepository.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiRepository.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAkwC8AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:47:32.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BCThongTinConThiService.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiService.cs",
-              "RelativeDocumentMoniker": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiService.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiService.cs",
-              "RelativeToolTip": "khaothi_2024_net_server\\Features\\BaoCaoSoLieuConThiTHPT\\BCThongTinConThiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T16:47:28.034Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uWCpdubLAMU=",
+  "dgSpecHash": "4JUOKZiQbQk=",
   "success": true,
   "projectFilePath": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\TRY\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.3.0\\microsoft.aspnetcore.routing.2.3.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.3.0\\microsoft.aspnetcore.routing.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\8.0.14\\microsoft.aspnetcore.webutilities.8.0.14.nupkg.sha512",
+    "C:\\Users\\TRY\\.nuget\\packages\\microsoft.authentication.webassembly.msal\\8.0.12\\microsoft.authentication.webassembly.msal.8.0.12.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\microsoft.codeanalysis.common\\4.8.0\\microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
     "C:\\Users\\TRY\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.8.0\\microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512",

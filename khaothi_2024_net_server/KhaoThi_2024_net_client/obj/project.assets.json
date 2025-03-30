@@ -506,6 +506,28 @@
           }
         }
       },
+      "Microsoft.Authentication.WebAssembly.Msal/8.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.12"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Authentication.WebAssembly.Msal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Authentication.WebAssembly.Msal.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.Authentication.WebAssembly.Msal.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Authentication.WebAssembly.Msal.props": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Analyzers/3.3.4": {
         "type": "package",
         "build": {
@@ -2323,6 +2345,28 @@
           "lib/net8.0/Microsoft.AspNetCore.WebUtilities.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.Authentication.WebAssembly.Msal/8.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.12"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Authentication.WebAssembly.Msal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Authentication.WebAssembly.Msal.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.Authentication.WebAssembly.Msal.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Authentication.WebAssembly.Msal.props": {}
         }
       },
       "Microsoft.CodeAnalysis.Analyzers/3.3.4": {
@@ -4341,6 +4385,26 @@
         "lib/net8.0/Microsoft.AspNetCore.WebUtilities.xml",
         "microsoft.aspnetcore.webutilities.8.0.14.nupkg.sha512",
         "microsoft.aspnetcore.webutilities.nuspec"
+      ]
+    },
+    "Microsoft.Authentication.WebAssembly.Msal/8.0.12": {
+      "sha512": "iJBtLqABlzeKsfk0QMh7x2UrcSpAo4LSOBBOsRupN7c8z81yA/oL6yw5sLJP7kd5+dMJv53eg9I6U2cclZJC2w==",
+      "type": "package",
+      "path": "microsoft.authentication.webassembly.msal/8.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Microsoft.Authentication.WebAssembly.Msal.props",
+        "buildMultiTargeting/Microsoft.Authentication.WebAssembly.Msal.props",
+        "buildTransitive/Microsoft.Authentication.WebAssembly.Msal.props",
+        "lib/net8.0/Microsoft.Authentication.WebAssembly.Msal.dll",
+        "lib/net8.0/Microsoft.Authentication.WebAssembly.Msal.xml",
+        "microsoft.authentication.webassembly.msal.8.0.12.nupkg.sha512",
+        "microsoft.authentication.webassembly.msal.nuspec",
+        "staticwebassets/AuthenticationService.js"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/3.3.4": {
@@ -7531,6 +7595,7 @@
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.12",
       "Microsoft.AspNetCore.Routing >= 2.3.0",
       "Microsoft.AspNetCore.WebUtilities >= 8.0.14",
+      "Microsoft.Authentication.WebAssembly.Msal >= 8.0.12",
       "Microsoft.Extensions.Http >= 8.0.0",
       "Microsoft.NET.ILLink.Tasks >= 8.0.12",
       "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.1",
@@ -7651,6 +7716,10 @@
           "Microsoft.AspNetCore.WebUtilities": {
             "target": "Package",
             "version": "[8.0.14, )"
+          },
+          "Microsoft.Authentication.WebAssembly.Msal": {
+            "target": "Package",
+            "version": "[8.0.12, )"
           },
           "Microsoft.Extensions.Http": {
             "target": "Package",

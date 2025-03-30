@@ -1,0 +1,118 @@
+.nav-container[b-0x2883fcsu] {
+    height: 100vh;
+    width: 280px !important;
+    background-color: #2A2D32;
+    position: fixed;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .nav-container[b-0x2883fcsu] {
+        width: 70vw; /* Điều chỉnh giá trị này nếu cần */
+    }
+}
+
+
+[b-0x2883fcsu] .mud-drawer {
+    width: 280px !important;
+    height: 100vh !important;
+    position: fixed;
+    background-color: #2A2D32 !important;
+    border-right: none !important;
+}
+
+[b-0x2883fcsu] .mud-drawer-content {
+    width: 280px !important;
+    height: 100vh !important;
+}
+
+.mud-navmenu[b-0x2883fcsu] {
+    background-color: #2A2D32 !important;
+    color: #b2b7bf !important;
+    padding: 0;
+    height: 100%;
+}
+
+/* Logo Section */
+.menu-header[b-0x2883fcsu] {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+    .menu-header[b-0x2883fcsu]  .mud-typography {
+        color: #fff !important;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+/* Profile Section */
+.profile-section[b-0x2883fcsu] {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-info[b-0x2883fcsu] {
+    margin-left: 12px;
+}
+
+.user-name[b-0x2883fcsu] {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.user-role[b-0x2883fcsu] {
+    color: #9299A4;
+    font-size: 12px;
+}
+
+/* Menu Sections */
+.menu-section[b-0x2883fcsu] {
+    color: #9299A4;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1.5rem 1.5rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Nav Links */
+[b-0x2883fcsu] .mud-nav-link {
+    color: #b2b7bf !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 13px;
+    height: 42px;
+    border-radius: 0;
+    transition: all 0.2s ease;
+}
+
+    [b-0x2883fcsu] .mud-nav-link:hover {
+        background-color: rgba(255,255,255,0.05) !important;
+        color: #fff !important;
+    }
+
+    [b-0x2883fcsu] .mud-nav-link.active {
+        background-color: rgba(255,255,255,0.05) !important;
+        color: #fff !important;
+        border-left: 2px solid #3B82F6;
+    }
+
+    [b-0x2883fcsu] .mud-nav-link .mud-nav-link-icon {
+        color: #9299A4 !important;
+        margin-right: 12px;
+    }
+
+    [b-0x2883fcsu] .mud-nav-link:hover .mud-nav-link-icon,
+    [b-0x2883fcsu] .mud-nav-link.active .mud-nav-link-icon {
+        color: #fff !important;
+    }
+
+/* For nested menu items */
+[b-0x2883fcsu] .mud-nav-group .mud-nav-link {
+    padding-left: 3.5rem !important;
+}
+.company-logo[b-0x2883fcsu] {
+    width: 50%; /* Thu nhỏ theo 50% chiều rộng của vùng chứa cha */
+    height: auto; /* Giữ nguyên tỷ lệ khung hình */
+}
