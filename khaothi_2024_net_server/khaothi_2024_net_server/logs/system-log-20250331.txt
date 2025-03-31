@@ -1,0 +1,27 @@
+2025-03-31 14:09:45.543 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 14:09:55.733 +07:00 [INF] [Client] Token hết hạn 
+2025-03-31 14:10:15.485 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-31 14:10:16.261 +07:00 [ERR] Password verification result: true
+2025-03-31 14:10:16.378 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-31 14:35:56.924 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 15:28:30.753 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 15:29:12.037 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-31 15:29:12.536 +07:00 [ERR] Password verification result: true
+2025-03-31 15:29:12.610 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-31 15:58:08.638 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 18:20:13.305 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 18:20:16.553 +07:00 [INF] [Client] Token hết hạn 
+2025-03-31 18:21:12.869 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 18:57:55.608 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 19:03:32.858 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 19:40:31.712 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 19:40:48.697 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-03-31 19:40:50.003 +07:00 [ERR] Password verification result: true
+2025-03-31 19:40:50.163 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-03-31 20:50:25.097 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 20:57:06.482 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 21:49:11.467 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 22:40:00.820 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 22:49:57.271 +07:00 [WRN] No XML encryptor configured. Key {0a2361dc-603e-49cf-acdd-a29d624de6ac} may be persisted to storage in unencrypted form.
+2025-03-31 22:49:57.444 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-03-31 22:50:41.207 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.

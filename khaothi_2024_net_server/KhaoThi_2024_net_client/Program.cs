@@ -40,7 +40,7 @@ public class Program
 #if DEBUG
     private const string API_BASE_URL = "https://localhost:7168/api/";
 #else
-    private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
+            private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
 #endif
     //private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
     private const int HTTP_TIMEOUT_SECONDS = 59;

@@ -1,4 +1,5 @@
-﻿using DotSwashbuckle.AspNetCore.SwaggerUI;
+﻿using DotSwashbuckle.AspNetCore.SwaggerGen;
+using DotSwashbuckle.AspNetCore.SwaggerUI;
 using khaothi_2024_net_server.Core.Interfaces;
 using khaothi_2024_net_server.Features.Authentication;
 using khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT;
@@ -18,6 +19,7 @@ using khaothi_2024_net_server.Infrastructure.Repositories;
 using khaothi_2024_net_server.Infrastructure.Security;
 using khaothi_2024_net_server.Infrastructure.TypeHandlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Caching.Distributed;
@@ -103,61 +105,71 @@ public class Program
         ConfigureRateLimiting(builder);
         ConfigureDapper();
         ConfigureDependencies(builder);
+        // THÊM ĐOẠN MÃ NÀY Ở ĐÂY
+        var dataProtectionPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "khaothi_2024_net_server", "DataProtectionKeys");
+        Directory.CreateDirectory(dataProtectionPath);
+
+        builder.Services.AddDataProtection()
+            .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionPath))
+            .SetApplicationName("khaothi_2024_net_server");
     }
 
     private static void ConfigureSwagger(WebApplicationBuilder builder)
     {
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen(options =>
+        try
         {
-            options.SwaggerDoc("v1", new OpenApiInfo
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(options =>
             {
-                Version = "2.0",
-                Title = "API Khảo Thí",
-                Description = "API quản lý hệ thống khảo thí",
-                Contact = new OpenApiContact
+
+                options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Name = "Support Team",
-                    Email = "support@example.com"
-                },
-                License = new OpenApiLicense
+                    Version = "2.0",
+                    Title = "API Khảo Thí",
+                    Description = "API quản lý hệ thống khảo thí",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Support Team",
+                        Email = "support@example.com"
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT License",
+                        Url = new Uri("https://opensource.org/licenses/MIT")
+                    }
+                });
+                // Cấu hình JWT Bearer Authentication cho Swagger UI
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Name = "MIT License",
-                    Url = new Uri("https://opensource.org/licenses/MIT")
-                }
-            });
-            // Cấu hình JWT Bearer Authentication cho Swagger UI
-            options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-            {
-                Name = "Authorization",
-                Type = SecuritySchemeType.ApiKey,
-                Scheme = "Bearer",
-                BearerFormat = "JWT",
-                In = ParameterLocation.Header,
-                Description = "Nhập Bearer token theo định dạng: Bearer {your_token}\r\n\r\nVí dụ: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-            });
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Nhập Bearer token theo định dạng: Bearer {your_token}\r\n\r\nVí dụ: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                });
 
 
-            // Cấu hình JWT Authentication với mô tả chi tiết hơn
-            var securityScheme = new OpenApiSecurityScheme
-            {
-                Name = "Authorization",
-                Description = @"JWT Bearer Token. 
+                // Cấu hình JWT Authentication với mô tả chi tiết hơn
+                var securityScheme = new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Description = @"JWT Bearer Token. 
                         Nhập theo định dạng: 'Bearer {your_token}'
                         Ví dụ: Bearer eyJhbGciOiJIUzI1NiIs...",
-                Type = SecuritySchemeType.Http,
-                Scheme = "bearer",
-                BearerFormat = "JWT",
-                In = ParameterLocation.Header,
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            };
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                };
+                // options.SchemaFilter<AnnotationsSchemaFilter>();
 
-
-            options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
         {
             {
                 new OpenApiSecurityScheme
@@ -172,35 +184,44 @@ public class Program
             }
         });
 
-            // Cấu hình XML Comments
-            var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
-            if (File.Exists(xmlPath))
-            {
-                options.IncludeXmlComments(xmlPath);
-            }
+                //// Cấu hình XML Comments
+                //var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+                //if (File.Exists(xmlPath))
+                //{
+                //    options.IncludeXmlComments(xmlPath);
+                //}
 
-            // Tối ưu hóa hiển thị
-            options.EnableAnnotations();
-            options.DescribeAllParametersInCamelCase();
-            options.UseInlineDefinitionsForEnums();
-            options.CustomSchemaIds(type => type.FullName);
+                // Tối ưu hóa hiển thị
+                // options.EnableAnnotations();
+                options.DescribeAllParametersInCamelCase();
+                options.UseInlineDefinitionsForEnums();
+                options.CustomSchemaIds(type => type.FullName);
 
-            // Nhóm API theo tags
-            options.TagActionsBy(api =>
-            {
-                if (api.GroupName != null)
+                // Nhóm API theo tags
+                options.TagActionsBy(api =>
                 {
-                    return new[] { api.GroupName };
-                }
+                    if (api.GroupName != null)
+                    {
+                        return new[] { api.GroupName };
+                    }
 
-                var controllerName = api.ActionDescriptor.RouteValues["controller"];
-                return new[] { controllerName };
+                    var controllerName = api.ActionDescriptor.RouteValues["controller"];
+                    return new[] { controllerName };
+                });
+
+                options.DocInclusionPredicate((docName, api) => true);
             });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
 
-            options.DocInclusionPredicate((docName, api) => true);
-        });
     }
+
+
+
 
     private static void ConfigureCors(WebApplicationBuilder builder)
     {
@@ -230,9 +251,83 @@ public class Program
 
     private static void ConfigureAuthentication(WebApplicationBuilder builder)
     {
-        var jwtConfig = builder.Configuration.GetSection("Jwt");
-        var secretKey = jwtConfig["SecretKey"] ?? throw new InvalidOperationException("JWT SecretKey is not configured");
+        // Thêm logging để debug
+        // Console.WriteLine("Starting ConfigureAuthentication");
 
+        // Đoạn này gây lỗi - thay thế bằng đoạn mới
+        // Console.WriteLine($"Configuration sources count: {builder.Configuration.Providers.Count()}");
+
+        var jwtConfig = builder.Configuration.GetSection("Jwt");
+        // Console.WriteLine($"JWT section exists: {jwtConfig.Exists()}");
+
+        // Thay thế đoạn liệt kê providers gây lỗi bằng đoạn này
+        try
+        {
+            // Console.WriteLine("All configuration keys:");
+            foreach (var key in builder.Configuration.AsEnumerable())
+            {
+                //Console.WriteLine($"Key: {key.Key}, Value: {(key.Key.Contains("Secret") ? "[HIDDEN]" : key.Value)}");
+            }
+        }
+        catch (Exception ex)
+        {
+            //Console.WriteLine($"Error enumerating config: {ex.Message}");
+        }
+
+        // Thử đọc trực tiếp từ nhiều định dạng khác nhau
+        var secretKey = jwtConfig["SecretKey"];
+        //Console.WriteLine($"SecretKey from jwtConfig: {(secretKey != null ? "Found" : "Not found")}");
+
+        if (string.IsNullOrEmpty(secretKey))
+        {
+            secretKey = builder.Configuration["Jwt:SecretKey"];
+            //Console.WriteLine($"SecretKey from direct access: {(secretKey != null ? "Found" : "Not found")}");
+        }
+
+        if (string.IsNullOrEmpty(secretKey))
+        {
+            // Thử đọc trực tiếp từ file
+            try
+            {
+                var basePath = AppContext.BaseDirectory;
+                var appSettingsPath = Path.Combine(basePath, "appsettings.json");
+                //Console.WriteLine($"Looking for appsettings.json at: {appSettingsPath}");
+
+                if (File.Exists(appSettingsPath))
+                {
+                    var json = File.ReadAllText(appSettingsPath);
+                    //Console.WriteLine("Successfully read appsettings.json");
+
+                    using (var doc = System.Text.Json.JsonDocument.Parse(json))
+                    {
+                        if (doc.RootElement.TryGetProperty("Jwt", out var jwtElement) &&
+                            jwtElement.TryGetProperty("SecretKey", out var secretKeyElement))
+                        {
+                            secretKey = secretKeyElement.GetString();
+                            //Console.WriteLine("Found SecretKey in direct file read");
+                        }
+                    }
+                }
+                else
+                {
+                    //Console.WriteLine("appsettings.json not found at expected location");
+                }
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine($"Error reading appsettings.json directly: {ex.Message}");
+            }
+        }
+
+        // Cuối cùng, nếu vẫn không tìm thấy, gán một giá trị cứng
+        //if (string.IsNullOrEmpty(secretKey))
+        //{
+        //    // Trong môi trường production, bạn nên xử lý tốt hơn
+        //   // Console.WriteLine("CRITICAL: Using hardcoded key as fallback - not recommended for production!");
+        //    secretKey = "AZOaiEIWCDlNSUO6IeHmigFPpZ7afCLH-H08LZpFbzc"; // Sử dụng key từ appsettings.json
+        //}
+
+        // Thiết lập authentication
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
@@ -249,6 +344,7 @@ public class Program
             });
 
         builder.Services.AddAuthorization();
+        // Console.WriteLine("ConfigureAuthentication completed successfully");
     }
 
     private static void ConfigureRateLimiting(WebApplicationBuilder builder)

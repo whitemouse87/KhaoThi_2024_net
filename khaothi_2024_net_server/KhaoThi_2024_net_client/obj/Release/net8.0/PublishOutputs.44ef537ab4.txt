@@ -1,3 +1,0 @@
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Release\net8.0\browser-wasm\PubTmp\Out\libman.json
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Release\net8.0\browser-wasm\PubTmp\Out\emcc-props.json
-C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\KhaoThi_2024_net_client\obj\Release\net8.0\browser-wasm\PubTmp\Out\web.config

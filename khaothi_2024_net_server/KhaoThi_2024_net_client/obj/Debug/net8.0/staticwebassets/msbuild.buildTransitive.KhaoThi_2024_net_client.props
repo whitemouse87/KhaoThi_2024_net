@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\KhaoThi_2024_net_client.props" />
-</Project>

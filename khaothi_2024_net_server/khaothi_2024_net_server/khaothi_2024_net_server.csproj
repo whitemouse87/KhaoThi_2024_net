@@ -36,7 +36,6 @@
 		<PackageReference Include="Dapper.Contrib" Version="2.0.78" />
 		<PackageReference Include="Dapper.SqlBuilder" Version="2.0.78" />
 		<PackageReference Include="DotSwashbuckle.AspNetCore" Version="3.0.11" />
-		<PackageReference Include="DotSwashbuckle.AspNetCore.Annotations" Version="3.0.11" />
 		<PackageReference Include="DotSwashbuckle.AspNetCore.Swagger" Version="3.0.11" />
 		<PackageReference Include="DotSwashbuckle.AspNetCore.SwaggerGen" Version="3.0.11" />
 		<PackageReference Include="DotSwashbuckle.AspNetCore.SwaggerUI" Version="3.0.11" />
