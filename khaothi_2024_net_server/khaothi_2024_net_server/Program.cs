@@ -20,6 +20,7 @@ using khaothi_2024_net_server.Infrastructure.Security;
 using khaothi_2024_net_server.Infrastructure.TypeHandlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Caching.Distributed;
@@ -39,16 +40,40 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        //var builder = WebApplication.CreateBuilder(args);
+        //var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+        //Console.WriteLine($"Running in {environment} environment");
+
+        //ConfigureLogging(builder);
+        //ConfigureServices(builder);
+
+        //var app = builder.Build();
+        //ConfigureMiddleware(app);
+        //app.MapBankEndpoints();
+        //app.MapTruongEndpoints();
+        //app.MapQuanEndpoints();
+
+
+        //app.Run();
+
+
+
         var builder = WebApplication.CreateBuilder(args);
+
+        // Thêm cấu hình từ web.config
+        builder.Configuration.AddXmlFile("web.config", optional: true, reloadOnChange: true);
+
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+        Console.WriteLine($"Running in {environment} environment");
 
         ConfigureLogging(builder);
         ConfigureServices(builder);
 
         var app = builder.Build();
+        ConfigureMiddleware(app);
         app.MapBankEndpoints();
         app.MapTruongEndpoints();
         app.MapQuanEndpoints();
-        ConfigureMiddleware(app);
 
         app.Run();
     }
@@ -78,7 +103,15 @@ public class Program
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 options.JsonSerializerOptions.WriteIndented = false;
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
             });
+        builder.Services.ConfigureHttpJsonOptions(options =>
+        {
+            options.SerializerOptions.PropertyNamingPolicy = null;
+            options.SerializerOptions.WriteIndented = false;
+            options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+            options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        });
 
         builder.Services.AddEndpointsApiExplorer();
 
@@ -238,7 +271,11 @@ public class Program
                     "http://localhost:44386",
                     "https://localhost:5168",
                     "http://localhost:5168",
-                    "https://localhost:7168"
+                    "https://localhost:7168",
+                    "https://thongtinkhaothihcm.com",
+                    "http://localhost:5000",
+                    "https://localhost:5000",
+                    "https://api.thongtinkhaothihcm.com"
                 )
                 .SetIsOriginAllowedToAllowWildcardSubdomains()
                 .AllowAnyMethod()
@@ -402,18 +439,38 @@ public class Program
     #region Cấu Hình Middleware
     private static void ConfigureMiddleware(WebApplication app)
     {
+        app.Use(async (context, next) =>
+        {
+            // Log path để debug
+            Log.Information("Request Path: {Path}, Method: {Method}", context.Request.Path, context.Request.Method);
+
+            // Xử lý OPTIONS request
+            if (context.Request.Method == "OPTIONS")
+            {
+                context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+                context.Response.Headers.Append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+                context.Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+                context.Response.StatusCode = 200;
+                await context.Response.CompleteAsync();
+                return;
+            }
+
+            await next();
+
+            // Log status code sau khi xử lý
+            Log.Information("Response Status: {StatusCode} for {Path}", context.Response.StatusCode, context.Request.Path);
+        });
         // Development specific middleware
         if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            app.UseCors("AllowedOrigins");
         }
         else
         {
             app.UseExceptionHandler("/Error");
             app.UseHsts();
-            app.UseCors("AllowAll");
         }
+        app.UseCors("AllowAll");
 
         // Swagger Configuration
         app.UseSwagger(options =>
@@ -476,6 +533,7 @@ public class Program
         app.UseAuthorization();
         app.UseRateLimiter();
 
+
         // JWT Token Blacklist Check
         app.Use(async (context, next) =>
         {
@@ -497,20 +555,26 @@ public class Program
         });
 
         // Global Exception Handler
-        app.Use(async (context, next) =>
+        // Global Exception Handler cần ghi log chi tiết hơn
+        app.UseExceptionHandler(new ExceptionHandlerOptions
         {
-            try
+            AllowStatusCode404Response = true,
+            ExceptionHandler = async context =>
             {
-                await next();
-            }
-            catch (Exception ex)
-            {
-                var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
-                logger.LogError(ex, "Unhandled exception");
-
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = "application/json";
-                await context.Response.WriteAsJsonAsync(new { message = "Đã xảy ra lỗi hệ thống" });
+
+                var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+
+                // Tạo chuỗi JSON thủ công để tránh serialization 
+                var message = exception?.Message ?? "Unknown error";
+                var path = context.Request.Path.ToString();
+
+                var jsonString = @"{""message"":""Đã xảy ra lỗi hệ thống"",""detail"":""" +
+                    message.Replace("\"", "\\\"") + @""",""path"":""" +
+                    path.Replace("\"", "\\\"") + @"""}";
+
+                await context.Response.WriteAsync(jsonString);
             }
         });
 

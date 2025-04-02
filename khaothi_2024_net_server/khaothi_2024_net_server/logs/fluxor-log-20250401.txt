@@ -1,0 +1,567 @@
+2025-04-01 08:19:55 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 15:37:41 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 15:37:42 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 15:37:42 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 15:37:42 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 15:37:43 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 15:37:51 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 15:37:51 [INF] Response Status: 200 for "/banks"
+2025-04-01 15:50:40 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 15:50:40 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 15:50:40 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 15:50:42 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 15:50:42 [INF] Request Path: "/swagger/favicon-32x32.png", Method: "GET"
+2025-04-01 15:50:42 [INF] Response Status: 200 for "/swagger/favicon-32x32.png"
+2025-04-01 15:50:42 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 20:15:23 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 20:15:25 [INF] Request Path: "/swagger", Method: "GET"
+2025-04-01 20:15:25 [INF] Response Status: 301 for "/swagger"
+2025-04-01 20:15:25 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 20:15:25 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 20:15:25 [INF] Request Path: "/swagger/swagger-ui.css", Method: "GET"
+2025-04-01 20:15:25 [INF] Request Path: "/swagger/swagger-ui-standalone-preset.js", Method: "GET"
+2025-04-01 20:15:25 [INF] Request Path: "/swagger/swagger-ui-bundle.js", Method: "GET"
+2025-04-01 20:15:25 [INF] Response Status: 200 for "/swagger/swagger-ui.css"
+2025-04-01 20:15:25 [INF] Response Status: 200 for "/swagger/swagger-ui-standalone-preset.js"
+2025-04-01 20:15:25 [INF] Response Status: 200 for "/swagger/swagger-ui-bundle.js"
+2025-04-01 20:15:25 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 20:15:25 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 20:15:26 [INF] Request Path: "/api/logs", Method: "OPTIONS"
+2025-04-01 20:15:26 [INF] Request Path: "/api/logs", Method: "POST"
+2025-04-01 20:15:26 [INF] ["Client"] "Token hết hạn" ""
+2025-04-01 20:15:26 [INF] Response Status: 200 for "/api/logs"
+2025-04-01 20:19:02 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 20:19:03 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 20:19:04 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 20:19:04 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 20:19:04 [INF] Request Path: "/swagger/favicon-32x32.png", Method: "GET"
+2025-04-01 20:19:04 [INF] Response Status: 200 for "/swagger/favicon-32x32.png"
+2025-04-01 20:19:04 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 20:19:10 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 20:19:10 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 20:19:10 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 20:19:10 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 20:19:33 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 20:19:34 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:8e1f0172-4e52-4774-82c6-cdb5233b6f49
+Error Number:229,State:5,Class:14
+2025-04-01 20:19:34 [ERR] Unhandled exception at "/banks"
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:8e1f0172-4e52-4774-82c6-cdb5233b6f49
+Error Number:229,State:5,Class:14
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 37
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at khaothi_2024_net_server.Program.<>c.<<ConfigureMiddleware>b__9_5>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 530
+2025-04-01 20:19:34 [INF] Response Status: 500 for "/banks"
+2025-04-01 20:26:26 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 20:26:26 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:d5fc57d2-c30c-4c73-877b-7b083b3665a7
+Error Number:229,State:5,Class:14
+2025-04-01 20:26:26 [ERR] Unhandled exception at "/banks"
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:d5fc57d2-c30c-4c73-877b-7b083b3665a7
+Error Number:229,State:5,Class:14
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 37
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at khaothi_2024_net_server.Program.<>c.<<ConfigureMiddleware>b__9_5>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 530
+2025-04-01 20:26:26 [INF] Response Status: 500 for "/banks"
+2025-04-01 20:26:26 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 20:26:26 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:d5fc57d2-c30c-4c73-877b-7b083b3665a7
+Error Number:229,State:5,Class:14
+2025-04-01 20:26:27 [ERR] Unhandled exception at "/banks"
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:d5fc57d2-c30c-4c73-877b-7b083b3665a7
+Error Number:229,State:5,Class:14
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 37
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at khaothi_2024_net_server.Program.<>c.<<ConfigureMiddleware>b__9_5>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 530
+2025-04-01 20:26:27 [INF] Response Status: 500 for "/banks"
+2025-04-01 20:26:29 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 20:26:29 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:d5fc57d2-c30c-4c73-877b-7b083b3665a7
+Error Number:229,State:5,Class:14
+2025-04-01 20:26:29 [ERR] Unhandled exception at "/banks"
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The SELECT permission was denied on the object 'Share_DanhSachNganHang', database 'ngoaingusgd', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:d5fc57d2-c30c-4c73-877b-7b083b3665a7
+Error Number:229,State:5,Class:14
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 37
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at khaothi_2024_net_server.Program.<>c.<<ConfigureMiddleware>b__9_5>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Program.cs:line 530
+2025-04-01 20:26:29 [INF] Response Status: 500 for "/banks"
+2025-04-01 21:18:50 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 21:18:50 [INF] Response Status: 200 for "/banks"
+2025-04-01 21:20:55 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 21:20:55 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 21:20:55 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 21:20:55 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:17:35 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 22:17:37 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:17:37 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:17:37 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:17:37 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:17:54 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 22:17:54 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:17:55 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:17:55 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:17:55 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:18:02 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:02 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:a790bff8-a719-4453-8f2a-cdfe85a5ce05
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:02 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:a790bff8-a719-4453-8f2a-cdfe85a5ce05
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:02 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:18:05 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:05 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:a790bff8-a719-4453-8f2a-cdfe85a5ce05
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:05 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:a790bff8-a719-4453-8f2a-cdfe85a5ce05
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:05 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:18:07 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:07 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:a790bff8-a719-4453-8f2a-cdfe85a5ce05
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:07 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:a790bff8-a719-4453-8f2a-cdfe85a5ce05
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:07 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:18:36 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 22:18:36 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:18:37 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:18:37 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:18:37 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:18:40 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:41 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:41 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:41 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:18:44 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:44 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:44 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:44 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:18:45 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:45 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:45 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:45 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:18:45 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:18:45 [ERR] Error executing query: "select * from Share_DanhSachNganHang order by MaNganHang"
+Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+2025-04-01 22:18:46 [ERR] An unhandled exception has occurred while executing the request.
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 32
+ClientConnectionId:998f5b6e-2d45-413c-a3aa-a98ddf857373
+Error Number:-2146893019,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 38
+   at khaothi_2024_net_server.Features.Shares.BankEndpoints.<>c.<<MapBankEndpoints>b__0_0>d.MoveNext() in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Shares\BankEndpoints.cs:line 16
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-04-01 22:18:46 [INF] Response Status: 500 for "/banks"
+2025-04-01 22:19:43 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:19:43 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:19:43 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:19:43 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:32:36 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 22:32:37 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:32:37 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:32:37 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:32:37 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:33:34 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:33:34 [INF] Response Status: 200 for "/banks"
+2025-04-01 22:37:39 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 22:37:40 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:37:40 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:37:40 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:37:40 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:37:53 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:38:03 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:38:14 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 22:38:15 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 22:38:15 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 22:38:15 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 22:38:15 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 22:38:24 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 22:38:24 [INF] Response Status: 200 for "/banks"
+2025-04-01 23:23:47 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 23:25:02 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 23:25:03 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 23:25:03 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 23:25:03 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 23:25:03 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 23:25:12 [INF] Request Path: "/api/auth/login", Method: "OPTIONS"
+2025-04-01 23:25:12 [INF] Request Path: "/api/auth/login", Method: "POST"
+2025-04-01 23:25:12 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-01 23:25:12 [INF] appsettings.json exists: True
+2025-04-01 23:25:12 [INF] Connection string 'SGD': True
+2025-04-01 23:25:12 [INF] Connection string configured successfully
+2025-04-01 23:25:12 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-01 23:25:14 [ERR] Password verification result: True
+2025-04-01 23:25:14 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-04-01 23:25:14 [INF] Response Status: 200 for "/api/auth/login"
+2025-04-01 23:25:16 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 23:25:16 [INF] Response Status: 200 for "/banks"
+2025-04-01 23:25:18 [INF] Request Path: "/api/KhaoThiUser/5", Method: "OPTIONS"
+2025-04-01 23:25:18 [INF] Request Path: "/api/KhaoThiUser/5", Method: "GET"
+2025-04-01 23:25:18 [INF] Response Status: 200 for "/api/KhaoThiUser/5"
+2025-04-01 23:44:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-01 23:44:18 [INF] Request Path: "/api/KhaoThiUser/5", Method: "OPTIONS"
+2025-04-01 23:44:18 [INF] Request Path: "/api/KhaoThiUser/5", Method: "GET"
+2025-04-01 23:44:18 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-01 23:44:18 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-01 23:44:18 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-01 23:44:18 [INF] appsettings.json exists: True
+2025-04-01 23:44:18 [INF] Connection string 'SGD': True
+2025-04-01 23:44:18 [INF] Connection string configured successfully
+2025-04-01 23:44:18 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-01 23:44:18 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-01 23:44:18 [INF] Response Status: 200 for "/api/KhaoThiUser/5"
+2025-04-01 23:44:25 [INF] Request Path: "/banks", Method: "GET"
+2025-04-01 23:44:25 [INF] Response Status: 200 for "/banks"

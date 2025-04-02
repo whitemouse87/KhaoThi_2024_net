@@ -1,7 +1,9 @@
 ﻿using Dapper;
 using khaothi_2024_net_server.Core.Interfaces;
 using Microsoft.Data.SqlClient;
+
 using System.Data;
+
 
 namespace khaothi_2024_net_server.Infrastructure.Data
 {
@@ -11,13 +13,84 @@ namespace khaothi_2024_net_server.Infrastructure.Data
         private readonly ILogger<MyDataAccessLayer> _logger;
         private bool _disposed;
 
+
+        //public MyDataAccessLayer(IConfiguration configuration, ILogger<MyDataAccessLayer> logger)
+        //{
+        //    _connectionString = configuration.GetConnectionString("SGD")
+        //        ?? throw new ArgumentNullException("Connection string 'SGD' not found");
+        //    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        //}
         public MyDataAccessLayer(IConfiguration configuration, ILogger<MyDataAccessLayer> logger)
         {
-            _connectionString = configuration.GetConnectionString("DefaultConnection")
-                ?? throw new ArgumentNullException("Connection string 'DefaultConnection' not found");
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        }
+            _logger = logger;
 
+            try
+            {
+                // Log đường dẫn làm việc
+                var currentDir = Directory.GetCurrentDirectory();
+                _logger.LogInformation("Current directory: {Directory}", currentDir);
+
+                // Kiểm tra file appsettings.json
+                var appSettingsPath = Path.Combine(currentDir, "appsettings.json");
+                _logger.LogInformation("appsettings.json exists: {Exists}", File.Exists(appSettingsPath));
+
+                // Tìm connection string từ nhiều nguồn khác nhau
+                string connectionString = null;
+
+                // Thử tìm SGD
+                connectionString = configuration.GetConnectionString("SGD");
+                _logger.LogInformation("Connection string 'SGD': {Found}", !string.IsNullOrEmpty(connectionString));
+
+                // Nếu không có, thử tìm DefaultConnection
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    connectionString = configuration.GetConnectionString("DefaultConnection");
+                    _logger.LogInformation("Connection string 'DefaultConnection': {Found}", !string.IsNullOrEmpty(connectionString));
+                }
+
+                // Nếu vẫn không có, thử đọc từ web.config
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    try
+                    {
+                        var webConfigPath = Path.Combine(currentDir, "web.config");
+                        _logger.LogInformation("web.config exists: {Exists}", File.Exists(webConfigPath));
+
+                        if (File.Exists(webConfigPath))
+                        {
+                            var configXml = new System.Xml.XmlDocument();
+                            configXml.Load(webConfigPath);
+
+                            var connectionNodes = configXml.SelectNodes("//connectionStrings/add[@name='DefaultConnection']");
+                            if (connectionNodes?.Count > 0)
+                            {
+                                connectionString = connectionNodes[0].Attributes["connectionString"]?.Value;
+                                _logger.LogInformation("Connection string from web.config: {Found}", !string.IsNullOrEmpty(connectionString));
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Error reading connection string from web.config");
+                    }
+                }
+
+                // Nếu vẫn không tìm thấy sau tất cả cách trên, sử dụng hardcoded (tạm thời)
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    connectionString = "Server=103.77.166.169;Database=ngoaingusgd;MultipleActiveResultSets=true;User ID=whitemouse87;Password=Abc123!!!;TrustServerCertificate=True";
+                    _logger.LogWarning("Using hardcoded connection string as a last resort");
+                }
+
+                _connectionString = connectionString;
+                _logger.LogInformation("Connection string configured successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error initializing MyDataAccessLayer");
+                throw;
+            }
+        }
         private SqlConnection CreateConnection()
         {
             return new SqlConnection(_connectionString);

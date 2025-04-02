@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+		<OutputType>Exe</OutputType>
+		<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+		<!-- Thêm các cấu hình này -->
+		<SelfContained>true</SelfContained>
+		<!--  <PublishSingleFile>true</PublishSingleFile> -->
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Core\Entities\**" />
+		<Compile Remove="Infrastructure\Services\**" />
+		<Content Remove="Core\Entities\**" />
+		<Content Remove="Infrastructure\Services\**" />
+		<EmbeddedResource Remove="Core\Entities\**" />
+		<EmbeddedResource Remove="Infrastructure\Services\**" />
+		<None Remove="Core\Entities\**" />
+		<None Remove="Infrastructure\Services\**" />
+		<Content Update="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="9.0.0" />
+		<PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<PackageReference Include="AutoMapper.Collection" Version="10.0.0" />
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="Dapper" Version="2.1.35" />
+		<PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+		<PackageReference Include="Dapper.SqlBuilder" Version="2.0.78" />
+		<PackageReference Include="DotSwashbuckle.AspNetCore" Version="3.0.11" />
+		<PackageReference Include="DotSwashbuckle.AspNetCore.Swagger" Version="3.0.11" />
+		<PackageReference Include="DotSwashbuckle.AspNetCore.SwaggerGen" Version="3.0.11" />
+		<PackageReference Include="DotSwashbuckle.AspNetCore.SwaggerUI" Version="3.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.0" />
+		<PackageReference Include="Microsoft.OpenApi" Version="1.6.23" />
+		<PackageReference Include="Serilog" Version="4.2.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+		<PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+		<PackageReference Include="Serilog.Enrichers.Process" Version="3.0.0" />
+		<PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0" />
+		<PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="logs\" />
+	</ItemGroup>
+</Project>
