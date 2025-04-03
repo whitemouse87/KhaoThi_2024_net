@@ -1,0 +1,41 @@
+2025-04-03 17:06:49.026 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 17:06:49.895 +07:00 [INF] [] Request Path: /swagger, Method: GET
+2025-04-03 17:06:49.909 +07:00 [INF] [] Response Status: 301 for /swagger
+2025-04-03 17:06:49.961 +07:00 [INF] [] Request Path: /swagger/index.html, Method: GET
+2025-04-03 17:06:50.029 +07:00 [INF] [] Response Status: 200 for /swagger/index.html
+2025-04-03 17:06:50.063 +07:00 [INF] [] Request Path: /swagger/swagger-ui.css, Method: GET
+2025-04-03 17:06:50.063 +07:00 [INF] [] Request Path: /swagger/swagger-ui-bundle.js, Method: GET
+2025-04-03 17:06:50.066 +07:00 [INF] [] Request Path: /swagger/swagger-ui-standalone-preset.js, Method: GET
+2025-04-03 17:06:50.076 +07:00 [INF] [] Response Status: 200 for /swagger/swagger-ui-standalone-preset.js
+2025-04-03 17:06:50.076 +07:00 [INF] [] Response Status: 200 for /swagger/swagger-ui.css
+2025-04-03 17:06:50.095 +07:00 [INF] [] Response Status: 200 for /swagger/swagger-ui-bundle.js
+2025-04-03 17:06:50.464 +07:00 [INF] [] Request Path: /swagger/v1/swagger.json, Method: GET
+2025-04-03 17:06:50.540 +07:00 [INF] [] Response Status: 200 for /swagger/v1/swagger.json
+2025-04-03 17:08:35.635 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 17:08:36.165 +07:00 [INF] [] Request Path: /swagger/index.html, Method: GET
+2025-04-03 17:08:36.244 +07:00 [INF] [] Response Status: 200 for /swagger/index.html
+2025-04-03 17:08:36.411 +07:00 [INF] [] Request Path: /swagger/v1/swagger.json, Method: GET
+2025-04-03 17:08:36.419 +07:00 [INF] [] Request Path: /swagger/favicon-32x32.png, Method: GET
+2025-04-03 17:08:36.425 +07:00 [INF] [] Response Status: 200 for /swagger/favicon-32x32.png
+2025-04-03 17:08:36.477 +07:00 [INF] [] Response Status: 200 for /swagger/v1/swagger.json
+2025-04-03 20:54:54.869 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 20:56:19.170 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 20:56:40.354 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-03 20:56:40.358 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-03 20:56:40.362 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-03 20:56:40.364 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-03 20:56:40.399 +07:00 [INF] [AuthController] Login attempt for user: asdas from IP: ::1
+2025-04-03 20:56:41.673 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
+2025-04-03 20:56:41.865 +07:00 [INF] [AuthController] User asdas logged in successfully from IP: ::1
+2025-04-03 20:56:55.735 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-04-03 22:02:31.276 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 22:02:51.020 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-03 22:02:51.024 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-03 22:02:51.028 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-03 22:02:51.030 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-03 22:02:51.072 +07:00 [INF] [AuthController] Login attempt for user: asdas from IP: ::1
+2025-04-03 22:02:52.462 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
+2025-04-03 22:02:52.607 +07:00 [INF] [AuthController] User asdas logged in successfully from IP: ::1
+2025-04-03 22:39:05.356 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 22:41:56.740 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-03 22:52:35.495 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.

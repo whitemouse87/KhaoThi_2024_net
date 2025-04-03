@@ -1,29 +1,12 @@
-2025-04-02 00:25:04.381 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
-2025-04-02 00:25:05.085 +07:00 [INF] [] Request Path: /api/KhaoThiUser/5, Method: OPTIONS
-2025-04-02 00:25:05.106 +07:00 [INF] [] Request Path: /api/KhaoThiUser/5, Method: GET
-2025-04-02 00:25:05.296 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
-2025-04-02 00:25:05.299 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
-2025-04-02 00:25:05.302 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
-2025-04-02 00:25:05.304 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
-2025-04-02 00:25:05.648 +07:00 [INF] [] Request Path: /swagger/index.html, Method: GET
-2025-04-02 00:25:05.726 +07:00 [INF] [] Response Status: 200 for /swagger/index.html
-2025-04-02 00:25:05.820 +07:00 [INF] [] Response Status: 200 for /api/KhaoThiUser/5
-2025-04-02 00:25:05.896 +07:00 [INF] [] Request Path: /swagger/v1/swagger.json, Method: GET
-2025-04-02 00:25:05.996 +07:00 [INF] [] Response Status: 200 for /swagger/v1/swagger.json
-2025-04-02 00:25:14.108 +07:00 [INF] [] Request Path: /api/KhaoThiUser/5, Method: OPTIONS
-2025-04-02 00:25:14.114 +07:00 [INF] [] Request Path: /api/KhaoThiUser/5, Method: GET
-2025-04-02 00:25:14.146 +07:00 [INF] [] Response Status: 200 for /api/KhaoThiUser/5
-2025-04-02 00:25:18.520 +07:00 [INF] [] Request Path: /quan, Method: GET
-2025-04-02 00:25:18.583 +07:00 [INF] [] Response Status: 200 for /quan
-2025-04-02 00:25:18.946 +07:00 [INF] [] Request Path: /quan, Method: GET
-2025-04-02 00:25:18.955 +07:00 [INF] [] Response Status: 200 for /quan
-2025-04-02 00:25:19.191 +07:00 [INF] [] Request Path: /api/BCThongTinDonVi/01EA60, Method: OPTIONS
-2025-04-02 00:25:19.196 +07:00 [INF] [] Request Path: /api/BCThongTinDonVi/01EA60, Method: GET
-2025-04-02 00:25:19.251 +07:00 [INF] [] Response Status: 200 for /api/BCThongTinDonVi/01EA60
-2025-04-02 00:25:19.613 +07:00 [INF] [] Request Path: /api/BCThongTinDonVi/01EA60, Method: GET
-2025-04-02 00:25:19.623 +07:00 [INF] [] Response Status: 200 for /api/BCThongTinDonVi/01EA60
-2025-04-02 00:25:23.612 +07:00 [INF] [] Request Path: /api/BCThongTinDonVi/01EA60, Method: PUT
-2025-04-02 00:25:23.683 +07:00 [INF] [] Response Status: 200 for /api/BCThongTinDonVi/01EA60
-2025-04-02 00:25:32.738 +07:00 [INF] [] Request Path: /api/BCThongTinNhomMon/truong/01EA60, Method: OPTIONS
-2025-04-02 00:25:32.743 +07:00 [INF] [] Request Path: /api/BCThongTinNhomMon/truong/01EA60, Method: GET
-2025-04-02 00:25:32.775 +07:00 [INF] [] Response Status: 404 for /api/BCThongTinNhomMon/truong/01EA60
+2025-04-02 23:05:24.064 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-02 23:05:25.017 +07:00 [INF] [] Request Path: /swagger/index.html, Method: GET
+2025-04-02 23:05:25.108 +07:00 [INF] [] Response Status: 200 for /swagger/index.html
+2025-04-02 23:05:25.254 +07:00 [INF] [] Request Path: /swagger/v1/swagger.json, Method: GET
+2025-04-02 23:05:25.332 +07:00 [INF] [] Response Status: 200 for /swagger/v1/swagger.json
+2025-04-02 23:05:27.200 +07:00 [INF] [] Request Path: /api/KhaoThiUser/5, Method: OPTIONS
+2025-04-02 23:05:27.205 +07:00 [INF] [] Request Path: /api/KhaoThiUser/5, Method: GET
+2025-04-02 23:05:27.408 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-02 23:05:27.411 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-02 23:05:27.413 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-02 23:05:27.415 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-02 23:05:27.920 +07:00 [INF] [] Response Status: 200 for /api/KhaoThiUser/5

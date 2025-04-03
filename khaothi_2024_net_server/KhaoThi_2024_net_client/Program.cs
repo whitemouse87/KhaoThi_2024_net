@@ -37,12 +37,9 @@ using khaothi_2024_net_client.Services.BC_5_ThongTinConThi;
 public class Program
 {
 
-#if DEBUG
-    private const string API_BASE_URL = "https://localhost:7168/api/";
-#else
-            private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
-#endif
-    //private const string API_BASE_URL = "http://api.thongtinkhaothihcm.com/api/";
+
+    private const string API_BASE_URL = "https://api.thongtinkhaothihcm.com/api/";
+    //private const string API_BASE_URL = "https://localhost:7168/api/";
     private const int HTTP_TIMEOUT_SECONDS = 59;
 
     public static async Task Main(string[] args)

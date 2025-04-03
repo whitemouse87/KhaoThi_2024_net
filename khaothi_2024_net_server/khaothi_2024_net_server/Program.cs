@@ -26,12 +26,14 @@ using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 using System.Threading.RateLimiting;
 
 namespace khaothi_2024_net_server;
@@ -95,22 +97,34 @@ public class Program
 
     private static void ConfigureServices(WebApplicationBuilder builder)
     {
+        if (builder.Environment.IsProduction())
+        {
+            var webRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            if (!Directory.Exists(webRootPath))
+            {
+                Directory.CreateDirectory(webRootPath);
+            }
+            builder.WebHost.UseWebRoot(webRootPath);
+        }
         // Controllers và JSON options
         builder.Services.AddControllers()
-            .AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                options.JsonSerializerOptions.PropertyNamingPolicy = null;
-                options.JsonSerializerOptions.WriteIndented = false;
-                options.JsonSerializerOptions.PropertyNamingPolicy = null;
-            });
+      .AddJsonOptions(options =>
+      {
+          options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+          options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+          options.JsonSerializerOptions.PropertyNamingPolicy = null;
+          options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+          options.JsonSerializerOptions.WriteIndented = true;
+          options.JsonSerializerOptions.TypeInfoResolver = new DefaultJsonTypeInfoResolver();
+      });
+
         builder.Services.ConfigureHttpJsonOptions(options =>
         {
             options.SerializerOptions.PropertyNamingPolicy = null;
             options.SerializerOptions.WriteIndented = false;
             options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
             options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            options.SerializerOptions.TypeInfoResolver = new DefaultJsonTypeInfoResolver();
         });
 
         builder.Services.AddEndpointsApiExplorer();
@@ -154,7 +168,6 @@ public class Program
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
-
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "2.0",
@@ -171,6 +184,7 @@ public class Program
                         Url = new Uri("https://opensource.org/licenses/MIT")
                     }
                 });
+
                 // Cấu hình JWT Bearer Authentication cho Swagger UI
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -182,51 +196,26 @@ public class Program
                     Description = "Nhập Bearer token theo định dạng: Bearer {your_token}\r\n\r\nVí dụ: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
                 });
 
-
-                // Cấu hình JWT Authentication với mô tả chi tiết hơn
-                var securityScheme = new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Description = @"JWT Bearer Token. 
-                        Nhập theo định dạng: 'Bearer {your_token}'
-                        Ví dụ: Bearer eyJhbGciOiJIUzI1NiIs...",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    BearerFormat = "JWT",
-                    In = ParameterLocation.Header,
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                    }
-                };
-                // options.SchemaFilter<AnnotationsSchemaFilter>();
-
+                // Thêm requirement bảo mật
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
             {
-                new OpenApiSecurityScheme
                 {
-                    Reference = new OpenApiReference
+                    new OpenApiSecurityScheme
                     {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                    }
-                },
-                Array.Empty<string>()
-            }
-        });
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+            });
 
-                //// Cấu hình XML Comments
-                //var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
-                //if (File.Exists(xmlPath))
-                //{
-                //    options.IncludeXmlComments(xmlPath);
-                //}
+                // Cải thiện xử lý enum - thêm SchemaFilter mới
+                options.SchemaFilter<EnumSchemaFilter>();
 
                 // Tối ưu hóa hiển thị
-                // options.EnableAnnotations();
                 options.DescribeAllParametersInCamelCase();
                 options.UseInlineDefinitionsForEnums();
                 options.CustomSchemaIds(type => type.FullName);
@@ -238,19 +227,43 @@ public class Program
                     {
                         return new[] { api.GroupName };
                     }
-
                     var controllerName = api.ActionDescriptor.RouteValues["controller"];
                     return new[] { controllerName };
                 });
 
                 options.DocInclusionPredicate((docName, api) => true);
             });
+
+            // Thêm SchemaFilter để xử lý enum tốt hơn
+            builder.Services.AddSingleton<EnumSchemaFilter>();
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.ToString());
         }
+    }
 
+    // Thêm class EnumSchemaFilter
+    public class EnumSchemaFilter : ISchemaFilter
+    {
+        public void Apply(OpenApiSchema schema, SchemaFilterContext context)
+        {
+            if (context.Type.IsEnum)
+            {
+                // Xóa các giá trị enum hiện có (số)
+                schema.Enum.Clear();
+
+                // Thêm lại dưới dạng string
+                foreach (var name in Enum.GetNames(context.Type))
+                {
+                    schema.Enum.Add(new OpenApiString(name));
+                }
+
+                // Đặt kiểu dữ liệu là string
+                schema.Type = "string";
+                schema.Format = null;
+            }
+        }
     }
 
 
@@ -439,27 +452,27 @@ public class Program
     #region Cấu Hình Middleware
     private static void ConfigureMiddleware(WebApplication app)
     {
-        app.Use(async (context, next) =>
-        {
-            // Log path để debug
-            Log.Information("Request Path: {Path}, Method: {Method}", context.Request.Path, context.Request.Method);
+        //app.Use(async (context, next) =>
+        //{
+        //    // Log path để debug
+        //    Log.Information("Request Path: {Path}, Method: {Method}", context.Request.Path, context.Request.Method);
 
-            // Xử lý OPTIONS request
-            if (context.Request.Method == "OPTIONS")
-            {
-                context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
-                context.Response.Headers.Append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-                context.Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
-                context.Response.StatusCode = 200;
-                await context.Response.CompleteAsync();
-                return;
-            }
+        //    // Xử lý OPTIONS request
+        //    if (context.Request.Method == "OPTIONS")
+        //    {
+        //        context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+        //        context.Response.Headers.Append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        //        context.Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+        //        context.Response.StatusCode = 200;
+        //        await context.Response.CompleteAsync();
+        //        return;
+        //    }
 
-            await next();
+        //    await next();
 
-            // Log status code sau khi xử lý
-            Log.Information("Response Status: {StatusCode} for {Path}", context.Response.StatusCode, context.Request.Path);
-        });
+        //    // Log status code sau khi xử lý
+        //    Log.Information("Response Status: {StatusCode} for {Path}", context.Response.StatusCode, context.Request.Path);
+        //});
         // Development specific middleware
         if (app.Environment.IsDevelopment())
         {
@@ -470,7 +483,7 @@ public class Program
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
-        app.UseCors("AllowAll");
+        app.UseCors("AllowedOrigins");
 
         // Swagger Configuration
         app.UseSwagger(options =>

@@ -1,29 +1,12 @@
-2025-04-02 00:25:04 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
-2025-04-02 00:25:05 [INF] Request Path: "/api/KhaoThiUser/5", Method: "OPTIONS"
-2025-04-02 00:25:05 [INF] Request Path: "/api/KhaoThiUser/5", Method: "GET"
-2025-04-02 00:25:05 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
-2025-04-02 00:25:05 [INF] appsettings.json exists: True
-2025-04-02 00:25:05 [INF] Connection string 'SGD': True
-2025-04-02 00:25:05 [INF] Connection string configured successfully
-2025-04-02 00:25:05 [INF] Request Path: "/swagger/index.html", Method: "GET"
-2025-04-02 00:25:05 [INF] Response Status: 200 for "/swagger/index.html"
-2025-04-02 00:25:05 [INF] Response Status: 200 for "/api/KhaoThiUser/5"
-2025-04-02 00:25:05 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
-2025-04-02 00:25:05 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
-2025-04-02 00:25:14 [INF] Request Path: "/api/KhaoThiUser/5", Method: "OPTIONS"
-2025-04-02 00:25:14 [INF] Request Path: "/api/KhaoThiUser/5", Method: "GET"
-2025-04-02 00:25:14 [INF] Response Status: 200 for "/api/KhaoThiUser/5"
-2025-04-02 00:25:18 [INF] Request Path: "/quan", Method: "GET"
-2025-04-02 00:25:18 [INF] Response Status: 200 for "/quan"
-2025-04-02 00:25:18 [INF] Request Path: "/quan", Method: "GET"
-2025-04-02 00:25:18 [INF] Response Status: 200 for "/quan"
-2025-04-02 00:25:19 [INF] Request Path: "/api/BCThongTinDonVi/01EA60", Method: "OPTIONS"
-2025-04-02 00:25:19 [INF] Request Path: "/api/BCThongTinDonVi/01EA60", Method: "GET"
-2025-04-02 00:25:19 [INF] Response Status: 200 for "/api/BCThongTinDonVi/01EA60"
-2025-04-02 00:25:19 [INF] Request Path: "/api/BCThongTinDonVi/01EA60", Method: "GET"
-2025-04-02 00:25:19 [INF] Response Status: 200 for "/api/BCThongTinDonVi/01EA60"
-2025-04-02 00:25:23 [INF] Request Path: "/api/BCThongTinDonVi/01EA60", Method: "PUT"
-2025-04-02 00:25:23 [INF] Response Status: 200 for "/api/BCThongTinDonVi/01EA60"
-2025-04-02 00:25:32 [INF] Request Path: "/api/BCThongTinNhomMon/truong/01EA60", Method: "OPTIONS"
-2025-04-02 00:25:32 [INF] Request Path: "/api/BCThongTinNhomMon/truong/01EA60", Method: "GET"
-2025-04-02 00:25:32 [INF] Response Status: 404 for "/api/BCThongTinNhomMon/truong/01EA60"
+2025-04-02 23:05:24 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-02 23:05:25 [INF] Request Path: "/swagger/index.html", Method: "GET"
+2025-04-02 23:05:25 [INF] Response Status: 200 for "/swagger/index.html"
+2025-04-02 23:05:25 [INF] Request Path: "/swagger/v1/swagger.json", Method: "GET"
+2025-04-02 23:05:25 [INF] Response Status: 200 for "/swagger/v1/swagger.json"
+2025-04-02 23:05:27 [INF] Request Path: "/api/KhaoThiUser/5", Method: "OPTIONS"
+2025-04-02 23:05:27 [INF] Request Path: "/api/KhaoThiUser/5", Method: "GET"
+2025-04-02 23:05:27 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-02 23:05:27 [INF] appsettings.json exists: True
+2025-04-02 23:05:27 [INF] Connection string 'SGD': True
+2025-04-02 23:05:27 [INF] Connection string configured successfully
+2025-04-02 23:05:27 [INF] Response Status: 200 for "/api/KhaoThiUser/5"
