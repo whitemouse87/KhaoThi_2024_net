@@ -201,25 +201,70 @@ public class Program
 
     private static void ConfigureStateManagement(IServiceCollection services)
     {
+        //        services.AddBlazoredLocalStorage();
+        //        services.AddFluxor(options =>
+        //        {
+        //            options.ScanAssemblies(typeof(Program).Assembly);
+        //            options.AddMiddleware<FluxorLoggingMiddleware>();
+        //#if DEBUG
+
+        //            options.UseReduxDevTools(options =>
+        //            {
+        //                // Cấu hình thêm nếu cần
+        //                options.Name = "KhaoThi_2024"; // Tên của ứng dụng
+        //                //options.trac(); // Hiển thị stack trace
+        //                //options.EnableStackTrace();
+        //            });
+        //#endif
+        //        });
         services.AddBlazoredLocalStorage();
+
+        // Đăng ký các dịch vụ Fluxor rõ ràng
+        services.AddScoped<IDispatcher, Dispatcher>();
+        services.AddScoped<IStore, Store>();
+        //services.AddScoped<IActionSubscriber, ActionSubscriber>();
+
         services.AddFluxor(options =>
         {
             options.ScanAssemblies(typeof(Program).Assembly);
-            options.AddMiddleware<FluxorLoggingMiddleware>();
-#if DEBUG
 
-            options.UseReduxDevTools(options =>
-            {
-                // Cấu hình thêm nếu cần
-                options.Name = "KhaoThi_2024"; // Tên của ứng dụng
-                //options.trac(); // Hiển thị stack trace
-                //options.EnableStackTrace();
-            });
+            // Điều chỉnh middleware để hoạt động tốt trong production
+            options.AddMiddleware<FluxorLoggingMiddleware>();
+
+            // Chỉ sử dụng ReduxDevTools trong development
+#if DEBUG
+            options.UseReduxDevTools(rdt => rdt.Name = "KhaoThi_2024");
 #endif
         });
 
     }
 
+
+    //    private static void ConfigureStateManagement(IServiceCollection services)
+    //    {
+    //        services.AddBlazoredLocalStorage();
+
+    //        // Chỉ đăng ký IDispatcher và Store
+    //        services.AddScoped<IDispatcher, Dispatcher>();
+    //        services.AddScoped<IStore, Store>();
+
+    //        // Đăng ký Fluxor
+    //        services.AddFluxor(options =>
+    //        {
+    //            options.ScanAssemblies(typeof(Program).Assembly);
+
+    //#if DEBUG
+    //            // Chỉ sử dụng middleware và DevTools trong môi trường Debug
+    //            options.AddMiddleware<FluxorLoggingMiddleware>();
+    //            options.UseReduxDevTools(rdt =>
+    //            {
+    //                rdt.Name = "KhaoThi_2024";
+    //            });
+    //#else
+    //        // Trong môi trường Production, không sử dụng middleware và DevTools
+    //#endif
+    //        });
+    //    }
     private static void ConfigureMudBlazor(IServiceCollection services)
     {
         services.AddMudServices(config =>
@@ -272,18 +317,19 @@ public class Program
     }
     private static void ConfigureAutoMapper(IServiceCollection services)
     {
-        services.AddAutoMapper(config =>
-        {
-            config.CreateMap<KhaoThiUserModel, UserInfo>()
-                .ForMember(dest => dest.ID, opt => opt.MapFrom(src => src.ID))
-                .ForMember(dest => dest.TenDangNhap, opt => opt.MapFrom(src => src.TenDangNhap))
-                .ForMember(dest => dest.HoTen, opt => opt.MapFrom(src => src.HoTen))
-                .ForMember(dest => dest.MaDonVi, opt => opt.MapFrom(src => src.MaDonVi))
-                .ForMember(dest => dest.TenDonVi, opt => opt.MapFrom(src => src.TenDonVi))
-                .ForMember(dest => dest.MaChucVu, opt => opt.MapFrom(src => src.MaChucVu))
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
+        services.AddAutoMapper(typeof(Program).Assembly);
+        //services.AddAutoMapper(config =>
+        //{
+        //    config.CreateMap<KhaoThiUserModel, UserInfo>()
+        //        .ForMember(dest => dest.ID, opt => opt.MapFrom(src => src.ID))
+        //        .ForMember(dest => dest.TenDangNhap, opt => opt.MapFrom(src => src.TenDangNhap))
+        //        .ForMember(dest => dest.HoTen, opt => opt.MapFrom(src => src.HoTen))
+        //        .ForMember(dest => dest.MaDonVi, opt => opt.MapFrom(src => src.MaDonVi))
+        //        .ForMember(dest => dest.TenDonVi, opt => opt.MapFrom(src => src.TenDonVi))
+        //        .ForMember(dest => dest.MaChucVu, opt => opt.MapFrom(src => src.MaChucVu))
+        //        .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
 
-        });
+        //});
     }
     private static void ConfigureRouting(IServiceCollection services)
     {

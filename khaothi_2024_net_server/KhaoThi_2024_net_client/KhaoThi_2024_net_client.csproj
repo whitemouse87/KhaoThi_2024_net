@@ -1,19 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<RootNamespace>KhaoThi_2024_net_client</RootNamespace>
-		<!-- Tối ưu build -->
-		<RunAOTCompilation>true</RunAOTCompilation>
-		<PublishTrimmed>true</PublishTrimmed>
-		<TrimMode>link</TrimMode>
-		<BlazorEnableCompression>true</BlazorEnableCompression>
-		<StaticWebAssetBasePath>/</StaticWebAssetBasePath>
-		<InvariantGlobalization>true</InvariantGlobalization>
-		<!-- PWA Support -->
-		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-	</PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>KhaoThi_2024_net_client</RootNamespace>
+    
+    <!-- Tắt AOT và các tùy chọn trimming -->
+    <RunAOTCompilation>false</RunAOTCompilation>
+    <PublishTrimmed>false</PublishTrimmed>
+    <!-- Bỏ TrimMode link -->
+    <!-- <TrimMode>link</TrimMode> -->
+    <BlazorEnableCompression>false</BlazorEnableCompression>
+    
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    
+    <!-- PWA Support -->
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+</PropertyGroup>
 
 	<!-- Loại bỏ các folder không sử dụng -->
 	<ItemGroup>
@@ -30,6 +35,16 @@
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
 		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+	</ItemGroup>
+
+	<!-- IL Linker configuration - thêm các assembly Fluxor -->
+	<ItemGroup>
+		<TrimmerRootAssembly Include="Microsoft.Authentication.WebAssembly.Msal" />
+		<TrimmerRootAssembly Include="System.Text.Json" />
+		<TrimmerRootAssembly Include="Microsoft.AspNetCore.Components.WebAssembly" />
+		<TrimmerRootAssembly Include="Fluxor" />
+		<TrimmerRootAssembly Include="Fluxor.Blazor.Web" />
+		<TrimmerRootAssembly Include="Fluxor.Blazor.Web.ReduxDevTools" />
 	</ItemGroup>
 
 	<!-- Package References - đã tối ưu -->
@@ -63,7 +78,6 @@
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
 		<PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
-		
 	</ItemGroup>
 
 	<!-- Empty folders to create -->
@@ -87,13 +101,6 @@
 		<DebugType>none</DebugType>
 		<DebugSymbols>false</DebugSymbols>
 	</PropertyGroup>
-
-	<!-- IL Linker configuration -->
-	<ItemGroup>
-		<TrimmerRootAssembly Include="Microsoft.Authentication.WebAssembly.Msal" />
-		<TrimmerRootAssembly Include="System.Text.Json" />
-		<TrimmerRootAssembly Include="Microsoft.AspNetCore.Components.WebAssembly" />
-	</ItemGroup>
 
 	<!-- PWA Assets -->
 	<ItemGroup>

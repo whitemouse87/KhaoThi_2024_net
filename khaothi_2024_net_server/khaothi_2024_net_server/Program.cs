@@ -125,6 +125,8 @@ public class Program
             options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
             options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
             options.SerializerOptions.TypeInfoResolver = new DefaultJsonTypeInfoResolver();
+
+            options.SerializerOptions.DefaultBufferSize = 32768; // Tăng kích thước buffer mặc định
         });
 
         builder.Services.AddEndpointsApiExplorer();
@@ -288,7 +290,9 @@ public class Program
                     "https://thongtinkhaothihcm.com",
                     "http://localhost:5000",
                     "https://localhost:5000",
-                    "https://api.thongtinkhaothihcm.com"
+                    "https://api.thongtinkhaothihcm.com",
+                    "https://www.thongtinkhaothihcm.com", // Thêm domain này
+                    "http://www.thongtinkhaothihcm.com" // Thêm domain này
                 )
                 .SetIsOriginAllowedToAllowWildcardSubdomains()
                 .AllowAnyMethod()
