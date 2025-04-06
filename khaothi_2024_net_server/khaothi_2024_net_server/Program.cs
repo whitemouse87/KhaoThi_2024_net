@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -161,6 +162,20 @@ public class Program
         builder.Services.AddDataProtection()
             .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionPath))
             .SetApplicationName("khaothi_2024_net_server");
+        builder.Services.AddResponseCompression(options =>
+        {
+            options.EnableForHttps = true;
+            options.Providers.Add<GzipCompressionProvider>();
+            options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+                new[] { "application/json", "application/xml" });
+        });
+        builder.Services.AddOutputCache(options =>
+        {
+            options.AddBasePolicy(builder =>
+                builder.Expire(TimeSpan.FromSeconds(60)) // Cache trong 60 giây
+                       .Tag("default")
+                       .SetVaryByHeader("Accept", "Accept-Encoding"));
+        });
     }
 
     private static void ConfigureSwagger(WebApplicationBuilder builder)
@@ -294,12 +309,12 @@ public class Program
                     "https://www.thongtinkhaothihcm.com", // Thêm domain này
                     "http://www.thongtinkhaothihcm.com" // Thêm domain này
                 )
-                .SetIsOriginAllowedToAllowWildcardSubdomains()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials()
-                .WithExposedHeaders("Content-Disposition", "File-Name")
-            );
+                  .SetIsOriginAllowedToAllowWildcardSubdomains()
+                    .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Chỉ định rõ các method
+                    .WithHeaders("Content-Type", "Authorization", "Accept") // Chỉ định rõ các header
+                    .WithExposedHeaders("Content-Disposition", "File-Name")
+                    .SetPreflightMaxAge(TimeSpan.FromMinutes(10)) // Tăng thời gian cache preflight
+                    );
         });
     }
 
@@ -406,14 +421,13 @@ public class Program
         builder.Services.AddRateLimiter(options =>
         {
             options.AddPolicy("StandardRateLimit", context =>
-                RateLimitPartition.GetFixedWindowLimiter(
+                RateLimitPartition.GetConcurrencyLimiter( // Thay đổi loại limiter
                     partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? "anonymous",
-                    factory: _ => new FixedWindowRateLimiterOptions
+                    factory: _ => new ConcurrencyLimiterOptions
                     {
-                        AutoReplenishment = true,
-                        PermitLimit = 100,
-                        QueueLimit = 0,
-                        Window = TimeSpan.FromMinutes(1)
+                        PermitLimit = 30, // Giới hạn đồng thời
+                        QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+                        QueueLimit = 50 // Hàng đợi xử lý
                     }));
         });
     }
@@ -545,8 +559,10 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+        app.UseResponseCompression();
         app.UseRouting();
         app.UseAuthentication();
+        app.UseOutputCache();
         app.UseAuthorization();
         app.UseRateLimiter();
 

@@ -126,16 +126,37 @@
         }
     }
 
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    await base.OnInitializedAsync();
+    //    var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+    //    isAuthenticated = authState.User.Identity?.IsAuthenticated ?? false;
+
+    //    if (isAuthenticated || AuthState.Value.IsAuthenticated)
+    //    {
+    //        await Logger.Info("[CLIENT] Authenticated user attempting to access login page - redirecting to dashboard");
+    //        NavigationManager.NavigateTo("/dashboard", true);
+    //    }
+    //}
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        isAuthenticated = authState.User.Identity?.IsAuthenticated ?? false;
-
-        if (isAuthenticated || AuthState.Value.IsAuthenticated)
+        try
         {
-            await Logger.Info("[CLIENT] Authenticated user attempting to access login page - redirecting to dashboard");
-            NavigationManager.NavigateTo("/dashboard", true);
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            isAuthenticated = authState.User.Identity?.IsAuthenticated ?? false;
+
+            if (isAuthenticated || AuthState.Value.IsAuthenticated)
+            {
+                await Logger.Info("[CLIENT] Authenticated user attempting to access login page - redirecting to dashboard");
+                NavigationManager.NavigateTo("/dashboard", true);
+            }
+        }
+        catch (Exception ex)
+        {
+            // Xử lý lỗi xác thực một cách im lặng
+            isAuthenticated = false;
+            await Logger.Error("Error checking authentication state", ex);
         }
     }
 

@@ -43,27 +43,27 @@ const BLAZOR_ASSETS = [
 
 // Sự kiện cài đặt service worker
 self.addEventListener('install', event => {
-    console.log('[Service Worker] Installing...');
+    //console.log('[Service Worker] Installing...');
     // Bước 1: Pre-cache app shell
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('[Service Worker] Pre-caching app shell');
+                // console.log('[Service Worker] Pre-caching app shell');
                 return cache.addAll(PRECACHE_ASSETS);
             })
             .then(() => {
-                console.log('[Service Worker] Pre-caching complete');
+                // console.log('[Service Worker] Pre-caching complete');
                 return self.skipWaiting();
             })
             .catch(error => {
-                console.error('[Service Worker] Pre-caching failed:', error);
+                // console.error('[Service Worker] Pre-caching failed:', error);
             })
     );
 });
 
 // Sự kiện kích hoạt (sau khi install hoặc update)
 self.addEventListener('activate', event => {
-    console.log('[Service Worker] Activating...');
+    //console.log('[Service Worker] Activating...');
 
     // Xóa cache cũ
     event.waitUntil(
@@ -72,13 +72,13 @@ self.addEventListener('activate', event => {
                 cacheNames.filter(name => {
                     return name !== CACHE_NAME;
                 }).map(name => {
-                    console.log('[Service Worker] Deleting old cache:', name);
+                    // console.log('[Service Worker] Deleting old cache:', name);
                     return caches.delete(name);
                 })
             );
         })
             .then(() => {
-                console.log('[Service Worker] Claiming clients');
+                //console.log('[Service Worker] Claiming clients');
                 return self.clients.claim();
             })
     );
@@ -134,7 +134,7 @@ async function cacheFirst(request) {
         }
         return networkResponse;
     } catch (error) {
-        console.error('[Service Worker] Cache-first fetch failed:', error);
+        // console.error('[Service Worker] Cache-first fetch failed:', error);
         // Nếu không có cache và network fail, trả về response lỗi
         return new Response('Network request failed', { status: 408, headers: { 'Content-Type': 'text/plain' } });
     }
@@ -154,7 +154,7 @@ async function networkFirst(request) {
 
         return networkResponse;
     } catch (error) {
-        console.log('[Service Worker] Network request failed, falling back to cache for', request.url);
+        //console.log('[Service Worker] Network request failed, falling back to cache for', request.url);
 
         // Nếu network fail, thử lấy từ cache
         const cachedResponse = await caches.match(request);
@@ -163,7 +163,7 @@ async function networkFirst(request) {
         }
 
         // Nếu không có trong cache, trả về response lỗi
-        console.error('[Service Worker] No cache available for', request.url);
+        // console.error('[Service Worker] No cache available for', request.url);
         return new Response('Network request failed and no cache available', {
             status: 503,
             headers: { 'Content-Type': 'text/plain' }

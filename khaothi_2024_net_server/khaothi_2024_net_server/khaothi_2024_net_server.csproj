@@ -23,6 +23,9 @@
         <EnableDefaultJsonSerializationProxies>true</EnableDefaultJsonSerializationProxies>
 		
 		<PublishReadyToRun>true</PublishReadyToRun>
+		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+
     </PropertyGroup>
     <ItemGroup>
         <Compile Remove="Core\Entities\**" />

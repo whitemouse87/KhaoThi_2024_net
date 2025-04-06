@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Hệ thống khảo thí 2024" />
+    <meta name="description" content="Hệ thống quản lý các kỳ thi của Thành phố " />
     <meta name="theme-color" content="#4A47B1" />
-    <title>KhaoThi 2024</title>
+    <title>Sở GDĐT Thành phố Hồ Chí Minh - Phòng Khảo thí và KĐCLGD</title>
     <base href="/" />
 
     <!-- Cache Control -->
@@ -31,7 +31,7 @@
     <link href="_content/Radzen.Blazor/css/default.css" rel="stylesheet" />
     <link href="css/blazored-modal.css" rel="stylesheet" />
     <link href="css/BankSelect.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" /> 
+    <link href="css/app.css" rel="stylesheet" />
     <link href="KhaoThi_2024_net_client.styles.css" rel="stylesheet" />
 
     <!-- Inline Critical CSS -->
@@ -81,8 +81,13 @@
         }
 
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         #blazor-error-ui {
@@ -100,18 +105,18 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        #blazor-error-ui .reload {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin: 0 0.5rem;
-            font-weight: 500;
-        }
+            #blazor-error-ui .reload {
+                color: var(--primary-color);
+                text-decoration: none;
+                margin: 0 0.5rem;
+                font-weight: 500;
+            }
 
-        #blazor-error-ui .dismiss {
-            cursor: pointer;
-            margin-left: 0.5rem;
-            font-weight: bold;
-        }
+            #blazor-error-ui .dismiss {
+                cursor: pointer;
+                margin-left: 0.5rem;
+                font-weight: bold;
+            }
 
         .file-upload-container {
             margin: 1rem 0;
@@ -127,9 +132,9 @@
             transition: background-color 0.3s;
         }
 
-        .upload-btn:hover {
-            background-color: #3935A0;
-        }
+            .upload-btn:hover {
+                background-color: #3935A0;
+            }
 
         .file-upload-input {
             display: none;
@@ -194,6 +199,19 @@
     <!--<environment include="Development">
         <script src="_framework/aspnetcore-browser-refresh.js"></script>
     </environment>-->
+    <script>
+        // Kiểm tra nếu là môi trường production
+        if (window.location.hostname !== 'localhost' &&
+            !window.location.hostname.includes('127.0.0.1')) {
+            // Ghi đè các hàm console trong production
+            console.log = function () { };
+            console.debug = function () { };
+            console.info = function () { };
+            // Giữ lại các hàm cảnh báo và lỗi để debug khi cần
+            // console.warn = function() {};
+             console.error = function() {};
+        }
+    </script>
 </head>
 
 <body>
