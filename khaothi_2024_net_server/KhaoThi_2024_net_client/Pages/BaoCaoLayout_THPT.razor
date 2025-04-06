@@ -72,11 +72,11 @@
         case 5:
             <BCThongTinConDonVi />
             break;
+        @*case 6:
+            <MudText>Đang phát triển - Bước 7: Khai báo thông tin phục vụ tuyển sinh"</MudText>
+            break;*@
         case 6:
-            <MudText>Đang phát triển - Bước 6: Khai báo thông tin phục vụ tuyển sinh"</MudText>
-            break;
-        case 7:
-            <MudText>Đang phát triển - Bước 7: In báo cáo</MudText>
+            <MudText>Đang phát triển - Bước 6: In báo cáo</MudText>
             break;
         default:
             <BCThongTinDonVi />
@@ -101,7 +101,7 @@
         Text="Lưu nháp"
         class="btn-save"
         Disabled="@(DonViState.Value.IsLoading)" />*@
-    @if (currentTab < 7)
+    @if (currentTab < 6)
     {
         <RadzenButton Click="@(async () => await SwitchTab(currentTab + 1))"
                       ButtonStyle="ButtonStyle.Primary"
@@ -137,8 +137,8 @@
         new StepInfo { Index = 3, Icon = "people", Title = "Khai báo thông tin lãnh đạo" },
         new StepInfo { Index = 4, Icon = "psychology", Title = "Khai báo thông tin lãnh đạo tham gia coi thi" },
         new StepInfo { Index = 5, Icon = "Face", Title = "Khai báo thông tin con em cán bộ nhà trường có con tham gia kỳ thi TS10 và tốt nghiệp THPT" },
-        new StepInfo { Index = 6, Icon = "assignment", Title = "Khai báo thông tin phục vụ tuyển sinh" },
-        new StepInfo { Index = 7, Icon = "print", Title = "In báo cáo" }
+        //new StepInfo { Index = 6, Icon = "assignment", Title = "Khai báo thông tin phục vụ tuyển sinh" },
+        new StepInfo { Index = 6, Icon = "print", Title = "In báo cáo" }
     };
 
     protected override void OnInitialized()
@@ -174,46 +174,46 @@
 
     private async Task SwitchTab(int tabIndex)
     {
-        // Kiểm tra nếu đang chuyển đến bước 4
-        if (tabIndex == 4)
-        {
-            // Lấy mã trường từ state
-            var maTruong = LanhDaoState.Value.MaTruong ?? "";
+        //// Kiểm tra nếu đang chuyển đến bước 4
+        //if (tabIndex == 4)
+        //{
+        //    // Lấy mã trường từ state
+        //    var maTruong = LanhDaoState.Value.MaTruong ?? "";
 
-            // Kiểm tra xem danh sách lãnh đạo có dữ liệu không
-            var lanhDaos = LanhDaoState.Value.LanhDaos;
+        //    // Kiểm tra xem danh sách lãnh đạo có dữ liệu không
+        //    var lanhDaos = LanhDaoState.Value.LanhDaos;
 
-            // Nếu chưa có dữ liệu, thử tải từ server
-            if ((lanhDaos == null || !lanhDaos.Any()) && !string.IsNullOrEmpty(maTruong))
-            {
+        //    // Nếu chưa có dữ liệu, thử tải từ server
+        //    if ((lanhDaos == null || !lanhDaos.Any()) && !string.IsNullOrEmpty(maTruong))
+        //    {
 
-                // Dispatch action để lấy danh sách lãnh đạo theo mã trường
-                Dispatcher.Dispatch(new BCLanhDaoDonViAction.CheckLanhDaoEmptyAction(maTruong));
+        //        // Dispatch action để lấy danh sách lãnh đạo theo mã trường
+        //        Dispatcher.Dispatch(new BCLanhDaoDonViAction.CheckLanhDaoEmptyAction(maTruong));
 
-                // Đợi một chút để action được xử lý
-                await Task.Delay(500);
+        //        // Đợi một chút để action được xử lý
+        //        await Task.Delay(500);
 
-                // Cập nhật lại danh sách sau khi đợi
-                lanhDaos = LanhDaoState.Value.LanhDaos;
-            }
+        //        // Cập nhật lại danh sách sau khi đợi
+        //        lanhDaos = LanhDaoState.Value.LanhDaos;
+        //    }
 
-            // Kiểm tra lại sau khi đã thử tải dữ liệu
-            if (lanhDaos == null || !lanhDaos.Any())
-            {
-                // Hiển thị thông báo lỗi màu đỏ
-                NotificationService.Notify(new NotificationMessage
-                {
-                    Severity = NotificationSeverity.Error,
-                    Summary = "Chưa có thông tin lãnh đạo",
-                    Detail = "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
-                    Duration = 6000
-                });
+        //    // Kiểm tra lại sau khi đã thử tải dữ liệu
+        //    if (lanhDaos == null || !lanhDaos.Any())
+        //    {
+        //        // Hiển thị thông báo lỗi màu đỏ
+        //        NotificationService.Notify(new NotificationMessage
+        //        {
+        //            Severity = NotificationSeverity.Error,
+        //            Summary = "Chưa có thông tin lãnh đạo",
+        //            Detail = "Trường của bạn chưa khai báo thông tin lãnh đạo. Vui lòng quay lại Bước 3 để khai báo thông tin lãnh đạo trước khi tiếp tục.",
+        //            Duration = 6000
+        //        });
 
-                // Chuyển về bước 3
-                currentTab = 3;
-                return;
-            }
-        }
+        //        // Chuyển về bước 3
+        //        currentTab = 3;
+        //        return;
+        //    }
+        //}
 
         // Nếu không có vấn đề gì hoặc không phải bước 4, chuyển tab bình thường
         currentTab = tabIndex;
