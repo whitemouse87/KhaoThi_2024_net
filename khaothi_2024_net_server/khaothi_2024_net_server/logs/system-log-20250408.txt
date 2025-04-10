@@ -1,0 +1,7 @@
+2025-04-08 12:04:45.193 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-08 12:09:24.485 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-08 12:12:53.881 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-08 13:43:49.481 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-08 13:46:08.906 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-08 15:52:05.927 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-08 15:54:28.785 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.

@@ -66,7 +66,11 @@
                         </MudItem>
                         <MudItem xs="12" md="4">
                             <MudField Label="Chức vụ" Variant="Variant.Outlined" FullWidth="true">
-                                @GetChucVuDisplay(context.User.FindFirst("maChucVu")?.Value)
+                                
+
+                                @GetChucVuDisplay(context.User.FindFirst("MaChucVu")?.Value == "1" ? "Quản trị Sở GDĐT" :
+                                            context.User.FindFirst("MaChucVu")?.Value == "2" ? "Quản trị đơn vị" :
+                                            context.User.FindFirst("MaChucVu")?.Value ?? "Chưa có chức vụ")
                             </MudField>
                         </MudItem>
                     </MudGrid>

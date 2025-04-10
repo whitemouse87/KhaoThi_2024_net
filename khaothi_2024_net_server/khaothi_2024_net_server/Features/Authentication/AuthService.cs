@@ -88,15 +88,15 @@ namespace khaothi_2024_net_server.Features.Authentication
                 }
 
                 // Kiểm soát các phiên đồng thời
-                if (!await CheckConcurrentSessionsAsync(user.ID.ToString(), 3)) // Giới hạn 3 phiên đồng thời
-                {
-                    return new LoginResponse
-                    {
-                        Success = false,
-                        ErrorType = LoginErrorType.TooManyAttempts,
-                        ErrorMessage = "Quá nhiều phiên hoạt động. Vui lòng đăng xuất khỏi các thiết bị khác."
-                    };
-                }
+                //if (!await CheckConcurrentSessionsAsync(user.ID.ToString(), 3)) // Giới hạn 3 phiên đồng thời
+                //{
+                //    return new LoginResponse
+                //    {
+                //        Success = false,
+                //        ErrorType = LoginErrorType.TooManyAttempts,
+                //        ErrorMessage = "Quá nhiều phiên hoạt động. Vui lòng đăng xuất khỏi các thiết bị khác."
+                //    };
+                //}
 
                 var token = GenerateJwtToken(user);
                 var refreshToken = GenerateRefreshToken();

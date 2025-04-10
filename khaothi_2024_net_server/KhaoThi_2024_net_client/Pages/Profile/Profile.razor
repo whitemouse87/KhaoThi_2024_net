@@ -177,14 +177,14 @@
                             <MudText Typo="Typo.h6" Style="color: #313a46; font-weight: 600;" Class="mb-4 d-flex align-center">
                                 <MudIcon Icon="@Icons.Material.Filled.AccountBalance"
                                          Style="color: #727cf5;" Class="mr-2" />
-                                Thông Tin Tài Chính (người quản lý tài khoản)
+                                Thông Tin Tài Chính (đơn vị)
                             </MudText>
                             <MudList T="string" Dense="true" Clickable="false" DisablePadding="true">
                                 <MudList Dense="true" Clickable="false" DisablePadding="true">
                                     <MudListItem Icon="@Icons.Material.Filled.AccountBalance" IconColor="Color.Primary">
                                         <MudText>
                                             <strong style="color: #313a46; min-width: 150px; display: inline-block;">
-                                                Số tài khoản:
+                                                Số tài khoản đơn vị:
                                             </strong>
                                             @(UserState.Value.SelectedUser.SoTaiKhoan ?? "Chưa cập nhật")
                                         </MudText>
@@ -202,7 +202,7 @@
                                     <MudListItem Icon="@Icons.Material.Filled.Receipt" IconColor="Color.Primary">
                                         <MudText>
                                             <strong style="color: #313a46; min-width: 150px; display: inline-block;">
-                                                Mã số thuế:
+                                                Mã số thuế đơn vị:
                                             </strong>
                                             @(UserState.Value.SelectedUser.MaSoThue ?? "Chưa cập nhật")
                                         </MudText>
@@ -211,10 +211,10 @@
                                     <MudListItem Icon="@Icons.Material.Filled.Today" IconColor="Color.Primary">
                                         <MudText>
                                             <strong style="color: #313a46; min-width: 150px; display: inline-block;">
-                                                Ngày tạo tài khoản:
+                                                Ngày tạo tài khoản đơn vị:
                                             </strong>
                                             @UserState.Value.SelectedUser.NgayTao.ToString("dd/MM/yyyy")
-                                        </MudText>
+                                        </MudText>2
                                     </MudListItem>
                                 </MudList>
                             </MudList>
