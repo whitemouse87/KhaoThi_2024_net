@@ -1,9 +1,0 @@
-2025-04-10 09:33:24.034 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
-2025-04-10 09:33:31.422 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] Token hết hạn 
-2025-04-10 09:34:03.887 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
-2025-04-10 09:34:03.890 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
-2025-04-10 09:34:03.892 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
-2025-04-10 09:34:03.893 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
-2025-04-10 09:34:03.906 +07:00 [INF] [AuthController] Login attempt for user: 06fa04 from IP: ::1
-2025-04-10 09:34:05.073 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
-2025-04-10 09:34:05.200 +07:00 [INF] [AuthController] User 06fa04 logged in successfully from IP: ::1
