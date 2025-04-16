@@ -13,6 +13,7 @@
 @using KhaoThi_2024_net_client.Pages.BC_4_LanhDaoDonVi
 @using KhaoThi_2024_net_client.Pages.BC_5_ThongTinTruongDiemDonVi
 @using KhaoThi_2024_net_client.Pages.BC_6_ThongTinConThiDonVi
+@using KhaoThi_2024_net_client.Pages.BC_7_InBaoCao
 @inject IDispatcher Dispatcher
 @inject NotificationService NotificationService
 @inject NavigationManager NavigationManager
@@ -76,7 +77,7 @@
             <MudText>Đang phát triển - Bước 7: Khai báo thông tin phục vụ tuyển sinh"</MudText>
             break;*@
         case 6:
-            <MudText>Đang phát triển - Bước 6: In báo cáo</MudText>
+            <InBaoCao />
             break;
         default:
             <BCThongTinDonVi />

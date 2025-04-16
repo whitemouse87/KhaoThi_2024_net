@@ -1,0 +1,464 @@
+﻿@page "/inbaocao"
+@page "/inbaocao/{MaTruong}"
+@inject KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.IBCThongTinDonViService ThongTinDonViService
+@inject HttpClient Http
+@inject IJSRuntime JSRuntime
+@inject ILoggingService Logger
+@inject NavigationManager NavigationManager
+@using DocumentFormat.OpenXml.Packaging
+@using DocumentFormat.OpenXml.Features
+@using DocumentFormat.OpenXml.Wordprocessing
+@using System.IO
+@using Microsoft.AspNetCore.WebUtilities
+@using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
+@using System.Text
+
+
+
+@*<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">
+            <i class="fas fa-file-word mr-2"></i>
+            Xuất báo cáo trường: @MaTruong
+        </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Mã trường</span>
+                    </div>
+                    <input type="text" class="form-control" value="@MaTruong" readonly />
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                @if (thongTinTruong != null)
+                {
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Tên trường</span>
+                        </div>
+                        <input type="text" class="form-control" value="@thongTinTruong.TenTruong" readonly />
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary" @onclick="GenerateReport" disabled="@isGenerating">
+                @if (isGenerating)
+                {
+                    <span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+                    <span>Đang tạo báo cáo...</span>
+                }
+                else
+                {
+                    <span><i class="fas fa-download mr-2"></i> Xuất báo cáo Word</span>
+                }
+            </button>
+        </div>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="alert alert-danger mt-3">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                @errorMessage
+            </div>
+        }
+
+        @if (isDataLoaded)
+        {
+            <div class="alert alert-success mt-3">
+                <i class="fas fa-check-circle mr-2"></i>
+                Đã tải xong dữ liệu. Sẵn sàng xuất báo cáo.
+            </div>
+        }
+    </div>
+</div>*@
+
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudPaper Elevation="3" Class="pa-4 mb-6">
+        <MudText Typo="Typo.h5" Class="mb-4 d-flex align-center">
+            <MudIcon Icon="@Icons.Material.Filled.Description" Class="mr-2" />
+            Xuất báo cáo trường: @MaTruong
+        </MudText>
+
+        <MudGrid>
+            <MudItem xs="12" md="6">
+                <MudTextField Label="Mã trường"
+                              Value="@MaTruong"
+                              ReadOnly="true"
+                              Variant="Variant.Outlined"
+                              Adornment="Adornment.Start"
+                              AdornmentIcon="@Icons.Material.Filled.School"
+                              Margin="Margin.Dense"
+                              FullWidth="true" />
+            </MudItem>
+
+            <MudItem xs="12" md="6">
+                @if (thongTinTruong != null)
+                {
+                    <MudTextField Label="Tên trường"
+                                  Value="@thongTinTruong.TenTruong"
+                                  ReadOnly="true"
+                                  Variant="Variant.Outlined"
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Business"
+                                  Margin="Margin.Dense"
+                                  FullWidth="true" />
+                }
+                else
+                {
+                    <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="40px" Class="my-2" />
+                }
+            </MudItem>
+        </MudGrid>
+
+        <div class="d-flex justify-start mt-4">
+            <MudButton Variant="Variant.Filled"
+                       Color="MudBlazor.Color.Primary"
+                       StartIcon="@Icons.Material.Filled.FileDownload"
+                       Size="Size.Large"
+                       OnClick="GenerateReport"
+                       Disabled="@(isGenerating || thongTinTruong == null)">
+                @if (isGenerating)
+                {
+                    <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    <span>Đang tạo báo cáo...</span>
+                }
+                else
+                {
+                    <span>Xuất báo cáo Word</span>
+                }
+            </MudButton>
+
+          
+        </div>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <MudAlert Severity="Severity.Error" Class="mt-4" Variant="Variant.Filled">
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.Error" Class="mr-3" />
+                    @errorMessage
+                </div>
+            </MudAlert>
+        }
+
+        @if (isDataLoaded)
+        {
+            <MudAlert Severity="Severity.Success" Class="mt-4" Variant="Variant.Filled">
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Class="mr-3" />
+                    Đã tải xong dữ liệu. Sẵn sàng xuất báo cáo.
+                </div>
+            </MudAlert>
+        }
+    </MudPaper>
+</MudContainer>
+
+@code {
+    [Parameter]
+    public string MaTruong { get; set; }
+
+    private bool isGenerating = false;
+    private bool isDataLoaded = false;
+    private string errorMessage = string.Empty;
+
+    // Lưu trữ dữ liệu đã tải
+    private KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Đảm bảo JavaScript cho download đã được đăng ký
+        await JSRuntime.InvokeVoidAsync("eval", @"
+window.downloadFileFromStream = (fileName, contentType, base64Data) => {
+const linkSource = `data:${contentType};base64,${base64Data}`;
+const downloadLink = document.createElement('a');
+downloadLink.href = linkSource;
+downloadLink.download = fileName;
+downloadLink.click();
+downloadLink.remove();
+}");
+
+        // Nếu có MaTruong, tải dữ liệu ngay khi component khởi tạo
+        if (!string.IsNullOrEmpty(MaTruong))
+        {
+            await LoadData();
+        }
+        else
+        {
+            // Cố gắng lấy từ query string nếu không có trong route
+            ExtractMaDonViFromQueryString();
+            if (!string.IsNullOrEmpty(MaTruong))
+            {
+                await LoadData();
+            }
+        }
+    }
+
+    private void ExtractMaDonViFromQueryString()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("MaDonVi", out var maDonViParam))
+        {
+            MaTruong = maDonViParam.FirstOrDefault() ?? string.Empty;
+        }
+    }
+
+    private async Task LoadData()
+    {
+        try
+        {
+            isDataLoaded = false;
+            errorMessage = string.Empty;
+            StateHasChanged();
+
+            // Tải thông tin trường
+            thongTinTruong = await ThongTinDonViService.GetByMaTruongAsync(MaTruong);
+
+            // Kiểm tra dữ liệu trường cơ bản
+            if (thongTinTruong == null)
+            {
+                errorMessage = $"Không tìm thấy thông tin trường với mã: {MaTruong}";
+                isDataLoaded = false;
+            }
+            else
+            {
+                isDataLoaded = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Lỗi khi tải dữ liệu: {ex.Message}";
+            await Logger.LogErrorAsync("Lỗi khi tải dữ liệu cho báo cáo", ex, "InBaoCaoComponent");
+            isDataLoaded = false;
+        }
+        finally
+        {
+            StateHasChanged();
+        }
+    }
+
+    private async Task GenerateReport()
+    {
+        try
+        {
+            isGenerating = true;
+            errorMessage = string.Empty;
+            StateHasChanged();
+
+            // Nếu chưa tải dữ liệu, tải lại
+            if (!isDataLoaded)
+            {
+                await LoadData();
+                if (!isDataLoaded) // Nếu vẫn không tải được dữ liệu
+                {
+                    errorMessage = "Không thể tải dữ liệu để tạo báo cáo";
+                    return;
+                }
+            }
+
+            // Tạo báo cáo từ dữ liệu đã tải
+            await GenerateWordReportFromDataAsync();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Lỗi khi tạo báo cáo: {ex.Message}";
+            await Logger.LogErrorAsync("Lỗi khi tạo báo cáo Word", ex, "InBaoCaoComponent");
+        }
+        finally
+        {
+            isGenerating = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task GenerateWordReportFromDataAsync()
+    {
+        try
+        {
+            // Cache busting cho template để luôn lấy phiên bản mới nhất
+            string templateUrl = $"{NavigationManager.BaseUri}template/BaoCao_THPT.docx?t={DateTime.Now.Ticks}";
+
+            // Tạo DateTime hiện tại một lần để đảm bảo tính nhất quán
+            DateTime reportTime = DateTime.Now;
+
+            // Đọc template
+            byte[] templateBytes = await Http.GetByteArrayAsync(templateUrl);
+
+            using var templateStream = new MemoryStream(templateBytes);
+            using var resultStream = new MemoryStream();
+
+            // Copy template vào stream kết quả
+            templateStream.CopyTo(resultStream);
+            resultStream.Position = 0;
+
+            // Chuẩn bị tất cả placeholder và giá trị tương ứng
+            Dictionary<string, string> placeholders = new()
+    {
+            {"{{MaTruong}}", thongTinTruong?.MaTruong ?? ""},
+            {"**{{MaTruong}}**", $"**{thongTinTruong?.MaTruong ?? ""}**"}, // Xử lý variant có định dạng đậm
+            {"{{TenTruong}}", thongTinTruong?.TenTruong ?? ""},
+            {"**{{TenTruong}}**", $"**{thongTinTruong?.TenTruong ?? ""}**"}, // Xử lý variant có định dạng đậm
+
+            {"{{NgayBaoCao}}", reportTime.ToString("dd/MM/yyyy")},
+            {"{{ThoiGianXuatBaoCao}}", reportTime.ToString("HH:mm:ss")},
+            {"Click or tap here to enter text.", ""}
+        };
+
+            // Mở template và thay thế các placeholder
+            using (WordprocessingDocument doc = WordprocessingDocument.Open(resultStream, true))
+            {
+                // Cập nhật document properties
+                if (doc.PackageProperties != null)
+                {
+                    doc.PackageProperties.Modified = reportTime;
+                }
+
+                // Thay đổi cách tiếp cận - Xử lý ở cấp đoạn văn để bảo toàn định dạng
+                ReplaceTextInParagraphs(doc.MainDocumentPart, placeholders);
+
+                // Xử lý header và footer
+                if (doc.MainDocumentPart?.HeaderParts != null)
+                {
+                    foreach (var headerPart in doc.MainDocumentPart.HeaderParts)
+                    {
+                        ReplaceTextInParagraphs(headerPart, placeholders);
+                    }
+                }
+
+                if (doc.MainDocumentPart?.FooterParts != null)
+                {
+                    foreach (var footerPart in doc.MainDocumentPart.FooterParts)
+                    {
+                        ReplaceTextInParagraphs(footerPart, placeholders);
+                    }
+                }
+            }
+
+            // Tải xuống file với tên có timestamp
+            resultStream.Position = 0;
+            string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{reportTime:yyyyMMdd_HHmmss}.docx";
+            await DownloadFile(resultStream.ToArray(), fileName);
+        }
+        catch (Exception ex)
+        {
+            await Logger.LogErrorAsync($"Lỗi khi tạo file Word: {ex.Message}", ex, "InBaoCaoComponent");
+            throw;
+        }
+    }
+
+    // Phương thức mới để xử lý thay thế text ở cấp đoạn văn để bảo toàn định dạng
+    private void ReplaceTextInParagraphs(OpenXmlPart part, Dictionary<string, string> placeholders)
+    {
+        if (part == null) return;
+
+        // Cách tiếp cận 1: Thay thế ở cấp XML (đơn giản và hiệu quả nhất)
+        try
+        {
+            string xml;
+            using (var sr = new StreamReader(part.GetStream()))
+            {
+                xml = sr.ReadToEnd();
+            }
+
+            bool hasChanges = false;
+            foreach (var placeholder in placeholders)
+            {
+                if (xml.Contains(placeholder.Key))
+                {
+                    xml = xml.Replace(placeholder.Key, placeholder.Value);
+                    hasChanges = true;
+                }
+            }
+
+            if (hasChanges)
+            {
+                using var sw = new StreamWriter(part.GetStream(FileMode.Create));
+                sw.Write(xml);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Lỗi khi thay thế text trong XML: {ex.Message}");
+
+            // Thử với cách 2 nếu cách 1 thất bại
+            TryReplacePlaceholdersInParagraphs(part, placeholders);
+        }
+    }
+
+    // Phương thức dự phòng nếu phương thức XM thất bại
+    private void TryReplacePlaceholdersInParagraphs(OpenXmlPart part, Dictionary<string, string> placeholders)
+    {
+        try
+        {
+            // Lấy tất cả các đoạn văn
+            var paragraphs = part.RootElement.Descendants<Paragraph>().ToList();
+
+            foreach (var paragraph in paragraphs)
+            {
+                // Tìm các placeholder trong đoạn
+                string paraText = string.Join("", paragraph.Descendants<Text>().Select(t => t.Text));
+                bool needReplace = false;
+
+                foreach (var placeholder in placeholders)
+                {
+                    if (paraText.Contains(placeholder.Key))
+                    {
+                        needReplace = true;
+                        break;
+                    }
+                }
+
+                if (needReplace)
+                {
+                    // Lưu tất cả nội dung của đoạn
+                    string paraContent = paraText;
+
+                    // Thay thế tất cả placeholder
+                    foreach (var placeholder in placeholders)
+                    {
+                        paraContent = paraContent.Replace(placeholder.Key, placeholder.Value);
+                    }
+
+                    // Xóa tất cả run hiện tại
+                    var runs = paragraph.Elements<Run>().ToList();
+                    foreach (var run in runs)
+                    {
+                        run.Remove();
+                    }
+
+                    // Tạo run mới với text đã thay thế
+                    var newRun = new Run(new Text(paraContent));
+
+                    // Bảo toàn định dạng đậm nếu có chứa "**"
+                    if (paraText.Contains("**"))
+                    {
+                        newRun.RunProperties = new RunProperties(new Bold());
+                    }
+
+                    paragraph.AppendChild(newRun);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Lỗi khi thay thế trong đoạn văn: {ex.Message}");
+        }
+    }
+    private async Task DownloadFile(byte[] data, string fileName)
+    {
+        // Sử dụng JS để tải file về client
+        string contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+        await JSRuntime.InvokeVoidAsync("downloadFileFromStream", fileName, contentType, Convert.ToBase64String(data));
+    }
+}
+
+
+
+
+
+

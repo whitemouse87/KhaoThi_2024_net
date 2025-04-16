@@ -1,0 +1,876 @@
+2025-04-16 20:38:52.461 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 20:38:58.643 +07:00 [INF] [Client] Token hết hạn 
+2025-04-16 20:39:20.600 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 20:39:20.603 +07:00 [INF] appsettings.json exists: true
+2025-04-16 20:39:20.609 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 20:39:20.611 +07:00 [INF] Connection string configured successfully
+2025-04-16 20:39:20.633 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-16 20:39:21.639 +07:00 [ERR] Password verification result: false
+2025-04-16 20:39:21.755 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-04-16 20:39:27.437 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-16 20:39:27.689 +07:00 [ERR] Password verification result: true
+2025-04-16 20:39:27.844 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-04-16 20:50:04.133 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 20:50:05.845 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 20:50:05.849 +07:00 [INF] appsettings.json exists: true
+2025-04-16 20:50:05.853 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 20:50:05.854 +07:00 [INF] Connection string configured successfully
+2025-04-16 20:52:40.882 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 20:52:41.958 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 20:52:41.963 +07:00 [INF] appsettings.json exists: true
+2025-04-16 20:52:41.969 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 20:52:41.971 +07:00 [INF] Connection string configured successfully
+2025-04-16 20:54:32.206 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 20:54:40.141 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 20:54:40.145 +07:00 [INF] appsettings.json exists: true
+2025-04-16 20:54:40.149 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 20:54:40.151 +07:00 [INF] Connection string configured successfully
+2025-04-16 20:57:21.381 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 20:57:24.808 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 20:57:24.813 +07:00 [INF] appsettings.json exists: true
+2025-04-16 20:57:24.818 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 20:57:24.820 +07:00 [INF] Connection string configured successfully
+2025-04-16 20:58:55.905 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 20:59:03.113 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 20:59:03.118 +07:00 [INF] appsettings.json exists: true
+2025-04-16 20:59:03.124 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 20:59:03.127 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:02:07.442 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:02:10.925 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:02:10.930 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:02:10.934 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:02:10.935 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:05:03.070 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:05:10.197 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:05:10.202 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:05:10.208 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:05:10.211 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:07:41.500 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:07:52.285 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:07:52.289 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:07:52.293 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:07:52.294 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:12:19.622 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:12:24.824 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:12:24.827 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:12:24.831 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:12:24.832 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:26:26.856 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:26:34.963 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:26:34.967 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:26:34.970 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:26:34.972 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:33:15.811 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:33:51.971 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:33:51.975 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:33:51.979 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:33:51.981 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:35:05.209 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:35:08.923 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:35:08.928 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:35:08.931 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:35:08.933 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:36:21.910 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:36:30.085 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:36:30.090 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:36:30.094 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:36:30.096 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:41:22.972 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:41:25.312 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:41:25.316 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:41:25.319 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:41:25.321 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:53:35.818 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:53:41.061 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:53:41.066 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:53:41.072 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:53:41.075 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:55:03.927 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:55:10.843 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:55:10.847 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:55:10.851 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:55:10.852 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:56:37.749 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:56:41.682 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:56:41.687 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:56:41.693 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:56:41.694 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:57:17.155 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:57:19.593 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:57:19.597 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:57:19.601 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:57:19.603 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:58:51.072 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 21:58:53.778 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 21:58:53.782 +07:00 [INF] appsettings.json exists: true
+2025-04-16 21:58:53.786 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 21:58:53.788 +07:00 [INF] Connection string configured successfully
+2025-04-16 21:59:43.875 +07:00 [INF] [Client] Token hết hạn 
+2025-04-16 21:59:44.326 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: 171.233.30.69, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-04-16 21:59:51.870 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-16 21:59:52.409 +07:00 [ERR] Password verification result: true
+2025-04-16 21:59:52.531 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-04-16 22:21:49.161 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:21:52.563 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:21:52.567 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:21:52.571 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:21:52.573 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:23:30.744 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:23:34.816 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:23:34.820 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:23:34.823 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:23:34.825 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:29:34.890 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:29:40.485 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:29:40.491 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:29:40.496 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:29:40.497 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:31:51.911 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:31:52.586 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:31:52.591 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:31:52.597 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:31:52.600 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:33:34.079 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:33:37.945 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:33:37.949 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:33:37.952 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:33:37.954 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:34:34.366 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:34:37.512 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:34:37.517 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:34:37.520 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:34:37.522 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:41:28.859 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:41:33.751 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:41:33.756 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:41:33.759 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:41:33.761 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:41:48.598 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:41:48.598 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:41:48.682 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:41:48.701 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:41:48.746 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:41:48.770 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:41:48.975 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:41:49.134 +07:00 [INF] [Client] [SECURITY] Unauthorized access attempt - IP: Unknown, URL: https://localhost:44386/bao-cao-ky-thi?maDonVi=01EA60 
+2025-04-16 22:41:49.424 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:41:49.451 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:41:49.480 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:41:49.529 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:41:57.841 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-16 22:42:12.552 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE TenDangNhap = @TenDangNhap
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:42:12.610 +07:00 [ERR] Login failed for user asdas
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByUsernameAsync(String username) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 27
+   at khaothi_2024_net_server.Features.Authentication.AuthService.LoginAsync(LoginRequest request) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Authentication\AuthService.cs:line 55
+2025-04-16 22:42:12.705 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Đã xảy ra lỗi trong quá trình đăng nhập: Error executing query 
+2025-04-16 22:42:22.831 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:42:25.057 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:42:25.063 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:42:25.066 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:42:25.067 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:42:39.940 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:42:39.940 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:42:39.989 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:42:40.006 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:42:40.055 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:42:40.074 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:42:40.260 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:42:40.410 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:42:40.427 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:42:40.452 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:42:40.500 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:43:03.933 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:43:03.984 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:43:04.026 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:43:04.165 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:43:04.511 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:43:04.538 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:43:04.563 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:43:04.601 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:43:11.371 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-16 22:43:11.379 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE TenDangNhap = @TenDangNhap
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:43:11.408 +07:00 [ERR] Login failed for user asdas
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByUsernameAsync(String username) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 27
+   at khaothi_2024_net_server.Features.Authentication.AuthService.LoginAsync(LoginRequest request) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Authentication\AuthService.cs:line 55
+2025-04-16 22:43:11.465 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Đã xảy ra lỗi trong quá trình đăng nhập: Error executing query 
+2025-04-16 22:43:12.857 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-16 22:43:12.859 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE TenDangNhap = @TenDangNhap
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:43:12.880 +07:00 [ERR] Login failed for user asdas
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByUsernameAsync(String username) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 27
+   at khaothi_2024_net_server.Features.Authentication.AuthService.LoginAsync(LoginRequest request) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\Authentication\AuthService.cs:line 55
+2025-04-16 22:43:12.924 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Đã xảy ra lỗi trong quá trình đăng nhập: Error executing query 
+2025-04-16 22:44:06.300 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:44:09.479 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:44:09.484 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:44:09.490 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:44:09.492 +07:00 [INF] Connection string configured successfully
+2025-04-16 22:44:24.333 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:44:24.389 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:44:24.432 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:44:24.637 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:44:24.809 +07:00 [ERR] Error executing query first or default: SELECT * FROM KhaoThi_User WHERE ID = @Id
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+2025-04-16 22:44:24.840 +07:00 [ERR] 🔥 Lỗi khi truy vấn user ID 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+2025-04-16 22:44:24.870 +07:00 [ERR] Lỗi khi lấy thông tin người dùng ID: 5
+khaothi_2024_net_server.Infrastructure.Data.DataAccessException: Error executing query
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (67): The network name cannot be found.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 119
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:67,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer.QueryFirstOrDefaultAsync[T](String sql, Object[] parameters) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Data\MyDataAccessLayer.cs:line 125
+   at khaothi_2024_net_server.Infrastructure.Repositories.KhaoThiUserRepository.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Infrastructure\Repositories\KhaoThiUserRepository.cs:line 21
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserService.GetByIdAsync(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserService.cs:line 44
+   at khaothi_2024_net_server.Features.UserManagement.KhaoThiUserController.GetById(Int32 id) in C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\Features\UserManagement\KhaoThiUserController.cs:line 38
+2025-04-16 22:44:24.917 +07:00 [INF] [BaseService - GET https://localhost:7168/api/KhaoThiUser/5] API Error: InternalServerError - {
+  "message": "Đã xảy ra lỗi khi xử lý yêu cầu"
+} 
+2025-04-16 22:48:32.058 +07:00 [WRN] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:48:41.760 +07:00 [INF] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:48:41.765 +07:00 [INF] appsettings.json exists: true
+2025-04-16 22:48:41.769 +07:00 [INF] Connection string 'SGD': true
+2025-04-16 22:48:41.770 +07:00 [INF] Connection string configured successfully

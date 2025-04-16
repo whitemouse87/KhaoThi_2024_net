@@ -1,0 +1,67 @@
+2025-04-15 20:23:23 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:07:28 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:12:53 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:16:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:21:05 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:24:04 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:25:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:26:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:26:25 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:26:25 [INF] appsettings.json exists: True
+2025-04-15 22:26:25 [INF] Connection string 'SGD': True
+2025-04-15 22:26:25 [INF] Connection string configured successfully
+2025-04-15 22:29:36 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:29:47 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:29:47 [INF] appsettings.json exists: True
+2025-04-15 22:29:47 [INF] Connection string 'SGD': True
+2025-04-15 22:29:47 [INF] Connection string configured successfully
+2025-04-15 22:31:31 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:31:36 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:31:36 [INF] appsettings.json exists: True
+2025-04-15 22:31:36 [INF] Connection string 'SGD': True
+2025-04-15 22:31:36 [INF] Connection string configured successfully
+2025-04-15 22:33:12 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:33:14 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:33:14 [INF] appsettings.json exists: True
+2025-04-15 22:33:14 [INF] Connection string 'SGD': True
+2025-04-15 22:33:14 [INF] Connection string configured successfully
+2025-04-15 22:34:32 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:34:36 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:34:36 [INF] appsettings.json exists: True
+2025-04-15 22:34:36 [INF] Connection string 'SGD': True
+2025-04-15 22:34:36 [INF] Connection string configured successfully
+2025-04-15 22:38:35 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:38:40 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:38:40 [INF] appsettings.json exists: True
+2025-04-15 22:38:40 [INF] Connection string 'SGD': True
+2025-04-15 22:38:40 [INF] Connection string configured successfully
+2025-04-15 22:44:40 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:44:48 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:44:48 [INF] appsettings.json exists: True
+2025-04-15 22:44:48 [INF] Connection string 'SGD': True
+2025-04-15 22:44:48 [INF] Connection string configured successfully
+2025-04-15 22:57:13 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:57:22 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:57:22 [INF] appsettings.json exists: True
+2025-04-15 22:57:22 [INF] Connection string 'SGD': True
+2025-04-15 22:57:22 [INF] Connection string configured successfully
+2025-04-15 22:59:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 22:59:23 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 22:59:23 [INF] appsettings.json exists: True
+2025-04-15 22:59:23 [INF] Connection string 'SGD': True
+2025-04-15 22:59:23 [INF] Connection string configured successfully
+2025-04-15 23:05:40 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 23:05:47 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 23:05:47 [INF] appsettings.json exists: True
+2025-04-15 23:05:47 [INF] Connection string 'SGD': True
+2025-04-15 23:05:47 [INF] Connection string configured successfully
+2025-04-15 23:07:16 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 23:07:20 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 23:07:20 [INF] appsettings.json exists: True
+2025-04-15 23:07:20 [INF] Connection string 'SGD': True
+2025-04-15 23:07:20 [INF] Connection string configured successfully
+2025-04-15 23:07:46 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-15 23:07:49 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-15 23:07:49 [INF] appsettings.json exists: True
+2025-04-15 23:07:49 [INF] Connection string 'SGD': True
+2025-04-15 23:07:49 [INF] Connection string configured successfully
