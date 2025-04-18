@@ -1,0 +1,25 @@
+2025-04-18 20:26:01 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-18 20:26:07 [INF] ["Client"] "Token hết hạn" ""
+2025-04-18 20:32:27 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-18 20:32:48 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-18 20:32:48 [INF] appsettings.json exists: True
+2025-04-18 20:32:48 [INF] Connection string 'SGD': True
+2025-04-18 20:32:48 [INF] Connection string configured successfully
+2025-04-18 20:32:49 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-18 20:32:50 [ERR] Password verification result: True
+2025-04-18 20:32:50 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-04-18 20:35:25 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-18 20:35:27 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-18 20:35:27 [INF] appsettings.json exists: True
+2025-04-18 20:35:27 [INF] Connection string 'SGD': True
+2025-04-18 20:35:27 [INF] Connection string configured successfully
+2025-04-18 20:41:29 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-18 20:41:36 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-18 20:41:36 [INF] appsettings.json exists: True
+2025-04-18 20:41:36 [INF] Connection string 'SGD': True
+2025-04-18 20:41:36 [INF] Connection string configured successfully
+2025-04-18 20:45:36 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-18 20:45:41 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-18 20:45:41 [INF] appsettings.json exists: True
+2025-04-18 20:45:41 [INF] Connection string 'SGD': True
+2025-04-18 20:45:41 [INF] Connection string configured successfully

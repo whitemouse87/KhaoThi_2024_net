@@ -124,7 +124,8 @@ public class Program
         ConfigureApplicationServices(services);
         ConfigureRouting(services);
         ConfigureAutoMapper(services); // Gọi hàm cấu hình AutoMapper
-        // Add WebAssembly specific services
+                                       // Add WebAssembly specific services
+        services.AddReportServices();
         services.AddScoped<CircularProgress>();
         services.AddScoped<IWebAssemblyHostEnvironment>(sp =>
             sp.GetRequiredService<IWebAssemblyHostEnvironment>());
@@ -306,9 +307,11 @@ public class Program
         services.AddScoped<IBCThongTinTruongDiemDonViService, BCThongTinTruongDiemService>();
         services.AddScoped<IBCThongTinConThiService, BCThongTinConThiService>();
         services.AddScoped<PWAService>(); // Thêm dòng này
+
         // Add other application services here
         ConfigureAdditionalServices(services);
     }
+
 
     private static void ConfigureAdditionalServices(IServiceCollection services)
     {

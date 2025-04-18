@@ -874,3 +874,8 @@ Error Number:67,State:0,Class:20
 2025-04-16 22:48:41 [INF] appsettings.json exists: True
 2025-04-16 22:48:41 [INF] Connection string 'SGD': True
 2025-04-16 22:48:41 [INF] Connection string configured successfully
+2025-04-16 22:55:47 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-16 22:55:50 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-16 22:55:50 [INF] appsettings.json exists: True
+2025-04-16 22:55:50 [INF] Connection string 'SGD': True
+2025-04-16 22:55:50 [INF] Connection string configured successfully

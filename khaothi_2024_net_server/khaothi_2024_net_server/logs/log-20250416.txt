@@ -874,3 +874,8 @@ Error Number:67,State:0,Class:20
 2025-04-16 22:48:41.765 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
 2025-04-16 22:48:41.769 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
 2025-04-16 22:48:41.770 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-16 22:55:47.362 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-16 22:55:50.980 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-16 22:55:50.986 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-16 22:55:50.990 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-16 22:55:50.992 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
