@@ -27,3 +27,18 @@
 2025-04-20 22:34:51.024 +07:00 [INF] Login attempt for user: asdas from IP: ::1
 2025-04-20 22:34:51.208 +07:00 [ERR] Password verification result: true
 2025-04-20 22:34:51.319 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-04-20 22:50:23.654 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-20 22:50:33.066 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-20 22:50:33.071 +07:00 [INF] appsettings.json exists: true
+2025-04-20 22:50:33.074 +07:00 [INF] Connection string 'SGD': true
+2025-04-20 22:50:33.076 +07:00 [INF] Connection string configured successfully
+2025-04-20 22:51:48.660 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-20 22:51:53.654 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-20 22:51:53.658 +07:00 [INF] appsettings.json exists: true
+2025-04-20 22:51:53.662 +07:00 [INF] Connection string 'SGD': true
+2025-04-20 22:51:53.663 +07:00 [INF] Connection string configured successfully
+2025-04-20 22:53:41.921 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-20 22:53:54.907 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-20 22:53:54.911 +07:00 [INF] appsettings.json exists: true
+2025-04-20 22:53:54.914 +07:00 [INF] Connection string 'SGD': true
+2025-04-20 22:53:54.915 +07:00 [INF] Connection string configured successfully
