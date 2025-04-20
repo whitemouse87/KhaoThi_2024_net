@@ -91,12 +91,57 @@ namespace KhaoThi_2024_net_client.Components
         {
             return new Dictionary<string, string>
             {
-                {"{{MaTruong}}", thongTinTruong?.MaTruong ?? ""},
-                {"**{{MaTruong}}**", $"**{thongTinTruong?.MaTruong ?? ""}**"}, // Xử lý variant có định dạng đậm
+                //{"{{MaTruong}}", thongTinTruong?.MaTruong ?? ""},
+                //{"**{{MaTruong}}**", $"**{thongTinTruong?.MaTruong ?? ""}**"}, // Xử lý variant có định dạng đậm
+                //{"{{TenTruong}}", thongTinTruong?.TenTruong ?? ""},
+                //{"**{{TenTruong}}**", $"**{thongTinTruong?.TenTruong ?? ""}**"}, // Xử lý variant có định dạng đậm
+                //{"{{NgayBaoCao}}", reportTime.ToString("dd/MM/yyyy")},
+                //{"{{ThoiGianXuatBaoCao}}", reportTime.ToString("HH:mm:ss")},
+               
                 {"{{TenTruong}}", thongTinTruong?.TenTruong ?? ""},
-                {"**{{TenTruong}}**", $"**{thongTinTruong?.TenTruong ?? ""}**"}, // Xử lý variant có định dạng đậm
+                {"**{{TenTruong}}**", $"**{thongTinTruong?.TenTruong.ToString().ToUpper() ?? ""}**"},
+                 {"{{Quận}}", thongTinTruong?.QuanDangKyDuThi.ToString() ?? ""},
+                 {"**{{Quận}}**", $"**{thongTinTruong?.QuanDangKyDuThi.ToString() ?? ""}**"},
+             
+
+                {"{{MaTruongSo}}", thongTinTruong?.MaTruong ?? ""},
+                {"**{{MaTruongSo}}**", $"**{thongTinTruong?.MaTruong ?? ""}**"},
+                {"{{MaTruongBo}}", thongTinTruong?.MaTruongBo ?? ""},
+                {"**{{MaTruongBo}}**", $"**{thongTinTruong?.MaTruongBo ?? ""}**"},
+                {"{{EmailNhanThongBao}}", thongTinTruong?.EmailNhanThongBao ?? ""},
+                {"{{LoaiHinhDaoTao}}", thongTinTruong?.LoaiHinhDaoTao ?? ""},
+                {"{{SDTTruong}}", thongTinTruong?.SDTTruong ?? ""},
+                {"{{SDTHoiDong}}", thongTinTruong?.SDTPhongHoiDong ?? ""},
+                {"{{DiaChiTruong}}", thongTinTruong?.DiaChiTruong ?? ""},
+        
+                // Thông tin cán bộ nhập liệu
+                {"{{HoTenNguoiNhapLieu}}", thongTinTruong?.HoTenNhapLieu ?? ""},
+                {"**{{HoTenNguoiNhapLieu}}**", $"**{thongTinTruong?.HoTenNhapLieu ?? ""}**"},
+                {"{{ChucVuNhapLieu}}", thongTinTruong?.ChucVuNhapLieu ?? ""},
+                {"**{{ChucVuNhapLieu}}**", $"**{thongTinTruong?.ChucVuNhapLieu ?? ""}**"},
+                {"{{SoDiDongNhapLieu}}", thongTinTruong?.SDTDiDongNhapLieu ?? ""},
+                {"**{{SoDiDongNhapLieu}}**", $"**{thongTinTruong?.SDTDiDongNhapLieu ?? ""}**"},
+                {"{{EmailNhapLieu}}", thongTinTruong?.EmailNhapLieu ?? ""},
+                {"**{{EmailNhapLieu}}**", $"**{thongTinTruong?.EmailNhapLieu ?? ""}**"},
+        
+                // Thông tin nhân sự - fix cho non-nullable int
+                {"{{HT}}", thongTinTruong != null ? thongTinTruong.TongHieuTruong.ToString() : ""},
+                {"{{PHT}}", thongTinTruong != null ? thongTinTruong.TongPhoHieuTruong.ToString() : ""},
+                {"{{GiaoVien}}", thongTinTruong != null ? thongTinTruong.TongGiaoVien.ToString() : ""},
+                {"{{TTCM}}", thongTinTruong != null ? thongTinTruong.TongGiaoVien_ToTruong.ToString() : ""},
+                {"{{NhanVien}}", thongTinTruong != null ? thongTinTruong.TongNhanVien.ToString() : ""},
+        
+                // Thông tin đề cử giáo viên, cơ sở vật chất - fix cho non-nullable int
+                {"{{GiaoVienCoiThi}}", thongTinTruong != null ? thongTinTruong.TongGiaoVien_CoiThi.ToString() : ""},
+                {"{{PhongToiDa}}", thongTinTruong != null ? thongTinTruong.TongSoPhongToiDa.ToString() : ""},
+                {"{{PhongDuDK}}", thongTinTruong != null ? thongTinTruong.TongSoPhongCoiThi.ToString() : ""},
+        
+                // Ngày tháng
+                {"ngày tháng 4 năm 2025", $"ngày {reportTime.Day} tháng {reportTime.Month} năm {reportTime.Year}"},
                 {"{{NgayBaoCao}}", reportTime.ToString("dd/MM/yyyy")},
                 {"{{ThoiGianXuatBaoCao}}", reportTime.ToString("HH:mm:ss")},
+        
+                // Xóa text placeholder mặc định
                 {"Click or tap here to enter text.", ""}
             };
         }

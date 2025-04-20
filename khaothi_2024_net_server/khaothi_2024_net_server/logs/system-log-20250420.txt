@@ -1,0 +1,29 @@
+2025-04-20 11:25:03.431 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-20 11:25:12.725 +07:00 [INF] [Client] Token hết hạn 
+2025-04-20 11:25:37.841 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-20 11:25:37.843 +07:00 [INF] appsettings.json exists: true
+2025-04-20 11:25:37.847 +07:00 [INF] Connection string 'SGD': true
+2025-04-20 11:25:37.849 +07:00 [INF] Connection string configured successfully
+2025-04-20 11:25:37.860 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-20 11:25:38.651 +07:00 [ERR] Password verification result: false
+2025-04-20 11:25:38.787 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-04-20 11:25:44.049 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-20 11:25:44.225 +07:00 [ERR] Password verification result: true
+2025-04-20 11:25:44.324 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-04-20 11:43:42.972 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-20 11:43:46.659 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-20 11:43:46.663 +07:00 [INF] appsettings.json exists: true
+2025-04-20 11:43:46.667 +07:00 [INF] Connection string 'SGD': true
+2025-04-20 11:43:46.668 +07:00 [INF] Connection string configured successfully
+2025-04-20 22:34:05.636 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-20 22:34:20.587 +07:00 [INF] [Client] Token hết hạn 
+2025-04-20 22:34:41.491 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-20 22:34:41.493 +07:00 [INF] appsettings.json exists: true
+2025-04-20 22:34:41.496 +07:00 [INF] Connection string 'SGD': true
+2025-04-20 22:34:41.497 +07:00 [INF] Connection string configured successfully
+2025-04-20 22:34:41.513 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-20 22:34:42.547 +07:00 [ERR] Password verification result: false
+2025-04-20 22:34:42.695 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-04-20 22:34:51.024 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-20 22:34:51.208 +07:00 [ERR] Password verification result: true
+2025-04-20 22:34:51.319 +07:00 [INF] User asdas logged in successfully from IP: ::1

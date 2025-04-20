@@ -1,0 +1,29 @@
+2025-04-20 11:25:03 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-20 11:25:12 [INF] ["Client"] "Token hết hạn" ""
+2025-04-20 11:25:37 [INF] Current directory: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-20 11:25:37 [INF] appsettings.json exists: True
+2025-04-20 11:25:37 [INF] Connection string 'SGD': True
+2025-04-20 11:25:37 [INF] Connection string configured successfully
+2025-04-20 11:25:37 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-20 11:25:38 [ERR] Password verification result: False
+2025-04-20 11:25:38 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng" ""
+2025-04-20 11:25:44 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-20 11:25:44 [ERR] Password verification result: True
+2025-04-20 11:25:44 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-04-20 11:43:42 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-20 11:43:46 [INF] Current directory: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-20 11:43:46 [INF] appsettings.json exists: True
+2025-04-20 11:43:46 [INF] Connection string 'SGD': True
+2025-04-20 11:43:46 [INF] Connection string configured successfully
+2025-04-20 22:34:05 [WRN] The WebRootPath was not found: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-20 22:34:20 [INF] ["Client"] "Token hết hạn" ""
+2025-04-20 22:34:41 [INF] Current directory: "C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-20 22:34:41 [INF] appsettings.json exists: True
+2025-04-20 22:34:41 [INF] Connection string 'SGD': True
+2025-04-20 22:34:41 [INF] Connection string configured successfully
+2025-04-20 22:34:41 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-20 22:34:42 [ERR] Password verification result: False
+2025-04-20 22:34:42 [INF] ["Client"] "[CLIENT] user đăng nhập thất bại: Mật khẩu không đúng" ""
+2025-04-20 22:34:51 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-20 22:34:51 [ERR] Password verification result: True
+2025-04-20 22:34:51 [INF] User "asdas" logged in successfully from IP: "::1"
