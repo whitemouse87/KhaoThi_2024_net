@@ -30,40 +30,37 @@ namespace KhaoThi_2024_net_client.Components
         {
             try
             {
-                // Tạo DateTime hiện tại một lần để đảm bảo tính nhất quán
                 DateTime reportTime = DateTime.Now;
-
-                // Đọc template
                 byte[] templateBytes = await _httpClient.GetByteArrayAsync(templateUrl);
 
                 using var templateStream = new MemoryStream(templateBytes);
                 using var resultStream = new MemoryStream();
 
-                // Copy template vào stream kết quả
                 templateStream.CopyTo(resultStream);
                 resultStream.Position = 0;
 
-                // Chuẩn bị tất cả placeholder và giá trị tương ứng
+                // Chuẩn bị các placeholder
                 Dictionary<string, string> placeholders = PrepareReportPlaceholders(thongTinTruong, reportTime);
 
-                // Mở template và thay thế các placeholder
                 using (WordprocessingDocument doc = WordprocessingDocument.Open(resultStream, true))
                 {
-                    // Cập nhật document properties
                     if (doc.PackageProperties != null)
                     {
                         doc.PackageProperties.Modified = reportTime;
                     }
 
-                    // Thay đổi cách tiếp cận - Xử lý ở cấp đoạn văn để bảo toàn định dạng
-                    ReplaceTextInParagraphs(doc.MainDocumentPart, placeholders);
+                    // Mở rộng danh sách placeholders để tìm các biến thể có thể có
+                    var expandedPlaceholders = ScanForActualPlaceholders(doc.MainDocumentPart, placeholders);
+
+                    // Thay thế text
+                    ReplaceTextInParagraphs(doc.MainDocumentPart, expandedPlaceholders);
 
                     // Xử lý header và footer
                     if (doc.MainDocumentPart?.HeaderParts != null)
                     {
                         foreach (var headerPart in doc.MainDocumentPart.HeaderParts)
                         {
-                            ReplaceTextInParagraphs(headerPart, placeholders);
+                            ReplaceTextInParagraphs(headerPart, expandedPlaceholders);
                         }
                     }
 
@@ -71,12 +68,11 @@ namespace KhaoThi_2024_net_client.Components
                     {
                         foreach (var footerPart in doc.MainDocumentPart.FooterParts)
                         {
-                            ReplaceTextInParagraphs(footerPart, placeholders);
+                            ReplaceTextInParagraphs(footerPart, expandedPlaceholders);
                         }
                     }
                 }
 
-                // Return the report as byte array
                 resultStream.Position = 0;
                 return resultStream.ToArray();
             }
@@ -84,6 +80,49 @@ namespace KhaoThi_2024_net_client.Components
             {
                 await _logger.LogErrorAsync($"Lỗi khi tạo file Word: {ex.Message}", ex, "WordReportService");
                 throw;
+            }
+        }
+        private Dictionary<string, string> ScanForActualPlaceholders(OpenXmlPart part, Dictionary<string, string> originalPlaceholders)
+        {
+            try
+            {
+                var result = new Dictionary<string, string>(originalPlaceholders);
+                string xml;
+                using (var sr = new StreamReader(part.GetStream()))
+                {
+                    xml = sr.ReadToEnd();
+                }
+
+                // Tìm tất cả các chuỗi có thể là placeholder
+                foreach (var key in originalPlaceholders.Keys.ToList())
+                {
+                    // Loại bỏ {{ và }} để tìm tên placeholder
+                    string placeholderName = key.Replace("{{", "").Replace("}}", "");
+
+                    // Tìm các biến thể có thể có
+                    var possibleVariations = new List<string>
+            {
+                $"{{{{{placeholderName}}}}}",
+                $"{{ {{{placeholderName}}} }}",
+                $"{{{{ {placeholderName} }}}}"
+                // Thêm các biến thể khác nếu cần
+            };
+
+                    foreach (var variation in possibleVariations)
+                    {
+                        if (xml.Contains(variation) && !originalPlaceholders.ContainsKey(variation))
+                        {
+                            Console.WriteLine($"Found variant: {variation} for {key}");
+                            result[variation] = originalPlaceholders[key];
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error scanning for placeholders: {ex.Message}");
+                return originalPlaceholders;
             }
         }
 
@@ -102,7 +141,7 @@ namespace KhaoThi_2024_net_client.Components
                 {"**{{TenTruong}}**", $"**{thongTinTruong?.TenTruong.ToString().ToUpper() ?? ""}**"},
                  {"{{Quận}}", thongTinTruong?.QuanDangKyDuThi.ToString() ?? ""},
                  {"**{{Quận}}**", $"**{thongTinTruong?.QuanDangKyDuThi.ToString() ?? ""}**"},
-             
+
 
                 {"{{MaTruongSo}}", thongTinTruong?.MaTruong ?? ""},
                 {"**{{MaTruongSo}}**", $"**{thongTinTruong?.MaTruong ?? ""}**"},
@@ -138,19 +177,23 @@ namespace KhaoThi_2024_net_client.Components
                 //Học sinh 12 và học sinh đặc biệt
 
                  {"{{Tong12}}", thongTinTruong != null ? thongTinTruong.Tong_HS_12.ToString() : ""},
-                 {"{{KhuyetTatNhe}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhuyetTat_Nhe.ToString() : ""},
-                 {"{{KhuyetTatNang}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhuyetTat_Nang.ToString() : ""},
+                 {"{{KhuyetTatNhe}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhuyetTat_Nhe.ToString() : ""},                
+                 {"{{khuyettatnang}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhuyetTat_Nang.ToString() : ""},
                  {"{{KhiemThi}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhiemThi.ToString() : ""},
                  {"{{HoTroDacBiet}}", thongTinTruong != null ? thongTinTruong.Tong_HS_CanHoTroDacBiet.ToString() : ""},
+
+
                  {"{{NoiDungHoTroDacBiet}}", thongTinTruong?.NoiDung_HoTro_HS ?? ""},
                 // Ngày tháng
-                {"ngày tháng 4 năm 2025", $"ngày {reportTime.Day} tháng {reportTime.Month} năm {reportTime.Year}"},
-                {"{{NgayBaoCao}}", reportTime.ToString("dd/MM/yyyy")},
-                {"{{ThoiGianXuatBaoCao}}", reportTime.ToString("HH:mm:ss")},
+                 {"ngày tháng 4 năm 2025", $"ngày {reportTime.Day} tháng {reportTime.Month} năm {reportTime.Year}"},
+                 {"{{NgayBaoCao}}", reportTime.ToString("dd/MM/yyyy")},
+                 {"{{ThoiGianXuatBaoCao}}", reportTime.ToString("HH:mm:ss")},
         
                 // Xóa text placeholder mặc định
-                {"Click or tap here to enter text.", ""}
+                 {"Click or tap here to enter text.", ""}
+
             };
+           
         }
 
         // Phương thức để xử lý thay thế text ở cấp đoạn văn để bảo toàn định dạng
@@ -158,7 +201,13 @@ namespace KhaoThi_2024_net_client.Components
         {
             if (part == null) return;
 
-            // Cách tiếp cận 1: Thay thế ở cấp XML (đơn giản và hiệu quả nhất)
+            // Thêm logging để theo dõi placeholders
+            foreach (var key in placeholders.Keys)
+            {
+                Console.WriteLine($"Checking placeholder: {key} => {placeholders[key]}");
+            }
+
+            // Cách tiếp cận 1: Thay thế ở cấp XML
             try
             {
                 string xml;
@@ -172,6 +221,7 @@ namespace KhaoThi_2024_net_client.Components
                 {
                     if (xml.Contains(placeholder.Key))
                     {
+                        Console.WriteLine($"Found and replacing: {placeholder.Key}");
                         xml = xml.Replace(placeholder.Key, placeholder.Value);
                         hasChanges = true;
                     }
@@ -185,9 +235,7 @@ namespace KhaoThi_2024_net_client.Components
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Lỗi khi thay thế text trong XML: {ex.Message}");
-
-                // Thử với cách 2 nếu cách 1 thất bại
+                Console.WriteLine($"Error replacing text in XML: {ex.Message}");
                 TryReplacePlaceholdersInParagraphs(part, placeholders);
             }
         }
@@ -197,58 +245,98 @@ namespace KhaoThi_2024_net_client.Components
         {
             try
             {
-                // Lấy tất cả các đoạn văn
+                // Xử lý từng đoạn văn
                 var paragraphs = part.RootElement.Descendants<Paragraph>().ToList();
 
                 foreach (var paragraph in paragraphs)
                 {
-                    // Tìm các placeholder trong đoạn
-                    string paraText = string.Join("", paragraph.Descendants<Text>().Select(t => t.Text));
-                    bool needReplace = false;
+                    // Lấy tất cả Text nodes trong đoạn
+                    var textNodes = paragraph.Descendants<Text>().ToList();
+
+                    // Tạo chuỗi văn bản đầy đủ của đoạn
+                    string fullText = string.Join("", textNodes.Select(t => t.Text));
+
+                    // Kiểm tra xem có placeholder nào trong đoạn này không
+                    bool hasChanges = false;
+                    string modifiedText = fullText;
 
                     foreach (var placeholder in placeholders)
                     {
-                        if (paraText.Contains(placeholder.Key))
+                        if (fullText.Contains(placeholder.Key))
                         {
-                            needReplace = true;
-                            break;
+                            modifiedText = modifiedText.Replace(placeholder.Key, placeholder.Value);
+                            hasChanges = true;
+                            Console.WriteLine($"Thay thế '{placeholder.Key}' bằng '{placeholder.Value}'");
                         }
                     }
 
-                    if (needReplace)
+                    // Nếu có thay đổi, cập nhật lại nội dung đoạn
+                    if (hasChanges)
                     {
-                        // Lưu tất cả nội dung của đoạn
-                        string paraContent = paraText;
-
-                        // Thay thế tất cả placeholder
-                        foreach (var placeholder in placeholders)
-                        {
-                            paraContent = paraContent.Replace(placeholder.Key, placeholder.Value);
-                        }
-
-                        // Xóa tất cả run hiện tại
-                        var runs = paragraph.Elements<Run>().ToList();
-                        foreach (var run in runs)
+                        // Xóa tất cả Run hiện tại
+                        foreach (var run in paragraph.Elements<Run>().ToList())
                         {
                             run.Remove();
                         }
 
-                        // Tạo run mới với text đã thay thế
-                        var newRun = new Run(new Text(paraContent));
-
-                        // Bảo toàn định dạng đậm nếu có chứa "**"
-                        if (paraText.Contains("**"))
-                        {
-                            newRun.RunProperties = new RunProperties(new Bold());
-                        }
-
+                        // Tạo Run mới với nội dung đã thay thế
+                        var newRun = new Run(new Text(modifiedText));
                         paragraph.AppendChild(newRun);
+                    }
+                    else
+                    {
+                        // Xử lý trường hợp placeholder bị chia cắt giữa các Run
+                        string combinedText = "";
+                        int combinedLength = 0;
+                        List<Run> runsToProcess = new List<Run>();
+
+                        // Thu thập các Run liên tiếp để tìm placeholder
+                        foreach (var run in paragraph.Elements<Run>())
+                        {
+                            var textNode = run.Descendants<Text>().FirstOrDefault();
+                            if (textNode != null)
+                            {
+                                combinedText += textNode.Text;
+                                combinedLength += textNode.Text.Length;
+                                runsToProcess.Add(run);
+
+                                // Kiểm tra xem có placeholder nào trong văn bản kết hợp
+                                bool foundPlaceholder = false;
+                                foreach (var placeholder in placeholders)
+                                {
+                                    if (combinedText.Contains(placeholder.Key))
+                                    {
+                                        // Thay thế placeholder
+                                        string replacedText = combinedText.Replace(placeholder.Key, placeholder.Value);
+
+                                        // Xóa tất cả Run đã thu thập
+                                        foreach (var collectedRun in runsToProcess)
+                                        {
+                                            collectedRun.Remove();
+                                        }
+
+                                        // Tạo Run mới với văn bản đã thay thế
+                                        var newRun = new Run(new Text(replacedText));
+                                        paragraph.AppendChild(newRun);
+
+                                        foundPlaceholder = true;
+                                        Console.WriteLine($"Thay thế placeholder bị chia cắt: '{placeholder.Key}'");
+                                        break;
+                                    }
+                                }
+
+                                if (foundPlaceholder)
+                                {
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Lỗi khi thay thế trong đoạn văn: {ex.Message}");
+                Console.WriteLine($"Lỗi khi thay thế placeholder trong đoạn văn: {ex.Message}");
             }
         }
     }
