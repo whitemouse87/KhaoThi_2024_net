@@ -135,7 +135,14 @@ namespace KhaoThi_2024_net_client.Components
                 {"{{GiaoVienCoiThi}}", thongTinTruong != null ? thongTinTruong.TongGiaoVien_CoiThi.ToString() : ""},
                 {"{{PhongToiDa}}", thongTinTruong != null ? thongTinTruong.TongSoPhongToiDa.ToString() : ""},
                 {"{{PhongDuDK}}", thongTinTruong != null ? thongTinTruong.TongSoPhongCoiThi.ToString() : ""},
-        
+                //Học sinh 12 và học sinh đặc biệt
+
+                 {"{{Tong12}}", thongTinTruong != null ? thongTinTruong.Tong_HS_12.ToString() : ""},
+                 {"{{KhuyetTatNhe}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhuyetTat_Nhe.ToString() : ""},
+                 {"{{KhuyetTatNang}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhuyetTat_Nang.ToString() : ""},
+                 {"{{KhiemThi}}", thongTinTruong != null ? thongTinTruong.Tong_HS_KhiemThi.ToString() : ""},
+                 {"{{HoTroDacBiet}}", thongTinTruong != null ? thongTinTruong.Tong_HS_CanHoTroDacBiet.ToString() : ""},
+                 {"{{NoiDungHoTroDacBiet}}", thongTinTruong?.NoiDung_HoTro_HS ?? ""},
                 // Ngày tháng
                 {"ngày tháng 4 năm 2025", $"ngày {reportTime.Day} tháng {reportTime.Month} năm {reportTime.Year}"},
                 {"{{NgayBaoCao}}", reportTime.ToString("dd/MM/yyyy")},

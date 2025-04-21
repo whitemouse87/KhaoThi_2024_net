@@ -1,0 +1,20 @@
+2025-04-21 08:22:47.637 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-21 08:24:05.296 +07:00 [INF] [Client] Token hết hạn 
+2025-04-21 08:24:21.513 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-21 08:24:21.516 +07:00 [INF] appsettings.json exists: true
+2025-04-21 08:24:21.535 +07:00 [INF] Connection string 'SGD': true
+2025-04-21 08:24:21.537 +07:00 [INF] Connection string configured successfully
+2025-04-21 08:24:21.552 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-21 08:24:22.450 +07:00 [ERR] Password verification result: false
+2025-04-21 08:24:22.579 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-04-21 08:24:26.846 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-21 08:24:27.014 +07:00 [ERR] Password verification result: false
+2025-04-21 08:24:27.033 +07:00 [INF] [Client] [CLIENT] user đăng nhập thất bại: Mật khẩu không đúng 
+2025-04-21 08:24:31.916 +07:00 [INF] Login attempt for user: asdas from IP: ::1
+2025-04-21 08:24:32.076 +07:00 [ERR] Password verification result: true
+2025-04-21 08:24:32.162 +07:00 [INF] User asdas logged in successfully from IP: ::1
+2025-04-21 16:11:37.422 +07:00 [WRN] The WebRootPath was not found: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-21 16:11:40.607 +07:00 [INF] Current directory: C:\Users\K-PC\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-21 16:11:40.611 +07:00 [INF] appsettings.json exists: true
+2025-04-21 16:11:40.613 +07:00 [INF] Connection string 'SGD': true
+2025-04-21 16:11:40.614 +07:00 [INF] Connection string configured successfully
