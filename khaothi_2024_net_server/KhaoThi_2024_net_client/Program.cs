@@ -33,6 +33,7 @@ using KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi;
 using KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi;
 using KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi;
 using khaothi_2024_net_client.Services.BC_5_ThongTinConThi;
+using KhaoThi_2024_net_client.Services;
 
 public class Program
 {
@@ -306,6 +307,7 @@ public class Program
         services.AddScoped<IBCLanhDaoDonViService, BCLanhDaoDonViService>();
         services.AddScoped<IBCThongTinTruongDiemDonViService, BCThongTinTruongDiemService>();
         services.AddScoped<IBCThongTinConThiService, BCThongTinConThiService>();
+        services.AddScoped<IPdfService, PdfService>();
         services.AddScoped<PWAService>(); // Thêm dòng này
 
         // Add other application services here

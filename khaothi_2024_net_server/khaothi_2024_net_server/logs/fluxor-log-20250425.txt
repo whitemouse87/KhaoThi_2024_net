@@ -1,0 +1,43 @@
+2025-04-25 22:16:38 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:16:57 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:16:57 [INF] appsettings.json exists: True
+2025-04-25 22:16:57 [INF] Connection string 'SGD': True
+2025-04-25 22:16:57 [INF] Connection string configured successfully
+2025-04-25 22:21:34 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:21:42 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:21:42 [INF] appsettings.json exists: True
+2025-04-25 22:21:42 [INF] Connection string 'SGD': True
+2025-04-25 22:21:42 [INF] Connection string configured successfully
+2025-04-25 22:28:47 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:28:52 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:28:52 [INF] appsettings.json exists: True
+2025-04-25 22:28:52 [INF] Connection string 'SGD': True
+2025-04-25 22:28:52 [INF] Connection string configured successfully
+2025-04-25 22:31:30 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:31:35 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:31:35 [INF] appsettings.json exists: True
+2025-04-25 22:31:35 [INF] Connection string 'SGD': True
+2025-04-25 22:31:35 [INF] Connection string configured successfully
+2025-04-25 22:33:06 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:33:11 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:33:11 [INF] appsettings.json exists: True
+2025-04-25 22:33:11 [INF] Connection string 'SGD': True
+2025-04-25 22:33:11 [INF] Connection string configured successfully
+2025-04-25 22:42:51 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:43:01 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:43:01 [INF] appsettings.json exists: True
+2025-04-25 22:43:01 [INF] Connection string 'SGD': True
+2025-04-25 22:43:02 [INF] Connection string configured successfully
+2025-04-25 22:43:09 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-25 22:46:21 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:46:26 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:46:26 [INF] appsettings.json exists: True
+2025-04-25 22:46:26 [INF] Connection string 'SGD': True
+2025-04-25 22:46:26 [INF] Connection string configured successfully
+2025-04-25 22:46:33 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-25 22:52:37 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-25 22:52:42 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-25 22:52:42 [INF] appsettings.json exists: True
+2025-04-25 22:52:42 [INF] Connection string 'SGD': True
+2025-04-25 22:52:42 [INF] Connection string configured successfully
+2025-04-25 22:52:50 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""

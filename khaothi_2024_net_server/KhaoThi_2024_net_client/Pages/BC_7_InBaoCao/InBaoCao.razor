@@ -1,7 +1,9 @@
 ﻿@page "/inbaocao"
 @page "/inbaocao/{MaTruong}"
 @inject KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.IBCThongTinDonViService ThongTinDonViService
+@inject KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi.IBCNhomMonDonViService NhomMonDonViService
 @inject KhaoThi_2024_net_client.Components.IReportService WordReportService
+@inject KhaoThi_2024_net_client.Services.IPdfService PdfService
 @inject HttpClient Http
 @inject IJSRuntime JSRuntime
 @inject ILoggingService Logger
@@ -47,6 +49,31 @@
             </MudItem>
         </MudGrid>
 
+        @if (nhomMons != null && nhomMons.Any())
+        {
+            <MudPaper Elevation="0" Class="mt-4">
+                <MudText Typo="Typo.h6" Class="mb-2">Danh sách nhóm môn</MudText>
+                <MudTable Items="@nhomMons" Hover="true" Striped="true" Bordered="true" Dense="true">
+                    <HeaderContent>
+                        <MudTh>ID</MudTh>
+                        <MudTh>Mã Trường</MudTh>
+                        <MudTh>Tên Nhóm</MudTh>
+                        <MudTh>Môn Luận Chọn 1</MudTh>
+                        <MudTh>Môn Luận Chọn 2</MudTh>
+                        <MudTh>Số Lượng</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="ID">@context.ID</MudTd>
+                        <MudTd DataLabel="Mã Trường">@context.MaTruong</MudTd>
+                        <MudTd DataLabel="Tên Nhóm">@context.TenNhom</MudTd>
+                        <MudTd DataLabel="Môn Luận Chọn 1">@context.MonLuaChon_1</MudTd>
+                        <MudTd DataLabel="Môn Luận Chọn 2">@context.MonLuaChon_2</MudTd>
+                        <MudTd DataLabel="Số Lượng">@context.SoLuong</MudTd>
+                    </RowTemplate>
+                </MudTable>
+            </MudPaper>
+        }
+
         <div class="d-flex justify-start mt-4">
             <MudButton Variant="Variant.Filled"
                        Color="MudBlazor.Color.Primary"
@@ -62,6 +89,24 @@
                 else
                 {
                     <span>Xuất báo cáo Word</span>
+                }
+            </MudButton>
+
+            <MudButton Variant="Variant.Filled"
+                       Color="MudBlazor.Color.Secondary"
+                       StartIcon="@Icons.Material.Filled.PictureAsPdf"
+                       Size="Size.Large"
+                       OnClick="GeneratePdfReport"
+                       Disabled="@(isGenerating || thongTinTruong == null)"
+                       Class="ml-2">
+                @if (isGenerating)
+                {
+                    <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    <span>Đang tạo PDF...</span>
+                }
+                else
+                {
+                    <span>Xuất báo cáo PDF</span>
                 }
             </MudButton>
         </div>
@@ -98,6 +143,7 @@
 
     // Lưu trữ dữ liệu đã tải
     private KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong;
+    private IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons;
 
     protected override async Task OnInitializedAsync()
     {
@@ -148,6 +194,9 @@ downloadLink.remove();
             // Tải thông tin trường
             thongTinTruong = await ThongTinDonViService.GetByMaTruongAsync(MaTruong);
 
+            // Tải dữ liệu nhóm môn
+            nhomMons = await NhomMonDonViService.GetByMaTruongAsync(MaTruong);
+
             // Kiểm tra dữ liệu trường cơ bản
             if (thongTinTruong == null)
             {
@@ -193,16 +242,16 @@ downloadLink.remove();
             // Cache busting cho template để luôn lấy phiên bản mới nhất
             string templateUrl = $"{NavigationManager.BaseUri}template/BaoCao_THPT.docx?t={DateTime.Now.Ticks}";
 
-            // Sử dụng service để tạo báo cáo
+            // Sử dụng service để tạo báo cáo Word
             byte[] reportData = await WordReportService.GenerateWordReportAsync(templateUrl, thongTinTruong);
 
             // Tải xuống file với tên có timestamp
             string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.docx";
-            await DownloadFile(reportData, fileName);
+            await DownloadFile(reportData, fileName, "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
         }
         catch (Exception ex)
         {
-            errorMessage = $"Lỗi khi tạo báo cáo: {ex.Message}";
+            errorMessage = $"Lỗi khi tạo báo cáo Word: {ex.Message}";
             await Logger.LogErrorAsync("Lỗi khi tạo báo cáo Word", ex, "InBaoCaoComponent");
         }
         finally
@@ -212,10 +261,47 @@ downloadLink.remove();
         }
     }
 
-    private async Task DownloadFile(byte[] data, string fileName)
+    private async Task GeneratePdfReport()
+    {
+        try
+        {
+            isGenerating = true;
+            errorMessage = string.Empty;
+            StateHasChanged();
+
+            // Nếu chưa tải dữ liệu, tải lại
+            if (!isDataLoaded)
+            {
+                await LoadData();
+                if (!isDataLoaded) // Nếu vẫn không tải được dữ liệu
+                {
+                    errorMessage = "Không thể tải dữ liệu để tạo báo cáo";
+                    return;
+                }
+            }
+
+            // Sử dụng service để tạo báo cáo PDF
+            byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong, nhomMons);
+
+            // Tải xuống file với tên có timestamp
+            string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+            await DownloadFile(reportData, fileName, "application/pdf");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Lỗi khi tạo báo cáo PDF: {ex.Message}";
+            await Logger.LogErrorAsync("Lỗi khi tạo báo cáo PDF", ex, "InBaoCaoComponent");
+        }
+        finally
+        {
+            isGenerating = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task DownloadFile(byte[] data, string fileName, string contentType)
     {
         // Sử dụng JS để tải file về client
-        string contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
         await JSRuntime.InvokeVoidAsync("downloadFileFromStream", fileName, contentType, Convert.ToBase64String(data));
     }
 }
