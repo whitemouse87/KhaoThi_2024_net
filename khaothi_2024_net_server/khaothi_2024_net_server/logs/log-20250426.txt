@@ -1,0 +1,93 @@
+2025-04-26 16:39:27.253 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 16:39:32.456 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] Token hết hạn 
+2025-04-26 16:40:36.395 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 16:40:36.400 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 16:40:36.404 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 16:40:36.406 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 16:40:36.420 +07:00 [INF] [AuthController] Login attempt for user: asdas from IP: ::1
+2025-04-26 16:40:37.482 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
+2025-04-26 16:40:37.616 +07:00 [INF] [AuthController] User asdas logged in successfully from IP: ::1
+2025-04-26 16:40:48.297 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 16:43:18.709 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 16:43:22.304 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 16:43:22.309 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 16:43:22.312 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 16:43:22.314 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 16:43:32.060 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 16:47:06.707 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 16:47:07.825 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 16:47:07.828 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 16:47:07.831 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 16:47:07.832 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 16:47:20.023 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 16:48:38.614 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 16:48:41.742 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 16:48:41.746 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 16:48:41.751 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 16:48:41.753 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 16:57:19.104 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 16:57:23.470 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 16:57:23.474 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 16:57:23.478 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 16:57:23.480 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 16:57:43.448 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [Client] Token hết hạn 
+2025-04-26 16:57:58.722 +07:00 [INF] [AuthController] Login attempt for user: asdas from IP: ::1
+2025-04-26 16:57:59.171 +07:00 [ERR] [khaothi_2024_net_server.Infrastructure.Security.BCryptPasswordHasher] Password verification result: true
+2025-04-26 16:57:59.262 +07:00 [INF] [AuthController] User asdas logged in successfully from IP: ::1
+2025-04-26 16:58:23.514 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:03:04.556 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:03:09.897 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:03:09.902 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:03:09.906 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:03:09.908 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:03:16.464 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:08:17.471 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:08:24.991 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:08:24.995 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:08:24.998 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:08:24.999 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:08:28.965 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:10:13.984 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:12:14.871 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:12:20.009 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:12:20.014 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:12:20.017 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:12:20.019 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:12:25.131 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:14:17.139 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:14:22.507 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:14:22.511 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:14:22.515 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:14:22.517 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:17:29.214 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:18:20.995 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:26:12.563 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:26:18.378 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:26:18.383 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:26:18.386 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:26:18.388 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:26:24.688 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:28:46.820 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:28:50.221 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:28:50.225 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:28:50.229 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:28:50.230 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:28:54.744 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:51:23.832 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:51:28.827 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:51:28.831 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:51:28.835 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:51:28.837 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:51:37.229 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:52:27.304 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:52:32.306 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:52:32.310 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:52:32.316 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:52:32.318 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:52:36.585 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 
+2025-04-26 17:53:24.460 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
+2025-04-26 17:53:29.741 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Current directory: C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server
+2025-04-26 17:53:29.745 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] appsettings.json exists: true
+2025-04-26 17:53:29.749 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string 'SGD': true
+2025-04-26 17:53:29.751 +07:00 [INF] [khaothi_2024_net_server.Infrastructure.Data.MyDataAccessLayer] Connection string configured successfully
+2025-04-26 17:53:34.710 +07:00 [INF] [khaothi_2024_net_server.Features.Logging.LogsController] [PdfService] Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo 

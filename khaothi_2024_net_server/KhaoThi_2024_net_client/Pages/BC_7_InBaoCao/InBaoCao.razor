@@ -75,7 +75,7 @@
         }
 
         <div class="d-flex justify-start mt-4">
-            <MudButton Variant="Variant.Filled"
+            @*<MudButton Variant="Variant.Filled"
                        Color="MudBlazor.Color.Primary"
                        StartIcon="@Icons.Material.Filled.FileDownload"
                        Size="Size.Large"
@@ -90,7 +90,7 @@
                 {
                     <span>Xuất báo cáo Word</span>
                 }
-            </MudButton>
+            </MudButton>*@
 
             <MudButton Variant="Variant.Filled"
                        Color="MudBlazor.Color.Secondary"
@@ -220,46 +220,46 @@ downloadLink.remove();
         }
     }
 
-    private async Task GenerateReport()
-    {
-        try
-        {
-            isGenerating = true;
-            errorMessage = string.Empty;
-            StateHasChanged();
+    //private async Task GenerateReport()
+    //{
+    //    try
+    //    {
+    //        isGenerating = true;
+    //        errorMessage = string.Empty;
+    //        StateHasChanged();
 
-            // Nếu chưa tải dữ liệu, tải lại
-            if (!isDataLoaded)
-            {
-                await LoadData();
-                if (!isDataLoaded) // Nếu vẫn không tải được dữ liệu
-                {
-                    errorMessage = "Không thể tải dữ liệu để tạo báo cáo";
-                    return;
-                }
-            }
+    //        // Nếu chưa tải dữ liệu, tải lại
+    //        if (!isDataLoaded)
+    //        {
+    //            await LoadData();
+    //            if (!isDataLoaded) // Nếu vẫn không tải được dữ liệu
+    //            {
+    //                errorMessage = "Không thể tải dữ liệu để tạo báo cáo";
+    //                return;
+    //            }
+    //        }
 
-            // Cache busting cho template để luôn lấy phiên bản mới nhất
-            string templateUrl = $"{NavigationManager.BaseUri}template/BaoCao_THPT.docx?t={DateTime.Now.Ticks}";
+    //        // Cache busting cho template để luôn lấy phiên bản mới nhất
+    //        string templateUrl = $"{NavigationManager.BaseUri}template/BaoCao_THPT.docx?t={DateTime.Now.Ticks}";
 
-            // Sử dụng service để tạo báo cáo Word
-            byte[] reportData = await WordReportService.GenerateWordReportAsync(templateUrl, thongTinTruong);
+    //        // Sử dụng service để tạo báo cáo Word
+    //        byte[] reportData = await WordReportService.GenerateWordReportAsync(templateUrl, thongTinTruong);
 
-            // Tải xuống file với tên có timestamp
-            string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.docx";
-            await DownloadFile(reportData, fileName, "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
-        }
-        catch (Exception ex)
-        {
-            errorMessage = $"Lỗi khi tạo báo cáo Word: {ex.Message}";
-            await Logger.LogErrorAsync("Lỗi khi tạo báo cáo Word", ex, "InBaoCaoComponent");
-        }
-        finally
-        {
-            isGenerating = false;
-            StateHasChanged();
-        }
-    }
+    //        // Tải xuống file với tên có timestamp
+    //        string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.docx";
+    //        await DownloadFile(reportData, fileName, "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        errorMessage = $"Lỗi khi tạo báo cáo Word: {ex.Message}";
+    //        await Logger.LogErrorAsync("Lỗi khi tạo báo cáo Word", ex, "InBaoCaoComponent");
+    //    }
+    //    finally
+    //    {
+    //        isGenerating = false;
+    //        StateHasChanged();
+    //    }
+    //}
 
     private async Task GeneratePdfReport()
     {

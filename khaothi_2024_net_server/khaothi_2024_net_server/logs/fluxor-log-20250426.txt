@@ -1,0 +1,93 @@
+2025-04-26 16:39:27 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 16:39:32 [INF] ["Client"] "Token hết hạn" ""
+2025-04-26 16:40:36 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 16:40:36 [INF] appsettings.json exists: True
+2025-04-26 16:40:36 [INF] Connection string 'SGD': True
+2025-04-26 16:40:36 [INF] Connection string configured successfully
+2025-04-26 16:40:36 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-26 16:40:37 [ERR] Password verification result: True
+2025-04-26 16:40:37 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-04-26 16:40:48 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 16:43:18 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 16:43:22 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 16:43:22 [INF] appsettings.json exists: True
+2025-04-26 16:43:22 [INF] Connection string 'SGD': True
+2025-04-26 16:43:22 [INF] Connection string configured successfully
+2025-04-26 16:43:32 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 16:47:06 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 16:47:07 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 16:47:07 [INF] appsettings.json exists: True
+2025-04-26 16:47:07 [INF] Connection string 'SGD': True
+2025-04-26 16:47:07 [INF] Connection string configured successfully
+2025-04-26 16:47:20 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 16:48:38 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 16:48:41 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 16:48:41 [INF] appsettings.json exists: True
+2025-04-26 16:48:41 [INF] Connection string 'SGD': True
+2025-04-26 16:48:41 [INF] Connection string configured successfully
+2025-04-26 16:57:19 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 16:57:23 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 16:57:23 [INF] appsettings.json exists: True
+2025-04-26 16:57:23 [INF] Connection string 'SGD': True
+2025-04-26 16:57:23 [INF] Connection string configured successfully
+2025-04-26 16:57:43 [INF] ["Client"] "Token hết hạn" ""
+2025-04-26 16:57:58 [INF] Login attempt for user: "asdas" from IP: "::1"
+2025-04-26 16:57:59 [ERR] Password verification result: True
+2025-04-26 16:57:59 [INF] User "asdas" logged in successfully from IP: "::1"
+2025-04-26 16:58:23 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:03:04 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:03:09 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:03:09 [INF] appsettings.json exists: True
+2025-04-26 17:03:09 [INF] Connection string 'SGD': True
+2025-04-26 17:03:09 [INF] Connection string configured successfully
+2025-04-26 17:03:16 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:08:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:08:24 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:08:24 [INF] appsettings.json exists: True
+2025-04-26 17:08:24 [INF] Connection string 'SGD': True
+2025-04-26 17:08:24 [INF] Connection string configured successfully
+2025-04-26 17:08:28 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:10:13 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:12:14 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:12:20 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:12:20 [INF] appsettings.json exists: True
+2025-04-26 17:12:20 [INF] Connection string 'SGD': True
+2025-04-26 17:12:20 [INF] Connection string configured successfully
+2025-04-26 17:12:25 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:14:17 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:14:22 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:14:22 [INF] appsettings.json exists: True
+2025-04-26 17:14:22 [INF] Connection string 'SGD': True
+2025-04-26 17:14:22 [INF] Connection string configured successfully
+2025-04-26 17:17:29 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:18:20 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:26:12 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:26:18 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:26:18 [INF] appsettings.json exists: True
+2025-04-26 17:26:18 [INF] Connection string 'SGD': True
+2025-04-26 17:26:18 [INF] Connection string configured successfully
+2025-04-26 17:26:24 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:28:46 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:28:50 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:28:50 [INF] appsettings.json exists: True
+2025-04-26 17:28:50 [INF] Connection string 'SGD': True
+2025-04-26 17:28:50 [INF] Connection string configured successfully
+2025-04-26 17:28:54 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:51:23 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:51:28 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:51:28 [INF] appsettings.json exists: True
+2025-04-26 17:51:28 [INF] Connection string 'SGD': True
+2025-04-26 17:51:28 [INF] Connection string configured successfully
+2025-04-26 17:51:37 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:52:27 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:52:32 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:52:32 [INF] appsettings.json exists: True
+2025-04-26 17:52:32 [INF] Connection string 'SGD': True
+2025-04-26 17:52:32 [INF] Connection string configured successfully
+2025-04-26 17:52:36 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""
+2025-04-26 17:53:24 [WRN] The WebRootPath was not found: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot". Static files may be unavailable.
+2025-04-26 17:53:29 [INF] Current directory: "C:\Users\TRY\Documents\GitHub\khaothi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server"
+2025-04-26 17:53:29 [INF] appsettings.json exists: True
+2025-04-26 17:53:29 [INF] Connection string 'SGD': True
+2025-04-26 17:53:29 [INF] Connection string configured successfully
+2025-04-26 17:53:34 [INF] ["PdfService"] "Bắt đầu tạo báo cáo PDF cho trường TT NNTH - Sở Giáo dục và Đào tạo" ""

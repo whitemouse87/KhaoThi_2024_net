@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\wwwroot\\js\\pdf-generator-html.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\components\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\components\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\services\\bc_6_thongtinconthi\\bcthongtinconthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|solutionrelative:khaothi_2024_net_client\\services\\bc_6_thongtinconthi\\bcthongtinconthiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4EF9336-4582-4F45-AF3A-28B6502A778E}|KhaoThi_2024_net_client\\KhaoThi_2024_net_client.csproj|c:\\users\\try\\documents\\github\\khaothi_2024_net\\khaothi_2024_net_server\\khaothi_2024_net_client\\services\\pdfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BCThongTinConThiService.cs",
+              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\BC_6_ThongTinConThi\\BCThongTinConThiService.cs",
+              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Services\\BC_6_ThongTinConThi\\BCThongTinConThiService.cs",
+              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\BC_6_ThongTinConThi\\BCThongTinConThiService.cs",
+              "RelativeToolTip": "KhaoThi_2024_net_client\\Services\\BC_6_ThongTinConThi\\BCThongTinConThiService.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T10:32:59.356Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,7 +53,7 @@
               "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\wwwroot\\js\\pdf-generator-html.js",
               "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\wwwroot\\js\\pdf-generator-html.js",
               "RelativeToolTip": "KhaoThi_2024_net_client\\wwwroot\\js\\pdf-generator-html.js",
-              "ViewState": "AgIAAOABAAAAAAAAAAAgwCECAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAJQBAAAAAAAAAAAAAJUBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-25T15:45:42.786Z",
               "EditorCaption": ""
@@ -53,22 +66,9 @@
               "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Services\\PdfService.cs",
               "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Services\\PdfService.cs",
               "RelativeToolTip": "KhaoThi_2024_net_client\\Services\\PdfService.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAywAUBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAIwIwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T15:10:12.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Components\\ReportService.cs",
-              "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Components\\ReportService.cs",
-              "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Components\\ReportService.cs",
-              "RelativeToolTip": "KhaoThi_2024_net_client\\Components\\ReportService.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAmwBkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T13:27:38.914Z",
               "EditorCaption": ""
             },
             {
@@ -79,7 +79,7 @@
               "RelativeDocumentMoniker": "KhaoThi_2024_net_client\\Pages\\BC_7_InBaoCao\\InBaoCao.razor",
               "ToolTip": "C:\\Users\\TRY\\Documents\\GitHub\\khaothi_2024_net\\khaothi_2024_net_server\\KhaoThi_2024_net_client\\Pages\\BC_7_InBaoCao\\InBaoCao.razor",
               "RelativeToolTip": "KhaoThi_2024_net_client\\Pages\\BC_7_InBaoCao\\InBaoCao.razor",
-              "ViewState": "AgIAAPAAAAAAAAAAAAAYwBMBAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAYwAwBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-15T14:56:30.01Z",
               "EditorCaption": ""
