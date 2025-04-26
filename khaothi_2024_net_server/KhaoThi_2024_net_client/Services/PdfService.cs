@@ -21,7 +21,10 @@ namespace KhaoThi_2024_net_client.Services
         /// <returns>Mảng byte của file PDF</returns>
         Task<byte[]> GeneratePdfReportAsync(
             KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong,
-            IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons);
+            IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons,
+            IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel> nhomConThis,
+            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomlanhdaodonvis
+            );
 
         /// <summary>
         /// Tạo báo cáo PDF và tải xuống trực tiếp từ trình duyệt
@@ -63,7 +66,10 @@ namespace KhaoThi_2024_net_client.Services
         /// <returns>Mảng byte của file PDF</returns>
         public async Task<byte[]> GeneratePdfReportAsync(
             KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong,
-            IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons)
+            IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons,
+            IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel> nhomConThis,
+            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomlanhdaodonvis
+            )
         {
             try
             {
@@ -73,6 +79,8 @@ namespace KhaoThi_2024_net_client.Services
                     await _logger.LogErrorAsync("Thông tin trường null khi tạo báo cáo PDF", null, nameof(PdfService));
                     thongTinTruong = new KhaoThi_1_THPT_ThongTin_DonViModel();
                 }
+
+
 
                 DateTime reportTime = DateTime.Now;
 
@@ -126,17 +134,65 @@ namespace KhaoThi_2024_net_client.Services
                 }
 
                 // Chuẩn bị dữ liệu nhóm môn
+                //var nhomMonData = nhomMons
+                //    .Select((n, index) => new
+                //    {
+                //        stt = index + 1,
+                //        maTruong = n.MaTruong ?? "",
+                //        tenNhomluachon = n.TenNhom.ToString(),
+                //        monLuaChon1 = n.MonLuaChon_1 ?? "",
+                //        monLuaChon2 = n.MonLuaChon_2 ?? "",
+                //        soLuong = n.SoLuong
+                //    }).ToArray();
+
                 var nhomMonData = nhomMons
+                .Select((n, index) => new
+                {
+                    stt = index + 1,
+                    maTruong = n.MaTruong ?? "",
+                    tennhom = n.TenNhom.ToString() ?? "Chưa xác định", // Thêm toán tử ?. và giá trị mặc định
+                    monLuaChon1 = n.MonLuaChon_1 ?? "Chưa xác định",
+                    monLuaChon2 = n.MonLuaChon_2 ?? "Chưa xác định",
+                    soLuong = n.SoLuong
+                }).ToArray();
+
+
+                if (nhomConThis == null)
+                {
+                    nhomConThis = Enumerable.Empty<KhaoThi_5_THPT_ThongTin_ConThiModel>();
+                }
+
+                // Chuẩn bị dữ liệu con thi
+                var nhomConData = nhomConThis
                     .Select((n, index) => new
                     {
                         stt = index + 1,
-                        maTruong = n.MaTruong ?? "",
-                        tenNhom = n.TenNhom,
-                        monLuaChon1 = n.MonLuaChon_1 ?? "",
-                        monLuaChon2 = n.MonLuaChon_2 ?? "",
-                        soLuong = n.SoLuong
+                        matruong = n.MaTruong ?? "",
+                        cccd = n.CCCD.ToString(),
+                        hoten = n.HoTen ?? "",
+                        chucvudonvi = n.ChucVuDonVi ?? "",
+                        madinhdanhcuacon = n.MaDinhDanhCuaCon ?? "",
+                        hotencon = n.HoTenCon ?? "",
+                        moiquanhe = n.ChucVuGiaDinh ?? "",
+                        kythithamdu = n.KyThiThamDu ?? ""
                     }).ToArray();
 
+                var nhomlanhdaoData = nhomlanhdaodonvis
+                    .Select((n, index) => new
+                    {
+                        stt = index + 1,
+                        matruong = n.MaTruong ?? "",
+                        cccd = n.CCCD,
+                        hoten = n.HoTen ?? "",
+                        namsinh = n.NamSinh,
+                        chucvu = n.ChucVuDonVi ?? "",
+                        coithits10 = n.CoiThiTS10.ToString(),
+                        chucvuts10 = n.ChucVuCoiThiTS10.ToString(),
+                        lydokothits10 = n.LyDoKhongThamGiaTS10.ToString(),
+                        coithithpt = n.CoiThiTHPT.ToString(),
+                        chucvuthpt = n.ChucVuCoiThiTHPT.ToString(),
+                        lydokothithpt = n.LyDoKhongThamGiaTHPT.ToString()
+                    }).ToArray();
                 //var nhomConThi = nhomCons
                 //.Select((n, index) => new
                 //{
@@ -152,7 +208,7 @@ namespace KhaoThi_2024_net_client.Services
                 await _logger.LogErrorAsync($"Bắt đầu tạo báo cáo PDF cho trường {thongTinTruong.TenTruong}", null, nameof(PdfService));
 
                 // Gọi hàm JavaScript để tạo PDF và trả về dưới dạng base64 string
-                string base64Pdf = await _jsRuntime.InvokeAsync<string>("pdfGenerator.generatePdfReport", schoolData, nhomMonData);
+                string base64Pdf = await _jsRuntime.InvokeAsync<string>("pdfGenerator.generatePdfReport", schoolData, nhomMonData, nhomConData, nhomlanhdaoData);
 
                 // Kiểm tra kết quả trả về
                 if (string.IsNullOrEmpty(base64Pdf))

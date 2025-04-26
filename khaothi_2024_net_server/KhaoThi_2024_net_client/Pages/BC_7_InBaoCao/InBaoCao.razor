@@ -2,6 +2,10 @@
 @page "/inbaocao/{MaTruong}"
 @inject KhaoThi_2024_net_client.Services.BC_1_ThongTinDonVi.IBCThongTinDonViService ThongTinDonViService
 @inject KhaoThi_2024_net_client.Services.BC_2_NhomMonDonVi.IBCNhomMonDonViService NhomMonDonViService
+@inject khaothi_2024_net_client.Services.BC_5_ThongTinConThi.IBCThongTinConThiService nhomConThiDonViService
+@inject KhaoThi_2024_net_client.Services.BC_4_LanhDaoDonVi.IBCLanhDaoDonViService nhomLanhDaoDonViService
+@inject KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi.IBCThongTinTruongDiemDonViService nhomTruongDiemDonViService
+@using KhaoThi_2024_net_client.Models.BaoCaoSoLieu
 @inject KhaoThi_2024_net_client.Components.IReportService WordReportService
 @inject KhaoThi_2024_net_client.Services.IPdfService PdfService
 @inject HttpClient Http
@@ -49,7 +53,7 @@
             </MudItem>
         </MudGrid>
 
-        @if (nhomMons != null && nhomMons.Any())
+        @*@if (nhomMons != null && nhomMons.Any())
         {
             <MudPaper Elevation="0" Class="mt-4">
                 <MudText Typo="Typo.h6" Class="mb-2">Danh sách nhóm môn</MudText>
@@ -72,25 +76,25 @@
                     </RowTemplate>
                 </MudTable>
             </MudPaper>
-        }
+        }*@
 
         <div class="d-flex justify-start mt-4">
             @*<MudButton Variant="Variant.Filled"
-                       Color="MudBlazor.Color.Primary"
-                       StartIcon="@Icons.Material.Filled.FileDownload"
-                       Size="Size.Large"
-                       OnClick="GenerateReport"
-                       Disabled="@(isGenerating || thongTinTruong == null)">
-                @if (isGenerating)
-                {
-                    <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
-                    <span>Đang tạo báo cáo...</span>
-                }
-                else
-                {
-                    <span>Xuất báo cáo Word</span>
-                }
-            </MudButton>*@
+                           Color="MudBlazor.Color.Primary"
+                           StartIcon="@Icons.Material.Filled.FileDownload"
+                           Size="Size.Large"
+                           OnClick="GenerateReport"
+                           Disabled="@(isGenerating || thongTinTruong == null)">
+                    @if (isGenerating)
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                        <span>Đang tạo báo cáo...</span>
+                    }
+                    else
+                    {
+                        <span>Xuất báo cáo Word</span>
+                    }
+                </MudButton>*@
 
             <MudButton Variant="Variant.Filled"
                        Color="MudBlazor.Color.Secondary"
@@ -144,6 +148,9 @@
     // Lưu trữ dữ liệu đã tải
     private KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong;
     private IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons;
+    private IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel> nhomConThis;
+    private IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomThongTinLanhDaos;
+    private IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomTruongDiems;
 
     protected override async Task OnInitializedAsync()
     {
@@ -196,6 +203,9 @@ downloadLink.remove();
 
             // Tải dữ liệu nhóm môn
             nhomMons = await NhomMonDonViService.GetByMaTruongAsync(MaTruong);
+            nhomConThis = await nhomConThiDonViService.GetByMaTruongAsync(MaTruong);
+            nhomThongTinLanhDaos = await nhomLanhDaoDonViService.GetByMaTruongAsync(MaTruong);
+            nhomTruongDiems = await nhomTruongDiemDonViService.GetByMaTruongAsync(MaTruong);
 
             // Kiểm tra dữ liệu trường cơ bản
             if (thongTinTruong == null)
@@ -220,46 +230,7 @@ downloadLink.remove();
         }
     }
 
-    //private async Task GenerateReport()
-    //{
-    //    try
-    //    {
-    //        isGenerating = true;
-    //        errorMessage = string.Empty;
-    //        StateHasChanged();
 
-    //        // Nếu chưa tải dữ liệu, tải lại
-    //        if (!isDataLoaded)
-    //        {
-    //            await LoadData();
-    //            if (!isDataLoaded) // Nếu vẫn không tải được dữ liệu
-    //            {
-    //                errorMessage = "Không thể tải dữ liệu để tạo báo cáo";
-    //                return;
-    //            }
-    //        }
-
-    //        // Cache busting cho template để luôn lấy phiên bản mới nhất
-    //        string templateUrl = $"{NavigationManager.BaseUri}template/BaoCao_THPT.docx?t={DateTime.Now.Ticks}";
-
-    //        // Sử dụng service để tạo báo cáo Word
-    //        byte[] reportData = await WordReportService.GenerateWordReportAsync(templateUrl, thongTinTruong);
-
-    //        // Tải xuống file với tên có timestamp
-    //        string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.docx";
-    //        await DownloadFile(reportData, fileName, "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        errorMessage = $"Lỗi khi tạo báo cáo Word: {ex.Message}";
-    //        await Logger.LogErrorAsync("Lỗi khi tạo báo cáo Word", ex, "InBaoCaoComponent");
-    //    }
-    //    finally
-    //    {
-    //        isGenerating = false;
-    //        StateHasChanged();
-    //    }
-    //}
 
     private async Task GeneratePdfReport()
     {
@@ -281,8 +252,8 @@ downloadLink.remove();
             }
 
             // Sử dụng service để tạo báo cáo PDF
-            byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong, nhomMons);
-
+            //byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong,nhomMons,nhomConThis,nhomThongTinLanhDaos);
+            byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong, nhomMons, nhomConThis, nhomThongTinLanhDaos);
             // Tải xuống file với tên có timestamp
             string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
             await DownloadFile(reportData, fileName, "application/pdf");

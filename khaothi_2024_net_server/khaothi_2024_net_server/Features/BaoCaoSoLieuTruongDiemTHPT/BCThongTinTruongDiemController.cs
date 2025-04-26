@@ -64,6 +64,29 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
             }
         }
 
+        [HttpGet("truongdiem/{maTruong}")]
+        [ProducesResponseType(typeof(IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetByMaTruong(string maTruong)
+        {
+            try
+            {
+                var lanhDaos = await _truongDiemService.GetByMaTruongAsync(maTruong);
+                if (lanhDaos == null || !lanhDaos.Any())
+                {
+                    return NotFound(new { message = $"Không tìm thấy lãnh đạo nào cho trường có mã: {maTruong}" });
+                }
+
+                return Ok(lanhDaos);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi lấy danh sách lãnh đạo theo mã trường: {MaTruong}", maTruong);
+                return StatusCode(500, new { message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
+            }
+        }
+
         /// <summary>
         /// Cập nhật thông tin trường điểm thi
         /// </summary>

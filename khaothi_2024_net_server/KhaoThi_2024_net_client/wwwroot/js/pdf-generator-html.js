@@ -9,7 +9,7 @@ window.pdfGenerator = {
      * @param {Array} nhomMonData - Dữ liệu danh sách nhóm môn học
      * @returns {Promise<string>} - Promise chứa base64 string của file PDF
      */
-    generatePdfReport: function (schoolData, nhomMonData, nhomConThi) {
+    generatePdfReport: function (schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData) {
         return new Promise((resolve) => {
             try {
                 // Tạo container để chứa báo cáo HTML
@@ -20,7 +20,7 @@ window.pdfGenerator = {
                 document.body.appendChild(container);
 
                 // Thiết lập style và nội dung cho container
-                container.innerHTML = this.createReportHTML(schoolData, nhomMonData);
+                container.innerHTML = this.createReportHTML(schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData);
 
                 // Thiết lập style
                 const style = document.createElement('style');
@@ -180,7 +180,7 @@ window.pdfGenerator = {
 
 
 
-    createReportHTML: function (schoolData, nhomMonData) {
+    createReportHTML: function (schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData) {
         return `
         <div class="report-container">
             <!-- Header -->
@@ -343,7 +343,7 @@ window.pdfGenerator = {
                 <table class="info-table">
                     <thead>
                         <tr>
-                            <th style="width: 10%;">ID</th>
+                            <th style="width: 10%;">STT</th>
                             <th style="width: 15%;">Tên nhóm</th>
                             <th style="width: 30%;">Môn lựa chọn 1</th>
                             <th style="width: 30%;">Môn lựa chọn 2</th>
@@ -375,11 +375,11 @@ window.pdfGenerator = {
                         </tr>
                     </thead>
                     <tbody>
-                        ${this.createConThiGroupRows(nhomConThi)}
+                        ${this.createConThiGroupRows(nhomconthiData)}
                     </tbody>
                 </table>
                 
-                ${this.createConThiGroupRows(nhomConThi)}
+               
             </div>
             <p>./.</p>
             
@@ -396,24 +396,40 @@ window.pdfGenerator = {
             </div>
         </div>
         `;
+
+
     },
     //Tạo danh sách nhóm môn
+    //createSubjectGroupRows: function (nhomMonData) {
+    //    if (!nhomMonData || nhomMonData.length === 0) {
+    //        return '<tr><td colspan="5" style="text-align: center;">Không có dữ liệu</td></tr>';
+    //    }
+
+    //    return nhomMonData.map(item => `
+    //        <tr>
+    //            <td>${item.stt}</td>
+    //            <td>${item.tennhomluachon}</td>
+    //            <td>${item.monLuaChon1}</td>
+    //            <td>${item.monLuaChon2}</td>
+    //            <td>${item.soLuong}</td>
+    //        </tr>
+    //    `).join('');
+    //},
     createSubjectGroupRows: function (nhomMonData) {
         if (!nhomMonData || nhomMonData.length === 0) {
             return '<tr><td colspan="5" style="text-align: center;">Không có dữ liệu</td></tr>';
         }
 
         return nhomMonData.map(item => `
-            <tr>
-                <td>${item.stt}</td>
-                <td>${item.tennhom}</td>
-                <td>${item.monLuaChon1}</td>
-                <td>${item.monLuaChon2}</td>
-                <td>${item.soLuong}</td>
-            </tr>
-        `).join('');
+        <tr>
+            <td>${item.stt || ''}</td>
+            <td>${item.tennhom || 'Chưa xác định'}</td>
+            <td>${item.monLuaChon1 || 'Chưa xác định'}</td>
+            <td>${item.monLuaChon2 || 'Chưa xác định'}</td>
+            <td>${item.soLuong || 0}</td>
+        </tr>
+    `).join('');
     },
-
 
     createTotalRow: function (schoolData, nhomMonData) {
         if (!nhomMonData || nhomMonData.length === 0) {
@@ -429,21 +445,21 @@ window.pdfGenerator = {
     },
 
     //Tạo danh sách con thi
-    createConThiGroupRows: function (nhomConThi) {
-        if (!nhomConThi || nhomConThi.length === 0) {
-            return '<tr><td colspan="5" style="text-align: center;">Không có dữ liệu</td></tr>';
+    createConThiGroupRows: function (nhomConThiData) {
+        if (!nhomConThiData || nhomConThiData.length === 0) {
+            return '<tr><td colspan="8" style="text-align: center;">Không có dữ liệu</td></tr>';
         }
 
-        return nhomConThi.map(item => `
+        return nhomConThiData.map(item => `
             <tr>
-                <td></td>
-                <td>${item.CCCD}</td>
-                <td>${item.HoTen}</td>
-                <td>${item.ChucVuDonVi}</td>
-                <td>${item.MaDinhDanhCuaCon}</td>
-                <td>${item.HoTenCon}</td>
-                <td>${item.MoiQuanHe}</td>
-                <td>${item.KyThiThamDu}</td>
+                <td>${item.stt}</td>
+                <td>${item.cccd}</td>
+                <td>${item.hoten}</td>
+                <td>${item.chucvudonvi}</td>
+                <td>${item.madinhdanhcuacon}</td>
+                <td>${item.hotencon}</td>
+                <td>${item.moiquanhe}</td>
+                <td>${item.kythithamdu}</td>
             </tr>
         `).join('');
     }

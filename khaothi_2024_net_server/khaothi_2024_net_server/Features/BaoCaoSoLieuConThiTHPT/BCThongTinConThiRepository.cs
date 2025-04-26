@@ -95,7 +95,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuConThiTHPT
                       KyThiThamDu
                   FROM {TableName} 
                   WHERE MaTruong = @MaTruong
-                  ORDER BY HoTen ASC, HoTenCon ASC";
+                  ORDER BY ChucVuDonVi,HoTen ASC, HoTenCon ASC";
 
             var result = await _dataAccess.QueryAsync<KhaoThi_5_THPT_ThongTin_ConThiModel>(
                 sql,

@@ -11,5 +11,6 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT.Interfaces
             string? searchTerm = null,
             string? maTruong = null
         );
+        Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetByMaTruongAsync(string maTruong);
     }
 }

@@ -36,7 +36,7 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuLanhDaoTHPT
         {
             string sql = $@"SELECT * FROM {TableName} 
                            WHERE MaTruong = @MaTruong
-                           ORDER BY HoTen ASC";
+                           ORDER BY ChucVuDonVi";
 
             var result = await _dataAccess.QueryAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
                 sql,

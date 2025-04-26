@@ -25,5 +25,7 @@ namespace KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi
         /// <param name="truongDiem">Thông tin trường điểm cần cập nhật</param>
         /// <returns>true nếu cập nhật thành công, false nếu thất bại</returns>
         Task<bool> UpdateAsync(KhaoThi_4_THPT_ThongTin_LanhDaoModel truongDiem);
+
+        Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetByMaTruongAsync(string maTruong);
     }
 }

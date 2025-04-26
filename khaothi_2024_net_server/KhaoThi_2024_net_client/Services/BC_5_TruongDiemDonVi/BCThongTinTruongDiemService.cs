@@ -101,5 +101,32 @@ namespace KhaoThi_2024_net_client.Services.BC_5_TruongDiemDonVi
                 throw;
             }
         }
+        public async Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetByMaTruongAsync(string maTruong)
+        {
+            try
+            {
+                await AddAuthenticationHeader();
+                var response = await _httpClient.GetAsync($"{API_ENDPOINT}/truongdiem/{Uri.EscapeDataString(maTruong)}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var lanhDaos = await response.Content.ReadFromJsonAsync<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>>(_jsonOptions);
+                    return lanhDaos ?? Enumerable.Empty<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
+                }
+
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return Enumerable.Empty<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
+                }
+
+                await HandleErrorResponse(response);
+                return Enumerable.Empty<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogErrorAsync($"Lỗi khi lấy danh sách lãnh đạo theo mã trường: {maTruong}", ex, nameof(BCThongTinTruongDiemService));
+                throw;
+            }
+        }
     }
 }

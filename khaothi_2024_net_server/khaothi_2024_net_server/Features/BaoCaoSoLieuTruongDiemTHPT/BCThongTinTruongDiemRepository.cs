@@ -48,6 +48,19 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
 
             return rowsAffected > 0;
         }
+        public async Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetByMaTruongAsync(string maTruong)
+        {
+            string sql = $@"SELECT * FROM {TableName} 
+                           WHERE MaTruong = @MaTruong
+                           ORDER BY ChucVuDonVi,CoiThiTS10,ChucVuCoiThiTS10,CoiThiTHPT,ChucVuCoiThiTHPT";
+
+            var result = await _dataAccess.QueryAsync<KhaoThi_4_THPT_ThongTin_LanhDaoModel>(
+                sql,
+                "@MaTruong", maTruong
+            );
+
+            return result;
+        }
 
         public async Task<(IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> Items, int TotalCount)> GetPaginatedAsync(
             int page,

@@ -52,6 +52,24 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuTruongDiemTHPT
                 return false;
             }
         }
+        public async Task<IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel>> GetByMaTruongAsync(string maTruong)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maTruong))
+                {
+                    _logger.LogWarning("Không thể lấy danh sách lãnh đạo khi mã trường trống");
+                    return new List<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
+                }
+
+                return await _truongDiemRepository.GetByMaTruongAsync(maTruong);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi lấy danh sách lãnh đạo theo mã trường: {MaTruong}", maTruong);
+                return new List<KhaoThi_4_THPT_ThongTin_LanhDaoModel>();
+            }
+        }
 
         /// <summary>
         /// Lấy danh sách trường điểm thi có phân trang và tìm kiếm
