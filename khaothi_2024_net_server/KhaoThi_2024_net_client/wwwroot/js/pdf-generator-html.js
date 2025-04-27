@@ -9,7 +9,7 @@ window.pdfGenerator = {
      * @param {Array} nhomMonData - Dữ liệu danh sách nhóm môn học
      * @returns {Promise<string>} - Promise chứa base64 string của file PDF
      */
-    generatePdfReport: function (schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData) {
+    generatePdfReport: function (schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData, nhomtruongdiemData) {
         return new Promise((resolve) => {
             try {
                 // Tạo container để chứa báo cáo HTML
@@ -20,7 +20,7 @@ window.pdfGenerator = {
                 document.body.appendChild(container);
 
                 // Thiết lập style và nội dung cho container
-                container.innerHTML = this.createReportHTML(schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData);
+                container.innerHTML = this.createReportHTML(schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData, nhomtruongdiemData);
 
                 // Thiết lập style
                 const style = document.createElement('style');
@@ -128,6 +128,12 @@ window.pdfGenerator = {
                     .header-doc-info p {
                         margin: 1pt 0;
                     }
+                    .wrap-text {
+                        word-wrap: break-word;
+                        white-space: normal;
+                        overflow-wrap: break-word;
+                        font-weight: bold;
+                    }
                 `;
                 container.appendChild(style);
 
@@ -180,7 +186,7 @@ window.pdfGenerator = {
 
 
 
-    createReportHTML: function (schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData) {
+    createReportHTML: function (schoolData, nhomMonData, nhomconthiData, nhomlanhdaoData, nhomtruongdiemData) {
         return `
         <div class="report-container">
             <!-- Header -->
@@ -380,6 +386,57 @@ window.pdfGenerator = {
                 </table>
                 
                
+             </div>
+           
+              <!-- Thông tin truong diem -->
+              <div class="avoid-break">
+                <p class="title">8. Danh sách cán bộ, giáo viên, nhân viên có con, người thân dự thi các kỳ thi của Thành phố:</p>
+                <p class="bold">Lưu ý: Tất cả thành viên thuộc Ban giám hiệu phải đăng ký tham gia coi thi, trừ trường hợp có người thân dự thi. Các trường hợp khác phải có văn bản kèm minh chứng gửi Ban giám đốc xin ý kiến.</p>
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">STT</th>
+                            <th style="width: 10%;">CCCD</th>
+                            <th style="width: 25%;">Họ tên</th>
+                            <th style="width: 5%">Năm sinh</th>
+                            <th style="width: 11%;">Chức vụ</th>
+                            <th style="width: 11%;">Coi thi TS10</th>
+                            <th style="width: 11%;">Chức vụ TS10</th>                         
+                            <th style="width: 11%;">Coi thi THPT</th>
+                            <th style="width: 11%;">Chức vụ THPT</th>                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${this.createTruongDiemGroupRows(nhomtruongdiemData)}
+                    </tbody>
+                </table>
+                 
+               
+             </div>
+               
+             <!-- Thông tin lanh dao -->
+               <div class="avoid-break">
+                <p class="title">9. Danh sách lãnh đạo đơn vị:</p>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">STT</th>
+                            <th style="width: 10%;">CCCD</th>
+                            <th style="width: 25%;">Họ tên</th>
+                            <th style="width: 5%">Năm sinh</th>
+                            <th style="width: 10%;">Chức vụ</th>
+                            <th style="width: 15%;">Di động</th>
+                            <th style="width: 20%;">Email</th>
+                            <th style="width: 5%;">Cụm chuyên môn</th>
+                            <th style="width: 5%;">Chức vụ cụm chuyên môn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${this.createLanhDaoGroupRows(nhomlanhdaoData)}
+                    </tbody>
+                </table>               
+                <p class="bold">Lưu ý: Tất cả thành viên thuộc Ban giám hiệu phải khai báo đầy đủ thông tin SĐT, Email để phục vụ công tác liên hệ tương lai khi xảy ra sự cố.</p>
             </div>
             <p>./.</p>
             
@@ -395,6 +452,7 @@ window.pdfGenerator = {
                 </div>
             </div>
         </div>
+          </div>
         `;
 
 
@@ -461,6 +519,51 @@ window.pdfGenerator = {
                 <td>${item.moiquanhe}</td>
                 <td>${item.kythithamdu}</td>
             </tr>
+        `).join('');
+    },
+    //Tạo danh sách lãnh đạo
+    createLanhDaoGroupRows: function (nhomlanhdaoData) {
+        if (!nhomlanhdaoData || nhomlanhdaoData.length === 0) {
+            return '<tr><td colspan="9" style="text-align: center;">Không có dữ liệu</td></tr>';
+        }
+
+        return nhomlanhdaoData.map(item => `
+            <tr>
+                <td>${item.stt}</td>
+                <td>${item.cccd}</td>
+                <td>${item.hoten}</td>
+                 <td>${item.namsinh}</td>
+                <td>${item.chucvu}</td>
+                <td>${item.didong}</td>
+                <td>${item.email}</td>
+                <td>${item.cumchuyenmon}</td>
+                <td>${item.chucvucumchuyenmon}</td>
+            </tr>
+        `).join('');
+    },
+    createTruongDiemGroupRows: function (nhomtruongdiemData) {
+        if (!nhomtruongdiemData || nhomtruongdiemData.length === 0) {
+            return '<tr><td colspan="11" style="text-align: center;">Không có dữ liệu</td></tr>';
+        }
+
+        return nhomtruongdiemData.map(item => `
+            <tr>
+                <td>${item.stt}</td>
+                <td>${item.cccd}</td>
+                <td>${item.hoten}</td>
+                 <td>${item.namsinh}</td>
+                <td>${item.chucvu}</td>
+                <td style="font-weight:bold">${item.coithits10 === 'True' || item.coithits10 === true || item.coithits10 === 'true' ? 'Tham gia' : 'Không tham gia'}</td>
+                <td>${item.chucvuts10}</td>        
+                <td style="font-weight:bold">${item.coithithpt === 'True' || item.coithithpt === true || item.coithithpt === 'true' ? 'Tham gia' : 'Không tham gia'}</td>
+                 <td>${item.chucvuthpt}</td>
+                
+            </tr>
+          
+            <tr><td colspan="9" style="word-wrap: break-word; font-weight:bold; text-align: left; padding: 6pt">${item.coithits10 === 'True' || item.coithits10 === true || item.coithits10 === 'true' ? 'Đã đăng ký tham gia TS10' : `Lý do không tham gia TS10: ${item.lydokothits10} 
+            (Cần có văn bản của đơn vị xin ý kiến Ban giám đốc Sở, trừ trường hợp có người thân tham dự các kỳ thi và đã được khai báo ở mục 7.`}</td></tr>
+             <tr><td colspan="9" style="word-wrap: break-word; font-weight:bold; text-align: left; padding: 6pt">${item.coithithpt === 'True' || item.coithithpt === true || item.coithithpt === 'true' ? 'Đã đăng ký tham gia THPT' : `Lý do không tham gia THPT: ${item.lydokothithpt} 
+             (Cần có văn bản của đơn vị xin ý kiến Ban giám đốc Sở, trừ trường hợp có người thân tham dự các kỳ thi và đã được khai báo ở mục 7.`}</td></tr>
         `).join('');
     }
 };

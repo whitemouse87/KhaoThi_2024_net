@@ -23,7 +23,8 @@ namespace KhaoThi_2024_net_client.Services
             KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong,
             IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons,
             IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel> nhomConThis,
-            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomlanhdaodonvis
+            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomlanhdaodonvis,
+            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomtruongdiemdonvis
             );
 
         /// <summary>
@@ -68,7 +69,8 @@ namespace KhaoThi_2024_net_client.Services
             KhaoThi_1_THPT_ThongTin_DonViModel thongTinTruong,
             IEnumerable<KhaoThi_2_THPT_NhomMon_DonViModel> nhomMons,
             IEnumerable<KhaoThi_5_THPT_ThongTin_ConThiModel> nhomConThis,
-            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomlanhdaodonvis
+            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomlanhdaodonvis,
+            IEnumerable<KhaoThi_4_THPT_ThongTin_LanhDaoModel> nhomtruongdiemdonvis
             )
         {
             try
@@ -186,13 +188,29 @@ namespace KhaoThi_2024_net_client.Services
                         hoten = n.HoTen ?? "",
                         namsinh = n.NamSinh,
                         chucvu = n.ChucVuDonVi ?? "",
-                        coithits10 = n.CoiThiTS10.ToString(),
-                        chucvuts10 = n.ChucVuCoiThiTS10.ToString(),
-                        lydokothits10 = n.LyDoKhongThamGiaTS10.ToString(),
-                        coithithpt = n.CoiThiTHPT.ToString(),
-                        chucvuthpt = n.ChucVuCoiThiTHPT.ToString(),
-                        lydokothithpt = n.LyDoKhongThamGiaTHPT.ToString()
+                        didong = n.SDTDiDong ?? "",
+                        email = n.Email ?? "",
+                        cumchuyenmon = n.CumChuyenMon ?? "",
+                        chucvucumchuyenmon = n.ChucVuCumChuyenMon ?? ""
+
+
                     }).ToArray();
+                var nhomtruongdiemData = nhomtruongdiemdonvis
+                 .Select((n, index) => new
+                 {
+                     stt = index + 1,
+                     matruong = n.MaTruong ?? "",
+                     cccd = n.CCCD,
+                     hoten = n.HoTen ?? "",
+                     namsinh = n.NamSinh,
+                     chucvu = n.ChucVuDonVi ?? "",
+                     coithits10 = n.CoiThiTS10.ToString(),
+                     chucvuts10 = n.ChucVuCoiThiTS10.ToString(),
+                     lydokothits10 = n.LyDoKhongThamGiaTS10.ToString(),
+                     coithithpt = n.CoiThiTHPT.ToString(),
+                     chucvuthpt = n.ChucVuCoiThiTHPT.ToString(),
+                     lydokothithpt = n.LyDoKhongThamGiaTHPT.ToString()
+                 }).ToArray();
                 //var nhomConThi = nhomCons
                 //.Select((n, index) => new
                 //{
@@ -208,7 +226,7 @@ namespace KhaoThi_2024_net_client.Services
                 await _logger.LogErrorAsync($"Bắt đầu tạo báo cáo PDF cho trường {thongTinTruong.TenTruong}", null, nameof(PdfService));
 
                 // Gọi hàm JavaScript để tạo PDF và trả về dưới dạng base64 string
-                string base64Pdf = await _jsRuntime.InvokeAsync<string>("pdfGenerator.generatePdfReport", schoolData, nhomMonData, nhomConData, nhomlanhdaoData);
+                string base64Pdf = await _jsRuntime.InvokeAsync<string>("pdfGenerator.generatePdfReport", schoolData, nhomMonData, nhomConData, nhomlanhdaoData, nhomtruongdiemData);
 
                 // Kiểm tra kết quả trả về
                 if (string.IsNullOrEmpty(base64Pdf))

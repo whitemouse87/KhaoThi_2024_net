@@ -253,7 +253,7 @@ downloadLink.remove();
 
             // Sử dụng service để tạo báo cáo PDF
             //byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong,nhomMons,nhomConThis,nhomThongTinLanhDaos);
-            byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong, nhomMons, nhomConThis, nhomThongTinLanhDaos);
+            byte[] reportData = await PdfService.GeneratePdfReportAsync(thongTinTruong, nhomMons, nhomConThis, nhomThongTinLanhDaos, nhomTruongDiems);
             // Tải xuống file với tên có timestamp
             string fileName = $"BaoCao_{thongTinTruong?.MaTruong ?? "Unknown"}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
             await DownloadFile(reportData, fileName, "application/pdf");
