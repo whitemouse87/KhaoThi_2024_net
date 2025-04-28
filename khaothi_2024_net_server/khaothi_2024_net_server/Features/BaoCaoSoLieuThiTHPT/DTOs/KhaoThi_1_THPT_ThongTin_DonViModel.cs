@@ -31,5 +31,6 @@
         public string? NoiDung_HoTro_HS { get; set; } = null;
         public bool Active { get; set; } = false;
         public bool Lock { get; set; } = false;
+        public bool KhoaTaiKhoan { get; set; } = false;
     }
 }

@@ -78,6 +78,7 @@ window.pdfGenerator = {
                     .subtitle {
                         font-size: 12pt;
                         margin: 5pt 0;
+                        text-align: center;
                     }
                     .info-table {
                         width: 100%;

@@ -23,9 +23,10 @@ namespace khaothi_2024_net_server.Features.BaoCaoSoLieuThiTHPT
         {
             try
             {
-                const string sql = @"SELECT KhaoThi_1_THPT_ThongTin_DonVi.*,MaTruong_New.TenTruong
+                const string sql = @"SELECT KhaoThi_1_THPT_ThongTin_DonVi.*,MaTruong_New.TenTruong,KhaoThi_User.Active as KhoaTaiKhoan
                                     FROM KhaoThi_1_THPT_ThongTin_DonVi 
                                     inner join MaTruong_New on MaTruong_New.MaTruong=KhaoThi_1_THPT_ThongTin_DonVi.MaTruong     
+                                    inner join KhaoThi_User on KhaoThi_User.MaDonVi=KhaoThi_1_THPT_ThongTin_DonVi.MaTruong 
                                     WHERE KhaoThi_1_THPT_ThongTin_DonVi.MaTruong = @MaTruong";
                 return await _dataAccess.QueryFirstOrDefaultAsync<KhaoThi_1_THPT_ThongTin_DonViModel>(sql, "@MaTruong", MaTruong);
             }

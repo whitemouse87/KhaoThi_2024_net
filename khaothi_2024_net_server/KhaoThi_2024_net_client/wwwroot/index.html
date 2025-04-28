@@ -21,6 +21,7 @@
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <link rel="preload" href="_framework/blazor.webassembly.js" as="script" />
     <link rel="preload" href="_content/MudBlazor/MudBlazor.min.css" as="style" />
     <link rel="preload" href="_content/MudBlazor/MudBlazor.min.js" as="script" />
@@ -37,8 +38,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
     <script src="js/pdfGenerator.js"></script>-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="js/pdf-generator-html.js"></script>
     <!-- Inline Critical CSS -->
     <style>
         :root {
@@ -239,16 +238,20 @@
 
     <!-- Essential Scripts -->
     <script src="_content/Radzen.Blazor/Radzen.Blazor.js" defer></script>
+   
+    <script src="_framework/dotnet.js" defer></script>
     <script src="_framework/blazor.webassembly.js" defer></script>
     <script src="_content/MudBlazor/MudBlazor.min.js" defer></script>
     <script src="js/security.js" defer></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/pdf-generator-html.js"></script>
     <!-- Cache Clear & Upload Scripts -->
     <script>
         // Xóa cache khi tải lại trang
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             if ('caches' in window) {
-                caches.keys().then(function(names) {
+                caches.keys().then(function (names) {
                     for (let name of names) caches.delete(name);
                 });
             }
@@ -268,7 +271,7 @@
         // Upload helper functions
         window.uploadHelpers = {
             // Khởi tạo upload UI
-            initUpload: function(elementId, maxFileSize, allowedExtensions, maxFiles) {
+            initUpload: function (elementId, maxFileSize, allowedExtensions, maxFiles) {
                 const inputElement = document.getElementById(elementId);
                 if (!inputElement) return;
 
@@ -282,7 +285,7 @@
                 }
 
                 // Thêm sự kiện kiểm tra file trước khi upload
-                inputElement.addEventListener('change', function(e) {
+                inputElement.addEventListener('change', function (e) {
                     const files = e.target.files;
                     if (!files || files.length === 0) return;
 
@@ -297,14 +300,14 @@
                     // Kiểm tra kích thước và định dạng file
                     for (let i = 0; i < files.length; i++) {
                         const file = files[i];
-                        
+
                         // Kiểm tra kích thước
                         if (maxFileSize && file.size > maxFileSize) {
-                            alert(`File ${file.name} vượt quá kích thước cho phép (${Math.floor(maxFileSize/1024/1024)}MB)`);
+                            alert(`File ${file.name} vượt quá kích thước cho phép (${Math.floor(maxFileSize / 1024 / 1024)}MB)`);
                             validFiles = false;
                             break;
                         }
-                        
+
                         // Kiểm tra phần mở rộng
                         if (allowedExtensions && allowedExtensions.length > 0) {
                             const fileExt = file.name.split('.').pop().toLowerCase();
@@ -328,17 +331,17 @@
                         const fileItem = document.createElement('div');
                         fileItem.className = 'file-item';
                         fileItem.innerHTML = `
-                            <span class="file-name">${file.name}</span>
-                            <span class="file-size">${this.formatFileSize(file.size)}</span>
-                            <span class="file-remove" data-index="${i}">✕</span>
-                        `;
+                                    <span class="file-name">${file.name}</span>
+                                    <span class="file-size">${this.formatFileSize(file.size)}</span>
+                                    <span class="file-remove" data-index="${i}">✕</span>
+                                `;
                         fileListEl.appendChild(fileItem);
                     }
 
                     // Thêm sự kiện xóa file
                     const removeButtons = fileListEl.querySelectorAll('.file-remove');
                     removeButtons.forEach(button => {
-                        button.addEventListener('click', function() {
+                        button.addEventListener('click', function () {
                             // Vì không thể xóa trực tiếp từ FileList, cần reset input
                             inputElement.value = '';
                             fileListEl.innerHTML = '';
@@ -348,7 +351,7 @@
             },
 
             // Hiển thị tiến trình upload
-            updateProgress: function(elementId, progress) {
+            updateProgress: function (elementId, progress) {
                 const progressBar = document.getElementById(elementId);
                 if (progressBar) {
                     progressBar.style.width = `${progress}%`;
@@ -356,7 +359,7 @@
             },
 
             // Format kích thước file
-            formatFileSize: function(bytes) {
+            formatFileSize: function (bytes) {
                 if (bytes === 0) return '0 Bytes';
                 const k = 1024;
                 const sizes = ['Bytes', 'KB', 'MB', 'GB'];
@@ -368,33 +371,33 @@
         // API để tích hợp với Blazor
         window.blazorExtensions = {
             // Khởi tạo component upload
-            initializeFileUpload: function(elementId, maxFileSize, allowedExtensions, maxFiles) {
-                window.uploadHelpers.initUpload(elementId, maxFileSize, 
+            initializeFileUpload: function (elementId, maxFileSize, allowedExtensions, maxFiles) {
+                window.uploadHelpers.initUpload(elementId, maxFileSize,
                     allowedExtensions ? allowedExtensions.split(',') : null, maxFiles);
             },
-            
+
             // Tạo FormData từ input file
-            createFormData: function(elementId) {
+            createFormData: function (elementId) {
                 const inputElement = document.getElementById(elementId);
                 if (!inputElement || !inputElement.files || inputElement.files.length === 0) {
                     return null;
                 }
-                
+
                 const formData = new FormData();
                 for (let i = 0; i < inputElement.files.length; i++) {
                     formData.append('files', inputElement.files[i]);
                 }
-                
+
                 return formData;
             },
 
             // Lấy danh sách các file được chọn
-            getSelectedFiles: function(elementId) {
+            getSelectedFiles: function (elementId) {
                 const inputElement = document.getElementById(elementId);
                 if (!inputElement || !inputElement.files || inputElement.files.length === 0) {
                     return [];
                 }
-                
+
                 const files = [];
                 for (let i = 0; i < inputElement.files.length; i++) {
                     const file = inputElement.files[i];
@@ -404,7 +407,7 @@
                         type: file.type
                     });
                 }
-                
+
                 return files;
             }
         };

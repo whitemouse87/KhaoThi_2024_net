@@ -39,8 +39,8 @@ public class Program
 {
 
 
-    //private const string API_BASE_URL = "https://api.thongtinkhaothihcm.com/api/";
-    private const string API_BASE_URL = "https://localhost:7168/api/";
+    private const string API_BASE_URL = "https://api.thongtinkhaothihcm.com/api/";
+    //private const string API_BASE_URL = "https://localhost:7168/api/";
     private const int HTTP_TIMEOUT_SECONDS = 59;
 
     public static async Task Main(string[] args)
