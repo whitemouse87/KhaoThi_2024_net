@@ -1,0 +1,2 @@
+2026-01-16 18:31:57.087 +07:00 [WRN] [Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager] No XML encryptor configured. Key {f10f6ac0-ab6c-4933-906b-7e87cf852039} may be persisted to storage in unencrypted form.
+2026-01-16 18:31:57.363 +07:00 [WRN] [Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware] The WebRootPath was not found: C:\Users\TRY\Documents\GitHub\KhaoThi_2024_net\khaothi_2024_net_server\khaothi_2024_net_server\wwwroot. Static files may be unavailable.
